@@ -1,0 +1,30 @@
+fac_no_faction = 0
+fac_commoners = 1
+fac_outlaws = 2
+fac_neutral = 3
+fac_innocents = 4
+fac_merchants = 5
+fac_trade_federation = 6
+fac_dark_knights = 7
+fac_culture_1 = 8
+fac_culture_2 = 9
+fac_culture_3 = 10
+fac_player_faction = 11
+fac_player_supporters_faction = 12
+fac_kingdom_1 = 13
+fac_kingdom_2 = 14
+fac_kingdom_3 = 15
+fac_kingdoms_end = 16
+fac_robber_knights = 17
+fac_khergits = 18
+fac_black_khergits = 19
+fac_manhunters = 20
+fac_deserters = 21
+fac_mountain_bandits = 22
+fac_forest_bandits = 23
+fac_undeads = 24
+fac_slavers = 25
+fac_peasant_rebels = 26
+fac_noble_refugees = 27
+
+
