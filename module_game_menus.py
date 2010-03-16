@@ -4074,7 +4074,8 @@ game_menus = [
   
 ##############################################################################  
   ("camp_cheat",0,
-   "Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. If you enable this option then additonal CHEAT menu's will also appear in other game menu's. Please do not report any bugs with this functionality since it is for testing only.",
+   #"Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. If you enable this option then additonal CHEAT menu's will also appear in other game menu's. Please do not report any bugs with this functionality since it is for testing only.",
+   "Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. Please do not report any bugs with this functionality since it is for testing only.",
    "none",
 	 [
      ],
@@ -4085,9 +4086,9 @@ game_menus = [
 		(str_clear, s1),
 		(try_begin),
 			(eq, "$cheat_mode", 0),
-			(str_store_string, s1, "@Enable cheat/modding options."),
+			(str_store_string, s1, "@Enable the M&B Developers CHEAT menu's & DEBUG messages."),
 		(else_try),
-			(str_store_string, s1, "@Disable cheat/modding options."),
+			(str_store_string, s1, "@Disable the M&B Developers CHEAT menu's & DEBUG messages."),
 		(try_end),
 		],
 		"{s1}",                         
@@ -4095,16 +4096,22 @@ game_menus = [
 		(try_begin),
 			(eq, "$cheat_mode", 0),
 			(assign, "$cheat_mode", 1),
+			(display_message, "@CHEAT and DEBUG messages are now enabled."),
+			(display_message, "@WARNING:  this mode was created by the M&B developers."),
+			(display_message, "@WARNING:  Functionality is unknown and has not been tested by the SWC team."),
 		(else_try),
 			(assign, "$cheat_mode", 0),
+			(display_message, "@CHEAT and DEBUG messages are now disabled."),
 		(try_end),
 		(str_clear, s1),
 		(jump_to_menu, "mnu_camp_cheat"),
 		]),
 	
       ("cheat_walk_around",
-		[(eq,"$cheat_mode",1)],
-		"Walk around.",
+		[
+		#(eq,"$cheat_mode",1)
+		],
+		"Walk around a random scene.",
 		[
 			(set_jump_mission,"mt_ai_training"),
 			(call_script, "script_setup_random_scene"),
@@ -4113,7 +4120,9 @@ game_menus = [
        ),	
 
       ("cheat_relocate_party",
-	  [(eq,"$cheat_mode",1)],
+	  [
+	  #(eq,"$cheat_mode",1)
+	  ],
 	  "Relocate player to a random planet.",
        [
 		(store_random_in_range, ":random_town", towns_begin, towns_end),
@@ -4139,7 +4148,9 @@ game_menus = [
        # ),
 	   
       ("cheat_increase_renown",
-	  [(eq,"$cheat_mode",1)],
+	  [
+	  #(eq,"$cheat_mode",1)
+	  ],
 	  "Increase player renown.",
        [
 		(str_store_string, s1, "@Player renown is increased by 500."),
@@ -4148,7 +4159,9 @@ game_menus = [
        ),
 
       ("cheat_change_ship_speed",
-	  [(eq,"$cheat_mode",1)],
+	  [
+	  #(eq,"$cheat_mode",1)
+	  ],
 	  "Change player ship speed.",
        [
 	   
@@ -4184,7 +4197,9 @@ game_menus = [
        ),	   
 	   
       ("cheat_add_xp",
-	  [(eq,"$cheat_mode",1)],
+	  [
+	  #(eq,"$cheat_mode",1)
+	  ],
 	  "Add experience to player.",
        [
 		(add_xp_to_troop, 15000, "trp_player"),
@@ -4196,7 +4211,9 @@ game_menus = [
 #SW - camp_mod concept by MartinF - http://forums.taleworlds.net/index.php/topic,57919.0.html
 ### MF - Add any units you want to test with below, look in troop.py for the troop_id      
       ("camp_mod_4",
-      [(eq,"$cheat_mode",1)],
+      [
+	  #(eq,"$cheat_mode",1)
+	  ],
       "Add mercenary units to player party.",
       [
         (party_add_members, "p_main_party", "trp_mandalorian_crusader", 5),
@@ -4212,7 +4229,9 @@ game_menus = [
       ),
 
       ("camp_mod_1",
-      [(eq,"$cheat_mode",1)],
+      [
+	  #(eq,"$cheat_mode",1)
+	  ],
 	  "Increase relations with all Factions.",
        [
 		(call_script, "script_set_player_relation_with_faction", "fac_kingdom_1", 40),
@@ -4223,7 +4242,9 @@ game_menus = [
        ),
 	   
       ("camp_mod_1b",
-      [(eq,"$cheat_mode",1)],
+      [
+	  #(eq,"$cheat_mode",1)
+	  ],
 	  "Decrease relations with all Factions.",
        [
 		(call_script, "script_set_player_relation_with_faction", "fac_kingdom_1", -40),
@@ -4234,7 +4255,9 @@ game_menus = [
        ),	   
 ### MF - change attributes and skills below, or add weapon proficiencies with (troop_raise_proficiency, "trp_player", wpt_). See header.troops.py for options   
       ("camp_mod_2",
-      [(eq,"$cheat_mode",1)],
+      [
+	  #(eq,"$cheat_mode",1)
+	  ],
       "Raise player's attributes, skills, and proficiencies.",
       [
 		#attributes
@@ -4276,7 +4299,9 @@ game_menus = [
 
 ### MF - Change items below to anything you want to test out, look in items.py for item_id
      ("camp_mod_3",
-     [(eq,"$cheat_mode",1)],
+     [
+	 #(eq,"$cheat_mode",1)
+	 ],
       "Add gear and gold to player.",
        [
 		 #gold
@@ -4363,13 +4388,15 @@ game_menus = [
 		(troop_add_item, "trp_player","itm_ammo_belt_pistol",0),
 		(troop_add_item, "trp_player","itm_ammo_belt_rifle",0),
 		
-	    (display_message, "@Items added to player inventory."),
+	    (display_message, "@gold & equipment added to player."),
         ]
        ),
       
 ### MF - Spawn any party you want near your party. Look in party_templates.py for pt_id
       ("camp_mod_5",
-      [(eq,"$cheat_mode",1)],
+      [
+	  #(eq,"$cheat_mode",1)
+	  ],
       "Spawn a party nearby.",
       [
          (spawn_around_party, "p_main_party", "pt_looters"),
@@ -4380,7 +4407,9 @@ game_menus = [
 ############## MF for testing end ####################	
 
       ("cheat_build_upgrades",
-	  [(eq,"$cheat_mode",1)],
+	  [
+	  #(eq,"$cheat_mode",1)
+	  ],
 	  "Build all village upgrades.",
        [
 		(try_for_range, ":cur_place", villages_begin, villages_end),
@@ -4403,7 +4432,9 @@ game_menus = [
        # ),
 
       ("cheat_next_page",
-	  [(eq,"$cheat_mode",1)],
+	  [
+	  #(eq,"$cheat_mode",1)
+	  ],
 	  "Next page.",
        [(jump_to_menu, "mnu_camp_cheat_2"),
         ]
@@ -4417,13 +4448,16 @@ game_menus = [
   ),
   
   ("camp_cheat_2",0,
-   "Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. If you enable this then additonal CHEAT menu's will also appear in other game menu's.",
+   #"Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. If you enable this then additonal CHEAT menu's will also appear in other game menu's.",
+   "Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. Please do not report any bugs with this functionality since it is for testing only.",
    "none",
 	 [
      ],
     [
       ("cheat_infest_planet",
-	  [(eq,"$cheat_mode",1)],
+	  [
+	  #(eq,"$cheat_mode",1)
+	  ],
 	  "Infest all villages with bandits.",
        [
 		(try_for_range, ":cur_place", villages_begin, villages_end),
@@ -4434,7 +4468,9 @@ game_menus = [
        ),
 
       ("cheat_increase_planet_relationship",
-	  [(eq,"$cheat_mode",1)],
+	  [
+	  #(eq,"$cheat_mode",1)
+	  ],
 	  "Increase relationship with all villages.",
        [
 		(try_for_range, ":cur_place", villages_begin, villages_end),
@@ -4445,7 +4481,9 @@ game_menus = [
        ),
 
       ("cheat_decrease_planet_relationship",
-	  [(eq,"$cheat_mode",1)],
+	  [
+	  #(eq,"$cheat_mode",1)
+	  ],
 	  "Decrease relationship with all villages.",
        [
 		(try_for_range, ":cur_place", villages_begin, villages_end),
@@ -4456,7 +4494,9 @@ game_menus = [
        ),	   
 	   
       ("cheat_relocate_fs_trainer",
-	  [(eq,"$cheat_mode",1),],
+	  [
+	  #(eq,"$cheat_mode",1),
+	  ],
 	  "Relocate a Force-Sensitive Trainer to the closest planet.",
        [
 		#SW - script_setup_random_scene is based on the closest town, determine its name
@@ -4477,7 +4517,9 @@ game_menus = [
        ),
 
       ("cheat_relocate_clone_merchant",
-	  [(eq,"$cheat_mode",1),],
+	  [
+	  #(eq,"$cheat_mode",1),
+	  ],
 	  "Relocate a Clone Wars Era merchant to the closest planet.",
        [
 		#SW - script_setup_random_scene is based on the closest town, determine its name
@@ -4498,7 +4540,9 @@ game_menus = [
        ),
 
       ("cheat_relocate_droid_merchant",
-	  [(eq,"$cheat_mode",1),],
+	  [
+	  #(eq,"$cheat_mode",1),
+	  ],
 	  "Relocate a Droid Parts merchant to the closest planet.",
        [
 		#SW - script_setup_random_scene is based on the closest town, determine its name
@@ -4519,7 +4563,9 @@ game_menus = [
        ),	   
 
       ("cheat_relocate_plastic_merchant",
-	  [(eq,"$cheat_mode",1),],
+	  [
+	  #(eq,"$cheat_mode",1),
+	  ],
 	  "Relocate a Plastic Surgeon to the closest planet.",
        [
 		#SW - script_setup_random_scene is based on the closest town, determine its name
@@ -4539,8 +4585,10 @@ game_menus = [
         ]
        ),
 
-      ("cheat_relocate_plastic_merchant",
-	  [(eq,"$cheat_mode",1),],
+      ("cheat_relocate_npc",
+	  [
+	  #(eq,"$cheat_mode",1),
+	  ],
 	  "Relocate a random NPC to the closest planet.",
        [
 		#SW - script_setup_random_scene is based on the closest town, determine its name
@@ -9743,7 +9791,7 @@ game_menus = [
 			(le, reg5, 0),
 			(str_store_string, s18, "@The Droid Foundry can not currently build any troops, please come back later."),
 		(else_try),
-			(str_store_string, s18, "@The Droid Foundry can build {reg5} droids.^What type of Battle Droids do you want to build?"),
+			(str_store_string, s18, "@The Droid Foundry can build {reg5} droids.^What type of droids do you want to build?"),
 		(try_end),
 	],
     [
@@ -9757,6 +9805,16 @@ game_menus = [
 						(assign, "$g_droid_foundry_type", "trp_oom_series_security"),
 						(jump_to_menu,"mnu_recruit_droids"),
                         ]),
+      # ("build_egseries", [(gt, reg5, 0)],
+						# "EG-Series Power Droids.",[
+						# (assign, "$g_droid_foundry_type", "trp_power_droid"),
+						# (jump_to_menu,"mnu_recruit_droids"),
+                        # ]),
+      # ("build_fxseries", [(gt, reg5, 0)],
+						# "FX-Series Medical Droids.",[
+						# (assign, "$g_droid_foundry_type", "trp_fxseries_droid"),
+						# (jump_to_menu,"mnu_recruit_droids"),
+                        # ]),
       ("leave",			[],
 						"go back.",[
 						(jump_to_menu,"mnu_village")
@@ -10991,6 +11049,9 @@ game_menus = [
              (try_end),
              (assign, "$town_entered", 1),
 			 
+			  #autoloot flag to allow player to talk to companions
+			  (assign, "$g_camp_talk",0),		#set this to zero so we don't mess up companion recruitment dialog
+			 
 			 #SW - switched jump_mission
 			 #(set_jump_mission, "mt_town_center"),
 			 (set_jump_mission, "mt_cantina_default"),
@@ -11152,7 +11213,8 @@ game_menus = [
            (try_end),
         ],"Door to the shop."),
       ("town_arena",
-       [(party_slot_eq,"$current_town",slot_party_type, spt_town),
+       [
+		(party_slot_eq,"$current_town",slot_party_type, spt_town),
         (eq, "$sneaked_into_town", 0),
 #           (party_get_slot, ":scene", "$current_town", slot_town_arena),
 #           (scene_slot_eq,  ":scene", slot_scene_visited, 1), #check if scene has been visited before to allow entry from menu. Otherwise scene will only be accessible from the town center.
@@ -11171,7 +11233,6 @@ game_menus = [
 			 
 			 #SW - added script_set_items_for_arena so we can toggle what weapons are used (didn't work here either...)
 			#(call_script, "script_set_items_for_arena", 0),
-			 
              (set_jump_mission, "mt_arena_melee_fight"),
              (party_get_slot, ":arena_scene", "$current_town", slot_town_arena),
              (modify_visitors_at_site, ":arena_scene"),
@@ -11265,7 +11326,8 @@ game_menus = [
            (set_jump_mission,"mt_castle_visit"),
            (jump_to_scene,":cur_castle_exterior"),
            (change_screen_mission),
-        ], "To the castle courtyard."),
+        #], "To the castle courtyard."),
+		], "To the site."),
       ("trade_with_merchants",
        [
            (party_slot_eq,"$current_town",slot_party_type, spt_town)

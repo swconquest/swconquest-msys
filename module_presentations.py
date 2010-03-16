@@ -6118,6 +6118,17 @@ presentations = [
 
 ("starship", 0,mesh_load_window, [
 	(ti_on_presentation_load,[
+
+    # #Little Pos Helper by Kuba begin
+	# #http://forums.taleworlds.com/index.php/topic,8652.msg2373733.html#msg2373733
+	# (str_store_string, s1, "@DEBUG: x = 00, y = 00"),
+    # (create_text_overlay, "$g_little_pos_helper", s1),
+    # (overlay_set_color, "$g_little_pos_helper", 0xFFFFFFFF),
+	# (set_fixed_point_multiplier, 1000),
+    # (position_set_x, pos1, 100),
+    # (position_set_y, pos1, 100),
+    # (overlay_set_position, "$g_little_pos_helper", pos1),
+    # #Little Pos Helper by Kuba end
 	
 	#get current gold
 	(store_troop_gold, ":cur_gold", "trp_player"),
@@ -6243,7 +6254,7 @@ presentations = [
 		#main title
 		(create_text_overlay, reg1, "@Shipyard Stock List - select the ship you want to view or purchase",tf_center_justify),
 		(position_set_x, pos3, 512),
-        (position_set_y, pos3, 705),
+        (position_set_y, pos3, 690),
         (overlay_set_position, reg1, pos3),
 		(overlay_set_color, reg1, 000066),
 
@@ -6258,8 +6269,8 @@ presentations = [
 		# (overlay_set_size, reg1, pos4),
 		#ship name
 		(create_game_button_overlay, reg1, "@{s3}",tf_center_justify),
-		(position_set_x, pos3, 750),
-        (position_set_y, pos3, 430),
+		(position_set_x, pos3, 725),
+        (position_set_y, pos3, 475),
         (overlay_set_position, reg1, pos3),
 		(overlay_set_color, reg1, 000066),
 		(position_set_x, pos4, 250),
@@ -6267,8 +6278,8 @@ presentations = [
 		(overlay_set_size, reg1, pos4),
 		#price overlay
 		(create_game_button_overlay , reg1, "@{s5}", tf_center_justify),
-        (position_set_x, pos3, 775),
-        (position_set_y, pos3, 175),
+        (position_set_x, pos3, 760),
+        (position_set_y, pos3, 115),
         (overlay_set_position, reg1, pos3),
 		(overlay_set_color, reg1, 0x009900),
 		(position_set_x, pos4, 200),
@@ -6314,9 +6325,13 @@ presentations = [
 	#load icon mesh on the right of the screen
     (create_mesh_overlay_with_tableau_material,reg1, -1, "tableau_starship_icon", "$g_ship_icon"),
 	(set_fixed_point_multiplier, 1000),
-	(position_set_x, pos0, 640),     
-	(position_set_y, pos0, 125),
+	(position_set_x, pos0, 320),     
+	(position_set_y, pos0, -80),
 	(overlay_set_position, reg1, pos0),
+	#SW - added ability to change the size
+	(position_set_x, pos1, 2100),
+	(position_set_y, pos1, 2100),
+	(overlay_set_size, reg1, pos1),
 	
 	
 	#Adding menu bar at the top
@@ -6327,7 +6342,7 @@ presentations = [
 	(party_get_slot, ":icon", "$g_ship_choice_1", slot_spaceship_icon),
 	(create_image_button_overlay_with_tableau_material,reg1, -1, "tableau_starship_icon", ":icon"),
 	(set_fixed_point_multiplier, 1000),
-	(position_set_x, pos0, 0),     
+	(position_set_x, pos0, 10), 
 	(position_set_y, pos0, 530),
 	(overlay_set_position, reg1, pos0),
 	(position_set_x, pos1, 500),
@@ -6335,7 +6350,7 @@ presentations = [
 #	(overlay_set_color, "$g_presentation_object_3", 0xec2a53),
 	(overlay_set_size, reg1, pos1),
 	(create_game_button_overlay, "$g_presentation_obj_3", "@view"),
-		(position_set_x, pos2, 130), #was 55 for text button
+		(position_set_x, pos2, 140), #was 55 for text button
         (position_set_y, pos2, ":button_y_val_2"),
         (overlay_set_position, "$g_presentation_obj_3", pos2),
 		(overlay_set_color, "$g_presentation_obj_3", 000066),
@@ -6347,14 +6362,14 @@ presentations = [
 	(party_get_slot, ":icon", "$g_ship_choice_2", slot_spaceship_icon),
 	(create_image_button_overlay_with_tableau_material,reg1, -1, "tableau_starship_icon", ":icon"),	
 	(set_fixed_point_multiplier, 1000),
-	(position_set_x, pos0, 110),     
+	(position_set_x, pos0, 140),     
 	(position_set_y, pos0, 530),
 	(overlay_set_position, reg1, pos0),
 	(position_set_x, pos1, 500),
 	(position_set_y, pos1, 500),
 	(overlay_set_size, reg1, pos1),
 	(create_game_button_overlay, "$g_presentation_obj_4", "@view"),
-		(position_set_x, pos2, 255),
+		(position_set_x, pos2, 270),
         (position_set_y, pos2, ":button_y_val_2"),
         (overlay_set_position, "$g_presentation_obj_4", pos2),
 		(overlay_set_color, "$g_presentation_obj_4", 000066),
@@ -6366,14 +6381,14 @@ presentations = [
 	(party_get_slot, ":icon", "$g_ship_choice_3", slot_spaceship_icon),
 	(create_image_button_overlay_with_tableau_material,reg1, -1, "tableau_starship_icon", ":icon"),	
 	(set_fixed_point_multiplier, 1000),
-	(position_set_x, pos0, 240),     
+	(position_set_x, pos0, 270),     
 	(position_set_y, pos0, 530),
 	(overlay_set_position, reg1, pos0),
 	(position_set_x, pos1, 500),
 	(position_set_y, pos1, 500),
 	(overlay_set_size, reg1, pos1),
 	(create_game_button_overlay, "$g_presentation_obj_5", "@view"),
-		(position_set_x, pos2, 375),
+		(position_set_x, pos2, 400),
         (position_set_y, pos2, ":button_y_val_2"),
         (overlay_set_position, "$g_presentation_obj_5", pos2),
 		(overlay_set_color, "$g_presentation_obj_5", 000066),
@@ -6385,14 +6400,14 @@ presentations = [
 	(party_get_slot, ":icon", "$g_ship_choice_4", slot_spaceship_icon),
 	(create_image_button_overlay_with_tableau_material,reg1, -1, "tableau_starship_icon", ":icon"),	
 	(set_fixed_point_multiplier, 1000),
-	(position_set_x, pos0, 365),     
-	(position_set_y, pos0, 565),
+	(position_set_x, pos0, 400),     
+	(position_set_y, pos0, 530),
 	(overlay_set_position, reg1, pos0),
-	(position_set_x, pos1, 400),
-	(position_set_y, pos1, 400),
+	(position_set_x, pos1, 500),
+	(position_set_y, pos1, 500),
 	(overlay_set_size, reg1, pos1),
 		(create_game_button_overlay, "$g_presentation_obj_6", "@view"),
-		(position_set_x, pos2, 495),
+		(position_set_x, pos2, 530),
         (position_set_y, pos2, ":button_y_val_2"),
         (overlay_set_position, "$g_presentation_obj_6", pos2),
 		(overlay_set_color, "$g_presentation_obj_6", 000066),
@@ -6404,15 +6419,14 @@ presentations = [
 	(party_get_slot, ":icon", "$g_ship_choice_5", slot_spaceship_icon),
 	(create_image_button_overlay_with_tableau_material,reg1, -1, "tableau_starship_icon", ":icon"),	
 	(set_fixed_point_multiplier, 1000),
-	(position_set_x, pos0, 470),     
+	(position_set_x, pos0, 530),     
 	(position_set_y, pos0, 530),
 	(overlay_set_position, reg1, pos0),
 	(position_set_x, pos1, 500),
 	(position_set_y, pos1, 500),
 	(overlay_set_size, reg1, pos1),
-	(overlay_set_size, reg1, pos1),
 		(create_game_button_overlay, "$g_presentation_obj_7", "@view"),
-		(position_set_x, pos2, 615),
+		(position_set_x, pos2, 660),
         (position_set_y, pos2, ":button_y_val_2"),
         (overlay_set_position, "$g_presentation_obj_7", pos2),
 		(overlay_set_color, "$g_presentation_obj_7", 000066),
@@ -6424,7 +6438,7 @@ presentations = [
 	(party_get_slot, ":icon", "$g_ship_choice_6", slot_spaceship_icon),
 	(create_image_button_overlay_with_tableau_material,reg1, -1, "tableau_starship_icon", ":icon"),	
 	(set_fixed_point_multiplier, 1000),
-	(position_set_x, pos0, 635),     
+	(position_set_x, pos0, 660),     
 	(position_set_y, pos0, 530),
 	(overlay_set_position, reg1, pos0),
 	(position_set_x, pos1, 500),
@@ -6432,7 +6446,7 @@ presentations = [
 	(overlay_set_size, reg1, pos1),
 	(overlay_set_size, reg1, pos1),
 		(create_game_button_overlay, "$g_presentation_obj_8", "@view"),
-		(position_set_x, pos2, 760),
+		(position_set_x, pos2, 790),
         (position_set_y, pos2, ":button_y_val_2"),
         (overlay_set_position, "$g_presentation_obj_8", pos2),
 		(overlay_set_color, "$g_presentation_obj_8", 000066),
@@ -6444,15 +6458,15 @@ presentations = [
 	(party_get_slot, ":icon", "$g_ship_choice_7", slot_spaceship_icon),
 	(create_image_button_overlay_with_tableau_material,reg1, -1, "tableau_starship_icon", ":icon"),	
 	(set_fixed_point_multiplier, 1000),
-	(position_set_x, pos0, 780),     
-	(position_set_y, pos0, 540),
+	(position_set_x, pos0, 790),     
+	(position_set_y, pos0, 530),
 	(overlay_set_position, reg1, pos0),
 	(position_set_x, pos1, 500),
 	(position_set_y, pos1, 500),
 	(overlay_set_size, reg1, pos1),
 	(overlay_set_size, reg1, pos1),
 		(create_game_button_overlay, "$g_presentation_obj_9", "@view"),
-		(position_set_x, pos2, 900),
+		(position_set_x, pos2, 920),
         (position_set_y, pos2, ":button_y_val_2"),
         (overlay_set_position, "$g_presentation_obj_9", pos2),
 		(overlay_set_color, "$g_presentation_obj_9", 000066),
@@ -6469,6 +6483,7 @@ presentations = [
 
       [
         (store_trigger_param_1, ":object"),
+
 	(try_begin),
  		(eq, ":object", "$g_presentation_obj_2"),
 		(presentation_set_duration, 0),
@@ -6521,6 +6536,18 @@ presentations = [
 #
 (ti_on_presentation_run,
        [
+	   
+		# #Little Pos Helper by Kuba begin
+		# #http://forums.taleworlds.com/index.php/topic,8652.msg2373733.html#msg2373733
+		# (set_fixed_point_multiplier, 1000),
+		# (mouse_get_position, pos1),
+		# (position_get_x, reg1, pos1),
+		# (position_get_y, reg2, pos1),
+		# (str_store_string, s1, "@DEBUG: x = {reg1}, y = {reg2}"),
+		# #(overlay_set_text, "$g_little_pos_helper", "@DEBUG: x = {reg1}, y = {reg2}"),
+		# (overlay_set_text, "$g_little_pos_helper", s1),
+		# #Little Pos Helper by Kuba end
+	   
 	   (try_begin),
           (this_or_next|key_clicked, key_escape),
           (key_clicked, key_back_space),
@@ -6533,6 +6560,17 @@ presentations = [
 
 ("ship_details", 0,mesh_load_window, [
 	(ti_on_presentation_load,[
+
+    # #Little Pos Helper by Kuba begin
+	# #http://forums.taleworlds.com/index.php/topic,8652.msg2373733.html#msg2373733
+	# (str_store_string, s1, "@DEBUG: x = 00, y = 00"),
+    # (create_text_overlay, "$g_little_pos_helper", s1),
+    # (overlay_set_color, "$g_little_pos_helper", 0xFFFFFFFF),
+	# (set_fixed_point_multiplier, 1000),
+    # (position_set_x, pos1, 100),
+    # (position_set_y, pos1, 100),
+    # (overlay_set_position, "$g_little_pos_helper", pos1),
+    # #Little Pos Helper by Kuba end
 	
 	(set_fixed_point_multiplier, 1000),
 	(presentation_set_duration, 999999),
@@ -6618,9 +6656,13 @@ presentations = [
 		(party_get_slot, "$g_ship_icon", "$g_ship_type", slot_spaceship_icon),		
 		(create_mesh_overlay_with_tableau_material,reg1, -1, "tableau_starship_icon", "$g_ship_icon"),
 		(set_fixed_point_multiplier, 1000),
-		(position_set_x, pos0, 690),     
-		(position_set_y, pos0, 450),
+		(position_set_x, pos0, 575),     
+		(position_set_y, pos0, 420),
 		(overlay_set_position, reg1, pos0),
+		#SW - added new code to set the size
+		(position_set_x, pos1, 1200),
+		(position_set_y, pos1, 1200),
+		(overlay_set_size, reg1, pos1),
 		
 		#first row: headers
 		(create_text_overlay, reg1, "@Ship system",tf_left_align),
@@ -7222,7 +7264,20 @@ presentations = [
         ]),
 #
 (ti_on_presentation_run,
-       [(try_begin),
+       [
+	   
+		# #Little Pos Helper by Kuba begin
+		# #http://forums.taleworlds.com/index.php/topic,8652.msg2373733.html#msg2373733
+		# (set_fixed_point_multiplier, 1000),
+		# (mouse_get_position, pos1),
+		# (position_get_x, reg1, pos1),
+		# (position_get_y, reg2, pos1),
+		# (str_store_string, s1, "@DEBUG: x = {reg1}, y = {reg2}"),
+		# #(overlay_set_text, "$g_little_pos_helper", "@DEBUG: x = {reg1}, y = {reg2}"),
+		# (overlay_set_text, "$g_little_pos_helper", s1),
+		# #Little Pos Helper by Kuba end
+	   
+	   (try_begin),
           (this_or_next|key_clicked, key_escape),
           (key_clicked, key_back_space),
           (presentation_set_duration, 0),

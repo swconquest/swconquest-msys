@@ -2658,7 +2658,7 @@ troops = [
 
 #power_droid
 #["power_droid","EG-6 Power Droid","EG-6 Power Droids",
-["power_droid","Power Droid","Power Droids",
+["power_droid","EG-Series Power Droid","EG-Series Power Droids",
 	tf_droid|tf_guarantee_all_armor|tf_guarantee_ranged,
 	no_scene,0,fac_commoners,
 	[

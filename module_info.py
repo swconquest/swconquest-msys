@@ -4,4 +4,4 @@
 
 
 #export_dir = "../"
-export_dir = "C:/Games/Mount&Blade/Modules/Star Wars Conquest 0.9.0/"
+export_dir = "C:/Games/Mount&Blade/Modules/Star Wars Conquest/"

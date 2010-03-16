@@ -48,7 +48,7 @@ map_icons = [
   #purchasable ships - rebel
   ("a_wing",mcn_no_shadow,"a_wing", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),	
   ("rebel_transport",mcn_no_shadow,"rebel_transport", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
-  ("corellian_gunship",mcn_no_shadow,"Cor_Gunship", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("corellian_gunship",mcn_no_shadow,"Cor_Gunship", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("moncal_cruiser",mcn_no_shadow,"Moncal_Cruiser", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("y_wing",mcn_no_shadow,"y_wing_gold", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
   #purchasable ships - hutt

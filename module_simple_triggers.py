@@ -2813,7 +2813,6 @@ simple_triggers = [
 #    ])
 
 #Run spawn script for parties who have a patrol base.
-
 (8, [	(eq, "$total_init_done", 1),
 		#(display_message,"@running spawn trigger"),
 		(try_for_range, ":cur_base", walled_centers_begin, walled_centers_end),

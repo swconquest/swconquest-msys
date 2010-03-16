@@ -881,6 +881,7 @@ animations = [
  #["defend_shield", acf_rotate_body|acf_parallels_for_look_slope|acf_anim_length(100),
  ["defend_shield", acf_rotate_body,	#acm modified
    [defend_duration, "anim_human", defend+105, defend+120, blend_in_defense], 	#native
+   [defend_duration, "anim_human", defend+105, defend+120, blend_in_defense], 	#native (gave it twice so it is more common)
    [defend_duration, "draw_greatsword", 24, 29, blend_in_defense], 	#acm new
    #[defend_duration, "sw_lightsaber_protect_1", 0, 99, blend_in_defense], 	#Swyter animation
    #[defend_duration, "sw_lightsaber_protect_1", 0, 9, blend_in_defense], 	#Swyter animation
@@ -1549,12 +1550,14 @@ animations = [
  ],
 
  ["release_bash", acf_enforce_all|acf_right_cut|acf_parallels_for_look_slope,
-   [0.62, "anim_human", combat+5710, combat+5740, blend_in_release],		#original shield bash
+#   [0.62, "anim_human", combat+5710, combat+5740, blend_in_release],		#original shield bash (good)
    #[0.62, "anim_human", combat+4300, combat+4335, blend_in_release],		# testing release_swingleft_fist?  nope
    #[2.0, "anim_human", combat+2650, combat+2860, blend_in_release],		#testing reload_musket?		     nope
    #[0.62, "sw_lightsaber_left_swing_1", 25, 49, blend_in_release],		#from swyter, maybe
    #[0.62, "equip_arms", 78, 84, blend_in_release],		#from native, maybe
    #[0.62, "man_cheer", 808, 825, blend_in_release],		#from native, maybe
+   #[0.8, "wb_defend_shield_right", 11, 36, blend_in_release],		#shield bash from warband
+   [0.8, "wb_defend_shield_right", 11, 36, arf_blend_in_3],		#shield bash from warband
  ],
  
  ["stand_crouch", 0,

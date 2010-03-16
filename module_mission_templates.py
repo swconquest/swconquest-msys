@@ -972,10 +972,12 @@ lightsaber_noise_idle = (
 )
 lightsaber_noise_agent = (
 	0.1, 0, 0, [], 
-		[    
+		[
+		(get_player_agent_no, ":player_agent"),
 		(try_for_agents, ":agent"),      
 		  (agent_is_alive, ":agent"),      
-		  (agent_is_human, ":agent"),      
+		  (agent_is_human, ":agent"),
+		  (neq, ":agent", ":player_agent"),		#we have a different trigger for the player_agent
 		  (agent_get_wielded_item, ":handone", ":agent", 0),      
 		  (agent_get_wielded_item, ":handtwo", ":agent", 1),      
 		  #(this_or_next|eq, ":handone", "itm_special_weapon"),      
@@ -1001,7 +1003,11 @@ lightsaber_noise_agent = (
 # old code (plays sound when you click the attack key)
 lightsaber_noise_player = (
 	0, 0, 1, 	#there's a 1 second refresh timer to give the attack sound time to complete
-		[(game_key_clicked, gk_attack),(neg|conversation_screen_is_active)], 
+		[
+		(neg|conversation_screen_is_active),
+		(game_key_clicked, gk_attack),
+		(neg|game_key_is_down, gk_defend),
+		], 
 		[     
 		  (get_player_agent_no, ":agent"),    
 		  (agent_is_alive, ":agent"),    
@@ -1465,7 +1471,8 @@ shield_bash_kit_4 = (
     1.0, 0, 0, [
 				(le, "$shield_bash_toggle", 0),
 				],
-	[(get_player_agent_no,":player"),
+	[
+	(get_player_agent_no,":player"),
 	(try_for_agents,":agent"),
 		(agent_is_alive,":agent"),
 		(agent_is_human,":agent"),
@@ -1517,6 +1524,7 @@ common_toggle_weapon_capabilities = (0, 0, 0,
   (key_clicked, "$toggle_weapon_key"),
   (neg|conversation_screen_is_active),
   (get_player_agent_no,":player"),
+  (agent_is_alive, ":player"),    	# only continue if player is alive
   (agent_get_team,":team",":player"),
   (agent_get_wielded_item,":item",":player",0),
   (gt,":item",-1),
@@ -2097,6 +2105,7 @@ tournament_triggers = [
 	#common_use_jetpack,	  		#not usable in tournaments
 	#common_toggle_weapon_capabilities, #not usable in tournaments
 	common_switch_sw_scene_props,
+	common_crouch_button,
 	
    
   (ti_inventory_key_pressed, 0, 0, [(display_message,"str_cant_use_inventory_arena")], []),
@@ -2437,6 +2446,7 @@ mission_templates = [
 	  common_use_jetpack,	 
 	  common_toggle_weapon_capabilities,
 	  common_switch_sw_scene_props,
+	  common_crouch_button,
 		  
     ],
   ),
@@ -2639,6 +2649,7 @@ mission_templates = [
 	  #common_toggle_weapon_capabilities,		#can't use this one because the scene is an interior and you'd still see your dead body
 	  common_toggle_weapon_capabilities_w_popup,
 	  common_switch_sw_scene_props,
+	  common_crouch_button,
 		  
     ],
   ),
@@ -2888,10 +2899,6 @@ mission_templates = [
 		shield_bash_kit_3,   
 		shield_bash_kit_4,		
 		
-		#testing crouching
-		#common_crouch_toggle,
-		common_crouch_button,
-		
 	    #SW - add custom lightsaber noise to town scenes
 	    #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
 	    lightsaber_noise_player,
@@ -2910,6 +2917,7 @@ mission_templates = [
 		common_speeder_trigger_1,
 		common_speeder_trigger_2,
 		common_switch_sw_scene_props,
+		common_crouch_button,
 		
       ],
     ),
@@ -3250,6 +3258,7 @@ mission_templates = [
 		common_speeder_trigger_1,
 		common_speeder_trigger_2,
 		common_switch_sw_scene_props,
+		common_crouch_button,
 		
     ],
   ),
@@ -3283,7 +3292,8 @@ mission_templates = [
 		common_helmet_view,
 		common_zoom_view,
 		common_use_jetpack,	  
-		common_toggle_weapon_capabilities,		
+		common_toggle_weapon_capabilities,	
+		common_crouch_button,
 	
       (ti_on_agent_spawn, 0, 0, [],
        [
@@ -3358,6 +3368,7 @@ mission_templates = [
 	common_zoom_view,
 	common_use_jetpack,	  	
 	common_toggle_weapon_capabilities,
+	common_crouch_button,
 	
       (ti_before_mission_start, 0, 0, [],
        [
@@ -3418,6 +3429,7 @@ mission_templates = [
 	  common_use_jetpack,	  	  
 	  common_toggle_weapon_capabilities,
 	  common_switch_sw_scene_props,
+	  common_crouch_button,
 	  
 	  (ti_on_agent_spawn, 0, 0, [],
        [
@@ -3528,6 +3540,7 @@ mission_templates = [
 	common_zoom_view,
 	common_use_jetpack,	  	
 	common_toggle_weapon_capabilities,
+	common_crouch_button,
 	
       common_inventory_not_available,
       (ti_tab_pressed, 0, 0, [(display_message,"@Cannot leave now.")], []),
@@ -3607,6 +3620,7 @@ mission_templates = [
 	common_use_jetpack,	  	
 	common_toggle_weapon_capabilities,
     common_inventory_not_available,
+	common_crouch_button,
 
       (ti_tab_pressed, 0, 0, [],
        [(question_box,"str_do_you_want_to_retreat"),
@@ -3773,6 +3787,7 @@ sw_deathcam_cycle_backwards,
 	  common_speeder_trigger_2,	
 	  common_agent_droid_refill_trigger,
 	  common_fix_droid_walking,
+	  common_crouch_button,
 	  
      
       #AI Tiggers
@@ -3946,6 +3961,7 @@ sw_deathcam_cycle_backwards,
 	  common_toggle_weapon_capabilities_w_popup,
 	  common_agent_droid_refill_trigger,
 	  common_fix_droid_walking,
+	  common_crouch_button,
    
       #AI Tiggers
       (0, 0, ti_once, [
@@ -4008,6 +4024,7 @@ sw_deathcam_cycle_backwards,
 	common_use_jetpack,	  	
 	common_toggle_weapon_capabilities,
 	common_agent_droid_refill_trigger,
+	common_crouch_button,
 	
     common_battle_tab_press,
 
@@ -4101,6 +4118,7 @@ sw_deathcam_cycle_backwards,
 		common_use_jetpack,	  		
 		common_toggle_weapon_capabilities,
 		common_agent_droid_refill_trigger,
+		common_crouch_button,
 		
 		common_battle_tab_press,
 
@@ -4394,6 +4412,7 @@ sw_deathcam_cycle_backwards,
 		common_use_jetpack,	  	
 		common_toggle_weapon_capabilities,
 		common_agent_droid_refill_trigger,
+		common_crouch_button,
 	
       (ti_before_mission_start, 0, 0, [], [(call_script, "script_change_banners_and_chest")]),
 
@@ -4495,7 +4514,8 @@ sw_deathcam_cycle_backwards,
 	  common_zoom_view,
 	  common_use_jetpack,	
 	  common_toggle_weapon_capabilities,
-	  common_agent_droid_refill_trigger,  	  
+	  common_agent_droid_refill_trigger,  
+	  common_crouch_button,	  
 	  
       (ti_question_answered, 0, 0, [],
        [(store_trigger_param_1,":answer"),
@@ -4585,6 +4605,7 @@ sw_deathcam_cycle_backwards,
 	  common_use_jetpack,	  	  
 	  common_toggle_weapon_capabilities,
 	  common_agent_droid_refill_trigger,
+	  common_crouch_button,
 	  
       (ti_on_agent_spawn, 0, 0, [],
        [
@@ -4707,6 +4728,7 @@ sw_deathcam_cycle_backwards,
 	  common_zoom_view,
 	  common_use_jetpack,
 	  common_toggle_weapon_capabilities,
+	  common_crouch_button,
 	  
       common_battle_mission_start,
       common_battle_tab_press,
@@ -4805,6 +4827,7 @@ sw_deathcam_cycle_backwards,
 	  common_zoom_view,
 	  common_use_jetpack,	  	  
 	  common_toggle_weapon_capabilities,
+	  common_crouch_button,
 	  
       common_battle_mission_start,
       common_battle_tab_press,
@@ -4956,6 +4979,7 @@ sw_deathcam_cycle_backwards,
 	  common_use_jetpack,	  	 
 	  common_toggle_weapon_capabilities,
 	  common_switch_sw_scene_props,
+	  common_crouch_button,
 	  
       (ti_on_agent_spawn, 0, 0, [],
        [
@@ -5319,6 +5343,7 @@ sw_deathcam_cycle_backwards,
 	  common_zoom_view,
 	  common_use_jetpack,	  
 	  common_toggle_weapon_capabilities,
+	  common_crouch_button,
 	  
       (ti_before_mission_start, 0, 0, [], [(call_script, "script_change_banners_and_chest")]),
       (ti_tab_pressed, 0, 0, [],
@@ -7176,6 +7201,7 @@ sw_deathcam_cycle_backwards,
 	  common_zoom_view,
 	  common_use_jetpack,	  
 	  common_toggle_weapon_capabilities,
+	  common_crouch_button,
 	  
     ],
   ),
@@ -7259,6 +7285,7 @@ sw_deathcam_cycle_backwards,
 	  common_zoom_view,
 	  common_use_jetpack,	  
 	  common_toggle_weapon_capabilities,
+	  common_crouch_button,
 	  
       ],
     ),
@@ -7332,6 +7359,7 @@ sw_deathcam_cycle_backwards,
 	  common_zoom_view,
 	  common_use_jetpack,	  
 	  common_toggle_weapon_capabilities,
+	  common_crouch_button,
 	  
       ],
     ),	
@@ -7364,6 +7392,16 @@ sw_deathcam_cycle_backwards,
 	  (18,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
 	  (19,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
 	  (20,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+	  (21,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),	  
+	  (22,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+	  (23,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+	  (24,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+	  (25,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+	  (26,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+	  (27,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+	  (28,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+	  (29,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+	  (30,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
 	  
       (40,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
       (41,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
@@ -7412,7 +7450,8 @@ sw_deathcam_cycle_backwards,
 	  common_helmet_view,
 	  common_zoom_view,
 	  common_use_jetpack,	  	
-	  common_toggle_weapon_capabilities,	  
+	  common_toggle_weapon_capabilities,	
+	  common_crouch_button,	
 	  
     ],
   ),
@@ -7603,6 +7642,7 @@ sw_deathcam_cycle_backwards,
 	  common_zoom_view,
 	  common_use_jetpack,	  
 	  common_toggle_weapon_capabilities,
+	  common_crouch_button,
 		
     ],
 	 ),
@@ -7762,7 +7802,8 @@ sw_deathcam_cycle_backwards,
 	  common_helmet_view,
 	  common_zoom_view,
 	  common_use_jetpack,	  	  
-	  common_toggle_weapon_capabilities
+	  common_toggle_weapon_capabilities,
+	  common_crouch_button,
 		
     ],
 	),
@@ -7828,6 +7869,7 @@ sw_deathcam_cycle_backwards,
 	  common_toggle_weapon_capabilities_w_popup,
 	  common_switch_sw_scene_props,
 	  #common_custom_commander_camera,
+	  common_crouch_button,
 		  
     ],
   ),
@@ -7924,6 +7966,7 @@ sw_deathcam_cycle_backwards,
 	  common_zoom_view,
 	  common_use_jetpack,	 
 	  common_toggle_weapon_capabilities,	  
+	  common_crouch_button,
 		  
     ],
   ),  
@@ -8504,6 +8547,7 @@ sw_deathcam_cycle_backwards,
 	common_zoom_view,
 	common_use_jetpack,	  	
 	common_toggle_weapon_capabilities,
+	common_crouch_button,
 
 	common_inventory_not_available,     
 

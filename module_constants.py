@@ -391,7 +391,9 @@ spt_town               = 3
 spt_village            = 4
 ##spt_forager            = 5
 ##spt_war_party          = 6
-##spt_patrol             = 7
+# #SW - un-commented Faction Patrols
+# #http://forums.taleworlds.com/index.php/topic,8652.msg2331555.html#msg2331555
+# spt_patrol             = 7
 ##spt_messenger          = 8
 ##spt_raider             = 9
 ##spt_scout              = 10
@@ -1162,6 +1164,8 @@ shields_begin = "itm_shields_begin"
 shields_end = "itm_shields_end"
 shield_bash_begin = "itm_shield_bash_begin"
 shield_bash_end = "itm_shield_bash_end"
+shield_bash_lightsaber_begin = "itm_lightsaber_block_blue"
+shield_bash_lightsaber_end = "itm_shields_end"
 #SW for special weapon noise
 slot_agent_attack_sound = 230	#can be any number not already in use
 lightsaber_noise_begin = "itm_lightsaber_green_arena"

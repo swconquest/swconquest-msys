@@ -1744,7 +1744,40 @@ scripts = [
     [
        (store_script_param_1, ":root_defender_party"),
        (store_script_param_2, ":root_attacker_party"),
-
+	   
+	   #--------------------------------------------------------------------------------------------------------------------------------
+	   #SW - START OF WORKAROUND FOR SCRIPT ERROR
+		(assign, ":root_defender_party_found", 0),
+		(assign, ":root_attacker_party_found", 0),
+		(try_for_parties, ":cur_party"),
+			(try_begin),
+				#check if root_defender_party is valid
+				(eq, ":cur_party", ":root_defender_party"),
+				(assign, ":root_defender_party_found", 1),
+			(try_end),
+			(try_begin),
+				#check if root_attacker_party is valid
+				(eq, ":cur_party", ":root_attacker_party"),
+				(assign, ":root_attacker_party_found", 1),
+			(try_end),
+		(try_end),
+	    (assign, ":error", -1),
+		(try_begin),
+			(this_or_next|eq, ":root_defender_party_found", 0),
+			(eq, ":root_attacker_party_found", 0),
+			#one or more parties was not found, error!
+			(assign, ":error", 1),
+		(else_try),
+			(assign, ":error", 0),
+		(try_end),
+		#check if there were any errors
+		(try_begin),
+		(eq, ":error", 1),
+			#(display_log_message, "@DEBUG: ERROR - either the root_defender_party or root_attacker_party were NOT found!"),
+		(else_try),
+	   #SW - END OF WORKAROUND FOR SCRIPT ERROR
+	   #--------------------------------------------------------------------------------------------------------------------------------
+	   
        (try_begin),
          (store_faction_of_party, ":defender_faction", ":root_defender_party"),
          (store_faction_of_party, ":attacker_faction", ":root_attacker_party"),
@@ -2004,6 +2037,10 @@ scripts = [
          (try_end),
          (set_trigger_result, ":trigger_result"),
        (try_end),
+	   
+	   #SW - added try_end for script workaround
+	   (try_end),
+	   
   ]),
 
   #script_game_event_battle_end:
@@ -8854,9 +8891,12 @@ scripts = [
 ##        (eq, ":party_type", spt_scout),
 ##        (assign, ":party_count_limit", 1),
 ##      (else_try),
-##        (eq, ":party_type", spt_patrol),
-##        (assign, ":party_count_limit", 1),
-##      (else_try),
+# #SW - un-commented Faction Patrols
+# #http://forums.taleworlds.com/index.php/topic,8652.msg2331555.html#msg2331555
+        # (eq, ":party_type", spt_patrol),
+        # #(assign, ":party_count_limit", 1),
+		# (assign, ":party_count_limit", 30),
+      # (else_try),
 ##        (eq, ":party_type", spt_messenger),
 ##        (assign, ":party_count_limit", 1),
 ##      (else_try),
@@ -8900,10 +8940,12 @@ scripts = [
 ##        (assign, ":party_template", "pt_scout_party"),
 #        (assign, ":party_name_str", "str_s7_scouts"),
 ##      (else_try),
-##        (eq, ":party_type", spt_patrol),
-##        (assign, ":party_template", "pt_patrol_party"),
-#        (assign, ":party_name_str", "str_s7_patrol"),
-##      (else_try),
+# #SW - un-commented Faction Patrols
+# #http://forums.taleworlds.com/index.php/topic,8652.msg2331555.html#msg2331555
+        # (eq, ":party_type", spt_patrol),
+        # (assign, ":party_template", "pt_patrol_party"),
+# #        (assign, ":party_name_str", "str_s7_patrol"),
+      # (else_try),
         (eq, ":party_type", spt_kingdom_caravan),
         (assign, ":party_template", "pt_kingdom_caravan_party"),
 #        (assign, ":party_name_str", "str_s7_caravan"),
@@ -23698,11 +23740,24 @@ scripts = [
 # START OF SHIELD BASH KIT 
 
  ("cf_agent_shield_bash",
-    [(store_script_param, ":agent",1),
-     (agent_get_position,pos1,":agent"),
-     (agent_set_animation, ":agent", "anim_release_bash"),
-     (agent_play_sound,":agent","snd_man_grunt"),
-     (assign,":victim",-1),
+    [
+	(store_script_param, ":agent",1),
+    (agent_get_position,pos1,":agent"),
+    (agent_set_animation, ":agent", "anim_release_bash"),
+	#check what sound to play
+	(assign, ":lightsaber_noise", 0),
+	(try_for_range,":shield",shield_bash_lightsaber_begin, shield_bash_lightsaber_end),
+		(agent_has_item_equipped,":agent",":shield"),
+	    (assign,":lightsaber_noise",1),
+	(end_try),
+	(try_begin),
+		(eq, ":lightsaber_noise", 1),	#its a lightsaber shield, make a lightsaber swing noise
+		(agent_play_sound,":agent","snd_lightsaber_swing"),
+	(else_try),
+		(agent_play_sound,":agent","snd_man_grunt"),
+	(try_end),
+	#check if you deal any damage
+    (assign,":victim",-1),
      (try_for_agents,":possible_victim"),
         (agent_is_alive,":possible_victim"),
         (agent_is_human,":possible_victim"),
@@ -23717,7 +23772,7 @@ scripts = [
      (end_try),
      (gt,":victim",-1),
      #(store_random_in_range,":rand",0,2),
-	 (store_random_in_range,":rand",5,15),	#SW - modified shield_bash damage
+	 (store_random_in_range,":rand",5,20),	#SW - modified shield_bash damage
      (store_agent_hit_points,":hp",":victim",1),
      (val_sub,":hp",":rand"),
      (store_random_in_range,":hit_reaction",1,101),
@@ -23738,6 +23793,7 @@ scripts = [
 			(display_message, "@Received {reg12} damage.", 0xd09595),	#new text		 
 		 (try_end),
          (agent_play_sound,":agent","snd_shield_hit_wood_wood"),
+         (agent_play_sound,":victim","snd_blunt_hit"),
          (agent_play_sound,":victim","snd_blunt_hit"),
          (try_begin),      
            (gt,":a_shield", ":v_shield"),
@@ -28304,7 +28360,7 @@ scripts = [
 		#--------------------------------- EMPIRE ------------------------------------------------------------------------------------------------------------------------
 		#tie_fighter
 		(party_set_slot, "p_spaceship_tie_fighter", slot_spaceship_name, "str_spaceship_tie_fighter_name"),
-		(party_set_slot, "p_spaceship_tie_fighter", slot_spaceship_price, 6000),
+		(party_set_slot, "p_spaceship_tie_fighter", slot_spaceship_price, 4000),
 		(party_set_slot, "p_spaceship_tie_fighter", slot_spaceship_desc, "str_spaceship_tie_fighter_desc"),
 		(party_set_slot, "p_spaceship_tie_fighter", slot_spaceship_icon, "icon_tie_fighter"),
 		(party_set_slot, "p_spaceship_tie_fighter", slot_spaceship_base_speed, 85),
@@ -28481,7 +28537,7 @@ scripts = [
 		(party_set_slot, "p_spaceship_a_wing", slot_spaceship_cargo_capacity_max, 0),
 		#y_wing
 		(party_set_slot, "p_spaceship_y_wing", slot_spaceship_name, "str_spaceship_y_wing_name"),
-		(party_set_slot, "p_spaceship_y_wing", slot_spaceship_price, 11000),
+		(party_set_slot, "p_spaceship_y_wing", slot_spaceship_price, 9000),
 		(party_set_slot, "p_spaceship_y_wing", slot_spaceship_desc, "str_spaceship_y_wing_desc"),
 		(party_set_slot, "p_spaceship_y_wing", slot_spaceship_icon, "icon_y_wing"),
 		(party_set_slot, "p_spaceship_y_wing", slot_spaceship_base_speed, 90),
@@ -28503,16 +28559,16 @@ scripts = [
 		(party_set_slot, "p_spaceship_y_wing", slot_spaceship_cargo_capacity_max, 0),
 		#corellian_gunship
 		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_name, "str_spaceship_corellian_gunship_name"),
-		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_price, 20000),
+		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_price, 18000),
 		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_desc, "str_spaceship_corellian_gunship_desc"),
 		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_icon, "icon_corellian_gunship"),
 		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_base_speed, 75),
 		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_drive_min, 2),
 		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_drive_max, 4),
-		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_scanner_min, 2),
-		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_scanner_max, 4),
-		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_combat_computer_min, 2),
-		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_combat_computer_max, 4),
+		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_scanner_min, 1),
+		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_scanner_max, 3),
+		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_combat_computer_min, 1),
+		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_combat_computer_max, 3),
 		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_troop_capacity_min, 1),
 		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_troop_capacity_max, 3),
 		(party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_medical_bay_min, 1),
@@ -28547,7 +28603,7 @@ scripts = [
 		(party_set_slot, "p_spaceship_rebel_transport", slot_spaceship_cargo_capacity_max, 4),
 		#moncal_cruiser
 		(party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_name, "str_spaceship_moncal_cruiser_name"),
-		(party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_price, 30000),
+		(party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_price, 32000),
 		(party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_desc, "str_spaceship_moncal_cruiser_desc"),
 		(party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_icon, "icon_moncal_cruiser"),
 		(party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_base_speed, 70),
@@ -28570,22 +28626,22 @@ scripts = [
 		#--------------------------------- HUTT ------------------------------------------------------------------------------------------------------------------------
 		#hutt_patrol
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_name, "str_spaceship_hutt_patrol_name"),
-		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_price, 6000),
+		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_price, 7000),
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_desc, "str_spaceship_hutt_patrol_desc"),
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_icon, "icon_hutt_patrol"),
-		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_base_speed, 90),
+		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_base_speed, 88),
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_drive_min, 2),
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_drive_max, 5),
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_scanner_min, 1),
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_scanner_max, 3),
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_combat_computer_min, 1),
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_combat_computer_max, 2),
-		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_troop_capacity_min, 0),
-		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_troop_capacity_max, 0),
+		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_troop_capacity_min, 1),
+		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_troop_capacity_max, 2),
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_medical_bay_min, 0),
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_medical_bay_max, 0),
-		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_prisoner_capacity_min, 0),
-		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_prisoner_capacity_max, 0),
+		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_prisoner_capacity_min, 1),
+		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_prisoner_capacity_max, 2),
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_trade_computer_min, 0),
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_trade_computer_max, 0),
 		(party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_cargo_capacity_min, 0),
@@ -28681,24 +28737,24 @@ scripts = [
 		#--------------------------------- OTHER ------------------------------------------------------------------------------------------------------------------------
 		#civilian_transport
 		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_name, "str_spaceship_civilian_transport_name"),
-		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_price, 4000),
+		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_price, 3500),
 		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_desc, "str_spaceship_civilian_transport_desc"),
 		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_icon, "icon_civilian_transport"),
-		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_base_speed, 80),
+		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_base_speed, 75),
 		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_drive_min, 1),
 		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_drive_max, 3),
 		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_scanner_min, 1),
 		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_scanner_max, 2),
 		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_combat_computer_min, 0),
 		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_combat_computer_max, 0),
-		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_troop_capacity_min, 1),
-		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_troop_capacity_max, 2),
-		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_medical_bay_min, 0),
-		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_medical_bay_max, 0),
+		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_troop_capacity_min, 0),
+		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_troop_capacity_max, 0),
+		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_medical_bay_min, 1),
+		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_medical_bay_max, 2),
 		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_prisoner_capacity_min, 0),
 		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_prisoner_capacity_max, 0),
-		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_trade_computer_min, 0),
-		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_trade_computer_max, 0),
+		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_trade_computer_min, 1),
+		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_trade_computer_max, 2),
 		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_cargo_capacity_min, 1),
 		(party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_cargo_capacity_max, 2),
 		#civilian_cruiser
@@ -28750,7 +28806,7 @@ scripts = [
 		(party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_price, 6000),
 		(party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_desc, "str_spaceship_scyk_fighter_desc"),
 		(party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_icon, "icon_scyk_fighter"),
-		(party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_base_speed, 90),
+		(party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_base_speed, 92),
 		(party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_drive_min, 2),
 		(party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_drive_max, 5),
 		(party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_scanner_min, 1),
@@ -28813,7 +28869,7 @@ scripts = [
 		(party_set_slot, "p_spaceship_mercenary_fighter", slot_spaceship_cargo_capacity_max, 0),
 		#mercenary_raider
 		(party_set_slot, "p_spaceship_mercenary_raider", slot_spaceship_name, "str_spaceship_mercenary_raider_name"),
-		(party_set_slot, "p_spaceship_mercenary_raider", slot_spaceship_price, 7500),
+		(party_set_slot, "p_spaceship_mercenary_raider", slot_spaceship_price, 8000),
 		(party_set_slot, "p_spaceship_mercenary_raider", slot_spaceship_desc, "str_spaceship_mercenary_raider_desc"),
 		(party_set_slot, "p_spaceship_mercenary_raider", slot_spaceship_icon, "icon_mercenary_raider"),
 		(party_set_slot, "p_spaceship_mercenary_raider", slot_spaceship_base_speed, 91),
@@ -28857,10 +28913,10 @@ scripts = [
 		(party_set_slot, "p_spaceship_freighter", slot_spaceship_cargo_capacity_max, 5),
 		#bulk_freighter
 		(party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_name, "str_spaceship_bulk_freighter_name"),
-		(party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_price, 11000),
+		(party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_price, 10500),
 		(party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_desc, "str_spaceship_bulk_freighter_desc"),
 		(party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_icon, "icon_bulk_freighter"),
-		(party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_base_speed, 60),
+		(party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_base_speed, 65),
 		(party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_drive_min, 1),
 		(party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_drive_max, 4),
 		(party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_scanner_min, 1),

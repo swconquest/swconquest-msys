@@ -389,11 +389,15 @@ triggers = [
 ##        (lt, ":random_no", 10),
 ##        (call_script, "script_create_kingdom_party_if_below_limit", ":cur_kingdom", spt_scout),
 ##      (try_end),
-##      (try_begin),
-##        (store_random_in_range, ":random_no", 0, 100),
-##        (lt, ":random_no", 10),
-##        (call_script, "script_create_kingdom_party_if_below_limit", ":cur_kingdom", spt_patrol),
-##      (try_end),
+
+# #SW - un-commented Faction Patrols
+# #http://forums.taleworlds.com/index.php/topic,8652.msg2331555.html#msg2331555
+      # (try_begin),
+        # (store_random_in_range, ":random_no", 0, 100),
+        # #(lt, ":random_no", 10),
+		# (lt, ":random_no", 100),
+        # (call_script, "script_create_kingdom_party_if_below_limit", ":cur_kingdom", spt_patrol),
+      # (try_end),
 ##      (try_begin),
 ##        (store_random_in_range, ":random_no", 0, 100),
 ##        (lt, ":random_no", 10),
