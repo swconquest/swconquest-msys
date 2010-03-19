@@ -17439,7 +17439,7 @@ game_menus = [
 		(store_mul, ":total_debt", ":interest_multiplier", 2500),
 		(val_div, ":total_debt", 100),
 		(assign, reg11, ":total_debt"),
-	], "Take a loan of 5000 credits. You'll have to repay {reg11} credits.",
+	], "Take a loan of 2500 credits. You'll have to repay {reg11} credits.",
 		[
 		(troop_add_gold, "trp_player", 2500),
 		(store_add, ":interest_multiplier", "$g_cur_interest_debt", 100),
