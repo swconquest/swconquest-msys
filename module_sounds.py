@@ -452,7 +452,7 @@ sounds = [
 
 #SW - new functionality for BSG integration
  ("viper_cannon_impact",sf_vol_6, ["Vip_Impact_Gun.ogg"]),
- ("viper_cannon",sf_vol_10, ["Vip_Cannon.ogg"]),
+ ("viper_cannon",sf_vol_10, ["bigblaster01.mp3"]),
  ("cylon_cannon",sf_vol_10, ["Rdr_Cannon.ogg"]),
  ("viper_cannon_far",sf_vol_2, ["Vip_Cannon.ogg"]),
  ("cylon_cannon_far",sf_vol_2, ["Rdr_Cannon.ogg"]),

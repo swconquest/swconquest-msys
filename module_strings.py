@@ -2066,7 +2066,7 @@ We apologize sincerely if you contributed your suggestions and feedback but were
 # ("viper_status", "Speed: {reg1}'cms. Damage: {reg2}. Missiles: {reg3}. Cannons: {reg4}. cylon1: {reg5}. cylon2: {reg6}. cylon3: {reg7}. cylon4: {reg8}.\
 # cylon5: {reg9}. cylon6: {reg10}. cylon7: {reg11}. cylon8: {reg12}. viper1: {reg13}. viper2: {reg14}. viper3: {reg15}. viper4: {reg16}.\
 # viper5: {reg17}. viper6: {reg18}. viper7: {reg9}. viper8: {reg20}."),
- ("viper_status", "PLAYER: Speed: {reg1}'cms. Damage: {reg2}. Missiles: {reg3}. Cannons: {reg4}.^             gold1: {reg13}. gold2: {reg14}. gold3: {reg15}. gold4: {reg16}. gold5: {reg17}. gold6: {reg18}. gold7: {reg9}. gold8: {reg20}.^ENEMY: blue1: {reg5}. blue2: {reg6}. blue3: {reg7}. blue4: {reg8}. blue5: {reg9}. blue6: {reg10}. blue7: {reg11}. blue8: {reg12}."),
+ ("viper_status", "PLAYER: Speed: {reg1}'cms. Damage: {reg2}. Missiles: {reg3}. Cannons: {reg4}.^             gold1: {reg13}. gold2: {reg14}. gold3: {reg15}. gold4: {reg16}. gold5: {reg17}. gold6: {reg18}. gold7: {reg9}. gold8: {reg20}.^ENEMY: blue1: {reg5}. blue2: {reg6}. blue3: {reg7}. blue4: {reg8}. blue5: {reg9}. blue6: {reg10}. blue7: {reg11}. blue8: {reg12}.^^^@DEBUG: x = {reg21}, y = {reg22}"),
 
 ###################################################################################
 # Autoloot

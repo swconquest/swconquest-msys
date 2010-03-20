@@ -909,18 +909,18 @@ particle_systems = [
     ),
 #-------------------------------------------------------------------------------------------------------		
 #SW BSG integration
-    ("viper_engine", psf_global_emit_dir|psf_always_emit|psf_randomize_rotation, "prt_engine_particle",
-     20, 0.5, 0.6, -0.0, 10.0, 0.2,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
-     (0.1, 0.7), (1, 0.2),        #alpha keys
-     (0.5, 0.5), (1, 0.5),      #red keys
-     (0.5, 0.5), (1, 0.5),      #green keys
+    ("viper_engine", psf_global_emit_dir|psf_always_emit, "prt_engine_particle",
+     100, 0.1, 0.6, -0.0, 10.0, 0.2,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
+     (0, 1), (1, 0),        #alpha keys
+     (0, 0.5), (1, 0.5),      #red keys
+     (0, 0.5), (1, 0.5),      #green keys
      (0, 0.5), (1, 0.5),      #blue keys
-     (0, 3),   (1, 0.5),    #scale keys
-     (0.05, 0.05, 0.05),           #emit box size
+     (0, 4),   (1, 0.5),    #scale keys
+     (0.09, 0.09, 0.05),           #emit box size
      (0, 0, 0),              #emit velocity
       0,                        #emit dir randomness
       50,                        #rotation speed
-      0.5                         #rotation damping
+      0.7                         #rotation damping
     ),
     ("viper_smoke", psf_billboard_3d|psf_global_emit_dir|psf_always_emit|psf_randomize_size|psf_randomize_rotation, "prt_mesh_smoke_1",
      30, 2, 0, 0, 0, 0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
@@ -935,39 +935,39 @@ particle_systems = [
      0,                       #rotation speed
      0.1                        #rotation damping
     ),
-    ("viper_machine_gun", psf_always_emit, "bullet",
-     10, 2.0, 0, 0, 0, 0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
-     (0.2, 0.7), (1, 0.7),        #alpha keys
-     (0.2, 1.0), (1, 0.9),      #red keys
-     (0.2, 0.7),(1, 0.3),       #green keys
-     (0.2, 0.2), (1, 0.0),      #blue keys
-     (0, 2.5),   (1, 2.3),          #scale keys
+    ("viper_machine_gun", psf_always_emit, "laser_bolt_red",
+     1, 1.0, 0, 0, 0, 0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
+     (0, 1), (1, 1),        #alpha keys
+     (1, 1), (1, 1),      #red keys
+     (1, 1), (1, 1),      #green keys
+     (1, 1), (1, 1),      #blue keys
+     (0, 2),   (1, 2),          #scale keys
      (0.0, 0.0, 0.0),           #emit box size
-     (0.0, 40, 0.0),               #emit velocity
+     (0.0, 400, 0.0),               #emit velocity
      0.0,                       #emit dir randomness
      0,                       #rotation speed
      0                        #rotation damping
     ),
-    ("cylon_machine_gun", psf_always_emit, "bullet",
-     10, 2.0, 0, 0, 0, 0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
-     (0.2, 0.7), (1, 0.7),        #alpha keys
-     (0.2, 0.2), (1, 0.0),      #red keys
-     (0.2, 0.3),(1, 0.1),       #green keys
-     (0.2, 1.0), (1, 1.0),      #blue keys
-     (0, 2.5),   (1, 2.3),          #scale keys
+    ("cylon_machine_gun", psf_always_emit, "laser_bolt_green",
+     1, 2.0, 0, 0, 0, 0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
+     (0, 0.6), (1, 0.6),        #alpha keys
+     (1, 1), (1, 1),      #red keys
+     (1, 1), (1, 1),      #green keys
+     (1, 1), (1, 1),      #blue keys
+     (0, 2),   (1, 2),          #scale keys
      (0.0, 0.0, 0.0),           #emit box size
-     (0.0, 40, 0.0),               #emit velocity
+     (0.0, 400, 0.0),               #emit velocity
      0.0,                       #emit dir randomness
      0,                       #rotation speed
      0                        #rotation damping
     ),
-    ("cannon_fire", psf_global_emit_dir|psf_always_emit|psf_randomize_rotation, "cannon_fire",
-     10, 0.1, 0.6, -0.0, 10.0, 0.2,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
-     (0.1, 1), (1, 0.5),        #alpha keys
-     (0.5, 1), (1, 1),      #red keys
-     (0.5, 0.4), (1, 0.1),      #green keys
-     (0, 0.4), (1, 0.1),      #blue keys
-     (0, 0.5),   (1, 0.5),    #scale keys
+    ("cannon_fire", psf_global_emit_dir|psf_always_emit, "cannon_fire",
+     2, 0.17, 0, 0.0, 0, 0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
+     (0, 1), (1, 0.1),        #alpha keys
+     (0, 1), (1, 1),      #red keys
+     (0, 1), (1, 1),      #green keys
+     (0, 1), (1, 1),      #blue keys
+     (0, 0.5),   (1, 1),    #scale keys
      (0, 0, 0),           #emit box size
      (0, 0, 0),              #emit velocity
       0,                        #emit dir randomness
@@ -987,13 +987,13 @@ particle_systems = [
       50,                        #rotation speed
       0.5                         #rotation damping
     ),
-    ("explosion", psf_billboard_3d|psf_global_emit_dir|psf_always_emit|psf_randomize_rotation, "explosion",
-     10, 5, 0, 0, 0, 0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
-     (0.1, 1), (1, 0.5),        #alpha keys
+    ("explosion", psf_billboard_3d|psf_global_emit_dir, "cannon_fire",
+     3, 15, 0, 0, 0, 0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
+     (0.1, 0.8), (1, 0.1),        #alpha keys
      (0.5, 1), (1, 1),      #red keys
-     (0.5, 0.3), (1, 0.1),      #green keys
-     (0, 0.3), (1, 0.1),      #blue keys
-     (0, 1.5),   (1, 1.5),    #scale keys
+     (0.5, 1), (1, 1),      #green keys
+     (0, 1), (1, 1),      #blue keys
+     (0, 80) , (1, 50),    #scale keys
      (0, 0, 0),           #emit box size
      (0, 0, 0),              #emit velocity
       0,                        #emit dir randomness

@@ -7970,10 +7970,12 @@ sw_deathcam_cycle_backwards,
 		  
     ],
   ),  
-
+  
+  
+  
 #==============================================================================================================
-#SW BSG Integration
-
+#SW BSG Integration - EDITED BY SWYTER - Improved controls - Tweaked and polished - Now playable
+#==============================================================================================================
   (
     "space_battle_entry",0,-1,
     "space_battle_entry",
@@ -8011,7 +8013,7 @@ sw_deathcam_cycle_backwards,
         ]),
 	(0.0, 1.0, ti_once, [],
 		[
-			(tutorial_box, "str_space_combat_practice", "@Space Combat practice"),
+			#(tutorial_box, "str_space_combat_practice", "@Space Combat practice"),
 		]
 	),
      # (0.0, 1.0, 2.0,
@@ -8051,12 +8053,12 @@ sw_deathcam_cycle_backwards,
       (0, 0, ti_once, [], [
           (assign,"$cam_follow",1),
           (assign,"$player_ship","spr_p_viper_mk7"),
-          (assign,"$player_max_speed",250),
-          (assign,"$player_speed",0),
+          (assign,"$player_max_speed",400),
+          (assign,"$player_speed",100),
           (assign,"$player_rotate_y",0),
           (assign,"$player_rotate_x",0),
           (assign,"$player_missiles",0),
-          (assign,"$player_cannons",2250),
+          (assign,"$player_cannons",22500000),
           (assign,"$player_damage",100),
           (assign,"$player_cannon_damage",3),
     #      (assign,"$auto_control",0),
@@ -8065,6 +8067,10 @@ sw_deathcam_cycle_backwards,
           (play_sound,"snd_viper_engine_hum"),
           (play_sound,"snd_subspace"),
         ]),
+		
+
+		
+		
       (0, 0, ti_once, [], [
          (try_for_range,":cylon","trp_cylon_a","trp_cylon_end"),
              (store_random_in_range,":randomized_number",1,11),
@@ -8128,27 +8134,18 @@ sw_deathcam_cycle_backwards,
          (end_try),
         ]),
       #camera tracking,particles,status,collision detect,destroy,loopsounds
+      (0, 0, ti_once, [], [
+		(mission_cam_set_mode,1),
+        ]),
       (0, 0, 0, [(eq,"$cam_follow",1),], [
           (scene_prop_get_instance,":s_instance", "$player_ship", 0),
           (prop_instance_get_position,pos1,":s_instance"),
 
-          (position_move_z,pos1,250),
+          (position_move_z,pos1,260),
           (position_rotate_x,pos1,-5),
           (position_move_y,pos1,-1000),
-          
-          (mission_cam_set_mode,1),
-          (mission_cam_set_position, pos1),
-        ]),
-      (0.02, 0, 0, [(eq,"$cam_follow",2),], [
-          (scene_prop_get_instance,":s_instance", "$player_ship", 0),
-          (prop_instance_get_position,pos1,":s_instance"),
-
-          (position_move_z,pos1,250),
-          (position_rotate_x,pos1,-5),
-          (position_move_y,pos1,-1000),
-          
-          (mission_cam_set_mode,1),
-          (mission_cam_set_position, pos1),
+     
+          (mission_cam_animate_to_position, pos1,100,1),
         ]),
      (20, 0, 0, [], [
          (play_sound,"snd_viper_engine_hum"),
@@ -8156,18 +8153,18 @@ sw_deathcam_cycle_backwards,
      (4, 0, 0, [], [
          (play_sound,"snd_subspace"),
         ]),
-     (0.1, 0, 0, [], [
+     (0, 0, 0, [], [
           (scene_prop_get_instance,":s_instance", "$player_ship", 0),
           (prop_instance_get_position,pos1,":s_instance"),
-          (position_move_y,pos1,-500),	#switched from -350
-          (position_move_x,pos1,-120),	#switched from -40
+          (position_move_y,pos1,-400),	#switched from -350
+          (position_move_x,pos1,-140),	#switched from -40
           (position_move_z,pos1,-25),	#switched from 0
-          (particle_system_burst,"psys_viper_engine",pos1,2),
+          (particle_system_burst,"psys_viper_engine",pos1,10),
           (prop_instance_get_position,pos1,":s_instance"),
-          (position_move_y,pos1,-500),	#switched from -350
-          (position_move_x,pos1,120),	#switched from 40
+          (position_move_y,pos1,-400),	#switched from -350
+          (position_move_x,pos1,140),	#switched from 40
           (position_move_z,pos1,-25), #switched from 0
-          (particle_system_burst,"psys_viper_engine",pos1,2),
+          (particle_system_burst,"psys_viper_engine",pos1,10),
           #(prop_instance_get_position,pos1,":s_instance"),
           #(position_move_y,pos1,-450),	#switched from -350
           #(position_move_x,pos1,0),		
@@ -8196,6 +8193,21 @@ sw_deathcam_cycle_backwards,
           (troop_get_slot,reg19,"trp_viper_g",slot_troop_damage),
           (troop_get_slot,reg20,"trp_viper_h",slot_troop_damage),
           
+		  #added by swyter
+		  
+		
+		 #Little Pos Helper by Kuba begin
+		 #http://forums.taleworlds.com/index.php/topic,8652.msg2373733.html#msg2373733
+		 #(set_fixed_point_multiplier, 1000),
+		 (mouse_get_position, pos1),
+		 (position_get_x, reg21, pos1),
+		 (position_get_y, reg22, pos1),
+		 #(str_store_string, s1, "@DEBUG: x = {reg1}, y = {reg2}"),
+		 #(overlay_set_text, "$g_little_pos_helper", "@DEBUG: x = {reg1}, y = {reg2}"),
+		 (tutorial_message, s1),
+		 #Little Pos Helper by Kuba end
+		  
+		  #THE MESSAGE IS SHOWN HERE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
           (tutorial_message,"str_viper_status"),
           (call_script,"script_fighter_explosions","spr_cylon_raider","spr_viper_mk7"),
         ]),
@@ -8214,7 +8226,7 @@ sw_deathcam_cycle_backwards,
               (assign,"$cam_follow",1),
           (try_end),
         ]),
-     (0.1, 0, 0, [(lt,"$player_damage",20),], [
+     (0, 0, 0, [(lt,"$player_damage",20),], [
          (scene_prop_get_instance,":s_instance", "$player_ship", 0),
          (prop_instance_get_position,pos1,":s_instance"),
          (particle_system_burst,"psys_viper_smoke",pos1,2),
@@ -8223,7 +8235,7 @@ sw_deathcam_cycle_backwards,
              (assign,"$cam_follow",2),
          (try_end),
         ]),
-     (0.1, 0, 0, [(lt,"$player_damage",1),], [
+     (0, 0, 0, [(lt,"$player_damage",1),], [
          (scene_prop_get_instance,":s_instance", "$player_ship", 0),
          (prop_instance_get_position,pos1,":s_instance"),
          (assign,"$cam_follow",0),
@@ -8241,26 +8253,66 @@ sw_deathcam_cycle_backwards,
          (try_end),
         ]),
 
-     #viper_controls
-     (0.01, 0, 0, [(key_is_down, key_a),(lt,"$player_speed","$player_max_speed"),(gt,"$player_damage",0),], [
-          (val_add,"$player_speed",1),
+     ### S W    B S G     C O N T R O L S  ############
+	  
+	  (0, 0, 0, [(key_is_down, key_middle_mouse_button),], [
+          (mouse_get_position, pos1),
+          (set_fixed_point_multiplier, 1000),
+          (position_get_x, ":mouse_x", pos1),
+          (position_get_y, ":mouse_y", pos1),
+		  
+		  #CENTER THE XY GRID [LEFT-DOWN BY DEFAULT]
+		  (val_sub,":mouse_x",500),
+		  (val_sub,":mouse_y",380),
+		  
+		  
+		#MAKE PLAYABLE COORS (LITTLE NUMBERS)
+		  (val_div,":mouse_x",70),
+		  (val_div,":mouse_y",70),
+
+		  #INVERSE CONTROLS (NEG 2 POSIT & VICEVERSA)
+		  (val_mul,":mouse_x",-1),
+		  (val_mul,":mouse_y",-1),
+		  
+		 # BIND DATA TO THE PLAYER'S SHIP
+	     (assign,"$player_rotate_x",":mouse_y"),
+	     (assign,"$player_rotate_z",":mouse_x"),
+	 
+	 
+	 
         ]),
-     (0.01, 0, 0, [(key_is_down, key_z),(gt,"$player_speed",0),(gt,"$player_damage",0),], [
-          (val_sub,"$player_speed",1),
+	 
+	 
+     (0.01, 0, 0, [(key_is_down, key_mouse_scroll_up),(lt,"$player_speed","$player_max_speed"),(gt,"$player_damage",0),], [
+          (val_add,"$player_speed",30),
         ]),
-     (0.1, 0, 0, [(key_is_down, key_up),(gt,"$player_rotate_x",-6),(gt,"$player_damage",0),], [
-          (val_sub,"$player_rotate_x",1),
+     (0.01, 0, 0, [(key_is_down, key_mouse_scroll_down),(gt,"$player_speed",0),(gt,"$player_damage",0),], [
+          (val_sub,"$player_speed",30),
         ]),
-     (0.1, 0, 0, [(key_is_down, key_down),(lt,"$player_rotate_x",6),(gt,"$player_damage",0),], [
-          (val_add,"$player_rotate_x",1),
+     (0.1, 0, 0, [(key_is_down, key_w),(gt,"$player_rotate_x",-6),(gt,"$player_damage",0),], [
+          (val_add,"$player_speed",50),
         ]),
-     (0.1, 0, 0, [(key_is_down, key_left),(gt,"$player_rotate_y",-8),(gt,"$player_damage",0),], [
+     (0.1, 0, 0, [(key_is_down, key_s),(lt,"$player_rotate_x",6),(gt,"$player_damage",0),], [
+          (val_sub,"$player_speed",40),
+        ]),
+     (0.1, 0, 0, [(key_is_down, key_a),(gt,"$player_rotate_y",-8),(gt,"$player_damage",0),], [
           (val_sub,"$player_rotate_y",1),
+		]),
+		         #SWY - LEFT LIMITER 
+		        (0.2, 0, 0, [(lt,"$player_rotate_y",1),], [
+				(val_add,"$player_rotate_y",1),
         ]),
-     (0.1, 0, 0, [(key_is_down, key_right),(lt,"$player_rotate_y",8),(gt,"$player_damage",0),], [
+     (0.1, 0, 0, [(key_is_down, key_d),(lt,"$player_rotate_y",8),(gt,"$player_damage",0),], [
           (val_add,"$player_rotate_y",1),
+		]),
+		         #SWY - RIGHT LIMITER
+		  		(0.2, 0, 0, [(gt,"$player_rotate_y",-1),], [
+				(val_sub,"$player_rotate_y",1),
         ]),
-     (0.1, 0, 0, [], [
+		
+		## CONTROLS END ########
+		
+     (0, 0, 0, [], [
           (scene_prop_get_instance,":s_instance", "$player_ship", 0),
           (prop_instance_get_position,pos1,":s_instance"),
           (prop_instance_get_position,pos2,":s_instance"),
@@ -8274,6 +8326,7 @@ sw_deathcam_cycle_backwards,
           (prop_instance_get_position,pos10,":s_instance"),
           (position_rotate_y,pos1,"$player_rotate_y"),
           (position_rotate_x,pos1,"$player_rotate_x"),
+		  (position_rotate_z,pos1,"$player_rotate_z"),
           (position_move_y,pos1,"$player_speed"),
           (prop_instance_animate_to_position,":s_instance",pos1,10),
 
@@ -8339,7 +8392,7 @@ sw_deathcam_cycle_backwards,
              (end_try),
          (end_try),
         ]),
-     (0.1, 0, 0, [(key_is_down, key_left_control),(gt,"$player_cannons",0),(gt,"$player_damage",0),], [
+     (0, 0, 0, [(this_or_next|key_is_down, key_left_mouse_button),(key_is_down, key_space),(gt,"$player_cannons",0),(gt,"$player_damage",0),], [
          (scene_prop_get_instance,":s_instance", "$player_ship", 0),
          (prop_instance_get_position,pos1,":s_instance"),
          (prop_instance_get_position,pos2,":s_instance"),
@@ -8364,7 +8417,7 @@ sw_deathcam_cycle_backwards,
          (call_script,"script_calculate_fighter_damages"),
          (play_sound,"snd_viper_cannon"),
         ]),
-     (0.1, 0, 0, [(key_is_down, key_left_control),(lt,"$player_cannons",1),(gt,"$player_damage",0),], [
+     (0.1, 0, 0, [(this_or_next|key_is_down, key_left_mouse_button),(key_is_down, key_space),(lt,"$player_cannons",1),(gt,"$player_damage",0),], [
          (play_sound,"snd_viper_cannon_impact"),
         ]),
      ################################################
@@ -8485,7 +8538,12 @@ sw_deathcam_cycle_backwards,
       (ti_before_mission_start, 0, 0, [], [(set_rain,2,0),]),
     ],
   ),  
-#-------------------------------------------------------------------------------------------------------
+  
+#==============================================================================================================
+#SW BSG Integration   END                 END                END                  END               END
+#==============================================================================================================
+  
+  
 
 ##############################  # Duel Mod by MartinF Start ##############################
 
@@ -8630,4 +8688,9 @@ sw_deathcam_cycle_backwards,
 
 ########################## Duel Mod End ##############################
 
+
 ]
+
+
+
+
