@@ -2263,6 +2263,7 @@ We apologize sincerely if you contributed your suggestions and feedback but were
   ("spaceship_cis_star_cruiser_name", "CIS Star Cruiser"),
   ("spaceship_cis_star_cruiser_desc", " "),
 #SW - spaceship string ends
-
-	
+  ("swy_space_battles_won", "-Victory-"),
+  ("swy_space_battles_won_desc", "Congratulations, commander^You have won the battle..."),
+  
 ]

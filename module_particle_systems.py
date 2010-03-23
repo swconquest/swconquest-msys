@@ -909,7 +909,7 @@ particle_systems = [
     ),
 #-------------------------------------------------------------------------------------------------------		
 #SW BSG integration
-    ("viper_engine", psf_global_emit_dir|psf_always_emit, "prt_engine_particle",
+    ("viper_engine", psf_global_emit_dir|psf_always_emit, "prt_engine_particle_orange",
      100, 0.1, 0.6, -0.0, 10.0, 0.2,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
      (0, 1), (1, 0),        #alpha keys
      (0, 0.5), (1, 0.5),      #red keys
@@ -938,22 +938,22 @@ particle_systems = [
     ("viper_machine_gun", psf_always_emit, "laser_bolt_red",
      1, 1.0, 0, 0, 0, 0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
      (0, 1), (1, 1),        #alpha keys
-     (1, 1), (1, 1),      #red keys
-     (1, 1), (1, 1),      #green keys
-     (1, 1), (1, 1),      #blue keys
+     (1, 2), (1, 2),      #red keys
+     (1, 2), (1, 2),      #green keys
+     (1, 2), (1, 2),      #blue keys
      (0, 2),   (1, 2),          #scale keys
-     (0.0, 0.0, 0.0),           #emit box size
-     (0.0, 400, 0.0),               #emit velocity
+     (0, 0, 0.0),           #emit box size
+     (0.0, 430, 0.0),               #emit velocity
      0.0,                       #emit dir randomness
      0,                       #rotation speed
      0                        #rotation damping
     ),
     ("cylon_machine_gun", psf_always_emit, "laser_bolt_green",
      1, 2.0, 0, 0, 0, 0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
-     (0, 0.6), (1, 0.6),        #alpha keys
-     (1, 1), (1, 1),      #red keys
-     (1, 1), (1, 1),      #green keys
-     (1, 1), (1, 1),      #blue keys
+     (0, 1), (1, 1),        #alpha keys
+     (1, 1.5), (1, 1.5),      #red keys
+     (1, 1.5), (1, 1.5),      #green keys
+     (1, 1.5), (1, 1.5),      #blue keys
      (0, 2),   (1, 2),          #scale keys
      (0.0, 0.0, 0.0),           #emit box size
      (0.0, 400, 0.0),               #emit velocity
@@ -961,13 +961,13 @@ particle_systems = [
      0,                       #rotation speed
      0                        #rotation damping
     ),
-    ("cannon_fire", psf_global_emit_dir|psf_always_emit, "cannon_fire",
-     2, 0.17, 0, 0.0, 0, 0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
+    ("cannon_fire", psf_global_emit_dir|psf_always_emit, "prt_engine_particle_orange",
+     2, 0.01, 2, 0.0, 0, 0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
      (0, 1), (1, 0.1),        #alpha keys
      (0, 1), (1, 1),      #red keys
      (0, 1), (1, 1),      #green keys
      (0, 1), (1, 1),      #blue keys
-     (0, 0.5),   (1, 1),    #scale keys
+     (0, 2),   (1, 1),    #scale keys
      (0, 0, 0),           #emit box size
      (0, 0, 0),              #emit velocity
       0,                        #emit dir randomness
