@@ -1745,38 +1745,40 @@ scripts = [
        (store_script_param_1, ":root_defender_party"),
        (store_script_param_2, ":root_attacker_party"),
 	   
-	   #--------------------------------------------------------------------------------------------------------------------------------
-	   #SW - START OF WORKAROUND FOR SCRIPT ERROR
-		(assign, ":root_defender_party_found", 0),
-		(assign, ":root_attacker_party_found", 0),
-		(try_for_parties, ":cur_party"),
-			(try_begin),
-				#check if root_defender_party is valid
-				(eq, ":cur_party", ":root_defender_party"),
-				(assign, ":root_defender_party_found", 1),
-			(try_end),
-			(try_begin),
-				#check if root_attacker_party is valid
-				(eq, ":cur_party", ":root_attacker_party"),
-				(assign, ":root_attacker_party_found", 1),
-			(try_end),
-		(try_end),
-	    (assign, ":error", -1),
-		(try_begin),
-			(this_or_next|eq, ":root_defender_party_found", 0),
-			(eq, ":root_attacker_party_found", 0),
-			#one or more parties was not found, error!
-			(assign, ":error", 1),
-		(else_try),
-			(assign, ":error", 0),
-		(try_end),
-		#check if there were any errors
-		(try_begin),
-		(eq, ":error", 1),
-			#(display_log_message, "@DEBUG: ERROR - either the root_defender_party or root_attacker_party were NOT found!"),
-		(else_try),
-	   #SW - END OF WORKAROUND FOR SCRIPT ERROR
-	   #--------------------------------------------------------------------------------------------------------------------------------
+	   # #--------------------------------------------------------------------------------------------------------------------------------
+	   # #SW _ DON'T USE THIS WORKAROUND BELOW - APPARENTLY IT CORRUPTS SAVED GAMES
+	   # #--------------------------------------------------------------------------------------------------------------------------------
+	   # #SW - START OF WORKAROUND FOR SCRIPT ERROR
+		# (assign, ":root_defender_party_found", 0),
+		# (assign, ":root_attacker_party_found", 0),
+		# (try_for_parties, ":cur_party"),
+			# (try_begin),
+				# #check if root_defender_party is valid
+				# (eq, ":cur_party", ":root_defender_party"),
+				# (assign, ":root_defender_party_found", 1),
+			# (try_end),
+			# (try_begin),
+				# #check if root_attacker_party is valid
+				# (eq, ":cur_party", ":root_attacker_party"),
+				# (assign, ":root_attacker_party_found", 1),
+			# (try_end),
+		# (try_end),
+	    # (assign, ":error", -1),
+		# (try_begin),
+			# (this_or_next|eq, ":root_defender_party_found", 0),
+			# (eq, ":root_attacker_party_found", 0),
+			# #one or more parties was not found, error!
+			# (assign, ":error", 1),
+		# (else_try),
+			# (assign, ":error", 0),
+		# (try_end),
+		# #check if there were any errors
+		# (try_begin),
+		# (eq, ":error", 1),
+			# #(display_log_message, "@DEBUG: ERROR - either the root_defender_party or root_attacker_party were NOT found!"),
+		# (else_try),
+	   # #SW - END OF WORKAROUND FOR SCRIPT ERROR
+	   # #--------------------------------------------------------------------------------------------------------------------------------
 	   
        (try_begin),
          (store_faction_of_party, ":defender_faction", ":root_defender_party"),
@@ -2037,9 +2039,12 @@ scripts = [
          (try_end),
          (set_trigger_result, ":trigger_result"),
        (try_end),
-	   
-	   #SW - added try_end for script workaround
-	   (try_end),
+
+	   # #--------------------------------------------------------------------------------------------------------------------------------	   
+	   # DON'T DO THE SCRIPT WORKAROUND
+	   # #SW - added try_end for script workaround
+	   # (try_end),
+	   # #--------------------------------------------------------------------------------------------------------------------------------
 	   
   ]),
 
@@ -26436,10 +26441,10 @@ scripts = [
 
 #initializing patrols for certain bases
 ("init_patrol_bases", [
+
 	(try_for_parties, ":temp_party"),
-	(party_set_slot, ":temp_party", slot_center_has_patrol, 0),
+		(party_set_slot, ":temp_party", slot_center_has_patrol, 0),
 	(try_end),
-	
 
 #empire
 		(call_script, "script_init_patrol_settings", "p_town_16", 3), #coruscant
@@ -26492,9 +26497,9 @@ scripts = [
 	  (store_script_param, ":cur_base", 1),
 	  (store_script_param, ":base_lvl", 2),
       (party_set_slot, ":cur_base", slot_center_has_patrol, ":base_lvl"),
-  (str_store_party_name, s10, ":cur_base"),
-  (assign, reg9, ":base_lvl"),
-#  (display_message, "@{s10} initiated for base lvl {reg9}"),
+	  (str_store_party_name, s10, ":cur_base"),
+	  (assign, reg9, ":base_lvl"),
+	#  (display_message, "@{s10} initiated for base lvl {reg9}"),
 	  ]),
 
 #script_patrol_base_spawn_patrols
@@ -26519,7 +26524,8 @@ scripts = [
 	#(assign, ":ideal_number", 3), #this could be replaced later if lower lvl bases have less patrols.
 	(assign, ":ideal_number", 2), #this could be replaced later if lower lvl bases have less patrols.
 	(val_sub, ":ideal_number", ":cur_number"),
-	(assign, ":cur_patrol", 0), #test for bugfix
+	#SW - should I comment out this assign statement below?  yes, it doesn't seem to be used
+	#(assign, ":cur_patrol", 0), #test for bugfix
 	(try_begin),
 		(gt, ":ideal_number", 0),
 		
@@ -26528,7 +26534,7 @@ scripts = [
 			(set_spawn_radius,1),
 			(spawn_around_party,":cur_base","pt_kingdom_1_escort"),
 			(store_faction_of_party, ":cur_faction", ":cur_base"),
-			#SW - should this assign statement be reversed? leaving it the way it is since reg0 doesn't seem to be used below
+			#SW - should this assign statement be reversed? leaving it the way it is since reg0 doesn't seem to be used below so it must be the patrol id
 			(assign, ":cur_patrol", reg0),
 			(party_set_faction, ":cur_patrol", ":cur_faction"),
 			
