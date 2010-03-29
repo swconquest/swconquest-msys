@@ -1427,6 +1427,8 @@ common_check_town_fight = (
 						(try_begin),
 							(eq,":enemies",0),
 							(dialog_box,"@All enemies at this location have been defeated!", "@Success"),	# display dialog popup ?
+							(add_xp_to_troop,100,"$g_player_troop"),	#since custom commander is integrated
+							(call_script, "script_troop_add_gold", "$g_player_troop", 100),
 							(assign, "$g_init_fight", 0),	#turn it off
 						(try_end),
 					(try_end),
@@ -1518,66 +1520,71 @@ shield_bash_kit_4 = (
 #SW - common_alternative_attack code from Highlander (only disadvantage is that ammo is refilled)
 # I also switched the code from trp_player to $g_player_troop since I use custom commander
 #common_alternative_attack = (0,0,0,
-common_toggle_weapon_capabilities = (0, 0, 0,
-[
-  #(key_clicked, key_t),
-  (key_clicked, "$toggle_weapon_key"),
-  (neg|conversation_screen_is_active),
-  (get_player_agent_no,":player"),
-  (agent_is_alive, ":player"),    	# only continue if player is alive
-  (agent_get_team,":team",":player"),
-  (agent_get_wielded_item,":item",":player",0),
-  (gt,":item",-1),
-  #(item_get_slot,":item_b",":item",slot_item_alternative_attack),
-  (item_get_slot,":item_b",":item",slot_item_alternate_weapon),
-  (gt,":item_b",0),
-  (set_show_messages,0),
-  (agent_get_horse,":horse",":player"),
-  (troop_get_inventory_slot,":slot_horse","$g_player_troop",ek_horse),
-  (troop_get_inventory_slot_modifier,":slot_horse_modifier","$g_player_troop",ek_horse),
-  (init_position,pos2),
-  (try_begin),
-    (lt,":horse",0),
-	(troop_set_inventory_slot,"$g_player_troop",ek_horse,"itm_no_item"),
-    (troop_remove_item, "$g_player_troop", "itm_no_item"),
-  (else_try),
-    (agent_get_item_id,":horse_item",":horse"),
-	(troop_set_inventory_slot,"$g_player_troop",ek_horse,":horse_item"),
-   (agent_set_position,":horse",pos2),
-  (try_end),
-  (try_for_range,":slot",0,4),
-	(troop_get_inventory_slot,":slot_item","$g_player_troop",":slot"),
-    (troop_get_inventory_slot_modifier,":slot_modifier","$g_player_troop",":slot"),
-    (eq,":slot_item",":item"),
-	(troop_get_inventory_slot,":slot_item_0","$g_player_troop",0),
-    (troop_get_inventory_slot_modifier,":slot_modifier_0","$g_player_troop",0),
-    (troop_set_inventory_slot,"$g_player_troop",0,":item_b"),
-    (troop_set_inventory_slot_modifier,"$g_player_troop",0,":slot_modifier"),
-    (neq,":slot",0),
-	(troop_set_inventory_slot,"$g_player_troop",":slot",":slot_item_0"),
-    (troop_set_inventory_slot_modifier,"$g_player_troop",":slot",":slot_modifier_0"),
-  (try_end),
-  (store_agent_hit_points,":hit_points",":player",1),
-  (agent_get_position,pos1,":player"),
-  (agent_set_position,":player",pos2),
-  (call_script,"script_dmod_kill_agent",":player"),
-  (set_spawn_position,pos1),
-  (spawn_agent,"$g_player_troop"),
-  (agent_set_hit_points,reg0,":hit_points",1),
-  (agent_set_team,reg0,":team"),
-  (try_begin),
-    (lt,":slot_horse",0),
-	(troop_set_inventory_slot,"$g_player_troop",ek_horse,"itm_no_item"),
-	(troop_remove_item, "$g_player_troop", "itm_no_item"),
-  (else_try),
-	(troop_set_inventory_slot,"$g_player_troop",ek_horse,":slot_horse"),
-	(troop_set_inventory_slot_modifier,"$g_player_troop",ek_horse,":slot_horse_modifier"),
-  (try_end),
-  (set_show_messages,1),
-],[])
+
+#SW - actually, this code causes issues with the battle summary at the end since it reports the player was injured, so I am no longer using it
+#	- there is also another issue that you see your dead body indoor scenes, but this would not be a problem in warband since there is now a remove_agent
+
+# common_toggle_weapon_capabilities = (0, 0, 0,
+# [
+  # #(key_clicked, key_t),
+  # (key_clicked, "$toggle_weapon_key"),
+  # (neg|conversation_screen_is_active),
+  # (get_player_agent_no,":player"),
+  # (agent_is_alive, ":player"),    	# only continue if player is alive
+  # (agent_get_team,":team",":player"),
+  # (agent_get_wielded_item,":item",":player",0),
+  # (gt,":item",-1),
+  # #(item_get_slot,":item_b",":item",slot_item_alternative_attack),
+  # (item_get_slot,":item_b",":item",slot_item_alternate_weapon),
+  # (gt,":item_b",0),
+  # (set_show_messages,0),
+  # (agent_get_horse,":horse",":player"),
+  # (troop_get_inventory_slot,":slot_horse","$g_player_troop",ek_horse),
+  # (troop_get_inventory_slot_modifier,":slot_horse_modifier","$g_player_troop",ek_horse),
+  # (init_position,pos2),
+  # (try_begin),
+    # (lt,":horse",0),
+	# (troop_set_inventory_slot,"$g_player_troop",ek_horse,"itm_no_item"),
+    # (troop_remove_item, "$g_player_troop", "itm_no_item"),
+  # (else_try),
+    # (agent_get_item_id,":horse_item",":horse"),
+	# (troop_set_inventory_slot,"$g_player_troop",ek_horse,":horse_item"),
+   # (agent_set_position,":horse",pos2),
+  # (try_end),
+  # (try_for_range,":slot",0,4),
+	# (troop_get_inventory_slot,":slot_item","$g_player_troop",":slot"),
+    # (troop_get_inventory_slot_modifier,":slot_modifier","$g_player_troop",":slot"),
+    # (eq,":slot_item",":item"),
+	# (troop_get_inventory_slot,":slot_item_0","$g_player_troop",0),
+    # (troop_get_inventory_slot_modifier,":slot_modifier_0","$g_player_troop",0),
+    # (troop_set_inventory_slot,"$g_player_troop",0,":item_b"),
+    # (troop_set_inventory_slot_modifier,"$g_player_troop",0,":slot_modifier"),
+    # (neq,":slot",0),
+	# (troop_set_inventory_slot,"$g_player_troop",":slot",":slot_item_0"),
+    # (troop_set_inventory_slot_modifier,"$g_player_troop",":slot",":slot_modifier_0"),
+  # (try_end),
+  # (store_agent_hit_points,":hit_points",":player",1),
+  # (agent_get_position,pos1,":player"),
+  # (agent_set_position,":player",pos2),
+  # (call_script,"script_dmod_kill_agent",":player"),
+  # (set_spawn_position,pos1),
+  # (spawn_agent,"$g_player_troop"),
+  # (agent_set_hit_points,reg0,":hit_points",1),
+  # (agent_set_team,reg0,":team"),
+  # (try_begin),
+    # (lt,":slot_horse",0),
+	# (troop_set_inventory_slot,"$g_player_troop",ek_horse,"itm_no_item"),
+	# (troop_remove_item, "$g_player_troop", "itm_no_item"),
+  # (else_try),
+	# (troop_set_inventory_slot,"$g_player_troop",ek_horse,":slot_horse"),
+	# (troop_set_inventory_slot_modifier,"$g_player_troop",ek_horse,":slot_horse_modifier"),
+  # (try_end),
+  # (set_show_messages,1),
+# ],[])
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 #SW - old toggle_weapon_capabilities code (you must display a dialog and ammo is refilled)
-common_toggle_weapon_capabilities_w_popup = (0, 0, 0, [
+#common_toggle_weapon_capabilities_w_popup = (0, 0, 0, [
+common_toggle_weapon_capabilities = (0, 0, 0, [
 	#(key_clicked, key_t),
 	(key_clicked, "$toggle_weapon_key"),
 	(neg|conversation_screen_is_active),
@@ -2646,8 +2653,7 @@ mission_templates = [
 	  common_helmet_view,
 	  common_zoom_view,
 	  common_use_jetpack,	 
-	  #common_toggle_weapon_capabilities,		#can't use this one because the scene is an interior and you'd still see your dead body
-	  common_toggle_weapon_capabilities_w_popup,
+	  common_toggle_weapon_capabilities,
 	  common_switch_sw_scene_props,
 	  common_crouch_button,
 		  
@@ -3957,8 +3963,7 @@ sw_deathcam_cycle_backwards,
 	  common_helmet_view,
 	  common_zoom_view,
 	  common_use_jetpack,	  
-	  #common_toggle_weapon_capabilities,		#can't use this one because the scene is an interior and you'd still see your dead body
-	  common_toggle_weapon_capabilities_w_popup,
+	  common_toggle_weapon_capabilities,
 	  common_agent_droid_refill_trigger,
 	  common_fix_droid_walking,
 	  common_crouch_button,
@@ -7865,8 +7870,7 @@ sw_deathcam_cycle_backwards,
 	  common_helmet_view,
 	  common_zoom_view,
 	  common_use_jetpack,	 
-	  #common_toggle_weapon_capabilities,		#can't use this one because the scene is an interior and you'd still see your dead body
-	  common_toggle_weapon_capabilities_w_popup,
+	  common_toggle_weapon_capabilities,
 	  common_switch_sw_scene_props,
 	  #common_custom_commander_camera,
 	  common_crouch_button,
@@ -8002,7 +8006,9 @@ sw_deathcam_cycle_backwards,
       #   (call_script, "script_change_banners_and_chest"),
       #   ]),
       (ti_inventory_key_pressed, 0, 0, [(set_trigger_result,1)], []),
-      (ti_tab_pressed, 0, 0, [(set_trigger_result,1)], []),
+      (ti_tab_pressed, 0, 0, [
+			(set_trigger_result,1)
+		], []),
       (0, 0, ti_once, [], [
         (try_begin),
           (eq, "$talk_context", tc_court_talk),
@@ -8013,7 +8019,7 @@ sw_deathcam_cycle_backwards,
         ]),
 	(0.0, 1.0, ti_once, [],
 		[
-			#(tutorial_box, "str_space_combat_practice", "@Space Combat practice"),
+			(tutorial_box, "str_space_combat_practice", "@Space Combat practice"),
 		]
 	),
      # (0.0, 1.0, 2.0,
@@ -8046,21 +8052,24 @@ sw_deathcam_cycle_backwards,
        [
          (store_trigger_param_1,":answer"),
          (eq,":answer",0),
-		   (add_xp_to_troop,100,"trp_player"),
+		   (add_xp_to_troop,100,"$g_player_troop"),	#since custom commander is integrated
+		   (stop_all_sounds,2),	#stop the engine sound from the space combat
 		   (finish_mission),
          ]),
      (ti_before_mission_start, 0, 0, [], [(set_rain,2,0)]),
       (0, 0, ti_once, [], [
           (assign,"$cam_follow",1),
           (assign,"$player_ship","spr_p_viper_mk7"),
-          (assign,"$player_max_speed",400),
-          (assign,"$player_speed",100),
+          (assign,"$player_max_speed",200),		#with higher speeds we need to add code to also adjust the position the guns/engine fire from (setting it to 200 for now)
+          (assign,"$player_speed",40),
           (assign,"$player_rotate_y",0),
           (assign,"$player_rotate_x",0),
           (assign,"$player_missiles",0),
-          (assign,"$player_cannons",22500000),
+          #(assign,"$player_cannons",22500000),
+		  (assign,"$player_cannons",100000),
           (assign,"$player_damage",100),
           (assign,"$player_cannon_damage",3),
+		  (assign,"$mouse_y_control",-1),			#mouse_up = down, mouse_down = up (can toggle with T key)
     #      (assign,"$auto_control",0),
     #      (assign,"$auto_slow_down",0),
           (call_script,"script_set_fighters","spr_cylon_raider","spr_viper_mk7"), #This edited by Ibanez after HokieBT's port.
@@ -8069,33 +8078,6 @@ sw_deathcam_cycle_backwards,
         ]),
 		
 
-		## VICTORY SYSTEM - IF ALL ENEMIES DEFEATED THEN ...
-      (1, 0, 0, [], [		
-		  (troop_get_slot,reg5,"trp_cylon_a",slot_troop_damage),
-          (troop_get_slot,reg6,"trp_cylon_b",slot_troop_damage),
-          (troop_get_slot,reg7,"trp_cylon_c",slot_troop_damage),
-          (troop_get_slot,reg8,"trp_cylon_d",slot_troop_damage),
-          (troop_get_slot,reg9,"trp_cylon_e",slot_troop_damage),
-          (troop_get_slot,reg10,"trp_cylon_f",slot_troop_damage),
-          (troop_get_slot,reg11,"trp_cylon_g",slot_troop_damage),
-          (troop_get_slot,reg12,"trp_cylon_h",slot_troop_damage),
-
-		  (lt,reg5,1),
-		  (lt,reg6,1),
-		  (lt,reg7,1),
-		  (lt,reg8,1),
-		  (lt,reg9,1),
-		  (lt,reg10,1),
-		  (lt,reg11,1),
-		  (lt,reg12,1),
-		  
-		  ##Victory music + Dialog + experience + exit
-		  (play_track,"track_victory", 2),
-		  (tutorial_box,"str_swy_space_battles_won","str_swy_space_battles_won_desc"),
-		  (add_xp_to_troop,1700,"trp_player"),
-		  (finish_mission),
-		]),
-		## VICTORY SYSTEM END
 		
 		
       (0, 0, ti_once, [], [
@@ -8161,12 +8143,9 @@ sw_deathcam_cycle_backwards,
          (end_try),
         ]),
       #camera tracking,particles,status,collision detect,destroy,loopsounds
-	  #### > NEW CAMERA SYSTEM BY SWYTER | NOW THE CAM TRACKING IS ANIMATED AND SPEED SENSITIVE > INCLUDE FIXED ROTATIVE DEATH CAM
       (0, 0, ti_once, [], [
 		(mission_cam_set_mode,1),
         ]),
-		
-		## NEW CAMERA TRACKING SYSTEM | MORE FUNNY AND MOVEMENT SENSITIVE [DYNAMIC CAM]
       (0, 0, 0, [(eq,"$cam_follow",1),], [
           (scene_prop_get_instance,":s_instance", "$player_ship", 0),
           (prop_instance_get_position,pos1,":s_instance"),
@@ -8177,22 +8156,6 @@ sw_deathcam_cycle_backwards,
      
           (mission_cam_animate_to_position, pos1,100,1),
         ]),
-		
-		##> DEATH CAM | FIXED BUT ALWAYS LOOK TO THE CRASHED PLAYER SPACESHIP
-		(0, 0, 0, [(eq,"$cam_follow",2),], [
-          (scene_prop_get_instance,":s_instance", "$player_ship", 0),
-          (prop_instance_get_position,pos1,":s_instance"),
-		  (position_copy_rotation,pos1,pos2),
-
-          #(position_move_z,pos1,260),
-          #(position_rotate_x,pos1,-5),
-		  #(position_rotate_y,pos1,10),
-          #(position_move_y,pos1,-1000),
-     
-          (mission_cam_animate_to_position, pos1,100,1),
-        ]),
-		
-		
      (20, 0, 0, [], [
          (play_sound,"snd_viper_engine_hum"),
         ]),
@@ -8242,22 +8205,23 @@ sw_deathcam_cycle_backwards,
 		  #added by swyter
 		  
 		
-		 #Little Pos Helper by Kuba begin
-		 #http://forums.taleworlds.com/index.php/topic,8652.msg2373733.html#msg2373733
-		 #(set_fixed_point_multiplier, 1000),
-		 (mouse_get_position, pos1),
-		 (position_get_x, reg21, pos1),
-		 (position_get_y, reg22, pos1),
-		 #(str_store_string, s1, "@DEBUG: x = {reg1}, y = {reg2}"),
-		 #(overlay_set_text, "$g_little_pos_helper", "@DEBUG: x = {reg1}, y = {reg2}"),
-		 (tutorial_message, s1),
-		 #Little Pos Helper by Kuba end
+		 # #Little Pos Helper by Kuba begin
+		 # #http://forums.taleworlds.com/index.php/topic,8652.msg2373733.html#msg2373733
+		 # #(set_fixed_point_multiplier, 1000),
+		 # (mouse_get_position, pos1),
+		 # (position_get_x, reg21, pos1),
+		 # (position_get_y, reg22, pos1),
+		 # #(str_store_string, s1, "@DEBUG: x = {reg1}, y = {reg2}"),
+		 # #(overlay_set_text, "$g_little_pos_helper", "@DEBUG: x = {reg1}, y = {reg2}"),
+		 # (tutorial_message, s1),
+		 # #Little Pos Helper by Kuba end
 		  
 		  #THE MESSAGE IS SHOWN HERE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
           (tutorial_message,"str_viper_status"),
           (call_script,"script_fighter_explosions","spr_cylon_raider","spr_viper_mk7"),
         ]),
-     (0.1, 0, 0, [(key_is_down, key_numpad_plus),(gt,"$player_damage",0),], [
+     #(0.1, 0, 0, [(key_is_down, key_numpad_plus),(gt,"$player_damage",0),], [
+	 (0.1, 0, 0, [(key_is_down, key_c),(gt,"$player_damage",0),], [
           (try_begin),
               (gt,"$cam_follow",0),
               (assign,"$cam_follow",0),
@@ -8266,25 +8230,25 @@ sw_deathcam_cycle_backwards,
               (assign,"$cam_follow",1),
           (try_end),
         ]),
-     #(0.2, 0, 0, [(gt,"$player_damage",19),], [
-     #     (try_begin),
-     #         (gt,"$cam_follow",2),
-     #         (assign,"$cam_follow",1),
-     #     (try_end),
-     #   ]),
-     (0, 0, 0, [(lt,"$player_damage",50),], [
+     (0.2, 0, 0, [(gt,"$player_damage",19),], [
+          (try_begin),
+              (gt,"$cam_follow",2),
+              (assign,"$cam_follow",1),
+          (try_end),
+        ]),
+     (0, 0, 0, [(lt,"$player_damage",20),], [
          (scene_prop_get_instance,":s_instance", "$player_ship", 0),
          (prop_instance_get_position,pos1,":s_instance"),
          (particle_system_burst,"psys_viper_smoke",pos1,2),
-         #(try_begin),
-             #(neq,"$cam_follow",0),
-             #(assign,"$cam_follow",2),
-         #(try_end),
+         (try_begin),
+             (neq,"$cam_follow",0),
+             (assign,"$cam_follow",2),
+         (try_end),
         ]),
      (0, 0, 0, [(lt,"$player_damage",1),], [
          (scene_prop_get_instance,":s_instance", "$player_ship", 0),
          (prop_instance_get_position,pos1,":s_instance"),
-         (assign,"$cam_follow",2),
+         (assign,"$cam_follow",0),
          (try_begin),
              (gt,"$player_speed",0),
              (val_sub,"$player_speed",1),
@@ -8300,8 +8264,21 @@ sw_deathcam_cycle_backwards,
         ]),
 
      ### S W    B S G     C O N T R O L S  ############
-	  
-	  (0, 0, 0, [(key_is_down, key_right_mouse_button),(gt,"$player_damage",0),], [
+
+	  (0, 0, 0, [
+				(key_is_down, key_t),
+				], 
+		[
+			(val_mul,"$mouse_y_control",-1),
+			#(display_message, "@The vertical mouse control was modified."),
+		]
+	  ),
+	 
+	  (0, 0, 0, [
+				#(key_is_down, key_middle_mouse_button),
+				(gt,"$player_speed",0),
+				], 
+		[
           (mouse_get_position, pos1),
           (set_fixed_point_multiplier, 1000),
           (position_get_x, ":mouse_x", pos1),
@@ -8318,7 +8295,8 @@ sw_deathcam_cycle_backwards,
 
 		  #INVERSE CONTROLS (NEG 2 POSIT & VICEVERSA)
 		  (val_mul,":mouse_x",-1),
-		  (val_mul,":mouse_y",-1),
+		  #(val_mul,":mouse_y",-1),		#up/down
+		  (val_mul,":mouse_y","$mouse_y_control"),		#up/down
 		  
 		 # BIND DATA TO THE PLAYER'S SHIP
 	     (assign,"$player_rotate_x",":mouse_y"),
@@ -8329,31 +8307,35 @@ sw_deathcam_cycle_backwards,
         ]),
 	 
 	 
-     (0.01, 0, 0, [(key_is_down, key_mouse_scroll_up),(lt,"$player_speed","$player_max_speed"),(gt,"$player_damage",0),], [
-          (val_add,"$player_speed",30),
+     #(0.01, 0, 0, [(key_is_down, key_mouse_scroll_up),(lt,"$player_speed","$player_max_speed"),(gt,"$player_damage",0),], [
+     #     (val_add,"$player_speed",30),
+     #   ]),
+     #(0.01, 0, 0, [(key_is_down, key_mouse_scroll_down),(gt,"$player_speed",0),(gt,"$player_damage",0),], [
+     #     (val_sub,"$player_speed",30),
+     #   ]),
+     #(0.1, 0, 0, [(key_is_down, key_w),(gt,"$player_rotate_x",-6),(gt,"$player_damage",0),], [
+	 (0.1, 0, 0, [(key_is_down, key_w),(lt,"$player_speed","$player_max_speed"),(gt,"$player_damage",0),], [
+          #(val_add,"$player_speed",50),
+		  (val_add,"$player_speed",20),
         ]),
-     (0.01, 0, 0, [(key_is_down, key_mouse_scroll_down),(gt,"$player_speed",20),(gt,"$player_damage",0),], [
-          (val_sub,"$player_speed",30),
+     #(0.1, 0, 0, [(key_is_down, key_s),(lt,"$player_rotate_x",6),(gt,"$player_damage",0),], [
+	 (0.1, 0, 0, [(key_is_down, key_s),(gt,"$player_speed",0),(gt,"$player_damage",0),], [
+          #(val_sub,"$player_speed",40),
+		  (val_sub,"$player_speed",20),
         ]),
-     (0.1, 0, 0, [(key_is_down, key_w),(lt,"$player_speed","$player_max_speed"),(gt,"$player_damage",0),], [
-          (val_add,"$player_speed",50),
-        ]),
-     (0.1, 0, 0, [(key_is_down, key_s),(gt,"$player_speed",0),(gt,"$player_damage",0),], [
-          (val_sub,"$player_speed",40),
-        ]),
-     (0.1, 0, 0, [(key_is_down, key_a),(gt,"$player_rotate_y",-10),(gt,"$player_damage",0),], [
-          (val_sub,"$player_rotate_y",1.5),
+     (0.1, 0, 0, [(key_is_down, key_a),(gt,"$player_rotate_y",-8),(gt,"$player_damage",0),], [
+          (val_sub,"$player_rotate_y",1),
 		]),
 		         #SWY - LEFT LIMITER 
 		        (0.2, 0, 0, [(lt,"$player_rotate_y",1),], [
-				(val_add,"$player_rotate_y",1.5),
+				(val_add,"$player_rotate_y",1),
         ]),
-     (0.1, 0, 0, [(key_is_down, key_d),(lt,"$player_rotate_y",10),(gt,"$player_damage",0),], [
-          (val_add,"$player_rotate_y",1.5),
+     (0.1, 0, 0, [(key_is_down, key_d),(lt,"$player_rotate_y",8),(gt,"$player_damage",0),], [
+          (val_add,"$player_rotate_y",1),
 		]),
 		         #SWY - RIGHT LIMITER
 		  		(0.2, 0, 0, [(gt,"$player_rotate_y",-1),], [
-				(val_sub,"$player_rotate_y",1.5),
+				(val_sub,"$player_rotate_y",1),
         ]),
 		
 		## CONTROLS END ########
@@ -8373,7 +8355,7 @@ sw_deathcam_cycle_backwards,
           (position_rotate_y,pos1,"$player_rotate_y"),
           (position_rotate_x,pos1,"$player_rotate_x"),
 		  (position_rotate_z,pos1,"$player_rotate_z"),
-          (position_move_y,pos1,"$player_speed"),
+          (position_move_y,pos1,"$player_speed"),		#moves the player forward or backwards depending on their speed?
           (prop_instance_animate_to_position,":s_instance",pos1,10),
 
           (position_move_y,pos2,1000),
@@ -8438,39 +8420,19 @@ sw_deathcam_cycle_backwards,
              (end_try),
          (end_try),
         ]),
-     (0.1, 0, 0, [(this_or_next|key_is_down, key_left_mouse_button),(key_is_down, key_space),(gt,"$player_cannons",0),(gt,"$player_damage",0),], [
-         #(scene_prop_get_instance,":s_instance", "$player_ship", 0),
-         #(prop_instance_get_position,pos1,":s_instance"),
-         #(prop_instance_get_position,pos2,":s_instance"),
-         #SW BSG - modified viper_machine_gun to remove the middle gun, pos3
-         #(prop_instance_get_position,pos3,":s_instance"),
-         #(position_move_y,pos1,25),
-         #(position_move_x,pos1,-230), # original value was -300
-         #(position_move_z,pos1,30),   # original value was -45
-         #(position_move_y,pos2,25),
-         #(position_move_x,pos2,230),  # original value was 300
-         #(position_move_z,pos2,30),	  #original value was -45
-		 #(position_move_y,pos3,-110),
-         #(position_move_x,pos3,0),
-         #(position_move_z,pos3,190),
-         #(particle_system_burst,"psys_viper_machine_gun",pos1,1),
-         #(particle_system_burst,"psys_viper_machine_gun",pos2,1),
-         #(particle_system_burst,"psys_viper_machine_gun",pos3,1),
-         #(particle_system_burst,"psys_cannon_fire",pos1,1),
-         #(particle_system_burst,"psys_cannon_fire",pos2,1),
-         #(particle_system_burst,"psys_cannon_fire",pos3,1),
-         (val_sub,"$player_cannons",3),
-         (call_script,"script_calculate_fighter_damages"),
-         #(play_sound,"snd_viper_cannon"),
-        ]),
-		
-		     (0.3, 0, 0, [(this_or_next|key_is_down, key_left_mouse_button),(key_is_down, key_space),(gt,"$player_cannons",0),(gt,"$player_damage",0),], [
+     (0, 0, 0, [
+				(this_or_next|key_is_down, key_left_mouse_button),
+				(key_is_down, key_space),
+				(gt,"$player_cannons",0),
+				(gt,"$player_damage",0),
+				], 
+				[
          (scene_prop_get_instance,":s_instance", "$player_ship", 0),
          (prop_instance_get_position,pos1,":s_instance"),
          (prop_instance_get_position,pos2,":s_instance"),
          #SW BSG - modified viper_machine_gun to remove the middle gun, pos3
          #(prop_instance_get_position,pos3,":s_instance"),
-         (position_move_y,pos1,25),
+         (position_move_y,pos1,25),	  #
          (position_move_x,pos1,-230), # original value was -300
          (position_move_z,pos1,30),   # original value was -45
          (position_move_y,pos2,25),
@@ -8486,10 +8448,9 @@ sw_deathcam_cycle_backwards,
          (particle_system_burst,"psys_cannon_fire",pos2,1),
          #(particle_system_burst,"psys_cannon_fire",pos3,1),
          (val_sub,"$player_cannons",3),
-         #(call_script,"script_calculate_fighter_damages"),
+         (call_script,"script_calculate_fighter_damages"),
          (play_sound,"snd_viper_cannon"),
         ]),
-		
      (0.1, 0, 0, [(this_or_next|key_is_down, key_left_mouse_button),(key_is_down, key_space),(lt,"$player_cannons",1),(gt,"$player_damage",0),], [
          (play_sound,"snd_viper_cannon_impact"),
         ]),
