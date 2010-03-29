@@ -1542,5 +1542,7 @@ str_spaceship_bulk_freighter_name = 1540
 str_spaceship_bulk_freighter_desc = 1541
 str_spaceship_cis_star_cruiser_name = 1542
 str_spaceship_cis_star_cruiser_desc = 1543
+str_swy_space_battles_won = 1544
+str_swy_space_battles_won_desc = 1545
 
 
