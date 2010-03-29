@@ -179,8 +179,7 @@ triggers = [
 
 						#melee
                         (troop_add_merchandise,reg(2),itp_type_one_handed_wpn,5),
-						(troop_add_merchandise,reg(2),itp_type_one_handed_wpn,5),
-                        #(troop_add_merchandise,reg(2),itp_type_two_handed_wpn,5),
+                        (troop_add_merchandise,reg(2),itp_type_two_handed_wpn,5),
                         (troop_add_merchandise,reg(2),itp_type_polearm,5),
 						#ranged
 						(troop_add_merchandise,reg(2),itp_type_thrown,4),
@@ -196,8 +195,8 @@ triggers = [
 						#(troop_add_merchandise,reg(2),itp_type_arrows,2),		#arrows are used for force powers and appear on force-sensitive merchants in cantina's
                         (troop_add_merchandise,reg(2),itp_type_bullets,5),											
 						#other
-                        (troop_add_merchandise,reg(2),itp_type_shield,5),
-						(troop_add_merchandise,reg(2),itp_type_shield,5),
+                        (troop_add_merchandise,reg(2),itp_type_shield,4),
+						(troop_add_merchandise,reg(2),itp_type_shield,4),
 
                         (troop_ensure_inventory_space,reg(2),merchant_inventory_space),
                         (troop_sort_inventory, reg(2)),
