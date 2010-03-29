@@ -454,7 +454,7 @@ sounds = [
  ("viper_cannon_impact",sf_vol_6, ["Vip_Impact_Gun.ogg"]),
  ("viper_cannon",sf_vol_10, ["bigblaster01.mp3"]),
  ("cylon_cannon",sf_vol_10, ["Rdr_Cannon.ogg"]),
- ("viper_cannon_far",sf_vol_2, ["Vip_Cannon.ogg"]),
+ ("viper_cannon_far",sf_vol_1, ["Vip_Cannon.ogg"]),
  ("cylon_cannon_far",sf_vol_2, ["Rdr_Cannon.ogg"]),
  ("viper_engine_hum",sf_vol_10, ["Vip_EngineHum_Lp.ogg"]),
  ("viper_engine_loop",sf_vol_8, ["Vip_AB_Loop.ogg"]),
