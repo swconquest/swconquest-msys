@@ -886,17 +886,18 @@ animations = [
    #[defend_duration, "sw_lightsaber_protect_1", 0, 99, blend_in_defense], 	#Swyter animation
    #[defend_duration, "sw_lightsaber_protect_1", 0, 9, blend_in_defense], 	#Swyter animation
    #[defend_duration, "anim_reload_b", 0, 0, blend_in_defense], 	#1866 animations
-   [defend_duration, "brfedit-01", 290, 290, blend_in_defense], 	#acm new
+   #[defend_duration, "brfedit-01", 290, 290, blend_in_defense], 	#acm new	(looks good with 2 lightsabers, bad with other shields)
  ],
  #["defend_shield_keep", acf_rotate_body|acf_parallels_for_look_slope|acf_anim_length(100),
  ["defend_shield_keep", acf_rotate_body,	#acm modified
    #[2.0, "anim_human", defend+120, defend+120, arf_blend_in_1|arf_cyclic], 
    [6.0, "anim_human", defend+120, defend+120, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#acm modified
+   [6.0, "anim_human", defend+120, defend+120, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#acm modified
    [6.0, "draw_greatsword", 29, 29, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#acm new
    #[6.0, "sw_lightsaber_protect_1", 99, 99, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#Swyter animation
    #[6.0, "sw_lightsaber_protect_1", 9, 9, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#Swyter animation
    #[6.0, "anim_reload_b", 0, 0, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#1866 animation
-   [6.0, "brfedit-01", 290, 290, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#acm new
+   #[6.0, "brfedit-01", 290, 290, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#acm new	(looks good with 2 lightsabers, bad with other shields)
  ],
  ["defend_shield_parry", acf_rotate_body|acf_parallels_for_look_slope|acf_anim_length(100),
    [0.5, "anim_human", defend+121, defend+130, arf_blend_in_1], 
