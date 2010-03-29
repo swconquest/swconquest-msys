@@ -2831,21 +2831,29 @@ simple_triggers = [
 
 #SW - every 1 hour, destroy all patrols or trade federation convoys that have zero troops
 (1, [
-	(try_for_parties,":cur_party"), #go through all parties to find patrols
-		(party_get_template_id,":cur_party_template",":cur_party"),
-		(this_or_next|eq, ":cur_party_template", "pt_kingdom_1_escort"),	#patrol
-		(eq, ":cur_party_template", "pt_independent_traders"),
-		(party_get_num_companions,":num_troops",":cur_party"),
-		(try_begin),
-			(le, ":num_troops", 0),
-			#(party_clear, ":cur_party"),		#probably not necessary and may introduce issues?
-			(remove_party, ":cur_party"),
-		(try_end),
-	(try_end),
+
+#SW - commenting out to try and fix random crashes, but leaving trigger so it will still be 0.9.0.1 saved game compatible
+
+	# (try_for_parties,":cur_party"), #go through all parties to find patrols
+		# (party_get_template_id,":cur_party_template",":cur_party"),
+		# (this_or_next|eq, ":cur_party_template", "pt_kingdom_1_escort"),	#patrol
+		# (eq, ":cur_party_template", "pt_independent_traders"),
+		# (party_get_num_companions,":num_troops",":cur_party"),
+		# (try_begin),
+			# (le, ":num_troops", 0),
+			# #(party_clear, ":cur_party"),		#probably not necessary and may introduce issues?
+			# (remove_party, ":cur_party"),
+		# (try_end),
+	# (try_end),
+	
 	]),		  
 		  
 #SW - every 6 hours, destroy all patrols that are not of the same faction as their home base, are from a base that is under siege
 (6, [
+
+#SW - 	this trigger below originally removed parties, which appeared to cause random crashes in 0.9.0 because a part could be removed while engaged in battle
+#		I have attempted to fix this by switching the icon/troops of the party if its not correct and not removing patrols if the planet is under siege
+
 			(try_for_range, ":cur_base", walled_centers_begin, walled_centers_end),
 				(party_get_slot, ":base_lvl", ":cur_base", slot_center_has_patrol),
 				(is_between, ":base_lvl", 1, 4),
@@ -2870,19 +2878,72 @@ simple_triggers = [
 						#(call_script, "script_clear_party_group", ":cur_patrol"),
 						#(party_detach, ":cur_patrol"),		#maybe not necessary, I got an in-game script error? maybe I need to check if they are active or in battle?
 						#(party_clear, ":cur_patrol"),	#probably not necessary and may introduce issues?
-						(remove_party, ":cur_patrol"),
-					(else_try),	#siege
+						
+						#SW - commented out this code since it could case crashes in 0.9.0 if a party in battle was removed
+						#(remove_party, ":cur_patrol"),
+						
+						#SW - adding new code to switch the faction, icon, and troops
+						#set faction
+						(party_set_faction, ":cur_patrol", ":cur_base_faction"),
+						#set icon
+						(try_begin),
+							(eq, ":cur_base_faction", "fac_kingdom_1"),	#empire
+							(party_set_icon, ":cur_patrol", "icon_tie_fighter"),
+						(else_try),
+							(eq, ":cur_base_faction", "fac_kingdom_1"),	#rebel
+							(party_set_icon, ":cur_patrol", "icon_a_wing"),
+						(else_try),
+							(eq, ":cur_base_faction", "fac_kingdom_1"),	#hutt
+							(party_set_icon, ":cur_patrol", "icon_hutt_patrol"),
+						(else_try),
+							#other
+							(party_set_icon, ":cur_patrol", "icon_z95"),
+						(try_end),
+						#remove troops that don't belong to that faction
+						(faction_get_slot, ":faction_trp_1", ":cur_base_faction", slot_faction_patrol_unit_1),
+						(faction_get_slot, ":faction_trp_2", ":cur_base_faction", slot_faction_patrol_unit_2),
+						(faction_get_slot, ":faction_trp_3", ":cur_base_faction", slot_faction_patrol_unit_3),
+						(display_message, "@running party_clear"),	#debug
+						#clear the troops
+						(party_clear, ":cur_patrol"),
+						#add party members
+						(try_begin),
+							(eq, ":base_lvl", 1),
+							(party_add_members,":cur_patrol",":faction_trp_1",15),
+							(party_add_members,":cur_patrol",":faction_trp_2",5),				
+			#				(display_message, "@added units lvl 1"),
+						(else_try),
+							(eq, ":base_lvl", 2),
+							(party_add_members,":cur_patrol",":faction_trp_1",20),
+							(party_add_members,":cur_patrol",":faction_trp_2",10),
+							(party_add_members,":cur_patrol",":faction_trp_3",5),				
+			#				(display_message, "@added units lvl 2"),
+						(else_try),
+							(eq, ":base_lvl", 3),
+							(party_add_members,":cur_patrol",":faction_trp_1",25),
+							(party_add_members,":cur_patrol",":faction_trp_2",15),
+							(party_add_members,":cur_patrol",":faction_trp_3",10),				
+			#				(display_message, "@added units lvl 3"),
+						(try_end),
+					(try_end),
+					#SW - Check if the planet is under siege and destroy parties? probably not necessary
+					(try_begin),	#siege
 						#(eq, ":siege_state", svs_under_siege),	#state is always zero for player sieges, use slot_center_is_besieged_by as a workaround
 						(ge, ":besieger_party", 0), #town is under siege
+						
 						# (assign, reg1, ":cur_base"),		#test
 						# (assign, reg2, ":base_state"),	#test	
 						# (assign, reg3, ":besieger_party"),	#test
 						# (display_log_message,"@Base = {reg1}, State = {reg2}, Besieger Party = {reg3}"),						
 						#(display_message, "@Base {reg1} is under siege, destroy patrol!!!"),
+						
 						#(call_script, "script_clear_party_group", ":cur_patrol"),
 						#(party_detach, ":cur_patrol"),		#maybe not necessary, I got an in-game script error? maybe I need to check if they are active or in battle?
 						#(party_clear, ":cur_patrol"),		#probably not necessary and may introduce issues?
-						(remove_party, ":cur_patrol"),
+						
+						#SW - commented out this line since it seemed to cause random crashes in 0.9.0.1...
+						#(remove_party, ":cur_patrol"),
+						
 					#remove parties with zero members as a safety? (switched to a separate trigger every hours)
 					# (else_try),
 						# (le, ":num_troops", 0),
@@ -2914,6 +2975,7 @@ simple_triggers = [
 					# (try_end),
 				(try_end),
 			(try_end),
+			
 	]),
 
 (1, [

@@ -77,14 +77,30 @@ dialogs = [
 	[anyone|plyr, "pre_member_chat", [], "I have a question for you.", "member_chat", []],	
 	[anyone|plyr, "pre_member_chat", [], "Good. Keep your eyes open.", "close_window", []],	
   
-  #SW - added player dialog for weapon switch functionality
+  #SW - added player dialog for weapon switch functionality (added auto_proceed so the dialog does not appear on screen? nope, doesn't work)
+
   [anyone,"start", 
+  #[anyone|auto_proceed,"start", 
+  #[anyone|auto_proceed,"event_triggered", 
 	[
 		(eq, "$show_switch_weapon_dialog", 1),
 		(assign, "$show_switch_weapon_dialog", 0),
+		#(talk_info_show, 0),
+		#(eq, 0, 1),
 	], 
 	"^{s10}^{s11}^{s12}^{s13}^^^Note: displaying this dialog is necessary due to a M&B game engine limitation.","close_window",[]
+	#"^{s10}^{s11}^{s12}^{s13}^^^Note: displaying this dialog is necessary due to a M&B game engine limitation.","switch_weapon_dialog_2",[]
   ],  
+  
+  # [anyone,"switch_weapon_dialog_2", 
+  # #[anyone|auto_proceed,"switch_weapon_dialog_2", 
+	# [
+		# #(eq, "$show_switch_weapon_dialog", 1),
+		# #(assign, "$show_switch_weapon_dialog", 0),
+		# # (eq, 1, 0),
+	# ], 
+	# "^{s10}^{s11}^{s12}^{s13}^^^TEST TEST TEST TEST","close_window",[]
+  # ],  
   
   [anyone ,"start", [(store_conversation_troop, "$g_talk_troop"),
                      (store_conversation_agent, "$g_talk_agent"),

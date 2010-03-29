@@ -1778,7 +1778,7 @@ game_menus = [
 
         (troop_add_item, "trp_player","itm_leather_boots",0),
 		(troop_add_item, "trp_player","itm_tunic_green",0),
-		(troop_add_item, "trp_player","itm_lightsaber_yellow_1h",imod_chipped),
+		(troop_add_item, "trp_player","itm_lightsaber_blue_1h",imod_chipped),
 		(troop_add_item, "trp_player","itm_force_block",0),
 		#(troop_add_item, "trp_player","itm_force_push",0),		#they don't have the skill to use
 		(troop_add_item, "trp_player","itm_speeder",0),
@@ -2335,6 +2335,23 @@ game_menus = [
 			(party_set_icon, "p_main_party", "icon_tie_fighter"),
 			(party_add_members, "p_main_party", "trp_imperial_recruit", 5),
 			(call_script, "script_troop_add_gold","trp_player", 500),	
+			
+			#Fix the starting equipment
+			(troop_set_inventory_slot, "trp_player",4,-1),	#ek_head
+			(troop_set_inventory_slot, "trp_player",5,-1),	#ek_body
+			(troop_set_inventory_slot, "trp_player",6,-1),	#ek_foot
+			(troop_set_inventory_slot, "trp_player",7,-1),	#ek_gloves
+			#add items
+			(troop_add_item, "trp_player","itm_imperial_trooper_armor",0),
+			(troop_add_item, "trp_player","itm_black_boots",0),
+			(troop_add_item, "trp_player","itm_imperial_hat_black",0),
+			(troop_add_item, "trp_player","itm_laser_bolts_red_rifle",0),
+			(troop_add_item, "trp_player","itm_e11",0),
+			(troop_add_item, "trp_player","itm_protein_pack",0),
+			(troop_add_item, "trp_player","itm_carbohydrate_pack",0),
+			#equip the items
+			(troop_equip_items, "trp_player"),
+			
 			(party_relocate_near_party, "p_main_party", "p_town_16", 5),
 			#change the culture to empire
 			(call_script, "script_change_culture_empire"),
@@ -2347,6 +2364,23 @@ game_menus = [
 			(party_set_icon, "p_main_party", "icon_a_wing"),
 			(party_add_members, "p_main_party", "trp_rebel_recruit", 5),
 			(call_script, "script_troop_add_gold","trp_player", 250),
+			
+			#Fix the starting equipment
+			(troop_set_inventory_slot, "trp_player",4,-1),	#ek_head
+			(troop_set_inventory_slot, "trp_player",5,-1),	#ek_body
+			(troop_set_inventory_slot, "trp_player",6,-1),	#ek_foot
+			(troop_set_inventory_slot, "trp_player",7,-1),	#ek_gloves
+			#add items
+			(troop_add_item, "trp_player","itm_rebel_technician_armor",0),
+			(troop_add_item, "trp_player","itm_black_boots",0),
+			(troop_add_item, "trp_player","itm_rebel_technician_helmet",0),
+			(troop_add_item, "trp_player","itm_laser_bolts_green_pistol",0),
+			(troop_add_item, "trp_player","itm_dh17",0),
+			(troop_add_item, "trp_player","itm_protein_pack",0),
+			(troop_add_item, "trp_player","itm_carbohydrate_pack",0),
+			#equip the items
+			(troop_equip_items, "trp_player"),
+			
 			(party_relocate_near_party, "p_main_party", "p_town_13", 5),
 			#change the culture to rebel
 			(call_script, "script_change_culture_rebel"),			
@@ -2359,12 +2393,35 @@ game_menus = [
 			(party_set_icon, "p_main_party", "icon_hutt_patrol"),
 			(party_add_members, "p_main_party", "trp_hutt_militia", 5), 
 			(call_script, "script_troop_add_gold","trp_player", 250),
+			
+			#Fix the starting equipment
+			(troop_set_inventory_slot, "trp_player",4,-1),	#ek_head
+			(troop_set_inventory_slot, "trp_player",5,-1),	#ek_body
+			(troop_set_inventory_slot, "trp_player",6,-1),	#ek_foot
+			(troop_set_inventory_slot, "trp_player",7,-1),	#ek_gloves
+			#add items
+			(troop_add_item, "trp_player","itm_skiff_guard_armor_white",0),
+			(troop_add_item, "trp_player","itm_leather_boots",0),
+			(troop_add_item, "trp_player","itm_laser_bolts_orange_pistol",0),
+			(troop_add_item, "trp_player","itm_skiff_guard_helmet",0),
+			(troop_add_item, "trp_player","itm_dl18",0),
+			(troop_add_item, "trp_player","itm_vibro_axe_long_1h",0),
+			(troop_add_item, "trp_player","itm_protein_pack",0),
+			(troop_add_item, "trp_player","itm_carbohydrate_pack",0),
+			#equip the items
+			(troop_equip_items, "trp_player"),
+			
 			(party_relocate_near_party, "p_main_party", "p_town_14", 5),
 			#change the culture to hutt
 			(call_script, "script_change_culture_hutt"),							
 		(else_try),
 			(troop_set_slot, "trp_player", slot_troop_renown, 50),
 			(call_script, "script_troop_add_gold","trp_player", 100),
+			
+			#Fix the starting equipment
+			(troop_add_item, "trp_player","itm_protein_pack",0),
+			(troop_add_item, "trp_player","itm_carbohydrate_pack",0),
+			
 			(party_relocate_near_party, "p_main_party", "p_shipyard_trade_federation", 10),	#trade federation base
 			#change the culture to human
 			(call_script, "script_change_culture_human"),				
@@ -4013,6 +4070,13 @@ game_menus = [
        # (start_presentation, "prsnt_key_assignment"),
        # ]),    
 
+      ("shield_bash",[],"Shield Bash [ block + attack ]",
+       [
+       #(assign,"$active_key",1),
+       #(start_presentation, "prsnt_key_assignment"),
+	   (display_message, "@This key cannot be modified."),
+       ]),	   
+	   
       ("crouch",[],"Crouch [{s15}]",
        [
        (assign,"$active_key",1),
