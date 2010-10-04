@@ -1,3 +1,7 @@
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+# By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
+
 import random
 
 from header_common import *
@@ -177,9 +181,12 @@ no_scene = 0
 
 #SW - face codes
 sw_player_face = 0x000000018000000136db6db6db6db6db00000000001db6db0000000000000000		#original code from native
-#sw_player_face = 	# NEW
-sw_woman_face_1    = 0x0000000000000001249249480029249200000000001d24920000000000000000
+#sw_player_face = 	# NEW   
+sw_woman_face_1    = 0x00000001be00000336db6db6db6db6db00000000001db6db0000000000000000
+#sw_woman_face_1    = 0x0000000000000001249249480029249200000000001d24920000000000000000
 sw_woman_face_2    = 0x0000000cff00700849246e480092492400000000001e49240000000000000000
+#sw_woman_face_2    = 0x0000000cff00700849246e480092492400000000001e49240000000000000000
+sw_woman_face_3		= 0x000000018b000006361b8db6db6dbefb00000000001db6db0000000000000000
 sw_slave_dancer_face1 = 0x0000000000000001249249249249249200000000001d24920000000000000000
 sw_slave_dancer_face2 = 0x000000003f0060085b65b6b6dbb6db6d00000000001e49240000000000000000
 sw_man_face_1 = 0x0000000000000001249249249249249200000000001c924b0000000000000000
@@ -215,7 +222,8 @@ weequay_face2 = 0x0000000fff01600c492492491c92492400000000001e492300000000000000
 #clone_face2 = 0x0000000fff001000000000000000000000000000000000000000000000000000
 bothan_face1 = 0x0000000000000000000000000000000000000000000000000000000000000000
 bothan_face2 = 0x0000000fff000003000000000000000000000000000000000000000000000000
-
+sw_zabrak_face_1 = 0x000000018000119735c22e7f632a053f0000000000f5b1c70000000000000000
+sw_zabrak_face_2 = 0x000000018000415735c22e7f632a053f0000000000f5b1c70000000000000000
 
 #single face texture only
 trandoshan_face1 = 0x0000000000000000000000000000000000000000000000000000000000000000
@@ -247,7 +255,7 @@ troops = [
   #SW BSG integration
   #["player","Player","Player",tf_hero|tf_unmoveable_in_party_window|tf_inactive,no_scene,reserved,fac_player_faction,
    #to release
-   [],
+[],
    #for testing - don't put too many items or it may crash when starting a new game?
    #[itm_speeder_dagger,itm_dc15a,itm_combat_knife,itm_dc15s,itm_dagger,itm_vibro_blade1,itm_vibro_axe_long_2h,itm_grey_gloves,itm_imperial_stormtrooper_armor,itm_black_gloves,itm_mandalorian_crushgaunts,itm_black_boots,itm_leather_gloves],
    #[itm_droid_parts,itm_shadow_stormtrooper_helmet,itm_shadow_stormtrooper_armor,itm_shadow_stormtrooper_boots,itm_darkgrey_gloves,itm_black_gloves,itm_clone_trooper_boots,itm_clone_trooper_head,itm_combat_knife,itm_clone_trooper_helmet_blue,itm_clone_trooper_helmet_green,itm_clone_trooper_helmet_white,itm_clone_trooper_helmet_red,itm_clone_trooper_armor_blue,itm_clone_trooper_armor_green,itm_clone_trooper_armor_white,itm_clone_trooper_armor_red,itm_dc15a,itm_dc15s],
@@ -503,8 +511,11 @@ troops = [
 	no_scene,reserved,fac_commoners,
 	[   itm_mandalorian_soldier_helmet,
 		itm_mandalorian_soldier_helmet,
+		itm_mandalorian_soldier_helmet2,
+		itm_mandalorian_soldier_helmet2,
+		itm_mandalorian_soldier_helmet3,
 		itm_mandalorian_soldier_armor,
-		itm_mandalorian_soldier_armor,
+		itm_mandalorian_soldier_armor2,
 		itm_mandalorian_soldier_boots,
 		itm_mandalorian_soldier_boots,
 		itm_grey_gloves,
@@ -529,7 +540,7 @@ troops = [
 	[   itm_mandalorian_commando_helmet,
 		itm_mandalorian_commando_helmet,
 		itm_mandalorian_commando_armor,
-		itm_mandalorian_commando_armor,
+		itm_mandalorian_commando_armor2,
 		itm_mandalorian_commando_boots,
 		itm_mandalorian_commando_boots,
 		itm_grey_gloves,
@@ -559,7 +570,8 @@ troops = [
 	[   itm_mandalorian_sniper_helmet,
 		itm_mandalorian_sniper_helmet,
 		itm_mandalorian_sniper_armor,
-		itm_mandalorian_sniper_armor,
+		itm_mandalorian_sniper_armor2,
+		itm_mandalorian_sniper_armor3,
 		itm_mandalorian_sniper_boots,
 		itm_mandalorian_sniper_boots,
 		itm_grey_gloves,
@@ -588,7 +600,8 @@ troops = [
 		itm_mandalorian_neocrusader_helmet,
 		#itm_mandalorian_neocrusader_helmet,	#so they are less common
 		itm_mandalorian_crusader_armor,
-		itm_mandalorian_crusader_armor,
+		#itm_mandalorian_crusader_armor2,
+		#itm_mandalorian_crusader_armor3,
 		itm_mandalorian_crusader_boots,
 		itm_mandalorian_crusader_boots,
 		itm_grey_gloves,
@@ -616,9 +629,9 @@ troops = [
 	tf_guarantee_all_armor|tf_guarantee_ranged,
 	no_scene,reserved,fac_commoners,
 	[   itm_mandalorian_deadeye_helmet,
-		itm_mandalorian_deadeye_helmet,
 		itm_mandalorian_deadeye_armor,
-		itm_mandalorian_deadeye_armor,
+		itm_mandalorian_deadeye_armor2,
+		itm_mandalorian_deadeye_armor3,
 		itm_mandalorian_deadeye_boots,
 		itm_mandalorian_deadeye_boots,
 		itm_grey_gloves,
@@ -746,7 +759,7 @@ troops = [
 		itm_twilek_dagger,
 		itm_twilek_dagger_throwing,
 		itm_twilek_dagger_throwing
-		# itm_westar,
+		# itm_dl44a,
 		# itm_q2,
 		# itm_ddc_defender,
 		# itm_laser_bolts_orange,
@@ -770,7 +783,7 @@ troops = [
 		itm_twilek_dagger,
 		itm_twilek_dagger,
 		#itm_twilek_dagger_throwing,		
-		itm_westar,
+		itm_dl44a,
 		itm_q2,
 		itm_ddc_defender,				
 		itm_laser_bolts_orange_pistol,
@@ -787,7 +800,7 @@ troops = [
 	[
 		itm_twilek_dagger,
 		itm_twilek_dagger,
-		itm_westar,
+		itm_dl44a,
 		itm_ddc_defender,
 		#itm_transparent_helmet_armor,
 		itm_transparent_helmet_armor,
@@ -821,8 +834,8 @@ troops = [
 		itm_laser_bolts_orange_pistol,
 		itm_ddc_defender,
 		itm_ddc_defender,
-		itm_westar,
-		itm_westar
+		itm_dl44a,
+		itm_dl44a
 	],
 	def_attrib_1|level(10),
 	wp(100)|wp_firearm(105),
@@ -923,7 +936,7 @@ troops = [
 		itm_laser_bolts_orange_pistol,
 		itm_dl18,
 		itm_ddc_defender,
-		itm_westar
+		itm_dl44a
 	],
 	def_attrib_1|level(10),
 	wp(100)|wp_firearm(105),
@@ -1216,8 +1229,8 @@ troops = [
 		itm_laser_bolts_red_pistol,
 		itm_ddc_defender,
 		#itm_ddc_defender,
-		#itm_westar,
-		itm_westar	
+		#itm_dl44a,
+		itm_dl44a	
 	],
 	def_attrib_1|level(10),
 	wp(100)|wp_firearm(105),
@@ -1389,8 +1402,8 @@ troops = [
 		itm_laser_bolts_green_pistol,
 		itm_ddc_defender,
 		itm_ddc_defender,
-		#itm_westar,
-		itm_westar
+		#itm_dl44a,
+		itm_dl44a
 	],
 	def_attrib_1|level(10),
 	wp(100)|wp_firearm(105),
@@ -1412,8 +1425,8 @@ troops = [
 		itm_laser_bolts_green_pistol,
 		itm_ddc_defender,
 		itm_ddc_defender,
-		itm_westar,
-		itm_westar
+		itm_dl44a,
+		itm_dl44a
 	],
 	def_attrib_2|level(16),
 	wp(110)|wp_firearm(125),
@@ -1485,8 +1498,8 @@ troops = [
 		itm_laser_bolts_green_pistol,
 		itm_ddc_defender,
 		itm_ddc_defender,
-		itm_westar,
-		itm_westar
+		itm_dl44a,
+		itm_dl44a
 	],
 	def_attrib_1|level(10),
 	wp(100)|wp_firearm(105),
@@ -1508,8 +1521,8 @@ troops = [
 		itm_laser_bolts_green_pistol,
 		itm_ddc_defender,
 		itm_ddc_defender,
-		itm_westar,
-		itm_westar
+		itm_dl44a,
+		itm_dl44a
 	],
 	def_attrib_2|level(16),
 	wp(110)|wp_firearm(125),
@@ -1531,8 +1544,8 @@ troops = [
 		itm_laser_bolts_green_pistol,
 		itm_ddc_defender,
 		itm_ddc_defender,
-		itm_westar,
-		itm_westar
+		itm_dl44a,
+		itm_dl44a
 	],
 	def_attrib_2|level(16),
 	wp(110)|wp_firearm(125),
@@ -1576,8 +1589,8 @@ troops = [
 		itm_laser_bolts_green_pistol,		
 		itm_ddc_defender,
 		itm_ddc_defender,
-		itm_westar,
-		itm_westar,
+		itm_dl44a,
+		itm_dl44a,
 		itm_transparent_helmet,
 		itm_energy_shield_green_small,
 		itm_energy_shield_blue_small
@@ -1689,10 +1702,10 @@ troops = [
 #human merc upgrade paths
 
   ["farmer","Farmer","Farmers",tf_guarantee_boots|tf_guarantee_armor,no_scene,reserved,fac_commoners,
-   [itm_baton,itm_baton,itm_pipe1,itm_pipe2,itm_melee_punch,itm_melee_punch,itm_q2,itm_ddc_defender,itm_westar,itm_laser_bolts_orange_pistol,itm_laser_bolts_yellow_pistol,itm_vibro_blade1,itm_durasteel_staff,itm_quarter_staff,itm_vibro_blade2,itm_vibro_blade3,itm_club,itm_leather_cap,itm_leather_apron,itm_linen_tunic,itm_coarse_tunic,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_a,itm_leather_gloves,itm_leather_boots,itm_nomad_boots,itm_wrapping_boots],
+   [itm_baton,itm_baton,itm_pipe1,itm_pipe2,itm_melee_punch,itm_melee_punch,itm_q2,itm_ddc_defender,itm_dl44a,itm_laser_bolts_orange_pistol,itm_laser_bolts_yellow_pistol,itm_vibro_blade1,itm_durasteel_staff,itm_quarter_staff,itm_vibro_blade2,itm_vibro_blade3,itm_club,itm_leather_cap,itm_leather_apron,itm_linen_tunic,itm_coarse_tunic,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_a,itm_leather_gloves,itm_leather_boots,itm_nomad_boots,itm_wrapping_boots],
    def_attrib|level(6),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
   ["townsman","Townsman","Townsmen",tf_guarantee_boots|tf_guarantee_armor,no_scene,reserved,fac_commoners,
-   [itm_pipe1,itm_pipe2,itm_melee_punch,itm_q2,itm_ddc_defender,itm_westar,itm_laser_bolts_orange_pistol,itm_laser_bolts_yellow_pistol,itm_vibro_blade1,itm_durasteel_staff,itm_quarter_staff,itm_vibro_blade2,itm_vibro_blade3,itm_club,itm_leather_cap,itm_leather_apron,itm_linen_tunic,itm_coarse_tunic,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_a,itm_leather_gloves,itm_leather_boots,itm_nomad_boots,itm_wrapping_boots],
+   [itm_pipe1,itm_pipe2,itm_melee_punch,itm_q2,itm_ddc_defender,itm_dl44a,itm_laser_bolts_orange_pistol,itm_laser_bolts_yellow_pistol,itm_vibro_blade1,itm_durasteel_staff,itm_quarter_staff,itm_vibro_blade2,itm_vibro_blade3,itm_club,itm_leather_cap,itm_leather_apron,itm_linen_tunic,itm_coarse_tunic,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_a,itm_leather_gloves,itm_leather_boots,itm_nomad_boots,itm_wrapping_boots],
    def_attrib|level(6),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
 
   ["civilian","Civilian","Civilians",tf_guarantee_boots|tf_guarantee_armor,no_scene,reserved,fac_commoners,
@@ -1704,7 +1717,7 @@ troops = [
 		itm_melee_punch,
 		itm_q2,
 		itm_ddc_defender,
-		itm_westar,
+		itm_dl44a,
 		itm_laser_bolts_orange_pistol,
 		itm_laser_bolts_yellow_pistol,
 		itm_jacket_closed_a,
@@ -1733,8 +1746,8 @@ troops = [
 		itm_ddc_defender,
 		itm_dl44a,
 		itm_dl44a,
-		itm_westar,
-		itm_westar,
+		itm_dl44a,
+		itm_dl44a,
 		itm_laser_bolts_orange_pistol,
 		itm_laser_bolts_yellow_pistol,
 		itm_vest_closed_b,
@@ -1758,8 +1771,8 @@ troops = [
 		itm_ddc_defender,
 		itm_dl44a,
 		itm_dl44a,
-		itm_westar,
-		itm_westar,
+		itm_dl44a,
+		itm_dl44a,
 		itm_energy_shield_yellow_small,
 		itm_energy_shield_yellow_small,
 		itm_laser_bolts_orange_pistol,
@@ -1858,8 +1871,8 @@ troops = [
 		itm_ddc_defender,
 		itm_dl44a,
 		itm_dl44a,
-		itm_westar,
-		itm_westar,
+		itm_dl44a,
+		itm_dl44a,
 		itm_laser_bolts_orange_pistol,
 		itm_laser_bolts_yellow_pistol,
 		itm_vest_closed_b,
@@ -1888,8 +1901,8 @@ troops = [
 		itm_ddc_defender,
 		itm_dl44a,
 		itm_dl44a,
-		itm_westar,
-		itm_westar,
+		itm_dl44a,
+		itm_dl44a,
 		itm_laser_bolts_orange_pistol,
 		itm_laser_bolts_yellow_pistol,
 		itm_jacket_closed_a,
@@ -1925,8 +1938,8 @@ troops = [
 		itm_ddc_defender,
 		itm_dl44a,
 		itm_dl44a,
-		itm_westar,
-		itm_westar,
+		itm_dl44a,
+		itm_dl44a,
 		itm_laser_bolts_orange_pistol,
 		itm_laser_bolts_yellow_pistol,
 		itm_jacket_closed_a,
@@ -1974,8 +1987,8 @@ troops = [
 		itm_ddc_defender,
 		itm_dl44a,
 		itm_dl44a,
-		itm_westar,
-		itm_westar,
+		itm_dl44a,
+		itm_dl44a,
 		itm_laser_bolts_orange_pistol,
 		itm_laser_bolts_yellow_pistol,
 		itm_jacket_closed_a,
@@ -2148,7 +2161,7 @@ troops = [
 
 #oom_series droid
 ["oom_series_security","OOM Security Battle Droid","OOM Security Battle Droids",
-	tf_droid|tf_guarantee_all_armor|tf_guarantee_ranged,
+	tf_battledroid|tf_guarantee_all_armor|tf_guarantee_ranged,
 	no_scene,0,fac_commoners,
 	[
 		itm_droid_parts,
@@ -2169,7 +2182,7 @@ troops = [
 ],
 
 ["oom_series_marine","OOM Marine Battle Droid","OOM Marine Battle Droids",
-	tf_droid|tf_guarantee_all_armor|tf_guarantee_ranged,
+	tf_battledroid|tf_guarantee_all_armor|tf_guarantee_ranged,
 	no_scene,0,fac_commoners,
 	[
 		itm_droid_parts,
@@ -2190,7 +2203,7 @@ troops = [
 ],
 
 ["oom_series_pilot","OOM Pilot Battle Droid","OOM Pilot Battle Droids",
-	tf_droid|tf_guarantee_all_armor|tf_guarantee_ranged|tf_guarantee_horse,
+	tf_battledroid|tf_guarantee_all_armor|tf_guarantee_ranged|tf_guarantee_horse,
 	no_scene,0,fac_commoners,
 	[
 		itm_droid_parts,
@@ -2213,7 +2226,7 @@ troops = [
 ],
 
 ["oom_series_command","OOM Command Battle Droid","OOM Command Battle Droid",
-	tf_droid|tf_guarantee_all_armor|tf_guarantee_ranged,
+	tf_battledroid|tf_guarantee_all_armor|tf_guarantee_ranged,
 	no_scene,0,fac_commoners,
 	[
 		itm_droid_parts,
@@ -2235,7 +2248,7 @@ troops = [
 
 # b1series droid
 ["b1series","B1-Series Battle Droid","B1-Series Battle Droids",
-	tf_droid|tf_guarantee_all_armor|tf_guarantee_ranged,
+	tf_battledroid|tf_guarantee_all_armor|tf_guarantee_ranged,
 	no_scene,0,fac_commoners,
 	[
 		itm_droid_parts,
@@ -2256,7 +2269,7 @@ troops = [
 ],
 
 ["b1series_assassin","B1-Series Droid Assassin","B1-Series Droid Assassins",
-	tf_droid|tf_guarantee_all_armor|tf_guarantee_ranged,
+	tf_battledroid|tf_guarantee_all_armor|tf_guarantee_ranged,
 	no_scene,0,fac_commoners,
 	[
 		itm_droid_parts,
@@ -2277,7 +2290,7 @@ troops = [
 ],
 
 ["bxseries_commando","BX-Series Droid Commando","BX-Series Droid Commandos",
-	tf_droid|tf_guarantee_all_armor|tf_guarantee_ranged,
+	tf_battledroid|tf_guarantee_all_armor|tf_guarantee_ranged,
 	no_scene,0,fac_commoners,
 	[
 		itm_droid_parts,
@@ -2298,27 +2311,48 @@ troops = [
 	droid_face1, droid_face2
 ],
 
-# ["b2series","B2-Series Battle Droid","B2-Series Battle Droids",
-	# tf_droid|tf_guarantee_all_armor|tf_guarantee_ranged,
-	# no_scene,0,fac_commoners,
-	# [
-		# itm_droid_parts,
-		# itm_b2series_attack,
-		# itm_transparent_droid_head,
-		# itm_transparent_droid_hands,
-		# itm_transparent_droid_feet,		
-		# itm_b2series_body,
-		# itm_b2series_blaster,
-		# #itm_b2series_blaster,
-		# itm_laser_bolts_red_pistol,
-		# itm_laser_bolts_red_pistol
-	# ],
-	# str_12|int_8|cha_3|level(25),
-	# wp(140)|wp_firearm(160),
-	# knows_ironflesh_8|knows_tactics_6|knows_leadership_6|knows_trainer_4,
-	# droid_face1, droid_face2
-# ],
-
+ ["b2series","B2-Series Battle Droid","B2-Series Battle Droids",
+	 tf_battledroid|tf_guarantee_all_armor|tf_guarantee_ranged,
+	 no_scene,0,fac_commoners,
+	 [
+		 itm_droid_parts,
+		 itm_b2series_attack,
+		 itm_transparent_droid_head,
+		 itm_transparent_droid_hands,
+		 itm_transparent_droid_feet,		
+		 itm_b2series_body,
+		 itm_b2series_blaster,
+		 itm_b2series_blaster,
+		 itm_laser_bolts_red_pistol,
+		 itm_laser_bolts_red_pistol
+	 ],
+	 str_12|int_8|cha_3|level(25),
+	 wp(140)|wp_firearm(160),
+	 knows_ironflesh_8|knows_tactics_6|knows_leadership_6|knows_trainer_4,
+	 droid_face1, droid_face2
+ ],
+ 
+ ["b2series_enhanced","C-B3 Cortosis Battle Droid","C-B3 Cortosis Battle Droids",
+	 tf_battledroid|tf_guarantee_all_armor|tf_guarantee_ranged,
+	 no_scene,0,fac_commoners,
+	 [
+		 itm_droid_parts,
+		 itm_b2series_attack,
+		 itm_transparent_droid_head,
+		 itm_transparent_droid_hands,
+		 itm_transparent_droid_feet,		
+		 itm_b2series_body_enhanced,
+		 itm_b2series_blaster,
+		 itm_b2series_blaster,
+		 itm_laser_bolts_red_pistol,
+		 itm_laser_bolts_red_pistol
+	 ],
+	 str_14|int_10|cha_4|level(27),
+	 wp(150)|wp_firearm(180),
+	 knows_ironflesh_10|knows_tactics_8|knows_leadership_10|knows_trainer_6,
+	 droid_face1, droid_face2
+ ],
+ 
 #clone troopers
 ["clone_trooper_1","Clone Trooper","Clone Troopers",
 	tf_guarantee_all_armor|tf_guarantee_ranged,
@@ -2589,17 +2623,34 @@ troops = [
 		itm_rancor_body_a,
 		itm_rancor_body_b,
 		itm_rancor_body_b,		
+		itm_transparent_head,
+		itm_transparent_hands,
+		itm_transparent_feet,
+		itm_rancor_attack
+	],
+	str_16|int_3|cha_3|level(35),
+	wp(175),
+	knows_ironflesh_8|knows_power_strike_8|knows_weapon_master_8|knows_shield_2|knows_tactics_2|knows_leadership_2,
+	sw_man_face_1, sw_man_face_2
+],
+
+["rancor_mutant","Mutant Baby Rancor","Mutant Baby Rancors",
+	tf_gamorrean|tf_guarantee_all_armor,		# used tf_gamorrean sounds  since we have a limit of races in module_skins.py
+	no_scene,0,fac_commoners,
+	[	
 		itm_rancor_body_c,
 		itm_transparent_head,
 		itm_transparent_hands,
 		itm_transparent_feet,
 		itm_rancor_attack
 	],
-	str_16|agi_8|int_3|cha_3|level(35),
-	wp(175),
-	knows_ironflesh_8|knows_power_strike_8|knows_weapon_master_8|knows_shield_2|knows_tactics_2|knows_leadership_2,
+	str_29|int_4|cha_5|level(40),
+	wp(200),
+	knows_ironflesh_10|knows_power_strike_10|knows_weapon_master_10|knows_shield_4|knows_tactics_4|knows_leadership_4,
 	sw_man_face_1, sw_man_face_2
 ],
+
+
 
 ######################################################################
 # droids primarily used as town_walkers or prisoners
@@ -2751,7 +2802,7 @@ troops = [
 ["human_deserter","Deserter","Deserters",
 	tf_guarantee_boots|tf_guarantee_all_armor,
 	0,0,fac_neutral,
-	[itm_outfit_grey,itm_black_boots,itm_black_gloves,itm_westar,itm_laser_bolts_yellow_pistol,itm_combat_knife],
+	[itm_outfit_grey,itm_black_boots,itm_black_gloves,itm_dl44a,itm_laser_bolts_yellow_pistol,itm_combat_knife],
 	def_attrib_2|level(16),wp(80),starwars_skills_2,sw_man_face_1, sw_man_face_2
 ],
 #wookiee
@@ -2825,8 +2876,8 @@ troops = [
 		itm_stun_beam_pistol,
 		itm_q2_stun,
 		itm_q2_stun,
-		itm_westar_stun,
-		itm_westar_stun
+		itm_dl44a_stun,
+		itm_dl44a
 	],
 	def_attrib_force_1|level(6),
 	wp(60)|wp_archery(70),
@@ -2852,8 +2903,8 @@ troops = [
 		itm_laser_bolts_red_pistol,
 		itm_q2,
 		itm_q2,
-		itm_westar,
-		itm_westar
+		itm_dl44a,
+		itm_dl44a
 	],
 	def_attrib_1|level(6),
 	wp(60)|wp_firearm(70),
@@ -2900,8 +2951,8 @@ troops = [
 		itm_laser_bolts_red_pistol,
 		itm_q2,
 		itm_q2,
-		itm_westar,
-		itm_westar
+		itm_dl44a,
+		itm_dl44a
 	],
 	def_attrib_force_1|level(10),
 	wp(100)|wp_archery(120),
@@ -3267,7 +3318,8 @@ troops = [
 		itm_dlt20a,
 		itm_e11_hip,
 		itm_e11_hip,
-		itm_e11
+		itm_e11,
+		itm_heavy_repeater
 	],
 	def_attrib_3|level(24),
 	wp(135)|wp_crossbow(150),
@@ -3545,7 +3597,7 @@ troops = [
 ["imperial_deserter","Imperial Deserter","Imperial Deserters",
 	tf_guarantee_ranged|tf_guarantee_boots|tf_guarantee_armor,
 	0,0,fac_deserters,
-	[itm_imperial_stormtrooper_armor,itm_imperial_scout_trooper_armor,itm_black_boots,itm_laser_bolts_red_pistol,itm_laser_bolts_red_pistol,itm_q2,itm_westar,itm_melee_punch],
+	[itm_imperial_stormtrooper_armor,itm_imperial_scout_trooper_armor,itm_black_boots,itm_laser_bolts_red_pistol,itm_laser_bolts_red_pistol,itm_q2,itm_dl44a,itm_melee_punch],
 	def_attrib_2|level(16),wp(80),starwars_skills_2,sw_imperial_face_1, sw_imperial_face_2
 ],
 
@@ -3565,8 +3617,8 @@ troops = [
 		itm_laser_bolts_green_pistol,
 		itm_q2,
 		itm_q2,
-		itm_westar,
-		itm_westar
+		itm_dl44a,
+		itm_dl44a
 	],
 	def_attrib_1|level(6),
 	wp(60)|wp_firearm(70),
@@ -3588,8 +3640,8 @@ troops = [
 		itm_laser_bolts_green_pistol,
 		itm_q2,
 		itm_q2,
-		itm_westar,
-		itm_westar
+		itm_dl44a,
+		itm_dl44a
 	],
 	def_attrib_force_1|level(10),
 	wp(100)|wp_archery(120),
@@ -3836,8 +3888,8 @@ troops = [
 		itm_melee_punch,
 		itm_laser_bolts_green_pistol,
 		itm_laser_bolts_green_pistol,
-		itm_westar,
-		itm_westar
+		itm_dl44a,
+		itm_dl44a
 	],
     def_attrib_1|level(10),
 	wp(80)|wp_firearm(90),
@@ -4135,7 +4187,7 @@ troops = [
 def_attrib_4|agi_21|level(30),wp(150),starwars_skills_mounted_4,sw_rebel_face_1, sw_rebel_face_2],
 ["rebel_deserter","Rebel Deserter","Rebel Deserters",
      tf_guarantee_ranged|tf_guarantee_boots|tf_guarantee_armor,0,0,fac_deserters,
-[itm_republic_trooper_armor,itm_republic_commando_armor,itm_republic_pilot_armor,itm_black_boots,itm_laser_bolts_green_pistol,itm_laser_bolts_green_pistol,itm_q2,itm_westar,itm_melee_punch],
+[itm_republic_trooper_armor,itm_republic_commando_armor,itm_republic_pilot_armor,itm_black_boots,itm_laser_bolts_green_pistol,itm_laser_bolts_green_pistol,itm_q2,itm_dl44a,itm_melee_punch],
 def_attrib_2|level(16),wp(80),starwars_skills_2,sw_rebel_face_1, sw_rebel_face_2],	
 
 #================================================================================================================================
@@ -4514,7 +4566,7 @@ def_attrib_2|level(16),wp(80),starwars_skills_2,sw_rebel_face_1, sw_rebel_face_2
 def_attrib_4|agi_21|level(30),wp(150),starwars_skills_mounted_4,sw_hutt_face_1, sw_hutt_face_2],
 ["hutt_deserter","Hutt Deserter","Hutt Deserters",
      tf_guarantee_ranged|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves,0,0,fac_deserters,
-[itm_klatooinian_armor,itm_weequay_head_helmet_a,itm_weequay_head_helmet_b,itm_klatooinian_head_helmet_a,itm_leather_gloves,itm_black_gloves,itm_transparent_helmet,itm_mining_helmet,itm_pipe_helmet,itm_fang_helmet,itm_beak_helmet,itm_gas_mask,itm_skiff_guard_helmet,itm_skiff_guard_armor_brown,itm_skiff_guard_armor_white,itm_skiff_guard_armor_grey,itm_tunic_yellow,itm_padded_armor_white,itm_armor_blue,itm_armor_brown,itm_armor_red,itm_armor_white,itm_hutt_palace_guard_armor,itm_hide_boots,itm_laser_bolts_orange_pistol,itm_laser_bolts_orange_pistol,itm_q2,itm_westar,itm_vibro_blade1,itm_vibro_blade2],
+[itm_klatooinian_armor,itm_weequay_head_helmet_a,itm_weequay_head_helmet_b,itm_klatooinian_head_helmet_a,itm_leather_gloves,itm_black_gloves,itm_transparent_helmet,itm_mining_helmet,itm_pipe_helmet,itm_fang_helmet,itm_beak_helmet,itm_gas_mask,itm_skiff_guard_helmet,itm_skiff_guard_armor_brown,itm_skiff_guard_armor_white,itm_skiff_guard_armor_grey,itm_tunic_yellow,itm_padded_armor_white,itm_armor_blue,itm_armor_brown,itm_armor_red,itm_armor_white,itm_hutt_palace_guard_armor,itm_hide_boots,itm_laser_bolts_orange_pistol,itm_laser_bolts_orange_pistol,itm_q2,itm_dl44a,itm_vibro_blade1,itm_vibro_blade2],
 def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 
 #================================================================================================================================   
@@ -4635,7 +4687,7 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 		itm_dl18,
 		itm_dl18,
 		itm_q2,
-		itm_westar,
+		itm_dl44a,
 		itm_melee_punch,
 		itm_melee_punch,
 		itm_vibro_knuckler,
@@ -4695,7 +4747,7 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 		itm_dl18,
 		itm_dl18,		
 		itm_q2,
-		itm_westar,
+		itm_dl44a,
 		itm_melee_punch,
 		itm_melee_punch,
 		itm_vibro_knuckler,
@@ -4746,7 +4798,7 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 		itm_dl18,
 		itm_dl18,
 		itm_ddc_defender,
-		itm_westar,
+		itm_dl44a,
 		itm_melee_punch,
 		itm_pipe1,
 		itm_pipe1
@@ -4799,7 +4851,7 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 		itm_dl44a,		
 		itm_dl18,
 		itm_dl18,		
-		itm_westar,
+		itm_dl44a,
 		itm_melee_punch,		
 		itm_combat_knife,
 		itm_vibro_knuckler,
@@ -4997,8 +5049,8 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 		itm_laser_bolts_yellow_pistol,
 		itm_laser_bolts_yellow_pistol,
 		#itm_ammo_belt_pistol,
-		itm_westar,
-		itm_westar,
+		itm_dl44a,
+		itm_dl44a,
 		itm_q2,
 		itm_dl18,
 		itm_dl18,
@@ -5099,8 +5151,8 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 		itm_laser_bolts_yellow_pistol,
 		itm_laser_bolts_yellow_pistol,
 		#itm_ammo_belt_pistol,
-		itm_westar,
-		itm_westar,
+		itm_dl44a,
+		itm_dl44a,
 		itm_q2,
 		itm_dl18,
 		itm_dl18,
@@ -5114,7 +5166,7 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 	def_attrib|level(12),
 	wp(110),
 	starwars_skills_outlaws_2,
-	sw_woman_face_1, sw_woman_face_2
+	sw_woman_face_3, sw_woman_face_2
 ],
 #SW - TUSKEN RAIDERS
 ["tusken_1","Tusken Warrior","Tusken Warriors",
@@ -5211,23 +5263,23 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 #["fighter_woman","Camp Defender","Camp Defenders",tf_female|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_ranged|tf_mounted,0,0,fac_commoners,[itm_laser_bolts_red,itm_q2,itm_dh17,itm_dl44a,itm_energy_shield_green_small,itm_energy_shield_blue_small,itm_durasteel_shield_small,itm_vibro_blade1,itm_vibro_blade3,itm_leather_jerkin,itm_leather_vest, itm_wrapping_boots],def_attrib|level(16),wp(100),starwars_skills_2,sw_woman_face_1,sw_woman_face_2],
 #["sword_sister","Sword Sister","Sword Sisters",tf_female|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_shield|tf_guarantee_ranged|tf_mounted,0,0,fac_commoners,[itm_laser_bolts_red,itm_vibro_blade1,itm_vibro_blade3,itm_durasteel_shield_small,itm_energy_shield_green_small,itm_energy_shield_blue_small,itm_dl44a,itm_westar,itm_ee3,itm_leather_jerkin,itm_leather_vest,itm_leather_boots,itm_leather_gloves],def_attrib|level(22),wp(140),starwars_skills_2,sw_woman_face_1,sw_woman_face_2],
 #["refugee","Refugee","Refugees",tf_female|tf_guarantee_armor,0,0,fac_commoners,[itm_knife,itm_pitch_fork,itm_sickle,itm_hatchet,itm_club,itm_dress,itm_robe,itm_woolen_dress, itm_headcloth, itm_woolen_hood, itm_wrapping_boots],def_attrib|level(1),wp(45),starwars_skills_1,sw_woman_face_1,sw_woman_face_2],
-["peasant_woman","Peasant Woman","Peasant Women",tf_female|tf_guarantee_armor,0,0,fac_commoners,[itm_q2,itm_westar,itm_laser_bolts_orange_pistol,itm_laser_bolts_yellow_pistol,itm_knife,itm_hatchet,itm_club,itm_dress,itm_quarter_staff,itm_vibro_blade2,itm_vibro_blade3,itm_woolen_dress, itm_headcloth, itm_woolen_hood, itm_wrapping_boots],def_attrib|level(1),wp(40),starwars_skills_1,sw_woman_face_1,sw_woman_face_2],
+["peasant_woman","Peasant Woman","Peasant Women",tf_female|tf_guarantee_armor,0,0,fac_commoners,[itm_q2,itm_dl44a,itm_laser_bolts_orange_pistol,itm_laser_bolts_yellow_pistol,itm_knife,itm_hatchet,itm_club,itm_dress,itm_quarter_staff,itm_vibro_blade2,itm_vibro_blade3,itm_woolen_dress, itm_headcloth, itm_woolen_hood, itm_wrapping_boots],def_attrib|level(1),wp(40),starwars_skills_1,sw_woman_face_1,sw_woman_face_2],
 
 # renamed caravan master
-["caravan_master","Freighter Captain","Freighter Captains",tf_mounted|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_ranged,0,0,fac_commoners,[itm_dl44a,itm_westar,itm_laser_bolts_green_pistol,itm_laser_bolts_red_pistol,itm_laser_bolts_yellow_pistol,itm_vest_open_b,itm_leather_boots],def_attrib|level(9),wp(100),starwars_skills_3,sw_man_face_1, sw_man_face_2],
+["caravan_master","Freighter Captain","Freighter Captains",tf_mounted|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_ranged,0,0,fac_commoners,[itm_dl44a,itm_dl44a,itm_laser_bolts_green_pistol,itm_laser_bolts_red_pistol,itm_laser_bolts_yellow_pistol,itm_vest_open_b,itm_leather_boots],def_attrib|level(9),wp(100),starwars_skills_3,sw_man_face_1, sw_man_face_2],
 ["kidnapped_girl","Kidnapped Girl","Kidnapped Girls",tf_hero|tf_female|tf_randomize_face|tf_unmoveable_in_party_window,0,reserved,fac_commoners,[itm_dress_blue,itm_leather_boots],def_attrib|level(2),wp(50),starwars_skills_1,sw_woman_face_1, sw_woman_face_2],
 #This troop is the troop marked as soldiers_end
-["town_walker_1","Townsman","Townsmen",tf_guarantee_boots|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_q2,itm_dl44a,itm_civilian_cloak,itm_civilian_cloak_hood,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
+["town_walker_1","Townsman","Townsmen",tf_guarantee_boots|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_q2,itm_dl44a,itm_civilian_cloak,itm_civilian_cloak_hood,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
 ["town_walker_2","Townswoman","Townswomen",tf_female|tf_guarantee_boots|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_female_jacket_a,itm_female_jacket_b,itm_female_jacket_c,itm_female_jacket_a,itm_female_jacket_b,itm_female_jacket_c,itm_female_outfit_femconblack,itm_female_outfit_femconbrowngreen,itm_female_outfit_femcongrey,itm_female_outfit_femconorange,itm_female_outfit_femconwhite,itm_female_outfit_femconwhitebrown,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_female_dress_a,itm_female_dress_a,itm_female_dress_b,itm_female_dress_b,itm_transparent_helmet,itm_transparent_helmet,itm_black_boots,itm_leather_boots], def_attrib|level(2),wp(40),knows_common,sw_woman_face_1, sw_woman_face_2],
-["town_walker_twilek","Twilek","Twileks",tf_twilek|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,twilek_face1,twilek_face2],
+["town_walker_twilek","Twilek","Twileks",tf_twilek|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,twilek_face1,twilek_face2],
 ["town_walker_twilek_female","Twilek Female","Twilek Females",tf_twilek_female|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [], def_attrib|level(4),wp(60),knows_common,twilek_female_face1,twilek_female_face2],
 ["town_walker_twilek_female_slave","Twilek Slave Dancer","Twilek Slave Dancers",tf_twilek_female|tf_guarantee_helmet|tf_randomize_face,0,0,fac_commoners, [itm_transparent_helmet,itm_slave_neck_chain], def_attrib|level(4),wp(60),knows_common,twilek_female_face1,twilek_female_face2],
 ["town_walker_slave_dancer","Slave Dancer","Slave Dancers",tf_female|tf_guarantee_boots|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_transparent_helmet,itm_slave_neck_chain,itm_female_leather_a,itm_female_leather_b,itm_female_leather_c,itm_female_leather_d,itm_black_boots], def_attrib|level(2),wp(40),knows_common,sw_slave_dancer_face1, sw_slave_dancer_face2],
-["town_walker_chiss","Chiss","Chiss",tf_chiss|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,chiss_face1,chiss_face2],
+["town_walker_chiss","Chiss","Chiss",tf_chiss|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,chiss_face1,chiss_face2],
 ["town_walker_chiss_female","Chiss Female","Chiss Female",tf_female|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_female_outfit_femconblack,itm_female_outfit_femconbrowngreen,itm_female_outfit_femcongrey,itm_female_outfit_femconorange,itm_female_outfit_femconwhite,itm_female_outfit_femconwhitebrown,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_white_cloak,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_black_boots,itm_leather_boots], def_attrib|level(4),wp(60),knows_common,chiss_female_face1,chiss_female_face2],
 ["town_walker_mandalorian","Mandalorian","Mandalorians",tf_guarantee_all_armor|tf_guarantee_ranged|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves,itm_laser_bolts_orange_rifle,itm_mandalorian_heavy_blaster,itm_mandalorian_sniper_helmet,itm_mandalorian_sniper_armor,itm_mandalorian_sniper_boots], def_attrib|level(20),wp(180),knows_common,mandalorian_face1,mandalorian_face2],
-["town_walker_trandoshan","Trandoshan","Trandoshans",tf_trandoshan|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_trandoshan_flight_suit,itm_trandoshan_flight_suit,itm_trandoshan_armor,itm_trandoshan_armor,itm_trandoshan_blade,itm_trandoshan_supressor,itm_trandoshan_stun_gun,itm_trandoshan_acp_array_gun,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b], def_attrib|level(4),wp(60),knows_common,trandoshan_face1,trandoshan_face2],
-["town_walker_rodian","Rodian","Rodians",tf_rodian|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_rodian_ventilator,itm_rodian_ventilator_black,itm_rodian_ventilator_red,itm_transparent_helmet,itm_transparent_helmet,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,rodian_face1,rodian_face2],
+["town_walker_trandoshan","Trandoshan","Trandoshans",tf_trandoshan|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_trandoshan_flight_suit,itm_trandoshan_flight_suit,itm_trandoshan_armor,itm_trandoshan_armor,itm_trandoshan_blade,itm_trandoshan_supressor,itm_trandoshan_stun_gun,itm_trandoshan_acp_array_gun,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b], def_attrib|level(4),wp(60),knows_common,trandoshan_face1,trandoshan_face2],
+["town_walker_rodian","Rodian","Rodians",tf_rodian|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_rodian_ventilator,itm_rodian_ventilator_black,itm_rodian_ventilator_red,itm_transparent_helmet,itm_transparent_helmet,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,rodian_face1,rodian_face2],
 ["town_walker_r2series","R2-Series Droid","R2-Series Droids",tf_droid|tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_r2series_blue,itm_r2series_green,itm_r2series_orange,itm_r2series_purple,itm_transparent_head,itm_transparent_hands,itm_transparent_feet,itm_droid_weapon_no_attack], droid_attrib_2,wp(60),droid_skills_2,droid_face1,droid_face2],
 ["town_walker_lin_droid","LIN Droid","LIN Droids",tf_droid|tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_lin_droid_armor,itm_lin_droid_armor,itm_lin_droid_armor_w_arm,itm_transparent_head,itm_transparent_hands,itm_transparent_feet,itm_droid_weapon_no_attack], droid_attrib_2,wp(30),droid_skills_2,droid_face1,droid_face2],
 ["town_walker_mse6","MSE-6 Droid","MSE-6 Droids",tf_droid|tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_mse6_armor,itm_transparent_head,itm_transparent_hands,itm_transparent_feet,itm_droid_weapon_no_attack], droid_attrib_1,wp(60),droid_skills_1,droid_face1,droid_face2],
@@ -5236,18 +5288,20 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["town_walker_power_droid","Power Droid","Power Droids",tf_droid|tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_power_droid_tan,itm_power_droid_tan,itm_power_droid_grey,itm_power_droid_grey,itm_power_droid_snow,itm_transparent_head,itm_transparent_hands,itm_transparent_feet,itm_droid_weapon_no_attack], droid_attrib_1,wp(60),droid_skills_1,droid_face1,droid_face2],
 ["town_walker_fxseries_droid","FX-Series Medical Droid","FX-Series Medical Droids",tf_droid|tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_fxseries_droid_armor,itm_transparent_head,itm_transparent_hands,itm_transparent_feet,itm_droid_weapon_no_attack], droid_attrib_1,wp(60),droid_skills_1,droid_face1,droid_face2],
 ["town_walker_hkseries","HK-Series Droid","HK-Series Droids",tf_droid|tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_hk_head,itm_hk_body,itm_hk_hands,itm_hk_feet,itm_hk_attack,itm_a280,itm_laser_bolts_orange_rifle], def_attrib_3|level(24),wp(150),starwars_skills_3,droid_face1,droid_face2],
-["town_walker_sullustan","Sullustan","Sullustans",tf_sullustan|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sullustan_face1,sullustan_face2],
-["town_walker_bothan","Bothan","Bothans",tf_bothan|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,bothan_face1,bothan_face2],
-["town_walker_weequay","Weequay","Weequays",tf_weequay|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_weequay_head_helmet_a,itm_weequay_head_helmet_b,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,weequay_face1,weequay_face2],
-["town_walker_klatooinian","Klatooinian","Klatooinians",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_klatooinian_head_helmet_a,itm_leather_gloves,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common, sw_man_face_1, sw_man_face_2],
-["town_walker_nikto","Nikto","Niktos",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_nikto_head_helmet_a,itm_nikto_head_helmet_b,itm_nikto_head_helmet_c,itm_leather_gloves,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
+["town_walker_sullustan","Sullustan","Sullustans",tf_sullustan|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sullustan_face1,sullustan_face2],
+["town_walker_bothan","Bothan","Bothans",tf_bothan|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,bothan_face1,bothan_face2],
+["town_walker_weequay","Weequay","Weequays",tf_weequay|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_weequay_head_helmet_a,itm_weequay_head_helmet_b,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,weequay_face1,weequay_face2],
+["town_walker_klatooinian","Klatooinian","Klatooinians",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_klatooinian_head_helmet_a,itm_leather_gloves,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common, sw_man_face_1, sw_man_face_2],
+["town_walker_nikto","Nikto","Niktos",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_nikto_head_helmet_a,itm_nikto_head_helmet_b,itm_nikto_head_helmet_c,itm_leather_gloves,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
 ["town_walker_jawa","Jawa","Jawas",tf_jawa|tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_jawa_hood,itm_jawa_robe,itm_jawa_boots,itm_leather_gloves,itm_ion_beam_pistol,itm_ion_pistol], def_attrib|level(4),wp(60),knows_common,jawa_face1,jawa_face2],
 #["town_walker_tusken","Tusken","Tuskens",tf_tusken|tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_tusken_helmet,itm_tusken_armor,itm_wrapping_boots,itm_leather_gloves,itm_laser_bolts_orange,itm_tusken_rifle,itm_tusken_gaffi_staff], def_attrib|level(4),wp(60),knows_common,tusken_face1,tusken_face2],
-["town_walker_moncal","Mon Calamarian","Mon Calamarians",tf_moncal|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,moncal_face1,moncal_face2],
+["town_walker_moncal","Mon Calamarian","Mon Calamarians",tf_moncal|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,moncal_face1,moncal_face2],
 ["town_walker_geonosian","Geonosian","geonosians",tf_geonosian|tf_randomize_face,0,0,fac_commoners, [itm_geonosian_sonic_pistol,itm_geonosian_sonic_rifle,itm_geonosian_static_pike,itm_geonosian_armor], def_attrib|level(4),wp(60),knows_common,geonosian_face1,geonosian_face2],
 ["town_walker_wookiee","Wookiee","Wookiees",tf_wookiee|tf_randomize_face,0,0,fac_commoners, [itm_wookiee_armor1,itm_wookiee_armor2,itm_ryyk_blade,itm_melee_punch,itm_wookiee_bowcaster,itm_laser_bolts_green_rifle], def_attrib|level(4),wp(60),knows_common,wookiee_face1,wookiee_face2],
 ["town_walker_wookiee_female","Wookiee Female","Wookiee Females",tf_wookiee|tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_wookiee_female_head,itm_wookiee_female_body,itm_wookiee_female_hands,itm_wookiee_female_feet,itm_melee_punch], def_attrib|level(4),wp(60),knows_common,wookiee_face1,wookiee_face2],
 ["town_walker_gamorrean","Gamorrean","Gamorreans",tf_gamorrean|tf_randomize_face,0,0,fac_commoners, [itm_vibro_axe_medium_1h,itm_throwing_axes], def_attrib|level(4),wp(60),knows_common,gamorrean_face1,gamorrean_face2],
+["town_walker_zabrak","Zabrak","Zabraks",tf_male|tf_guarantee_boots|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_q2,itm_dl44a,itm_civilian_cloak,itm_civilian_cloak_hood,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_zabrak_face_1, sw_zabrak_face_2],
+
 #new faction specific town walkers
 ["town_walker_empire_1","Imperial Navy Trooper","Imperial Navy Trooper",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_imperial_navy_trooper_armor,itm_imperial_navy_trooper_helmet,itm_black_boots,itm_black_gloves_long,itm_laser_bolts_red_pistol,itm_ddc_defender], def_attrib|level(4),wp(60),knows_common,sw_imperial_face_1,sw_imperial_face_2],
 ["town_walker_empire_2","Imperial Army Trooper","Imperial Army Trooper",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_imperial_trooper_armor,itm_imperial_trooper_helmet,itm_black_boots,itm_black_gloves_long,itm_laser_bolts_red_pistol,itm_ddc_defender], def_attrib|level(4),wp(60),knows_common,sw_imperial_face_1,sw_imperial_face_2],
@@ -5271,54 +5325,54 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["town_walker_hutt_3","Gamorrean Guard","Gamorrean Guards",tf_gamorrean|tf_randomize_face,0,0,fac_commoners, [itm_vibro_axe_medium_1h,itm_throwing_axes], def_attrib|level(4),wp(60),knows_common,gamorrean_face1,gamorrean_face2],
 ["town_walker_hutt_4","Slave Dancer","Slave Dancers",tf_female|tf_guarantee_boots|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_female_dancer_outfit_a,itm_female_dancer_outfit_a,itm_female_dancer_outfit_a,itm_female_dancer_outfit_a_cloak,itm_female_dancer_boots], def_attrib|level(2),wp(40),knows_common,sw_slave_dancer_face1, sw_slave_dancer_face2],
 #SW - added cantina_walkers - cantina_walker_1 marked as town_walker_end
-["cantina_walker_1","Townsman","Townsmen",tf_guarantee_boots|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_q2,itm_dl44a,itm_civilian_cloak,itm_civilian_cloak_hood,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
-["cantina_walker_2","Townswoman","Townswomen",tf_female|tf_guarantee_boots|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_female_jacket_a,itm_female_jacket_b,itm_female_jacket_c,itm_female_jacket_a,itm_female_jacket_b,itm_female_jacket_c,itm_female_outfit_femconblack,itm_female_outfit_femconbrowngreen,itm_female_outfit_femcongrey,itm_female_outfit_femconorange,itm_female_outfit_femconwhite,itm_female_outfit_femconwhitebrown,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_white_cloak,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_black_boots,itm_leather_boots], def_attrib|level(2),wp(40),knows_common,sw_woman_face_1, sw_woman_face_2],
+["cantina_walker_1","Townsman","Townsmen",tf_guarantee_boots|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_q2,itm_dl44a,itm_civilian_cloak,itm_civilian_cloak_hood,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
+["cantina_walker_2","Townswoman","Townswomen",tf_female|tf_guarantee_boots|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_female_jacket_a,itm_female_jacket_b,itm_female_jacket_c,itm_female_jacket_a,itm_female_jacket_b,itm_female_jacket_c,itm_female_outfit_femconblack,itm_female_outfit_femconbrowngreen,itm_female_outfit_femcongrey,itm_female_outfit_femconorange,itm_female_outfit_femconwhite,itm_female_outfit_femconwhitebrown,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_white_cloak,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_black_boots,itm_leather_boots], def_attrib|level(2),wp(40),knows_common,sw_woman_face_1, sw_woman_face_3],
 #["cantina_walker_jawa","Jawa","Jawas",tf_jawa|tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_jawa_hood,itm_jawa_robe,itm_jawa_boots,itm_leather_gloves,itm_ion_beam,itm_ion_pistol,itm_ion_blaster], def_attrib|level(4),wp(60),knows_common,jawa_face1,jawa_face2],
-["cantina_walker_rodian","Rodian","Rodians",tf_rodian|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_rodian_ventilator,itm_rodian_ventilator_black,itm_rodian_ventilator_red,itm_transparent_helmet,itm_transparent_helmet,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,rodian_face1,rodian_face2],
-["cantina_walker_moncal","Mon Calamarian","Mon Calamarians",tf_moncal|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,moncal_face1,moncal_face2],
-["cantina_walker_trandoshan","Trandoshan","Trandoshans",tf_trandoshan|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_trandoshan_flight_suit,itm_trandoshan_flight_suit,itm_trandoshan_armor,itm_trandoshan_armor,itm_trandoshan_blade,itm_trandoshan_supressor,itm_trandoshan_stun_gun,itm_trandoshan_acp_array_gun,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b], def_attrib|level(4),wp(60),knows_common,trandoshan_face1,trandoshan_face2],
+["cantina_walker_rodian","Rodian","Rodians",tf_rodian|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_rodian_ventilator,itm_rodian_ventilator_black,itm_rodian_ventilator_red,itm_transparent_helmet,itm_transparent_helmet,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,rodian_face1,rodian_face2],
+["cantina_walker_moncal","Mon Calamarian","Mon Calamarians",tf_moncal|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,moncal_face1,moncal_face2],
+["cantina_walker_trandoshan","Trandoshan","Trandoshans",tf_trandoshan|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_trandoshan_flight_suit,itm_trandoshan_flight_suit,itm_trandoshan_armor,itm_trandoshan_armor,itm_trandoshan_blade,itm_trandoshan_supressor,itm_trandoshan_stun_gun,itm_trandoshan_acp_array_gun,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b], def_attrib|level(4),wp(60),knows_common,trandoshan_face1,trandoshan_face2],
 ["cantina_walker_mandalorian","Mandalorian","Mandalorians",tf_guarantee_all_armor|tf_guarantee_ranged|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves,itm_laser_bolts_orange_rifle,itm_mandalorian_heavy_blaster,itm_mandalorian_sniper_helmet,itm_mandalorian_sniper_armor,itm_mandalorian_sniper_boots], def_attrib|level(4),wp(60),knows_common,mandalorian_face1,mandalorian_face2],
-["cantina_walker_sullustan","Sullustan","Sullustans",tf_sullustan|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sullustan_face1,sullustan_face2],
-["cantina_walker_bothan","Bothan","Bothans",tf_bothan|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,bothan_face1,bothan_face2],
-["cantina_walker_chiss","Chiss","Chiss",tf_chiss|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,chiss_face1,chiss_face2],
+["cantina_walker_sullustan","Sullustan","Sullustans",tf_sullustan|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sullustan_face1,sullustan_face2],
+["cantina_walker_bothan","Bothan","Bothans",tf_bothan|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,bothan_face1,bothan_face2],
+["cantina_walker_chiss","Chiss","Chiss",tf_chiss|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,chiss_face1,chiss_face2],
 ["cantina_walker_chiss_female","Chiss Female","Chiss Female",tf_female|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_female_outfit_femconblack,itm_female_outfit_femconbrowngreen,itm_female_outfit_femcongrey,itm_female_outfit_femconorange,itm_female_outfit_femconwhite,itm_female_outfit_femconwhitebrown,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_white_cloak,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_black_boots,itm_leather_boots], def_attrib|level(4),wp(60),knows_common,chiss_female_face1,chiss_female_face2],
-["cantina_walker_weequay","Weequay","Weequays",tf_weequay|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_weequay_head_helmet_a,itm_weequay_head_helmet_b,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,weequay_face1,weequay_face2],
-["cantina_walker_klatooinian","Klatooinian","Klatooinians",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_klatooinian_head_helmet_a,itm_leather_gloves,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common, sw_man_face_1, sw_man_face_2],
-["cantina_walker_nikto","Nikto","Niktos",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_nikto_head_helmet_a,itm_nikto_head_helmet_b,itm_nikto_head_helmet_c,itm_leather_gloves,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
-["cantina_walker_twilek","Twilek","Twileks",tf_twilek|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,twilek_face1,twilek_face2],
+["cantina_walker_weequay","Weequay","Weequays",tf_weequay|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_weequay_head_helmet_a,itm_weequay_head_helmet_b,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,weequay_face1,weequay_face2],
+["cantina_walker_klatooinian","Klatooinian","Klatooinians",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_klatooinian_head_helmet_a,itm_leather_gloves,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common, sw_man_face_1, sw_man_face_2],
+["cantina_walker_nikto","Nikto","Niktos",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_nikto_head_helmet_a,itm_nikto_head_helmet_b,itm_nikto_head_helmet_c,itm_leather_gloves,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
+["cantina_walker_twilek","Twilek","Twileks",tf_twilek|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,twilek_face1,twilek_face2],
 ["cantina_walker_twilek_female","Twilek Female","Twilek Females",tf_twilek_female|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [], def_attrib|level(4),wp(60),knows_common,twilek_female_face1,twilek_female_face2],
 ["cantina_walker_geonosian","Geonosian","geonosians",tf_geonosian|tf_randomize_face,0,0,fac_commoners, [itm_geonosian_sonic_pistol,itm_geonosian_sonic_rifle,itm_geonosian_static_pike,itm_geonosian_armor], def_attrib|level(4),wp(60),knows_common,geonosian_face1,geonosian_face2],
 ["cantina_walker_wookiee","Wookiee","Wookiees",tf_wookiee|tf_randomize_face,0,0,fac_commoners, [itm_wookiee_armor1,itm_wookiee_armor2,itm_ryyk_blade,itm_wookiee_bowcaster], def_attrib|level(4),wp(60),knows_common,wookiee_face1,wookiee_face2],
 ["cantina_walker_wookiee_female","Wookiee Female","Wookiee Females",tf_wookiee|tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_wookiee_female_head,itm_wookiee_female_body,itm_wookiee_female_hands,itm_wookiee_female_feet], def_attrib|level(4),wp(60),knows_common,wookiee_face1,wookiee_face2],
 ["cantina_walker_gamorrean","Gamorrean","Gamorreans",tf_gamorrean|tf_randomize_face,0,0,fac_commoners, [itm_vibro_axe_medium_1h], def_attrib|level(4),wp(60),knows_common,gamorrean_face1,gamorrean_face2],
-["cantina_drinker_1","Townsman","Townsmen",tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_ubese_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_q2,itm_dl44a,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
-["cantina_drinker_rodian","Rodian","Rodians",tf_rodian|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_rodian_ventilator,itm_rodian_ventilator_black,itm_rodian_ventilator_red,itm_transparent_helmet,itm_transparent_helmet,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,rodian_face1,rodian_face2],
-["cantina_drinker_moncal","Mon Calamarian","Mon Calamarians",tf_moncal|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,moncal_face1,moncal_face2],
-["cantina_drinker_trandoshan","Trandoshan","Trandoshans",tf_trandoshan|tf_guarantee_armor|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_trandoshan_flight_suit,itm_trandoshan_flight_suit,itm_trandoshan_armor,itm_trandoshan_armor,itm_trandoshan_blade,itm_trandoshan_supressor,itm_trandoshan_stun_gun,itm_trandoshan_acp_array_gun,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b], def_attrib|level(4),wp(60),knows_common,trandoshan_face1,trandoshan_face2],
-["cantina_drinker_sullustan","Sullustan","Sullustans",tf_sullustan|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sullustan_face1,sullustan_face2],
-["cantina_drinker_bothan","Bothan","Bothans",tf_bothan|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,bothan_face1,bothan_face2],
-["cantina_drinker_chiss","Chiss","Chiss",tf_chiss|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,chiss_face1,chiss_face2],
-["cantina_drinker_weequay","Weequay","Weequays",tf_weequay|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_weequay_head_helmet_a,itm_weequay_head_helmet_b,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,weequay_face1,weequay_face2],
-["cantina_drinker_klatooinian","Klatooinian","Klatooinians",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_klatooinian_head_helmet_a,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common, sw_man_face_1, sw_man_face_2],
-["cantina_drinker_nikto","Nikto","Niktos",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_nikto_head_helmet_a,itm_nikto_head_helmet_b,itm_nikto_head_helmet_c,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
-["cantina_drinker_twilek","Twilek","Twileks",tf_twilek|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_ubese_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,twilek_face1,twilek_face2],
+["cantina_drinker_1","Townsman","Townsmen",tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_ubese_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_q2,itm_dl44a,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
+["cantina_drinker_rodian","Rodian","Rodians",tf_rodian|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_rodian_ventilator,itm_rodian_ventilator_black,itm_rodian_ventilator_red,itm_transparent_helmet,itm_transparent_helmet,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,rodian_face1,rodian_face2],
+["cantina_drinker_moncal","Mon Calamarian","Mon Calamarians",tf_moncal|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,moncal_face1,moncal_face2],
+["cantina_drinker_trandoshan","Trandoshan","Trandoshans",tf_trandoshan|tf_guarantee_armor|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_trandoshan_flight_suit,itm_trandoshan_flight_suit,itm_trandoshan_armor,itm_trandoshan_armor,itm_trandoshan_blade,itm_trandoshan_supressor,itm_trandoshan_stun_gun,itm_trandoshan_acp_array_gun,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b], def_attrib|level(4),wp(60),knows_common,trandoshan_face1,trandoshan_face2],
+["cantina_drinker_sullustan","Sullustan","Sullustans",tf_sullustan|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sullustan_face1,sullustan_face2],
+["cantina_drinker_bothan","Bothan","Bothans",tf_bothan|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,bothan_face1,bothan_face2],
+["cantina_drinker_chiss","Chiss","Chiss",tf_chiss|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,chiss_face1,chiss_face2],
+["cantina_drinker_weequay","Weequay","Weequays",tf_weequay|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_weequay_head_helmet_a,itm_weequay_head_helmet_b,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,weequay_face1,weequay_face2],
+["cantina_drinker_klatooinian","Klatooinian","Klatooinians",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_klatooinian_head_helmet_a,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common, sw_man_face_1, sw_man_face_2],
+["cantina_drinker_nikto","Nikto","Niktos",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_nikto_head_helmet_a,itm_nikto_head_helmet_b,itm_nikto_head_helmet_c,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
+["cantina_drinker_twilek","Twilek","Twileks",tf_twilek|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_gloves|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves_with_bottle,itm_ubese_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,twilek_face1,twilek_face2],
 #SW - renamed to colonists - village_walker_1 marked as cantina_walker_end
-["village_walker_1","Colonist","Colonists",tf_guarantee_boots|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_q2,itm_dl44a,itm_civilian_cloak,itm_civilian_cloak_hood,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
+["village_walker_1","Colonist","Colonists",tf_guarantee_boots|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_q2,itm_dl44a,itm_civilian_cloak,itm_civilian_cloak_hood,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
 ["village_walker_2","Colonist","Colonists",tf_female|tf_guarantee_boots|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_female_jacket_a,itm_female_jacket_b,itm_female_jacket_c,itm_female_jacket_a,itm_female_jacket_b,itm_female_jacket_c,itm_female_outfit_femconblack,itm_female_outfit_femconbrowngreen,itm_female_outfit_femcongrey,itm_female_outfit_femconorange,itm_female_outfit_femconwhite,itm_female_outfit_femconwhitebrown,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_female_dress_a,itm_female_dress_a,itm_female_dress_b,itm_female_dress_b,itm_transparent_helmet,itm_transparent_helmet,itm_black_boots,itm_leather_boots], def_attrib|level(2),wp(40),knows_common,sw_woman_face_1, sw_woman_face_2],
 #["village_walker_jawa","Jawa","Jawas",tf_jawa|tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_jawa_hood,itm_jawa_robe,itm_jawa_boots,itm_leather_gloves,itm_ion_beam,itm_ion_pistol,itm_ion_blaster], def_attrib|level(4),wp(60),knows_common,jawa_face1,jawa_face2],
 #["village_walker_tusken","Tusken","Tuskens",tf_tusken|tf_guarantee_all_armor,0,0,fac_commoners, [itm_tusken_helmet,itm_tusken_armor,itm_wrapping_boots,itm_leather_gloves,itm_laser_bolts_orange,itm_tusken_rifle,itm_tusken_gaffi_staff], def_attrib|level(4),wp(60),knows_common,tusken_face1,tusken_face2],
-["village_walker_rodian","Rodian","Rodians",tf_rodian|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_rodian_ventilator,itm_rodian_ventilator_black,itm_rodian_ventilator_red,itm_transparent_helmet,itm_transparent_helmet,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,rodian_face1,rodian_face2],
-["village_walker_moncal","Mon Calamarian","Mon Calamarians",tf_moncal|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,moncal_face1,moncal_face2],
-["village_walker_trandoshan","Trandoshan","Trandoshans",tf_trandoshan|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_trandoshan_flight_suit,itm_trandoshan_flight_suit,itm_trandoshan_armor,itm_trandoshan_armor,itm_trandoshan_blade,itm_trandoshan_supressor,itm_trandoshan_stun_gun,itm_trandoshan_acp_array_gun,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b], def_attrib|level(4),wp(60),knows_common,trandoshan_face1,trandoshan_face2],
+["village_walker_rodian","Rodian","Rodians",tf_rodian|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_rodian_ventilator,itm_rodian_ventilator_black,itm_rodian_ventilator_red,itm_transparent_helmet,itm_transparent_helmet,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,rodian_face1,rodian_face2],
+["village_walker_moncal","Mon Calamarian","Mon Calamarians",tf_moncal|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,moncal_face1,moncal_face2],
+["village_walker_trandoshan","Trandoshan","Trandoshans",tf_trandoshan|tf_guarantee_armor|tf_randomize_face,0,0,fac_commoners, [itm_trandoshan_flight_suit,itm_trandoshan_flight_suit,itm_trandoshan_armor,itm_trandoshan_armor,itm_trandoshan_blade,itm_trandoshan_supressor,itm_trandoshan_stun_gun,itm_trandoshan_acp_array_gun,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b], def_attrib|level(4),wp(60),knows_common,trandoshan_face1,trandoshan_face2],
 ["village_walker_mandalorian","Mandalorian","Mandalorians",tf_guarantee_all_armor|tf_guarantee_ranged|tf_randomize_face,0,0,fac_commoners, [itm_grey_gloves,itm_laser_bolts_orange_rifle,itm_mandalorian_heavy_blaster,itm_mandalorian_sniper_helmet,itm_mandalorian_sniper_armor,itm_mandalorian_sniper_boots], def_attrib|level(4),wp(60),knows_common,mandalorian_face1,mandalorian_face2],
-["village_walker_sullustan","Sullustan","Sullustans",tf_sullustan|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sullustan_face1,sullustan_face2],
-["village_walker_bothan","Bothan","Bothans",tf_bothan|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,bothan_face1,bothan_face2],
-["village_walker_chiss","Chiss","Chiss",tf_chiss|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,chiss_face1,chiss_face2],
+["village_walker_sullustan","Sullustan","Sullustans",tf_sullustan|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sullustan_face1,sullustan_face2],
+["village_walker_bothan","Bothan","Bothans",tf_bothan|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,bothan_face1,bothan_face2],
+["village_walker_chiss","Chiss","Chiss",tf_chiss|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,chiss_face1,chiss_face2],
 ["village_walker_chiss_female","Chiss Female","Chiss Female",tf_female|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_female_outfit_femconblack,itm_female_outfit_femconbrowngreen,itm_female_outfit_femcongrey,itm_female_outfit_femconorange,itm_female_outfit_femconwhite,itm_female_outfit_femconwhitebrown,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_white_cloak,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_black_boots,itm_leather_boots], def_attrib|level(4),wp(60),knows_common,chiss_female_face1,chiss_female_face2],
-["village_walker_weequay","Weequay","Weequays",tf_weequay|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_weequay_head_helmet_a,itm_weequay_head_helmet_b,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,weequay_face1,weequay_face2],
-["village_walker_klatooinian","Klatooinian","Klatooinians",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_klatooinian_head_helmet_a,itm_leather_gloves,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common, sw_man_face_1, sw_man_face_2],
-["village_walker_nikto","Nikto","Niktos",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_nikto_head_helmet_a,itm_nikto_head_helmet_b,itm_nikto_head_helmet_c,itm_leather_gloves,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
-["village_walker_twilek","Twilek","Twileks",tf_twilek|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_westar,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,twilek_face1,twilek_face2],
+["village_walker_weequay","Weequay","Weequays",tf_weequay|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_weequay_head_helmet_a,itm_weequay_head_helmet_b,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,weequay_face1,weequay_face2],
+["village_walker_klatooinian","Klatooinian","Klatooinians",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_klatooinian_head_helmet_a,itm_leather_gloves,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common, sw_man_face_1, sw_man_face_2],
+["village_walker_nikto","Nikto","Niktos",tf_guarantee_all_armor|tf_randomize_face,0,0,fac_commoners, [itm_nikto_head_helmet_a,itm_nikto_head_helmet_b,itm_nikto_head_helmet_c,itm_leather_gloves,itm_guard_armor,itm_guard_armor_red,itm_vibro_axe_long_2h,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
+["village_walker_twilek","Twilek","Twileks",tf_twilek|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_ubese_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_laser_bolts_orange_pistol,itm_dl44a,itm_ddc_defender,itm_q2,itm_dl44a,itm_jacket_closed_a,itm_jacket_closed_b,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_c,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|level(4),wp(60),knows_common,twilek_face1,twilek_face2],
 ["village_walker_twilek_female","Twilek Female","Twilek Females",tf_twilek_female|tf_guarantee_armor|tf_guarantee_boots|tf_randomize_face,0,0,fac_commoners, [itm_female_outfit_femconblack,itm_female_outfit_femconbrowngreen,itm_female_outfit_femcongrey,itm_female_outfit_femconorange,itm_female_outfit_femconwhite,itm_female_outfit_femconwhitebrown,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress_yellow,itm_dress_red,itm_dress_green,itm_dress_blue,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_dress,itm_woolen_dress,itm_peasant_dress,itm_blue_dress,itm_white_cloak,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_black_boots,itm_leather_boots], def_attrib|level(4),wp(60),knows_common,twilek_female_face1,twilek_female_face2],
 ["village_walker_twilek_female_slave","Twilek Slave","Twilek Slaves",tf_twilek_female|tf_guarantee_helmet|tf_randomize_face,0,0,fac_commoners, [itm_slave_neck_chain], def_attrib|level(4),wp(60),knows_common,twilek_female_face1,twilek_female_face2],
 ["village_walker_geonosian","Geonosian","geonosians",tf_geonosian|tf_randomize_face,0,0,fac_commoners, [itm_geonosian_sonic_pistol,itm_geonosian_sonic_rifle,itm_geonosian_static_pike,itm_geonosian_armor], def_attrib|level(4),wp(60),knows_common,geonosian_face1,geonosian_face2],
@@ -5411,7 +5465,7 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["tavern_bookseller_7","Clone Wars Era Merchant","Clone Era Merchants",tf_hero|tf_is_merchant|tf_randomize_face, 0, reserved, fac_commoners,[itm_clone_trooper_head,itm_clone_trooper_armor_mand,itm_clone_trooper_boots,itm_clone_trooper_gloves_red],def_attrib|level(5),wp(20),knows_common|knows_inventory_management_10,sw_man_face_1, sw_man_face_2],
 ["tavern_bookseller_8","Clone Wars Era Merchant","Clone Era Merchants",tf_hero|tf_is_merchant|tf_randomize_face, 0, reserved, fac_commoners,[itm_clone_trooper_head_scar,itm_clone_trooper_armor_mand,itm_clone_trooper_boots,itm_clone_trooper_gloves_red],def_attrib|level(5),wp(20),knows_common|knows_inventory_management_10,sw_man_face_1, sw_man_face_2],
 ["tavern_bookseller_9", "Illegal Weapons Merchant","Illegal Weapons Merchants",tf_hero|tf_is_merchant|tf_randomize_face, 0, reserved, fac_commoners,[itm_scavenger_armor,itm_black_boots],def_attrib|level(5),wp(20),knows_common|knows_inventory_management_10,sw_man_face_1, sw_man_face_2],
-["tavern_bookseller_10","Illegal Weapons Merchant","Illegal Weapons Merchants",tf_hero|tf_female|tf_is_merchant|tf_randomize_face, 0, reserved, fac_commoners,[itm_female_jacket_c,itm_black_boots],def_attrib|level(5),wp(20),knows_common|knows_inventory_management_10,sw_woman_face_1, sw_woman_face_2],
+["tavern_bookseller_10","Illegal Weapons Merchant","Illegal Weapons Merchants",tf_hero|tf_female|tf_is_merchant|tf_randomize_face, 0, reserved, fac_commoners,[itm_female_jacket_c,itm_black_boots],def_attrib|level(5),wp(20),knows_common|knows_inventory_management_10,sw_woman_face_3, sw_woman_face_2],
 #["tavern_bookseller_11","Droid Parts Merchant","Droid Parts Merchants",tf_hero|tf_droid|tf_is_merchant|tf_randomize_face, 0, reserved, fac_commoners,[],def_attrib|level(5),wp(20),knows_common|knows_inventory_management_10,droid_face1, droid_face2],
 #["tavern_bookseller_12","Droid Parts Merchant","Droid Parts Merchants",tf_hero|tf_droid|tf_is_merchant|tf_randomize_face, 0, reserved, fac_commoners,[],def_attrib|level(5),wp(20),knows_common|knows_inventory_management_10,droid_face1, droid_face2],
 ["tavern_bookseller_11","Droid Parts Merchant","Droid Parts Merchants",tf_hero|tf_is_merchant|tf_randomize_face, 0, reserved, fac_commoners,[itm_outfit_grey,itm_black_boots],def_attrib|level(5),wp(20),knows_common|knows_inventory_management_10,sw_man_face_1, sw_man_face_2],
@@ -5438,13 +5492,13 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 #SW - Baheshtur
 ["npc5","Trec Quizan","Trec Quizan",tf_weequay|tf_hero|tf_randomize_face|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_shirt,itm_leather_boots,itm_vibro_blade3], str_12|agi_10|int_4|cha_5|level(3),wp(50),knows_ironflesh_3|knows_power_strike_1|knows_athletics_3|knows_trade_1|knows_trainer_1|knows_inventory_management_1|knows_first_aid_1|knows_shield_1, weequay_face1, weequay_face2],
 #SW - Firentis
-["npc6","Gaven Iscandar","Gaven Iscandar",tf_hero|tf_randomize_face|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_jacket_closed_b,itm_leather_boots,itm_laser_bolts_yellow_pistol,itm_westar,itm_vibro_blade3], str_11|agi_9|int_6|cha_9|level(4),wp(70),knows_ironflesh_1|knows_power_strike_1|knows_athletics_1|knows_looting_1|knows_riding_2|knows_horse_archery_1|knows_trade_2|knows_inventory_management_1|knows_weapon_master_3, sw_man_face_1,sw_man_face_2],
+["npc6","Gaven Iscandar","Gaven Iscandar",tf_hero|tf_randomize_face|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_jacket_closed_b,itm_leather_boots,itm_laser_bolts_yellow_pistol,itm_dl44a,itm_vibro_blade3], str_11|agi_9|int_6|cha_9|level(4),wp(70),knows_ironflesh_1|knows_power_strike_1|knows_athletics_1|knows_looting_1|knows_riding_2|knows_horse_archery_1|knows_trade_2|knows_inventory_management_1|knows_weapon_master_3, sw_man_face_1,sw_man_face_2],
 #SW - Deshavi (female)
 ["npc7","Jade Codi","Jade Codi",tf_female|tf_hero|tf_randomize_face|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_dress_yellow,itm_laser_bolts_yellow_pistol,itm_q2,itm_vibro_blade3], str_5|agi_5|cha_13|int_10|level(2),wp(30),knows_athletics_1|knows_riding_1|knows_leadership_3|knows_weapon_master_1|knows_trade_4|knows_tactics_1, sw_woman_face_1,sw_woman_face_2],
 #SW - Matheld (female)
 ["npc8","Dossok Snorkh","Dossok Snorkh",tf_trandoshan|tf_hero|tf_randomize_face|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_jacket_closed_a,itm_leather_boots,itm_laser_bolts_yellow_pistol], str_5|agi_11|cha_10|int_4|level(2),wp(110),knows_ironflesh_2|knows_weapon_master_5|knows_spotting_2|knows_pathfinding_3|knows_athletics_4|knows_riding_3|knows_horse_archery_3, trandoshan_face1, trandoshan_face2],
 #SW - Alayen
-["npc9","Arvis Sunwright","Arvis Sunwright",tf_chiss|tf_hero|tf_randomize_face|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_shirt,itm_leather_boots,itm_laser_bolts_yellow_pistol,itm_westar,itm_vibro_blade3], str_10|agi_12|int_8|cha_6|level(3),wp(60),knows_ironflesh_1|knows_weapon_master_2|knows_athletics_3|knows_riding_4|knows_horse_archery_2|knows_first_aid_1|knows_trade_2|knows_tactics_1|knows_leadership_2, chiss_face1, chiss_face2],
+["npc9","Arvis Sunwright","Arvis Sunwright",tf_chiss|tf_hero|tf_randomize_face|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_shirt,itm_leather_boots,itm_laser_bolts_yellow_pistol,itm_dl44a,itm_vibro_blade3], str_10|agi_12|int_8|cha_6|level(3),wp(60),knows_ironflesh_1|knows_weapon_master_2|knows_athletics_3|knows_riding_4|knows_horse_archery_2|knows_first_aid_1|knows_trade_2|knows_tactics_1|knows_leadership_2, chiss_face1, chiss_face2],
 #SW - Bunduk
 ["npc10","Nerthak Beviin","Nerthak Beviin",tf_hero|tf_randomize_face|tf_unmoveable_in_party_window, 0, reserved,  fac_commoners,[itm_mandalorian_tunic,itm_leather_boots,itm_laser_bolts_yellow_rifle,itm_e11,itm_vibro_blade3], str_13|agi_10|int_8|cha_7|level(5),wp(110),knows_weapon_master_4|knows_engineer_2|knows_trade_1|knows_ironflesh_2|knows_power_strike_2|knows_tracking_1|knows_trainer_2|knows_pathfinding_1|knows_riding_2|knows_horse_archery_1|knows_leadership_3|knows_tactics_3, sw_man_face_1,sw_man_face_2],
 #SW - Katrin (female)
@@ -5468,7 +5522,7 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 
 #governers olgrel rasevas                                                                        Horse          Bodywear                Footwear_in                     Footwear_out                    Armor                       Weapon                  Shield                  Headwaer
 ["kingdom_1_lord",  "Emperor Palpatine",  "Kingdom 1 Lord",  tf_hero, 0,reserved,  fac_kingdom_1,[itm_sith_hood,itm_sith_marauder_robe,itm_black_boots,itm_lightsaber_red,itm_force_protect,itm_force_power_ds_4,itm_force_lightning_ammo],lord_attrib,wp(300)|wp_archery(300),starwars_knight_skills_5|knows_power_draw_10, 0x0000000000012000249249249249249200000000001d24530000000000000000],
-["kingdom_2_lord",  "Mon Mothma",  "Kingdom 2 Lord",  tf_female|tf_hero, 0,reserved,fac_kingdom_2,[itm_transparent_helmet_armor,itm_blue_dress,itm_woolen_hose,itm_laser_bolts_green_rifle,itm_a295,itm_vibro_blade1,itm_hero_shield],lord_attrib,wp(300),starwars_knight_skills_5, 0x0000000ceb00500436db49480049b6db00000000001db6db0000000000000000],
+["kingdom_2_lord",  "Mon Mothma",  "Kingdom 2 Lord",  tf_female|tf_hero, 0,reserved,fac_kingdom_2,[itm_transparent_helmet_armor,itm_woolen_hose,itm_laser_bolts_green_rifle,itm_a295,itm_vibro_blade1,itm_hero_shield,itm_princess_leia_outfit],lord_attrib,wp(300),starwars_knight_skills_5, 0x0000000ceb00500436db49480049b6db00000000001db6db0000000000000000],
 ["kingdom_3_lord",  "Jabba the Hutt",  "Kingdom 3 Lord",  tf_hutt|tf_hero|tf_randomize_face, 0,reserved,  fac_kingdom_3,[itm_jabba_speeder,itm_transparent_head,itm_transparent_hands,itm_jabba_armor,itm_transparent_feet,itm_jabba_attack],  lord_attrib,wp(300),starwars_knight_skills_5, hutt_face1, hutt_face2],
   
 #SW - commented out kingdom 4 & 5 lords
@@ -5486,7 +5540,7 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 #SW - Galactic Empire Knights
 # don't adjust skills much because it may lead to game in-balance?
 #knight skill 5 - added tf_randomize_face to most
-["knight_1_1", "Darth Vader", "knight_1_1", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_1, [itm_speeder_fc20,itm_darth_vader_helmet,itm_darth_vader_helmet,itm_darth_vader_armor,itm_darth_vader_armor,itm_black_boots,itm_black_gloves,itm_darth_vader_lightsaber,itm_darth_vader_lightsaber,itm_force_protect,itm_force_power_ds_4,itm_force_lightning_ammo,itm_force_throw_lightsaber_red],knight_attrib_5,wp(220)|wp_archery(220),starwars_knight_skills_5|knows_power_draw_9, sw_imperial_face_1, sw_imperial_face_2],
+["knight_1_1", "Darth Vader", "knight_1_1", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_1, [itm_darth_vader_helmet,itm_darth_vader_helmet,itm_darth_vader_armor,itm_darth_vader_armor,itm_darth_vader_feet,itm_darth_vader_lightsaber,itm_darth_vader_lightsaber,itm_force_protect,itm_force_power_ds_4,itm_force_lightning_ammo,itm_force_throw_lightsaber_red],knight_attrib_5,wp(220)|wp_archery(220),starwars_knight_skills_5|knows_power_draw_9, sw_imperial_face_1, sw_imperial_face_2],
 ["knight_1_2", "Grand Moff Tarkin", "knight_1_2", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_1, [itm_tarkin_head,itm_imperial_uniform_green,itm_black_boots,itm_ee3,itm_laser_bolts_red_rifle,itm_hero_shield,itm_vibro_blade4], knight_attrib_5,wp(220),starwars_knight_skills_5, sw_imperial_face_1, sw_imperial_face_2],
 ["knight_1_3", "General Maximilian Veers", "knight_1_3", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_1, [itm_imperial_uniform_black,itm_imperial_hat_black,itm_black_boots,itm_ee3,itm_laser_bolts_red_rifle,itm_hero_shield,itm_vibro_blade4],knight_attrib_5,wp(220),starwars_knight_skills_5, sw_imperial_face_1, sw_imperial_face_2],
 ["knight_1_4", "Grand General Malcor Brashin", "knight_1_4", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_1, [itm_imperial_uniform_black,itm_imperial_hat_black,itm_black_boots,itm_ee3,itm_laser_bolts_red_rifle,itm_energy_shield_red_large,itm_vibro_blade4], knight_attrib_5,wp(220),starwars_knight_skills_5, sw_imperial_face_1, sw_imperial_face_2],
@@ -5535,6 +5589,11 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["knight_1_43", "Officer Kely Tarrak", "knight_1_3", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_1, [itm_officer_uniform_white,itm_officer_hat_white,itm_black_boots,itm_ee3,itm_laser_bolts_red_rifle,itm_energy_shield_red_small,itm_vibro_blade4],knight_attrib_1,wp(140),starwars_knight_skills_1, sw_imperial_face_1, sw_imperial_face_2],   
 ["knight_1_44", "Officer Reric Kutlo", "knight_1_4", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_1, [itm_officer_uniform_white,itm_officer_hat_white,itm_black_boots,itm_ee3,itm_laser_bolts_red_rifle,itm_energy_shield_red_small,itm_vibro_blade4],knight_attrib_1,wp(140),starwars_knight_skills_1, sw_imperial_face_1, sw_imperial_face_2],   
 ["knight_1_45", "Officer Milis Quallo", "knight_1_5", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_1, [itm_officer_uniform_white,itm_officer_hat_white,itm_black_boots,itm_ee3,itm_laser_bolts_red_rifle,itm_energy_shield_red_small,itm_vibro_blade4],knight_attrib_1,wp(140),starwars_knight_skills_1, sw_imperial_face_1, sw_imperial_face_2],   
+
+## SWY 0.9.0.3 Added Taris Commander, an old sith
+["knight_taris","Joruus C'baoth","knight_2_1",tf_hero,0,reserved,fac_kingdom_1,[itm_transparent_helmet_armor,itm_force_power_ls_4,itm_sith_master_robe_unique,itm_leather_boots,itm_joruus_lightsaber,itm_force_protect,itm_force_power_ds_4,itm_force_lightning_ammo,itm_force_throw_lightsaber_red],knight_attrib_5,wp(220)|wp_archery(220),starwars_knight_skills_5|knows_power_draw_9,0x0000000fff0073882f1c6c3bde0db6db00000000001dbaf80000000000000000],
+
+
 # SW - switched 10 knights to be hutt cartel
 # ["knight_1_46", "Officer Hasati Neldine", "knight_1_6", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_1, [itm_officer_uniform_white,itm_officer_hat_white,itm_black_boots,itm_ee3,itm_laser_bolts_red,itm_energy_shield_yellow_small,itm_vibro_blade4],knight_attrib_1,wp(120),starwars_knight_skills_1, sw_imperial_face_1, sw_imperial_face_2],   
 # ["knight_1_47", "Officer Elmi Nelma", "knight_1_7", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_1, [itm_officer_uniform_white,itm_officer_hat_white,itm_black_boots,itm_ee3,itm_laser_bolts_red,itm_energy_shield_yellow_small,itm_vibro_blade4],knight_attrib_1,wp(120),starwars_knight_skills_1, sw_imperial_face_1, sw_imperial_face_2],   
@@ -5551,13 +5610,13 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 #SW - Rebel Alliance Knights
 # don't adjust skills much because it may lead to game in-balance?
 #knight skill 5
-["knight_2_1","Obi-Wan Kenobi","knight_2_1",tf_hero,0,reserved,fac_kingdom_2,[itm_transparent_helmet_armor,itm_force_protect,itm_force_throw_lightsaber_blue,itm_force_power_ls_4,itm_force_push_ammo,itm_jedi_master_robe,itm_leather_boots,itm_obi_wan_lightsaber,itm_obi_wan_lightsaber],knight_attrib_5,wp(220)|wp_archery(220),starwars_knight_skills_5|knows_power_draw_9,0x0000000fc00040c536db6db6d26db6db00000000001db6db0000000000000000],
-["knight_2_2","Luke Skywalker","knight_2_2",tf_hero,0,reserved,fac_kingdom_2,[itm_speeder_rebel,itm_transparent_helmet_armor,itm_force_protect,itm_force_throw_lightsaber_green,itm_force_power_ls_4,itm_force_push_ammo,itm_right_hand_glove,itm_right_hand_glove,itm_luke_skywalker_outfit,itm_luke_skywalker_outfit,itm_black_boots,itm_luke_skywalker_lightsaber,itm_luke_skywalker_lightsaber],knight_attrib_5,wp(220)|wp_archery(220),starwars_knight_skills_5|knows_power_draw_8,0x000000000000000136db6db6d26db6db00000000001db6db0000000000000000],
+["knight_2_1","Obi-Wan Kenobi","knight_2_1",tf_hero,0,reserved,fac_kingdom_2,[itm_ben_head,itm_force_protect,itm_force_throw_lightsaber_blue,itm_force_power_ls_4,itm_force_push_ammo,itm_jedi_master_robe,itm_leather_boots,itm_obi_wan_lightsaber,itm_obi_wan_lightsaber],knight_attrib_5,wp(220)|wp_archery(220),starwars_knight_skills_5|knows_power_draw_9,0x0000000fc00040c536db6db6d26db6db00000000001db6db0000000000000000],
+["knight_2_2","Luke Skywalker","knight_2_2",tf_hero,0,reserved,fac_kingdom_2,[itm_speeder_rebel,itm_transparent_helmet_armor,itm_force_protect,itm_force_throw_lightsaber_green,itm_force_power_ls_4,itm_force_push_ammo,itm_right_hand_glove,itm_right_hand_glove,itm_republic_pilot_armor,itm_luke_skywalker_outfit,itm_black_boots,itm_luke_skywalker_lightsaber,itm_luke_skywalker_lightsaber],knight_attrib_5,wp(220)|wp_archery(220),starwars_knight_skills_5|knows_power_draw_8,0x000000000000000136db6db6d26db6db00000000001db6db0000000000000000],
 ["knight_2_3","General Jan Dodonna","knight_2_3",tf_hero|tf_randomize_face,0,reserved,fac_kingdom_2,[itm_transparent_helmet_armor,itm_a280,itm_laser_bolts_green_rifle,itm_rebel_uniform_tanblue,itm_leather_boots,itm_hero_shield,itm_vibro_blade3],knight_attrib_5,wp(220),starwars_knight_skills_5,sw_rebel_face_1, sw_rebel_face_2],
 ["knight_2_4","Chewbacca","knight_2_4",tf_hero|tf_wookiee|tf_randomize_face,0,reserved,fac_kingdom_2,[itm_speeder_rebel,itm_transparent_helmet_armor,itm_wookiee_armor1,itm_chewbacca_ryyk_blade,itm_chewbacca_ryyk_blade,itm_chewbacca_bowcaster,itm_chewbacca_bowcaster,itm_laser_bolts_green_rifle,itm_wookiee_shield_large],knight_attrib_5,wp(220),starwars_knight_skills_5,wookiee_face1, wookiee_face2],
 ["knight_2_5","Han Solo","knight_2_5",tf_hero,0,reserved,fac_kingdom_2,[itm_speeder_rebel,itm_transparent_helmet_armor,itm_han_solo_outfit,itm_han_solo_outfit,itm_black_boots,itm_laser_bolts_green_pistol,itm_han_solo_blaster,itm_han_solo_blaster,itm_vibro_sword3_gold,itm_hero_shield],knight_attrib_5,wp(220),starwars_knight_skills_5,0x0000000c7f00300136db6db6d26db6db00000000001db6db0000000000000000],
 ["knight_2_6","Lando Calrissian","knight_2_6",tf_hero,0,reserved,fac_kingdom_2,[itm_speeder_rebel,itm_transparent_helmet_armor,itm_shirt_blue,itm_black_boots,itm_laser_bolts_green_rifle,itm_a280,itm_vibro_sword3_gold,itm_hero_shield],knight_attrib_5,wp(220),starwars_knight_skills_5,0x0000000a7f010104249249249249249200000000001d24930000000000000000],
-["knight_2_7","Leia Organa","knight_2_7",tf_female|tf_hero,0,reserved,fac_kingdom_2,[itm_transparent_helmet_armor,itm_princess_leia_blaster,itm_princess_leia_blaster,itm_princess_leia_outfit,itm_princess_leia_outfit,itm_woolen_hose,itm_laser_bolts_green_pistol,itm_hero_shield,itm_vibro_blade3],knight_attrib_5,wp(220),starwars_knight_skills_5,0x00000001bf00000836db6d86026db6db00000000001db6db0000000000000000],
+["knight_2_7","Leia Organa","knight_2_7",tf_female|tf_hero,0,reserved,fac_kingdom_2,[itm_leia_head,itm_princess_leia_blaster,itm_princess_leia_blaster,itm_princess_leia_outfit,itm_princess_leia_outfit,itm_woolen_hose,itm_laser_bolts_green_pistol,itm_hero_shield,itm_vibro_blade3],knight_attrib_5,wp(220),starwars_knight_skills_5,0x00000001bf00000836db6d86026db6db00000000001db6db0000000000000000],
 ["knight_2_8","Yoda","knight_2_8",tf_hero|tf_randomize_face,0,reserved,fac_kingdom_2,[itm_yoda_armor,itm_yoda_speeder,itm_yoda_lightsaber,itm_transparent_head,itm_transparent_hands,itm_transparent_feet,itm_force_protect,itm_force_throw_lightsaber_green,itm_force_power_ls_4,itm_force_push_ammo],knight_attrib_5,wp(220)|wp_archery(220),starwars_knight_skills_5|knows_power_draw_10,sw_rebel_face_1, sw_rebel_face_2],
 ["knight_2_9","Admiral Ackbar","knight_2_9",tf_hero|tf_moncal|tf_randomize_face,0,reserved,fac_kingdom_2,[itm_transparent_helmet_armor,itm_black_gloves,itm_officer_uniform_white,itm_black_boots,itm_vibro_blade1,itm_vibro_blade3,itm_laser_bolts_green_rifle,itm_a280,itm_hero_shield],knight_attrib_5,wp(220),starwars_knight_skills_5,moncal_face1, moncal_face2],
 #knight skill 4
@@ -5570,27 +5629,28 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["knight_2_16","Corran Horn","knight_2_6",tf_hero,0,reserved,fac_kingdom_2,[itm_speeder_rebel,itm_transparent_helmet_armor,itm_republic_pilot_armor,itm_black_boots,itm_black_gloves,itm_laser_bolts_green_pistol,itm_dh17,itm_hero_shield,itm_vibro_sword3_gold],knight_attrib_4,wp(200),starwars_knight_skills_4,0x000000003f00500536db6db6db6db6db00000000001db6db0000000000000000],
 ["knight_2_17","Wes Janson","knight_2_7",tf_hero|tf_randomize_face,0,reserved,fac_kingdom_2,[itm_speeder_rebel,itm_transparent_helmet_armor,itm_republic_pilot_armor,itm_black_boots,itm_black_gloves,itm_laser_bolts_green_pistol,itm_dh17,itm_hero_shield,itm_vibro_sword3_gold],knight_attrib_4,wp(200),starwars_knight_skills_4,sw_man_face_1,sw_man_face_2],
 ["knight_2_18","Wedge Antilles","knight_2_8",tf_hero,0,reserved,fac_kingdom_2,[itm_speeder_rebel,itm_transparent_helmet_armor,itm_republic_pilot_armor,itm_black_boots,itm_black_gloves,itm_laser_bolts_green_pistol,itm_dh17,itm_hero_shield,itm_vibro_sword3_gold],knight_attrib_4,wp(200),starwars_knight_skills_4, 0x000000003f00400636db6db6db6db6db00000000001db6db0000000000000000],
+["knight_2_19","Echuu Sehn-Jon","knight_2_8",tf_hero,0,reserved,fac_kingdom_2,[itm_transparent_helmet_armor,itm_jedi_master_robe,itm_black_boots,itm_black_gloves,itm_hero_shield,itm_yoda_lightsaber,itm_force_power_ls_4,itm_force_push_ammo],knight_attrib_5,wp(220)|wp_archery(220),starwars_knight_skills_5|knows_power_draw_9, 0x0000000e7f00919636db4d96db6db6db00000000001d9bf80000000000000000],
 #knight skill 3 - added tf_randomize_face to most generic commander knights
-["knight_2_19","Arvel Crynyd","knight_2_9",tf_hero|tf_randomize_face,0,reserved,fac_kingdom_2,[itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_a280,itm_laser_bolts_green_rifle,itm_vibro_blade1,itm_hero_shield],knight_attrib_3,wp(180),starwars_knight_skills_3,sw_rebel_face_1, sw_rebel_face_2],
-["knight_2_20","Nik Sant","knight_2_0",tf_hero,0,reserved,fac_kingdom_2,[itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_a280,itm_laser_bolts_green_rifle,itm_vibro_blade1,itm_hero_shield],knight_attrib_3,wp(180),starwars_knight_skills_3,0x0000000fc000124526d46d34db6dc95c00000000001db8d30000000000000000],
-["knight_2_21", "Derek Klivian", "knight_2_1", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_hero_shield,itm_vibro_blade4],knight_attrib_3,wp(180),starwars_knight_skills_3, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_20","Arvel Crynyd","knight_2_9",tf_hero|tf_randomize_face,0,reserved,fac_kingdom_2,[itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_a280,itm_laser_bolts_green_rifle,itm_vibro_blade1,itm_hero_shield],knight_attrib_3,wp(180),starwars_knight_skills_3,sw_rebel_face_1, sw_rebel_face_2],
+["knight_2_21","Nik Sant","knight_2_0",tf_hero,0,reserved,fac_kingdom_2,[itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_a280,itm_laser_bolts_green_rifle,itm_vibro_blade1,itm_hero_shield],knight_attrib_3,wp(180),starwars_knight_skills_3,0x0000000fc000124526d46d34db6dc95c00000000001db8d30000000000000000],
+["knight_2_22", "Derek Klivian", "knight_2_1", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_hero_shield,itm_vibro_blade4],knight_attrib_3,wp(180),starwars_knight_skills_3, sw_rebel_face_1, sw_rebel_face_2],   
 #use energy shields below this point
-["knight_2_22", "Commander Elte Tuntrin", "knight_2_2", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_3,wp(180),starwars_knight_skills_3, sw_rebel_face_1, sw_rebel_face_2],   
-["knight_2_23", "Commander Shiy Facken", "knight_2_3", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_3,wp(180),starwars_knight_skills_3, sw_rebel_face_1, sw_rebel_face_2],   
-["knight_2_24", "Commander Jomi Torwalker", "knight_2_4", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_3,wp(180),starwars_knight_skills_3, sw_rebel_face_1, sw_rebel_face_2],   
-["knight_2_25", "Commander Shay Kracin", "knight_2_5", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_3,wp(180),starwars_knight_skills_3, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_23", "Commander Elte Tuntrin", "knight_2_2", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_3,wp(180),starwars_knight_skills_3, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_24", "Commander Shiy Facken", "knight_2_3", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_3,wp(180),starwars_knight_skills_3, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_25", "Commander Jomi Torwalker", "knight_2_4", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_3,wp(180),starwars_knight_skills_3, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_26", "Commander Shay Kracin", "knight_2_5", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_3,wp(180),starwars_knight_skills_3, sw_rebel_face_1, sw_rebel_face_2],   
 #knight skill 2 - added tf_randomize_face to most generic commander knights
-["knight_2_26", "Commander Dakan Talik", "knight_2_6", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_2,wp(160),starwars_knight_skills_2, sw_rebel_face_1, sw_rebel_face_2],   
-["knight_2_27", "Commander Celnia Terrles", "knight_2_7", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_2,wp(160),starwars_knight_skills_2, sw_rebel_face_1, sw_rebel_face_2],   
-["knight_2_28", "Commander Jeran Ardtrin", "knight_2_8", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_2,wp(160),starwars_knight_skills_2, sw_rebel_face_1, sw_rebel_face_2],   
-["knight_2_29", "Commander Corsati Berles", "knight_2_9", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_2,wp(160),starwars_knight_skills_2, sw_rebel_face_1, sw_rebel_face_2],   
-["knight_2_30", "Commander Shin Lightrus", "knight_2_0", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_2,wp(160),starwars_knight_skills_2, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_27", "Commander Dakan Talik", "knight_2_6", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_2,wp(160),starwars_knight_skills_2, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_28", "Commander Celnia Terrles", "knight_2_7", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_2,wp(160),starwars_knight_skills_2, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_29", "Commander Jeran Ardtrin", "knight_2_8", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_2,wp(160),starwars_knight_skills_2, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_30", "Commander Corsati Berles", "knight_2_9", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_2,wp(160),starwars_knight_skills_2, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_31", "Commander Shin Lightrus", "knight_2_0", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_2,wp(160),starwars_knight_skills_2, sw_rebel_face_1, sw_rebel_face_2],   
 #knight skill 1 - added tf_randomize_face to most generic commander knights
-["knight_2_31", "Commander Janah Talik", "knight_2_1", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_1,wp(140),starwars_knight_skills_1, sw_rebel_face_1, sw_rebel_face_2],   
-["knight_2_32", "Commander Lerek Terrtrayn", "knight_2_2", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_1,wp(140),starwars_knight_skills_1, sw_rebel_face_1, sw_rebel_face_2],   
-["knight_2_33", "Commander Rhyin Quellan", "knight_2_3", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_1,wp(140),starwars_knight_skills_1, sw_rebel_face_1, sw_rebel_face_2],   
-["knight_2_34", "Commander Ardlena Sanhek", "knight_2_4", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_1,wp(140),starwars_knight_skills_1, sw_rebel_face_1, sw_rebel_face_2],   
-["knight_2_35", "Commander Pakric Cynekin", "knight_2_5", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_1,wp(140),starwars_knight_skills_1, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_32", "Commander Janah Talik", "knight_2_1", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_1,wp(140),starwars_knight_skills_1, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_33", "Commander Lerek Terrtrayn", "knight_2_2", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_1,wp(140),starwars_knight_skills_1, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_34", "Commander Rhyin Quellan", "knight_2_3", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_1,wp(140),starwars_knight_skills_1, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_35", "Commander Ardlena Sanhek", "knight_2_4", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_1,wp(140),starwars_knight_skills_1, sw_rebel_face_1, sw_rebel_face_2],   
+["knight_2_36", "Commander Pakric Cynekin", "knight_2_5", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_transparent_helmet,itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green_rifle,itm_energy_shield_green_small,itm_vibro_blade4],knight_attrib_1,wp(140),starwars_knight_skills_1, sw_rebel_face_1, sw_rebel_face_2],   
 
 # SW - commented out since imperials should have more knights since they own more land/castles, also moved some knights to the hutt cartel
 # ["knight_2_36", "Commander Mios Darkker", "knight_2_6", tf_hero|tf_randomize_face, 0, reserved,fac_kingdom_2, [itm_rebel_uniform_green,itm_leather_boots,itm_ee3,itm_laser_bolts_green,itm_energy_shield_yellow_small,itm_vibro_blade4],knight_attrib_2,wp(130),starwars_knight_skills_2, sw_rebel_face_1, sw_rebel_face_2],   
@@ -5822,6 +5882,12 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["town_19_seneschal", "Planet Administrator", "Town 19 Administrator", tf_hero|tf_bothan|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_blue_gambeson,itm_leather_boots],     def_attrib|level(2),wp(20),knows_common, bothan_face1, bothan_face2],
 ["town_20_seneschal", "Planet Administrator", "Town 20 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots],     def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
 ["town_21_seneschal", "Planet Administrator", "Town 21 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots],     def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
+["town_22_seneschal", "Planet Administrator", "Town 21 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots],     def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
+["town_23_seneschal", "Planet Administrator", "Town 21 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots],     def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
+["town_24_seneschal", "Planet Administrator", "Town 21 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots],     def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
+["town_25_seneschal", "Planet Administrator", "Town 21 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots],     def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
+["town_26_seneschal", "Planet Administrator", "Town 21 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots],     def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
+["town_27_seneschal", "Planet Administrator", "Town 21 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots],     def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
 
 ["castle_1_seneschal", "Planet Administrator", "Castle 1 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_gambeson,itm_leather_boots],    def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
 ["castle_2_seneschal", "Planet Administrator", "Castle 2 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots],   def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
@@ -5863,6 +5929,8 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["castle_38_seneschal", "Planet Administrator", "Castle 8 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots],    def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
 ["castle_39_seneschal", "Planet Administrator", "Castle 9 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_red_gambeson,itm_leather_boots], def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
 ["castle_40_seneschal", "Planet Administrator", "Castle 20 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_gambeson,itm_leather_boots],   def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
+["castle_41_seneschal", "Planet Administrator", "Castle 20 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_gambeson,itm_leather_boots],   def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
+["castle_42_seneschal", "Planet Administrator", "Castle 20 Administrator", tf_hero|tf_randomize_face|tf_is_merchant, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_gambeson,itm_leather_boots],   def_attrib|level(2),wp(20),knows_common, sw_man_face_1, sw_man_face_2],
 
 #Arena Masters
 #SW - town_1 = Mandalore, give mandalorian armor/tunic
@@ -5893,6 +5961,12 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["town_19_arena_master","Arena Master","Tournament Master",tf_hero|tf_bothan|tf_randomize_face, scn_town_19_arena|entry(52),reserved,  fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a],    def_attrib|level(2),wp(20),knows_common, bothan_face1, bothan_face2],
 ["town_20_arena_master","Arena Master","Tournament Master",tf_hero|tf_randomize_face, scn_town_20_arena|entry(52),reserved,  fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a],    def_attrib|level(2),wp(20),knows_common,sw_man_face_1, sw_man_face_2],
 ["town_21_arena_master","Arena Master","Tournament Master",tf_hero|tf_randomize_face, scn_town_21_arena|entry(52),reserved,  fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a],    def_attrib|level(2),wp(20),knows_common,sw_man_face_1, sw_man_face_2],
+["town_22_arena_master","Arena Master","Tournament Master",tf_hero|tf_randomize_face, scn_town_22_arena|entry(52),reserved,  fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a],    def_attrib|level(2),wp(20),knows_common,sw_man_face_1, sw_man_face_2],
+["town_23_arena_master","Arena Master","Tournament Master",tf_hero|tf_randomize_face, scn_town_23_arena|entry(52),reserved,  fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a],    def_attrib|level(2),wp(20),knows_common,sw_man_face_1, sw_man_face_2],
+["town_24_arena_master","Arena Master","Tournament Master",tf_hero|tf_randomize_face, scn_town_24_arena|entry(52),reserved,  fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a],    def_attrib|level(2),wp(20),knows_common,sw_man_face_1, sw_man_face_2],
+["town_25_arena_master","Arena Master","Tournament Master",tf_hero|tf_randomize_face, scn_town_25_arena|entry(52),reserved,  fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a],    def_attrib|level(2),wp(20),knows_common,sw_man_face_1, sw_man_face_2],
+["town_26_arena_master","Arena Master","Tournament Master",tf_hero|tf_randomize_face, scn_town_26_arena|entry(52),reserved,  fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a],    def_attrib|level(2),wp(20),knows_common,sw_man_face_1, sw_man_face_2],
+["town_27_arena_master","Arena Master","Tournament Master",tf_hero|tf_randomize_face, scn_town_27_arena|entry(52),reserved,  fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a],    def_attrib|level(2),wp(20),knows_common,sw_man_face_1, sw_man_face_2],
 
 # Underground 
 
@@ -5944,6 +6018,12 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["town_19_armorer","Armorer", "Armorer",  tf_hero|tf_bothan|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_blue,itm_leather_boots,itm_vibro_blade1],def_attrib|level(12),wp(80),knows_inventory_management_10, bothan_face1, bothan_face2],
 ["town_20_armorer","Armorer", "Armorer",  tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_red,itm_leather_boots,itm_vibro_blade1],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["town_21_armorer","Armorer", "Armorer",  tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_22_armorer","Armorer", "Armorer",  tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_23_armorer","Armorer", "Armorer",  tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_24_armorer","Armorer", "Armorer",  tf_hero|tf_trandoshan|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_25_armorer","Armorer", "Armorer",  tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_26_armorer","Armorer", "Armorer",  tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_27_armorer","Armorer", "Armorer",  tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 
 # Weapon merchants
 #SW - town_1 = Mandalore, give mandalorian armor/tunic (also switched from female to male)
@@ -5975,29 +6055,35 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["town_19_weaponsmith","Weaponsmith","Weaponsmith",tf_hero|tf_bothan|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_blue,itm_leather_boots,itm_vibro_blade1,itm_laser_bolts_yellow_pistol,itm_ddc_defender],def_attrib|level(12),wp(80),knows_inventory_management_10, bothan_face1, bothan_face2],
 ["town_20_weaponsmith","Weaponsmith","Weaponsmith",tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_red,itm_leather_boots,itm_vibro_blade1,itm_laser_bolts_yellow_pistol,itm_ddc_defender],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["town_21_weaponsmith","Weaponsmith","Weaponsmith",tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1,itm_laser_bolts_yellow_pistol,itm_ddc_defender],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_22_weaponsmith","Weaponsmith","Weaponsmith",tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1,itm_laser_bolts_yellow_pistol,itm_ddc_defender],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_23_weaponsmith","Weaponsmith","Weaponsmith",tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1,itm_laser_bolts_yellow_pistol,itm_ddc_defender],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_24_weaponsmith","Weaponsmith","Weaponsmith",tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1,itm_laser_bolts_yellow_pistol,itm_ddc_defender],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_25_weaponsmith","Weaponsmith","Weaponsmith",tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1,itm_laser_bolts_yellow_pistol,itm_ddc_defender],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_26_weaponsmith","Weaponsmith","Weaponsmith",tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1,itm_laser_bolts_yellow_pistol,itm_ddc_defender],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_27_weaponsmith","Weaponsmith","Weaponsmith",tf_hero|tf_randomize_face|          tf_is_merchant, 0, 0, fac_commoners,[itm_padded_tunic_yellow,itm_leather_boots,itm_vibro_blade1,itm_laser_bolts_yellow_pistol,itm_ddc_defender],def_attrib|level(12),wp(80),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 
 #Tavern keepers
 #SW - updated Tavern_Keeper to Bartender
 #SW - town_1 = Mandalore, give mandalorian armor/tunic
 ["town_1_tavernkeeper", "Bartender","Bartender",tf_hero|tf_randomize_face,           scn_town_1_tavern|entry(9),0,   fac_commoners,[itm_mandalorian_tunic,itm_hide_boots],def_attrib|level(2),wp(20),knows_common, mandalorian_face1, mandalorian_face2],
 ["town_2_tavernkeeper", "Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_2_tavern|entry(9),0,   fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
-["town_3_tavernkeeper", "Bartender","Bartender",tf_hero|tf_randomize_face|tf_female, scn_town_3_tavern|entry(9),0,   fac_commoners,[itm_female_dress_b, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
+["town_3_tavernkeeper", "Bartender","Bartender",tf_hero|tf_randomize_face|tf_female, scn_town_3_tavern|entry(9),0,   fac_commoners,[itm_female_dress_b, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_3, sw_woman_face_2],
 ["town_4_tavernkeeper", "Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_4_tavern|entry(9),0,   fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
-["town_5_tavernkeeper", "Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_5_tavern|entry(9),0,   fac_commoners,[itm_female_dress_b, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
+["town_5_tavernkeeper", "Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_5_tavern|entry(9),0,   fac_commoners,[itm_female_dress_b, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_3],
 ["town_6_tavernkeeper", "Bartender","Bartender",tf_hero|tf_randomize_face|tf_female, scn_town_6_tavern|entry(9),0,   fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
-["town_7_tavernkeeper", "Bartender","Bartender",tf_hero|tf_randomize_face|tf_female, scn_town_7_tavern|entry(9),0,   fac_commoners,[itm_female_dress_b, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
+["town_7_tavernkeeper", "Bartender","Bartender",tf_hero|tf_randomize_face|tf_female, scn_town_7_tavern|entry(9),0,   fac_commoners,[itm_female_dress_b, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_3],
 #SW- town_8 = geonosian
 ["town_8_tavernkeeper", "Bartender","Bartender",tf_hero|tf_geonosian|tf_randomize_face,           scn_town_8_tavern|entry(9),0,   fac_commoners,[],def_attrib|level(2),wp(20),knows_common, geonosian_face1, geonosian_face2],
 #SW - town_9 = Mon Cal, give mon calamari armor (removed tf_female)
 ["town_9_tavernkeeper", "Bartender","Bartender",tf_hero|tf_moncal|tf_randomize_face, scn_town_9_tavern|entry(9),0,   fac_commoners,[itm_officer_uniform_white,itm_moncal_armor,itm_moncal_armor_2,itm_black_boots],def_attrib|level(2),wp(20),knows_common, moncal_face1, moncal_face2],
 #SW - town_10 = Kashyyyk, give wookiee armor
 ["town_10_tavernkeeper","Bartender","Bartender",tf_hero|tf_wookiee|tf_randomize_face, scn_town_10_tavern|entry(9),0,  fac_commoners,[],def_attrib|level(2),wp(20),knows_common, wookiee_face1, wookiee_face2],
-["town_11_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female, scn_town_11_tavern|entry(9),0,  fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
+["town_11_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female, scn_town_11_tavern|entry(9),0,  fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_3],
 #SW - town_12 = Gamorr, give gamorrean armor
 ["town_12_tavernkeeper","Bartender","Bartender",tf_hero|tf_gamorrean|tf_randomize_face,           scn_town_12_tavern|entry(9),0,  fac_commoners,[],def_attrib|level(2),wp(20),knows_common, gamorrean_face1, gamorrean_face2],
 ["town_13_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female, scn_town_13_tavern|entry(9),0,  fac_commoners,[itm_female_dress_b, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
 ["town_14_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_14_tavern|entry(9),0,  fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
-["town_15_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female, scn_town_15_tavern|entry(9),0,  fac_commoners,[itm_female_dress_b, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
+["town_15_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female, scn_town_15_tavern|entry(9),0,  fac_commoners,[itm_female_dress_b, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_3, sw_woman_face_2],
 ["town_16_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_16_tavern|entry(9),0,  fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
 #SW - town 17 = Ryloth, give twilek armor
 ["town_17_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_twilek_female, scn_town_17_tavern|entry(9),0,  fac_commoners,[itm_woolen_dress,itm_hide_boots],def_attrib|level(2),wp(20),knows_common, twilek_female_face1, twilek_female_face2],
@@ -6005,30 +6091,36 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["town_18_tavernkeeper","Bartender","Bartender",tf_hero|tf_hutt|tf_randomize_face,           scn_town_18_tavern|entry(9),0,  fac_commoners,[itm_transparent_head,itm_transparent_hands,itm_jabba_armor,itm_transparent_feet,itm_jabba_attack],def_attrib|level(2),wp(20),knows_common, hutt_face1, hutt_face2],
 #SW - town 19, bothan
 ["town_19_tavernkeeper","Bartender","Bartender",tf_hero|tf_bothan|tf_randomize_face,           scn_town_19_tavern|entry(9),0,  fac_commoners,[itm_tunic_green, itm_leather_boots],def_attrib|level(2),wp(20),knows_common, bothan_face1, bothan_face2],
-["town_20_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_20_tavern|entry(9),0,  fac_commoners,[itm_female_dress_b, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
+["town_20_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_20_tavern|entry(9),0,  fac_commoners,[itm_female_dress_b, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_3],
 ["town_21_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_21_tavern|entry(9),0,  fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
+["town_22_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_22_tavern|entry(9),0,  fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
+["town_23_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_23_tavern|entry(9),0,  fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_3, sw_woman_face_2],
+["town_24_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_24_tavern|entry(9),0,  fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
+["town_25_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_25_tavern|entry(9),0,  fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_2],
+["town_26_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_26_tavern|entry(9),0,  fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_3],
+["town_26_tavernkeeper","Bartender","Bartender",tf_hero|tf_randomize_face|tf_female,           scn_town_27_tavern|entry(9),0,  fac_commoners,[itm_female_dress_a, itm_leather_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common, sw_woman_face_1, sw_woman_face_3],
 
 #Goods Merchants
 #SW - town_1 = Mandalore, give mandalorian armor/tunic
 ["town_1_merchant", "Merchant","Merchant",          tf_hero|tf_randomize_face|tf_is_merchant, scn_town_1_store|entry(9),0, fac_commoners,     [itm_mandalorian_tunic,itm_hide_boots],def_attrib|level(2),wp(20),knows_inventory_management_10, mandalorian_face1, mandalorian_face2],
-["town_2_merchant", "Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_2_store|entry(9),0, fac_commoners,     [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
+["town_2_merchant", "Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_2_store|entry(9),0, fac_commoners,     [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_3],
 ["town_3_merchant", "Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_3_store|entry(9),0, fac_commoners,     [itm_female_jacket_b, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
 ["town_4_merchant", "Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_4_store|entry(9),0, fac_commoners,     [itm_female_jacket_c, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
-["town_5_merchant", "Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_5_store|entry(9),0, fac_commoners,     [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
+["town_5_merchant", "Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_5_store|entry(9),0, fac_commoners,     [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_3, sw_woman_face_2],
 ["town_6_merchant", "Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_6_store|entry(9),0, fac_commoners,     [itm_female_jacket_b, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
-["town_7_merchant", "Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_7_store|entry(9),0, fac_commoners,     [itm_female_jacket_c, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
+["town_7_merchant", "Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_7_store|entry(9),0, fac_commoners,     [itm_female_jacket_c, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_3],
 #SW- town_8 = geonosian
 ["town_8_merchant", "Merchant","Merchant",          tf_hero|tf_geonosian|tf_randomize_face|tf_is_merchant, scn_town_8_store|entry(9),0, fac_commoners,     [itm_geonosian_armor],def_attrib|level(2),wp(20),knows_inventory_management_10, geonosian_face1, geonosian_face2],
 #SW - town_9 = Mon Cal, give mon calamari armor
 ["town_9_merchant", "Merchant","Merchant",          tf_hero|tf_moncal|tf_randomize_face|tf_is_merchant, scn_town_9_store|entry(9),0, fac_commoners,     [itm_officer_uniform_white,itm_moncal_armor,itm_moncal_armor_2,itm_black_boots],def_attrib|level(2),wp(20),knows_inventory_management_10, moncal_face1, moncal_face2],
 #SW - town_10 = Kashyyyk, give wookiee armor
 ["town_10_merchant","Merchant","Merchant",          tf_hero|tf_randomize_face|tf_wookiee|tf_is_merchant, scn_town_10_store|entry(9),0, fac_commoners,    [itm_wookiee_armor1],def_attrib|level(2),wp(20),knows_inventory_management_10, wookiee_face1, wookiee_face2],
-["town_11_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_11_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
+["town_11_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_11_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_3, sw_woman_face_2],
 #SW - town_12 = Gamorr, give gamorrean armor
 ["town_12_merchant","Merchant","Merchant",tf_gamorrean|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_12_store|entry(9),0, fac_commoners,    [],def_attrib|level(2),wp(20),knows_inventory_management_10, gamorrean_face1, gamorrean_face2],
 ["town_13_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_13_store|entry(9),0, fac_commoners,    [itm_female_jacket_b, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
 ["town_14_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_14_store|entry(9),0, fac_commoners,    [itm_female_jacket_c, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
-["town_15_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_15_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
+["town_15_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_15_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_3, sw_woman_face_2],
 ["town_16_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_16_store|entry(9),0, fac_commoners,    [itm_female_jacket_b, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
 #SW - town 17 = Ryloth, give twilek armor
 ["town_17_merchant","Merchant","Merchant",tf_twilek_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_17_store|entry(9),0, fac_commoners,    [itm_dress,itm_leather_boots],def_attrib|level(2),wp(20),knows_inventory_management_10, twilek_female_face1, twilek_female_face2],
@@ -6037,7 +6129,13 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 #SW - town 19, bothan
 ["town_19_merchant","Merchant","Merchant",tf_bothan|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_19_store|entry(9),0, fac_commoners,    [itm_tunic_yellow, itm_leather_boots ],def_attrib|level(2),wp(20),knows_inventory_management_10, bothan_face1, bothan_face2],
 ["town_20_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_20_store|entry(9),0, fac_commoners,    [itm_female_jacket_c, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
-["town_21_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_21_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
+["town_21_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_21_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_3, sw_woman_face_2],
+["town_22_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_22_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_3],
+["town_23_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_23_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
+["town_24_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_24_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_3],
+["town_25_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_25_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_1, sw_woman_face_2],
+["town_26_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_26_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_3, sw_woman_face_2],
+["town_27_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_town_27_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_3, sw_woman_face_2],
 
 ["salt_mine_merchant","Barezan","Barezan",                tf_hero|tf_randomize_face|tf_is_merchant, scn_salt_mine|entry(1),0, fac_commoners,        [itm_leather_apron, itm_leather_boots],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 
@@ -6072,6 +6170,12 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["town_19_horse_merchant","Transportation Merchant","Town 19 Transportation Merchant",tf_hero|tf_bothan|tf_randomize_face|tf_is_merchant,            0, 0, fac_commoners,[itm_tunic_green,      itm_leather_boots],                        def_attrib|level(5),wp(20),knows_inventory_management_10, bothan_face1, bothan_face2],
 ["town_20_horse_merchant","Transportation Merchant","Town 20 Transportation Merchant",tf_hero|tf_randomize_face|tf_is_merchant,            0, 0, fac_commoners,[itm_tunic_white, itm_leather_boots, itm_vibro_blade1],                        def_attrib|level(5),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["town_21_horse_merchant","Transportation Merchant","Town 21 Transportation Merchant",tf_hero|tf_randomize_face|tf_is_merchant,            0, 0, fac_commoners,[itm_tunic_blue, itm_leather_boots, itm_vibro_blade1],                        def_attrib|level(5),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_22_horse_merchant","Transportation Merchant","Town 22 Transportation Merchant",tf_hero|tf_randomize_face|tf_is_merchant,            0, 0, fac_commoners,[itm_tunic_blue, itm_leather_boots, itm_vibro_blade1],                        def_attrib|level(5),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_23_horse_merchant","Transportation Merchant","Town 23 Transportation Merchant",tf_hero|tf_randomize_face|tf_is_merchant,            0, 0, fac_commoners,[itm_tunic_blue, itm_leather_boots, itm_vibro_blade1],                        def_attrib|level(5),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_24_horse_merchant","Transportation Merchant","Town 24 Transportation Merchant",tf_hero|tf_randomize_face|tf_is_merchant,            0, 0, fac_commoners,[itm_tunic_blue, itm_leather_boots, itm_vibro_blade1],                        def_attrib|level(5),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_25_horse_merchant","Transportation Merchant","Town 23 Transportation Merchant",tf_hero|tf_randomize_face|tf_is_merchant,            0, 0, fac_commoners,[itm_tunic_blue, itm_leather_boots, itm_vibro_blade1],                        def_attrib|level(5),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_26_horse_merchant","Transportation Merchant","Town 24 Transportation Merchant",tf_hero|tf_randomize_face|tf_is_merchant,            0, 0, fac_commoners,[itm_tunic_blue, itm_leather_boots, itm_vibro_blade1],                        def_attrib|level(5),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["town_27_horse_merchant","Transportation Merchant","Town 24 Transportation Merchant",tf_hero|tf_randomize_face|tf_is_merchant,            0, 0, fac_commoners,[itm_tunic_blue, itm_leather_boots, itm_vibro_blade1],                        def_attrib|level(5),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 
 #Town Mayors    #itm_courtly_outfit itm_gambeson itm_blue_gambeson itm_red_gambeson itm_nobleman_outfit itm_rich_outfit
 #SW - town_1 = Mandalore, give mandalorian armor/tunic
@@ -6103,6 +6207,12 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["town_19_mayor", "Planet_Administrator", "Planet_Administrator", tf_hero|tf_bothan|tf_randomize_face, 0,reserved,  fac_neutral,[itm_blue_gambeson,itm_leather_boots], def_attrib|level(2),wp(20),knows_common,  bothan_face1, bothan_face2],
 ["town_20_mayor", "Planet_Administrator", "Planet_Administrator", tf_hero|tf_randomize_face, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots], def_attrib|level(2),wp(20),knows_common,  sw_man_face_1, sw_man_face_2],
 ["town_21_mayor", "Planet_Administrator", "Planet_Administrator", tf_hero|tf_randomize_face, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots], def_attrib|level(2),wp(20),knows_common,  sw_man_face_1, sw_man_face_2],
+["town_22_mayor", "Planet_Administrator", "Planet_Administrator", tf_hero|tf_randomize_face, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots], def_attrib|level(2),wp(20),knows_common,  sw_man_face_1, sw_man_face_2],
+["town_23_mayor", "Planet_Administrator", "Planet_Administrator", tf_hero|tf_randomize_face, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots], def_attrib|level(2),wp(20),knows_common,  sw_man_face_1, sw_man_face_2],
+["town_24_mayor", "Planet_Administrator", "Planet_Administrator", tf_hero|tf_randomize_face, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots], def_attrib|level(2),wp(20),knows_common,  sw_man_face_1, sw_man_face_2],
+["town_25_mayor", "Planet_Administrator", "Planet_Administrator", tf_hero|tf_randomize_face, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots], def_attrib|level(2),wp(20),knows_common,  sw_man_face_1, sw_man_face_2],
+["town_26_mayor", "Planet_Administrator", "Planet_Administrator", tf_hero|tf_randomize_face, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots], def_attrib|level(2),wp(20),knows_common,  sw_man_face_1, sw_man_face_2],
+["town_27_mayor", "Planet_Administrator", "Planet_Administrator", tf_hero|tf_randomize_face, 0,reserved,  fac_neutral,[itm_lobot_headgear,itm_blue_gambeson,itm_leather_boots], def_attrib|level(2),wp(20),knows_common,  sw_man_face_1, sw_man_face_2],
 
 
 #Village stores
@@ -6131,16 +6241,16 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["village_23_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_closed_c,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_q2,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_24_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_closed_c,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_q2,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_25_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_26_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_27_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_28_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_29_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_30_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_31_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_26_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_27_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_28_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_29_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_30_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_31_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_32_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_33_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_34_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_35_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_35_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_zabrak_face_2, sw_zabrak_face_2],
 ["village_36_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_37_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_c,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_38_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_jacket_open_c,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
@@ -6158,7 +6268,7 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["village_50_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_closed_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_q2,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_51_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_closed_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_q2,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_52_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_closed_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_q2,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_53_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_closed_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_q2,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_53_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_gamorrean|tf_randomize_face|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_ranged|tf_guarantee_shield,0,0,fac_commoners, [itm_transparent_helmet_armor,itm_durasteel_shield_small,itm_gamorrean_armor,itm_vibro_axe_medium_1h,itm_throwing_axes], def_attrib_4|level(2),wp(20),starwars_skills_4, gamorrean_face1, gamorrean_face2],
 ["village_54_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_closed_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_q2,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_55_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_closed_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_q2,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_56_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_closed_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_q2,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
@@ -6167,17 +6277,17 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["village_59_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_closed_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_q2,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_60_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_closed_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_q2,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_61_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_62_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_63_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_64_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_65_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_66_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_67_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_68_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_69_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_70_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_71_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
-["village_72_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_westar,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_62_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_63_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_64_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_65_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_66_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_67_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_68_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_69_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_70_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_71_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+["village_72_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_a,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_leadership],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_73_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_b,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_74_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_b,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 ["village_75_elder","Planet_Administrator", "village_1_elder",tf_hero|tf_randomize_face|tf_is_merchant, 0,0, fac_commoners,[itm_vest_open_b,itm_leather_boots,itm_laser_bolts_orange_pistol,itm_dl44a,itm_eyepiece_tactics],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
@@ -6234,6 +6344,12 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["bonus_chest_town_19","Bonus Chest","Bonus Chest",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[itm_protein_pack,itm_carbohydrate_pack],def_attrib|level(18),wp(60),knows_common, 0],
 ["bonus_chest_town_20","Bonus Chest","Bonus Chest",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[itm_protein_pack,itm_carbohydrate_pack],def_attrib|level(18),wp(60),knows_common, 0],
 ["bonus_chest_town_21","Bonus Chest","Bonus Chest",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[itm_protein_pack,itm_carbohydrate_pack],def_attrib|level(18),wp(60),knows_common, 0],
+["bonus_chest_town_22","Bonus Chest","Bonus Chest",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[itm_protein_pack,itm_carbohydrate_pack],def_attrib|level(18),wp(60),knows_common, 0],
+["bonus_chest_town_23","Bonus Chest","Bonus Chest",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[itm_protein_pack,itm_carbohydrate_pack],def_attrib|level(18),wp(60),knows_common, 0],
+["bonus_chest_town_24","Bonus Chest","Bonus Chest",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[itm_protein_pack,itm_carbohydrate_pack],def_attrib|level(18),wp(60),knows_common, 0],
+["bonus_chest_town_25","Bonus Chest","Bonus Chest",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[itm_protein_pack,itm_carbohydrate_pack],def_attrib|level(18),wp(60),knows_common, 0],
+["bonus_chest_town_26","Bonus Chest","Bonus Chest",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[itm_protein_pack,itm_carbohydrate_pack],def_attrib|level(18),wp(60),knows_common, 0],
+["bonus_chest_town_27","Bonus Chest","Bonus Chest",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[itm_protein_pack,itm_carbohydrate_pack],def_attrib|level(18),wp(60),knows_common, 0],
 	
 # These are used as arrays in the scripts.
 ["temp_array_a","temp_array_a","temp_array_a",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[],def_attrib|level(18),wp(60),knows_common, 0],
@@ -6278,11 +6394,11 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 # Add Extra Quest NPCs below this point  
 
 ["local_merchant","Local Merchant","Local Merchants",tf_guarantee_boots|tf_guarantee_armor, 0,0, fac_commoners,[itm_leather_apron,itm_leather_boots,itm_butchering_knife],def_attrib|level(5),wp(40),knows_power_strike_1, sw_man_face_1, sw_man_face_2],
-["tax_rebel","Peasant Rebel","Peasant Rebels",tf_guarantee_armor|tf_guarantee_boots,0,reserved,fac_commoners, [itm_q2,itm_ddc_defender,itm_westar,itm_laser_bolts_orange_pistol,itm_laser_bolts_yellow_pistol,itm_cleaver,itm_durasteel_staff,itm_quarter_staff,itm_vibro_blade2,itm_vibro_blade3,itm_club,itm_leather_cap,itm_leather_apron,itm_linen_tunic,itm_coarse_tunic,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_a,itm_leather_gloves,itm_leather_boots,itm_nomad_boots,itm_wrapping_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
-["trainee_peasant","Peasant","Peasants",tf_guarantee_armor|tf_guarantee_boots,0,reserved,fac_commoners, [itm_q2,itm_ddc_defender,itm_westar,itm_laser_bolts_orange_pistol,itm_laser_bolts_yellow_pistol,itm_cleaver,itm_durasteel_staff,itm_quarter_staff,itm_vibro_blade2,itm_vibro_blade3,itm_club,itm_leather_cap,itm_leather_apron,itm_linen_tunic,itm_coarse_tunic,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_a,itm_leather_gloves,itm_leather_boots,itm_nomad_boots,itm_wrapping_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
+["tax_rebel","Peasant Rebel","Peasant Rebels",tf_guarantee_armor|tf_guarantee_boots,0,reserved,fac_commoners, [itm_q2,itm_ddc_defender,itm_dl44a,itm_laser_bolts_orange_pistol,itm_laser_bolts_yellow_pistol,itm_cleaver,itm_durasteel_staff,itm_quarter_staff,itm_vibro_blade2,itm_vibro_blade3,itm_club,itm_leather_cap,itm_leather_apron,itm_linen_tunic,itm_coarse_tunic,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_a,itm_leather_gloves,itm_leather_boots,itm_nomad_boots,itm_wrapping_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
+["trainee_peasant","Peasant","Peasants",tf_guarantee_armor|tf_guarantee_boots,0,reserved,fac_commoners, [itm_q2,itm_ddc_defender,itm_dl44a,itm_laser_bolts_orange_pistol,itm_laser_bolts_yellow_pistol,itm_cleaver,itm_durasteel_staff,itm_quarter_staff,itm_vibro_blade2,itm_vibro_blade3,itm_club,itm_leather_cap,itm_leather_apron,itm_linen_tunic,itm_coarse_tunic,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_a,itm_leather_gloves,itm_leather_boots,itm_nomad_boots,itm_wrapping_boots], def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
 ["fugitive","Nervous Man","Nervous Men",tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_ranged,0,0,fac_commoners, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_vibro_sword3_gold,itm_laser_bolts_orange_pistol,itm_westar,itm_q2,itm_dl44a,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|str_24|agi_25|level(26),wp(180),knows_common|knows_power_throw_6|knows_power_strike_6|knows_ironflesh_9,mandalorian_face1, mandalorian_face2],
-["spy","Ordinary Townsman","Ordinary Townsmen", tf_mounted|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_horse|tf_guarantee_ranged,0,0,fac_neutral, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_vibro_sword3_gold,itm_laser_bolts_orange_pistol,itm_westar,itm_q2,itm_dl44a,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|agi_11|level(20),wp(130),knows_common,mandalorian_face1, mandalorian_face2],
-["spy_partner","Unremarkable Townsman","Unremarkable Townsmen", tf_mounted|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_horse|tf_guarantee_ranged,0,0,fac_neutral, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_vibro_sword3_gold,itm_laser_bolts_orange_pistol,itm_westar,itm_q2,itm_dl44a,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|agi_11|level(10),wp(130),knows_common,mandalorian_face1, mandalorian_face2],
+["spy","Ordinary Townsman","Ordinary Townsmen", tf_mounted|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_horse|tf_guarantee_ranged,0,0,fac_neutral, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_vibro_sword3_gold,itm_laser_bolts_orange_pistol,itm_dl44a,itm_q2,itm_dl44a,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|agi_11|level(20),wp(130),knows_common,mandalorian_face1, mandalorian_face2],
+["spy_partner","Unremarkable Townsman","Unremarkable Townsmen", tf_mounted|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_gloves|tf_guarantee_horse|tf_guarantee_ranged,0,0,fac_neutral, [itm_ubese_armor,itm_scavenger_armor,itm_crime_lord_armor,itm_guard_armor,itm_guard_armor_red,itm_tunic_blue,itm_tunic_red,itm_tunic_yellow,itm_vibro_sword3_gold,itm_laser_bolts_orange_pistol,itm_dl44a,itm_q2,itm_dl44a,itm_transparent_helmet,itm_transparent_helmet,itm_transparent_helmet,itm_jacket_closed_a,itm_jacket_closed_c,itm_jacket_open_a,itm_jacket_open_c,itm_vest_closed_a,itm_vest_open_a,itm_vest_open_b,itm_black_boots], def_attrib|agi_11|level(10),wp(130),knows_common,mandalorian_face1, mandalorian_face2],
 ["bounty_target_1a","CIS Officer","CIS Officers",tf_randomize_face|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_ranged|tf_guarantee_shield,0,0,fac_commoners, [itm_transparent_helmet_armor,itm_black_boots,itm_black_gloves,itm_officer_uniform_white,itm_vibro_sword3_gold,itm_energy_shield_yellow_small,itm_laser_bolts_yellow_rifle,itm_a295], def_attrib_3|level(26),wp(180),starwars_skills_3, sw_imperial_face_1, sw_imperial_face_2],
 ["bounty_target_1b","CIS Officer","CIS Officers",tf_randomize_face|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_ranged|tf_guarantee_shield,0,0,fac_commoners, [itm_transparent_helmet_armor,itm_black_boots,itm_black_gloves,itm_outfit_grey,itm_vibro_sword3_gold,itm_energy_shield_yellow_small,itm_laser_bolts_yellow_rifle,itm_a295], def_attrib_3|level(26),wp(180),starwars_skills_3, sw_imperial_face_1, sw_imperial_face_2],
 ["bounty_target_2a","Farmer","Farmers",tf_randomize_face|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_helmet|tf_guarantee_ranged|tf_guarantee_shield,0,0,fac_commoners, [itm_transparent_helmet_armor,itm_vibro_blade1,itm_q2,itm_ddc_defender,itm_laser_bolts_yellow_pistol,itm_coarse_tunic,itm_jacket_open_c,itm_vest_open_a,itm_leather_gloves,itm_leather_boots], def_attrib_2|level(20),wp(150),starwars_skills_2 ,sw_man_face_1, sw_man_face_2],
@@ -6319,7 +6435,7 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["quick_battle_player", "Player", "Player", tf_hero, 0, reserved,  fac_player_faction, [itm_transparent_helmet,itm_leather_boots,itm_quick_battle_armor, itm_leather_gloves, itm_lightsaber_yellow, itm_a280,  itm_stun_beam_rifle, itm_energy_shield_yellow_medium],    knight_attrib_5,wp(250),starwars_knight_skills_5, sw_player_face],
 ["quick_battle_player_mounted", "Player", "Player", tf_hero, 0, reserved,  fac_player_faction, [itm_transparent_helmet,itm_leather_boots,itm_quick_battle_armor, itm_leather_gloves, itm_lightsaber_yellow, itm_a280,  itm_stun_beam_rifle, itm_energy_shield_yellow_medium, itm_practice_speeder],knight_attrib_5,wp(250),starwars_knight_skills_5, sw_player_face],
 ["quick_battle_farmer","Farmer","Farmers",tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_ranged,no_scene,reserved,fac_commoners,
-   [itm_baton,itm_baton,itm_pipe1,itm_pipe2,itm_melee_punch,itm_melee_punch,itm_vibro_blade1,itm_vibro_blade2,itm_q2,itm_q2,itm_dl44a,itm_ddc_defender,itm_westar,itm_laser_bolts_yellow_pistol,itm_leather_apron,itm_linen_tunic,itm_coarse_tunic,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_a,itm_leather_gloves,itm_leather_boots,itm_outfit_tan,itm_outfit_grey,itm_outfit_green],
+   [itm_baton,itm_baton,itm_pipe1,itm_pipe2,itm_melee_punch,itm_melee_punch,itm_vibro_blade1,itm_vibro_blade2,itm_q2,itm_q2,itm_dl44a,itm_ddc_defender,itm_dl44a,itm_laser_bolts_yellow_pistol,itm_leather_apron,itm_linen_tunic,itm_coarse_tunic,itm_jacket_open_c,itm_vest_closed_a,itm_vest_closed_b,itm_vest_closed_a,itm_leather_gloves,itm_leather_boots,itm_outfit_tan,itm_outfit_grey,itm_outfit_green],
    def_attrib|level(4),wp(60),knows_common,sw_man_face_1, sw_man_face_2],
 
 # START OF CUSTOM BATTLE TROOPS  
@@ -6377,7 +6493,12 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 	#instance arrays
   ["instance_attached_to",            "_","_",tf_guarantee_boots|tf_guarantee_armor, 0,0, fac_commoners,[],def_attrib|level(5),wp(40),knows_power_strike_1, sw_man_face_1, sw_man_face_2],
 #Highlander end--------------------------------------
+
+##@> Swyter's Gate.sys array
+["gate_sys_array","Mr Gate Array[Internal]","Mr Gate Array[Internal]",tf_hero,no_scene,reserved,fac_commoners,[],def_attrib,0,knows_common,0],
+["gate_sys_counter","Mr Gate Array[Internal]","Mr Gate Array[Internal]",tf_hero,no_scene,reserved,fac_commoners,[],def_attrib,0,knows_common,0],
 ]
+
 
 
 #Troop upgrade declarations
@@ -6538,6 +6659,13 @@ upgrade(troops,"b1series_assassin","bxseries_commando")
 #oom_series
 upgrade2(troops,"oom_series_security","oom_series_marine","oom_series_pilot")
 upgrade(troops,"oom_series_marine","oom_series_command")
+
+#SWY B2 series + CB3 Upgrade to Cortosis shield
+upgrade(troops,"b2series","b2series_enhanced")
+
+#SWY - Fixed Rancors with new skin and upgrades
+upgrade(troops,"rancor","rancor_mutant")
+
 
 #SW - manhunter switched to trandoshan slavers, currently with no upgrade path
 #upgrade(troops,"manhunter","slave_driver")

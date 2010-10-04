@@ -209,6 +209,9 @@ create_mesh_overlay_with_tableau_material         = 939 # (create_mesh_overlay_w
                                                         # when mesh_id is -1, a default mesh is generated automatically
 create_game_button_overlay      = 940 # (create_game_button_overlay, <destination>, <string_id>), #returns overlay id
 
+#may run?
+overlay_get_position                      = 946 # (overlay_get_position, <destination>, <overlay_id>)
+
 context_menu_add_item       = 980 # (right_mouse_menu_add_item, <string_id>, <value>), #must be called only inside script_game_right_mouse_menu_get_buttons
 
 get_average_game_difficulty = 990 # (get_average_game_difficulty, <destination>),

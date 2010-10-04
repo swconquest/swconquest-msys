@@ -1,3 +1,7 @@
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+# By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
+
 from header_common import *
 from header_animations import *
 
@@ -70,10 +74,13 @@ animations = [
 #   [124.0, "stand_shopkeeper", 0, 3740, arf_cyclic|arf_loop_pos_0_25],
 #   [80.0, "stand_guardsman", 0, 2397, arf_cyclic|arf_loop_pos_0_25],
  ],
- ["jump", acf_enforce_lowerbody,
+ ["jump", acf_enforce_lowerbody|acf_displace_position,
+ 
+ [0.6, "sw_jump1", 1, 36, arf_blend_in_1, 0, (0, 0, 0), 0.4], #new jump by swyter
+ 
    #[1.09, "jump", 22, 48, arf_blend_in_1],
-   [1.09, "jump", 22, 48, arf_blend_in_1, 0, (0, 0, 0), 1.0],	#acm modified
-   [0.8, "anim_human", 270, 272, arf_blend_in_1, 0, (0, 0, 0), 0.7],	#acm new
+   #@>[1.09, "jump", 22, 48, arf_blend_in_1, 0, (0, 0, 0), 1.0],	#acm modified
+   #@>[0.8, "anim_human", 270, 272, arf_blend_in_1, 0, (0, 0, 0), 0.7],	#acm new
 ##   [0.8, "anim_human", 270, 272, arf_blend_in_4],
  ],
  # Super-Mario Stype Super Jump - http://forums.taleworlds.net/index.php/topic,65520.msg1703891.html
@@ -82,26 +89,32 @@ animations = [
  #["jump", acf_enforce_lowerbody|acf_displace_position,
    #[1.09, "jump", 22, 48, arf_blend_in_1, 0, (0, 10, 0), 0],
  #], 
- ["jump_end", acf_enforce_lowerbody,
+ ["jump_end", acf_enforce_lowerbody|acf_displace_position,
+ 
+ [0.5, "sw_jump1", 30, 1, arf_blend_in_1, 0, (0, 0, 0), 0.3], #new jump by swyter
    #[0.3, "jump", 48, 55, arf_blend_in_1],
-   [0.3, "jump", 48, 55, arf_blend_in_1, 0, (0, 0, 0), 0.2],	#acm modified
-   [0.4, "anim_human", 280, 290, arf_blend_in_1, 0, (0, 0, 0), 0.3],	#acm new
+   #@>[0.3, "jump", 48, 55, arf_blend_in_1, 0, (0, 0, 0), 0.2],	#acm modified
+   #@>[0.4, "anim_human", 280, 290, arf_blend_in_1, 0, (0, 0, 0), 0.3],	#acm new
  ],
  ["stand_unarmed", 0,
   #["stand_unarmed", acf_enforce_lowerbody | acf_synch_with_horse,	#SW - trying to make the player move up/down with the horse_stand animation, nope ...
    [8, "noweapon_cstance", 0, 100, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25],
  ],
- ["stand_single", 0,
-   [9.0, "sword_loop01", 0, 200, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25],
-#   [4.0, "sword_loop02", 0, 100, arf_cyclic|arf_loop_pos_0_25],  
+ ["stand_single", 0, #Used for Lightsaber pair
+    #[9.0, "sw_single_saber_static", 0, 99, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25],
+    [9.0, "sword_loop01", 0, 200, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25],
+   #[4.0, "sword_loop02", 0, 100, arf_cyclic|arf_loop_pos_0_25],  
+   [6.0, "greatsword_cstance", 0, 91, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25],  
  ],
- ["stand_greatsword", 0,
+ ["stand_greatsword", 0, #used for standard lightsaber
    [6.0, "greatsword_cstance", 0, 91, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25],  
    [2.0, "anim_human", 1100, 1120, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.1],  	#acm new
  ],
  ["stand_staff", 0,
-   [2.0, "staff_cstance", 0, 60, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],  
-   [2.0, "anim_human", 1500, 1520, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],  #acm new
+ [9.0, "sw_single_saber_static", 0, 99, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25],
+ [9.0, "sword_loop01", 0, 200, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25],
+   #[2.0, "staff_cstance", 0, 60, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],  
+   #[2.0, "anim_human", 1500, 1520, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],  #acm new
  ],
  #SW - modified stand_crossbow
  ["stand_crossbow", 0,
@@ -118,6 +131,7 @@ animations = [
  ],
  ["walk_forward_staff", acf_enforce_lowerbody,
    [1.0, "anim_human", 6100, 6120, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   ##[1.0, "sw_staff_anim", 0, 99, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
  ],
  ["walk_forward_greatsword", acf_enforce_lowerbody,
    [1.0, "anim_human", 6200, 6220, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
@@ -132,6 +146,7 @@ animations = [
  ],
  ["walk_backward_staff", acf_enforce_lowerbody,
    [1.0, "anim_human", 6120, 6100, arf_use_inv_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   ##[1.0, "sw_staff_anim", 99, 0, arf_use_inv_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
  ],
  ["walk_backward_greatsword", acf_enforce_lowerbody,
    [1.0, "anim_human", 6220, 6200, arf_use_inv_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
@@ -146,9 +161,12 @@ animations = [
    [0.8, "run_man_forward_onehanded", 0, 24, arf_use_walk_progress|arf_cyclic|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.4], 
  ],
  ["run_forward_staff", acf_enforce_lowerbody,
+
 #   [0.8, "anim_human", 7100, 7140, arf_use_walk_progress|arf_cyclic|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
 ##   [0.8, "run_greatsword", 0, 22, arf_use_walk_progress|arf_cyclic|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
-   [0.8, "run_forward_staff", 0, 24, arf_use_walk_progress|arf_cyclic|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.4], 
+ ### [0.8, "run_forward_staff", 0, 24, arf_use_walk_progress|arf_cyclic|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.4], 
+    ##[0.8, "sw_staff_anim", 0, 99, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.4],
+	[0.8, "run_man_forward_onehanded", 0, 24, arf_use_walk_progress|arf_cyclic|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.4], 
  ],
  ["run_forward_greatsword", acf_enforce_lowerbody,
 #   [0.8, "anim_human", 7200, 7240, arf_use_walk_progress|arf_cyclic|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
@@ -196,7 +214,8 @@ animations = [
    [1.0, "anim_human", 7040, 7000, arf_use_inv_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
  ],
  ["run_backward_staff", acf_enforce_lowerbody,
-   [1.0, "anim_human", 7140, 7100, arf_use_inv_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   #[1.0, "anim_human", 7140, 7100, arf_use_inv_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   [1.0, "anim_human", 7040, 7000, arf_use_inv_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
  ],
  ["run_backward_greatsword", acf_enforce_lowerbody,
    [1.0, "anim_human", 7240, 7200, arf_use_inv_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
@@ -211,7 +230,8 @@ animations = [
    [1.0, "walk_right_greatsword_r", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
  ],
  ["walk_right_polearm", acf_enforce_lowerbody,
-   [1.0, "walk_right_staff_r", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
+   #[1.0, "walk_right_staff_r", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
+   [1.0, "walk_right_onehanded_r", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
  ],
  ["walk_left", acf_enforce_lowerbody,
    [1.0, "walk_left_normal", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
@@ -223,7 +243,8 @@ animations = [
    [1.0, "walk_left_greatsword", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
  ],
  ["walk_left_polearm", acf_enforce_lowerbody,
-   [1.0, "walk_left_staff", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   #[1.0, "walk_left_staff", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   [1.0, "walk_left_onehanded_r", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
  ],
  ["walk_forward_right", acf_enforce_lowerbody,
    [1.0, "walk_crossright_normal", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
@@ -235,7 +256,8 @@ animations = [
    [1.0, "walk_crossright_greatsword", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
  ],
  ["walk_forward_right_polearm", acf_enforce_lowerbody,
-   [1.0, "walk_crossright_staff", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
+   #[1.0, "walk_crossright_staff", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
+   [1.0, "walk_crossright_onehanded", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
  ],
  ["walk_forward_left", acf_enforce_lowerbody,
    [1.0, "walk_crossleft_normal", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
@@ -247,7 +269,8 @@ animations = [
    [1.0, "walk_crossleft_greatsword", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
  ],
  ["walk_forward_left_polearm", acf_enforce_lowerbody,
-   [1.0, "walk_crossleft_staff", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   #[1.0, "walk_crossleft_staff", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   [1.0, "walk_crossleft_onehanded", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
  ],
  ["walk_backward_left", acf_enforce_lowerbody,
    [1.0, "walk_crossright_normal", 32, 0, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
@@ -259,7 +282,8 @@ animations = [
    [1.0, "walk_crossright_greatsword", 32, 0, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
  ],
  ["walk_backward_left_polearm", acf_enforce_lowerbody,
-   [1.0, "walk_crossright_staff", 32, 0, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
+   #[1.0, "walk_crossright_staff", 32, 0, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
+   [1.0, "walk_crossright_onehanded", 32, 0, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
  ],
  ["walk_backward_right", acf_enforce_lowerbody,
    [1.0, "walk_crossleft_normal", 32, 0, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
@@ -271,7 +295,8 @@ animations = [
    [1.0, "walk_crossleft_greatsword", 32, 0, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
  ],
  ["walk_backward_right_polearm", acf_enforce_lowerbody,
-   [1.0, "walk_crossleft_staff", 32, 0, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   #[1.0, "walk_crossleft_staff", 32, 0, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   [1.0, "walk_crossleft_onehanded", 32, 0, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
  ],
  ["run_right", acf_enforce_lowerbody,
 #   [0.8, "anim_human", 9000, 9020, arf_use_walk_progress|arf_cyclic|blend_in_walk,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
@@ -291,7 +316,8 @@ animations = [
  ["run_right_polearm", acf_enforce_lowerbody,
 #   [0.8, "run_right_staff", 0, 12, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
 ##   [0.8, "run_right_staff", 0, 24, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
-   [0.8, "run_man_right_stuff", 0, 24, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
+ #  [0.8, "run_man_right_stuff", 0, 24, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
+    [0.8, "run_man_right_onehanded", 0, 24, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
  ],
  ["run_left", acf_enforce_lowerbody,
 #   [0.8, "anim_human", 9500, 9520, arf_use_walk_progress|arf_cyclic|arf_cyclic|blend_in_walk,pack2f(0.4,0.9), (0, 0, 0), 0.0],  
@@ -312,23 +338,25 @@ animations = [
  ["run_left_polearm", acf_enforce_lowerbody,
 #   [0.8, "run_left_staff", 0, 12, arf_use_walk_progress|arf_cyclic|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],  
 ##   [0.8, "run_left_staff", 0, 24, arf_use_walk_progress|arf_cyclic|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],  
-   [0.8, "run_man_left_stuff", 0, 24, arf_use_walk_progress|arf_cyclic|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],  
+ #  [0.8, "run_man_left_stuff", 0, 24, arf_use_walk_progress|arf_cyclic|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0], 
+   [0.8, "run_man_left_onehanded", 0, 24, arf_use_walk_progress|arf_cyclic|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],     
  ],
  #SW - modified ride_0 (nevermind)
- ["ride_0", acf_enforce_lowerbody,
+ ["ride_0", acf_align_with_ground|acf_enforce_lowerbody,
  #["ride_0", acf_enforce_lowerbody|acf_synch_with_horse,		#synch_with_horse didn't work to get them to move up/down
   ## [10.0, "anim_human", horse_move+2000, horse_move+2100, arf_cyclic],
   # [3.0, "anim_human_02", 600, 644, arf_cyclic],
 ##   [37.0, "stand_onhorse", 0, 1110, arf_cyclic],
 ##   [22.0, "stand_onhorse_sword", 0, 671, arf_cyclic],
-   [15.0, "stand_onhorse", 0, 456, arf_cyclic],		#original native animation
+   #[15.0, "stand_onhorse", 0, 456, arf_cyclic],		#original native animation
+   [12.0, "sw_pilot_stand", 0, 199, acf_align_with_ground|arf_cyclic|arf_blend_in_2],
    #[5.0, "sw_pilot_stand", 0, 99, arf_cyclic],
    #[10.0, "sw_pilot_stand", 0, 199, arf_cyclic],
    #[5.0, "sw_speeder_stand", 0, 99, arf_cyclic|arf_use_stand_progress|arf_make_walk_sound, 0, (0, 0, 0), 0.0],	#SW - new horse_stand animation by Swyter   
    
   ],
   #SW - modified ride_1
- ["ride_1", acf_enforce_lowerbody | acf_synch_with_horse,
+ ["ride_1", acf_enforce_lowerbody | acf_synch_with_horse | acf_align_with_ground,
    #[1.0, "anim_human_02", 0, 31, arf_cyclic],
    [1.0, "anim_human_02", 0, 0, arf_cyclic],
  ],
@@ -398,10 +426,12 @@ animations = [
  ],
  
  ["mount_horse", acf_enforce_all,
-   [2.0, "anim_human", horse_move+1000, horse_move+1050,  arf_blend_in_1, 0, (0.0,0,0.0)],
+  # [2.0, "anim_human", horse_move+1000, horse_move+1050,  arf_blend_in_1, 0, (0.0,0,0.0)],
+  [2.0, "sw_pilot_mount", 0, 100,  arf_blend_in_2, 0, (0.0,0,0.0)],
  ],
  ["dismount_horse", acf_enforce_lowerbody|acf_displace_position,
-   [2.0, "anim_human", horse_move+1100, horse_move+1150,  arf_blend_in_1, 0, (-0.5,0,0)],
+  # [2.0, "anim_human", horse_move+1100, horse_move+1150,  arf_blend_in_1, 0, (-0.5,0,0)],
+  [3.0, "sw_pilot_mount", 100, 0,   arf_blend_in_1, 0, (-0.6,0,0)],
  ],
  #SW - modified lancer_ride_0 (nevermind)
  #["lancer_ride_0", acf_enforce_lowerbody,
@@ -411,7 +441,8 @@ animations = [
  ],
  ["equip_default", 0,
 ##   [0.6, "anim_human", combat+0, combat+20, arf_blend_in_0],
-   [0.6, "equip_arms", 206, 221, arf_blend_in_0],
+  ##@> 0-9-0-4 by SWYT [0.6, "equip_arms", 206, 221, arf_blend_in_0],   
+  [0.6, "equip_arms", 352, 365, arf_blend_in_0],
  ],
  ["unequip_default", 0,
 ##   [0.3, "anim_human", combat+10, combat+0, arf_blend_in_0],
@@ -1206,10 +1237,13 @@ animations = [
    [2.2, "death_face", 8, 60, arf_blend_in_16|arf_make_custom_sound, pack2f(0.5, 0.0), (0,0,0), 0.6],
  ],
  ["fall_chest_front", acf_enforce_all|acf_align_with_ground|acf_lock_camera,
-   [1.0, "death_chest", 4, 37, arf_blend_in_16|arf_make_custom_sound, pack2f(0.9, 0.0), (0,0,0), 0.5],
+   #[1.0, "death_chest", 4, 37, arf_blend_in_16|arf_make_custom_sound, pack2f(0.9, 0.0), (0,0,0), 0.5],
+   [1.0, "swy_sw_death_chest", 0, 50, arf_blend_in_16|arf_make_custom_sound, pack2f(0.9, 0.0), (0,0,0), 0.5],
  ],
  ["fall_abdomen_hold_front", acf_enforce_all|acf_align_with_ground|acf_lock_camera,
-   [2.7, "death_abdomen", 5, 96, arf_blend_in_16|arf_make_custom_sound, pack2f(0.4, 0.0), (0,0,0), 0.5],
+   #[2.7, "death_abdomen", 5, 96, arf_blend_in_16|arf_make_custom_sound, pack2f(0.4, 0.0), (0,0,0), 0.5],
+   [1.7, "swy_sw_death_side", 0, 50, arf_blend_in_16|arf_make_custom_sound, pack2f(0.4, 0.0), (0,0,0), 0.5],
+
  ],
  ["fall_head_front", acf_enforce_all|acf_align_with_ground|acf_lock_camera,
    [1.2, "anim_human", blow+100, blow+138, arf_blend_in_16|arf_make_custom_sound, pack2f(0.8, 0.0), (0,0,0), 0.8], 
@@ -1385,7 +1419,7 @@ animations = [
  ["unused_human_anim_73", 0, [1.0, "anim_human", 0, 1, 0]],
  ["unused_human_anim_74", 0, [1.0, "anim_human", 0, 1, 0]],
  ["unused_human_anim_75", 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_76", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_76", 0, [1.0, "anim_human", 0, 1, 0]],        #SWY - Commented out for vader's stand
 # ["unused_human_anim_77", 0, [1.0, "anim_human", 0, 1, 0]],		#had to comment out for slave_dance
 # ["unused_human_anim_78", 0, [1.0, "anim_human", 0, 1, 0]],		#hand to comment out for crouch_stop
 # ["unused_human_anim_79", 0, [1.0, "anim_human", 0, 1, 0]],		#had to comment out for crouch
@@ -1394,6 +1428,7 @@ animations = [
 # ["unused_human_anim_82", 0, [1.0, "anim_human", 0, 1, 0]],		#had to comment out for droid_walk_forward
 # ["unused_human_anim_83", 0, [1.0, "anim_human", 0, 1, 0]],		#had to comment out for dmod_kill_agent animation
 #--------------------------------------------------------------------------------------------------------------------
+
 
  ["slave_dance", 0,
    #[10.0, "dancer_stand", 0, 177, arf_blend_in_5], 
@@ -1493,9 +1528,9 @@ animations = [
  ["sitting", 0,
  #["sitting", acf_enforce_all|acf_displace_position,
    #[2, "anim-drinking", 0, 1, 0],		#by geroj
-   #[2, "sw_chair_moving_head", 0, 59, 0, pack2f(0.0, 0.0), (0, 0, 2), 0.0],	#(right,  forward,  down), delay
-   #[2, "sw_chair_moving_head", 0, 59, 0, 0],	#(right,  forward,  down), delay
-   #[2, "sw_chair_moving_head", 0, 59, 0, 0, (0, 0, 0.2), 0.25],	#(right,  forward,  down), delay
+   #[2, "sw_chair_moving_head_fixed", 0, 59, 0, pack2f(0.0, 0.0), (0, 0, 2), 0.0],	#(right,  forward,  down), delay
+   #[2, "sw_chair_moving_head_fixed", 0, 59, 0, 0],	#(right,  forward,  down), delay
+   #[2, "sw_chair_moving_head_fixed", 0, 59, 0, 0, (0, 0, 0.2), 0.25],	#(right,  forward,  down), delay
    #[2, "sw_chair_drinking_beta_1", 0, 59, 0, 0, (0, 0, 0.2), 0.25],	#(right,  forward,  down), delay
    #[2, "sw_chair_drinking_beta_1", 0, 59, 0, 0],	#(right,  forward,  down), delay
    [2.0, "sw_chair_moving_head_fixed", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],	#by Swyter
@@ -1508,11 +1543,16 @@ animations = [
  #["sit_cantina_agent", acf_enforce_all|acf_displace_position,
  ["sit_cantina_agent", acf_displace_position,
    #[2, "anim-drinking", 0, 1, 0],		#by geroj
-   #[2, "sw_chair_moving_head", 0, 59, 0, pack2f(0.0, 0.0), (0, 0, 2), 0.0],	#(right,  forward,  down), delay
-   #[2, "sw_chair_moving_head", 0, 1, 0, 0, (0, 0, 0.2), 0.0],	#(right,  forward,  down), delay
-   #[2, "sw_chair_moving_head", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0.2), 0.0],	#(right,  forward,  down), delay
-   [0.2, "sw_chair_moving_head", 0, 1, 0, 0, (0, 0, 0.2), 0.0],	#(right,  forward,  down), delay
+   #[2, "sw_chair_moving_head_fixed", 0, 59, 0, pack2f(0.0, 0.0), (0, 0, 2), 0.0],	#(right,  forward,  down), delay
+   #[2, "sw_chair_moving_head_fixed", 0, 1, 0, 0, (0, 0, 0.2), 0.0],	#(right,  forward,  down), delay
+   #[2, "sw_chair_moving_head_fixed", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0.2), 0.0],	#(right,  forward,  down), delay
+   [0.2, "sw_chair_stand1_fixed", 0, 1, 0, 0, (0, 0, 0.2), 0.0],	#(right,  forward,  down), delay
  ],  
+ 
+ 
+   ["vader_stand", 0,
+   [4, "swy_vader_stand", 0, 70, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25], #by Swyter
+ ],
 
 #-------------------------------------------------------------------------------------------------------------------- 
  
@@ -1581,6 +1621,7 @@ animations = [
    [1.0, "crouch", 0, 19, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
  ], 
  
+ 
   # ["release_bash", acf_left_cut|acf_parallels_for_look_slope|acf_anim_length(100),	#from release_slashleft_onehanded
    # [0.6, "anim_human", combat+9110, combat+9140, blend_in_release], 			#original
    # #[2.0, "sw_lightsaber_left_swing_1", 0, 49, blend_in_release], 
@@ -1611,7 +1652,8 @@ animations = [
    #[5.0, "sw_speeder_stand", 0, 99, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.4,0.31,0.79,0.94), (0, 0, 0), 0.0],
    #[5, "sw_speeder_stand", 0, 99, arf_blend_in_4],	#SW - new horse_stand animation by Swyter
    #[1.6, "anim_horse", 205, 222,  arf_blend_in_4], #|arf_end_pos_0_25],
-   [5.0, "anim_horse", 600, 600, arf_cyclic|arf_use_stand_progress, 0, (0, 0, 0), 0.0],		#SW this was working decent
+   ##@>[5.0, "anim_horse", 600, 600, arf_cyclic|arf_use_stand_progress, 0, (0, 0, 0), 0.0],		#SW this was working decent
+   [6.0, "sw_speeder_stand", 0, 99, arf_cyclic|arf_use_stand_progress, 0, (0, 0, 0), 0.0],		#SW this was working decent
    #[5.0, "sw_speeder_stand", 0, 99, arf_cyclic|arf_use_stand_progress|arf_make_walk_sound, 0, (0, 0, 0), 0.0],	#SW - new horse_stand animation by Swyter   
  ],
  #SW - modified horse_pace_1

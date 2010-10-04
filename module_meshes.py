@@ -1,3 +1,7 @@
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+# By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
+
 from header_meshes import *
 
 ####################################################################################################################
@@ -44,9 +48,9 @@ meshes = [
   ("pic_village_s", 0, "pic_village_s", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("pic_village_w", 0, "pic_village_w", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("pic_recruits", 0, "pic_recruits", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  ("pic_arms_swadian", 0, "pic_arms_swadian", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  ("pic_arms_vaegir", 0, "pic_arms_vaegir", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  ("pic_arms_khergit", 0, "pic_arms_khergit", 0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("pic_arms_swadian", 0, "pic_arms_empire", 0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("pic_arms_vaegir", 0, "pic_arms_rebel", 0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("pic_arms_khergit", 0, "pic_arms_hutt", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("pic_arms_nord", 0, "pic_arms_nord", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("pic_arms_rhodok", 0, "pic_arms_rhodok", 0, 0, 0, 0, 0, 0, 1, 1, 1),
 
@@ -63,6 +67,7 @@ meshes = [
   ("pic_fullscreen_town_hoth", 0, "pic_fullscreen_town_hoth", 0, 0, 0, 0, 0, 0, 1, 1, 1),  
   ("pic_fullscreen_town_kashyyk", 0, "pic_fullscreen_town_kashyyk", 0, 0, 0, 0, 0, 0, 1, 1, 1),  
   ("pic_fullscreen_town_tatooine", 0, "pic_fullscreen_town_tatooine", 0, 0, 0, 0, 0, 0, 1, 1, 1), 
+  ("pic_fullscreen_town_kamino", 0, "pic_fullscreen_town_kamino", 0, 0, 0, 0, 0, 0, 1, 1, 1), 
   
   #SW - new pictures
   ("pic_rancors", 0, "pic_rancors", 0, 0, 0, 0, 0, 0, 1, 1, 1),
@@ -97,6 +102,10 @@ meshes = [
   ("player_damage_50", 0, "player_damage_50", 0, 0, 0, 0, 0, 0, 1, 1, 1), 
   ("player_damage_75", 0, "player_damage_75", 0, 0, 0, 0, 0, 0, 1, 1, 1), 
 
+##@> SWY New Class Pics for Selection Window
+
+  ("ui_soldier", 0, "ui_soldier", 0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("ui_merchant", 0, "ui_merchant", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   
   ("portrait_blend_out", 0, "portrait_blend_out", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("load_window", 0, "load_window", 0, 0, 0, 0, 0, 0, 1, 1, 1),

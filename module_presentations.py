@@ -1,3 +1,7 @@
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+# By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
+
 from header_common import *
 from header_presentations import *
 from header_mission_templates import *
@@ -442,9 +446,7 @@ presentations = [
 
 ("zoom_view", prsntf_read_only, 0, [		#must use prsntf_read_only or you cannot attack
 	(ti_on_presentation_load,
-		[
-		(presentation_set_duration, 999999),
-		
+		[			
 		(assign, ":view", 0),
 		(get_player_agent_no, ":player_agent"),
 		(agent_get_wielded_item, ":item_handone", ":player_agent", 0),
@@ -471,10 +473,10 @@ presentations = [
 
 		(try_begin),
 			(eq, ":view", 1),
-			(create_mesh_overlay, reg1, "mesh_binocular_display"),
-			(position_set_x, pos1, 0),
-			(position_set_y, pos1, 0),
-			(overlay_set_position, reg1, pos1),	
+			 (create_mesh_overlay, reg1, "mesh_binocular_display"),
+			 (position_set_x, pos1, 0),
+			 (position_set_y, pos1, 0),
+			 (overlay_set_position, reg1, pos1),	
 		(else_try),
 			(eq, ":view", 2),
 			(create_mesh_overlay, reg1, "mesh_scope_display"),
@@ -483,12 +485,67 @@ presentations = [
 			(overlay_set_position, reg1, pos1),			
 		(try_end),
 		
+		(presentation_set_duration, 999999),
+		
+		#--------------------------
+							#Little Pos Helper by Kuba begin---------
+							(create_text_overlay, "$g_little_pos_helper", "@X: 00,Y: 00"),
+							(overlay_set_color, "$g_little_pos_helper", 0xFFFFFFFF),
+							(position_set_x, pos1, 10),
+							(position_set_y, pos1, 700),
+							(overlay_set_position, "$g_little_pos_helper", pos1),
+							#----------------------------------------
+							
+							# (create_mesh_overlay, reg1, "mesh_binocular_display"),
+							# (position_set_x, pos1, 0),
+							# (position_set_y, pos1, 0),
+							# (position_set_z, pos1, 0),
+							# (overlay_set_position, reg1, pos1),	
+							
+							#Dynamic numbers by Swyter - Rotation
+							(create_text_overlay, "$g_rotation", "@Binocular Rotation"),
+							(position_set_x, pos1, 465),
+							(position_set_y, pos1, 200),
+							(position_set_z, pos1, 0),
+							(overlay_set_position, "$g_rotation", pos1),
+							(overlay_set_color, "$g_rotation", 0xde9e62),		
+							
+							#Dynamic numbers by Swyter - Distance
+							(create_text_overlay, "$g_distance", "@Binocular Distance"),
+							(position_set_x, pos1, 238),
+							(position_set_y, pos1, 140),
+							(position_set_z, pos1, 0),
+							(overlay_set_position, "$g_distance", pos1),	
+							(overlay_set_color, "$g_distance", 0x3e1213),
+		#-----------------------------------------------------------
 		]),
 	(ti_on_presentation_run,
        		[
+				#-----------------------------------------------------------
+				(mouse_get_position, pos1),
+				(position_get_x, reg1, pos1),
+				(position_get_y, reg2, pos1),
+				(overlay_set_text, "$g_little_pos_helper", "@X: {reg1},Y: {reg2}"),
+			
+			
+				(get_player_agent_no,":bin_player"),
+				(agent_get_position, pos2,":bin_player"),
+				(position_get_rotation_around_z,":bin_rotation",pos2),
+				(str_store_string,reg60,":bin_rotation"),
+				
+				(agent_get_look_position, pos3, ":bin_player"),
+				(get_distance_between_positions,":bin_distance",pos2,pos3),
+				(store_div,":bin_distance",":bin_distance",1000),
+				
+				(overlay_set_text, "$g_rotation", "@{reg60}"),
+				(overlay_set_text, "$g_distance", ":bin_distance"),
+			#-----------------------------------------------------------
+
+		(try_begin),
 			(neg|game_key_is_down,gk_zoom),
 			#(assign, "$zoom_view", 0),
-			(presentation_set_duration, 0),
+			(presentation_set_duration, 0),	
+		(try_end),
         	]),	
 ]),
 
@@ -7441,9 +7498,9 @@ presentations = [
 		 (else_try),
 		  	 (eq,"$active_key",6),
 		         (assign,"$bacta_injector_key",":bind"),
-		 (else_try),
-		  	 (eq,"$active_key",7),
-		         (assign,"$binoculars_key",":bind"),
+		 #(else_try),
+		  	 #(eq,"$active_key",7),
+		         #(assign,"$binoculars_key",":bind"),
 		 (else_try),
 		  	 (eq,"$active_key",8),
 		         (assign,"$deathcam_forward_key",":bind"),
@@ -7460,5 +7517,487 @@ presentations = [
 ]),		
 ##################################################################################################
 
+######################################################################################################
+	  
+# SWYTER's FACTION SELECTION ANIMATED AND MODULAR MENU
+# enjoy it :P
+  ("faction_selection",0,mesh_load_window,[
+      (ti_on_presentation_load,
+       [	#Little Pos Helper by Kuba begin
+			(create_text_overlay, "$g_little_pos_helper", "@X: 00,Y: 00"),
+			(overlay_set_color, "$g_little_pos_helper", 0xFFFFFFFF),
+			(position_set_x, pos1, 10),
+			(position_set_y, pos1, 700),
+			(overlay_set_position, "$g_little_pos_helper", pos1),
+			
+			(create_text_overlay, "$g_little_pos2_helper", "@Over:"),
+			(overlay_set_color, "$g_little_pos2_helper", 0xFFFFFFFF),
+			(position_set_x, pos1, 35),
+			(position_set_y, pos1, 680),
+			(overlay_set_position, "$g_little_pos2_helper", pos1),
+			
+			(create_text_overlay, "$g_little_pos3_helper", "@Selected:"),
+			(overlay_set_color, "$g_little_pos3_helper", 0xFFFFFFFF),
+			(position_set_x, pos1, 50),
+			(position_set_y, pos1, 660),
+			(overlay_set_position, "$g_little_pos3_helper", pos1),
+			#Little Pos Helper by Kuba end
+			
+	   (set_fixed_point_multiplier, 1000),
+	   
+        (str_store_string, s1, "@As you grew older you decided to join..."),
+        (create_text_overlay, reg1, s1, tf_center_justify),
+        (position_set_x, pos1, 500),
+        (position_set_y, pos1, 600),
+        (overlay_set_position, reg1, pos1),
+        (overlay_set_text, reg1, s1),
+        (create_button_overlay, "$g_presentation_obj_1", "@Go Back...", tf_center_justify),
+		#(create_button_overlay, "$g_presentation_obj_1", 0, tf_center_justify),
+        (position_set_x, pos1, 350),
+        (position_set_y, pos1, 50),
+        (overlay_set_position, "$g_presentation_obj_1", pos1),
+		
+        (create_button_overlay, "$g_presentation_obj_2", "@Remain Independent.", tf_center_justify),
+		#(create_button_overlay, "$g_presentation_obj_1", 0, tf_center_justify),
+        (position_set_x, pos1, 570),
+        (position_set_y, pos1, 50),
+        (overlay_set_position, "$g_presentation_obj_2", pos1),
+		
+		#GALACTIC EMPIRE
+		#text
+		 (create_text_overlay, "$g_option_empire_text", "@Galactic Empire", tf_center_justify),
+		#(create_button_overlay, "$g_presentation_obj_1", 0, tf_center_justify),
+        (position_set_x, pos1, 460),
+        (position_set_y, pos1, 280),
+        (overlay_set_position, "$g_option_empire_text", pos1),
+		(overlay_set_alpha, "$g_option_empire_text", 0x7D),
+		(overlay_set_color, "$g_option_empire_text", 0x181D4D),
+		
+		#logo	
+	    (create_image_button_overlay, "$g_option_empire", "mesh_pic_arms_swadian", "mesh_pic_arms_swadian"),
+           (position_set_x, pos1, 460),
+           (position_set_y, pos1, 400),
+           (overlay_set_position, "$g_option_empire", pos1),
+           (position_set_x, pos1, 500),
+           (position_set_y, pos1, 500),
+           (overlay_set_size, "$g_option_empire", pos1),
 
+		#REBEL ALLIANCE
+		#text
+		 (create_text_overlay, "$g_option_rebel_text", "@Rebel Alliance", tf_center_justify),
+		#(create_button_overlay, "$g_presentation_obj_1", 0, tf_center_justify),
+        (position_set_x, pos1, 160),
+        (position_set_y, pos1, 180),
+        (overlay_set_position, "$g_option_rebel_text", pos1),
+		(overlay_set_alpha, "$g_option_rebel_text", 0x7D),
+		(overlay_set_color, "$g_option_rebel_text", 0x4D1818),
+		
+		#logo	
+	    (create_image_button_overlay, "$g_option_rebel", "mesh_pic_arms_vaegir", "mesh_pic_arms_vaegir"),
+           (position_set_x, pos1, 160),
+           (position_set_y, pos1, 300),
+           (overlay_set_position, "$g_option_rebel", pos1),
+           (position_set_x, pos1, 600),
+           (position_set_y, pos1, 600),
+           (overlay_set_size, "$g_option_rebel",pos1),
+
+
+		#HUTT CARTEL
+		#text
+		 (create_text_overlay, "$g_option_hutt_text", "@Hutt Cartel", tf_center_justify),
+		#(create_button_overlay, "$g_presentation_obj_1", 0, tf_center_justify),
+        (position_set_x, pos1, 760),
+        (position_set_y, pos1, 180),
+        (overlay_set_position, "$g_option_hutt_text", pos1),
+		(overlay_set_alpha, "$g_option_hutt_text", 0x7D),
+		(overlay_set_color, "$g_option_hutt_text", 0x4D4018),
+		
+		#logo	
+	    (create_image_button_overlay, "$g_option_hutt", "mesh_pic_arms_khergit", "mesh_pic_arms_khergit"),
+           (position_set_x, pos1, 760),
+           (position_set_y, pos1, 300),
+           (overlay_set_position, "$g_option_hutt", pos1),
+           (position_set_x, pos1, 600),
+           (position_set_y, pos1, 600),
+           (overlay_set_size, "$g_option_hutt",pos1),
+		   
+        # (assign, ":x_pos", 160),
+        # (assign, ":y_pos", 400),
+        # (assign, ":try_end", faction_meshes_end_minus_one),
+        # (store_mul, ":begin_mesh", 16, "$g_presentation_page_no"),
+        # (val_add, ":begin_mesh", faction_meshes_begin),
+        # (store_add, ":try_end_2", ":begin_mesh", 16),
+        # (val_min, ":try_end", ":try_end_2"),
+        # (store_add, "$g_presentation_banner_start", "$g_presentation_obj_1", 1),
+        # (try_for_range, ":cur_banner_mesh", ":begin_mesh", ":try_end"),
+          # (create_image_button_overlay, reg1, ":cur_banner_mesh", ":cur_banner_mesh"),
+          # (position_set_x, pos1, ":x_pos"),
+          # (position_set_y, pos1, ":y_pos"),
+          # (overlay_set_position, reg1, pos1),
+            # (position_set_x, pos1, 300),
+            # (position_set_y, pos1, 300),
+            # (overlay_set_size, reg1, pos1),
+          # (val_add, ":x_pos", 300),
+          # (ge, ":x_pos", 900),
+          # (assign, ":x_pos", 110),
+          # (val_sub, ":y_pos", 250),
+        # (try_end),
+        (presentation_set_duration, 999999),
+        ]),
+      (ti_on_presentation_event_state_change,
+       [(store_trigger_param_1, ":object"),
+		(store_trigger_param_1, reg5),
+	    (overlay_set_text, "$g_little_pos3_helper", "@Selected: {reg5}"),
+		
+        (try_begin),
+			  (eq, ":object", "$g_presentation_obj_1"),
+			  (jump_to_menu,"mnu_start_character_0"),
+			  (presentation_set_duration, 0),
+        (else_try),
+			  (eq, ":object", "$g_presentation_obj_2"),
+				(str_store_string,s13,"@You decide it is now time to leave your family and seek you own fortune."),
+				(assign,"$faction_choice",cb0_independent),	  	  
+				(jump_to_menu,"mnu_choose_skill"),
+			  (presentation_set_duration, 0),
+        (else_try),
+			(eq, ":object", "$g_option_empire"),
+				(str_store_string,s13,"@After visiting the recruiting center you were accepted into the army and spent several months training at the Imperial Academy. As your last task before graduation you were given a small ship and sent to Coruscant to pledge your loyalty before Emperor Palpatine himself."),
+				(assign,"$faction_choice",cb0_empire),		
+				(jump_to_menu,"mnu_choose_skill"),
+				(presentation_set_duration, 0),
+        (else_try),
+			(eq, ":object", "$g_option_rebel"),
+				(str_store_string,s13,"@Using some of your local contacts you eventually arranged a meeting with a rebel commander. After working with his unit for several months you have been given a small ship and sent to Yavin IV to pledge your loyalty before Mon Mothma herself."),
+				(assign,"$faction_choice",cb0_rebel),
+				(jump_to_menu,"mnu_choose_skill"),
+				(presentation_set_duration, 0),
+        (else_try),
+			(eq, ":object", "$g_option_hutt"),
+				(str_store_string,s13,"@You spent several months doing random jobs for the local crime lord. Thievery and murder became a common part of your life and you developed enough of a reputation that you were given a small ship and sent to Tatooine to pledge your loyalty before Jabba the Hutt."),	  
+				(assign,"$faction_choice",cb0_hutt),	  
+				(jump_to_menu,"mnu_choose_skill"),
+				(presentation_set_duration, 0),
+        (try_end),
+        ]),
+		
+		
+       (ti_on_presentation_run,[
+	   	(mouse_get_position, pos1),
+		(position_get_x, reg1, pos1),
+		(position_get_y, reg2, pos1),
+		(overlay_set_text, "$g_little_pos_helper", "@X: {reg1},Y: {reg2}"),
+	   
+	   
+       # [(try_begin),
+          # (this_or_next|key_clicked, key_space),
+          # (this_or_next|key_clicked, key_enter),
+          # (this_or_next|key_clicked, key_escape),
+          # (key_clicked, key_back_space),
+          # (presentation_set_duration, 0),
+        # (try_end),
+
+         ]),
+		
+		(ti_on_presentation_mouse_enter_leave,[
+			
+			(store_trigger_param_1, reg3),
+			(store_trigger_param_2, reg4),
+			(store_trigger_param_1, ":id"),
+			(store_trigger_param_2, ":stage"),
+			
+			(overlay_set_text, "$g_little_pos2_helper", "@Over: {reg3},{reg4}"),
+			
+        (try_begin),
+		
+		
+			  (eq, ":id", "$g_option_empire"),
+			  (eq, ":stage", 0),
+			(position_set_x, pos1, 300),
+            (position_set_y, pos1, 300),
+			(overlay_animate_to_size, ":id", 200, pos1),
+			(overlay_animate_to_alpha, ":id", 150, 0x7D),
+			(overlay_animate_to_alpha, "$g_option_empire_text", 150, 0xFF),
+		(else_try),
+			  (eq, ":id", "$g_option_empire"),
+			  (eq, ":stage", 1),
+			(position_set_x, pos1, 600),
+            (position_set_y, pos1, 600),
+			(overlay_animate_to_size, ":id", 200, pos1),
+			(overlay_animate_to_alpha, ":id", 150, 0x0),
+			(overlay_animate_to_alpha, "$g_option_empire_text", 150, 0x7D),
+        (else_try),
+		
+		
+			  (eq, ":id", "$g_option_rebel"),
+			  (eq, ":stage", 0),
+			(position_set_x, pos1, 400),
+            (position_set_y, pos1, 400),
+			(overlay_animate_to_size, ":id", 200, pos1),
+			(overlay_animate_to_alpha, ":id", 150, 0x7D),
+			(overlay_animate_to_alpha, "$g_option_rebel_text", 150, 0xFF),
+		(else_try),
+			  (eq, ":id", "$g_option_rebel"),
+			  (eq, ":stage", 1),
+			(position_set_x, pos1, 700),
+            (position_set_y, pos1, 700),
+			(overlay_animate_to_size, ":id", 200, pos1),
+			(overlay_animate_to_alpha, ":id", 150, 0x0),
+			(overlay_animate_to_alpha, "$g_option_rebel_text", 150, 0x7D),
+        (else_try),
+		
+		
+			  (eq, ":id", "$g_option_hutt"),
+			  (eq, ":stage", 0),
+			(position_set_x, pos1, 400),
+            (position_set_y, pos1, 400),
+			(overlay_animate_to_size, ":id", 200, pos1),
+			(overlay_animate_to_alpha, ":id", 150, 0x7D),
+			(overlay_animate_to_alpha, "$g_option_hutt_text", 150, 0xFF),
+		(else_try),
+			  (eq, ":id", "$g_option_hutt"),
+			  (eq, ":stage", 1),
+			(position_set_x, pos1, 700),
+            (position_set_y, pos1, 700),
+			(overlay_animate_to_size, ":id", 200, pos1),
+			(overlay_animate_to_alpha, ":id", 150, 0x0),
+			(overlay_animate_to_alpha, "$g_option_hutt_text", 150, 0x7D),
+		(try_end),
+		]),
+		
+      ]),
+	  
+	  
+	  # SWYTER's class SELECTION ANIMATED AND MODULAR MENU
+# enjoy it :P
+  ("class_selection",0,mesh_load_window,[
+      (ti_on_presentation_load,
+       [	#Little Pos Helper by Kuba begin
+			(create_text_overlay, "$g_little_pos_helper", "@X: 00,Y: 00"),
+			(overlay_set_color, "$g_little_pos_helper", 0xFFFFFFFF),
+			(position_set_x, pos1, 10),
+			(position_set_y, pos1, 700),
+			(overlay_set_position, "$g_little_pos_helper", pos1),
+			
+			(create_text_overlay, "$g_little_pos2_helper", "@Over:"),
+			(overlay_set_color, "$g_little_pos2_helper", 0xFFFFFFFF),
+			(position_set_x, pos1, 35),
+			(position_set_y, pos1, 680),
+			(overlay_set_position, "$g_little_pos2_helper", pos1),
+			
+			(create_text_overlay, "$g_little_pos3_helper", "@Selected:"),
+			(overlay_set_color, "$g_little_pos3_helper", 0xFFFFFFFF),
+			(position_set_x, pos1, 50),
+			(position_set_y, pos1, 660),
+			(overlay_set_position, "$g_little_pos3_helper", pos1),
+			#Little Pos Helper by Kuba end
+			
+	   (set_fixed_point_multiplier, 1000),
+	   
+        (str_store_string, s1, "@You spent your early years traveling around the galaxy with your parents. Your father was..."),
+        (create_text_overlay, reg1, s1, tf_center_justify),
+        (position_set_x, pos1, 500),
+        (position_set_y, pos1, 600),
+        (overlay_set_position, reg1, pos1),
+        (overlay_set_text, reg1, s1),
+        (create_button_overlay, "$g_presentation_obj_1", "@Go Back...", tf_center_justify),
+		#(create_button_overlay, "$g_presentation_obj_1", 0, tf_center_justify),
+        (position_set_x, pos1, 450),
+        (position_set_y, pos1, 50),
+        (overlay_set_position, "$g_presentation_obj_1", pos1),
+		
+		#GALACTIC ambassador
+		#text
+		 (create_text_overlay, "$g_option_ambassador_text", "@Ambassador", tf_center_justify),
+		#(create_button_overlay, "$g_presentation_obj_1", 0, tf_center_justify),
+        (position_set_x, pos1, 460),
+        (position_set_y, pos1, 280),
+        (overlay_set_position, "$g_option_ambassador_text", pos1),
+		(overlay_set_alpha, "$g_option_ambassador_text", 0x7D),
+		(overlay_set_color, "$g_option_ambassador_text", 0x181D4D),
+		
+		#logo	
+	    (create_image_button_overlay, "$g_option_ambassador", "mesh_ui_merchant", "mesh_ui_merchant"),
+           (position_set_x, pos1, 460),
+           (position_set_y, pos1, 400),
+           (overlay_set_position, "$g_option_ambassador", pos1),
+           (position_set_x, pos1, 500),
+           (position_set_y, pos1, 500),
+           (overlay_set_size, "$g_option_ambassador", pos1),
+
+		#merchant ALLIANCE
+		#text
+		 (create_text_overlay, "$g_option_merchant_text", "@Merchant", tf_center_justify),
+		#(create_button_overlay, "$g_presentation_obj_1", 0, tf_center_justify),
+        (position_set_x, pos1, 160),
+        (position_set_y, pos1, 180),
+        (overlay_set_position, "$g_option_merchant_text", pos1),
+		(overlay_set_alpha, "$g_option_merchant_text", 0x7D),
+		(overlay_set_color, "$g_option_merchant_text", 0x4D1818),
+		
+		#logo	
+	    (create_image_button_overlay, "$g_option_merchant", "mesh_ui_merchant", "mesh_ui_merchant"),
+           (position_set_x, pos1, 160),
+           (position_set_y, pos1, 300),
+           (overlay_set_position, "$g_option_merchant", pos1),
+           (position_set_x, pos1, 600),
+           (position_set_y, pos1, 600),
+           (overlay_set_size, "$g_option_merchant",pos1),
+
+
+		#HUTT CARTEL
+		#text
+		 (create_text_overlay, "$g_option_soldier_text", "@Soldier", tf_center_justify),
+		#(create_button_overlay, "$g_presentation_obj_1", 0, tf_center_justify),
+        (position_set_x, pos1, 760),
+        (position_set_y, pos1, 180),
+        (overlay_set_position, "$g_option_soldier_text", pos1),
+		(overlay_set_alpha, "$g_option_soldier_text", 0x7D),
+		(overlay_set_color, "$g_option_soldier_text", 0x4D4018),
+		
+		#logo	
+	    (create_image_button_overlay, "$g_option_soldier", "mesh_ui_soldier", "mesh_ui_soldier"),
+           (position_set_x, pos1, 760),
+           (position_set_y, pos1, 300),
+           (overlay_set_position, "$g_option_soldier", pos1),
+           (position_set_x, pos1, 600),
+           (position_set_y, pos1, 600),
+           (overlay_set_size, "$g_option_soldier",pos1),
+
+        (presentation_set_duration, 999999),
+        ]),
+      (ti_on_presentation_event_state_change,
+       [(store_trigger_param_1, ":object"),
+		(store_trigger_param_1, reg5),
+	    (overlay_set_text, "$g_little_pos3_helper", "@Selected: {reg5}"),
+		
+        (try_begin),
+			  (eq, ":object", "$g_presentation_obj_1"),
+			  (jump_to_menu,"mnu_start_game_1"),
+			  (presentation_set_duration, 0),
+        (else_try),
+			(eq, ":object", "$g_option_ambassador"),
+				  (assign,"$background_type",cb0_ambassador),
+				  (assign, reg3, "$character_gender"),
+				  #(str_store_string,s10,"@string not used"),
+				  #(str_store_string,s13,"@You decide it is now time to leave your family and seek you own fortune."),
+				(jump_to_menu,"mnu_start_character_faction"),
+				(presentation_set_duration, 0),
+        (else_try),
+			(eq, ":object", "$g_option_merchant"),
+				  (assign,"$background_type",cb0_merchant),
+				  (assign, reg3, "$character_gender"),
+				  #(str_store_string,s10,"@string not used"),
+				  #(str_store_string,s13,"@You decide it is now time to leave your family and seek you own fortune."),	  
+				(jump_to_menu,"mnu_start_character_faction"),
+				(presentation_set_duration, 0),
+        (else_try),
+			(eq, ":object", "$g_option_soldier"),
+				  (assign,"$background_type",cb0_soldier),
+				  (assign, reg3, "$character_gender"),
+				  #(str_store_string,s10,"@string not used"),
+				  #(str_store_string,s13,"@You decide it is now time to leave your family and seek you own fortune."),	  
+				(jump_to_menu,"mnu_start_character_faction"),
+				(presentation_set_duration, 0),
+        (try_end),
+        ]),
+		
+		
+       (ti_on_presentation_run,[
+	   	(mouse_get_position, pos1),
+		(position_get_x, reg1, pos1),
+		(position_get_x, ":mouse_x", pos1),
+		(position_get_y, reg2, pos1),
+		(overlay_set_text, "$g_little_pos_helper", "@X: {reg1},Y: {reg2}"),
+	   
+	  (assign,"$g_roller_end_plus_1","$g_option_soldier"),
+	  (val_add,"$g_roller_end_plus_1",1),
+	  
+	  (try_for_range,":overlay","$g_option_ambassador_text","$g_roller_end_plus_1"),
+		(try_begin),
+			(le,":mouse_x",150), #-> left screen side
+			(overlay_get_position, pos1, ":overlay"),
+			(position_get_x,":x",pos1),
+				(val_sub,":x",10),
+			(position_set_x,pos1,":x"),
+			(overlay_animate_to_position, ":overlay", 500, pos1),
+		(else_try),
+			(ge,":mouse_x",750), #-> right screen side
+			(overlay_get_position, pos1, ":overlay"),
+			(position_get_x,":x",pos1),
+				(val_add,":x",10),
+			(position_set_x,pos1,":x"),
+			(overlay_animate_to_position, ":overlay", 500, pos1),
+		(try_end),
+	   (try_end),
+
+         ]),
+		
+		(ti_on_presentation_mouse_enter_leave,[
+			
+			(store_trigger_param_1, reg3),
+			(store_trigger_param_2, reg4),
+			(store_trigger_param_1, ":id"),
+			(store_trigger_param_2, ":stage"),
+			
+			(overlay_set_text, "$g_little_pos2_helper", "@Over: {reg3},{reg4}"),
+			
+        (try_begin),
+		
+		
+			  (eq, ":id", "$g_option_ambassador"),
+			  (eq, ":stage", 0),
+			(position_set_x, pos1, 300),
+            (position_set_y, pos1, 300),
+			(overlay_animate_to_size, ":id", 200, pos1),
+			(overlay_animate_to_alpha, ":id", 150, 0x7D),
+			(overlay_animate_to_alpha, "$g_option_ambassador_text", 150, 0xFF),
+		(else_try),
+			  (eq, ":id", "$g_option_ambassador"),
+			  (eq, ":stage", 1),
+			(position_set_x, pos1, 600),
+            (position_set_y, pos1, 600),
+			(overlay_animate_to_size, ":id", 200, pos1),
+			(overlay_animate_to_alpha, ":id", 150, 0x0),
+			(overlay_animate_to_alpha, "$g_option_ambassador_text", 150, 0x7D),
+        (else_try),
+		
+		
+			  (eq, ":id", "$g_option_merchant"),
+			  (eq, ":stage", 0),
+			(position_set_x, pos1, 400),
+            (position_set_y, pos1, 400),
+			(overlay_animate_to_size, ":id", 200, pos1),
+			(overlay_animate_to_alpha, ":id", 150, 0x7D),
+			(overlay_animate_to_alpha, "$g_option_merchant_text", 150, 0xFF),
+		(else_try),
+			  (eq, ":id", "$g_option_merchant"),
+			  (eq, ":stage", 1),
+			(position_set_x, pos1, 700),
+            (position_set_y, pos1, 700),
+			(overlay_animate_to_size, ":id", 200, pos1),
+			(overlay_animate_to_alpha, ":id", 150, 0x0),
+			(overlay_animate_to_alpha, "$g_option_merchant_text", 150, 0x7D),
+        (else_try),
+		
+		
+			  (eq, ":id", "$g_option_soldier"),
+			  (eq, ":stage", 0),
+			(position_set_x, pos1, 400),
+            (position_set_y, pos1, 400),
+			(overlay_animate_to_size, ":id", 200, pos1),
+			(overlay_animate_to_alpha, ":id", 150, 0x7D),
+			(overlay_animate_to_alpha, "$g_option_soldier_text", 150, 0xFF),
+		(else_try),
+			  (eq, ":id", "$g_option_soldier"),
+			  (eq, ":stage", 1),
+			(position_set_x, pos1, 700),
+            (position_set_y, pos1, 700),
+			(overlay_animate_to_size, ":id", 200, pos1),
+			(overlay_animate_to_alpha, ":id", 150, 0x0),
+			(overlay_animate_to_alpha, "$g_option_soldier_text", 150, 0x7D),
+		(try_end),
+		]),
+		
+      ]),
 ]
+

@@ -1,3 +1,7 @@
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+# By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
+
 from header_game_menus import *
 from header_parties import *
 from header_items import *
@@ -37,11 +41,15 @@ from header_terrain_types import *
 #
 # Note: The first Menu is the initial character creation menu.
 ####################################################################################################################
-
+##
+###@> SWY 0.9.0.3 Change color of every menu, from black to HEX 071423 (dark blue)
+##
+##  menu_text_color(0xFF000000)  >  menu_text_color(0xFF071423)
+##
 game_menus = [
 #This needs to be the first window!!!
   (
-    "start_game_1",menu_text_color(0xFF000000)|mnf_disable_all_keys,
+    "start_game_1",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     #"A long time ago, in a galaxy far, far away...^^Welcome, to Star Wars Calradia, a mod for Mount&Blade.^^Before you can start playing the game you must create a character. To begin, select your character's gender.",
 	#"A long time ago, in a galaxy far, far away...^^Welcome, to Star Wars Calradia, a mod for Mount&Blade. Before you can start playing the game you must create a character.^^You were born on the planet Zolan, home to a humanoid species known as Clawdites, but often referred to as Changelings. As one of the few shape-shifting species in the galaxy you can choose what form to begin your adventure as...",
 	"A long time ago, in a galaxy far, far away...^^Welcome, to Star Wars: Conquest, a mod for Mount&Blade. Before you can start playing the game you must create a character. Please choose your race:",
@@ -92,20 +100,52 @@ game_menus = [
 		   # (change_screen_mission)],"Door to the tavern."),
 		   
         # #]   
-       # #),			   
-#---------------------------------------------------------------
+       # #),			
 
 ############## MF for testing start ####################
+("start_mod",[
 
-     # ("start_mod",[(eq,1,1),],"Quick Character (for mod testing)",
-       # [
-           # (troop_set_type,"trp_player",0),
-           # (assign,"$character_gender",tf_male),
-         # (troop_raise_attribute, "trp_player",ca_intelligence,-4), #so you dont need to wait time picking extra skills         
-           # (change_screen_return, 0),
-      # ]
-	# ),
+		#New Cheat protection system by Swyter
+		(mouse_get_position, pos2),
+		(position_get_y,":y",pos2),
+		(le,":y",1),
+
+],"Quick Character (for mod testing)",
+      #("start_mod",[(eq,1,1),],"Quick Character (for mod testing)",
+        [
+            (troop_set_type,"trp_player",0),
+            (assign,"$character_gender",tf_male),
+			#(troop_raise_attribute, "trp_player",ca_intelligence,-30), #so you dont need to wait time picking extra skills   
+     (troop_clear_inventory, "trp_player"),
+     (troop_raise_attribute, "trp_player", ca_strength, -100),
+     (troop_raise_attribute, "trp_player", ca_agility, -100),
+     (troop_raise_attribute, "trp_player", ca_charisma, -100),
+     (troop_raise_attribute, "trp_player", ca_intelligence, -100),
+     (troop_raise_skill, "trp_player", skl_shield, -100),
+     (troop_raise_skill, "trp_player", skl_athletics, -100),
+     (troop_raise_skill, "trp_player", skl_riding, -100),
+     (troop_raise_skill, "trp_player", skl_power_strike, -100),
+     (troop_raise_skill, "trp_player", skl_power_throw, -100),
+     (troop_raise_skill, "trp_player", skl_weapon_master, -100),
+     (troop_raise_skill, "trp_player", skl_horse_archery, -100),
+     (troop_raise_skill, "trp_player", skl_ironflesh, -100),
+     (troop_raise_proficiency_linear, "trp_player", wpt_one_handed_weapon, -100),
+     (troop_raise_proficiency_linear, "trp_player", wpt_two_handed_weapon, -100),
+     (troop_raise_proficiency_linear, "trp_player", wpt_polearm, -100),
+     (troop_raise_proficiency_linear, "trp_player", wpt_archery, -100),
+     (troop_raise_proficiency_linear, "trp_player", wpt_crossbow, -100),
+     (troop_raise_proficiency_linear, "trp_player", wpt_throwing, -100),
+	#SW - added firearm proficiency
+     (troop_raise_proficiency_linear, "trp_player", wpt_firearm, -100),	 	
+	 
+			(change_screen_map),			
+            (change_screen_return, 0),
+       ]
+	 ),
 ############## MF for testing end ####################   
+
+	   
+#---------------------------------------------------------------
 
       ("start_male",[],"Human Male",
        [
@@ -240,11 +280,12 @@ game_menus = [
        [(change_screen_quit),
         ]
        ),
+
       ]
   ),
 #This needs to be the second window!!!
   (
-    "start_phase_2",mnf_disable_all_keys,
+    "start_phase_2",menu_text_color(0xFF071423)|mnf_disable_all_keys,
 #    "During your travels, you come accross a group of wandering men looking for a leader. You...",
 #
     # "You arrive at Calradia, a land torn between rival kingdoms battling each other for supremacy,\
@@ -366,7 +407,7 @@ game_menus = [
   ),
 # This needs to be the third window!!!  
   (
-    "start_game_3",mnf_disable_all_keys,
+    "start_game_3",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "Choose your scenario:",
     "none",
     [
@@ -459,7 +500,7 @@ game_menus = [
 
 # This needs to be the fourth window!!!
   (
-    "tutorial",mnf_disable_all_keys,
+    "tutorial",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "You approach a field where the locals are training with weapons. You can practice here to improve your combat skills.",
     "none",
     [(set_passage_menu, "mnu_tutorial"),
@@ -546,7 +587,7 @@ game_menus = [
   ),
 
 # This needs to be the fifth window!!!  
-  ("reports",0,
+  ("reports",menu_text_color(0xFF071423),
    "Character Renown: {reg5}^Honor Rating: {reg6}^Party Morale: {reg8}^Party Size Limit: {reg7}^",
    "none",
    [(call_script, "script_game_get_party_companion_limit"),
@@ -631,7 +672,7 @@ game_menus = [
   
   (
     #SW - Modified many things about the Quick Battles (items, troops, player stats, etc)  
-    "custom_battle_2",mnf_disable_all_keys,
+    "custom_battle_2",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "{s16}",
     "none",
     [
@@ -970,7 +1011,7 @@ game_menus = [
 
 
   (
-    "custom_battle_end",mnf_disable_all_keys,
+    "custom_battle_end",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "The battle is over. {s1} Your side killed {reg5} enemies and lost {reg6} troops over the battle. You personally slew {reg7} men in the fighting.",
     "none",
     [(music_set_situation, 0),
@@ -995,10 +1036,11 @@ game_menus = [
 #-------------------------------------------------------------------------------------------------
 #SW - new quick start menu
   (
-    "start_character_0",mnf_disable_all_keys,
+    "start_character_0",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "You spent your early years traveling around the galaxy with your parents. Your father was...",
     "none",
     [
+	#(start_presentation, "prsnt_class_selection"),
     (str_clear,s10),
     (str_clear,s11),
     (str_clear,s12),
@@ -1057,7 +1099,7 @@ game_menus = [
 
 #------------------------------------------------------------------------------------------------
   (
-    "start_character_faction",mnf_disable_all_keys,
+    "start_character_faction",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "As you grew older you decided to...",
     "none",
     [
@@ -1067,6 +1109,7 @@ game_menus = [
     #(str_clear,s13),
     #(str_clear,s14),
     #(str_clear,s15),
+	(start_presentation, "prsnt_faction_selection"),
     ],
     [
     ("start_quick_faction1",[],"Join the Galactic Empire.",[
@@ -1097,7 +1140,7 @@ game_menus = [
   
 #-------------------------------------------------------------------------------------------------
   # (
-    # "start_character_1",mnf_disable_all_keys,
+    # "start_character_1",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     # "You were born a long time ago, in a galaxy far, far away. Your father was...",
     # "none",
     # [
@@ -1180,7 +1223,7 @@ game_menus = [
     # ]
   # ),
   # (
-    # "start_character_2",0,
+    # "start_character_2",menu_text_color(0xFF071423),
     # "{s10}^^ You started to learn about the world almost as soon as you could walk and talk. You spent your early life as...",
     # "none",
     # [],
@@ -1297,7 +1340,7 @@ game_menus = [
     # ]
   # ),
   # (
-    # "start_character_3",mnf_disable_all_keys,
+    # "start_character_3",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     # "{s11}^^ Then, as a young adult, life changed as it always does. You became...",
     # "none",
     # [(assign, reg3, "$character_gender"),],
@@ -1432,7 +1475,7 @@ game_menus = [
   # ),
 
   # (
-    # "start_character_4",mnf_disable_all_keys,
+    # "start_character_4",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     # "{s12}^^But soon everything changed and you decided to strike out on your own as an adventurer. What made you take this decision was...",
     # #Finally, what made you decide to strike out on your own as an adventurer?",
     # "none",
@@ -1495,7 +1538,7 @@ game_menus = [
     # ]
   # ),
   (
-    "choose_skill",mnf_disable_all_keys,
+    "choose_skill",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "{s13}",
     "none",
     [(assign,"$current_string_reg",10)],
@@ -1545,7 +1588,7 @@ game_menus = [
 ##             (troop_raise_attribute, "trp_player",ca_agility,1),
 ##             (troop_raise_attribute, "trp_player",ca_strength,1),
 ##             (troop_raise_skill, "trp_player",skl_power_strike,2),
-##             (troop_raise_proficiency, "trp_player",0,30),
+##             (troop_raise_proficiency, "trp_player",menu_text_color(0xFF071423),30),
 ##             (troop_raise_proficiency, "trp_player",1,20),
 ##           (else_try),
 ##             (eq, "$starting_skill", 2),
@@ -1558,7 +1601,7 @@ game_menus = [
 ##             (troop_raise_skill, "trp_player",skl_first_aid,1),
 ##             (troop_raise_skill, "trp_player",skl_wound_treatment,1),
 ##             (troop_add_item, "trp_player","itm_winged_mace",0),
-##             (troop_raise_proficiency, "trp_player",0,15),
+##             (troop_raise_proficiency, "trp_player",menu_text_color(0xFF071423),15),
 ##             (troop_raise_proficiency, "trp_player",1,15),
 ##             (troop_raise_proficiency, "trp_player",2,15),
 ##           (try_end),
@@ -2000,7 +2043,7 @@ game_menus = [
 # ##        (troop_raise_skill, "trp_player",skl_wound_treatment,1),
 # ##        (troop_raise_skill, "trp_player",skl_leadership,1),
 # ##        (troop_raise_skill, "trp_player",skl_prisoner_management,1),
-# ##        (troop_raise_proficiency, "trp_player",0,10),
+# ##        (troop_raise_proficiency, "trp_player",menu_text_color(0xFF071423),10),
 # ##        (troop_add_item, "trp_player","itm_robe",0),
 # ##        (troop_add_item, "trp_player","itm_wrapping_boots",0),
 # ##        (troop_add_item, "trp_player","itm_club",0),
@@ -2061,7 +2104,7 @@ game_menus = [
 # ##        (troop_raise_attribute, "trp_player",ca_charisma,3),
 # ##        (troop_raise_attribute, "trp_player",ca_agility,1),
 # ##        (troop_raise_skill, "trp_player",skl_weapon_master,1),
-# ##        (troop_raise_proficiency, "trp_player",0,15),
+# ##        (troop_raise_proficiency, "trp_player",menu_text_color(0xFF071423),15),
 # ##        (troop_raise_proficiency, "trp_player",2,10),
 # ##        (troop_raise_proficiency, "trp_player",4,10),
 # ##        (call_script,"script_change_troop_renown", "trp_player", 20),
@@ -2071,7 +2114,7 @@ game_menus = [
 # ##        (troop_raise_attribute, "trp_player",ca_charisma,2),
 # ##        (troop_raise_skill, "trp_player",skl_leadership,1),
 # ##        (troop_raise_skill, "trp_player",skl_tactics,1),
-# ##        (troop_raise_proficiency, "trp_player",0,10),
+# ##        (troop_raise_proficiency, "trp_player",menu_text_color(0xFF071423),10),
 # ##        (troop_raise_proficiency, "trp_player",1,10),
 # ##        (call_script,"script_change_troop_renown", "trp_player", 15),
 # ##	(else_try),
@@ -2104,7 +2147,7 @@ game_menus = [
 # ##        (try_end),
 # ##        (troop_add_item, "trp_player","itm_short_sword",0),
 # ##        (troop_add_item, "trp_player","itm_wooden_shield",imod_battered),
-# ##        (troop_raise_proficiency, "trp_player",0,10),
+# ##        (troop_raise_proficiency, "trp_player",menu_text_color(0xFF071423),10),
 # ##        (troop_raise_proficiency, "trp_player",4,10),
 # ##    (else_try),
 # ##        (eq,"$background_answer_3",2),
@@ -2448,7 +2491,7 @@ game_menus = [
   ),
 
   (
-    "past_life_explanation",mnf_disable_all_keys,
+    "past_life_explanation",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "{s3}",
     "none",
     [
@@ -2479,14 +2522,14 @@ game_menus = [
   ),
 
   (
-    "auto_return",0,
+    "auto_return",menu_text_color(0xFF071423),
     "This menu automatically returns to caller.",
     "none",
     [(change_screen_return, 0)],
     [
     ]
   ),
-  ("morale_report",0,
+  ("morale_report",menu_text_color(0xFF071423),
    "{s1}",
    "none",
    [(call_script, "script_get_player_party_morale_values"),
@@ -2548,7 +2591,7 @@ game_menus = [
       ]
   ),
 
-  ("faction_orders",0,
+  ("faction_orders",menu_text_color(0xFF071423),
    "{s9}",
    "none",
    [
@@ -2655,7 +2698,7 @@ game_menus = [
   ),
 
   
-  ("character_report",0,
+  ("character_report",menu_text_color(0xFF071423),
    "{s9}",
    "none",
    [(try_begin),
@@ -2746,7 +2789,7 @@ game_menus = [
       ]
   ),
 
-  ("party_size_report",0,
+  ("party_size_report",menu_text_color(0xFF071423),
    "{s1}",
    "none",
    [(call_script, "script_game_get_party_companion_limit"),
@@ -2790,7 +2833,7 @@ game_menus = [
       ]
   ),
 
-  ("faction_relations_report",0,
+  ("faction_relations_report",menu_text_color(0xFF071423),
    "{s1}",
    "none",
    [(str_clear, s2),
@@ -2867,7 +2910,7 @@ game_menus = [
   ),
 
 
-  ("camp",mnf_scale_picture,
+  ("camp",menu_text_color(0xFF071423)|mnf_scale_picture,
    #"You set up camp. What do you want to do?",
    "It's {s1} on day {reg0} of your adventure.^^{s9}^^What do you want to do?",
    "none",
@@ -2988,7 +3031,12 @@ game_menus = [
        ),	   
       ("cheat_menu",
 		[
-			#(neq,"$cheat_mode",-1),#if cheats disabled with loader... (doesn't seem to work correctly)
+		#(neq,"$cheat_mode",-1),#if cheats disabled with loader... (doesn't seem to work correctly)
+		
+		#New Cheat protection system by Swyter
+		(mouse_get_position, pos2),
+		(position_get_y,":y",pos2),
+		(le,":y",1),
 	    ]
 		,"Modding/Cheat Menu (for development use).",
         [
@@ -3004,7 +3052,7 @@ game_menus = [
       ]
   ),
 
-  ("walk_around_choose",0,
+  ("walk_around_choose",menu_text_color(0xFF071423),
    "What area of the ship do you want to walk around?",
    "none",
    [],
@@ -3057,7 +3105,7 @@ game_menus = [
   ),
   
 #Own kingdom start------------------------------
-  ("own_kingdom",0,
+  ("own_kingdom",menu_text_color(0xFF071423),
    "Choose an action:",
    "none",
    [
@@ -3145,7 +3193,7 @@ game_menus = [
       ]
   ),
   
-  ("change_culture",0,
+  ("change_culture",menu_text_color(0xFF071423),
    "Choose a culture:^^^The culture of your Kingdom determine the guards in your territories, the type of recruits from your planets, and the soldiers in your commanders armies.",	#SW - modified
    "none",
    [],
@@ -3207,7 +3255,7 @@ game_menus = [
     [
 		#(assign,"$culture_selected",1),
 		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_kingdom_3"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
-		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_3"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
+		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_4"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
 		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Kingdom"),		#nevermind, I gave the player the ability to change the faction name
 		
 		#(assign,"$players_kingdom","fac_player_supporters_faction"),		would this be necessary to add?
@@ -3293,7 +3341,7 @@ game_menus = [
     [
 		#(assign,"$culture_selected",1),
 		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_kingdom_3"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
-		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_3"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
+		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_5"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
 		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Kingdom"),		#nevermind, I gave the player the ability to change the faction name
 		
 		#(assign,"$players_kingdom","fac_player_supporters_faction"),		would this be necessary to add?
@@ -3393,7 +3441,7 @@ game_menus = [
     [
 		#(assign,"$culture_selected",1),
 		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_kingdom_3"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
-		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_3"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
+		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_6"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
 		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Kingdom"),		#nevermind, I gave the player the ability to change the faction name
 		
 		#(assign,"$players_kingdom","fac_player_supporters_faction"),		would this be necessary to add?
@@ -3496,7 +3544,7 @@ game_menus = [
     [
 		#(assign,"$culture_selected",1),
 		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_kingdom_3"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
-		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_3"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
+		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_7"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
 		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Kingdom"),		#nevermind, I gave the player the ability to change the faction name
 		
 		#(assign,"$players_kingdom","fac_player_supporters_faction"),		would this be necessary to add?
@@ -3584,7 +3632,7 @@ game_menus = [
 	
   ]),
 #############################################################################################################		  
-  ("manage_fiefs",0,
+  ("manage_fiefs",menu_text_color(0xFF071423),
    "Choose a territory ({reg1} to {reg2}):",	#SW modified
    "none",
    [
@@ -3737,7 +3785,7 @@ game_menus = [
        ),
       ]
   ),
-  ("manage_fiefs_2",0,
+  ("manage_fiefs_2",menu_text_color(0xFF071423),
    "Give to commander ({reg1} to {reg2}):",	#SW modified
    "none",
    [
@@ -3886,7 +3934,7 @@ game_menus = [
 
 ##############################################################################
 #SWC configuration menu
-  ("camp_configuration",0,
+  ("camp_configuration",menu_text_color(0xFF071423),
    "Star Wars: Conquest Configuration Menu",
    "none",
 	 [
@@ -4036,7 +4084,7 @@ game_menus = [
 		(jump_to_menu, "mnu_camp_configuration"),
 		]),  
 
-      ("config_back",[],"Configure keys.",
+      ("setup_keys",[],"Configure keys.",
        [(jump_to_menu, "mnu_setup_keys"),
         ]
        ),
@@ -4052,7 +4100,7 @@ game_menus = [
 
     (
 	#code from Expanded Gameplay III
-    "setup_keys",0,
+    "setup_keys",menu_text_color(0xFF071423),
     "Choose ability and then press a key to assign/change its key binding. To unassign key choose ability and press ESC",
     "none",
     [ 
@@ -4113,11 +4161,11 @@ game_menus = [
        (start_presentation, "prsnt_key_assignment"),
        ]),
 	   
-      ("binoculars",[],"Macrobinoculars [{s21}]",
-       [
-       (assign,"$active_key",7),
-       (start_presentation, "prsnt_key_assignment"),
-       ]),
+     # ("binoculars",[],"Macrobinoculars [{s21}]",
+     #  [
+      # (assign,"$active_key",7),
+      # (start_presentation, "prsnt_key_assignment"),
+     #  ]),
 	   
       ("deathcam_forward",[],"After Death Camera - Next [{s22}]",
        [
@@ -4137,13 +4185,25 @@ game_menus = [
   ),		
   
 ##############################################################################  
-  ("camp_cheat",0,
+  ("camp_cheat",menu_text_color(0xFF071423),
    #"Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. If you enable this option then additonal CHEAT menu's will also appear in other game menu's. Please do not report any bugs with this functionality since it is for testing only.",
    "Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. Please do not report any bugs with this functionality since it is for testing only.",
    "none",
 	 [
      ],
     [
+	      ("devs_island",
+		[
+		#(eq,"$cheat_mode",1)
+		],
+		"Go to the SWC Dev Island.",
+		[
+			(set_jump_mission,"mt_town_center"),
+			(jump_to_scene, "scn_swc_dev_island"),
+			(change_screen_mission),
+        ]
+       ),	
+	
 		#SW - added enable/disable camp cheat menu by ConstantA - http://forums.taleworlds.net/index.php/topic,63142.msg1647442.html#msg1647442
 		("cheat_toggle",
 		[
@@ -4373,10 +4433,10 @@ game_menus = [
    
 		#equipment
 		(troop_add_item, "trp_player","itm_grey_gloves",0),
-		(troop_add_item, "trp_player","itm_mandalorian_beskar_helmet",0),
-		(troop_add_item, "trp_player","itm_mandalorian_beskar_armor",0),
-		(troop_add_item, "trp_player","itm_mandalorian_beskar_boots",0),
-		(troop_add_item, "trp_player","itm_mandalorian_heavy_blaster",0),
+		#(troop_add_item, "trp_player","itm_mandalorian_beskar_helmet",0),
+		#(troop_add_item, "trp_player","itm_mandalorian_beskar_armor",0),
+		#(troop_add_item, "trp_player","itm_mandalorian_beskar_boots",0),
+		#(troop_add_item, "trp_player","itm_mandalorian_heavy_blaster",0),
 		(troop_add_item, "trp_player","itm_boba_fett_helmet",0),
 		(troop_add_item, "trp_player","itm_boba_fett_armor",0),
 		(troop_add_item, "trp_player","itm_boba_fett_boots",0),
@@ -4391,10 +4451,10 @@ game_menus = [
 		
 		#testing stormtrooper equipment
 		(troop_add_item, "trp_player","itm_e11",0),
-		(troop_add_item, "trp_player","itm_imperial_stormtrooper_gloves",0),
-		(troop_add_item, "trp_player","itm_imperial_stormtrooper_boots",0),
-		(troop_add_item, "trp_player","itm_imperial_stormtrooper_helmet",0),
-		(troop_add_item, "trp_player","itm_imperial_stormtrooper_armor",0),
+		#(troop_add_item, "trp_player","itm_imperial_stormtrooper_gloves",0),
+		#(troop_add_item, "trp_player","itm_imperial_stormtrooper_boots",0),
+		#(troop_add_item, "trp_player","itm_imperial_stormtrooper_helmet",0),
+		#(troop_add_item, "trp_player","itm_imperial_stormtrooper_armor",0),
 		
 		# #testing new melee weapons
 		# (troop_add_item, "trp_player","itm_gamorrean_axe_1h",0),
@@ -4411,7 +4471,14 @@ game_menus = [
 		# (troop_add_item, "trp_player","itm_black_boots",0),
 		# (troop_add_item, "trp_player","itm_leather_boots",0),
 		(troop_add_item, "trp_player","itm_lightsaber_red_multikill",0),
+		(troop_add_item, "trp_player","itm_heavy_repeater",0),
+		(troop_add_item, "trp_player","itm_tfu_stormie",0),
 		
+		#Transparent Items
+		(troop_add_item, "trp_player","itm_transparent_body",0),
+		(troop_add_item, "trp_player","itm_transparent_head",0),
+		(troop_add_item, "trp_player","itm_transparent_hands",0),
+		(troop_add_item, "trp_player","itm_transparent_feet",0),
 		
 		# #testing surrealarms items
 		# (troop_add_item, "trp_player","itm_female_dress_a",0),
@@ -4511,7 +4578,7 @@ game_menus = [
 	]
   ),
   
-  ("camp_cheat_2",0,
+  ("camp_cheat_2",menu_text_color(0xFF071423),
    #"Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. If you enable this then additonal CHEAT menu's will also appear in other game menu's.",
    "Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. Please do not report any bugs with this functionality since it is for testing only.",
    "none",
@@ -4696,7 +4763,7 @@ game_menus = [
   ),
 
 ##############################################################################
-  ("camp_action",0,
+  ("camp_action",menu_text_color(0xFF071423),
    "Choose an action:",
    "none",
    [
@@ -4927,7 +4994,7 @@ game_menus = [
     #### export/import NPCs end ####  
 #################################################################################################	
   
-  ("camp_recruit_prisoners",0,
+  ("camp_recruit_prisoners",menu_text_color(0xFF071423),
    "You offer your prisoners freedom if they agree to join you as soldiers. {s18}",
    "none",
    [(assign, ":num_regular_prisoner_slots", 0),
@@ -5011,7 +5078,7 @@ game_menus = [
       ]
   ),
   
-  ("camp_no_prisoners",0,
+  ("camp_no_prisoners",menu_text_color(0xFF071423),
    "You have no prisoners to recruit from.",
    "none",
    [],
@@ -5023,7 +5090,7 @@ game_menus = [
       ]
   ),
 
-  ("camp_action_read_book",0,
+  ("camp_action_read_book",menu_text_color(0xFF071423),
   #SW - modified read book menu
    "Choose a holocron to view:",
    "none",
@@ -5092,7 +5159,7 @@ game_menus = [
       ]
   ),
 
-  # ("camp_action_change_ship",0,
+  # ("camp_action_change_ship",menu_text_color(0xFF071423),
   # #SW - modified so you can choose your own spaceship
    # "Choose the spaceship you want to buy:",
    # "none",
@@ -5261,7 +5328,7 @@ game_menus = [
       # ]
   # ),  
 
-  ("camp_action_change_race",0,
+  ("camp_action_change_race",menu_text_color(0xFF071423),
   #SW - modified so you can change your race
    #"You were born on the planet Zolan, home to a humanoid species known as Clawdites, but often referred to as Changelings. As one of the few shape-shifting species in the galaxy you can change your form and appearance.^^Note: You should review your character in the face generator after making this change.",
    "Please choose your race:^^Note: You should review your character in the face generator after making this change.",
@@ -5396,7 +5463,7 @@ game_menus = [
     ]
   ),
   
-  ("camp_action_read_book_start",0,
+  ("camp_action_read_book_start",menu_text_color(0xFF071423),
    "{s1}",
    "none",
    [(assign, ":new_book", "$temp"),
@@ -5422,7 +5489,7 @@ game_menus = [
   ),
 
 
-  ("retirement_verify",0,
+  ("retirement_verify",menu_text_color(0xFF071423),
    "You are at day {reg0}. Your current luck is {reg1}. Are you sure you want to retire?",
    "none",
    [
@@ -5443,7 +5510,7 @@ game_menus = [
       ]
   ),
 
-  ("end_game",0,
+  ("end_game",menu_text_color(0xFF071423),
    "The decision is made, and you resolve to give up your adventurer's\
  life and settle down. You sell off your weapons and armour, gather up\
  all your money, and ride off into the sunset....",
@@ -5460,7 +5527,7 @@ game_menus = [
 
   #SW MF modified to add option to take money out of bank account.
   (
-    "pay_day",mnf_scale_picture|mnf_disable_all_keys,
+    "pay_day",menu_text_color(0xFF071423)|mnf_scale_picture|mnf_disable_all_keys,
     "{s1}.",
     "none",
     [
@@ -5598,7 +5665,7 @@ game_menus = [
 	  ]),
   
 ]),  
-  ("cattle_herd",mnf_scale_picture,
+  ("cattle_herd",menu_text_color(0xFF071423)|mnf_scale_picture,
    "You encounter a nerf herd.",
    "none",
    [#SW - commented out snd_cow_moo
@@ -5640,7 +5707,7 @@ game_menus = [
       ]
   ),
 
-  ("cattle_herd_kill",0,
+  ("cattle_herd_kill",menu_text_color(0xFF071423),
    "How many animals do you want to slaughter?",
    "none",
    [(party_get_num_companions, reg5, "$g_encountered_party")],
@@ -5687,7 +5754,7 @@ game_menus = [
       ]
   ),
 
-  ("cattle_herd_kill_end",0,
+  ("cattle_herd_kill_end",menu_text_color(0xFF071423),
    "You shouldn't be reading this.",
    "none",
    [(change_screen_return)],
@@ -5696,7 +5763,7 @@ game_menus = [
   ),
 
 
-  ("arena_duel_fight",0,
+  ("arena_duel_fight",menu_text_color(0xFF071423),
    "You and your opponent prepare to fight for honour.",
    "none",
    [],
@@ -5712,7 +5779,7 @@ game_menus = [
 ############################### Duel Mod by MartinF Start  ##############################
 
 
-("duel_menu",0,
+("duel_menu",menu_text_color(0xFF071423),
    "{s1}{s2}",
    "none",
    [
@@ -5785,7 +5852,7 @@ game_menus = [
 ############################### Duel Mod End  ##############################
   
   (
-    "simple_encounter",mnf_enable_hot_keys|mnf_scale_picture,
+    "simple_encounter",menu_text_color(0xFF071423)|mnf_enable_hot_keys|mnf_scale_picture,
     "{s2} You have {reg10} troops fit for battle against their {reg11}.",
     "none",
     [
@@ -6125,7 +6192,7 @@ game_menus = [
 ############################################################################################################
 
   (
-    "change_commander",0,
+    "change_commander",menu_text_color(0xFF071423),
     "Please reselect a companion as the commander for the comming battle.^^Current:{s7}.",
     "none",
   [
@@ -6221,7 +6288,7 @@ game_menus = [
 ############################################################################################################
   
   (
-    "encounter_retreat_confirm",0,
+    "encounter_retreat_confirm",menu_text_color(0xFF071423),
     "As the party member with the highest tactics skill,\
  ({reg2}), {reg3?you devise:{s3} devises} a plan that will allow you and your men to escape with your lives,\
  but you'll have to leave {reg4} soldiers behind to stop the enemy from giving chase.",
@@ -6264,7 +6331,7 @@ game_menus = [
     ]
   ),
   (
-    "encounter_retreat",0,
+    "encounter_retreat",menu_text_color(0xFF071423),
     "You tell {reg4} of your troops to hold the enemy while you retreat with the rest of your party.",
     "none",
     [
@@ -6286,7 +6353,7 @@ game_menus = [
     ]
   ),
   (
-    "order_attack_begin",0,
+    "order_attack_begin",menu_text_color(0xFF071423),
     "Your troops prepare to attack the enemy.",
     "none",
     [],
@@ -6299,7 +6366,7 @@ game_menus = [
     ]
   ),
   (
-    "order_attack_2",mnf_disable_all_keys,
+    "order_attack_2",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "{s4}^^Your casualties: {s8}^^Enemy casualties: {s9}",
     "none",
     [
@@ -6371,7 +6438,7 @@ game_menus = [
   ),
 
   (
-    "battle_debrief",mnf_scale_picture|mnf_disable_all_keys,
+    "battle_debrief",menu_text_color(0xFF071423)|mnf_scale_picture|mnf_disable_all_keys,
     "{s11}^^Your Casualties:{s8}{s10}^^Enemy Casualties:{s9}",
     "none",
     [
@@ -6479,7 +6546,7 @@ game_menus = [
 
   
   (
-    "total_victory",0,
+    "total_victory",menu_text_color(0xFF071423),
     "You shouldn't be reading this... {s9}",
     "none",
     [
@@ -6722,7 +6789,7 @@ game_menus = [
   ),
 
   (
-    "enemy_slipped_away",0,
+    "enemy_slipped_away",menu_text_color(0xFF071423),
     "{s17}",
     "none",
     [],
@@ -6732,7 +6799,7 @@ game_menus = [
   ),
 
   (
-    "total_defeat",0,
+    "total_defeat",menu_text_color(0xFF071423),
     "You shouldn't be reading this...",
     "none",
     [
@@ -6792,7 +6859,7 @@ game_menus = [
   ),
 
   (
-    "permanent_damage",mnf_disable_all_keys,
+    "permanent_damage",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "{s0}",
     "none",
     [
@@ -6872,7 +6939,7 @@ game_menus = [
   ),
   
   (
-    "pre_join",0,
+    "pre_join",menu_text_color(0xFF071423),
     "You come across a battle between {s2} and {s1}. You decide to...",
     "none",
     [
@@ -6910,7 +6977,7 @@ game_menus = [
     ]
   ),
   (
-    "join_battle",0,
+    "join_battle",menu_text_color(0xFF071423),
     "You are helping the {s2} against the {s1}. You have {reg10} troops fit for battle against the enemy's {reg11}.",
     "none",
     [
@@ -7058,7 +7125,7 @@ game_menus = [
 
 
   (
-    "join_order_attack",mnf_disable_all_keys,
+    "join_order_attack",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "{s4}^^Your casualties: {s8}^^Allies' casualties: {s9}^^Enemy casualties: {s10}",
     "none",
     [
@@ -7120,7 +7187,7 @@ game_menus = [
   
 # Towns
   (
-    "zendar",mnf_auto_enter,
+    "zendar",menu_text_color(0xFF071423)|mnf_auto_enter,
     "You enter the town of Zendar.",
     "none",
     [(reset_price_rates,0),(set_price_rate_for_item,"itm_tools",70),(set_price_rate_for_item,"itm_salt",140)],
@@ -7140,7 +7207,7 @@ game_menus = [
     ]
   ),
   (
-    "salt_mine",mnf_auto_enter,
+    "salt_mine",menu_text_color(0xFF071423)|mnf_auto_enter,
     "You enter the salt mine.",
     "none",
     [(reset_price_rates,0),(set_price_rate_for_item,"itm_salt",55)],
@@ -7150,7 +7217,7 @@ game_menus = [
     ]
   ),
   (
-    "four_ways_inn",mnf_auto_enter,
+    "four_ways_inn",menu_text_color(0xFF071423)|mnf_auto_enter,
     "You arrive at the Four Ways Inn.",
     "none",
     [],
@@ -7162,7 +7229,7 @@ game_menus = [
     ]
   ),
   (
-    "test_scene",mnf_auto_enter,
+    "test_scene",menu_text_color(0xFF071423)|mnf_auto_enter,
     "You enter the test scene.",
     "none",
     [],
@@ -7173,7 +7240,7 @@ game_menus = [
     ]
   ),
   (
-    "battlefields",0,
+    "battlefields",menu_text_color(0xFF071423),
     "Select a field...",
     "none",
     [],
@@ -7188,7 +7255,7 @@ game_menus = [
     ]
   ),
   (
-    "dhorak_keep",0,
+    "dhorak_keep",menu_text_color(0xFF071423),
 #    "Dhorak Keep, the stronghold of the bandits stands overlooking the barren wilderness.",
     "You enter the Dhorak Keep",
     "none",
@@ -7200,7 +7267,7 @@ game_menus = [
   ),
   
 ##  (
-##    "center_under_attack_while_resting",0,
+##    "center_under_attack_while_resting",menu_text_color(0xFF071423),
 ##    "{s1} has been besieged by {s2}, and the enemy seems to be preparing for an assault!\
 ## What will you do?",
 ##    "none",
@@ -7225,7 +7292,7 @@ game_menus = [
 ##  ),
 
   (
-    "join_siege_outside",mnf_scale_picture,
+    "join_siege_outside",menu_text_color(0xFF071423)|mnf_scale_picture,
     "{s1} has come under siege by {s2}.",
     "none",
     [
@@ -7268,7 +7335,7 @@ game_menus = [
     ]
   ),
   (
-    "cut_siege_without_fight",0,
+    "cut_siege_without_fight",menu_text_color(0xFF071423),
     "The besiegers let you approach the entrance without challenge.",
     "none",
     [],
@@ -7283,7 +7350,7 @@ game_menus = [
       ]
   ),
   (
-    "besiegers_camp_with_allies",0,
+    "besiegers_camp_with_allies",menu_text_color(0xFF071423),
     "{s1} remains under siege. The banners of {s2} fly above the camp of the besiegers,\
  where you and your men are welcomed.",
     "none",
@@ -7431,7 +7498,7 @@ game_menus = [
   ),
 
   (
-    "castle_outside",0,
+    "castle_outside",menu_text_color(0xFF071423),
     "You are outside {s2}.{s11} {s3} {s4}",
     "none",
     [
@@ -7736,7 +7803,7 @@ game_menus = [
     ]
   ),
    (
-    "castle_guard",0,
+    "castle_guard",menu_text_color(0xFF071423),
     "You approach the landing bay. The guards on the observation posts watch you closely.",
     "none",
     [
@@ -7777,7 +7844,7 @@ game_menus = [
     ]
   ),
   (
-    "castle_entry_granted",0,
+    "castle_entry_granted",menu_text_color(0xFF071423),
     "After a brief wait, the guards lower the shields for you and allow your party to land.",
     "none",
     [
@@ -7793,7 +7860,7 @@ game_menus = [
     ]
   ),
   (
-    "castle_entry_denied",0,
+    "castle_entry_denied",menu_text_color(0xFF071423),
     "The lord of this planet has forbidden you from landing on the surface,\
  and the guard sergeant informs you that his men will fire if you attempt to come any closer.",
     "none",
@@ -7808,7 +7875,7 @@ game_menus = [
     ]
   ),
   (
-    "castle_meeting",0,
+    "castle_meeting",menu_text_color(0xFF071423),
     "With whom do you want to meet?",
     "none",
     [
@@ -7840,7 +7907,7 @@ game_menus = [
     ]
   ),
   (
-    "castle_meeting_selected",0,
+    "castle_meeting_selected",menu_text_color(0xFF071423),
     #"Your request for a meeting is relayed inside, and finally {s6} appears in the courtyard to speak with you.",
 	"Your request for a meeting is relayed inside, and finally they appear to speak with you.",
     "none",
@@ -7867,7 +7934,7 @@ game_menus = [
 
 
    (
-    "castle_besiege",mnf_enable_hot_keys|mnf_scale_picture,
+    "castle_besiege",menu_text_color(0xFF071423)|mnf_enable_hot_keys|mnf_scale_picture,
     "You are laying siege to {s1}. {s2} {s3}",
     "none",
     [
@@ -8156,7 +8223,7 @@ game_menus = [
   ),
   
   (
-    "siege_attack_meets_sally",0,
+    "siege_attack_meets_sally",menu_text_color(0xFF071423),
     "The defenders sally out to meet your assault.",
     "none",
     [
@@ -8172,7 +8239,7 @@ game_menus = [
   ),
 
    (
-    "castle_besiege_inner_battle",mnf_scale_picture,
+    "castle_besiege_inner_battle",menu_text_color(0xFF071423)|mnf_scale_picture,
     "{s1}",
     "none",
     [
@@ -8273,7 +8340,7 @@ game_menus = [
 
   
   (
-    "construct_ladders",0,
+    "construct_ladders",menu_text_color(0xFF071423),
 	#SW - modified game menu
     #"As the party member with the highest Engineer skill ({reg2}), {reg3?you estimate:{s3} estimates} that it will take\
  #{reg4} hours to build enough scaling ladders for the assault.",
@@ -8319,7 +8386,7 @@ game_menus = [
 
   
   (
-    "construct_siege_tower",0,
+    "construct_siege_tower",menu_text_color(0xFF071423),
     "As the party member with the highest Engineer skill ({reg2}), {reg3?you estimate:{s3} estimates} that building a siege tower will take\
  {reg4} hours.",
     "none",
@@ -8358,7 +8425,7 @@ game_menus = [
   ),
 
    (
-    "castle_attack_walls_simulate",mnf_scale_picture|mnf_disable_all_keys,
+    "castle_attack_walls_simulate",menu_text_color(0xFF071423)|mnf_scale_picture|mnf_disable_all_keys,
     "{s4}^^Your casualties:{s8}^^Enemy casualties were: {s9}",
     "none",
     [
@@ -8427,7 +8494,7 @@ game_menus = [
   ),
   
    (
-    "castle_attack_walls_with_allies_simulate",mnf_scale_picture|mnf_disable_all_keys,
+    "castle_attack_walls_with_allies_simulate",menu_text_color(0xFF071423)|mnf_scale_picture|mnf_disable_all_keys,
     "{s4}^^Your casualties: {s8}^^Allies' casualties: {s9}^^Enemy casualties: {s10}",
     "none",
     [
@@ -8510,7 +8577,7 @@ game_menus = [
   ),
 
   (
-    "castle_taken_by_friends",0,
+    "castle_taken_by_friends",menu_text_color(0xFF071423),
     "Nothing to see here.",
     "none",
     [
@@ -8531,7 +8598,7 @@ game_menus = [
 
 
   (
-    "castle_taken",mnf_disable_all_keys,
+    "castle_taken",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "{s3} has fallen to your troops, and you now have full control of the {reg2?town:castle}.\
 {reg1? It would seem that there is nothing stopping you from taking it for yourself...:}",# Only visible when castle is taken without being a vassal of a kingdom.
     "none",
@@ -8576,7 +8643,7 @@ game_menus = [
     ],
   ),
   (
-    "castle_taken_2",mnf_disable_all_keys,
+    "castle_taken_2",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "{s3} has fallen to your troops, and you now have full control of the castle.\
  It is time to send word to {s9} about your victory. {s5}",
     "none",
@@ -8614,7 +8681,7 @@ game_menus = [
   ),
 
   (
-    "requested_castle_granted_to_player",mnf_scale_picture,
+    "requested_castle_granted_to_player",menu_text_color(0xFF071423)|mnf_scale_picture,
     "You receive a message from your liege, {s3}.^^\
  {reg4?She:He} has decided to grant {s2}{reg3? and the nearby planet of {s4}:} to you, with all due incomes and titles,\
  to hold in {reg4?her:his} name for as long as you maintain your oath of homage.",
@@ -8644,7 +8711,7 @@ game_menus = [
   ),
   
   (
-    "requested_castle_granted_to_another",mnf_scale_picture,
+    "requested_castle_granted_to_another",menu_text_color(0xFF071423)|mnf_scale_picture,
     "You receive a message from your monarch, {s3}.^^\
  'I was most pleased to hear of your valiant efforts in the capture of {s2}. Your victory has gladdened all our hearts.\
  You also requested me to give you ownership of the castle, but that is a favour which I fear I cannot grant,\
@@ -8675,7 +8742,7 @@ game_menus = [
   ),
 
   (
-    "leave_faction",0,
+    "leave_faction",menu_text_color(0xFF071423),
     "Renouncing your oath is a grave act. Your lord may condemn you and confiscate your lands and holdings.\
  However, if you return them of your own free will, he may let the betrayal go without a fight.",
     "none",
@@ -8719,7 +8786,7 @@ game_menus = [
   ),
 
   (
-    "give_center_to_player",mnf_scale_picture,
+    "give_center_to_player",menu_text_color(0xFF071423)|mnf_scale_picture,
 	  #SW - modified fiefs to territories
     "Your lord offers to extend your territories!\
  {s1} sends word that he is willing to grant {s2} to you in payment for your loyal service,\
@@ -8744,7 +8811,7 @@ game_menus = [
   ),
   
   (
-    "give_center_to_player_2",0,
+    "give_center_to_player_2",menu_text_color(0xFF071423),
     "With a brief ceremony, you are officially confirmed as the new lord of {s2}{reg3? and its bound planet {s4}:}.\
  {reg3?They:It} will make a fine part of your fiefdom.\
  You can now claim the rents and revenues from your personal estates there, draft soldiers from the populace,\
@@ -8773,7 +8840,7 @@ game_menus = [
 
 
   (
-    "oath_fulfilled",0,
+    "oath_fulfilled",menu_text_color(0xFF071423),
     "You had a contract with {s1} to serve him for a certain duration.\
  Your contract has now expired. What will you do?",
     "none",
@@ -8799,7 +8866,7 @@ game_menus = [
   
 
 ##  (
-##    "castle_garrison_stationed",0,
+##    "castle_garrison_stationed",menu_text_color(0xFF071423),
 ###    "The rest of the castle garrison recognizes that their situation is hopeless and surrenders. {s1} is at your mercy now. What do you want to do with this castle?",
 ##    "_",
 ##    "none",
@@ -8810,7 +8877,7 @@ game_menus = [
 ##  ),
 
 ##  (
-##    "castle_choose_captain",0,
+##    "castle_choose_captain",menu_text_color(0xFF071423),
 ##    "You will need to assign one of your companions as the castellan. Who will it be?",
 ##    "none",
 ##    [
@@ -8866,7 +8933,7 @@ game_menus = [
 ##    ],
 ##  ),
 ##  (
-##    "castle_captain_chosen",0,
+##    "castle_captain_chosen",menu_text_color(0xFF071423),
 ##    "h this castle?",
 ##    "none",
 ##    [
@@ -8884,7 +8951,7 @@ game_menus = [
 ##  ),
 
 ##  (
-##    "under_siege_attacked_continue",0,
+##    "under_siege_attacked_continue",menu_text_color(0xFF071423),
 ##    "Nothing to see here.",
 ##    "none",
 ##    [
@@ -8954,7 +9021,7 @@ game_menus = [
 
 
   (
-    "siege_started_defender",0,
+    "siege_started_defender",menu_text_color(0xFF071423),
     "{s1} is launching an assault against the walls of {s2}. You have {reg10} troops fit for battle against the enemy's {reg11}. You decide to...",
     "none",
     [
@@ -9133,7 +9200,7 @@ game_menus = [
   ),
 
   (
-    "siege_join_defense",mnf_disable_all_keys,
+    "siege_join_defense",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "{s4}^^Your casualties: {s8}^^Allies' casualties: {s9}^^Enemy casualties: {s10}",
     "none",
     [
@@ -9194,7 +9261,7 @@ game_menus = [
   ),
 
   (
-    "enter_your_own_castle",0,
+    "enter_your_own_castle",menu_text_color(0xFF071423),
     "As you approach, you are spotted by the planet guards, who welcome you and lower the shields for their {lord/lady}.",
     "none",
     [
@@ -9209,7 +9276,7 @@ game_menus = [
 
 
   (
-    "village",mnf_enable_hot_keys,
+    "village",menu_text_color(0xFF071423)|mnf_enable_hot_keys,
     "{s10}{s11}{s6}{s7}",
     "none",
     [
@@ -9680,7 +9747,7 @@ game_menus = [
 
 
   (
-    "village_hostile_action",0,
+    "village_hostile_action",menu_text_color(0xFF071423),
     "What action do you have in mind?",
     "none",
     [],
@@ -9734,7 +9801,7 @@ game_menus = [
 
 # inserted by obi 2009-04-28 --> recruit clones, droids, force sensitives
 	(
-    "recruit_clones",0,
+    "recruit_clones",menu_text_color(0xFF071423),
     "{s18}",
     "none",
     [
@@ -9782,7 +9849,7 @@ game_menus = [
     ],
   ),
 	(
-    "recruit_force_sensitives",0,
+    "recruit_force_sensitives",menu_text_color(0xFF071423),
     "{s18}",
     "none",
     [
@@ -9840,7 +9907,7 @@ game_menus = [
   ),
 
 	(
-    "recruit_droids_pre",0,
+    "recruit_droids_pre",menu_text_color(0xFF071423),
     #"What type of Battle Droids do you want to build?",
 	"{s18}",
     "none",
@@ -9859,14 +9926,20 @@ game_menus = [
 		(try_end),
 	],
     [
-      ("build_b1series", [(gt, reg5, 0)],
+
+      ("build_oomseries", [(gt, reg5, 0)],
+						"OOM-Series Battle Droids.",[
+						(assign, "$g_droid_foundry_type", "trp_oom_series_security"),
+						(jump_to_menu,"mnu_recruit_droids"),
+                        ]),
+		("build_b1series", [(gt, reg5, 0)],
 						"B1-Series Battle Droids.",	[
 						(assign, "$g_droid_foundry_type", "trp_b1series"),
 						(jump_to_menu,"mnu_recruit_droids")
 						]),
-      ("build_oomseries", [(gt, reg5, 0)],
-						"OOM-Series Battle Droids.",[
-						(assign, "$g_droid_foundry_type", "trp_oom_series_security"),
+		("build_b2series", [(gt, reg5, 0)],
+						"B2-Series Battle Droids.",[
+						(assign, "$g_droid_foundry_type", "trp_b2series"),
 						(jump_to_menu,"mnu_recruit_droids"),
                         ]),
       # ("build_egseries", [(gt, reg5, 0)],
@@ -9886,7 +9959,7 @@ game_menus = [
     ],
   ),  
 	(
-    "recruit_droids",0,
+    "recruit_droids",menu_text_color(0xFF071423),
     "{s18}",
     "none",
     [
@@ -9934,7 +10007,7 @@ game_menus = [
     ],
   ),
 	(
-    "recruit_rancors",0,
+    "recruit_rancors",menu_text_color(0xFF071423),
     "{s18}",
     "none",
     [
@@ -9985,7 +10058,7 @@ game_menus = [
 # end of insert
 	(
 	#SW - modified recruit_volunteers game menu
-    "recruit_volunteers",0,
+    "recruit_volunteers",menu_text_color(0xFF071423),
     "{s18}",
     "none",
     [
@@ -10050,7 +10123,7 @@ game_menus = [
     ],
   ),
   (
-    "village_hunt_down_fugitive_defeated",0,
+    "village_hunt_down_fugitive_defeated",menu_text_color(0xFF071423),
     "A heavy blow from the fugitive sends you to the ground, and your vision spins and goes dark.\
  Time passes. When you open your eyes again you find yourself battered and bloody,\
  but luckily none of the wounds appear to be lethal.",
@@ -10062,7 +10135,7 @@ game_menus = [
   ),
 
   (
-    "village_infest_bandits_result",mnf_scale_picture,
+    "village_infest_bandits_result",menu_text_color(0xFF071423)|mnf_scale_picture,
     "{s9}",
     "none",
     [(try_begin),
@@ -10100,7 +10173,7 @@ game_menus = [
 
 
   (
-    "village_infestation_removed",mnf_disable_all_keys,
+    "village_infestation_removed",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "In a battle worthy of song, you and your men drive the bandits out of the village, making it safe once more.\
  The villagers have little left in the way of wealth after their ordeal,\
  but they offer you all they can find.",
@@ -10146,7 +10219,7 @@ game_menus = [
   ),
 
   (
-    "center_manage",0,
+    "center_manage",menu_text_color(0xFF071423),
     "{s19}^{reg6?^^You are\
  currently building {s7}. The building will be completed after {reg8} day{reg9?s:}.:}",
     "none",
@@ -10272,7 +10345,7 @@ game_menus = [
   ),
 
   (
-    "center_improve",0,
+    "center_improve",menu_text_color(0xFF071423),
     "{s19} As the party member with the highest engineer skill ({reg2}), {reg3?you reckon:{s3} reckons} that building the {s4} will cost you\
  {reg5} credits and will take {reg6} days.",
     "none",
@@ -10326,7 +10399,7 @@ game_menus = [
   ),
 
   (
-    "town_bandits_failed",mnf_disable_all_keys,
+    "town_bandits_failed",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "{s4} {s5}",
     "none",
     [
@@ -10355,7 +10428,7 @@ game_menus = [
   ),
 
   (
-    "town_bandits_succeeded",mnf_disable_all_keys,
+    "town_bandits_succeeded",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "The bandits fall before you as wheat to a scythe! Soon you stand alone in the streets\
  while most of your attackers lie unconscious, dead or dying.\
  Searching the bodies, you find a purse which must have belonged to a previous victim of these brutes.\
@@ -10382,7 +10455,7 @@ game_menus = [
 
   
    (
-    "village_steal_cattle_confirm",0,
+    "village_steal_cattle_confirm",menu_text_color(0xFF071423),
     "As the party member with the highest looting skill ({reg2}), {reg3?you reckon:{s1} reckons} that you can steal as many as {reg4} nerfs from the village's herd.",
     "none",
     [
@@ -10411,7 +10484,7 @@ game_menus = [
   ),
 
   (
-    "village_steal_cattle",mnf_disable_all_keys,
+    "village_steal_cattle",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "{s1}",
     "none",
     [
@@ -10450,7 +10523,7 @@ game_menus = [
   
 
    (
-    "village_take_food_confirm",0,
+    "village_take_food_confirm",menu_text_color(0xFF071423),
     "It will be difficult to force and threaten the peasants into giving their precious supplies. You think you will need at least one hour.",
     #TODO: mention looting skill?
     "none",
@@ -10469,7 +10542,7 @@ game_menus = [
   ),
 
   (
-    "village_take_food",0,
+    "village_take_food",menu_text_color(0xFF071423),
     "The villagers grudgingly bring out what they have for you.",
     "none",
     [
@@ -10529,7 +10602,7 @@ game_menus = [
 
 
   (
-    "village_start_attack",mnf_disable_all_keys,
+    "village_start_attack",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "Some of the angry villagers grab their tools and prepare to resist you.\
  It looks like you'll have a fight on your hands if you continue.",
     "none",
@@ -10590,7 +10663,7 @@ game_menus = [
   ),
   
   (
-    "village_loot_no_resist",0,
+    "village_loot_no_resist",menu_text_color(0xFF071423),
     "The villagers here are few and frightened, and they quickly scatter and run before you.\
  The planet is at your mercy.",
     "none",
@@ -10608,7 +10681,7 @@ game_menus = [
     ],
   ),
   (
-    "village_loot_complete",mnf_disable_all_keys,
+    "village_loot_complete",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "On your orders your troops sack the village, pillaging everything of any value,\
  and then put the buildings to the torch. From the coins and valuables that are found, you get your share of {reg1} credits.",
     "none",
@@ -10662,7 +10735,7 @@ game_menus = [
     ],
   ),
   (
-    "village_loot_defeat",0,
+    "village_loot_defeat",menu_text_color(0xFF071423),
     "Fighting with courage and determination, the villagers manage to hold together and drive off your forces.",
     "none",
     [],
@@ -10672,7 +10745,7 @@ game_menus = [
   ),
   
   (
-    "village_loot_continue",0,
+    "village_loot_continue",menu_text_color(0xFF071423),
     "Do you wish to continue looting this village?",
     "none",
     [],
@@ -10688,7 +10761,7 @@ game_menus = [
   ),
   
   (
-    "close",0,
+    "close",menu_text_color(0xFF071423),
     "Nothing.",
     "none",
     [
@@ -10698,7 +10771,7 @@ game_menus = [
   ),
   
   (
-    "center_tax",mnf_disable_all_keys,
+    "center_tax",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     #"You receive the accumulated rents and taxes of this fief, amounting to {reg1} credits.",
 	"You receive the accumulated rents and taxes of all your planets, amounting to {reg1} credits.",
     "none",
@@ -10744,7 +10817,7 @@ game_menus = [
   ),
 
   (
-    "town",mnf_enable_hot_keys,
+    "town",menu_text_color(0xFF071423)|mnf_enable_hot_keys,
     "{s10}{s11}{s12}{s13}",
     "none",
     [
@@ -11606,7 +11679,7 @@ game_menus = [
   ),
 
   (
-    "town_tournament_lost",0,
+    "town_tournament_lost",menu_text_color(0xFF071423),
     "You have been eliminated from the tournament.",
     "none",
     [
@@ -11619,7 +11692,7 @@ game_menus = [
   ),
 
   (
-    "town_tournament_won",mnf_disable_all_keys,
+    "town_tournament_won",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "You have won the tournament of {s3}! You are filled with pride as the crowd cheers your name.\
  In addition to honour, fame and glory, you earn a prize of {reg9} credits. {s8}",
     "none",
@@ -11654,7 +11727,7 @@ game_menus = [
   ),
   
   (
-    "town_tournament_won_by_another",mnf_disable_all_keys,
+    "town_tournament_won_by_another",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "As the only {reg3?fighter:man} to remain undefeated this day, {s1} wins the lists and the glory of this tournament.",
     "none",
     [   (call_script, "script_get_num_tournament_participants"),
@@ -11677,7 +11750,7 @@ game_menus = [
   ),
 
   (
-    "town_tournament",mnf_disable_all_keys,
+    "town_tournament",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "{s1}You are at tier {reg0} of the tournament, with {reg1} participants remaining. In the next round, there will be {reg2} teams with {reg3} {reg4?fighters:fighter} each.",
     "none",
     [
@@ -11874,7 +11947,7 @@ game_menus = [
   ),
 
   (
-    "tournament_withdraw_verify",0,
+    "tournament_withdraw_verify",menu_text_color(0xFF071423),
     "Are you sure you want to withdraw from the tournament?",
     "none",
     [],
@@ -11889,7 +11962,7 @@ game_menus = [
   ),
 
   (
-    "tournament_bet",0,
+    "tournament_bet",menu_text_color(0xFF071423),
     "The odds against you are {reg5} to {reg6}.{reg1? You have already bet {reg1} credits on yourself, and if you win, you will earn {reg2} credits.:} How much do you want to bet?",
     "none",
     [
@@ -11965,7 +12038,7 @@ game_menus = [
   ),
 
   (
-    "tournament_bet_confirm",0,
+    "tournament_bet_confirm",menu_text_color(0xFF071423),
     "If you bet {reg1} denars, you will earn {reg2} credits if you win the tournament. Is that all right?",
     "none",
     [
@@ -11992,7 +12065,7 @@ game_menus = [
   ),
   
   (
-    "tournament_participants",0,
+    "tournament_participants",menu_text_color(0xFF071423),
     "You ask one of the criers for the names of the tournament participants. They are:^{s11}",
     "none",
     [
@@ -12015,7 +12088,7 @@ game_menus = [
 
 
   (
-    "collect_taxes",mnf_disable_all_keys,
+    "collect_taxes",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "As the party member with the highest trade skill ({reg2}), {reg3?you expect:{s1} expects} that collecting taxes from here will take {reg4} days...",
     "none",
     [(call_script, "script_get_max_skill_of_player_party", "skl_trade"),
@@ -12100,7 +12173,7 @@ game_menus = [
   ),
 
   (
-    "collect_taxes_complete",mnf_disable_all_keys,
+    "collect_taxes_complete",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "You've collected {reg3} credits in taxes from {s3}. {s19} will be expecting you to take the money to him.",
     "none",
     [(str_store_party_name, s3, "$current_town"),
@@ -12121,7 +12194,7 @@ game_menus = [
   ),
 
   (
-    "collect_taxes_rebels_killed",0,
+    "collect_taxes_rebels_killed",menu_text_color(0xFF071423),
     "Your quick action and strong arm have successfully put down the revolt.\
  Surely, anyone with a mind to rebel against you will think better of it after this.",
     "none",
@@ -12135,7 +12208,7 @@ game_menus = [
   ),
 
   (
-    "collect_taxes_failed",mnf_disable_all_keys,
+    "collect_taxes_failed",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "You could collect only {reg3} credits as tax from {s3} before the revolt broke out.\
  {s1} won't be happy, but some silver will placate him better than nothing at all...",
     "none",
@@ -12155,7 +12228,7 @@ game_menus = [
   ),
 
   (
-    "collect_taxes_revolt_warning",0,
+    "collect_taxes_revolt_warning",menu_text_color(0xFF071423),
     "The people of {s3} are outraged at your demands and decry it as nothing more than extortion.\
  They're getting very restless, and they may react badly if you keep pressing them.",
     "none",
@@ -12174,7 +12247,7 @@ game_menus = [
   ),
 
   (
-    "collect_taxes_revolt",0,
+    "collect_taxes_revolt",menu_text_color(0xFF071423),
     "You are interrupted while collecting the taxes at {s3}. A large band of angry {reg9?peasants:townsmen} is marching nearer,\
  shouting about the exorbitant taxes and waving torches and weapons. It looks like they aim to fight you!",
     "none",
@@ -12210,7 +12283,7 @@ game_menus = [
 
 # They must learn field discipline and the steadiness to follow orders in combat before they can be thought to use arms.",
   (
-    "train_peasants_against_bandits",0,
+    "train_peasants_against_bandits",menu_text_color(0xFF071423),
     "As the party member with the highest training skill ({reg2}), {reg3?you expect:{s1} expects} that getting some peasants ready for practice will take {reg4} hours.",
     "none",
     [(call_script, "script_get_max_skill_of_player_party", "skl_trainer"),
@@ -12246,7 +12319,7 @@ game_menus = [
   ), 
 
   (
-    "train_peasants_against_bandits_ready",0,
+    "train_peasants_against_bandits_ready",menu_text_color(0xFF071423),
     "You put the peasants through the basics of soldiering, discipline and obedience.\
  You think {reg0} of them {reg1?have:has} fully grasped the training and {reg1?are:is} ready for some practice.",
     "none",
@@ -12286,7 +12359,7 @@ game_menus = [
     ),
 
   (
-    "train_peasants_against_bandits_training_result",mnf_disable_all_keys,
+    "train_peasants_against_bandits_training_result",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "{s0}",
     "none",
     [
@@ -12317,7 +12390,7 @@ game_menus = [
     ),
 
   (
-    "train_peasants_against_bandits_attack",0,
+    "train_peasants_against_bandits_attack",menu_text_color(0xFF071423),
     "As you get ready to continue the training, a sentry from the planet runs up to you, shouting alarums.\
  The bandits have been spotted on the horizon, riding hard for {s3}.\
  The administrator begs that you organize your newly-trained militia and face them.",
@@ -12363,7 +12436,7 @@ game_menus = [
     ),
 
   (
-    "train_peasants_against_bandits_attack_result",mnf_scale_picture|mnf_disable_all_keys,
+    "train_peasants_against_bandits_attack_result",menu_text_color(0xFF071423)|mnf_scale_picture|mnf_disable_all_keys,
     "{s9}",
     "none",
     [
@@ -12397,7 +12470,7 @@ game_menus = [
     ),
 
    (
-    "train_peasants_against_bandits_success",mnf_disable_all_keys,
+    "train_peasants_against_bandits_success",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "The bandits are broken!\
  Those few who remain run off with their tails between their legs,\
  terrified of the peasants and their new champion.\
@@ -12430,7 +12503,7 @@ game_menus = [
 
 
   (
-    "disembark",0,
+    "disembark",menu_text_color(0xFF071423),
     "Do you wish to disembark?",
     "none",
     [],
@@ -12468,7 +12541,7 @@ game_menus = [
   ),
 
   (
-    "ship_reembark",0,
+    "ship_reembark",menu_text_color(0xFF071423),
     "Do you wish to embark?",
     "none",
     [],
@@ -12490,7 +12563,7 @@ game_menus = [
   ),
 
   (
-    "center_reports",0,
+    "center_reports",menu_text_color(0xFF071423),
     "Town Name: {s1}^Rent Income: {reg1} credits^Tariff Income: {reg2} credits^Food Stock: for {reg3} days",
     "none",
     [(party_get_slot, ":town_food_store", "$g_encountered_party", slot_party_food_store),
@@ -12518,7 +12591,7 @@ game_menus = [
   ),
     
   (
-    "price_and_production",0,
+    "price_and_production",menu_text_color(0xFF071423),
     "Productions are:^{s1}^^Price factors are:^{s2}",
     "none",
     [(str_store_string, s1, "@ "),
@@ -12550,7 +12623,7 @@ game_menus = [
   ),
   
   (
-    "town_trade",0,
+    "town_trade",menu_text_color(0xFF071423),
     "You head towards the marketplace.",
     "none",
     [],
@@ -12614,7 +12687,7 @@ game_menus = [
   ),
 
   (
-    "town_trade_assessment_begin",0,
+    "town_trade_assessment_begin",menu_text_color(0xFF071423),
     "You overhear several discussions about the price of trade goods across the local area.\
  You listen closely, trying to work out the best deals around.",
     "none",
@@ -12636,7 +12709,7 @@ game_menus = [
   ),
 
   (
-    "town_trade_assessment",mnf_disable_all_keys,
+    "town_trade_assessment",menu_text_color(0xFF071423)|mnf_disable_all_keys,
     "As the party member with the highest trade skill ({reg2}), {reg3?you try to figure out:{s1} tries to figure out} the best goods to trade in. {s2}",
     "none",
     [(call_script, "script_get_max_skill_of_player_party", "skl_trade"),
@@ -12774,7 +12847,7 @@ game_menus = [
   ),
 
   (
-    "sneak_into_town_suceeded",0,
+    "sneak_into_town_suceeded",menu_text_color(0xFF071423),
     "Disguised in the garments of a citizen, you fool the guards and make your way onto the planet.",
     "none",
     [
@@ -12790,7 +12863,7 @@ game_menus = [
     ]
   ),
   (
-    "sneak_into_town_caught",0,
+    "sneak_into_town_caught",menu_text_color(0xFF071423),
     "As you try to sneak in, one of the guards recognizes you and raises the alarm!\
  You must flee back to your ship before all the guards come down on you!",
     "none",
@@ -12839,7 +12912,7 @@ game_menus = [
     ]
   ),
   (
-    "sneak_into_town_caught_dispersed_guards",0,
+    "sneak_into_town_caught_dispersed_guards",menu_text_color(0xFF071423),
     "You drive off the guards and cover your trail before running off, easily losing your pursuers in the maze of streets.",
     "none",
     [],
@@ -12853,7 +12926,7 @@ game_menus = [
     ]
   ),
   (
-    "sneak_into_town_caught_ran_away",0,
+    "sneak_into_town_caught_ran_away",menu_text_color(0xFF071423),
     "You make your way back to your ship and quickly retreat to the safety of the stars.",
     "none",
     [],
@@ -12870,7 +12943,7 @@ game_menus = [
 
 
   (
-    "enemy_offer_ransom_for_prisoner",0,
+    "enemy_offer_ransom_for_prisoner",menu_text_color(0xFF071423),
     "{s2} offers you a sum of {reg12} credits if you are willing to sell him {s1}.",
     "none",
     [(call_script, "script_calculate_ransom_amount_for_troop", "$g_ransom_offer_troop"),
@@ -12899,7 +12972,7 @@ game_menus = [
 
 
   (
-    "training_ground",0,
+    "training_ground",menu_text_color(0xFF071423),
     "You approach a training field where you can practice your martial skills. What kind of training do you want to do?",
     "none",
     [
@@ -12995,7 +13068,7 @@ game_menus = [
     ]
   ),
 
-  ("training_ground_selection_details_melee_1",0,
+  ("training_ground_selection_details_melee_1",menu_text_color(0xFF071423),
    "How many opponents will you go against?",
    "none",
    [
@@ -13031,7 +13104,7 @@ game_menus = [
       ]
   ),
 
-  ("training_ground_selection_details_melee_2",0,
+  ("training_ground_selection_details_melee_2",menu_text_color(0xFF071423),
    "Choose your opponent #{reg1}:",
    "none",
    [
@@ -13090,7 +13163,7 @@ game_menus = [
 
 
   #SW - modified mounted training weapons
-  ("training_ground_selection_details_mounted",0,
+  ("training_ground_selection_details_mounted",menu_text_color(0xFF071423),
    "What kind of weapon do you want to train with?",
    "none",
    [],
@@ -13119,7 +13192,7 @@ game_menus = [
   ),
 
 
-  ("training_ground_selection_details_ranged_1",0,
+  ("training_ground_selection_details_ranged_1",menu_text_color(0xFF071423),
    "What kind of ranged weapon do you want to train with?",
    "none",
    [],
@@ -13151,7 +13224,7 @@ game_menus = [
   ),
 
 
-  ("training_ground_selection_details_ranged_2",0,
+  ("training_ground_selection_details_ranged_2",menu_text_color(0xFF071423),
    "What range do you want to practice at?",
    "none",
    [],
@@ -13192,7 +13265,7 @@ game_menus = [
   ),
 
 
-  ("training_ground_description",0,
+  ("training_ground_description",menu_text_color(0xFF071423),
    "{s0}",
    "none",
    [],
@@ -13207,7 +13280,7 @@ game_menus = [
       ]
   ),
 
-  ("training_ground_training_result",mnf_disable_all_keys,
+  ("training_ground_training_result",menu_text_color(0xFF071423)|mnf_disable_all_keys,
    "{s7}{s2}",
    "none",
    [
@@ -13308,7 +13381,7 @@ game_menus = [
       ]
    ),
   
-  ("marshall_selection_candidate_ask",0,
+  ("marshall_selection_candidate_ask",menu_text_color(0xFF071423),
    "{s15} will soon select a new marshall for {s23}. Some of the lords have suggested your name as a likely candidate.",
    "none",
    [
@@ -13367,7 +13440,7 @@ game_menus = [
 #####################################################################
 #####################################################################
   (
-    "captivity_avoid_wilderness",0,
+    "captivity_avoid_wilderness",menu_text_color(0xFF071423),
     "Suddenly all the world goes black around you.\
  Many hours later you regain your conciousness and find yourself at the spot you fell.\
  Your enemies must have taken you up for dead and left you there.\
@@ -13381,7 +13454,7 @@ game_menus = [
   ),
 
   (
-    "captivity_start_wilderness",0,
+    "captivity_start_wilderness",menu_text_color(0xFF071423),
     "Stub",
     "none",
     [
@@ -13397,7 +13470,7 @@ game_menus = [
   ),
   
   (
-    "captivity_start_wilderness_surrender",0,
+    "captivity_start_wilderness_surrender",menu_text_color(0xFF071423),
     "Stub",
     "none",
     [
@@ -13409,7 +13482,7 @@ game_menus = [
     []
   ),
   (
-    "captivity_start_wilderness_defeat",0,
+    "captivity_start_wilderness_defeat",menu_text_color(0xFF071423),
     "Your enemies take you prisoner.",
     "none",
     [
@@ -13421,7 +13494,7 @@ game_menus = [
     []
   ),
   (
-    "captivity_start_castle_surrender",0,
+    "captivity_start_castle_surrender",menu_text_color(0xFF071423),
     "Stub",
     "none",
     [
@@ -13433,7 +13506,7 @@ game_menus = [
     []
   ),
   (
-    "captivity_start_castle_defeat",0,
+    "captivity_start_castle_defeat",menu_text_color(0xFF071423),
     "Stub",
     "none",
     [
@@ -13445,7 +13518,7 @@ game_menus = [
     []
   ),
   (
-    "captivity_start_under_siege_defeat",0,
+    "captivity_start_under_siege_defeat",menu_text_color(0xFF071423),
     "Your enemies take you prisoner.",
     "none",
     [
@@ -13458,7 +13531,7 @@ game_menus = [
   ),
   
   (
-    "captivity_wilderness_taken_prisoner",mnf_scale_picture,
+    "captivity_wilderness_taken_prisoner",menu_text_color(0xFF071423)|mnf_scale_picture,
     "Your enemies take you prisoner.",
     "none",
     [
@@ -13503,14 +13576,14 @@ game_menus = [
       ]
   ),
   (
-    "captivity_wilderness_check",0,
+    "captivity_wilderness_check",menu_text_color(0xFF071423),
     "stub",
     "none",
     [(jump_to_menu,"mnu_captivity_end_wilderness_escape")],
     []
   ),
   (
-    "captivity_end_wilderness_escape",mnf_scale_picture,
+    "captivity_end_wilderness_escape",menu_text_color(0xFF071423)|mnf_scale_picture,
     "After painful days of being dragged about as a prisoner, you find a chance and escape from your captors!",
     "none",
     [
@@ -13540,7 +13613,7 @@ game_menus = [
     ]
   ),
   (
-    "captivity_castle_taken_prisoner",0,
+    "captivity_castle_taken_prisoner",menu_text_color(0xFF071423),
     "You are quickly surrounded by guards who take away your weapons. With curses and insults, they throw you into the dungeon where you must while away the miserable days of your captivity.",
     "none",
     [
@@ -13565,7 +13638,7 @@ game_menus = [
     ]
   ),
   (
-    "captivity_rescue_lord_taken_prisoner",0,
+    "captivity_rescue_lord_taken_prisoner",menu_text_color(0xFF071423),
     "You remain in disguise for as long as possible before revealing yourself.\
  The guards are outraged and beat you savagely before throwing you back into the cell for God knows how long...",
     "none",
@@ -13591,7 +13664,7 @@ game_menus = [
     ]
   ),
   (
-    "captivity_castle_check",0,
+    "captivity_castle_check",menu_text_color(0xFF071423),
     "stub",
     "none",
     [
@@ -13613,7 +13686,7 @@ game_menus = [
     []
   ),
   (
-    "captivity_end_exchanged_with_prisoner",0,
+    "captivity_end_exchanged_with_prisoner",menu_text_color(0xFF071423),
     "After days of imprisonment, you are finally set free when your captors exchange you with another prisoner.",
     "none",
     [
@@ -13636,7 +13709,7 @@ game_menus = [
     ]
   ),
   (
-    "captivity_end_propose_ransom",0,
+    "captivity_end_propose_ransom",menu_text_color(0xFF071423),
     "You spend long hours in the sunless dank of the dungeon, more than you can count.\
  Suddenly one of your captors enters your cell with an offer;\
  he proposes to free you in return for {reg5} credits of your hidden wealth. You decide to...",
@@ -13675,7 +13748,7 @@ game_menus = [
     ]
   ),
   (
-    "captivity_castle_remain",mnf_scale_picture|mnf_disable_all_keys,
+    "captivity_castle_remain",menu_text_color(0xFF071423)|mnf_scale_picture|mnf_disable_all_keys,
     "More days pass in the darkness of your cell. You get through them as best you can,\
  enduring the kicks and curses of the guards, watching your underfed body waste away more and more...",
     "none",
@@ -13702,7 +13775,7 @@ game_menus = [
   ),
 
   (
-    "kingdom_army_quest_report_to_army",mnf_scale_picture,
+    "kingdom_army_quest_report_to_army",menu_text_color(0xFF071423)|mnf_scale_picture,
     "{s8} sends word that he wishes you to join his new military campaign.\
  You need to bring at least {reg13} troops to the army,\
  and are instructed to raise more men with all due haste if you do not have enough.",
@@ -13737,7 +13810,7 @@ game_menus = [
   ),
 
   (
-    "kingdom_army_quest_messenger",mnf_scale_picture,
+    "kingdom_army_quest_messenger",menu_text_color(0xFF071423)|mnf_scale_picture,
     "{s8} sends word that he wishes to speak with you about a task he needs performed.\
  He requests you to come and see him as soon as possible.",
     "none",
@@ -13754,7 +13827,7 @@ game_menus = [
   ),
 
   (
-    "kingdom_army_quest_join_siege_order",mnf_scale_picture,
+    "kingdom_army_quest_join_siege_order",menu_text_color(0xFF071423)|mnf_scale_picture,
     "{s8} sends word that you are to join the siege of {s9} in preparation for a full assault.\
  Your troops are to take {s9} at all costs.",
     "none",
@@ -13782,7 +13855,7 @@ game_menus = [
   ),
 
   (
-    "kingdom_army_follow_failed",mnf_scale_picture,
+    "kingdom_army_follow_failed",menu_text_color(0xFF071423)|mnf_scale_picture,
     "You have disobeyed orders and failed to follow {s8}. In anger he has disbanded you from the army,\
  and sends a stern warning that your actions will not be forgotten.",
     "none",
@@ -13802,7 +13875,7 @@ game_menus = [
 
 
   (
-    "invite_player_to_faction_without_center",mnf_scale_picture,
+    "invite_player_to_faction_without_center",menu_text_color(0xFF071423)|mnf_scale_picture,
     "You receive an offer of vassalage!^^\
  {s8} of {s9} has sent a royal herald to bring you an invititation in his own hand.\
  You would be granted the honour of becoming a vassal {lord/lady} of {s9},\
@@ -13843,7 +13916,7 @@ game_menus = [
   
 
   (
-    "invite_player_to_faction",mnf_scale_picture,
+    "invite_player_to_faction",menu_text_color(0xFF071423)|mnf_scale_picture,
     "You receive an offer of vassalage!^^\
  {s8} of {s9} has sent a royal herald to bring you an invititation in his own hand.\
  You would be granted the honour of becoming a vassal {lord/lady} of {s9},\
@@ -13883,7 +13956,7 @@ game_menus = [
   ),
   
   (
-    "invite_player_to_faction_accepted",0,
+    "invite_player_to_faction_accepted",menu_text_color(0xFF071423),
     "In order to become a vassal, you must swear an oath of homage to {s3}.\
  You shall have to find him and give him your oath in person. {s5}",
     "none",
@@ -13900,7 +13973,7 @@ game_menus = [
   ),
 
   (
-    "question_peace_offer",0,
+    "question_peace_offer",menu_text_color(0xFF071423),
     "You Receive a Peace Offer^^{s1} offers you a peace agreement. What is your answer?",
     "none",
     [
@@ -13926,7 +13999,7 @@ game_menus = [
   ),
 
   (
-    "notification_player_faction_active",0,
+    "notification_player_faction_active",menu_text_color(0xFF071423),
     "You now posess land in your name without being tied to any kingdom, as a masterless warlord who knows no higher authority.\
  Enjoy this freedom, but know that the kings of the land will not look to you kindly and will make every attempt to dispose of you.\
  You may find life very difficult without the protection of a kingdom.",
@@ -13946,7 +14019,7 @@ game_menus = [
   ),  
 
   (
-    "notification_player_faction_deactive",0,
+    "notification_player_faction_deactive",menu_text_color(0xFF071423),
     "You no longer hold any land.",
     "none",
     [
@@ -13964,7 +14037,7 @@ game_menus = [
   ),
 
   (
-    "notification_center_under_siege",0,
+    "notification_center_under_siege",menu_text_color(0xFF071423),
     "{s1} has been besieged by {s2} of {s3}!",
     "none",
     [
@@ -13986,7 +14059,7 @@ game_menus = [
   ),  
 
   (
-    "notification_village_raided",0,
+    "notification_village_raided",menu_text_color(0xFF071423),
     #"Enemies have Laid Waste to a Fief^^{s1} has been raided by {s2} of {s3}!",
 	"Enemies have Laid Waste to a territory.^^{s1} has been raided by {s2} of {s3}!",
     "none",
@@ -14009,7 +14082,7 @@ game_menus = [
   ),  
 
   (
-    "notification_village_raid_started",0,
+    "notification_village_raid_started",menu_text_color(0xFF071423),
     "Your planet is under Attack!^^{s2} of {s3} is laying waste to {s1}.",
     "none",
     [
@@ -14031,7 +14104,7 @@ game_menus = [
   ),
 
   (
-    "notification_one_faction_left",0,
+    "notification_one_faction_left",menu_text_color(0xFF071423),
     "Calradia Conquered by One Kingdom^^{s1} has defeated all rivals and stands as the sole kingdom.",
     "none",
     [
@@ -14055,7 +14128,7 @@ game_menus = [
   ),
   
   (
-    "notification_oath_renounced_faction_defeated",0,
+    "notification_oath_renounced_faction_defeated",menu_text_color(0xFF071423),
     "Your Old Faction was Defeated^^You won the battle against {s1}! This ends your struggle which started after you renounced your oath to them.",
     "none",
     [
@@ -14079,7 +14152,7 @@ game_menus = [
   ),
 
   (
-    "notification_center_lost",0,
+    "notification_center_lost",menu_text_color(0xFF071423),
     "An Estate was Lost^^You have lost {s1} to {s2}.",
     "none",
     [
@@ -14100,7 +14173,7 @@ game_menus = [
 
 
   (
-    "notification_troop_left_players_faction",0,
+    "notification_troop_left_players_faction",menu_text_color(0xFF071423),
     "Betrayal!^^{s1} has left {s2} and joined {s3}.",
     "none",
     [
@@ -14121,7 +14194,7 @@ game_menus = [
   ),
 
   (
-    "notification_troop_joined_players_faction",0,
+    "notification_troop_joined_players_faction",menu_text_color(0xFF071423),
     "Good news!^^ {s1} has left {s2} and joined {s3}.",
     "none",
     [
@@ -14142,7 +14215,7 @@ game_menus = [
   ),
 
   (
-    "notification_war_declared",0,
+    "notification_war_declared",menu_text_color(0xFF071423),
     "Declaration of War^^{s1} has declared war against {s2}!",
     "none",
     [
@@ -14176,7 +14249,7 @@ game_menus = [
   ),
 
   (
-    "notification_peace_declared",0,
+    "notification_peace_declared",menu_text_color(0xFF071423),
     "Peace Agreement^^{s1} and {s2} have made peace!",
     "none",
     [
@@ -14200,7 +14273,7 @@ game_menus = [
   ),
   
   (
-    "notification_faction_defeated",0,
+    "notification_faction_defeated",menu_text_color(0xFF071423),
     "Faction Eliminated^^{s1} is no more!",
     "none",
     [
@@ -14263,7 +14336,7 @@ game_menus = [
 
   
   (
-    "notification_rebels_switched_to_faction",0,
+    "notification_rebels_switched_to_faction",menu_text_color(0xFF071423),
     "Rebellion Success^^ Your rebellion is victorious! Your faction now has the sole claim to the title of {s11}, with {s12} as the single ruler.",
     "none",
     [
@@ -14292,7 +14365,7 @@ game_menus = [
 
 
     (
-    "kill_local_merchant_begin",0,
+    "kill_local_merchant_begin",menu_text_color(0xFF071423),
     "You spot your victim and follow him, observing as he turns a corner into a dark alley.\
  This will surely be your best opportunity to attack him.",
     "none",
@@ -14314,7 +14387,7 @@ game_menus = [
   ),
 
   (
-    "auto_return_to_map",0,
+    "auto_return_to_map",menu_text_color(0xFF071423),
     "stub",
     "none",
     [(change_screen_map)],
@@ -14329,7 +14402,7 @@ game_menus = [
 
 # Menu 1: Location Choice
   (
-    "custom_battle_config_1",0,
+    "custom_battle_config_1",menu_text_color(0xFF071423),
 	"Please choose the location for this battle.^{s1}",
 	"none",
 	[(try_begin),
@@ -14341,18 +14414,62 @@ game_menus = [
 	(else_try),
 	(eq,"$g_custom_battle_location",3),
 	(str_store_string,s1,"str_custom_battle_location_3"),
+	(else_try),
+	(eq,"$g_custom_battle_location",4),
+	(str_store_string,s1,"@Felucia"),
+	(else_try),
+	(eq,"$g_custom_battle_location",5),
+	(str_store_string,s1,"@Coruscant"),
+	(else_try),
+	(eq,"$g_custom_battle_location",6),
+	(str_store_string,s1,"@Tatooine"),
+	(else_try),
+	(eq,"$g_custom_battle_location",7),
+	(str_store_string,s1,"@Mustafar"),
+	(else_try),
+	(eq,"$g_custom_battle_location",8),
+	(str_store_string,s1,"@Dantooine"),
+	(else_try),
+	(eq,"$g_custom_battle_location",9),
+	(str_store_string,s1,"@Kashyyyk"),
+	(else_try),
+	(eq,"$g_custom_battle_location",10),
+	(str_store_string,s1,"@Raxus Prime"),
 	(try_end)],
 	[
-	  ("open_plains",[],"Geonosis (V. Large)",
+	  ("open_plains",[],"Geonosis [V. Large]",
 	  [(assign, "$g_custom_battle_location", 1),]
 	   ),
 	  #("deep_forest",[],"Deep Forest (Large)",
-	  ("deep_forest",[],"Yavin IV Plains (Large)",
+	  ("deep_forest",[],"Yavin IV Plains [Large]",
 	  [(assign, "$g_custom_battle_location", 2),]
 	   ), 
-	  ("desert_pass",[],"Dagobah Swamp (Medium)",
+	  ("desert_pass",[],"Dagobah Swamp [Medium]",
 	  [(assign, "$g_custom_battle_location", 3),]
 	   ), 
+	   ##New Custom Battle Maps...
+	  ("felucia",[],"Felucia [Medium]",
+	  [(assign, "$g_custom_battle_location", 4),]
+	   ), 
+	   ("coruscant",[],"Coruscant [Medium]",
+	  [(assign, "$g_custom_battle_location", 5),]
+	   ), 
+	   ("tatooine",[],"Tatooine [Medium]",
+	  [(assign, "$g_custom_battle_location", 6),]
+	   ), 
+	   ("mustafar",[],"Mustafar [Medium]",
+	  [(assign, "$g_custom_battle_location", 7),]
+	   ), 
+	   ("dantooine",[],"Dantooine [Medium]",
+	  [(assign, "$g_custom_battle_location", 8),]
+	   ), 
+	   ("kashyyyk",[],"Kashyyyk [Medium]",
+	  [(assign, "$g_custom_battle_location", 9),]
+	   ), 
+	   ("raxus",[],"Raxus Prime [Medium]",
+	  [(assign, "$g_custom_battle_location", 10),]
+	   ), 
+
 	  ("next",[],"Next",
 	  [(jump_to_menu,"mnu_custom_battle_config_2"),
 	  (assign,"$g_custom_battle_faction_to_edit",1)]
@@ -14367,7 +14484,7 @@ game_menus = [
   
 # Menu 2: Teams Choice
   (
-    "custom_battle_config_2",0,
+    "custom_battle_config_2",menu_text_color(0xFF071423),
 	"Please choose the type of battle.^You have chosen: {s1}",
 	"none",
 	[
@@ -14472,7 +14589,7 @@ game_menus = [
 	]
   ),
   (
-    "custom_battle_config_3",0,
+    "custom_battle_config_3",menu_text_color(0xFF071423),
 	"Please choose the faction for army {reg1}.^Your choice: {s1}",
 	"none",
 	[(assign,reg1,"$g_custom_battle_faction_to_edit"),],
@@ -14517,7 +14634,7 @@ game_menus = [
   ),
   
   (
-    "custom_battle_config_main_class",0,
+    "custom_battle_config_main_class",menu_text_color(0xFF071423),
 	"Please choose the main class of your character. (This determines your choice of subclasses)",
 	"none",
 	[],
@@ -14545,7 +14662,7 @@ game_menus = [
   ),
   
 # (
-	# "custom_battle_custom_class_1",0,
+	# "custom_battle_custom_class_1",menu_text_color(0xFF071423),
 	# "Choose your body armour",
 	# "none",
 	# [],
@@ -14579,7 +14696,7 @@ game_menus = [
 	# ),
 
 # (
-	# "custom_battle_custom_class_2",0,
+	# "custom_battle_custom_class_2",menu_text_color(0xFF071423),
 	# "Choose your boots",
 	# "none",
 	# [],
@@ -14607,7 +14724,7 @@ game_menus = [
 	# ]
 	# ),
 # (
-	# "custom_battle_custom_class_3",0,
+	# "custom_battle_custom_class_3",menu_text_color(0xFF071423),
 	# "Choose your gauntlets",
 	# "none",
 	# [],
@@ -14635,7 +14752,7 @@ game_menus = [
 	# ]
 	# ),
 # (
-	# "custom_battle_custom_class_4",0,
+	# "custom_battle_custom_class_4",menu_text_color(0xFF071423),
 	# "Choose weapon one",
 	# "none",
 	# [],
@@ -14663,7 +14780,7 @@ game_menus = [
 	# ]
 	# ),
   (
-    "custom_battle_config_class",0,
+    "custom_battle_config_class",menu_text_color(0xFF071423),
 	"Please choose the sub class of your character. (This determines your skills and equipment)",
 	"none",
 	[],
@@ -14675,7 +14792,7 @@ game_menus = [
 	   (jump_to_menu, "mnu_custom_battle_config_finish"),
 	   ]
 	   ),
-	  ("soldier_regular",[(eq , "$g_custom_battle_class", 1)],"Regular Soldier (Medium)",
+	  ("soldier_regular",[(eq , "$g_custom_battle_class", 1)],"Regular Soldier [Medium]",
 	  [(assign, "$g_custom_battle_sub_class", 2),
 	   (jump_to_menu, "mnu_custom_battle_config_finish"),
 	   ]
@@ -14685,7 +14802,7 @@ game_menus = [
 	   (jump_to_menu, "mnu_custom_battle_config_finish"),
 	   ]
 	   ),
-	  # ("mounted_warrior",[(eq , "$g_custom_battle_class", 1)],"Mounted Warrior (Medium)",
+	  # ("mounted_warrior",[(eq , "$g_custom_battle_class", 1)],"Mounted Warrior [Medium]",
 	  # [(assign, "$g_custom_battle_sub_class", 4),
 	   # (jump_to_menu, "mnu_custom_battle_config_finish"),
 	   # ]
@@ -14707,7 +14824,7 @@ game_menus = [
 	  (jump_to_menu,"mnu_custom_battle_config_finish")
 	  ]
 	  ),
-	  ("fs_warrior",[(eq,"$g_custom_battle_class",2)],"Force-Sensitive Warrior (Medium)",
+	  ("fs_warrior",[(eq,"$g_custom_battle_class",2)],"Force-Sensitive Warrior [Medium]",
 	  [(assign,"$g_custom_battle_sub_class", 8),
 	  (jump_to_menu,"mnu_custom_battle_config_finish")
 	  ]
@@ -14717,12 +14834,12 @@ game_menus = [
 	  (jump_to_menu,"mnu_custom_battle_config_finish")
 	  ]
 	  ),
-	  # ("axeman",[(eq , "$g_custom_battle_class", 2)],"Axeman (Medium)",
+	  # ("axeman",[(eq , "$g_custom_battle_class", 2)],"Axeman [Medium]",
 	  # [(assign, "$g_custom_battle_sub_class", 10),
 	   # (jump_to_menu, "mnu_custom_battle_config_finish"),
 	   # ]
 	   # ),
-	  # ("pikeman",[(eq , "$g_custom_battle_class", 2)],"Pikeman (Medium)",
+	  # ("pikeman",[(eq , "$g_custom_battle_class", 2)],"Pikeman [Medium]",
 	  # [(assign, "$g_custom_battle_sub_class", 11),
 	   # (jump_to_menu, "mnu_custom_battle_config_finish"),
 	   # ]
@@ -14748,22 +14865,22 @@ game_menus = [
 	  # (jump_to_menu,"mnu_custom_battle_config_finish")
 	  # ]
 	  # ),
-	  # ("veteran_archer",[(eq,"$g_custom_battle_class",3)],"Veteran Archer (Medium)",
+	  # ("veteran_archer",[(eq,"$g_custom_battle_class",3)],"Veteran Archer [Medium]",
 	  # [(assign,"$g_custom_battle_sub_class", 16),
 	  # (jump_to_menu,"mnu_custom_battle_config_finish")
 	  # ]
 	  # ),
-	  # ("veteran_crossbowman",[(eq , "$g_custom_battle_class", 3)],"Veteran Crossbowman (Medium)",
+	  # ("veteran_crossbowman",[(eq , "$g_custom_battle_class", 3)],"Veteran Crossbowman [Medium]",
 	  # [(assign, "$g_custom_battle_sub_class", 17),
 	   # (jump_to_menu, "mnu_custom_battle_config_finish"),
 	   # ]
 	   # ),
-	  # ("axe_thrower",[(eq , "$g_custom_battle_class", 3)],"Axe Thrower (Medium)",
+	  # ("axe_thrower",[(eq , "$g_custom_battle_class", 3)],"Axe Thrower [Medium]",
 	  # [(assign, "$g_custom_battle_sub_class", 18),
 	   # (jump_to_menu, "mnu_custom_battle_config_finish"),
 	   # ]
 	   # ),
-	  # ("javelineer",[(eq , "$g_custom_battle_class", 3)],"Javelineer (Medium)",
+	  # ("javelineer",[(eq , "$g_custom_battle_class", 3)],"Javelineer [Medium]",
 	  # [(assign, "$g_custom_battle_sub_class", 19),
 	   # (jump_to_menu, "mnu_custom_battle_config_finish"),
 	   # ]
@@ -14782,7 +14899,7 @@ game_menus = [
   ),
 # Set troops for each party
   (
-   "custom_battle_config_4",0,
+   "custom_battle_config_4",menu_text_color(0xFF071423),
 	"Select the troops for army {reg11} (Left CTRL + Left Click removes troops, Left Shift + Left Click adds five troops and Left Shift + Left Control + Left Click removes five troops.)",
 	"none",
 	[
@@ -15825,7 +15942,7 @@ game_menus = [
   
 
   (
-    "custom_battle_config_finish",0,
+    "custom_battle_config_finish",menu_text_color(0xFF071423),
     "The battle is ready.",
     "none",
     [
@@ -16422,6 +16539,27 @@ game_menus = [
 	(else_try),
 	(eq, "$g_custom_battle_location", 3),
 	(assign, "$g_custom_battle_scene", "scn_custom_battle_3"),
+	(else_try),
+	(eq, "$g_custom_battle_location", 4),
+	(assign, "$g_custom_battle_scene", "scn_town_26_land_battle"),
+	(else_try),
+	(eq, "$g_custom_battle_location", 5),
+	(assign, "$g_custom_battle_scene", "scn_town_16_land_battle"),
+	(else_try),
+	(eq, "$g_custom_battle_location", 6),
+	(assign, "$g_custom_battle_scene", "scn_town_14_land_battle"),
+	(else_try),
+	(eq, "$g_custom_battle_location", 7),
+	(assign, "$g_custom_battle_scene", "scn_town_20_land_battle"),
+	(else_try),
+	(eq, "$g_custom_battle_location", 8),
+	(assign, "$g_custom_battle_scene", "scn_town_7_land_battle"),
+	(else_try),
+	(eq, "$g_custom_battle_location", 9),
+	(assign, "$g_custom_battle_scene", "scn_town_10_land_battle"),
+	(else_try),
+	(eq, "$g_custom_battle_location", 10),
+	(assign, "$g_custom_battle_scene", "scn_town_23_land_battle"),
 	(end_try),
 
 
@@ -16683,7 +16821,7 @@ game_menus = [
   
 # Testing Menu
 (
-	"custom_battle_test",0,
+	"custom_battle_test",menu_text_color(0xFF071423),
 	"The factions for this battle are:{s1},{s2},{s3},{s4},{s5}.",
 	"none",
 	[
@@ -16821,7 +16959,7 @@ game_menus = [
 	),
 	
 (
-	"custom_battle_test_troops",0,
+	"custom_battle_test_troops",menu_text_color(0xFF071423),
 	"The number of troops for this team are:{reg1},{reg2},{reg3},{reg4},{reg5},{reg6},{reg7},{reg8},{reg9},{reg10}",
 	"none",
 	[
@@ -16844,7 +16982,7 @@ game_menus = [
 	]
 	),
   (
-    "custom_battle_optional",0,
+    "custom_battle_optional",menu_text_color(0xFF071423),
 	"From here the time of day and the weather can be changed.",
 	"none",
 	[
@@ -16932,7 +17070,7 @@ game_menus = [
 	]
   ),
   (
-    "custom_battle_end",0,
+    "custom_battle_end",menu_text_color(0xFF071423),
     "Battle is over. {s1} Your party killed {reg5} troops, enemy party killed {reg6} troops. You have killed {reg7} troops.",
     "none",
     [(assign, reg5, "$g_custom_battle_team2_death_count"),
@@ -16966,7 +17104,7 @@ game_menus = [
 	(assign,"$g_custom_battle_class",0),
 	(assign,"$g_custom_battle_sub_class",0),
 	# Remove all equipment
-	(troop_set_inventory_slot,"trp_player",0,0),
+	(troop_set_inventory_slot,"trp_player",menu_text_color(0xFF071423),0),
 	(troop_set_inventory_slot,"trp_player",1,0),
 	(troop_set_inventory_slot,"trp_player",2,0),
 	(troop_set_inventory_slot,"trp_player",3,0),
@@ -17394,7 +17532,7 @@ game_menus = [
 ]),
 
   (
-    "bank",0,
+    "bank",menu_text_color(0xFF071423),
     #"You visit the bank of the {s1}.\
 	"You visit the bank.\
  ^^You can deposit money and earn interest, or take a loan.\
@@ -17542,7 +17680,7 @@ game_menus = [
 
 #SW - added swc_readme game menu
   (
-    "swc_readme",0,
+    "swc_readme",menu_text_color(0xFF071423),
     "Star Wars: Conquest - FAQ & Notes^^This mod is still in development. We hope to eventually add more models, factions, quests, complete scene editing for all scenes, and add other functionality. Please post any bugs or suggestions on our forum.^^Content for this mod and future changes will primarily be focused on the original movies, Episode 4-6 range.  Clone Wars era troops and equipment have been included but are not planned to be further improved or a major feature of this mod.^^Scene editing is still in progress and we have made changes to many of the major planets like Tatooine, Yavin IV, Naboo, Geonosis, Ryloth, Kashyyyk, and Endor.  We are also working on creating several generic scenes to use for battlestations, outposts, and smaller planets. This is still a work in progress so not all scenes have been modified yet.^^The Trade Federation Base has several merchants like a Force-Sensitive Trainer, Clone Wars Era Merchant, Droid Parts Merchant, Plastic Surgeon, and others. Their inventory refreshes every hour and they can also randomly appear in the cantina's.^^Clone Troopers, B1-Series Battledroids, Baby Rancors, and Force-Sensitive troops can be recruited by building village upgrades.^^Space Battles can be found at the Training Academy.  Improving the controls or this functionality is a lower priority but may be reviewed in the future.^^Heavy Weapons (rocket launcher, flame rifle, etc) and some force powers (force kill, force knockdown, etc) are include for fun but are overpowered and will unbalance the game if you choose to use them.^^Currently some spaceships can be purchased and upgraded at the Trade Federation base and we plan to add more later.^^It is possible to get droids from Jawa prisoners but currently these droids do not do anything in battle.^^We could use help with this mod with models, textures, scene editing, and coding. Please post on our forum if you are interested in helping.^^Thanks very much to everybody who has directly or indirectly contributed to this mod, we all appreciate it.",
     "none",[],
     [("done",[],"Done.",[(change_screen_return),]),]

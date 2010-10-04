@@ -239,7 +239,7 @@ dialogs = [
  My merchandise is a bit different from most, however. It has to be fed and watered twice a day and tries to run away if I turn my back.", "ramun_introduce_3",[]],
   [trp_ramun_the_slave_trader|plyr, "ramun_introduce_3", [], "Livestock?", "ramun_introduce_4",[]],
   [trp_ramun_the_slave_trader, "ramun_introduce_4", [], "Close enough. I like to call myself the man who keeps every ship in space moving.\
- Ships are flown by engines, you see, and engines need a crew to run them or they stop. That's where I come in.", "ramun_introduce_5",[]],
+ Ships are flown by engines, you see, and engines need troops to run them or they stop. That's where I come in.", "ramun_introduce_5",[]],
   [trp_ramun_the_slave_trader|plyr, "ramun_introduce_5", [], "Slaves.", "ramun_introduce_6",[]],
   [trp_ramun_the_slave_trader, "ramun_introduce_6", [], "Now you're catching on! A trading planet like this couldn't survive without them.\
  The ships lose a few hands on every voyage, so there's always a high demand. The captains come to me and they pay well.", "ramun_introduce_7",[]],
@@ -249,8 +249,8 @@ dialogs = [
  However, on occasion I'll buy from privateers and other . . . 'individuals'. You can't be picky about your suppliers in this line of work.\
  You wouldn't happen to have any prisoners with you, would you?", "ramun_introduce_9",[]],
   [trp_ramun_the_slave_trader|plyr, "ramun_introduce_9", [], "Me? ", "ramun_introduce_10",[]],
-  [trp_ramun_the_slave_trader, "ramun_introduce_10", [], "Why not? If you intend to travel the Galaxy,\
- you're going to get into a shoot-out with someone sooner or later. And, hopefully, you'll come out on top.\
+  [trp_ramun_the_slave_trader, "ramun_introduce_10", [], "Why not? If you intend to travel outside this planet,\
+ you're going to get into a shoot-out with someone sooner or later. And, God willing, you'll come out on top.\
  Why not make some extra money off the whole thing? Take them alive, bring them back to me, and I'll pay you fifty credits for each head.\
  Don't much care who they are or where they come from.", "ramun_introduce_11",[]],
   [trp_ramun_the_slave_trader|plyr, "ramun_introduce_11", [], "Hmm. I'll think about it.", "ramun_introduce_12",[]],
@@ -323,7 +323,7 @@ dialogs = [
 ##  [trp_tutorial_trainer|plyr, "tutorial1_1", [], "Greetings sir, it's {playername}.", "tutorial1_2", []],
 ##  [trp_tutorial_trainer, "tutorial1_2", [], "Well {playername}, this place you see is the training ground. Locals come here to practice their combat skills. Since you are here you may have a go as well.", "tutorial1_3", []],
 ##  [trp_tutorial_trainer|plyr, "tutorial1_3", [], "I'd like that very much sir. Thank you.", "tutorial1_4", []],
-##  [trp_tutorial_trainer, "tutorial1_4", [], "You will learn the basics of weapons and riding a speeder here.\
+##  [trp_tutorial_trainer, "tutorial1_4", [], "You will learn the basics of weapons and riding a horse here.\
 ##  First you'll begin with melee weapons. Then you'll enter an archery range to test your skills. And finally you'll see a horse waiting for you.\
 ##  I advise you to train in all these 3 areas. But you can skip some of them, it's up to you.", "tutorial1_6", []],
 ##  [trp_tutorial_trainer, "tutorial1_6", [], "Tell you what, if you destroy at least 10 dummies while training, I will give you my old knife as a reward. It's a little rusty but it's a good blade.", "tutorial1_7", []],
@@ -353,18 +353,18 @@ dialogs = [
 ##  [party_tpl|pt_peasant|plyr,"peasant_talk_1", [[eq,"$quest_accepted_zendar_looters"]], "Greetings to you too.", "close_window",[(assign, "$g_leave_encounter",1)]],
 ##  [party_tpl|pt_peasant|plyr,"peasant_talk_1", [[neq,"$quest_accepted_zendar_looters"],[eq,"$peasant_misunderstanding_said"]], "I have been charged with hunting down outlaws in this area...", "peasant_talk_2",[[assign,"$peasant_misunderstanding_said",1]]],
 ##  [party_tpl|pt_peasant|plyr,"peasant_talk_1", [[neq,"$quest_accepted_zendar_looters"],[neq,"$peasant_misunderstanding_said"]], "Greetings. I am hunting outlaws. Have you seen any around here?", "peasant_talk_2b",[]],
-##  [party_tpl|pt_peasant,"peasant_talk_2", [], "I swear {sir/madam}. I am not an outlaw... I am just a simple nerf herder. I am taking my goods to the market, see.", "peasant_talk_3",[]],
+##  [party_tpl|pt_peasant,"peasant_talk_2", [], "I swear to God {sir/madam}. I am not an outlaw... I am just a simple farmer. I am taking my goods to the market, see.", "peasant_talk_3",[]],
 ##  [party_tpl|pt_peasant|plyr,"peasant_talk_3", [], "I was just going to ask if you saw any outlaws around here.", "peasant_talk_4",[]],
 ##  [party_tpl|pt_peasant,"peasant_talk_4", [], "Oh... phew... yes, outlaws are everywhere. They are making life miserable for us.\
-## I wish you luck in killing them all.", "close_window",[(assign, "$g_leave_encounter",1)]],
+## I pray to God you will kill them all.", "close_window",[(assign, "$g_leave_encounter",1)]],
 ##  [party_tpl|pt_peasant,"peasant_talk_2b", [], "Outlaws? They are everywhere. They are making life miserable for us.\
-## I wish you luck in killing them all.", "close_window",[(assign, "$g_leave_encounter",1)]],
+## I pray to God you will kill them all.", "close_window",[(assign, "$g_leave_encounter",1)]],
 
   [party_tpl|pt_manhunters,"start", [(eq,"$talk_context",tc_party_encounter)], "Hey, you there! You seen any smugglers around here?", "manhunter_talk_b",[]],
   [party_tpl|pt_manhunters|plyr,"manhunter_talk_b", [], "Yes, they went this way about an hour ago.", "manhunter_talk_b1",[]],
   [party_tpl|pt_manhunters,"manhunter_talk_b1", [], "I knew it! Come on, lads, lets go get these bastards! Thanks a lot, friend.", "close_window",[(assign, "$g_leave_encounter",1)]],
   [party_tpl|pt_manhunters|plyr,"manhunter_talk_b", [], "No, haven't seen any outlaws lately.", "manhunter_talk_b2",[]],
-  [party_tpl|pt_manhunters,"manhunter_talk_b2", [], "Bah. They're holed up in this sector like womp rats, but we'll smoke them out yet. Sooner or later.", "close_window",[(assign, "$g_leave_encounter",1)]],
+  [party_tpl|pt_manhunters,"manhunter_talk_b2", [], "Bah. They're holed up in this sector like rats, but we'll smoke them out yet. Sooner or later.", "close_window",[(assign, "$g_leave_encounter",1)]],
 
   [party_tpl|pt_looters|auto_proceed,"start", [(eq,"$talk_context",tc_party_encounter)], "Warning: This line should never be displayed.", "looters_1",[
 #SW - modified looters/jawa dialogs
@@ -379,13 +379,13 @@ dialogs = [
   [party_tpl|pt_looters,"looters_1", [], "{s4}", "looters_2",[]],
   [party_tpl|pt_looters|plyr,"looters_2", [[store_character_level,reg(1),"trp_player"],[lt,reg(1),4]], "I'm not afraid of you lot. Fight me if you dare!", "close_window",
    [[encounter_attack]]],
-  [party_tpl|pt_looters|plyr,"looters_2", [[store_character_level,reg(1),"trp_player"],[ge,reg(1),4]], "You'll have nothing of mine but a blaster bolt between the eyes, scum.", "close_window",
+  [party_tpl|pt_looters|plyr,"looters_2", [[store_character_level,reg(1),"trp_player"],[ge,reg(1),4]], "You'll have nothing of mine but a blaster bolt through the eyes, scum.", "close_window",
    [[encounter_attack]]],
 
   [party_tpl|pt_village_farmers,"start", [(eq,"$talk_context",tc_party_encounter),
                                           (agent_play_sound, "$g_talk_agent", "snd_encounter_farmers"),
   ],
-   " Good {sir/lady}, we're only poor farmers from the planet of {s11}. {reg1?We are taking our products to the market at {s12}.:We are returning from the market at {s12} back to our planet.}", "village_farmer_talk",
+   " My {lord/lady}, we're only poor farmers from the planet of {s11}. {reg1?We are taking our products to the market at {s12}.:We are returning from the market at {s12} back to our planet.}", "village_farmer_talk",
    [(party_get_slot, ":target_center", "$g_encountered_party", slot_party_ai_object),
     (party_get_slot, ":home_center", "$g_encountered_party", slot_party_home_center),
     (party_get_slot, ":market_town", ":home_center", slot_village_market_town),
@@ -436,9 +436,9 @@ dialogs = [
 [anyone|plyr, "independent_trader_1",[], "I'd like to sell you some of my prisoners", "independent_trader_prisoner_1", [[change_screen_trade_prisoners]]],
 [anyone, "independent_trader_prisoner_1", [], "Pleasure doing business and safe travels!", "close_window", [(assign, "$g_leave_encounter",1)]],
 [anyone|plyr, "independent_trader_1",[], "Good luck in your travels", "close_window", [(assign, "$g_leave_encounter",1)]],
-[anyone, "independent_trader_intro_1", [], "We're a convoy of Independent Traders alligned with the Trade Federation. We mostly trade in prisoners and robots and travel around the Galaxy to pick up merchandise to transport to our home base.", "independent_trader_intro_1",[]],
+[anyone, "independent_trader_intro_1", [], "We are a convoy of Independent Traders alligned with the Trade Federation. We mostly trade in prisoners and robots and travel around the galaxy to pick up merchandise to transport to our home base.", "independent_trader_intro_1",[]],
 [anyone|plyr, "independent_trader_intro_1",[], "Can you tell me more about the Trade Federation?", "independent_trader_intro_2", []],
-[anyone, "independent_trader_intro_2", [], "Of course. The Trade Federation is an alliance of independent traders and companies who wish to remain neutral, so they will trade with any faction. We have several bases around the Galaxy with shipyards, slave markets and a banking system that will allow you to keep your credits safe.", "independent_trader_1", []],
+[anyone, "independent_trader_intro_2", [], "Of course. The Trade Federation is an alliance of independent traders and companies who wish to remain neutral, so they will trade with any faction. We have several bases around the galaxy with shipyards, slave markets and a banking system that will allow you to keep your credits safe.", "independent_trader_1", []],
 [anyone|plyr, "independent_trader_intro_1",[], "Pretty soon, your head will be independent from your body. Die!", "close_window", [(call_script, "script_set_player_relation_with_faction", "$g_encountered_party_faction", -10),[encounter_attack]]],
 [anyone|plyr, "independent_trader_intro_1",[], "Thank you, now about those other things...", "independent_trader_1", []],
 
@@ -508,7 +508,7 @@ dialogs = [
                      (str_store_string, s1, "@You may have won more of our duels than I, but that will change today!"),
                     (else_try),
                      (eq, ":duel_losses", ":duel_wins"),
-                     (str_store_string, s1, "@We seem to be evenly matched so another duel should prove to be interesting."),
+                     (str_store_string, s1, "@We seem to be evenly match so another duel should prove to be interesting."),
                     (else_try),
                       (str_store_string, s1, "@You should not be seeing this text."),
                     (try_end),
@@ -656,7 +656,7 @@ dialogs = [
   [anyone|plyr, "member_lady_1", [],  "We still have a long way ahead of us.", "member_lady_2a", []],
   [anyone|plyr, "member_lady_1", [],  "Very soon. We're almost there.", "member_lady_2b", []],
 
-  [anyone ,"member_lady_2a", [],  "Ah, I am going to enjoy the journey for a while longer then. I won't complain.\
+  [anyone ,"member_lady_2a", [],  "Ah, I am going to enjoy the route for a while longer then. I won't complain.\
  I find flying out in the open so much more pleasant than sitting on the planet all day.\
  You know, I envy you. You can live like this all the time.", "close_window", []],
   [anyone ,"member_lady_2b", [],  "That's good news. Not that I don't like your company, but I did miss my little luxuries.\
@@ -744,8 +744,8 @@ dialogs = [
        (faction_get_slot, ":enemy_king", "$supported_pretender_old_faction", slot_faction_leader),
        (str_store_troop_name, s9, ":enemy_king"),
       ],
-   "{reg11?We have {reg11} officers on our side:We have no commander with us yet},\
- whereas {reg21?{s9} still has {reg21} officers supporting them:{s9} has no loyal officers left}.\
+   "{reg11?We have {reg11} offciers on our side:We have no lord with us yet},\
+ whereas {reg21?{s9} still has {reg21} offciers supporting them:{s9} has no loyal officers left}.\
  {reg19?We control {reg13?{reg13} planets:} {reg14?{reg14} outposts:} {reg15?and {reg15} lesser planets:}:We don't control any outposts or planets},\
  while {reg29?they have {reg23?{reg23} planets:} {reg24?{reg24} outposts:} {reg25?and {reg25} lesser planets:}:they have no remaining planets}.\
  Overall, {s30}.", "pretender_progress_2",[]],
@@ -775,7 +775,7 @@ dialogs = [
    "Let me think about this some more.", "supported_pretender_pretalk",[]],
  
   [anyone,"pretender_quit_rebel", [],
-   "So be it. My cause is lost. There is only one thing to do now. I will flee the Galaxy and never come back.", "close_window",
+   "So be it. Then my cause is lost. There is only one thing to do for me now. I will go from the Galaxy and never come back.", "close_window",
    [
      (troop_get_slot, ":original_faction", "$g_talk_troop", slot_troop_original_faction),
      (try_for_range, ":cur_troop", kingdom_heroes_begin, kingdom_heroes_end),
@@ -854,7 +854,7 @@ dialogs = [
 
   [anyone,"member_separate", [
             (gt, "$npc_quit_morale", 30),
-      ], "Oh really? Well, I'm not just going to wait around here. I'm going to go to other planets to look for other work. Is that what you want?", "member_separate_confirm",
+      ], "Oh really? Well, I'm not just going to wait around here. I'm going to go to the planets to look for other work. Is that what you want?", "member_separate_confirm",
    []],
 
   [anyone,"member_separate", [
@@ -1592,7 +1592,7 @@ dialogs = [
                      (troop_get_slot, ":honorific", "$g_talk_troop", slot_troop_honorific),
                      (str_store_string, 5, ":honorific"),
    ],
-   "It is good to see you alive, {s5}! {s6}, and I did not know whether you had been captured, killed, or got away. I've been roaming around since then, looking for you. Shall I get my gear together and rejoin your company?",
+   "It is good to see you alive, {s5}! {s6}, and I did not know whether you had been captured, or killed, or got away. I've been roaming around since then, looking for you. Shall I get my gear together and rejoin your company?",
    "companion_rehire", [
                      (troop_set_slot, "$g_talk_troop", slot_troop_playerparty_history, pp_history_indeterminate),
       ]],
@@ -1820,7 +1820,7 @@ dialogs = [
   [anyone|plyr, "companion_quitting_response", [
             (eq, 1, 0),
             (eq, "$player_can_refuse_npc_quitting", 1),
-      ], "We shoot deserters in this company.", "companion_quitting_no", [
+      ], "We hang deserters in this company.", "companion_quitting_no", [
           ]],
 
   [anyone, "companion_quitting_no", [],
@@ -1877,7 +1877,7 @@ dialogs = [
 
   [anyone|plyr, "companion_objection_response", [
                     (eq, "$npc_praise_not_complaint", 0),
-      ], "We can only hope it won't happen again.", "close_window", [
+      ], "Hopefully it won't happen again.", "close_window", [
                     (troop_set_slot, "$map_talk_troop", "$npc_grievance_slot", tms_acknowledged),
           ]],
 
@@ -1934,7 +1934,7 @@ dialogs = [
       (troop_get_slot, ":object", "$map_talk_troop", slot_troop_personalityclash2_object),
       (str_store_troop_name, s11, ":object"),
       (troop_get_type, reg11, ":object"),
-      ],  "{s11} is a valued member of this company. I don't want you picking any more fights with {reg11?her:him}.", "close_window", [
+      ],  "{s11} is a valuable member of this company. I don't want you picking any more fights with {reg11?her:him}.", "close_window", [
                     (troop_set_slot, "$map_talk_troop", slot_troop_personalityclash2_state, pclash_penalty_to_self),
           ]],
 
@@ -2082,7 +2082,7 @@ dialogs = [
           ]],
 
   [anyone|plyr, "companion_home_description", [
-      ],  "We don't have time to chat right now.", "close_window", [
+      ],  "We don't have time to chat just now.", "close_window", [
           ]],
 
   [anyone|plyr, "companion_home_description", [
@@ -2112,7 +2112,7 @@ dialogs = [
  And fewer still would be willing to put their lives at risk for my cause.\
  But you didn't hesitate for a moment in throwing yourself at my enemies.\
  We have gone through a lot together, and there were times I came close to losing all hope.\
- However, thanks to you, we have prevailed. It is now time for me to leave your company and take what's rightfully mine.\
+ But with God's help, we prevailed. It is now time for me to leave your company and take what's rightfully mine.\
  From now on, I will carry out the great responsibility of ruling {s3}.\
  There still lie many challanges ahead and I count on your help in overcoming those.\
  And of course, you will always remain as my foremost vassal."),
@@ -2147,16 +2147,16 @@ dialogs = [
   [anyone,"start", [(eq, "$talk_context", tc_castle_commander)],
    "What do you want?", "player_siege_castle_commander_1", []],
   [anyone|plyr,"player_siege_castle_commander_1", [],
-   "Your situation is hopeless! Surrender now or die", "player_siege_ask_surrender", []],
-  [anyone|plyr,"player_siege_castle_commander_1", [], "Nothing. I'll leave you for now.", "close_window", []],
+   "Surrender! Your situation is hopeless!", "player_siege_ask_surrender", []],
+  [anyone|plyr,"player_siege_castle_commander_1", [], "Nothing. I'll leave you now.", "close_window", []],
 
   
   [anyone,"player_siege_ask_surrender", [(lt, "$g_enemy_strength", 100), (store_mul,":required_str","$g_enemy_strength",5),(ge, "$g_ally_strength", ":required_str")],
-   "Do you give your word we shall not be harmed?", "player_siege_ask_surrender_treatment", []],
+   "Perhaps... Do you give your word of honour that we'll be treated well?", "player_siege_ask_surrender_treatment", []],
   [anyone,"player_siege_ask_surrender", [(lt, "$g_enemy_strength", 200), (store_mul,":required_str","$g_enemy_strength",3),(ge, "$g_ally_strength", ":required_str")],
-   "We are ready to leave this planet to you if you give me your word that you shall not fire upon us.", "player_siege_ask_leave_unmolested", []],
+   "We are ready to leave this castle to you and march away if you give me your word of honour that you'll let us leave unmolested.", "player_siege_ask_leave_unmolested", []],
   [anyone,"player_siege_ask_surrender", [],
-   "Surrender? Hah! We'll hold this system or die defending it.", "close_window", []],
+   "Surrender? Hah! We can hold these walls until we all die of old age.", "close_window", []],
 
   
   [anyone|plyr,"player_siege_ask_surrender_treatment", [],
@@ -2169,26 +2169,26 @@ dialogs = [
    "Very well then. Under those terms, I offer you my surrender.", "close_window", [(assign,"$g_enemy_surrenders",1)]],
 
   [anyone|plyr,"player_siege_ask_leave_unmolested", [],
-   "You have my word. We will hold fire if you leave the system.", "player_siege_ask_leave_unmolested_accept", []],
+   "You have my word. You will not come under attack if you leave the castle.", "player_siege_ask_leave_unmolested_accept", []],
   [anyone,"player_siege_ask_leave_unmolested_accept", [],
-   "Very well. Then we leave this planet to you. You have won this day. But we'll meet again.", "close_window", [(assign,"$g_castle_left_to_player",1)]],
+   "Very well. Then we leave this castle to you. You have won this day. But we'll meet again.", "close_window", [(assign,"$g_castle_left_to_player",1)]],
   [anyone|plyr,"player_siege_ask_leave_unmolested", [],
-   "Unacceptable. I want prisoners and blood.", "player_siege_ask_leave_unmolested_reject", []],
+   "Unacceptable. I want prisoners.", "player_siege_ask_leave_unmolested_reject", []],
   [anyone,"player_siege_ask_leave_unmolested_reject", [],
-   "Then we will defend this stronghold to the death. The negotiations are over. Good-bye.", "close_window", []],
+   "Then we will defend this castle to the death, and this parley is done. Good-bye.", "close_window", []],
 
   
 #After battle texts
   
   [anyone,"start", [(eq, "$talk_context", tc_hero_freed),
                       (troop_slot_eq,"$g_talk_troop",slot_troop_occupation, slto_kingdom_hero)],
-   "I am in your debt for freeing me from that rat infested hole my friend.", "freed_lord_answer",
+   "I am in your debt for freeing me, friend.", "freed_lord_answer",
    [
     (call_script, "script_remove_troop_from_prison", "$g_talk_troop"),
    ]],
 
   [anyone|plyr,"freed_lord_answer", [(lt, "$g_talk_troop_faction_relation", 0)],
-   "Sorry, but you're not going anywhere, 'friend'. You're my prisoner now.", "freed_lord_answer_1",
+   "You're not going anywhere, 'friend'. You're my prisoner now.", "freed_lord_answer_1",
    [#(troop_set_slot, "$g_talk_troop", slot_troop_is_prisoner, 1),
     (troop_set_slot, "$g_talk_troop", slot_troop_prisoner_of_party, "p_main_party"),
     (party_force_add_prisoners, "p_main_party", "$g_talk_troop", 1),
@@ -2198,10 +2198,10 @@ dialogs = [
     ]],#take prisoner
 
   [anyone,"freed_lord_answer_1", [],
-   "Someday you shall pay for this.", "close_window", []],
+   "I'll have your head on a pike for this, you bastard! Someday!", "close_window", []],
 
   [anyone|plyr,"freed_lord_answer", [],
-   "You are free to go on your way, sir.", "freed_lord_answer_2",
+   "You are free to go wherever you want, sir.", "freed_lord_answer_2",
    [(call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 7),
     (call_script, "script_change_player_honor", 2),
 #    (troop_get_slot, ":cur_rank", "$g_talk_troop", slot_troop_kingdom_rank),
@@ -2209,7 +2209,7 @@ dialogs = [
     (call_script, "script_change_player_relation_with_faction_ex", "$g_talk_troop_faction", 2)]],
 
   [anyone,"freed_lord_answer_2", [],
-   "Thank you, good {sire/lady}. I don't forget a good deed.", "close_window",
+   "Thank you, good {sire/lady}. I never forget someone who's done me a good turn.", "close_window",
    []],
 
 ##  [anyone|plyr,"freed_lord_answer", [(neg|faction_slot_eq, "$g_talk_troop_faction", slot_faction_leader, "$g_talk_troop"), #he is not a faction leader!
@@ -2241,7 +2241,7 @@ dialogs = [
     ]],
 
   [anyone|plyr,"defeat_lord_answer", [],
-   "You are my prisoner now. You'll fetch me a fine ransom.", "defeat_lord_answer_1",
+   "You are my prisoner now.", "defeat_lord_answer_1",
    [
      #(troop_set_slot, "$g_talk_troop", slot_troop_is_prisoner, 1),
      (troop_set_slot, "$g_talk_troop", slot_troop_prisoner_of_party, "p_main_party"),
@@ -2353,7 +2353,7 @@ dialogs = [
 ##                     (troop_slot_eq,"$g_talk_troop",slot_troop_last_quest, "qst_deliver_message_to_lover"),
 ##                     (le,"$talk_context",tc_siege_commander),
 ##                     ],
-##   "I had trusted that datacard to you, thinking you were a {man/lady} of honor, and you handed it directly to the girl's father.\
+##   "I had trusted that letter to you, thinking you were a {man/lady} of honor, and you handed it directly to the girl's father.\
 ## I should have known you were not to be trusted. Anyway, I have learned my lesson and I won't make that mistake again.", "close_window",
 ##   [(call_script, "script_clear_last_quest", "$g_talk_troop")]],
 
@@ -2367,7 +2367,7 @@ dialogs = [
      (faction_slot_eq, "$g_talk_troop_faction", slot_faction_state, 2),
      (neg|faction_slot_eq, "$g_talk_troop_faction", slot_faction_leader, "$g_talk_troop"),
      ],
-   "[Our first task is to seize a planet. Then other lords will join us.]", "pretender_start", [
+   "[Our first task is to seize a fortress. Then other lords will join us.]", "pretender_start", [
      ]],
 
   [anyone ,"start",
@@ -2503,7 +2503,7 @@ dialogs = [
                                              (str_store_faction_name, s12, ":original_faction"),
                                              (faction_get_slot, ":original_ruler", ":original_faction", slot_faction_leader),
                                              (str_store_troop_name, s11, ":original_ruler")],
-   "You are a capable warrior, {playername}, and I am sure with your renown as a commander, and my righteous cause, the rulers and the good people of {s12} will flock to our support.\
+   "You are a capable warrior, {playername}, and I am sure with your renown as a commander, and my righteous cause, the nobles and the good people of {s12} will flock to our support.\
  The time is ripe for us to act! I will come with you, and together, we will topple the usurper {s11} and take the throne from his bloodied hands.\
  But first, you must give me your oath of homage and accept me as your liege {reg65?lady:lord}.", "pretender_rebellion_ready", []],
 
@@ -2582,7 +2582,7 @@ dialogs = [
 
   [anyone ,"lord_give_conclude_2", [(is_between, "$g_talk_troop", pretenders_begin, pretenders_end),
                      ],
-   "Forward, then! Our first task is to take hold of a system and persuade other lords to join us. You lead the way!", "close_window", [
+   "Forward, then! Our first task is to take hold of a fortress and persuade other lords to join us. You lead the way!", "close_window", [
 
             (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 25),
             (faction_set_slot, "$g_talk_troop_faction", slot_faction_state, sfs_active),
@@ -2693,15 +2693,15 @@ dialogs = [
       (call_script, "script_change_player_relation_with_troop","$temp",-10),
       ]],
 
-  [anyone ,"lord_event_choose_friend_renounce", [],  "Good news, {playername}. I would fear for your safety otherwise.\
- If you do encounter {s6}, keep your blaster at your side and don't believe a word.", "lord_pretalk", []],
+  [anyone ,"lord_event_choose_friend_renounce", [],  "Glad news, {playername}. I would fear for your safety otherwise.\
+ If you do encounter {s6}, be on your guard and don't believe a word.", "lord_pretalk", []],
   
   [anyone|plyr ,"lord_event_choose_friend", [],  "{s6} is an honourable person, you've no right to speak of them that way.", "lord_event_choose_friend_defend", [
       (call_script, "script_change_player_relation_with_troop","$g_talk_troop",-10),
       (call_script, "script_change_player_relation_with_troop","$temp",5),
       ]],
   [anyone ,"lord_event_choose_friend_defend", [],  "As you like, {playername}.\
- You may be a fool, but at least you are an loyal fool. {s6}'s loyalty may not be so steadfast, however...", "lord_pretalk", []],
+ A fool you might be, but a loyal fool at the least. {s6}'s loyalty may not be so steadfast, however...", "lord_pretalk", []],
 #Post 0907 changes end
   
   [anyone|plyr ,"lord_event_choose_friend", [],  "I don't want to be involved in your quarrel with {s6}.", "lord_event_choose_friend_neutral", [
@@ -2709,8 +2709,8 @@ dialogs = [
       (call_script, "script_change_player_relation_with_troop","$temp",-3),
       ]],
 
-  [anyone ,"lord_event_choose_friend_neutral", [],  "As you wish, {playername}.\
- Remember, everyone in the Galaxy needs friends. Stand alone and you shall never find any.", "lord_pretalk", []],
+  [anyone ,"lord_event_choose_friend_neutral", [],  "Hmph. As you wish, {playername}.\
+ Just remember that a {man/woman} needs friends in this world, and you'll never make any if you never stand with anyone.", "lord_pretalk", []],
 
 #Meeting.
 
@@ -2732,10 +2732,10 @@ dialogs = [
    []],
 
 
-  [anyone|plyr ,"lord_invite_1", [],  "Thank you, {s65}, you honour me with your favour.", "lord_invite_2",  []],
+  [anyone|plyr ,"lord_invite_1", [],  "Thank you, {s65}, you honour me with your offer.", "lord_invite_2",  []],
   [anyone|plyr ,"lord_invite_1", [],  "It is good to have my true value recognised.", "lord_invite_2",  []],
    
-  [anyone ,"lord_invite_2", [],  "Indeed. Let us dispense with the formalities, {playername}; are you ready to swear loyalty to me?", "lord_invite_3",  []],
+  [anyone ,"lord_invite_2", [],  "Aye. Let us dispense with the formalities, {playername}; are you ready to swear homage to me?", "lord_invite_3",  []],
     
   [anyone|plyr ,"lord_invite_3", [],  "Yes, {s65}.", "lord_give_oath_2",  []],
   [anyone|plyr ,"lord_invite_3", [],  "No, {s65}. I cannot serve you right now.", "lord_enter_service_reject",  []],
@@ -2851,7 +2851,7 @@ dialogs = [
   [anyone,"lord_start", [(store_partner_quest,":lords_quest"),
                          (eq,":lords_quest","qst_lend_surgeon"),
                          (quest_slot_eq, "qst_lend_surgeon", slot_quest_giver_troop, "$g_talk_troop")],
-   "Your surgeon managed to convince my friend and made the operation.  Fate will decide the outcome now, all my we can do is hope for his recovery.\
+   "Your surgeon managed to convince my friend and made the operation.  The matter is in God's hands now,, and all we can do is pray for his recovery.\
  Anyway, I thank you for lending your surgeon to me {sir/madam}. You have a noble spirit. I will not forget it.", "lord_generic_mission_completed",
    [
      (call_script, "script_finish_quest", "qst_lend_surgeon", 100),
@@ -2906,7 +2906,7 @@ dialogs = [
                          ],
    "Hah! Our little plot against {s3} worked perfectly, {playername}.\
  The fool has lost one of their most valuable retainers, and we are one step closer to bringing them to their knees.\
- Here, this purse contains {reg5} credits, and I wish you to have it. You deserve every one.\
+ Here, this purse contains {reg5} credits, and I wish you to have it. You deserve every copper.\
  And, need I remind you, there could be much more to come if you've a mind to earn it...", "lord_generic_mission_completed",[
      (call_script, "script_end_quest", "qst_incriminate_loyal_commander"),
      (call_script, "script_change_player_relation_with_troop","$g_talk_troop",5),
@@ -2952,10 +2952,10 @@ dialogs = [
                          (quest_get_slot, ":quest_target_faction", "qst_raid_caravan_to_start_war", slot_quest_target_faction),
                          (str_store_faction_name, s13, ":quest_target_faction"),
                          ],
-   "Brilliant work, {playername}! Your convoy raids really got their attention, I must say.\
+   "Brilliant work, {playername}! Your caravan raids really got their attention, I must say.\
  I've just received word that {s13} has declared war!\
  Now the time has come for us to reap the benefits of our hard work, {playername}.\
- And by that I of course mean taking and plundering {s13} star systems!\
+ And by that I of course mean taking and plundering {s13} land!\
  This war is going to make us rich {troops/souls}, mark my words!", "lord_pretalk",
    [
     (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 10),
@@ -3015,7 +3015,7 @@ dialogs = [
   [anyone|plyr,"lord_collect_debt_completed", [], "I am afraid I don't have the money with me sir.", "lord_collect_debt_no_pay",[]],
   [anyone,"lord_collect_debt_no_pay", [], "Is this a joke?\
  I know full well that {s7} gave you the money, and I want every credit owed to me, {sir/madam}.\
- As far as I'm concerned, I hold you personally in my debt until I see the credits.", "close_window",[
+ As far as I'm concerned, I hold you personally in my debt until I see that silver.", "close_window",[
      (call_script, "script_change_debt_to_troop", "$g_talk_troop", reg4),
      (call_script, "script_end_quest", "qst_collect_debt"),
 
@@ -3060,7 +3060,7 @@ dialogs = [
   [anyone,"lord_kill_local_merchant_let_go_2", [],
    "Piffle. You were supposed to remove him, not give him a sermon and send him on his way.\
  He had better do as you say, or you'll both regret it.\
- Here, this is half the credits I promised you. Don't say a word, {playername}, you're lucky to get even that.\
+ Here, this is half the money I promised you. Don't say a word, {playername}, you're lucky to get even that.\
  I have little use for {troops/people} who cannot follow orders.", "lord_pretalk",
    [(call_script, "script_troop_add_gold", "trp_player", 300),
      (call_script, "script_change_player_relation_with_troop","$g_talk_troop",2),
@@ -3339,7 +3339,7 @@ dialogs = [
   [anyone,"lord_start", [(store_partner_quest,":lords_quest"),
                          (eq,":lords_quest","qst_deal_with_bandits_at_lords_village"),
                          (check_quest_succeeded, "qst_deal_with_bandits_at_lords_village")],
-   "{playername}, I was told that you have crushed the pirates at the planet of {s5}. Please know that I am most grateful to you for that.\
+   "{playername}, I was told that you have crushed the bandits at the planet of {s5}. Please know that I am most grateful to you for that.\
  Please, let me pay the expenses of your campaign. Here, I hope these {reg14} credits will be adequate.", "lord_deal_with_bandits_completed",
    [
        (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 3),
@@ -3365,7 +3365,7 @@ dialogs = [
                          (eq,":lords_quest","qst_deal_with_bandits_at_lords_village"),
                          (check_quest_concluded, "qst_deal_with_bandits_at_lords_village")],
    "Damn it, {playername}. I heard that you were unable to drive off the bandits from the planet of {s5}, and thanks to you, part of the planet now lies in ruins.\
- Everyone said that you were a capable warrior, but apparently, they were wrong.", "lord_pretalk",
+ Everyone said that you were a capable warrior, but appearently, they were wrong.", "lord_pretalk",
    [
        (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", -5),
        (call_script, "script_end_quest", "qst_deal_with_bandits_at_lords_village"),
@@ -3421,7 +3421,7 @@ dialogs = [
      #Reactivating follow army quest
      (str_store_troop_name_link, s9, "$g_talk_troop"),
      (setup_quest_text, "qst_follow_army"),
-     (str_store_string, s2, "@Your mission is complete, {s9} wants you to resume following his fleet until further notice."),
+     (str_store_string, s2, "@Your mission is complete, {s9} wants you to resume following his army until further notice."),
      (call_script, "script_start_quest", "qst_follow_army", "$g_talk_troop"),
      (assign, "$g_player_follow_army_warnings", 0),
      ]],
@@ -3443,7 +3443,7 @@ dialogs = [
      (quest_get_slot, ":quest_target_amount", "$g_random_army_quest", slot_quest_target_amount),
      (assign, reg3, ":quest_target_amount"),
      ],
-   "The fleet's supplies are dwindling too quickly, {playername}. I need you to bring me a herd of {reg3} nerfs so I can keep the troops fed. I care very little about where you get them, just bring them to me as soon as you can.", "lord_mission_told_deliver_cattle_to_army",
+   "The army's supplies are dwindling too quickly, {playername}. I need you to bring me a herd of {reg3} nerfs so I can keep the troops fed. I care very little about where you get them, just bring them to me as soon as you can.", "lord_mission_told_deliver_cattle_to_army",
    [
    ]
    ],
@@ -3562,7 +3562,7 @@ dialogs = [
 ##    (try_end),
 ##    (remove_member_from_party, ":quest_object_troop"),
 ##    (try_begin),
-##      (is_between, "$g_encountered_party", centers_begin, centers_end),#Lord might be in space
+##      (is_between, "$g_encountered_party", centers_begin, centers_end),#Lord might be in wilderness
 ##      (troop_set_slot, ":quest_object_troop", slot_troop_cur_center, "$g_encountered_party"),
 ##    (try_end),
 ##    (call_script, "script_finish_quest", "qst_rescue_lady_under_siege", 100),
@@ -3600,7 +3600,7 @@ dialogs = [
    "Alas, I don't have sufficient funds, {s65}. But I'll pay you soon enough.", "lord_pay_debt_3_2", []],
 
   [anyone, "lord_pay_debt_3_1", [],
-   "Ah, excellent. You are a {man/woman} of honour, {playername}. I am satisfied, your debt to me has been paid in full.", "lord_pretalk", []],
+   "Ah, excellent. You are a {man/woman} of honour, {playername}. I am satisfied, yopur debt to me has been paid in full.", "lord_pretalk", []],
 
   [anyone, "lord_pay_debt_3_2", [],
    "Well, don't keep me waiting much longer.", "lord_pretalk", []],
@@ -3623,7 +3623,7 @@ dialogs = [
 ##                         (str_store_party_name, s4, "$center_to_be_claimed"),
 ##                         ],
 ##   "I heard that your forces have taken {s4}. I commend you for your victory {playername}.\
-## But we need to decide what to do with this new planet now.", "lord_claim_center_begin", []],
+## But we need to decide what to do with this new castle now.", "lord_claim_center_begin", []],
 
 
 ##  [anyone,"lord_start", [(troop_slot_eq, "$g_talk_troop", slot_troop_is_prisoner, 0),
@@ -3639,25 +3639,25 @@ dialogs = [
 ##                         (troop_get_slot, ":wealth", "$g_talk_troop", slot_troop_wealth),
 ##                         (ge, ":wealth", 6000)],
 ##   "I heard that your forces have taken {s4}. I applaud your victory {playername}, but you know as well as I do that\
-## as a person of low rank and status you cannot be permitted to hold that system for yourself.\
-## It is to your benefit to sell it to a commander like myself who can hold and protect the battlestation and the surrounding planets.\
-## Anyway, I am ready to make you an offer of 5000 credits, should you decide to sell the planet.", "lord_buy_center", []],
+## as a person of low rank and status you cannot be permitted to hold that castle for yourself.\
+## It is to your benefit to sell it to a Lord like myself who can hold and protect the castle and the surrounding estates.\
+## Anyway, I am ready to make you an offer of 5000 credits, should you decide to sell that castle.", "lord_buy_center", []],
 ##
 ##
 ##  [anyone|plyr,"lord_buy_center", [],
-##   "I accept your offer sir. The system is yours for 5000 credits.", "lord_buy_center_accept", []],
+##   "I accept your offer sir. The castle is yours for 5000 credits.", "lord_buy_center_accept", []],
 ##  [anyone|plyr,"lord_buy_center", [],
 ##   "I am afraid I can't accept that offer.", "lord_buy_center_deny", []],
 ##
 ##  [anyone,"lord_buy_center_accept", [],
 ##   "Excellent, {playername}! You have decided wisely.\
-## Why bother yourself with the necessities of holding a planet when you can leave all those boring details to noble Lords like me?\
-## I am sure money will be much more useful to you than a battlestation would.", "lord_buy_center_accept_2", []],
+## Why bother yourself with the necessities of keeping a castle while you can leave all those boring details to noble Lords like me?\
+## I am sure money will be much more useful to you than a castle would.", "lord_buy_center_accept_2", []],
 ##
 ##  [anyone|plyr,"lord_buy_center_accept_2", [],
-##   "One day sir, one day I'll have my own system.", "lord_buy_center_accept_3", []],
+##   "One day sir, one day I'll have my own castle.", "lord_buy_center_accept_3", []],
 ##  [anyone|plyr,"lord_buy_center_accept_2", [],
-##   "Everyone needs money sir. I can take another planet anytime.", "lord_buy_center_accept_3", []],
+##   "Everyone needs money sir. I can take another castle anytime.", "lord_buy_center_accept_3", []],
 ##
 ##  [anyone,"lord_buy_center_accept_3", [],
 ##   "Of course, of course, {playername}.  Then let us conclude our deal. Here's the 5000 credits I offered you.\
@@ -3686,8 +3686,8 @@ dialogs = [
 ##    ]],
 ##
 ##  [anyone,"lord_buy_center_deny", [],
-##   "As you wish {playername}. But don't forget, the great lords of the Galaxy won't like a low born {man/woman} like you holding such a system without their consent.\
-## It is the nature of this Galaxy {playername}. Everyone should know their place.", "lord_pretalk", []],
+##   "As you wish {playername}. But don't forget, the great lords of the country won't like a low born {man/woman} like you holding such an estate without their consent.\
+## It is the nature of this world {playername}. Everyone should know their place.", "lord_pretalk", []],
 
   [anyone,"lord_start", [(party_slot_eq, "$g_encountered_party",slot_town_lord, "$g_talk_troop"),#we are talking to Town's Lord.
                          (ge,"$g_talk_troop_faction_relation",0),
@@ -3797,7 +3797,7 @@ dialogs = [
    "I've come to collect the debt you owe to {s1}.", "lord_ask_to_collect_debt",
    [(assign, "$g_convince_quest", "qst_collect_debt")]],
 
-  [anyone,"lord_ask_to_collect_debt", [],  "Oh. Well, {s1} did lend me some credits a ways back,\
+  [anyone,"lord_ask_to_collect_debt", [],  "Oh. Well, {s1} did lend me some silver a ways back,\
  but I've done them many favours in the past and I consider that money as my due payment.", "lord_ask_to_collect_debt_2",[]],
   [anyone|plyr,"lord_ask_to_collect_debt_2", [],  "{s1} considers it a debt. They asked me to speak to you on their behalf.", "convince_begin",[]],
   [anyone|plyr,"lord_ask_to_collect_debt_2", [],  "Then I will not press the matter any further.", "lord_pretalk",[]],
@@ -3930,9 +3930,9 @@ dialogs = [
                             (str_store_troop_name,1,":quest_giver_troop")],
    "I want you to take back your accusations against {s1}.", "lord_challenge_duel_for_lady", []],
   [anyone,"lord_challenge_duel_for_lady", [], "What accusations?\
- Everyone knows that she beds her guards and anyone else she can lay hands on while her husband is away.\
+ Everyone knows that she beds her stable boys and anyone else she can lay hands on while her husband is away.\
  I merely repeat the words of many.", "lord_challenge_duel_for_lady_2",[]],
-  [anyone|plyr,"lord_challenge_duel_for_lady_2", [], "You will take back these lies, or prove them against my blaster!", "lord_challenge_duel_for_lady_3",[]],
+  [anyone|plyr,"lord_challenge_duel_for_lady_2", [], "You will recant these lies, sirrah, or prove them against my sword!", "lord_challenge_duel_for_lady_3",[]],
   [anyone|plyr,"lord_challenge_duel_for_lady_2", [], "If you say so...", "lord_pretalk",[]],
   [anyone,"lord_challenge_duel_for_lady_3", [], "You are challenging me to a duel? How droll!\
  As you wish, {playername}, it will be good sport to bash your head in.", "close_window",
@@ -4029,7 +4029,7 @@ dialogs = [
                              (neg|check_quest_succeeded, "qst_rescue_lord_by_replace")],
    "Fear not, I am here to rescue you.", "lord_rescue_by_replace_offer",[]],
   [anyone,"lord_rescue_by_replace_offer", [],
-   "Are you serious? What is your plan?", "lord_rescue_by_replace_offer_2",[]],
+   "By God, are you serious? What is your plan?", "lord_rescue_by_replace_offer_2",[]],
   [anyone|plyr,"lord_rescue_by_replace_offer_2", [],
    "A simple ruse, {s65}. If we exchange garments, I shall take your place here in prison,\
  while you make your escape disguised as myself.\
@@ -4070,10 +4070,10 @@ dialogs = [
 ##                             (quest_get_slot, ":troop_no", "qst_deliver_message_to_lover", slot_quest_giver_troop),
 ##                             (str_store_troop_name, 3, ":troop_no"),
 ##                             (str_store_troop_name, 4, ":cur_daughter")],
-##   "Sir, {s3} asked me to give this datacard to your daughter, but I think you should read it first.", "lord_deliver_message_to_lover_tell_father",[]],
+##   "My lord, {s3} asked me to give this letter to your daughter, but I think you should read it first.", "lord_deliver_message_to_lover_tell_father",[]],
 ##
 ##  [anyone,"lord_deliver_message_to_lover_tell_father", [],
-##   "That swine called {s3} is trying to approach my daughter eh? You have made the right decision by bringing this datacard to me. I'll have a long talk with {s4} about it.", "lord_pretalk",
+##   "That swine called {s3} is trying to approach my daughter eh? You have made the right decision by bringing this letter to me. I'll have a long talk with {s4} about it.", "lord_pretalk",
 ##   [(add_xp_as_reward, 200),
 ##    (call_script, "script_troop_add_gold", "trp_player", 1000),
 ##    (quest_get_slot, ":quest_giver", "qst_deliver_message_to_lover", slot_quest_giver_troop),
@@ -4099,10 +4099,10 @@ dialogs = [
 ##                             (party_get_num_companions, reg7, "p_main_party"),
 ##                             (val_sub, reg7, 1),
 ##                             ],
-##   "{reg7?Me and my troops:I} need shelter and fuel. Can we land here for a while?", "lord_castle_let_in",[]],
+##   "{reg7?Me and my troops:I} need shelter for the night my lord. Can we rest in your castle for a while?", "lord_castle_let_in",[]],
 ##
 ##  [anyone, "lord_castle_let_in", [(lt,"$g_talk_troop_relation",-10)],
-##   "What? Do I look like I am running an inn here? I have no place here for {reg7?you and your lot:you}. Now get off my land...", "close_window",[(assign, "$g_permitted_to_center",1)]],
+##   "What? Do I look like I am running an inn here? I have no place here for {reg7?you and your lot:you}. Now get off my lands...", "close_window",[(assign, "$g_permitted_to_center",1)]],
 ##  [anyone, "lord_castle_let_in", [(lt,"$g_talk_troop_relation",2), (lt, "$g_talk_troop_faction_relation", 10),(assign, reg6, 100)],
 ##   "I'll give you shelter if you pay a toll of {reg6} credits.", "lord_castle_let_in_toll",[]],
 ##  [anyone|plyr,"lord_castle_let_in_toll", [(store_troop_gold, ":gold", "trp_player"),(gt,":gold",reg6)], "Of course sir. I'll pay the toll.", "lord_castle_let_in_toll_pay",
@@ -4119,7 +4119,7 @@ dialogs = [
 							 (neg|troop_slot_ge, "$g_talk_troop", slot_troop_prisoner_of_party, 0),
                              (eq, "$players_oath_renounced_against_kingdom", "$g_talk_troop_faction"),
                              (str_store_faction_name, s4, "$g_talk_troop_faction"),],
-   "{s66}, I wish to restore my oath to {s4}.", "lord_ask_pardon_after_oath_renounced",[]],
+   "{s66}, I wish to restore my old oath to {s4}.", "lord_ask_pardon_after_oath_renounced",[]],
 
   [anyone,"lord_ask_pardon_after_oath_renounced",
    [
@@ -4212,7 +4212,7 @@ dialogs = [
   [anyone|plyr,"lord_ask_pardon_terms",
    [(eq, "$players_oath_renounced_terms_state", 1),
     ],
-   "Yes, I am ready.", "lord_ask_pardon_after_renounce_peace",[]],
+   "Aye, I am ready.", "lord_ask_pardon_after_renounce_peace",[]],
 
   [anyone|plyr,"lord_ask_pardon_terms",
    [(eq, "$players_oath_renounced_terms_state", 1),
@@ -4222,7 +4222,7 @@ dialogs = [
   [anyone|plyr,"lord_ask_pardon_terms",
    [(eq, "$players_oath_renounced_terms_state", 2),
     ],
-   "Yes, I agree to those terms.", "lord_ask_pardon_after_renounce_peace",[]],
+   "Aye, I agree to those terms.", "lord_ask_pardon_after_renounce_peace",[]],
 
   [anyone|plyr,"lord_ask_pardon_terms",
    [(eq, "$players_oath_renounced_terms_state", 2),
@@ -4271,7 +4271,7 @@ dialogs = [
                              (eq, ":continue", 1),
                              (str_store_faction_name, s4, "$g_talk_troop_faction"),],
    "I wish to make peace with {s4}.", "lord_ask_pardon",[]],
-  [anyone,"lord_ask_pardon", [(lt, "$g_talk_troop_relation", -10)], "Do you indeed, {playername}? Then go and trip on your vibro-sword. Give us all peace.", "lord_pretalk",[]],
+  [anyone,"lord_ask_pardon", [(lt, "$g_talk_troop_relation", -10)], "Do you indeed, {playername}? Then go and trip on your sword. Give us all peace.", "lord_pretalk",[]],
   [anyone,"lord_ask_pardon",
    [
      (assign, ":has_center", 0),
@@ -4281,20 +4281,20 @@ dialogs = [
        (assign, ":has_center", 1),
      (try_end),
      (eq, ":has_center", 1),
-    ], "{playername}, you are a {ruler/ruler} without a master, holding systems in your own name, without having allegience to any faction.\
- As long as that continues, no leader in the Galaxy would accept a lasting peace with you.", "lord_pretalk",[]],
+    ], "{playername}, you are a {lord/lady} without a master, holding lands in your name, without having allegience to any kingdom.\
+ As long as that continues, no ruler in this Galaxy would accept a lasting peace with you.", "lord_pretalk",[]],
   [anyone,"lord_ask_pardon", [(store_sub, ":hostility", 4, "$g_talk_troop_faction_relation"),
                                   (val_mul, ":hostility", ":hostility"), #square it
                                   (store_mul, reg16, ":hostility", 10),
       ], "Hmm. I could use my considerable influence to arrange a pardon for you, {playername},\
- but there are some who see you as an enemy and will not be satisfied unless you pay many credits to compensate your actions.\
+ but there are some who see you as an enemy and will not be satisfied unless you pay tribute.\
  All in all, you'd need to bring no less than {reg16} credits to make any friends in {s4}.", "lord_ask_pardon_2",[]],
 
   [anyone|plyr,"lord_ask_pardon_2", [(store_troop_gold, ":gold","trp_player"),(ge, ":gold", reg16)], "I have the money here. {reg16} credits.", "lord_ask_pardon_tribue_accept",[]],
   [anyone|plyr,"lord_ask_pardon_2", [], "I fear I cannot pay that much.", "lord_ask_pardon_tribue_deny",[]],
 
   [anyone,"lord_ask_pardon_tribue_accept", [], "Excellent, {playername}.\
- I'll use the credits to smooth the feathers of those that can oppose your pardon, and I'm sure that word will soon spread that you are no longer an enemy of {s4}.", "close_window",
+ I'll use the coin to smooth the feathers of those that can oppose your pardon, and I'm sure that word will soon spread that you are no longer an enemy of {s4}.", "close_window",
    [
      (troop_remove_gold, "trp_player", reg16),
      (try_begin),
@@ -4307,7 +4307,7 @@ dialogs = [
      (assign, "$g_leave_encounter", 1),
      ]],
 
-  [anyone,"lord_ask_pardon_tribue_deny", [], "Then there's nothing I can do for you, {playername}. No credits, no pardon.", "lord_pretalk",[]],
+  [anyone,"lord_ask_pardon_tribue_deny", [], "Then there's nothing I can do for you, {playername}. No silver, no pardon.", "lord_pretalk",[]],
 
 
   [anyone|plyr,"lord_talk", [(store_partner_quest,":lords_quest"),
@@ -4351,7 +4351,7 @@ dialogs = [
                              (store_partner_quest, ":lords_quest"),
                              (neq, ":lords_quest", "qst_join_faction"),
                             ],
-   "{s66}, I have come to offer you myself in vassalage!", "lord_ask_enter_service",[]],
+   "{s66}, I have come to offer you my sword in vassalage!", "lord_ask_enter_service",[]],
 
 
   [anyone|plyr,"lord_talk", [(le,"$talk_context", tc_party_encounter),
@@ -4637,7 +4637,7 @@ dialogs = [
    "I wish to ask you something.", "lord_talk_ask_something",[]],
 
   [anyone,"lord_talk_ask_something", [],
-   "Yes? What is it?", "lord_talk_ask_something_2",[]],
+   "Aye? What is it?", "lord_talk_ask_something_2",[]],
 
   [anyone|plyr,"lord_talk_ask_something_2", [#(troop_slot_eq, "$g_talk_troop", slot_troop_is_prisoner, 0),
                                              (neg|troop_slot_ge, "$g_talk_troop", slot_troop_prisoner_of_party, 0),
@@ -5199,7 +5199,7 @@ dialogs = [
         (display_message, "@Consistency check: {reg10}/{reg11}"),
         (lt, ":consistency", ":arguments_used"),
 
-], "Hmm. Do you perhaps tell each commander something different, depending on what you think they most want to hear?", "lord_join_rebellion_suggest_4",
+], "Hmm. Do you perhaps tell each lord something different, depending on what you think they most wants to hear?", "lord_join_rebellion_suggest_4",
 [
         (assign, "$current_argument_value", -5),
 ]],
@@ -5385,11 +5385,11 @@ dialogs = [
                                                  (str_store_party_name, s1, ":ai_object")]],
 
   [anyone,"lord_tell_objective", [(party_slot_eq, "$g_talk_troop_party", slot_party_ai_state, spai_patrolling_around_center)],
-   "We are scouting for enemies around {s1}.", "lord_pretalk",[(party_get_slot, ":ai_object", "$g_talk_troop_party", slot_party_ai_object),
+   "We are scouting for the enemy around {s1}.", "lord_pretalk",[(party_get_slot, ":ai_object", "$g_talk_troop_party", slot_party_ai_object),
                                                       (str_store_party_name, s1, ":ai_object")]],
 
 #  [anyone,"lord_tell_objective", [(party_slot_eq, "$g_talk_troop_party", slot_party_ai_state, spai_raiding_around_center)],
-#   "We ride out to loot the world of {s1} to punish the foe for his misdeeds.", "lord_pretalk",[(party_get_slot, ":ai_object", "$g_talk_troop_party", slot_party_ai_object),
+#   "We ride out to lay waste to village of {s1} to punish the foe for his misdeeds.", "lord_pretalk",[(party_get_slot, ":ai_object", "$g_talk_troop_party", slot_party_ai_object),
 #                                                               (str_store_party_name, s1, ":ai_object")]],
 
   [anyone,"lord_tell_objective", [(party_slot_eq, "$g_talk_troop_party", slot_party_ai_state, spai_raiding_around_center)],
@@ -5525,10 +5525,10 @@ dialogs = [
        (gt, reg6,0)], #note that we abuse the value of reg6 in the next line.
  "I would be glad to fight at your side, my friend, but there is a problem...\
  The thing is, I've found myself in a bit of debt that I must repay very soon. {reg6} credits altogether,\
- and I am honour-bound to return every credit. Unless you've got {reg6} credits with you that you can spare,\
+ and I am honour-bound to return every coin. Unless you've got {reg6} credits with you that you can spare,\
  I've to keep my mind on getting this weight off my neck.", "knight_offer_join_2",[]],
   [anyone ,"knight_offer_join", [(gt,reg6, 100000)], "Join you? I think not.", "close_window",[]],
-  [anyone ,"knight_offer_join", [], "Indeed, my friend, I'll be happy to join you.", "knight_offer_join_2",[]],
+  [anyone ,"knight_offer_join", [], "Aye, my friend, I'll be happy to join you.", "knight_offer_join_2",[]],
 
   [anyone|plyr,"knight_offer_join_2", [(gt, reg6,0),(store_troop_gold, ":gold", "trp_player"),(gt,":gold",reg6)],
    "Here, take it, all {reg6} credits you need. 'Tis only money.", "knight_offer_join_accept",[(troop_remove_gold, "trp_player",reg6)]],
@@ -5566,7 +5566,7 @@ dialogs = [
       ]],
 
   [anyone ,"knight_join_party_join", [], "Excellent.\
- My lads and I will travel with you.", "close_window",[
+ My lads and I will ride with you.", "close_window",[
       (call_script, "script_recruit_troop_as_companion", "$g_talk_troop"),
       (party_remove_members, "p_main_party", "$g_talk_troop", 1),
       
@@ -5592,7 +5592,7 @@ dialogs = [
 
 
   [anyone,"lord_enter_service_reject", [], "What pigswill!\
- And to think I would offer you a place among my rulers. Begone, beggar, before I lose my temper!", "close_window",
+ And to think I would offer you a place among my nobles. Begone, beggar, before I lose my temper!", "close_window",
    [
      (try_begin),
        (store_partner_quest, ":lords_quest"),
@@ -5635,11 +5635,11 @@ dialogs = [
      (try_end),
      ],
    "You are known as a brave {man-at-arms/warrior} and a fine leader of troops, {playername}.\
- I shall be pleased to accept you into my service and bestow vassalage upon you,\
+ I shall be pleased to accept your sword into my service and bestow vassalage upon you,\
  if you are ready to swear homage to me.", "lord_give_oath_1",[]],
 
   [anyone,"lord_ask_enter_service", [], "You've yet to show yourself as a competent commander, {playername}.\
- Take your weapons to my enemies and prove to me that you are worthy of becoming my vassal.\
+ Take your sword to my enemies and prove to me that you are worthy of becoming my vassal.\
  Then we may speak more of this.", "lord_pretalk",[]],
 
   [anyone|plyr,"lord_give_oath_1", [],  "I am ready, {s65}.", "lord_give_oath_2", []],
@@ -5663,9 +5663,9 @@ dialogs = [
   [anyone|plyr,"lord_give_oath_5", [],  "I will remain as your loyal and devoted {man/follower} as long as my breath remains...", "lord_give_oath_6", []],
   [anyone|plyr,"lord_give_oath_5", [],  "{reg65?My lady:Sir}, may I ask for some time to think about this?", "lord_give_oath_give_up", []],
 
-  [anyone,"lord_give_oath_6", [],  "...and I will be at your side to fight your enemies should you need me.", "lord_give_oath_7", []],
+  [anyone,"lord_give_oath_6", [],  "...and I will be at your side to fight your enemies should you need my sword.", "lord_give_oath_7", []],
 
-  [anyone|plyr,"lord_give_oath_7", [],  "...and I will be at your side to fight your enemies should you need me.", "lord_give_oath_8", []],
+  [anyone|plyr,"lord_give_oath_7", [],  "...and I will be at your side to fight your enemies should you need my sword.", "lord_give_oath_8", []],
   [anyone|plyr,"lord_give_oath_7", [],  "{reg65?My lady:My lord}, please give me more time to think about this.", "lord_give_oath_give_up", []],
 
   [anyone,"lord_give_oath_8", [],  "Finally, I will uphold your lawful claims and those of your legitimate heirs.", "lord_give_oath_9", []],
@@ -5686,7 +5686,7 @@ dialogs = [
      (try_end),
      ],
    "Let it be known that from this day forward, you are my sworn {man/follower} and vassal.\
- I give you my protection and grant you the right to bear arms in my name, and I pledge that I shall not deprive you of your life, liberty or properties except by the lawful judgment of your peers or by the law and custom of the Galaxy.{reg1? Furthermore I give you the fief of {s1} with all its rents and revenues.:}", "lord_give_oath_go_on_3", []],
+ I give you my protection and grant you the right to bear arms in my name, and I pledge that I shall not deprive you of your life, liberty or properties except by the lawful judgment of your peers or by the law and custom of the land.{reg1? Furthermore I give you the fief of {s1} with all its rents and revenues.:}", "lord_give_oath_go_on_3", []],
 
   [anyone,"lord_give_oath_go_on_3",
    [
@@ -5717,9 +5717,9 @@ dialogs = [
 ##  
 ##  [anyone|plyr, "lord_oath_what_do_you_want", [], "I ask for nothing but your blessing, my lord.", "lord_oath_consider",[(assign,"$temp2",0)]],
 ##  [anyone|plyr, "lord_oath_what_do_you_want", [], "I only ask for the right to have my own banner, my lord.", "lord_oath_consider",[(assign,"$temp2",1)]],
-##  [anyone|plyr, "lord_oath_what_do_you_want", [], "I just ask for the right to hold one stronghold, my lord.", "lord_oath_consider",[(assign,"$temp2",2)]],
-##  [anyone|plyr, "lord_oath_what_do_you_want", [], "I ask for the right to hold two strongholds, my lord.", "lord_oath_consider",[(assign,"$temp2",4)]],
-##  [anyone|plyr, "lord_oath_what_do_you_want", [], "I ask for the right to hold three strongholds, my lord.", "lord_oath_consider",[(assign,"$temp2",6)]],
+##  [anyone|plyr, "lord_oath_what_do_you_want", [], "I just ask for the right to hold one castle, my lord.", "lord_oath_consider",[(assign,"$temp2",2)]],
+##  [anyone|plyr, "lord_oath_what_do_you_want", [], "I ask for the right to hold two castles, my lord.", "lord_oath_consider",[(assign,"$temp2",4)]],
+##  [anyone|plyr, "lord_oath_what_do_you_want", [], "I ask for the right to hold three castles, my lord.", "lord_oath_consider",[(assign,"$temp2",6)]],
 ##  [anyone|plyr ,"lord_oath_what_do_you_want", [], "Maybe I should give more thought to this, my lord.", "lord_oath_what_kind_cancel",[]],
 ##  
 ##  [anyone ,"lord_oath_consider", [
@@ -5736,15 +5736,15 @@ dialogs = [
 ##
 ##  [anyone|plyr,"lord_give_oath_go_on", [(eq, "$temp", 60)],  "I give you my oath lord, that I will remain in your service for two months.\
 ## During this time, I will be faithful to you,\
-## I will not act in a way to cause you harm, and I will be at your side to fight your enemies should you need me.", "lord_give_oath_go_on_2", []],
+## I will not act in a way to cause you harm, and I will be at your side to fight your enemies should you need my sword.", "lord_give_oath_go_on_2", []],
 ##  [anyone|plyr,"lord_give_oath_go_on", [(eq, "$temp", 90)],  "I give you my oath lord, that I will remain in your service for three months.\
 ## During this time, I will be faithful to you,\
-## I will not act in a way to cause you harm, and I will be at your side to fight your enemies should you need me.", "lord_give_oath_go_on_2", []],
+## I will not act in a way to cause you harm, and I will be at your side to fight your enemies should you need my sword.", "lord_give_oath_go_on_2", []],
 ##  [anyone|plyr,"lord_give_oath_go_on", [(eq, "$temp", 180)],  "I give you my oath lord, that I will remain in your service for six months.\
 ## During this time, I will be faithful to you,\
-## I will not act in a way to cause you harm, and I will be at your side to fight your enemies should you need me.", "lord_give_oath_go_on_2", []],
+## I will not act in a way to cause you harm, and I will be at your side to fight your enemies should you need my sword.", "lord_give_oath_go_on_2", []],
 ##  [anyone|plyr,"lord_give_oath_go_on", [(gt, "$temp", 700)],  "I give you my oath lord, that I will remain as your loyal and devoted {man/follower} as long as my breath remains.\
-## I will never act in a way to cause you harm, and I will be at your side to fight your enemies should you need me.", "lord_give_oath_go_on_2", []],
+## I will never act in a way to cause you harm, and I will be at your side to fight your enemies should you need my sword.", "lord_give_oath_go_on_2", []],
 ##  
 ##  [anyone,"lord_give_oath_go_on_2", [(eq,"$temp2",0)],  "Then let it be know that from now on, you are my sworn {man/follower}.\
 ## I give you my protection and grant you the right to bear arms in my name.\
@@ -5755,15 +5755,15 @@ dialogs = [
 ## You have done wisely {playername}. Serve me well and I promise, you will rise high.", "lord_give_oath_5", []],
 ##  
 ##  [anyone,"lord_give_oath_go_on_2", [(eq,"$temp2",2)],  "Then let it be know that from now on, you are my sworn {man/follower} and vassal.\
-## I give you my protection and grant you the right to command a stronghold.\
+## I give you my protection and grant you the right to hold a castle.\
 ## You have done wisely {playername}. Serve me well and I promise, you will rise high.", "lord_give_oath_5", []],
 ##
 ##  [anyone,"lord_give_oath_go_on_2", [(eq,"$temp2",4)],  "Then let it be know that from now on, you are my sworn {man/follower} and vassal.\
-## I give you my protection and grant you the right to command two strongholds.\
+## I give you my protection and grant you the right to hold two castles.\
 ## You have done wisely {playername}. Serve me well and I promise, you will rise high.", "lord_give_oath_5", []],
 ##
 ##  [anyone,"lord_give_oath_go_on_2", [],  "Then let it be know that from now on, you are my sworn {man/follower} and vassal.\
-## I give you my protection and grant you the right to command three strongholds.\
+## I give you my protection and grant you the right to hold three castles.\
 ## You have done wisely {playername}. Serve me well and I promise, you will rise high.", "lord_give_oath_5", []],
 
   [anyone|plyr,"lord_give_conclude", [
@@ -5836,8 +5836,8 @@ dialogs = [
 
   [anyone,"lord_ask_enter_service", [(str_store_faction_name,5,"$g_talk_troop_faction")], "Heh, a wise move,\
  {playername}. With loyal service, a {man/woman} in my service could become wealthy and powerful,\
- and our enemies shall fall swiftly.\
- However, to enter my service you must first renounce all oaths and bonds,\
+ and our enemies... Well, our enemies are as wheat before a scythe.\
+ However, to enter my service you must first renounce all worldly oaths and bonds,\
  and swear to serve only the {s5}.", "lord_enter_service_swear",[]],
   [anyone|plyr ,"lord_enter_service_swear", [], "I do so swear, {s65}.", "lord_enter_service_swear_accepted",[]],
   [anyone|plyr ,"lord_enter_service_swear", [], "I need some time to think about this.", "lord_enter_service_swear_denied",[]],
@@ -5845,16 +5845,16 @@ dialogs = [
  Make up your mind and stop wasting my time.", "close_window",[(assign, "$g_leave_encounter",1)]],
 
   [anyone ,"lord_enter_service_swear_accepted", [(str_store_faction_name,5,"$g_talk_troop_faction")],
- "Then it is my pleasure to welcome you to the service of my faction. From this day on, {playername},\
+ "Then it is my pleasure to welcome you to the service of my house. From this day on, {playername},\
  you are a soldier of the {s5} with all the duties and privileges that come with it.", "lord_enter_service_swear_accepted_2",
    [
    ]],
 
   [anyone ,"lord_enter_service_swear_accepted_2", [(str_store_faction_name,5,"$g_talk_troop_faction")],
  "I charge you with rooting out and destroying the forces of our enemies wherever you may find them.\
- Moreover, I will have special tasks for you from time to time, as may some of my other rulers.\
+ Moreover, I will have special tasks for you from time to time, as may some of my other vassal lords.\
  Serve, fight, and honour your oaths. These things will take you far, if you've a mind for promotion.\
- May the force grant us long lives and many victories to toast!", "close_window",[(assign, "$g_leave_encounter",1)]],
+ May God grant us long lives and many victories to toast in my hall!", "close_window",[(assign, "$g_leave_encounter",1)]],
 
   [anyone,"lord_ask_leave_service", [(ge, "$g_talk_troop_relation", 1)], "Hrm.\
  Has your oath become burdensome, {playername}? It is unusual to request release from homage,\
@@ -5874,7 +5874,7 @@ dialogs = [
   [anyone|plyr ,"lord_ask_leave_service_verify_again", [], "Of course not, {s65}. I am ever your loyal vassal.", "lord_ask_leave_service_giveup",[]],
 
   [anyone,"lord_ask_leave_service_3", [], "As you wish. I hereby declare your oaths to be null and void.\
- You will no longer hold planets or titles in my name, and you are released from your duties to my faction.\
+ You will no longer hold land or titles in my name, and you are released from your duties to my house.\
  You are free, {playername}.", "lord_ask_leave_service_end",
    [
         (call_script, "script_add_log_entry", logent_renounced_allegiance,   "trp_player",  -1, "$g_talk_troop", "$g_talk_troop_faction"),
@@ -5951,11 +5951,11 @@ dialogs = [
      (eq, ":has_prisoner", 1),
      (str_store_faction_name, s13, ":quest_target_faction")
      ],
-   "Oh, indeed. I've captured an officer from {s13} for you.", "capture_enemy_hero_thank",
+   "Oh, indeed. I've captured a lord from {s13} for you.", "capture_enemy_hero_thank",
    []],
 
   [anyone,"capture_enemy_hero_thank", [],
-   "Many thanks, my friend. They will serve very well for a bargain. You've done fine work here. Please accept these {reg5} credits for your help.", "capture_enemy_hero_thank_2",
+   "Many thanks, my friend. They will serve very well for a bargain. You've done a fine work here. Please accept these {reg5} credits for your help.", "capture_enemy_hero_thank_2",
    [(quest_get_slot, ":quest_target_troop", "qst_capture_enemy_hero", slot_quest_target_troop),
      (quest_get_slot, ":quest_target_faction", "qst_capture_enemy_hero", slot_quest_target_faction),
      (party_remove_prisoners, "p_main_party", ":quest_target_troop", 1),
@@ -5993,7 +5993,7 @@ dialogs = [
 ##                                         (party_count_prisoners_of_type, ":num_prisoners", "p_main_party", ":quest_target_troop"),
 ##                                         (ge, ":num_prisoners", 1),
 ##                                         (str_store_troop_name, 3, ":quest_target_troop")],
-##   "Indeed sir. I have captured a {s3}.", "lord_generic_mission_thank",[(quest_get_slot, ":quest_target_troop", "qst_capture_messenger", slot_quest_target_troop),
+##   "Indeed sir. I have captured a {s3} my lord.", "lord_generic_mission_thank",[(quest_get_slot, ":quest_target_troop", "qst_capture_messenger", slot_quest_target_troop),
 ##                                                                     (party_remove_prisoners, "p_main_party", ":quest_target_troop", 1),
 ##                                                                     (party_add_prisoners, "$g_encountered_party", ":quest_target_troop", 1),#Adding him to the dungeon
 ##                                                                     (call_script, "script_finish_quest", "qst_capture_messenger", 100)]],
@@ -6102,7 +6102,7 @@ dialogs = [
    "What?! Is this some scheme of yours, {playername}? That's less than half the taxes I'm owed!\
  You have let them get away with murder as well as my money. What a farce!\
  You can forget the money I promised you, I'm taking {reg20} credits from what you collected,\
- and you're lucky I'm leaving you a few credits for honour's sake.", "lord_pretalk",
+ and you're lucky I'm leaving you a few coins for honour's sake.", "lord_pretalk",
    [(troop_remove_gold, "trp_player", reg20),
     (quest_set_slot, "qst_collect_taxes", slot_quest_gold_reward, 0),
     (call_script, "script_end_quest", "qst_collect_taxes"),
@@ -6110,7 +6110,7 @@ dialogs = [
 
 
   [anyone,"lord_collect_taxes_fail", [],
-   "What a bloody mess you've gotten us into, {playername}.\
+   "God, what a bloody mess you've gotten us into, {playername}.\
 This could turn very ugly if I do not take immediate action.\
 I certainly hope you're not here expecting to be paid for failure.\
 Hand over my {reg19} credits, if you please, and end our business together.", "lord_pretalk",
@@ -6239,16 +6239,16 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
 ##  [anyone|plyr,"lord_claim_center_ask", [],
 ##   "I want to claim it for myself.", "lord_claim_center_2",[]],
 ##  [anyone|plyr,"lord_claim_center_ask", [],
-##   "I will leave it to you. I have no interest in holding {s4}.", "lord_claim_center_leave_to_lord",[]],
+##   "I will leave it to you my lord. I have no interest in holding {s4}.", "lord_claim_center_leave_to_lord",[]],
 
 
 ##  [anyone,"lord_claim_center_2", [(eq, "$g_player_permitted_castles", 0),],
 ##   "You are an able warrior {playername} and there is no question of your bravery.\
-## Sadly you are not born of noble stock, and there are those who will be upset if I allow you to hold a system.\
+## Alas, you are not noble born, and there are those who will be upset if I allow you to hold a castle.\
 ## So, it saddens me but I must decline your request.", "lord_claim_center_deny", []],
 ##  
 ##  [anyone|plyr,"lord_claim_center_deny", [],
-##   "This is not fair. I shed my blood to take {s4}. Now another {man/master} will rule over it.", "lord_claim_center_deny_2", []],
+##   "This is not fair my lord. I shed my blood to take {s4}. Now another {man/master} will rule over it.", "lord_claim_center_deny_2", []],
 ##  [anyone|plyr,"lord_claim_center_deny", [],
 ##   "I understand sir. Do as you will.", "lord_claim_center_leave_to_lord", []],
 ##  [anyone,"lord_claim_center_deny_2", [],
@@ -6310,15 +6310,15 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
 ##                                  (lt, ":number_of_claimed_centers", "$g_player_permitted_castles"),
 ##                                  (assign, reg7, ":number_of_claimed_centers"),
 ##                                  ],
-##   "I had promised you to defend your right to hold {reg7?a:another} system {playername}. Now I honour that promise.\
-## I can think of {no man finer than you/no one better than you} to be the {ruler/ruler} of {s4}.\
+##   "I had promised you to defend your right to hold {reg7?a:another} castle {playername}. Now I honor that promise.\
+## I can think of {no man finer than you/no one better than you} to be the {lord/lady} of {s4}.\
 ## Renew your oath to me now. Then I will be your liege,\
 ## and I'll support you and protect you against all those who oppose your claim.",
 ##  "lord_claim_center_give_oath",[]],
 ##
 ##                                    
-##  [anyone|plyr,"lord_claim_center_give_oath", [],  "I give you my oath, I will forever be faithful to you,\
-## I will never act in a way to cause you harm, and I will be at your side to fight your enemies should you need me.", "lord_claim_center_direct_3", []],
+##  [anyone|plyr,"lord_claim_center_give_oath", [],  "I give you my oath lord, I will forever be faithful to you,\
+## I will never act in a way to cause you harm, and I will be at your side to fight your enemies should you need my sword.", "lord_claim_center_direct_3", []],
 ##  [anyone,"lord_claim_center_direct_3", [],  "You have given your oath of fealty {playername}. I accept your oath and give you the fief of {s4}.\
 ## Rule it wisely and protect it against our enemies.", "lord_claim_center_direct_4", [
 ##     (party_set_slot, "$center_to_be_claimed", slot_town_claimed_by_player, 1),
@@ -6332,7 +6332,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
 ##   "Say it then. If it's something possible...", "lord_ask_for_favor",[]],
 ##
 ##  [anyone|plyr,"lord_ask_for_favor", [],
-##   "Nothing. It's not important.", "lord_pretalk",[]],
+##   "Nothing my lord. It's not important.", "lord_pretalk",[]],
 #Suggest action
   [anyone,"lord_suggest_action_ask", [],
    "What do you suggest?", "lord_suggest_action",[]],
@@ -6354,7 +6354,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
    "It is {reg0}.", "lord_pretalk",[]],   
    
   [anyone|plyr,"lord_suggest_action", [(eq, "$players_kingdom", "$g_talk_troop_faction"),],
-   "I want to be your faction's commandant.", "lord_suggest_become_marshall",[]],
+   "I want to be your kingdom's marshall.", "lord_suggest_become_marshall",[]],
   [anyone,"lord_suggest_become_marshall", [],
    "Alright then.", "lord_pretalk",
    [
@@ -6450,7 +6450,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
    "{s1} of {s2}", "lord_suggets_attack_enemy_castle3",[(store_repeat_object, "$suggested_to_attack_center")]],
 
   [anyone|plyr,"lord_suggets_attack_enemy_castle2", [],
-   "Never mind.", "lord_pretalk",[]],
+   "Never mind my lord.", "lord_pretalk",[]],
 
   [anyone,"lord_suggets_attack_enemy_castle3", [(str_store_party_name, 1, "$suggested_to_attack_center")],
    "That should be possible. Very well, we'll attack {s1}.", "lord_pretalk",
@@ -6481,7 +6481,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
 
 
   [anyone,"lord_suggest_follow_me", [],
-   "Okay, I'll follow you.", "lord_pretalk",[(party_set_slot, "$g_talk_troop_party", slot_party_commander_party, "p_main_party"),
+   "Aye, I'll follow you.", "lord_pretalk",[(party_set_slot, "$g_talk_troop_party", slot_party_commander_party, "p_main_party"),
                                 (call_script, "script_party_decide_next_ai_state_under_command", "$g_talk_troop_party")]],
 
 
@@ -6553,7 +6553,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
  What do you say to entering the service of {s9} as a mercenary captain?\
  I've no doubt that you would be up to the task.", "lord_mercenary_service", []],
   [anyone|plyr,"lord_mercenary_service", [], "I'm not interested, thank you.", "lord_mercenary_service_reject", []],
-  [anyone|plyr,"lord_mercenary_service", [], "Okay, I'll join {s9}.", "lord_mercenary_service_accept", []],
+  [anyone|plyr,"lord_mercenary_service", [], "Aye, I'll join {s9}.", "lord_mercenary_service_accept", []],
   [anyone|plyr,"lord_mercenary_service", [], "I'm interested. Please tell me more.", "lord_mercenary_elaborate_pay", []],
 
   [anyone,"lord_mercenary_service_accept", [(str_store_faction_name, s9, "$g_talk_troop_faction")],
@@ -6594,12 +6594,12 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
    "Duties... There are only a few, none of them difficult. The very first thing is to declare your allegiance.\
  An oath of loyalty to our cause. Once that's done, you shall be required to fulfill certain responsibilities.\
  You'll participate in military campaigns, fulfill any duties given to you by your commanders,\
- and most of all you shall attack the enemies of our faction wherever you might find them.", "lord_mercenary_elaborate_1",
+ and most of all you shall attack the enemies of our kingdom wherever you might find them.", "lord_mercenary_elaborate_1",
    [(faction_get_slot, ":faction_leader", "$g_talk_troop_faction", slot_faction_leader),
     (str_store_troop_name, s10, ":faction_leader")]],
   
   [anyone|plyr,"lord_mercenary_elaborate_1", [], "And what about my duties as a mercenary?", "lord_mercenary_service_elaborate_duty", []],
-  [anyone|plyr,"lord_mercenary_elaborate_1", [], "Can I hold on to any planets I conquer?", "lord_mercenary_elaborate_castle", []],
+  [anyone|plyr,"lord_mercenary_elaborate_1", [], "Can I hold on to any castles I take?", "lord_mercenary_elaborate_castle", []],
   [anyone|plyr,"lord_mercenary_elaborate_1",
    [
      (neg|troop_slot_ge, "trp_player", slot_troop_banner_scene_prop, 1),
@@ -6607,23 +6607,23 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
 ##    (eq, "trp_player", slot_troop_custom_banner_flag_type, -1),
 #custom_banner end
      ], "Can I fly my own banner?", "lord_mercenary_elaborate_banner", []],
-  [anyone|plyr,"lord_mercenary_elaborate_1", [], "How much will my services fetch me?", "lord_mercenary_elaborate_pay", []],
-  [anyone|plyr,"lord_mercenary_elaborate_1", [], "That sounds satisfactory. I'll fight for you as long as the credits keep flowing.", "lord_mercenary_service_accept", []],
-  [anyone|plyr,"lord_mercenary_elaborate_1", [], "I'm sorry, I'm not for hire.", "lord_mercenary_service_reject", []],
+  [anyone|plyr,"lord_mercenary_elaborate_1", [], "How much will you pay me for my service?", "lord_mercenary_elaborate_pay", []],
+  [anyone|plyr,"lord_mercenary_elaborate_1", [], "Sounds good. I wish to enter your service as a mercenary.", "lord_mercenary_service_accept", []],
+  [anyone|plyr,"lord_mercenary_elaborate_1", [], "Apologies, my sword is not for hire.", "lord_mercenary_service_reject", []],
 
   [anyone,"lord_mercenary_elaborate_castle", [(faction_slot_eq, "$g_talk_troop_faction", slot_faction_leader, "$g_talk_troop")],
-   "Only my loyal vassals can own planets in my dominion.\
+   "Only my loyal vassals can own lands and castles in my realm.\
  A mercenary can not be trusted with such a responsibility.\
- However, after serving for some time, you can swear loyalty to me and become my vassal.\
- Then you will be rewarded with a planet.", "lord_mercenary_elaborate_1", []],
-  [anyone,"lord_mercenary_elaborate_castle", [], "Only loyal vassals of {s10} can control planets.\
+ However, after serving for some time, you can swear homage to me and become my vassal.\
+ Then you will be rewarded with a fief.", "lord_mercenary_elaborate_1", []],
+  [anyone,"lord_mercenary_elaborate_castle", [], "Only loyal vassals of {s10} can own lands and castles.\
  You understand, a simple mercenary cannot be trusted with such responsibility.\
- However, after serving for some time, you may earn the right to swear loyalty to {s10} and become his vassal.\
- Then you would be rewarded with a planet.", "lord_mercenary_elaborate_1", []],
+ However, after serving for some time, you may earn the right to swear homage to {s10} and become his vassal.\
+ Then you would be rewarded with a fief.", "lord_mercenary_elaborate_1", []],
 
   [anyone,"lord_mercenary_elaborate_banner", [(faction_slot_eq, "$g_talk_troop_faction", slot_faction_leader, "$g_talk_troop")],
    "Only my noble vassals have the honour of carrying their own banners.\
- However, after some time in mercenary service, you may earn the opportunity to swear loyalty to me and become my vassal,\
+ However, after some time in mercenary service, you may earn the opportunity to swear homage to me and become my vassal,\
  gaining the right to choose a banner of your own and fight under it in battle.", "lord_mercenary_elaborate_1", []],
   [anyone,"lord_mercenary_elaborate_banner", [], "Only noble vassals of {s10} have the honour of carrying their own banners.\
  However, after some time of mercenary service, perhaps you can earn the opportunity to swear homage to {s10} and become his vassal,\
@@ -6716,7 +6716,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
 ##  [anyone,"lord_tell_mission", [(eq,"$random_quest_no","qst_deliver_message_to_lover")],
 ##   "My dear friend, I have a deep affection for {s3} and I believe she feels the same way for me as well.\
 ## Alas, her father {s5} finds me unsuitable for her and will do anything to prevent our union.\
-## I really need your help. Please, will you take this datacard to her? She should be at {s4} at the moment.", "lord_mission_told",
+## I really need your help. Please, will you take this letter to her? She should be at {s4} at the moment.", "lord_mission_told",
 ##   [
 ##     (quest_get_slot, ":quest_target_troop", "$random_quest_no", slot_quest_target_troop),
 ##     (quest_get_slot, ":quest_target_center", "$random_quest_no", slot_quest_target_center),
@@ -6735,7 +6735,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
 ##
   [anyone,"lord_tell_mission", [(eq,"$random_quest_no","qst_escort_lady")],
    "There is a small thing... My {s17} {s13} is due for a visit to her relatives at {s14}.\
- The visit has been postponed several times already with all the trouble in this sector,\
+ The visit has been postponed several times already with all the trouble on the roads,\
  but this time she is adamant about going. So, I want to at least make sure she's well-guarded.\
  I trust you well, {playername} so I would be very grateful if you could escort her to {s14}\
  and make sure she arrives safe and sound.", "lord_mission_told",
@@ -6816,7 +6816,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
 ##    ]],
 ##
 ##  [anyone,"lord_tell_mission", [(eq,"$random_quest_no","qst_bring_reinforcements_to_siege")],
-## "{s4} has besieged {s5} and, if luck is on our side, that town will not hold for long.\
+## "{s4} has besieged {s5} and God willing, that town will not hold for long.\
 ## Still I promised him to send {reg1} {s3} as reinforcements and I need someone to lead those troops.\
 ## Can you take them to {s4}?", "lord_mission_told",
 ##   [
@@ -6872,7 +6872,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
 ##  [anyone,"lord_tell_mission", [(eq,"$random_quest_no","qst_bring_prisoners_to_enemy")],
 ##   "The enemy wants to ransom some of their soldiers that we captured at the last battle.\
 ## They'll pay 100 credits in return for giving them back {reg1} {s3}.\
-## I can always use the money so I accepted their offer.\
+## God knows I can use that money so I accepted their offer.\
 ## Now, what I need is someone to take the prisoners to {s4} and come back with the money.", "lord_mission_told",
 ##   [
 ##     (quest_get_slot, ":quest_object_troop", "$random_quest_no", slot_quest_object_troop),
@@ -6932,11 +6932,11 @@ I'd like nothing better than to go out there and teach them a lesson,\
 
 # Raise troops
   [anyone,"lord_tell_mission", [(eq,"$random_quest_no","qst_raise_troops")],
-   "No commander should have to admit this, {playername}, but I was inspecting my soldiers the other day\
- and there are troops here who don't know which end of a blaster is which.\
+   "No lord should have to admit this, {playername}, but I was inspecting my soldiers the other day\
+ and there are troops here who don't know which end of a sword to hold.\
  {s44}\
- You are a warrior of galatic renown, {playername}. Will you train some troops for me?\
- I would appreciate it.", "lord_tell_mission_raise_troops",[
+ You are a warrior of renown, {playername}. Will you train some troops for me?\
+ I would be grateful to you.", "lord_tell_mission_raise_troops",[
     (troop_get_slot, ":training_string", "$g_talk_troop", slot_lord_reputation_type),
     (val_add, ":training_string", "str_troop_train_request_default"),
     (str_store_string, 44, ":training_string")
@@ -6959,7 +6959,7 @@ I'd like nothing better than to go out there and teach them a lesson,\
   [anyone|plyr,"lord_mission_raise_troops_told", [], "I am too busy these days to train anyone.", "lord_mission_raise_troops_rejected",[]],
 
   [anyone,"lord_mission_raise_troops_accepted", [], "You've taken a weight off my shoulders, {playername}.\
- I shall tell my officers to send you the recruits and attach them to your command.\
+ I shall tell my sergeants to send you the recruits and attach them to your command.\
  Also, I'll advance you some money to help with expenses. Here, this purse should do it.\
  Thank you for your help.", "close_window",
    [(call_script, "script_start_quest", "$random_quest_no", "$g_talk_troop"),
@@ -6983,8 +6983,8 @@ I'd like nothing better than to go out there and teach them a lesson,\
                                   (party_slot_eq, ":quest_target_center", slot_party_type, spt_town),
                                   (assign, reg9, 1),
                                 (try_end),
-                                ], "You probably know that I am the ruler of the {reg9?planet:planet} of {s3}.\
- However, it has been months since {s3} has delivered the taxes and rents owed to me as its rightful ruler.\
+                                ], "You probably know that I am the lord of the {reg9?town:village} of {s3}.\
+ However, it has been months since {s3} has delivered the taxes and rents due me as its rightful lord.\
  Apparently the populace there has grown unruly lately and I need someone to go there and remind them of\
  their obligations. And to . . . persuade them if they won't listen.\
  If you go there and raise the taxes they owe me, I will grant you one-fifth of everything you collect.", "lord_mission_collect_taxes_told",
@@ -7002,7 +7002,7 @@ I'd like nothing better than to go out there and teach them a lesson,\
 
   [anyone,"lord_mission_collect_taxes_accepted", [], "Welcome news, {playername}.\
  I will entrust this matter to you.\
- Remember, those {reg9?townsmen:peasants} are sly beasts, they will make every excuse not to pay me my rightful incomes.\
+ Remember, those {reg9?townsmen:peasants} are foxy beasts, they will make every excuse not to pay me my rightful incomes.\
  Do not let them fool you.", "close_window",
    [(call_script, "script_start_quest", "$random_quest_no", "$g_talk_troop"),
     (call_script, "script_change_player_relation_with_troop","$g_talk_troop",2),
@@ -7023,7 +7023,7 @@ I'd like nothing better than to go out there and teach them a lesson,\
    "I have something you could help with, an issue with the lawless villain known as {s4}. \
  He murdered one of my troops and has been on the run from his judgment ever since.\
  I can't let him get away with avoiding justice, so I've put a bounty of 300 credits on his head.\
- Friends of the murdered man reckon that this assassin may have taken refuge with his family at {s3}.\
+ Friends of the murdered man reckon that this assassin may have taken refuge with his kinsmen at {s3}.\
  You might be able to hunt him down and give him what he deserves, and claim the bounty for yourself.", "lord_mission_hunt_down_fugitive_told",
    [
      (quest_get_slot, ":quest_target_center", "$random_quest_no", slot_quest_target_center),
@@ -7037,7 +7037,7 @@ I'd like nothing better than to go out there and teach them a lesson,\
    ]],
 
   [anyone|plyr,"lord_mission_hunt_down_fugitive_told", [],
-   "Then I will hunt him down and give him what he deserves.", "lord_mission_hunt_down_fugitive_accepted",[]],
+   "Then I will hunt him down and execute the law.", "lord_mission_hunt_down_fugitive_accepted",[]],
   [anyone|plyr,"lord_mission_hunt_down_fugitive_told", [], "I am too busy to go after him at the moment.", "lord_mission_hunt_down_fugitive_rejected",[]],
 
   [anyone,"lord_mission_hunt_down_fugitive_accepted", [], "That's excellent, {playername}.\
@@ -7086,8 +7086,8 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
        (str_store_string, s2, "@{s9} asked you to assassinate a local merchant at {s3}."),
    ]],
   
-  [anyone|plyr,"lord_mission_told_kill_local_merchant", [], "If you're credits are good, I'll do the job.", "lord_mission_accepted_kill_local_merchant",[]],
-  [anyone|plyr,"lord_mission_told_kill_local_merchant", [], "I'm no common murderer. Find someone else for your dirty job.", "lord_mission_rejected",[]],
+  [anyone|plyr,"lord_mission_told_kill_local_merchant", [], "Worry not, he shan't breathe a word.", "lord_mission_accepted_kill_local_merchant",[]],
+  [anyone|plyr,"lord_mission_told_kill_local_merchant", [], "I'm no common murderer, sir. Find someone else for your dirty job.", "lord_mission_rejected",[]],
 
   [anyone,"lord_mission_accepted_kill_local_merchant", [], "Very good. I trust in your skill and discretion,\
  {playername}. Do not disappoint me.\
@@ -7110,8 +7110,8 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    [
    ]],
 
-  [anyone|plyr,"lord_mission_told_meet_spy_in_enemy_town", [], "I don't mind a bit of espionage. Count me in.", "quest_meet_spy_in_enemy_town_accepted",[]],
-  [anyone|plyr,"lord_mission_told_meet_spy_in_enemy_town", [], "I must decline. This cloak-and-blaster work isn't fit for me.", "quest_meet_spy_in_enemy_town_rejected",[]],
+  [anyone|plyr,"lord_mission_told_meet_spy_in_enemy_town", [], "I don't mind a bit of skullduggery. Count me in.", "quest_meet_spy_in_enemy_town_accepted",[]],
+  [anyone|plyr,"lord_mission_told_meet_spy_in_enemy_town", [], "I must decline. This cloak-and-dagger work isn't fit for me.", "quest_meet_spy_in_enemy_town_rejected",[]],
 
   [anyone,"quest_meet_spy_in_enemy_town_accepted", [], "Excellent! Make your way to {s13} as soon as you can, the spy will be waiting.", "quest_meet_spy_in_enemy_town_accepted_response",
    [
@@ -7137,7 +7137,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                                                   (str_store_party_name_link, s13, ":quest_target_center")],
    "{s13} is heavily defended. How can I get close without being noticed?", "quest_meet_spy_in_enemy_town_accepted_2",
    []],
-  [anyone,"quest_meet_spy_in_enemy_town_accepted_2", [], "You shall have to use stealth. Take care to avoid enemy battlestations, planets and patrols, and don't bring too many troops with you. If you fail to sneak in the first time, give it a while for the garrison to lower its guard again, or you may have a difficult time infiltrating the space port.", "quest_meet_spy_in_enemy_town_accepted_response",
+  [anyone,"quest_meet_spy_in_enemy_town_accepted_2", [], "You shall have to use stealth. Take care to avoid enemy battlestations, planets and patrols, and don't bring too many troops with you. If you fail to sneak in the first time, give it a while for the garrison to lower its guard again, or you may have a difficult time infiltrating the planet.", "quest_meet_spy_in_enemy_town_accepted_response",
    []],
   [anyone|plyr,"quest_meet_spy_in_enemy_town_accepted_response", [], "How will I recognise the spy?", "quest_meet_spy_in_enemy_town_accepted_3",
    []],
@@ -7153,7 +7153,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    []],
   [anyone|plyr,"quest_meet_spy_in_enemy_town_accepted_response", [], "Will I be paid?", "quest_meet_spy_in_enemy_town_accepted_4",
    []],
-  [anyone,"quest_meet_spy_in_enemy_town_accepted_4", [], "Of course, I have plenty of credits in my coffers for loyal {troops/women} like you. Do well by me, {playername}, and you'll rise high.", "quest_meet_spy_in_enemy_town_accepted_response",
+  [anyone,"quest_meet_spy_in_enemy_town_accepted_4", [], "Of course, I have plenty of silver in my coffers for loyal {troops/women} like you. Do well by me, {playername}, and you'll rise high.", "quest_meet_spy_in_enemy_town_accepted_response",
    []],
   [anyone|plyr,"quest_meet_spy_in_enemy_town_accepted_response", [], "I know what to do. Good-bye.", "quest_meet_spy_in_enemy_town_accepted_end",
    []],
@@ -7174,8 +7174,8 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
   [anyone,"lord_tell_mission", [(eq,"$random_quest_no","qst_raid_caravan_to_start_war"),
                                 (quest_get_slot, ":quest_target_faction", "$random_quest_no", slot_quest_target_faction),
                                 (str_store_faction_name_link, s13, ":quest_target_faction")],
-   "This peace with {s13} ill suits me, {playername}. We've let them have their way for far too long.\
- Now they get stronger with each passing day and their arrogance knows no bounds.\
+   "This peace with {s13} ill suits me, {playername}. We've let those swine have their way for far too long.\
+ Now they get stronger with each passing and their arrogance knows no bounds.\
  I say, we must wage war on them before it's too late!\
  Unfortunately, some of the bleeding hearts among our realm's lords are blocking a possible declaration of war.\
  Witless cowards with no stomach for blood.", "lord_mission_told_raid_caravan_to_start_war",
@@ -7189,30 +7189,30 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                                             (str_store_faction_name_link, s13, ":quest_target_faction")],
    "Ah, 'tis good to hear someone who understands!\
  As a matter of fact, there is something we can do, {playername}. A little bit of provocation.\
- The dogs in {s13} are very fond of their merchant convoys, and rely on them overmuch.\
- If one of our war parties managed to enter their territory and pillage some of their convoys,\
- they would have ample cause to declare war on our faction.\
+ The dogs in {s13} are very fond of their merchant caravans, and rely on them overmuch.\
+ If one of our war parties managed to enter their territory and pillage some of their caravans,\
+ they would have ample cause to declare war on our kingdom.\
  And then, well, even the cowards among us must rise to defend themselves.\
  So what do you say? Are you interested?", "lord_mission_tell_raid_caravan_to_start_war_3",[]],
 
   [anyone|plyr,"lord_mission_tell_raid_caravan_to_start_war_3", [], "An excellent plan. Count me in.", "quest_raid_caravan_to_start_war_accepted",[]],
-  [anyone|plyr,"lord_mission_tell_raid_caravan_to_start_war_3", [], "Why don't you raid the convoys yourself?", "lord_mission_tell_raid_caravan_to_start_war_4",[]],
+  [anyone|plyr,"lord_mission_tell_raid_caravan_to_start_war_3", [], "Why don't you raid the caravans yourself?", "lord_mission_tell_raid_caravan_to_start_war_4",[]],
 
   [anyone,"lord_mission_tell_raid_caravan_to_start_war_4", [
-  	], "Well, {playername}, some of the lords in our faction\
+  	], "Well, {playername}, some of the lords in our kingdom\
  won't like the idea of someone inciting a war without their consent.\
  They are already looking for an excuse to get at me, and if I did this they could make me pay for it dearly.\
  You, on the other hand, are young and well liked and daring, so you might just get away with it.\
  And of course I will back you up and defend your actions against your opponents.\
  All in all, a few lords might be upset at your endeavour, but I am sure you won't be bothered with that.", "lord_mission_tell_raid_caravan_to_start_war_5",[]],
 
-  [anyone|plyr,"lord_mission_tell_raid_caravan_to_start_war_5", [], "Then I will go and raid those convoys!", "quest_raid_caravan_to_start_war_accepted",[]],
+  [anyone|plyr,"lord_mission_tell_raid_caravan_to_start_war_5", [], "Then I will go and raid those caravans!", "quest_raid_caravan_to_start_war_accepted",[]],
   [anyone|plyr,"lord_mission_tell_raid_caravan_to_start_war_5", [], "I don't like this. Find yourself someone else to take the blame for your schemes.", "quest_raid_caravan_to_start_war_rejected_2",[]],
 
   [anyone,"quest_raid_caravan_to_start_war_accepted", [], "Very good!\
- Now, don't forget that you must capture and loot at least {reg13} convoys to make sure that those fools in {s13} get really infuriated.\
+ Now, don't forget that you must capture and loot at least {reg13} caravans to make sure that those fools in {s13} get really infuriated.\
  Once you do that, return to me and make sure you are not captured by their patrols.\
- If they catch you, our plan will fail without a doubt and you will be facing a long time in prison.\
+ If they catch you, our plan will fail without a doubt and you will be facing a long time in prisons.\
  Now, good luck and good hunting to you.", "close_window",
    [
      (quest_get_slot, ":quest_target_faction", "$random_quest_no", slot_quest_target_faction),
@@ -7221,7 +7221,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      (str_store_faction_name_link, s13, ":quest_target_faction"),
      (assign, reg13, ":quest_target_amount"),
      (setup_quest_text,"$random_quest_no"),
-     (str_store_string, s2, "@{s9} asked you to capture and loot {reg13} convoys so as to provoke a war with {s13}."),
+     (str_store_string, s2, "@{s9} asked you to capture and loot {reg13} caravans so as to provoke a war with {s13}."),
      (call_script, "script_start_quest", "$random_quest_no", "$g_talk_troop"),
      (call_script, "script_change_player_relation_with_troop","$g_talk_troop",5),
      (assign, "$g_leave_encounter",1),
@@ -7236,12 +7236,12 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 
 
   [anyone,"lord_tell_mission", [(eq,"$random_quest_no","qst_bring_back_runaway_serfs")],
- "Well, some of the serfs working my fields in {s4} have run away. The ungrateful nerf herders,\
- I let them tend to my herd, harvest my crops and rent my buildings, and this is how they repay me!\
- From what I've been hearing, they're flying to {s3} as fast as they can,\
+ "Well, some of the serfs working my fields in {s4} have run away. The ungrateful swine,\
+ I let them plough my fields and rent my cottages, and this is how they repay me!\
+ From what I've been hearing, they're running to {s3} as fast as they can,\
  and have split up into three groups to try and avoid capture.\
  I want you to capture all three groups and fetch them back to {s4} by whatever means necessary.\
- I should really have them executed for attempting to escape, but we need hands for the upcoming harvest,\
+ I should really have them hanged for attempting to escape, but we need hands for the upcoming harvest,\
  so I'll let them go off this time with a good beating.", "lord_mission_told",
    [
        (quest_get_slot, ":quest_target_center", "$random_quest_no", slot_quest_target_center),
@@ -7314,7 +7314,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  "There is a difficult job I need done, {playername}, and you may be the {man/one} who can carry it off.\
  I need someone to capture one of the noble lords of {s13} and bring them to me.\
  Afterwards, I'll be able to exchange them in return for a relative of mine held by {s13}.\
- It is a simple enough job, but whomever you choose will be guarded by an elite band of personal bodyguards.\
+ It is a simple enough job, but whomever you choose will be guarded by an elite band of personal retainers.\
  Are you up for a fight?", "lord_tell_mission_capture_enemy_hero",
    [
      (quest_get_slot, ":quest_target_faction", "$random_quest_no", slot_quest_target_faction),
@@ -7334,7 +7334,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      (str_store_troop_name_link, s11, "$g_talk_troop"),
      (str_store_faction_name_link, s13, ":quest_target_faction"),
      (setup_quest_text, "$random_quest_no"),
-     (str_store_string, s2, "@{s11} asked you to capture a commander from {s13}, any commander, and then drag your victim back to {s11} for safekeeping."),
+     (str_store_string, s2, "@{s11} asked you to capture a lord from {s13}, any lord, and then drag your victim back to {s11} for safekeeping."),
      (call_script, "script_start_quest", "$random_quest_no", "$g_talk_troop"),
      #TODO: Change this value
      (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 1),
@@ -7466,8 +7466,8 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                 (str_store_troop_name_link, s15,":quest_object_troop"),
                                 ],
  "I tell you, that blubbering fool {s13} is not fit to rule {s14}.\
- The Galaxy would be rid of them in an instant were it not for one of their loyal vassals, {s15}.\
- As long as they have vassals aiding them, it will be a difficult job beating them.\
+ God knows they would be divested of their lands in an instant were it not for one of their loyal vassals, {s15}.\
+ As long as they have vassals adding them, it will be a difficult job beating them.\
  So I need to get {s15} out of the picture, and I have a plan just to do that...\
  With your help, naturally.", "lord_tell_mission_incriminate_commander",[]],
 
@@ -7863,7 +7863,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
  It was a fine gesture, and I thank you for your efforts.", "lady_qst_duel_for_lady_failed", []],
   [anyone|plyr,"lady_qst_duel_for_lady_failed", [], "I beg your forgiveness for my defeat, {s65}...", "lady_qst_duel_for_lady_failed_2",[]],
   [anyone,"lady_qst_duel_for_lady_failed_2", [], "It matters not, dear {playername}. You tried.\
- The truth cannot be proven at the end of a blaster, but you willingly put your life at stake for my honour.\
+ The truth cannot be proven at the point of a sword, but you willingly put your life at stake for my honour.\
  That alone will convince many of my innocence.", "lady_pretalk",
    [(call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 6),
     (add_xp_as_reward, 400),
@@ -7968,10 +7968,10 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    "I don't have anything else for you to do right now.", "lady_pretalk",[]],
   
   [anyone,"lady_ask_for_quest", [(eq, "$random_quest_no", "qst_rescue_lord_by_replace")],
-   "Oh, I fear I may never see my {s17}, {s13}, again... They are a prisoner in the dungeon of {s14}.\
+   "Oh, I fear I may never see my {s17}, {s13}, again... Theyare a prisoner in the dungeon of {s14}.\
  We have tried to negotiate their ransom, but it has been set too high.\
  We can never hope to raise that much money without selling everything we own,\
- and we are all aware {s13} would rather spend their life in prison than make us destitute.\
+ and God knows {s13} would rather spend their life in prison than make us destitute.\
  Instead I came up with a plan to get them out of there, but it requires someone to make a great sacrifice,\
  and so far my pleas have fallen on deaf ears...", "lady_mission_told",
    [
@@ -8079,7 +8079,7 @@ They are going around making terrible accusations against me, impugning my honou
     ]],
 
 #Leave
-  [anyone|plyr,"lady_talk", [], "I want to improve my relation with a commander. Can you help me?", "lady_restore_relation",[]],
+  [anyone|plyr,"lady_talk", [], "I want to improve my relation with a lord. Can you help me?", "lady_restore_relation",[]],
   [anyone,"lady_restore_relation", [(le, "$g_talk_troop_relation", 0)], "{playername}, I don't know you well enough to act on your behalf. I am sorry.", "lady_pretalk",[]],
   [anyone,"lady_restore_relation", [], "Hmm. I guess you got on the wrong side of somebody. Very well, who do you want to restore your relation with?", "lady_restore_relation_2",[]],
 
@@ -8246,7 +8246,7 @@ They are going around making terrible accusations against me, impugning my honou
   ]],
   [anyone|plyr,"convince_persuade_begin_2", [], "Wait, perhaps there is another way to convince you.", "convince_begin",[]],
 
-  [anyone,"convince_persuade_begin", [], "Be silent, {playername}!\
+  [anyone,"convince_persuade_begin", [], "By God's grace, {playername}!\
  Haven't we talked enough already? I am tired of listening to you,\
  and I do not want to hear any more of it right now.", "lord_pretalk",[]],
  
@@ -8265,62 +8265,62 @@ They are going around making terrible accusations against me, impugning my honou
                     (eq, "$talk_context", tc_siege_won_seneschal),
                     (str_store_party_name, s1, "$g_encountered_party"),
                     ],
-   "I must congratulate you on your victory. Welcome to {s1}.\
- We, the keepers of this planet, are at your service.", "siege_won_seneschal_1",[]],
+   "I must congratulate you on your victory, my {lord/lady}. Welcome to {s1}.\
+ We, the housekeepers of this castle, are at your service.", "siege_won_seneschal_1",[]],
   [anyone|plyr,"siege_won_seneschal_1", [], "Are you the seneschal?", "siege_won_seneschal_2",[]],
-  [anyone,"siege_won_seneschal_2", [], "Indeed I am, {sir/madam}.\
+  [anyone,"siege_won_seneschal_2", [], "Indeed I am, my {lord/lady}.\
  I have always served the masters of {s1} to the best of my ability, whichever side they might be on.\
- Thus you may count on my utmost loyalty for as long as you are the {ruler/ruler} of this place.\
+ Thus you may count on my utmost loyalty for as long as you are the {lord/lady} of this place.\
  Now, do you intend to keep me on as the seneschal? I promise you will not be disappointed.", "siege_won_seneschal_3",[]],
   [anyone|plyr,"siege_won_seneschal_3", [], "Very well, you may keep your post for the time being.", "siege_won_seneschal_4",[]],
   [anyone|plyr,"siege_won_seneschal_3", [], "You can stay, but I shall be keeping a close watch on you.", "siege_won_seneschal_4",[]],
-  [anyone,"siege_won_seneschal_4", [], "Thank you. If you do not mind my impudence,\
- may I inquire as to what you wish to do with the planet?", "siege_won_seneschal_5",[]],
+  [anyone,"siege_won_seneschal_4", [], "Thank you, my {lord/lady}. If you do not mind my impudence,\
+ may I inquire as to what you wish to do with the castle?", "siege_won_seneschal_5",[]],
 
-  [anyone|plyr,"siege_won_seneschal_5", [], "I will sell it to another commander.", "siege_won_seneschal_6",[]],
+  [anyone|plyr,"siege_won_seneschal_5", [], "I will sell it to another lord.", "siege_won_seneschal_6",[]],
   [anyone|plyr,"siege_won_seneschal_5", [], "I intend to claim it for myself.", "siege_won_seneschal_6",[]],
   
   [anyone|plyr,"siege_won_seneschal_5", [], "I haven't given it much thought. What are my options?", "siege_won_seneschal_list_options",[]],
 
-  [anyone,"siege_won_seneschal_list_options", [], "According to our galatic laws and traditions,\
+  [anyone,"siege_won_seneschal_list_options", [], "According to our laws and traditions,\
  you can do one of several things.\
- First, you could station a garrison here to protect the planet from any immediate counterattacks,\
- then request an audience with some wealthy ruler and ask them to make you an offer.\
+ First, you could station a garrison here to protect the castle from any immediate counterattacks,\
+ then request an audience with some wealthy lord and ask them to make you an offer.\
  It would be worth a tidy sum, believe you me.\
- If you do not wish to sell, then you will have to find yourself a leader and protector who would accept homage from you.\
- Without a leader's investiture and an army at your back, you would have a difficult time holding on to the system.\
- Both you and {s1} would become great big targets for anyone with a few soldiers and a scrap of ambition.\
+ If you do not wish to sell, then you will have to find yourself a liege lord and protector who would accept homage from you.\
+ Without a royal investiture and an army at your back, you would have a difficult time holding on to the castle.\
+ Both you and {s1} would become great big targets for any one with a few soldiers and a scrap of ambition.\
  ", "siege_won_seneschal_list_options_2",[]],
 
-  [anyone|plyr,"siege_won_seneschal_list_options_2", [], "What do you mean, a leader and protector? I won this place by my own hand, I don't need anyone else!", "siege_won_seneschal_list_options_3",[]],
-  [anyone,"siege_won_seneschal_list_options_3", [], "Of course you don't, my apologies.\
- However, no commander in the Galaxy will recognize your claim to the planet unless it is verified by a ruler's decree.\
- They would call {s1} an outlaw base and take it from you at the earliest opportunity.\
+  [anyone|plyr,"siege_won_seneschal_list_options_2", [], "What do you mean, a liege lord and protector? I won this place by my own hand, I don't need anyone else!", "siege_won_seneschal_list_options_3",[]],
+  [anyone,"siege_won_seneschal_list_options_3", [], "Of course you don't, my {lord/lady}.\
+ However, no lord in the land will recognize your claim to the castle unless it is verified by royal decree.\
+ They would call {s1} an outlaw stronghold and take it from you at the earliest opportunity.\
  Surely not even you could stand against a whole army.", "siege_won_seneschal_list_options_4",[]],
   [anyone|plyr,"siege_won_seneschal_list_options_4", [], "Hmm. I'll give it some thought.", "siege_won_seneschal_6",[]],
 
-  [anyone,"siege_won_seneschal_6", [], "I am very pleased to hear it.\
+  [anyone,"siege_won_seneschal_6", [], "I am very pleased to hear it, my {lord/lady}.\
  I am only trying to serve you to the best of my ability. Now,\
  if at any time you find you have further need of me,\
- I will be in the main hall arranging a smooth handover of the system to your forces.\
+ I will be in the great hall arranging a smooth handover of the castle to your forces.\
  ", "close_window",[]],
 
   
   [anyone,"start", [(troop_slot_eq, "$g_talk_troop", slot_troop_occupation, slto_kingdom_seneschal),(eq,"$g_talk_troop_met",0),(str_store_party_name,s1,"$g_encountered_party")],
-   "Good day, {sir/madam}. I do not believe I've seen you here before.\
+   "Good day, {sir/madam}. I do nott believe I've seen you here before.\
  Let me extend my welcome to you as the seneschal of {s1}.", "seneschal_intro_1",[]],
 
   [anyone|plyr,"seneschal_intro_1", [],  "A pleasure to meet you, {s65}.", "seneschal_intro_1a",[]],
   [anyone,"seneschal_intro_1a", [], "How can I help you?", "seneschal_talk",[]],
   [anyone|plyr,"seneschal_intro_1", [],  "What exactly do you do here?", "seneschal_intro_1b",[]],
-  [anyone,"seneschal_intro_1b", [], "Ah, a seneschal's duties are many, good {ruler/ruler}.\
- For example, I collect the rents from my ruler's people, I manage the planet's supplies,\
- I deal with the local farmers and citizens, I take care of the stronghold staff, I arrange supplies for the garrison...\
- All mundane matters on this site are my responsibility, on behalf of my ruler.\
+  [anyone,"seneschal_intro_1b", [], "Ah, a seneschal's duties are many, good {sire/woman}.\
+ For example, I collect the rents from my lord's estates, I manage the castle's storerooms,\
+ I deal with the local peasantry, I take care of castle staff, I arrange supplies for the garrison...\
+ All mundane matters on this fief are my responsibility, on behalf of my lord.\
  Everything except commanding the soldiers themselves.", "seneschal_talk",[]],
   
   [anyone,"start", [(troop_slot_eq, "$g_talk_troop", slot_troop_occupation, slto_kingdom_seneschal)],
-   "Good day.", "seneschal_talk",[]],
+   "Good day, {sir/madam}.", "seneschal_talk",[]],
 
   [anyone,"seneschal_pretalk", [], "Anything else?", "seneschal_talk",[]],
 
@@ -8529,8 +8529,8 @@ They are going around making terrible accusations against me, impugning my honou
                     (faction_get_slot, ":faction_leader", "$g_encountered_party_faction",slot_faction_leader),
                     (str_store_troop_name, s9, ":faction_leader"),
                     ],
-   "Be warned! This convoy is under the protection of {s9}.\
- Step out of our way or you will face their fury!", "merchant_talk",[]],
+   "Be warned, knave! This caravan is under the protection of {s9}.\
+ Step out of our way or you will face his fury!", "merchant_talk",[]],
 
 
   [anyone,"start", [(party_slot_eq, "$g_encountered_party", slot_party_type, spt_kingdom_caravan),(this_or_next|eq,"$talk_context", tc_party_encounter),(eq,"$talk_context", 0)],
@@ -8543,7 +8543,7 @@ They are going around making terrible accusations against me, impugning my honou
                                  (quest_slot_eq, "qst_raid_caravan_to_start_war", slot_quest_target_faction, "$g_encountered_party_faction"),
                                  (str_store_faction_name, s17, "$players_kingdom"),
                                  ],
-   "You are trespassing in {s17} territory. I am confiscating this convoy and all its goods!", "caravan_start_war_quest_1",[]],
+   "You are trespassing in {s17} territory. I am confiscating this caravan and all its goods!", "caravan_start_war_quest_1",[]],
   [anyone,"caravan_start_war_quest_1", [(str_store_faction_name, s17, "$players_kingdom"),],
    "What? What nonsense is this? We are nowhere near your territory, {mate/wench},\
  and moreover we have a peace treaty with {s17}!", "caravan_start_war_quest_2",[]],
@@ -8618,7 +8618,7 @@ They are going around making terrible accusations against me, impugning my honou
   
   [anyone,"merchant_attack_begin", [], "Are you robbing us?", "merchant_attack_verify",[]],
   [anyone|plyr,"merchant_attack_verify", [], "Robbing you? No, no! It was a joke.", "merchant_attack_verify_norob",[]],
-  [anyone,"merchant_attack_verify_norob", [], "Don't joke about that, {lad/lass}. For a moment I thought we were in real trouble.", "close_window",[(assign, "$g_leave_encounter",1)]],
+  [anyone,"merchant_attack_verify_norob", [], "God, don't joke about that, {lad/lass}. For a moment I thought we were in real trouble.", "close_window",[(assign, "$g_leave_encounter",1)]],
   [anyone|plyr,"merchant_attack_verify", [], "Of course I'm robbing you. Now hand over your goods.", "merchant_attack",[]],
   
   [anyone,"merchant_attack", [], "Damn you, you won't get anything from us without a fight!", "close_window",
@@ -8635,7 +8635,7 @@ They are going around making terrible accusations against me, impugning my honou
     ]],
 
   [anyone,"caravan_offer_protection", [],
-   "These trade routes are dangerous indeed. One can never have enough protection.", "caravan_offer_protection_2",
+   "These roads are dangerous indeed. One can never have enough protection.", "caravan_offer_protection_2",
    [(get_party_ai_object,":caravan_destination","$g_encountered_party"),
     (store_distance_to_party_from_party, "$caravan_distance_to_target",":caravan_destination","$g_encountered_party"),
     (assign,"$caravan_escort_offer","$caravan_distance_to_target"),
@@ -8700,7 +8700,7 @@ They are going around making terrible accusations against me, impugning my honou
                     (this_or_next|eq, "$g_encountered_party_faction", "fac_player_supporters_faction"),
                     (             party_slot_eq, "$g_encountered_party", slot_town_lord, "trp_player")
                     ],
-   "Good day commander. Will you be visiting the prison?", "prison_guard_players",[]],
+   "Good day, my {lord/lady}. Will you be visiting the prison?", "prison_guard_players",[]],
   [anyone|plyr,"prison_guard_players", [],
    "Yes. Unlock the door.", "close_window",[(call_script, "script_enter_dungeon", "$current_town", "mt_visit_town_castle")]],
   [anyone|plyr,"prison_guard_players", [],
@@ -8739,7 +8739,7 @@ They are going around making terrible accusations against me, impugning my honou
    "Of course, {sir/madam}. Go in.", "close_window",[(call_script, "script_enter_dungeon", "$current_town", "mt_visit_town_castle")]],
 
   [anyone,"prison_guard_visit_prison", [],
-   "You need to get permission from the commander to talk to prisoners.", "prison_guard_visit_prison_2",[]],
+   "You need to get permission from the lord to talk to prisoners.", "prison_guard_visit_prison_2",[]],
 
   [anyone|plyr,"prison_guard_visit_prison_2", [], "All right then. I'll try that.", "close_window",[]],
   [anyone|plyr,"prison_guard_visit_prison_2", [], "Come on now. I thought you were the boss here.", "prison_guard_visit_prison_3",[]],
@@ -8763,7 +8763,7 @@ They are going around making terrible accusations against me, impugning my honou
                     (this_or_next|eq, "$g_encountered_party_faction", "fac_player_supporters_faction"),
                     (             party_slot_eq, "$g_encountered_party", slot_town_lord, "trp_player")
                     ],
-   "Your orders, {commander/commander}?", "castle_guard_players",[]],
+   "Your orders, {Lord/Lady}?", "castle_guard_players",[]],
   [anyone|plyr,"castle_guard_players", [],
    "Open the door. I'll go in.", "close_window",[(call_script, "script_enter_court", "$current_town")]],
   [anyone|plyr,"castle_guard_players", [],
@@ -8775,7 +8775,7 @@ They are going around making terrible accusations against me, impugning my honou
    "Get out of my sight, beggar! You stink!", "castle_guard_sneaked_intro_1",[]],
   [anyone,"start", [(eq, "$talk_context", 0),(faction_slot_eq, "$g_encountered_party_faction", slot_faction_castle_guard_troop, "$g_talk_troop"),(eq, "$sneaked_into_town",1)],
    "Get lost before I lose my temper you vile beggar!", "close_window",[]],
-  [anyone|plyr,"castle_guard_sneaked_intro_1", [], "I want to enter the hall and speak to the ruler.", "castle_guard_sneaked_intro_2",[]],
+  [anyone|plyr,"castle_guard_sneaked_intro_1", [], "I want to enter the hall and speak to the lord.", "castle_guard_sneaked_intro_2",[]],
   [anyone|plyr,"castle_guard_sneaked_intro_1", [], "[Leave]", "close_window",[]],
   [anyone,"castle_guard_sneaked_intro_2", [], "Are you out of your mind, {man/woman}?\
  Beggars are not allowed into the hall. Now get lost or I'll beat you bloody.", "close_window",[]],
@@ -8784,7 +8784,7 @@ They are going around making terrible accusations against me, impugning my honou
   [anyone,"start", [(eq, "$talk_context", 0),(faction_slot_eq, "$g_encountered_party_faction", slot_faction_castle_guard_troop, "$g_talk_troop")],
    "What do you want?", "castle_guard_intro_1",[]],
   [anyone|plyr,"castle_guard_intro_1", [],
-   "I want to enter the hall and speak to the ruler.", "castle_guard_intro_2",[]],
+   "I want to enter the hall and speak to the lord.", "castle_guard_intro_2",[]],
   [anyone|plyr,"castle_guard_intro_1", [],
    "Never mind.", "close_window",[]],
   [anyone,"castle_guard_intro_2", [], "You can go in after leaving your weapons with me. No one is allowed to carry arms into the main hall.", "castle_guard_intro_2",
@@ -8796,21 +8796,21 @@ They are going around making terrible accusations against me, impugning my honou
 ##  [anyone|plyr,"castle_guard_intro_1", [],
 ##   "Never mind.", "close_window",[]],
 ##  [anyone,"castle_guard_intro_2", [],
-##   "Does the ruler expect you?", "castle_guard_intro_3",[]],
+##   "Does the lord expect you?", "castle_guard_intro_3",[]],
 ##  [anyone|plyr,"castle_guard_intro_3", [], "Yes.", "castle_guard_intro_check",[]],
 ##  [anyone|plyr,"castle_guard_intro_3", [], "No.", "castle_guard_intro_no",[]],
 ##  [anyone,"castle_guard_intro_check", [], "Hmm. All right {sir/madam}.\
 ## You can go in. But you must leave your weapons with me. Noone's allowed into the court with weapons.", "close_window",[]],
 ##  [anyone,"castle_guard_intro_check", [], "You liar!\
-## Our ruler would have no business with a filthy vagabond like you. Get lost now before I beat you like a womp rat.", "close_window",[]],
+## Our lord would have no business with a filthy vagabond like you. Get lost now before I kick your butt.", "close_window",[]],
 ##  [anyone,"castle_guard_intro_no", [], "Well... What business do you have here then?", "castle_guard_intro_4",[]],
-##  [anyone|plyr,"castle_guard_intro_4", [], "I wish to present the ruler some gifts.", "castle_guard_intro_gifts",[]],
-##  [anyone|plyr,"castle_guard_intro_4", [], "I have an important matter to discuss with the ruler. Make way now.", "castle_guard_intro_check",[]],
+##  [anyone|plyr,"castle_guard_intro_4", [], "I wish to present the lord some gifts.", "castle_guard_intro_gifts",[]],
+##  [anyone|plyr,"castle_guard_intro_4", [], "I have an important matter to discuss with the lord. Make way now.", "castle_guard_intro_check",[]],
 ##  [anyone,"castle_guard_intro_gifts", [], "Really? What gifts?", "castle_guard_intro_5",[]],
 ##  [anyone|plyr,"castle_guard_intro_4", [], "Many gifts. For example, I have a gift of 20 credits here for his loyal servants.", "castle_guard_intro_gifts",[]],
 ##  [anyone|plyr,"castle_guard_intro_4", [], "My gifts are of no concern to you. They are for your lords and ladies..", "castle_guard_intro_check",[]],
 ##  [anyone,"castle_guard_intro_gifts", [], "Oh! you can give those 20 credits to me. I can distribute them for you.\
-## You can enter the court and present your gifts to the ruler. I'm sure he'll be pleased.\
+## You can enter the court and present your gifts to the lord. I'm sure he'll be pleased.\
 ## But you must leave your weapons with me. Noone's allowed into the court with weapons.", "close_window",[]],
 
 #Kingdom Parties
@@ -8841,7 +8841,7 @@ They are going around making terrible accusations against me, impugning my honou
 
 #Player Parties
 ##  [party_tpl|pt_old_garrison,"start", [],
-##   "They told us to leave the system to the new garrison {sir/madam}. So we left and came to rejoin you.", "player_old_garrison_encounter",[]],
+##   "They told us to leave the castle to the new garrison {sir/madam}. So we left and came to rejoin you.", "player_old_garrison_encounter",[]],
 ##  
 ##  [anyone|plyr,"player_old_garrison_encounter", [(party_can_join)],
 ##   "You have done well. You'll join my command now.", "close_window",[(assign, "$g_move_heroes", 1),
@@ -8884,8 +8884,8 @@ They are going around making terrible accusations against me, impugning my honou
 
   [anyone|plyr,"castle_gate_guard_talk", [(ge, "$g_encountered_party_relation", 0)], 
   "We need shelter for the night. Will you let us in?", "castle_gate_open",[]],
-  [anyone|plyr,"castle_gate_guard_talk", [(party_slot_ge, "$g_encountered_party", slot_town_lord, 1)], "I want to speak with the ruler of this planet.", "request_meeting_castle_lord",[]],
-  [anyone|plyr,"castle_gate_guard_talk", [], "I want to speak with someone in the main hall.", "request_meeting_other",[]],
+  [anyone|plyr,"castle_gate_guard_talk", [(party_slot_ge, "$g_encountered_party", slot_town_lord, 1)], "I want to speak with the lord of the castle.", "request_meeting_castle_lord",[]],
+  [anyone|plyr,"castle_gate_guard_talk", [], "I want to speak with someone in the castle.", "request_meeting_other",[]],
 
   [anyone|plyr,"castle_gate_guard_talk", [], "[Leave]", "close_window",[]],
 
@@ -8896,7 +8896,7 @@ They are going around making terrible accusations against me, impugning my honou
                                          (assign, "$lord_requested_to_talk_to", ":castle_lord"),
                                           ],  "Wait here. {s2} will see you.", "close_window",[]],
   
-  [anyone,"request_meeting_castle_lord", [],  "My commander is not here now.", "castle_gate_guard_pretalk",[]],
+  [anyone,"request_meeting_castle_lord", [],  "My lord is not here now.", "castle_gate_guard_pretalk",[]],
 
   [anyone,"request_meeting_other", [],  "Who is that?", "request_meeting_3",[]],
 
@@ -8933,7 +8933,7 @@ They are going around making terrible accusations against me, impugning my honou
                                          #(troop_get_slot, ":castle_lord_relation", ":castle_lord", slot_troop_player_relation),
                                          (ge, ":castle_lord_relation", 5),
                                          (str_store_troop_name, s2, ":castle_lord")
-                                         ],  "My ruler, {s2} will be happy to see you {sir/madam}.\
+                                         ],  "My lord {s2} will be happy to see you {sir/madam}.\
  Come on in. I am lowering the shields for you.", "close_window",[(assign,"$g_permitted_to_center",1)]],
 
 
@@ -8946,9 +8946,9 @@ They are going around making terrible accusations against me, impugning my honou
                                          #(troop_get_slot, ":castle_lord_relation", ":castle_lord", slot_troop_player_relation),
                                          (ge, ":castle_lord_relation", 5),
                                          (str_store_troop_name, s2, ":castle_lord")
-                                         ],  "My ruler, {s2} is not in the main hall now.\
- But I think he would approve of you refuelling here.\
- Come on in. I am lowering the shields for you. Begin your descent.", "close_window",[(assign,"$g_permitted_to_center",1)]],
+                                         ],  "My lord {s2} is not in the castle now.\
+ But I think he would approve of you taking shelter here.\
+ Come on in. I am lowering the shields for you.", "close_window",[(assign,"$g_permitted_to_center",1)]],
  
   [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),
                                (call_script, "script_troop_get_player_relation", ":castle_lord"),
@@ -8964,11 +8964,11 @@ They are going around making terrible accusations against me, impugning my honou
                                (ge, ":castle_lord_relation", -19),
                                (str_store_troop_name, s2, ":castle_lord")
                                          ],  "Come on in. But make sure your troops behave sensibly within the walls.\
- My ruler, {s2} does not want trouble here.", "close_window",[(assign,"$g_permitted_to_center",1)]],
+ My lord {s2} does not want trouble here.", "close_window",[(assign,"$g_permitted_to_center",1)]],
  
   [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),
                                (str_store_troop_name, s2, ":castle_lord"),
-  ],  "My ruler, {s2} does not want you here. Leave now or we will open fire.", "close_window",[]],
+  ],  "My lord {s2} does not want you here. Begone now.", "close_window",[]],
 
 
 #Enemy Kingdom Meetings
@@ -8982,8 +8982,8 @@ They are going around making terrible accusations against me, impugning my honou
   
 #  [anyone|plyr,"request_meeting_1", [(ge, "$g_encountered_party_faction", 0)], "Open the gates and let me in!", "request_meeting_open_gates",[]],
   
-#  [anyone|plyr,"request_meeting_1", [(party_slot_ge, "$g_encountered_party", slot_town_lord, 1)], "I want to speak with the ruler of this planet.", "request_meeting_castle_lord",[]],
-#  [anyone|plyr,"request_meeting_1", [], "I want to speak with someone in the main hall.", "request_meeting_other",[]],
+#  [anyone|plyr,"request_meeting_1", [(party_slot_ge, "$g_encountered_party", slot_town_lord, 1)], "I want to speak with the lord of the castle.", "request_meeting_castle_lord",[]],
+#  [anyone|plyr,"request_meeting_1", [], "I want to speak with someone in the castle.", "request_meeting_other",[]],
 
 ##### TODO: QUESTS COMMENT OUT BEGIN
 ##  [anyone|plyr,"request_meeting_1",[(check_quest_active,"qst_bring_prisoners_to_enemy"),
@@ -8997,7 +8997,7 @@ They are going around making terrible accusations against me, impugning my honou
 ##                                    (str_store_troop_name,1,":quest_giver_troop"),
 ##                                    (assign, reg1, ":quest_target_amount"),
 ##                                    (str_store_troop_name_plural,2,":quest_object_troop")],
-##   "TODO: Sir, {s1} ordered me to bring {reg1} {s2} for ransom.", "guard_prisoners_brought",
+##   "TODO: Sir, lord {s1} ordered me to bring {reg1} {s2} for ransom.", "guard_prisoners_brought",
 ##   [(quest_get_slot, ":quest_target_amount", "qst_bring_prisoners_to_enemy", slot_quest_target_amount),
 ##    (quest_get_slot, ":quest_target_center", "qst_bring_prisoners_to_enemy", slot_quest_target_center),
 ##    (quest_get_slot, ":quest_object_troop", "qst_bring_prisoners_to_enemy", slot_quest_object_troop),
@@ -9028,7 +9028,7 @@ They are going around making terrible accusations against me, impugning my honou
 ##                                    (str_store_troop_name,1,":quest_giver_troop"),
 ##                                    (assign, reg1, ":quest_target_amount"),
 ##                                    (str_store_troop_name_plural,2,":quest_object_troop")],
-##   "TODO: Sir, {s1} ordered me to bring {reg1} {s2} for ransom, but some of them died during my expedition.", "guard_prisoners_brought_some",
+##   "TODO: Sir, lord {s1} ordered me to bring {reg1} {s2} for ransom, but some of them died during my expedition.", "guard_prisoners_brought_some",
 ##   [(quest_get_slot, ":quest_target_amount", "qst_bring_prisoners_to_enemy", slot_quest_target_amount),
 ##    (quest_get_slot, ":quest_target_center", "qst_bring_prisoners_to_enemy", slot_quest_target_center),
 ##    (quest_get_slot, ":quest_object_troop", "qst_bring_prisoners_to_enemy", slot_quest_object_troop),
@@ -9070,7 +9070,7 @@ They are going around making terrible accusations against me, impugning my honou
 ##                                         (call_script, "script_get_troop_attached_party", ":castle_lord"),
 ##                                         (eq, "$g_encountered_party", reg0),
 ##                                         (str_store_troop_name, 1, ":castle_lord")
-##                                         ],  "My ruler {s1} is in the main hall now. You must ask his permission to enter.", "request_meeting_pretalk",[]],
+##                                         ],  "My lord {s1} is in the castle now. You must ask his permission to enter.", "request_meeting_pretalk",[]],
 ##
 ##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),
 ##                                         (call_script, "script_get_troop_attached_party", ":castle_lord"),
@@ -9079,12 +9079,12 @@ They are going around making terrible accusations against me, impugning my honou
 ##                                         (troop_get_slot, ":castle_lord_relation", ":castle_lord", slot_troop_player_relation),
 ##                                         (ge, ":castle_lord_relation", 20),
 ##                                         (str_store_troop_name, 1, ":castle_lord")
-##                                         ],  "My ruler {s1} is not in the main hall now.\
-## But I think he would approve of you refuelling here, {sir/madam}.\
-## Come on in. I am lowering the shields for your descent.", "close_window",[]],
+##                                         ],  "My lord {s1} is not in the castle now.\
+## But I think he would approve of you taking shelter here, {sir/madam}.\
+## Come on in. I am opening the gates for you.", "close_window",[]],
 ##  
 ##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),(str_store_troop_name, 1, ":castle_lord")],
-##   "My ruler {s1} is not in the main hall now. I can't allow you in without his orders.", "request_meeting_pretalk",[]],
+##   "My lord {s1} is not in the castle now. I can't allow you into the castle without his orders.", "request_meeting_pretalk",[]],
   
 
   
@@ -9326,7 +9326,7 @@ They are going around making terrible accusations against me, impugning my honou
   [anyone|plyr,"local_merchant_mercy_yes_2", [], "You are going to forget about {s2}'s debt to you.\
  And you will sign a paper stating that he owes you nothing.", "local_merchant_mercy_yes_3",[]],
   [anyone,"local_merchant_mercy_yes_3", [], "Yes, of course. I'll do as you say.", "local_merchant_mercy_yes_4",[]],
-  [anyone|plyr,"local_merchant_mercy_yes_4", [], "And if they hear so much as a hint of a complaint about this issue, then I'll come back for you,\
+  [anyone|plyr,"local_merchant_mercy_yes_4", [], "And if my lord hears so much of a hint of a complaint about this issue, then I'll come back for you,\
  and it won't matter how much you scream for mercy then.\
  Do you understand me?", "local_merchant_mercy_yes_5",[]],
   [anyone,"local_merchant_mercy_yes_5", [], "Yes {sir/madam}. Don't worry. I won't make any complaint.", "local_merchant_mercy_yes_6",[]],
@@ -9593,14 +9593,14 @@ They are going around making terrible accusations against me, impugning my honou
   
   [anyone|plyr,"runaway_serf_intro_1", [(quest_get_slot, ":lord", "qst_bring_back_runaway_serfs", slot_quest_giver_troop),
                                         (str_store_troop_name, s4, ":lord")],
-   "I have been sent by your {s4} whom you are flying from. He will not punish you if you return now.", "runaway_serf_intro_2",[]],
+   "I have been sent by your {s4} whom you are running from. He will not punish you if you return now.", "runaway_serf_intro_2",[]],
    
   [anyone,"runaway_serf_intro_2", [(quest_get_slot, ":target_center", "qst_bring_back_runaway_serfs", slot_quest_target_center),
                                    (str_store_party_name, s6, ":target_center"),
                                    (quest_get_slot, ":quest_object_center", "qst_bring_back_runaway_serfs", slot_quest_object_center),
                                    (str_store_party_name, s1, ":quest_object_center")],
-   "My good {sir/madam}. Our life on the planet of {s1} was unbearable. We worked all day long and still went to bed hungry.\
- We are going to {s6} to start a new life, where we will be treated like sentient beings.", "runaway_serf_intro_3",[]],
+   "My good {sir/madam}. Our lives on the planet of {s1} was unbearable. We worked all day long and still went to bed hungry.\
+ We are going to {s6} to start a new life, where we will be treated like humans.", "runaway_serf_intro_3",[]],
 
   [anyone|plyr,"runaway_serf_intro_3", [(quest_get_slot, ":quest_object_center", "qst_bring_back_runaway_serfs", slot_quest_object_center),
                                         (str_store_party_name, s1, ":quest_object_center"),],
@@ -9619,7 +9619,7 @@ They are going around making terrible accusations against me, impugning my honou
     (party_set_ai_object, "$g_encountered_party", ":quest_object_center"),
     (assign, "$g_leave_encounter",1)]],
   
-  [anyone,"runaway_serf_let_go", [], "Such a great act of kindness, {sir/madam}. We will not forget your help.", "close_window",
+  [anyone,"runaway_serf_let_go", [], "God bless you, {sir/madam}. We will not forget your help.", "close_window",
    [(party_set_slot, "$g_encountered_party", slot_town_castle, 1),
     (assign, "$g_leave_encounter",1)]],
   
@@ -9628,7 +9628,7 @@ They are going around making terrible accusations against me, impugning my honou
                                         ],
    "Good day {sir/madam}. Don't worry. If anyone asks, we haven't seen you.", "runaway_serf_reconsider",[]],
 
-  [anyone|plyr,"runaway_serf_reconsider", [], "I have changed my mind. You must back to your planet!", "runaway_serf_go_back",
+  [anyone|plyr,"runaway_serf_reconsider", [], "I have changed my mind. You must back to your village!", "runaway_serf_go_back",
    [(party_set_slot, "$g_encountered_party", slot_town_castle, 0),
     (quest_get_slot, ":quest_object_center", "qst_bring_back_runaway_serfs", slot_quest_object_center),
     (call_script, "script_change_player_relation_with_center", ":quest_object_center", -2)]],
@@ -9668,7 +9668,7 @@ They are going around making terrible accusations against me, impugning my honou
   [anyone|plyr,"deserter_paid_talk", [], "Sorry to trouble you. I'll be on my way now.", "deserter_paid_talk_2a",[]],
   [anyone,"deserter_paid_talk_2a", [], "Yeah. Stop fooling around and go make some money.\
  I want to see that purse full next time I see you.", "close_window",[(assign, "$g_leave_encounter",1)]],
-  [anyone|plyr,"deserter_paid_talk", [], "Actually, I'm going to make you pay this time.", "deserter_paid_talk_2b",[]],
+  [anyone|plyr,"deserter_paid_talk", [], "No. It's your turn to pay me this time.", "deserter_paid_talk_2b",[]],
   [anyone,"deserter_paid_talk_2b", [], "What nonsense are you talking about? You want trouble? You got it.", "close_window",[
        (party_set_slot,"$g_encountered_party",slot_party_ignore_player_until,0),
        (party_ignore_player, "$g_encountered_party", 0),
@@ -9678,15 +9678,15 @@ They are going around making terrible accusations against me, impugning my honou
   [party_tpl|pt_deserters,"start", [
       (eq,"$talk_context",tc_party_encounter)
                     ], "We are the free brothers.\
- We fight only for ourselves from now on.\
- Now give us your credits or taste our blasters.", "deserter_talk",[]],
+ We will fight only for ourselves from now on.\
+ Now give us your gold or taste our steel.", "deserter_talk",[]],
 ##  [anyone|plyr,"deserter_talk", [(check_quest_active, "qst_bring_back_deserters"),
 ##                                 (quest_get_slot, ":target_deserter_troop", "qst_bring_back_deserters", slot_quest_target_troop),
 ##                                 (party_count_members_of_type, ":num_deserters", "$g_encountered_party",":target_deserter_troop"),
 ##                                 (gt, ":num_deserters", 1)],
-##   "If you surrender to me now, you will rejoin the army of your faction without being punished. Otherwise you'll get a taste of my blaster.", "deserter_join_as_prisoner",[]],
+##   "If you surrender to me now, you will rejoin the army of your kingdom without being punished. Otherwise you'll get a taste of my sword.", "deserter_join_as_prisoner",[]],
   [anyone|plyr,"deserter_talk", [], "When I'm done with you, you'll regret ever leaving your army.", "close_window",[]],
-  [anyone|plyr,"deserter_talk", [], "There's no need for things to get heated. I am ready to pay for a safe journey.", "deserter_barter",[]],
+  [anyone|plyr,"deserter_talk", [], "There's no need to fight. I am ready to pay for free passage.", "deserter_barter",[]],
 
 ##  [anyone,"deserter_join_as_prisoner", [(call_script, "script_party_calculate_strength", "p_main_party"),
 ##                                        (assign, ":player_strength", reg0),
@@ -9702,12 +9702,12 @@ They are going around making terrible accusations against me, impugning my honou
   [anyone|plyr,"deserter_barter_2", [(store_troop_gold,reg(2)),(ge,reg(2),"$deserter_tribute"),(assign,reg(5),"$deserter_tribute")],
    "All right here's your {reg5} credits.", "deserter_barter_3a",[(troop_remove_gold, "trp_player","$deserter_tribute")]],
   [anyone|plyr,"deserter_barter_2", [],
-   "I don't have that much with me", "deserter_barter_3b",[]],
+   "I don't have that much money with me", "deserter_barter_3b",[]],
   [anyone,"deserter_barter_3b", [],
-   "Too bad. Then we'll have to sell you into slavery.", "close_window",[]],
+   "Too bad. Then we'll have to sell you to the slavers.", "close_window",[]],
 
 
-  [anyone,"deserter_barter_3a", [], "Was that so hard? All right. Go now.", "close_window",[
+  [anyone,"deserter_barter_3a", [], "Heh. That wasn't difficult now was it? All right. Go now.", "close_window",[
     (store_current_hours,":protected_until"),
     (val_add, ":protected_until", 72),
     (party_set_slot,"$g_encountered_party",slot_party_ignore_player_until,":protected_until"),
@@ -9725,7 +9725,7 @@ They are going around making terrible accusations against me, impugning my honou
       ],
    "I'm drunk, leave me alone.", "cantina_drinkers_talk", []
    ],
-   [anyone|plyr, "cantina_drinkers_talk", [], "Sorry to bother you, goodbye.", "close_window", []],
+   [anyone|plyr, "cantina_drinkers_talk", [], "Sorry I bothered you, goodbye.", "close_window", []],
 
 #SW - new cantina_walkers dialog - code primarily created by Mordachai and MartinF
   [anyone ,"start",
@@ -9801,7 +9801,7 @@ They are going around making terrible accusations against me, impugning my honou
 		
 [anyone|plyr, "cantina_walkers_pre_brawl", [], "I'm sorry.", "cantina_walkers_pre_brawl_2", []],
 
-[anyone, "cantina_walkers_pre_brawl_2", [], "Don't insult me. You should watch yourself. I have the death sentence in twelve systems.", "cantina_walkers_pre_brawl_3", []],
+[anyone, "cantina_walkers_pre_brawl_2", [], "Don't insult me. You just watch yourself. I'm wanted and have the death sentence in twelve systems.", "cantina_walkers_pre_brawl_3", []],
 
 [anyone|plyr, "cantina_walkers_pre_brawl_3", [], "I'll be careful then.", "cantina_walkers_pre_brawl_4", []],
 [anyone|plyr, "cantina_walkers_pre_brawl_3", [], "I'm not worth the effort, let me buy you a drink.", "close_window", 
@@ -9845,7 +9845,7 @@ They are going around making terrible accusations against me, impugning my honou
  # #SW - cantina_walkers_tell_joke code from MartinF
  # [anyone, "cantina_walkers_tell_joke", [
     # (str_store_string, s10, "@Q:  What do you call a Sith who won't fight?^^A:  A Sithy."),
-	# (str_store_string, s11, "@Q:  How is Ducktape like the Force?^^A:  It has a dark side, a light side and it binds the Galaxy together."),
+	# (str_store_string, s11, "@Q:  How is Ducktape like the Force?^^A:  It has a dark side, a light side and it binds the galaxy together."),
     # (str_store_string, s12, "@Q:  How many stormtroopers does it take to replace a lightbulb?^^A:  Two, one to screw the bulb in, the other to shoot him and take the credit."),
 	# (str_store_string, s13, "@Q:  What goes, 'Ha, ha, ha, haaaa.... AGGGHHHH! Thump'?^^A:  An Imperial Officer laughing at Darth Vader."),
 	# (str_store_string, s14, "@Q:  Why did Yoda cross the road?^^A:  Because the chickens Forced him to."),
@@ -9924,8 +9924,8 @@ They are going around making terrible accusations against me, impugning my honou
                                      ],
    "I was told to deliver you {reg9} units of {s4}, but I lost some of the cargo on the way.", "tavernkeeper_deliver_wine_incomplete",[]],
   [anyone,"tavernkeeper_deliver_wine_incomplete", [],
- "Attacked by pirates eh?\
- You're lucky they left you alive.\
+ "Attacked by bandits eh?\
+ You are lucky they left you alive.\
  Anyway, I can pay you no more than {reg5} credits for this.\
  And I will let {s1} know that my order was delivered less than completely,\
  so you will probably be charged for this loss.", "tavernkeeper_pretalk",
@@ -10275,7 +10275,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone,"tavernkeeper_buy_drinks",
    [
-    ], "Of course, {sir/madam}. I reckon {reg5} credits should be enough for that. What should I tell the lads?", "tavernkeeper_buy_drinks_2",[
+    ], "Of course, {my lord/my lady}. I reckon {reg5} credits should be enough for that. What should I tell the lads?", "tavernkeeper_buy_drinks_2",[
         (assign, "$temp", 1000),
         (assign, reg5, "$temp"),
         ]],
@@ -10308,7 +10308,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone,"tavernkeeper_buy_drinks_troops",
    [
-    ], "Of course, {sir/madam}. I reckon {reg5} credits should be enough for that. What should I tell the lads?", "tavernkeeper_buy_drinks_troops_2",[
+    ], "Of course, {my lord/my lady}. I reckon {reg5} credits should be enough for that. What should I tell the lads?", "tavernkeeper_buy_drinks_troops_2",[
         (assign, "$temp", 20),
       (store_party_size_wo_prisoners, reg5, "p_main_party"),
       (store_mul, "$temp", "$temp", reg5),
@@ -10368,16 +10368,16 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                                                                             ]],
 
   [anyone|plyr,"ransom_broker_info_talk",[(eq, "$ransom_broker_families_told",0)], "What if their families can't pay?", "ransom_broker_families",[]],
-  [anyone, "ransom_broker_families", [], "Oh, then I spin them a few heartwarming tales of life in the engine rooms of the great fleets of this Galaxy.\
- You'd be surprised what sorts of treasures a farmer can dig out of his nerf hut or wheedle out of his cousins,\
+  [anyone, "ransom_broker_families", [], "Oh, then I spin them a few heartwarming tales of life on the galleys.\
+ You'd be surprised what sorts of treasures a farmer can dig out of his cowshed or wheedle out of his cousins,\
  assuming he's got the proper motivation!\
- And if in the end they cannot come up with the credits, then there are always slave merchants who are looking for engine slaves.\
- One cannot survive in this Galaxy with an empty credit account, you see.", "ransom_broker_info_talk",[(assign, "$ransom_broker_families_told",1)]],
+ And if in the end they cannot come up with the silver, then there are always slave merchants who are looking for galley slaves.\
+ One cannot do Heaven's work with an empty purse, you see.", "ransom_broker_info_talk",[(assign, "$ransom_broker_families_told",1)]],
   [anyone|plyr,"ransom_broker_info_talk",[(eq, "$ransom_broker_prices_told",0)], "What can I get for a prisoner?", "ransom_broker_prices",[]],
   [anyone, "ransom_broker_prices", [], "It varies. I fancy that I have a fine eye for assessing a ransom.\
  There are a dozen little things about a man that will tell you whether he goes to bed hungry, or dines each night on soft dumplings and goose.\
- The real credits to be made, of course, are in the gentry, and if you ever want to do my job you'll want to learn about every important family in the Galaxy,\
- their planets, their heraldry, their offspring both lawful and bastard, and, of course, their credit with the merchants.", "ransom_broker_info_talk",[(assign, "$ransom_broker_prices_told",1)]],
+ The real money of course is in the gentry, and if you ever want to do my job you'll want to learn about every landowning family in the Galaxy,\
+ their estates, their heraldry, their offspring both lawful and bastard, and, of course, their credit with the merchants.", "ransom_broker_info_talk",[(assign, "$ransom_broker_prices_told",1)]],
   [anyone|plyr,"ransom_broker_info_talk",[(eq, "$ransom_broker_ransom_me_told",0)], "Would you be able to ransom me if I were taken?", "ransom_broker_ransom_me",[]],
   [anyone, "ransom_broker_ransom_me", [], "Of course. I'm welcome on every planet in the Galaxy.\
  There's not many who can say that! So always be sure to keep a pot of credits buried somewhere,\
@@ -10434,10 +10434,10 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone, "tavern_traveler_pretalk", [], "Yes?", "tavern_traveler_talk", []],
 
-  [anyone|plyr, "tavern_traveler_talk", [(eq, "$traveler_land_asked", 0)], "What can you tell me about the Galaxy?", "tavern_traveler_tell_kingdoms", [(assign, "$traveler_land_asked", 1)]],
-  [anyone, "tavern_traveler_tell_kingdoms", [], "The Galaxy is divided between Chancellor Palpatine's Empire and the Rebel Alliance, both fighting for control.\
- The war has been long and our Galaxy is divided! The Empire fights for control and the Rebels are fighting to liberate the Galaxy.\
- This war-torn Galaxy is a great place for you, however, an aspiring adventurer.\
+  [anyone|plyr, "tavern_traveler_talk", [(eq, "$traveler_land_asked", 0)], "What can you tell me about this land?", "tavern_traveler_tell_kingdoms", [(assign, "$traveler_land_asked", 1)]],
+  [anyone, "tavern_traveler_tell_kingdoms", [], "The Galaxy is divided between Chancellor's Palpatine Empire and the Rebels, which fight a constant battle for crush the enemy side,\
+ the war has been long and our Galaxy it's divided!.\
+ Well, at least this must be a good place to be for an adventurer such as yourself.\
  With some luck and skill, you can make a name for yourself here, amass a fortune perhaps, or gain great power.\
  Opportunities are endless and so are the rewards, if you are willing to risk your life for them.", "tavern_traveler_tell_kingdoms_2", []],
   
@@ -10450,21 +10450,21 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
  If you have done a bit of fighting, speaking with one of their commanders will probably result in being offered a mercenary contract.\
  However the real rewards come if you can manage to become a vassal to a ruler.\
  A vassal can own planets and get rich with the taxes and revenues of these locations.\
- Normally, only rulers of the faction own star systems in this way,\
- but in time of war, a commander will not hesitate to accept someone who distinugishes {himself/herself} on the battlefield as a vassal, and grant {him/her} the right to own planets.",
+ Normally, only rulers of the faction own land in this way,\
+ but in time of war, a commander will not hesitate to accept someone who distinugishes {himself/herself} on the battlefield as a vassal, and grant {him/her} the right to own land.",
    "tavern_traveler_tell_kingdoms_4", []],
 
-  [anyone, "tavern_traveler_tell_kingdoms_4", [], "The only path closed to a an adventurer such as you would be becoming the leader of a faction.\
- The people and rulers of the Galaxy would never accept an upstart adventurer as their ruler.\
- But don't think that leaders can sit on their thrones too comfortably, either. They have their own rivals,\
- those who are born to the right family, who could go around and stir up trouble saying they have a better claim to the faction than the current leader.\
- If those claim holders could find supporters, they could easily start their civil wars and perhaps even replace the leader one day.",
+  [anyone, "tavern_traveler_tell_kingdoms_4", [], "The only path closed to a an adventurer such as you would be becoming the {king/queen} of a kingdom.\
+ The people and nobles of these lands would never accept an upstart adventurer as their ruler.\
+ But don't think that kings can sit on their thrones too comfortably, either. They have their own rivals,\
+ those who are born to the right family, who could go around and stir up trouble saying they have a better claim to the throne than the current king.\
+ If those claim holders could find supporters, they could easily start civil wars and perhaps even replace the king one day.",
    "tavern_traveler_tell_kingdoms_5", []],
 
   [anyone|plyr, "tavern_traveler_tell_kingdoms_5", [], "Interesting. Where can I find these claim holders?", "tavern_traveler_tell_kingdoms_6", []],
   [anyone|plyr, "tavern_traveler_tell_kingdoms_5", [], "I guess I heard enough already. Thank you.", "close_window", []],
 
-  [anyone, "tavern_traveler_tell_kingdoms_6", [], "A claim holder's life would be in danger in his own territory of course.\
+  [anyone, "tavern_traveler_tell_kingdoms_6", [], "A claim holder's life would be in danger in his own country of course.\
  Therefore, they usually stay at rival courts, raising support and hoping to find someone willing to champion their cause.\
  I usually hear news about some of them, and may be able to tell you their location with some precision.\
  But of course, I would ask for a little something for such a service.",
@@ -10513,7 +10513,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone|plyr, "tavern_traveler_talk", [], "I am looking for one of my companions...", "tavern_traveler_companion_location", []],
 
-  [anyone, "tavern_traveler_companion_location", [], "The Galaxy is a large place. But maybe I can help you. Who are you looking for?", "tavern_traveler_companion_location_ask", []],
+  [anyone, "tavern_traveler_companion_location", [], "Maybe I can help you. Who are you looking for?", "tavern_traveler_companion_location_ask", []],
 
   [anyone|plyr|repeat_for_troops, "tavern_traveler_companion_location_ask",
    [
@@ -10625,7 +10625,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                        (assign, ":end_cond", 0),
                      (try_end),
                      ],
-   "You look like a {man/lady} of honour and someone who could help us.\
+   "{My lord/Madam}, you look like a {man/lady} of the sword and someone who could help us.\
  Will you hear my plea?", "farmer_from_bandit_village_1", []],
 
   [anyone|plyr, "farmer_from_bandit_village_1", [],
@@ -10634,44 +10634,44 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "What are you blurbing about farmer? Speak out.", "farmer_from_bandit_village_2", []],
 
   [anyone, "farmer_from_bandit_village_2", [],
-   "A band of pirates have taken refuge on our planet. They take everything we have and force us to serve them.\
- If one of us so much as breathes a word of protest, they kill the poor soul without hesistation.\
- Our lives have become unbearable. I risked my skin and fled to find someone who can help us.", "farmer_from_bandit_village_3", []],
+   "A band of brigands have taken refuge in our village. They take everything we have, force us to serve them, and do us much evil.\
+ If one of us so much as breathes a word of protest, they kill the poor soul on the spot right away.\
+ Our lives have become unbearable. I risked my skin and ran away to find someone who can help us.", "farmer_from_bandit_village_3", []],
   [anyone|plyr, "farmer_from_bandit_village_3", [],
-   "Why don't you go to the ruler of your system? He should take care of the vermin.", "farmer_from_bandit_village_4", []],
+   "Why don't you go to the lord of your village? He should take care of the vermin.", "farmer_from_bandit_village_4", []],
   [anyone, "farmer_from_bandit_village_4", [],
-   "I did, {sir/madam}, but our ruler's troops did not let me see him and said they were occupied with more important matters and that we should deal with the problem ourselves.\
+   "I did, {sir/madam}, but our lord's troops did not let me see him and said they were occupied with more important matters and that we should deal with our own problem ourselves.\
  Please {sir/madam}, you look like a {man/lady} of valor and a fearsome warrior, and you have no doubt many friends and soldiers at your service.\
  If there is anyone who can help us, it's you.", "farmer_from_bandit_village_5", [(assign, "$temp", 0)]],
   [anyone|plyr, "farmer_from_bandit_village_5", [],
-   "Very well, I'll help you. Where is your planet?", "farmer_from_bandit_village_accepted", []],
+   "Very well, I'll help you. Where is this village?", "farmer_from_bandit_village_accepted", []],
   [anyone|plyr, "farmer_from_bandit_village_5", [],
-   "Find yourself some other mercenaries, I'm not interested.", "farmer_from_bandit_village_denied", []],
+   "I can't be bothered with this right now.", "farmer_from_bandit_village_denied", []],
   [anyone|plyr, "farmer_from_bandit_village_5", [(eq, "$temp", 0)],
-   "Why would I fight these pirates? What's in it for me?", "farmer_from_bandit_village_barter", []],
+   "Why would I fight these bandits? What's in it for me?", "farmer_from_bandit_village_barter", []],
 
   
   [anyone, "farmer_from_bandit_village_accepted", [],
-   "Thank you for your help, {sir/madam}. Our planet is {s7}. It is not too far from here.", "close_window",
+   "God bless you, {sir/madam}. Our planet is {s7}. It is not too far from here.", "close_window",
    [(quest_get_slot, ":target_center", "qst_eliminate_bandits_infesting_village", slot_quest_target_center),
     (str_store_party_name_link,s7,":target_center"),
     (setup_quest_text, "qst_eliminate_bandits_infesting_village"),
-    (str_store_string, s2, "@A citizen from {s7} begged you to save their planet from the pirates that took refuge there."),
+    (str_store_string, s2, "@A citizen from {s7} begged you to save their planet from the bandits that took refuge there."),
     (call_script, "script_start_quest", "qst_eliminate_bandits_infesting_village", "$g_talk_troop"),
     ]],
 
   [anyone, "farmer_from_bandit_village_denied", [],"As you say {sir/madam}. Forgive me for bothering you.", "close_window", []],
 
   [anyone, "farmer_from_bandit_village_barter", [],
-   "We are but poor moisture farmers {sir/madam}, and the pirates have already taken most of what we had on our world.\
- But we'll be glad to share with you whatever we have left.\
- We will forever express our gratitude if you help us.", "farmer_from_bandit_village_5", [(assign, "$temp", 1)]],
+   "We are but poor farmers {sir/madam}, and the bandits have already got most of what we have on this world.\
+ but we'll be glad to share with you whatever we have got.\
+ And we'll always be in your gratitude if you help us.", "farmer_from_bandit_village_5", [(assign, "$temp", 1)]],
   
   [anyone, "start", [(eq, "$talk_context", tc_tavern_talk),
                      (eq, "$g_talk_troop", "trp_farmer_from_bandit_village"),
                      (check_quest_active, "qst_eliminate_bandits_infesting_village"),
                      ],
-   "Thank you for helping us {sir/madam}. Crush those pirates!", "close_window", []],
+   "Thank you for helping us {sir/madam}. Crush those bandits!", "close_window", []],
 
 
 
@@ -10704,7 +10704,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "Any orders, {sir/madam}?", "mercenary_after_recruited", []],
 
   [anyone|plyr, "mercenary_after_recruited", [],
-   "Make your preparations. See you back at the ship.", "mercenary_after_recruited_2", []],
+   "Make your preparations. We'll be moving at dawn.", "mercenary_after_recruited_2", []],
   [anyone|plyr, "mercenary_after_recruited", [],
    "Take your time. We'll be staying on this planet for a while.", "mercenary_after_recruited_2", []],
 
@@ -10738,7 +10738,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                           (else_try),
                                             (eq, ":rand", 1), 
                                             (str_store_string, s17,
-                                             "@Well done, {sir/madam}. Keep the credits and wine coming our way, and there's no foe in the Galaxy you need fear."),
+                                             "@Well done, {sir/madam}. Keep the money and wine coming our way, and there's no foe in the Galaxy you need fear."),
                                           (else_try),
                                             (eq, ":rand", 2), 
                                             (str_store_string, s17,
@@ -10776,7 +10776,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 #Trainers
   [anyone,"start", [(is_between, "$g_talk_troop", training_gound_trainers_begin, training_gound_trainers_end),
                     (eq, "$g_talk_troop_met", 0)],
-   "Good day to you {lad/lass}. You look like another adventurer who has come to try {his/her} chance in this Galaxy.\
+   "Good day to you {lad/lass}. You look like another adventurer who has come to try {his/her} chance in these lands.\
  Well, trust my word, you won't be able to survive long here unless you know how to fight yourself out of a tight spot.", "trainer_intro_1",[]],
 
   [anyone|plyr, "trainer_intro_1", [],
@@ -10841,9 +10841,9 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
    [anyone,"trainer_explain_defense", [], "Good question. The first thing you should know as a fighter is how to defend yourself.\
  Keeping yourself out of harm's way is the first rule of combat, and it is much more important than giving harm to others.\
- Anyone can swing a vibro-sword around and hope to cut some flesh, but only those fighters that are experts at defense live to tell of it.",
+ Everybody can swing a sword around and hope to cut some flesh, but only those fighters that are experts at defense live to tell of it.",
 	"trainer_explain_defense_2",[]],
-  [anyone,"trainer_explain_defense_2", [], "Now. Defending yourself is easiest if you are equipped with some kind of shield.\
+  [anyone,"trainer_explain_defense_2", [], "Now. Defending yourself is easiest if you are equipped with a shield.\
  Just block with your shield. [Hold down the right mouse button to defend yourself with the shield.] In this state, you will be able to deflect all attacks that come from your front. However, you will still be open to strikes from your sides or your back.", "trainer_explain_defense_3",[]],
   [anyone|plyr,"trainer_explain_defense_3", [], "What if I don't have shield?", "trainer_explain_defense_4",[]],
   [anyone,"trainer_explain_defense_4", [], "Then you will have to use your weapon to block your opponent.\
@@ -10982,10 +10982,10 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ## But don't worry. Noone knows it is {playername} under that hood. Except me of course. But I am {s1}. It is my business to know things.", "crook_intro_sneak_3",[]],
 ##  [anyone|plyr,"crook_intro_sneak_3", [], "You won't tip off the guards about my presence?", "crook_intro_sneak_4",[]],
 ##  [anyone,"crook_intro_sneak_4", [], "What? Of course not! Well, maybe I would, but the new captain of the guards is a dung-eating cheat.\
-## I led him to this fugitive, and the man was worth his weight in Bassel sea salt as prize money. But I swear, I didn't see a credit of it.\
+## I led him to this fugitive, and the man was worth his weight in silver as prize money. But I swear, I didn't see a penny of it.\
 ## The bastard took it all to himself. So your secret is safe with me.", "crook_intro_sneak_5",[]],
 ##  [anyone,"crook_intro_sneak_5", [], "Besides, I heard you have a talent for surviving any kind of ordeal.\
-## I wouldn't want you to survive this one as well and then come after me with a blaster. Ha-hah.", "crook_talk",[]],
+## I wouldn't want you to survive this one as well and then come after me with a sword. Ha-hah.", "crook_talk",[]],
 ##
 ##
 ##  [anyone ,"start", [(is_between,"$g_talk_troop",crooks_begin,crooks_end),(eq,"$g_talk_troop_met",0),(eq,"$sneaked_into_town",1),(str_store_troop_name,s1,"$g_talk_troop")],
@@ -11126,7 +11126,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone ,"start", [(is_between,"$g_talk_troop",mayors_begin,mayors_end),(eq,"$g_talk_troop_met",0),
                      (this_or_next|eq, "$players_kingdom", "$g_encountered_party_faction"),
                      (             eq, "$g_encountered_party_faction", "fac_player_supporters_faction"),],
-   "Good day.", "mayor_begin",[]],
+   "Good day, my lord.", "mayor_begin",[]],
   [anyone ,"start", [(is_between,"$g_talk_troop",mayors_begin,mayors_end),(eq,"$g_talk_troop_met",0),
                      (str_store_party_name, s9, "$current_town")],
    "Hello stranger, you seem to be new to {s9}. I am the administrator of this planet.", "mayor_talk",[]],
@@ -11246,7 +11246,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "Not yet, sir. Good-bye.", "close_window",[]],
 
   [anyone,"mayor_looters_quest_destroyed", [],
-   "Oh yes, my scouts saw the whole thing. That should make anyone else think twice before turning to piracy!\
+   "Aye, my scouts saw the whole thing. That should make anyone else think twice before turning outlaw!\
  The bounty is 40 credits for every band, so that makes {reg1} in total. Here is your money, as promised.",
    "mayor_looters_quest_destroyed_2",[
       (store_num_parties_destroyed_by_player, ":num_looters_destroyed", "pt_looters"),
@@ -11279,7 +11279,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "And that's not the only good news! Thanks to you, the looters have ceased to be a threat. We've not had a single attack reported for some time now.\
    If there are any of them left, they've either run off or gone deep into hiding. That's good for business,\
    and what's good for business is good for the planet!\
-   I think that concludes our arrangement, {playername}. Please accept these credits as a token of my gratitude. Thank you, and good-bye.",
+   I think that concludes our arrangement, {playername}. Please accept this silver as a token of my gratitude. Thank you, and good-bye.",
    "close_window",[
       ]],
   [anyone,"mayor_looters_quest_destroyed_2", [],
@@ -11414,10 +11414,10 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                           (check_quest_succeeded, "qst_troublesome_bandits"),
                           (quest_slot_eq, "qst_troublesome_bandits", slot_quest_giver_troop, "$g_talk_troop"),
                           ],
-   "I have heard about your deeds. You have given those pirates the punishment they deserved.\
+   "I have heard about your deeds. You have given those bandits the punishment they deserved.\
  You are really as good as they say.\
  Here is your reward: {reg5} credits.\
- I would like to give more but those pirates almost brought me to bankruptcy.",
+ I would like to give more but those bandits almost brought me to bankruptcy.",
    "mayor_friendly_pretalk", [(quest_get_slot, ":quest_gold_reward", "qst_troublesome_bandits", slot_quest_gold_reward),
                               (call_script, "script_troop_add_gold", "trp_player", ":quest_gold_reward"),
                               (assign, ":xp_reward", ":quest_gold_reward"),
@@ -11471,14 +11471,14 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone|plyr,"mayor_talk", [], "[Leave]", "close_window",[]],
 
   [anyone, "mayor_info_begin", [(str_store_party_name, s9, "$current_town")],
-   "I am the administrator of {s9}. You could say I am the leader of the good people of {s9}.\
+   "I am the guildmaster of {s9}. You can say I am the leader of the good people of {s9}.\
  I can help you find a job if you are looking for some honest work.", "mayor_info_talk",[(assign, "$mayor_info_lord_told",0)]],
 
   [anyone|plyr,"mayor_info_talk",[(eq, "$mayor_info_lord_told",0)], "Who rules this planet?", "mayor_info_lord",[]],
   [anyone, "mayor_info_lord", [(party_get_slot, ":town_lord","$current_town",slot_town_lord),(str_store_troop_name, s10, ":town_lord")],
-   "Our planet's ruler and protector is {s10}. He owns the main hall and sometimes resides there, and collects taxes from this planet.\
+   "Our planet's lord and protector is {s10}. He owns the main hall and sometimes resides there, and collects taxes from this planet.\
  However we regulate ourselves in most of the matters that concern ourselves.\
- As the planet's administrator I have the authority to decide those things.", "mayor_info_talk",[(assign, "$mayor_info_lord_told",1)]],
+ As the planet's guildmaster I have the authority to decide those things.", "mayor_info_talk",[(assign, "$mayor_info_lord_told",1)]],
   
   [anyone|plyr,"mayor_info_talk",[], "That's all I need to know. Thanks.", "mayor_pretalk",[]],
   
@@ -11529,7 +11529,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
  A lot of valuable goods were taken. I need somebody to teach those bastards a lesson.\
  Sound like your kind of work?", "merchant_quest_looters_choice", []],
 
-  [anyone|plyr,"merchant_quest_looters_choice", [], "Yes, I'll do it.", "merchant_quest_looters_brief", []],
+  [anyone|plyr,"merchant_quest_looters_choice", [], "Aye, I'll do it.", "merchant_quest_looters_brief", []],
 
   [anyone|plyr,"merchant_quest_looters_choice", [], "I'm afraid I can't take the job at the moment.", "merchant_quest_stall",[]],
 
@@ -11556,11 +11556,11 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    (str_store_party_name_link, s13, "$g_encountered_party"),
    (str_store_party_name, s4, "$g_encountered_party"),
    (setup_quest_text, "qst_deal_with_looters"),
-   (str_store_string, s2, "@The administrator of {s13} has asked you to deal with looters in the surrounding system."),
+   (str_store_string, s2, "@The Guildmaster of {s13} has asked you to deal with looters in the surrounding countryside."),
    (call_script, "script_start_quest", "qst_deal_with_looters", "$g_talk_troop"),
    (assign, "$g_leave_encounter",1),
   ],
-   "Excellent! You'll find the looters roaming around this sector, probably trying to rob more good people.\
+   "Excellent! You'll find the looters roaming around the countryside, probably trying to rob more good people.\
  Kill or capture the bastards, I don't care what you do with them.\
  I'll pay you a bounty of 40 credits on every band of looters you destroy,\
  until all the looters are dealt with.", "close_window",
@@ -11576,7 +11576,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
     ]],
 
   [anyone,"merchant_quest_brief", [(eq,"$random_merchant_quest_no","qst_deliver_wine")],
-   "I have a cargo of {s6} that needs to be delivered to the cantina in {s4}.\
+   "I have a cargo of {s6} that needs to be delivered to the tavern in {s4}.\
  If you can take {reg5} units of {s6} to {s4} in 7 days, you may earn {reg8} credits.\
  What do you say?", "merchant_quest_brief_deliver_wine",
    [(quest_get_slot, reg5, "qst_deliver_wine", slot_quest_target_amount),
@@ -11588,7 +11588,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
     (str_store_party_name_link, s4, ":quest_target_center"),
     (str_store_item_name, s6, ":quest_target_item"),
     (setup_quest_text,"qst_deliver_wine"),
-    (str_store_string, s2, "@{s9} of {s3} asked you to deliver {reg5} units of {s6} to the cantina in {s4} in 7 days."),
+    (str_store_string, s2, "@{s9} of {s3} asked you to deliver {reg5} units of {s6} to the tavern in {s4} in 7 days."),
     #s2 should not be changed until the decision is made
    ]],
   
@@ -11603,18 +11603,18 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
     (call_script, "script_start_quest", "qst_deliver_wine", "$g_talk_troop"),
     ]],
 
-  [anyone|plyr,"merchant_quest_brief_deliver_wine", [], "I'm afraid I can't carry all that cargo now.", "merchant_quest_stall",[]],
+  [anyone|plyr,"merchant_quest_brief_deliver_wine", [], "I am afraid I can't carry all that cargo now.", "merchant_quest_stall",[]],
 
 #escort merchant caravan:
   [anyone,"merchant_quest_requested", [(eq,"$random_merchant_quest_no","qst_escort_merchant_caravan")], "You're looking for a job?\
- Actually I was looking for someone to escort a convoy.\
+ Actually I was looking for someone to escort a caravan.\
  Perhaps you can do that...", "merchant_quest_brief",
    []],
 
   [anyone,"merchant_quest_brief", [(eq, "$random_merchant_quest_no", "qst_escort_merchant_caravan")],
-   "I am going to send a convoy of goods to {s8}.\
- However with all those pirates and deserters patrolling the trade routes, I don't want to send them out without an escort.\
- If you can lead that convoy to {s8} in 15 days, you will earn {reg8} credits.\
+   "I am going to send a caravan of goods to {s8}.\
+ However with all those bandits and deserters on the roads, I don't want to send them out without an escort.\
+ If you can lead that caravan to {s8} in 15 days, you will earn {reg8} credits.\
  Of course your party needs to be at least {reg4} strong to offer them any protection.", "escort_merchant_caravan_quest_brief",
    [(quest_get_slot, reg8, "qst_escort_merchant_caravan", slot_quest_gold_reward),
     (quest_get_slot, reg4, "qst_escort_merchant_caravan", slot_quest_target_amount),
@@ -11626,7 +11626,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                                        (quest_get_slot, ":quest_target_amount", "qst_escort_merchant_caravan", slot_quest_target_amount),
                                                        (ge,":party_size",":quest_target_amount"),
                                                        ],
-   "Alright. I'll escort the convoy.", "merchant_quest_taken",
+   "Alright. I will escort the caravan.", "merchant_quest_taken",
    [(quest_get_slot, ":quest_target_center", "qst_escort_merchant_caravan", slot_quest_target_center),
     (set_spawn_radius, 1),
     (spawn_around_party,"$g_encountered_party","pt_merchant_caravan"),
@@ -11638,7 +11638,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
     (quest_set_slot, "qst_escort_merchant_caravan", slot_quest_current_state, 0),
     (str_store_party_name_link, s8, ":quest_target_center"),
     (setup_quest_text, "qst_escort_merchant_caravan"),
-    (str_store_string, s2, "@Escort the merchant convoy to the planet of {s8}."),
+    (str_store_string, s2, "@Escort the merchant caravan to the planet of {s8}."),
     (call_script, "script_start_quest", "qst_escort_merchant_caravan", "$g_talk_troop"),
     ]],
   
@@ -11708,7 +11708,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone|plyr,"escort_merchant_caravan_talk", [], "You follow my lead. I'll take you through a safe route.", "merchant_caravan_follow_lead",[]],
   [anyone,"merchant_caravan_follow_lead", [], "Alright. We'll be right behind you.", "close_window",[(assign, "$escort_merchant_caravan_mode", 0),
                                                                                                      (assign, "$g_leave_encounter", 1)]],
-  [anyone|plyr,"escort_merchant_caravan_talk", [], "You stay here for a while. I'll go ahead and scout this quadrant.", "merchant_caravan_stay_here",[]],
+  [anyone|plyr,"escort_merchant_caravan_talk", [], "You stay here for a while. I'll go ahead and check the road.", "merchant_caravan_stay_here",[]],
   [anyone,"merchant_caravan_stay_here", [], "Alright. We'll be waiting here for you.", "close_window",[(assign, "$escort_merchant_caravan_mode", 1),
                                                                                                        (assign, "$g_leave_encounter", 1)]],
 #  [anyone|plyr,"escort_merchant_caravan_talk", [], "You go ahead to {s1}. I'll catch up with you.", "merchant_caravan_go_to_destination",[]],
@@ -11719,7 +11719,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone,"merchant_quest_requested", [(eq, "$random_merchant_quest_no", "qst_troublesome_bandits")],
  "Actually, I was looking for an able adventurer like you.\
  There's this group of particularly troublesome bandits.\
- They have been waiting in orbit of the planet and are preying on my convoys.\
+ They have infested the vicinity of the planet and are preying on my caravans.\
  They have avoided all the soldiers and the militias up to now.\
  If someone doesn't stop them soon, I am going to be ruined...", "merchant_quest_brief",
    []],
@@ -11755,16 +11755,16 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
  "Actually, I was looking for a reliable {man/helper} that can undertake an important mission.\
  A group of bandits have kidnapped the daughter of a friend of mine and are holding her for ransom.\
  My friend is ready to pay them, but we still need\
- someone to take the money to those villains and bring the girl back to safety.", "merchant_quest_brief",
+ someone to take the money to those rascals and bring the girl back to safety.", "merchant_quest_brief",
    []],
 
   [anyone,"merchant_quest_brief", [(eq, "$random_merchant_quest_no", "qst_kidnapped_girl")],
   #SW - modified village to planet in dialogs
   "The amount the bandits ask as ransom is {reg12} credits.\
  I will give you that money once you accept to take the quest.\
- You have 15 days to take the money to the bandits who will be waiting in orbit of planet {s4}.\
- They've said they'll kill the girl if they don't get the money in that time.\
- You will be paid {reg8} credits when you bring the girl safely back here.",
+ You have 15 days to take the money to the bandits who will be waiting near the planet of {s4}.\
+ Those bastards said that they are going to kill the poor girl if they don't get the money by that time.\
+ You will get your pay of {reg8} credits when you bring the girl safely back here.",
    "kidnapped_girl_quest_brief",[(quest_get_slot, ":quest_target_center", "qst_kidnapped_girl", slot_quest_target_center),
                                  (str_store_party_name, s4, ":quest_target_center"),
                                  (quest_get_slot, reg8, "qst_kidnapped_girl", slot_quest_gold_reward),
@@ -11772,7 +11772,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                  ]],
 
   [anyone|plyr,"kidnapped_girl_quest_brief", [],
-      "Okay. Give me the ransom money and I'll get you the girl.",
+      "Alright. I will take the ransom money to the bandits and bring back the girl.",
    "kidnapped_girl_quest_taken",[(set_spawn_radius, 4),
                                  (quest_get_slot, ":quest_target_center", "qst_kidnapped_girl", slot_quest_target_center),
                                  (quest_get_slot, ":quest_target_amount", "qst_kidnapped_girl", slot_quest_target_amount),
@@ -11788,17 +11788,17 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                  (str_store_party_name_link, s4, "$g_encountered_party"),
                                  (str_store_party_name_link, s3, ":quest_target_center"),
                                  (setup_quest_text, "qst_kidnapped_girl"),
-                                 (str_store_string, s2, "@Administrator of {s4} gave you {reg12} credits to pay the ransom of a girl kidnapped by bandits.\
+                                 (str_store_string, s2, "@Guildmaster of {s4} gave you {reg12} credits to pay the ransom of a girl kidnapped by bandits.\
  You are to meet the bandits near {s3} and pay them the ransom fee.\
  After that you are to bring the girl back to {s4}."),
                                  (call_script, "script_start_quest", "qst_kidnapped_girl", "$g_talk_troop"),
                                  ]],
   
   [anyone,"kidnapped_girl_quest_taken", [], "Good. I knew we could trust you at this.\
- Here's the ransom money, {reg12} credits.\
+ Here is the ransom money, {reg12} credits.\
  Count it before taking it.\
- And please, don't attempt any heroics.\
- The girl's safety is the main concern.", "close_window",
+ And please, don't attempt to do anything rash.\
+ Keep in mind that the girl's well being is more important than anything else...", "close_window",
    []],
   
   [anyone|plyr,"kidnapped_girl_quest_brief", [],
@@ -11810,7 +11810,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
      (eq, "$talk_context", tc_entering_center_quest_talk),
      ],
    "Thank you so much for bringing me back!\
-  I can't wait to see my family. Perhaps we shall meet again some day? Good-bye.",
+  I can't wait to see my family. Good-bye.",
    "close_window",
    [(remove_member_from_party, "trp_kidnapped_girl"),
     (quest_set_slot, "qst_kidnapped_girl", slot_quest_current_state, 4),
@@ -11973,24 +11973,24 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                        (str_store_faction_name_link, s14, ":quest_target_faction"),
                                        (str_store_faction_name_link, s15, "$g_encountered_party_faction"),],
    "This war between {s15} and {s14} has brought our planet to the verge of ruin.\
- Our convoys get raided before they can reach their destination.\
+ Our caravans get raided before they can reach their destination.\
  Our merchants are afraid to leave the safety of the planet shields.\
  And as if those aren't enough, the taxes to maintain the war take away the last bits of our savings.\
  If peace does not come soon, we can not hold on for much longer.", "merchant_quest_persuade_peace_1",
    []],
 
   [anyone|plyr,"merchant_quest_persuade_peace_1", [], "You are right. But who can stop this madness called war?", "merchant_quest_brief",[]],
-  [anyone|plyr,"merchant_quest_persuade_peace_1", [], "It is your duty to help the rulers in their war effort. You shouldn't complain about it.", "merchant_quest_persuade_peace_reject",[]],
+  [anyone|plyr,"merchant_quest_persuade_peace_1", [], "It is your duty to help the nobles in their war effort. You shouldn't complain about it.", "merchant_quest_persuade_peace_reject",[]],
 
-  [anyone,"merchant_quest_persuade_peace_reject", [], "Hah. The rulers fight their wars for their greed and their dreams of glory.\
+  [anyone,"merchant_quest_persuade_peace_reject", [], "Hah. The nobles fight their wars for their greed and their dreams of glory.\
  And it is poor honest folk like us who have to bear the real burden.\
  But you obviously don't want to hear about that.", "close_window",[]],
 
   [anyone,"merchant_quest_brief", [(eq,"$random_merchant_quest_no","qst_persuade_lords_to_make_peace")],
-   "There have been attempts to reconcile the two sides and reach an agreement.\
+   "There have been attempts to reconcile the two sides and reach a settlement.\
  However, there are powerful lords on both sides whose interests lie in continuing the war.\
  These troops urge all others not to heed to the word of sensible troops, but to keep fighting.\
- While these leaders remain influential, no peace agreement can be reached.", "merchant_quest_persuade_peace_3",[]],
+ While these leaders remain influential, no peace settlement can be reached.", "merchant_quest_persuade_peace_3",[]],
 
   [anyone|plyr,"merchant_quest_persuade_peace_3", [], "Who are these warmongers who block the way of peace?", "merchant_quest_persuade_peace_4",[]],
   [anyone|plyr,"merchant_quest_persuade_peace_3", [], "Who are these lords you speak of?", "merchant_quest_persuade_peace_4",[]],
@@ -12007,23 +12007,23 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
      ]],
 
   [anyone|plyr,"merchant_quest_persuade_peace_5", [], "What can be done about this?", "merchant_quest_persuade_peace_6",[]],
-  [anyone|plyr,"merchant_quest_persuade_peace_5", [], "Sadly however, it seems nothing can be done about it.", "merchant_quest_persuade_peace_6",[]],
+  [anyone|plyr,"merchant_quest_persuade_peace_5", [], "Alas, it seems nothing can be done about it.", "merchant_quest_persuade_peace_6",[]],
 
   [anyone,"merchant_quest_persuade_peace_6", [], "There is a way to resolve the issue.\
  A particularly determined person can perhaps persuade one or both of these lords to accept making peace.\
  And even if that fails, it can be possible to see that these lords are defeated by force and taken prisoner.\
- If they are captive, they will lose their influence and they can no longer oppose an agreement... What do you think? Can you do it?",
+ If they are captive, they will lose their influence and they can no longer oppose a settlement... What do you think? Can you do it?",
    "merchant_quest_persuade_peace_7",[]],
 
   [anyone|plyr,"merchant_quest_persuade_peace_7", [], "It seems difficult. But I will try.", "merchant_quest_persuade_peace_8",[]],
   [anyone|plyr,"merchant_quest_persuade_peace_7", [], "If the price is right, I may.", "merchant_quest_persuade_peace_8",[]],
   [anyone|plyr,"merchant_quest_persuade_peace_7", [], "Forget it. This is not my problem.", "merchant_quest_persuade_peace_8",[]],
 
-  [anyone,"merchant_quest_persuade_peace_8", [], "Most of the merchants on the planet will gladly dig into their bank accounts to support such a plan.\
+  [anyone,"merchant_quest_persuade_peace_8", [], "Most of the merchants on the planet will gladly open up their purses to support such a plan.\
  I think we can collect {reg12} credits between ourselves.\
  We will be happy to reward you with that sum, if you can work this out.\
- Convince {s12} and {s13} to accept peace,\
- and if either of them proves too stubborn, make sure they fall captive and can not be ransomed until a peace deal is settled.",
+ Convince {s12} and {s13} to accept a peace settlement,\
+ and if either of them proves too stubborn, make sure he falls captive and can not be ransomed until a peace deal is settled.",
    "merchant_quest_persuade_peace_9",[
        (quest_get_slot, ":quest_object_troop", "qst_persuade_lords_to_make_peace", slot_quest_object_troop),
        (quest_get_slot, ":quest_target_troop", "qst_persuade_lords_to_make_peace", slot_quest_target_troop),
@@ -12049,8 +12049,8 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
      (str_store_faction_name_link, s14, ":quest_target_faction"),
      (str_store_faction_name_link, s15, "$g_encountered_party_faction"),     
      (setup_quest_text,"qst_persuade_lords_to_make_peace"),
-     (str_store_string, s2, "@Administrator of {s4} promised you {reg12} credits if you can make sure that\
- {s12} and {s13} no longer pose a threat to peace between {s15} and {s14}.\
+     (str_store_string, s2, "@Guildmaster of {s4} promised you {reg12} credits if you can make sure that\
+ {s12} and {s13} no longer pose a threat to a peace settlement between {s15} and {s14}.\
  In order to do that, you must either convince them or make sure they fall captive and remain so until a peace agreement is made."),
      (call_script, "script_start_quest", "qst_persuade_lords_to_make_peace", "$g_talk_troop"),
      (quest_get_slot, ":quest_object_troop", "qst_persuade_lords_to_make_peace", slot_quest_object_troop),
@@ -12095,7 +12095,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    [
      (str_store_party_name_link, s14, "$g_encountered_party"),
      (setup_quest_text, "qst_deal_with_night_bandits"),
-     (str_store_string, s2, "@The Administrator of {s14} has asked you to deal with a group of bandits terrorising the streets of {s14}. They only come out at night, and only attack lone travellers on the streets."),
+     (str_store_string, s2, "@The Guildmaster of {s14} has asked you to deal with a group of bandits terrorising the streets of {s14}. They only come out at night, and only attack lone travellers on the streets."),
      (call_script, "script_start_quest", "qst_deal_with_night_bandits", "$g_talk_troop"),
      ]],
   
@@ -12125,7 +12125,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
  If you can do that, I'd be willing to pay you {reg8} credits for your trouble. Interested?", "move_cattle_herd_quest_brief",
    []],
   
-  [anyone|plyr,"move_cattle_herd_quest_brief", [],  "Okay, I'll take the nerfs to {s13}.",
+  [anyone|plyr,"move_cattle_herd_quest_brief", [],  "Aye, I can take the herd to {s13}.",
    "move_cattle_herd_quest_taken",
    [
      (call_script, "script_create_cattle_herd", "$g_encountered_party", 0),
@@ -12135,7 +12135,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
      (str_store_party_name_link, s13, ":target_center"),
      (quest_get_slot, reg8, "qst_move_cattle_herd", slot_quest_gold_reward),
      (setup_quest_text, "qst_move_cattle_herd"),
-     (str_store_string, s2, "@Administrator of {s10} asked you to move a nerf herd to {s13}. You will earn {reg8} credits in return."),
+     (str_store_string, s2, "@Guildmaster of {s10} asked you to move a nerf herd to {s13}. You will earn {reg8} credits in return."),
      (call_script, "script_start_quest", "qst_move_cattle_herd", "$g_talk_troop"),
      ]],
   [anyone|plyr,"move_cattle_herd_quest_brief", [],
@@ -12172,7 +12172,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
     ]],
 
   [anyone,"village_elder_deliver_cattle_thank", [],
-   "My good {man/lady}, please, is there anything I can do for you?", "village_elder_talk",[]],
+   "My good {lord/lady}, please, is there anything I can do for you?", "village_elder_talk",[]],
   
 
 ##  [anyone,"start",
@@ -12202,8 +12202,8 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone,"start", [(is_between,"$g_talk_troop", village_elders_begin, village_elders_end),(eq,"$g_talk_troop_met",0),
                     (str_store_party_name, s9, "$current_town"),
                     (party_slot_eq, "$current_town", slot_town_lord, "trp_player")],
-   "Welcome to {s9}, {playername}. We were rejoiced by the news that you are the new {chancellor/chancellor} of our minor planet.\
- I am the planet administrator and I would be honoured to serve you in any way I can.", "village_elder_talk",[]],
+   "Welcome to {s9}, my {lord/lady}. We were rejoiced by the news that you are the new {chancellor/chancellor} of our minor planet.\
+ I am the planet elder and I will be honoured to serve you in any way I can.", "village_elder_talk",[]],
   
   [anyone ,"start", [(is_between,"$g_talk_troop",village_elders_begin,village_elders_end),
                      (party_slot_eq, "$current_town", slot_town_lord, "trp_player")],
@@ -12416,7 +12416,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "We have {reg5} nerfs, each for {reg6} credits. How many do you want to buy?", "village_elder_buy_cattle_2",[]],
 
   [anyone ,"village_elder_buy_cattle", [],
-   "I am afraid we have no nerfs within this sector.", "village_elder_buy_cattle_2",[]],
+   "I am afraid we have no nerfs left on the planet {sir/madam}.", "village_elder_buy_cattle_2",[]],
 
 
   [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_village_number_of_cattle),
@@ -12462,15 +12462,15 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "Forget it.", "village_elder_pretalk",[]],
 
   [anyone ,"village_elder_buy_cattle_complete", [],
-   "I will tell the herders to round up the animals and bring them to you. I am sure you will be satisfied with your purchase.", "village_elder_pretalk",[]],
+   "I will tell the herders to round up the animals and bring them to you, {sir/madam}. I am sure you will be satisfied with your purchase.", "village_elder_pretalk",[]],
 
 
   [anyone ,"village_elder_recruit_start", [(party_slot_eq, "$current_town", slot_center_volunteer_troop_amount, 0)],
-   "I don't think anyone would be interested. We are a peaceful planet. Is there anything else I can do for you?", "village_elder_talk",[]],
+   "I don't think anyone would be interested, {sir/madam}. Is there anything else I can do for you?", "village_elder_talk",[]],
 
   #SW - possible bug fix?
   [anyone ,"village_elder_recruit_start", [(party_slot_eq, "$current_town", slot_center_volunteer_troop_amount, -1)],
-   "I don't think anyone would be interested. We are a peaceful planet. Is there anything else I can do for you?", "village_elder_talk",[]],   
+   "I don't think anyone would be interested, {sir/madam}. Is there anything else I can do for you?", "village_elder_talk",[]],   
   
   [anyone ,"village_elder_recruit_start", [(party_get_slot, ":num_volunteers", "$current_town", slot_center_volunteer_troop_amount),
                                            (party_get_free_companions_capacity, ":free_capacity", "p_main_party"),
@@ -12479,7 +12479,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                            (assign, reg5, ":num_volunteers"),
                                            (store_add, reg7, ":num_volunteers", -1),
                                            ],
-   "I can think of {reg5} whom I suspect would jump at the chance to see the stars. If you could pay 10 credits {reg7?each for their equipment:for his equipment}.\
+   "I can think of {reg5} whom I suspect would jump at the chance. If you could pay 10 credits {reg7?each for their equipment:for his equipment}.\
  Does that suit you?", "village_elder_recruit_decision",[]],
 
   [anyone|plyr,"village_elder_recruit_decision", [(party_slot_eq, "$current_town", slot_center_volunteer_troop_amount, 0)],
@@ -12493,7 +12493,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone|plyr,"village_elder_recruit_decision", [(party_slot_ge, "$current_town", slot_center_volunteer_troop_amount, 1)],
    "No, not now.", "village_elder_pretalk",[]],
 
-  [anyone,"village_elder_active_mission_1", [], "Yes {playername}, have you made any progress on it?", "village_elder_active_mission_2",[]],
+  [anyone,"village_elder_active_mission_1", [], "Yes {sir/madam}, have you made any progress on it?", "village_elder_active_mission_2",[]],
 
   [anyone|plyr,"village_elder_active_mission_2",[(store_partner_quest,":elder_quest"),
                                                  (eq, ":elder_quest", "qst_deliver_grain"),
@@ -12508,7 +12508,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
 #SW - modified village to planet in dialogs
   [anyone,"village_elder_deliver_grain_thank", [(str_store_party_name, s13, "$current_town")],
-   "My good {sir/lady}. You have saved us from hunger and desperation. We cannot thank you enough, but you'll always be in our prayers.\
+   "My good {lord/lady}. You have saved us from hunger and desperation. We cannot thank you enough, but you'll always be in our prayers.\
  The planet of {s13} will not forget what you have done for us.", "village_elder_deliver_grain_thank_2",
    [(quest_get_slot, ":quest_target_amount", "qst_deliver_grain", slot_quest_target_amount),
     (troop_remove_items, "trp_player", "itm_grain", ":quest_target_amount"),
@@ -12522,7 +12522,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    ]],
 
   [anyone,"village_elder_deliver_grain_thank_2", [],
-   "My good {sir/lady}, please, is there anything I can do for you?", "village_elder_talk",[]],
+   "My good {lord/lady}, please, is there anything I can do for you?", "village_elder_talk",[]],
 
 
   [anyone|plyr,"village_elder_active_mission_2", [], "I am still working on it.", "village_elder_active_mission_3",[]],
@@ -12552,7 +12552,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "Well {sir/madam}, you are already engaged with a task helping us. We cannot ask more from you.", "village_elder_pretalk",[]],
 
   [anyone,"village_elder_request_mission_ask", [(troop_slot_eq, "$g_talk_troop", slot_troop_does_not_give_quest, 1)],
-   "No {sir/madam}. We don't have any other tasks for you.", "village_elder_pretalk",[]],
+   "No {sir/madam}, We don't have any other tasks for you.", "village_elder_pretalk",[]],
   
   [anyone|auto_proceed,"village_elder_request_mission_ask", [], "A task?", "village_elder_tell_mission",
    [
@@ -12563,7 +12563,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone,"village_elder_tell_mission", [(eq,"$random_quest_no","qst_deliver_grain")],
    "{My good sir/My good lady}, our planet has been going through such hardships lately.\
- The harvest has been bad, and recently some merciless pirates took away our seed grain that we had reserved for the planting season.\
+ The harvest has been bad, and recently some merciless bandits took away our seed grain that we had reserved for the planting season.\
  If we cannot find some grain soon, we will not be able to plant our fields and then we will have nothing to eat for the coming year.\
  If you can help us, we would be indebted to you forever.", "village_elder_tell_deliver_grain_mission",
    [
@@ -12602,9 +12602,9 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone,"village_elder_tell_mission", [(eq,"$random_quest_no", "qst_train_peasants_against_bandits")],
    "We are suffering greatly at the hands of a group of bandits. They take our food and livestock,\
- and kill anyone who doesn't obey them. In the days of the Republic we would be sent aid but our ruler refuses to help.\
- With some help the people here could be taught discipline and combat skills.\
- We just need an experienced warrior to teach us how.",
+ and kill anyone who doesn't obey them immediately. Our troops are angry that we cannot defend ourselves, but we are only simple farmers...\
+ However, with some help, I think that some of the people here could be more than that.\
+ We just need an experienced warrior to teach us how to fight.",
    "village_elder_tell_train_peasants_against_bandits_mission",
    [
      (quest_get_slot, ":quest_target_center", "$random_quest_no", slot_quest_target_center),
@@ -12616,13 +12616,13 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    ]],
 
   [anyone|plyr, "village_elder_tell_train_peasants_against_bandits_mission", [],
-   "I can teach you how to defend yourself. I've learnt much in my travels.", "village_elder_train_peasants_against_bandits_mission_accept",[]],
+   "I can teach you how to defend yourself.", "village_elder_train_peasants_against_bandits_mission_accept",[]],
   [anyone|plyr, "village_elder_tell_train_peasants_against_bandits_mission", [],
    "You peasants have no business taking up arms. Just pay the bandits and be off with it.", "village_elder_train_peasants_against_bandits_mission_reject",[]],
   
   [anyone,"village_elder_train_peasants_against_bandits_mission_accept", [], "You will? Oh, splendid!\
  We would be deeply indebted to you, {sir/madam}.\
- I'll instruct the citizens to assemble here and gather what weapons we have.\
+ I'll instruct the citizens to assemble here and receive your training.\
  If you can teach us how to defend ourselves, I promise you'll receive everything we can give you in return for your efforts.", "close_window",
    [
      (assign, "$g_leave_encounter",1),
@@ -12653,13 +12653,13 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone|plyr,"village_elder_tell_deliver_cattle_mission", [],
    "How many animals do you need?", "village_elder_tell_deliver_cattle_mission_2",[]],
   [anyone|plyr,"village_elder_tell_deliver_cattle_mission", [],
-   "Do I look like a nerf herder to you? Find someone else.", "village_elder_deliver_cattle_mission_reject",[]],
+   "I don't have time for this. Ask help from someone else.", "village_elder_deliver_cattle_mission_reject",[]],
   
   [anyone,"village_elder_tell_deliver_cattle_mission_2", [(quest_get_slot, reg5, "$random_quest_no", slot_quest_target_amount)],
    "I think {reg5} heads will suffice for a small herd.", "village_elder_tell_deliver_cattle_mission_3",[]],
   
   [anyone|plyr,"village_elder_tell_deliver_cattle_mission_3", [],
-   "I'll deliver the nerfs you need shortly.", "village_elder_deliver_cattle_mission_accept",[]],
+   "Then I will bring you the nerfs you need.", "village_elder_deliver_cattle_mission_accept",[]],
   [anyone|plyr,"village_elder_tell_deliver_cattle_mission_3", [],
    "I am afraid I don't have time for this. You'll need to find help elsewhere.", "village_elder_deliver_cattle_mission_reject",[]],
 
@@ -12699,7 +12699,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   
   [anyone ,"start", [(is_between,"$g_talk_troop",goods_merchants_begin,goods_merchants_end),
                      (party_slot_eq, "$current_town", slot_town_lord, "trp_player")],
-   "You honour my humble shop with your presence.", "goods_merchant_talk",[]],
+   "{My lord/my lady}, you honour my humble shop with your presence.", "goods_merchant_talk",[]],
   [anyone ,"start", [(is_between,"$g_talk_troop",goods_merchants_begin,goods_merchants_end)],
    "Welcome {sir/madam}. What can I do for you?", "goods_merchant_talk",[]],
 
@@ -12717,7 +12717,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone|plyr,"goods_merchant_talk", [], "Nothing. Thanks.", "close_window",[]],
 
-  [anyone,"trade_info_request", [], "That information can be best obtained from convoy masters\
+  [anyone,"trade_info_request", [], "That information can be best obtained from caravan masters\
  and travelling merchants. If you want I can send you to the district where foreign merchants stay at when they come to the planet.\
  If you spend some time there and listen to the talk,\
  you can learn a lot about what to buy and where to sell it.", "trade_info_request_2",[]],
@@ -12731,7 +12731,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone|plyr,"trade_info_request_2", [], "I have no time for this right now.", "goods_merchant_pretalk",[]],
   
 
-#  [anyone|plyr,"goods_merchant_talk", [], "What do convoys buy and sell in this town?", "goods_merchant_town_info",[]],
+#  [anyone|plyr,"goods_merchant_talk", [], "What do caravans buy and sell in this town?", "goods_merchant_town_info",[]],
 #  [anyone,"goods_merchant_town_info_completed", [], "Anything else?", "goods_merchant_talk",[]],
   
 
@@ -13534,7 +13534,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##   "You deserve to die a thousand deaths!", "close_window",
 ##   [(store_relation, reg(5),"$g_encountered_party_faction"), (val_sub,reg(5),2), (set_relation,"$g_encountered_party_faction",0,reg(5)),(encounter_attack,0)]],
 ##  [anyone,"start", [(eq, "$g_encountered_party_type", spt_scout),(ge, "$g_encountered_party_relation", 1)],
-##   "Venture deep into the enemy territory and find myself a convoy to raid. That's the way I will get rich.", "close_window",[(assign, "$g_leave_encounter",1)]],
+##   "Venture deep into the enemy territory and find myself a caravan to raid. That's the way I will get rich.", "close_window",[(assign, "$g_leave_encounter",1)]],
 ##
 ##  [anyone,"start", [(this_or_next|eq, "$g_encountered_party_type", spt_patrol),(eq, "$g_encountered_party_type", spt_war_party),(is_between, "$g_encountered_party_relation", -9, 1)],
 ##   "Hold it right there. Who are you?", "soldiers_interrogation",[]],
@@ -13549,7 +13549,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##  [anyone,"soldiers_interrogation_2", [], "What are you doing here?", "soldiers_interrogation_3",[]],
 ##  [anyone|plyr,"soldiers_interrogation_3", [], "I am carrying some merchandise.", "soldiers_interrogation_4",[]],
 ##  [anyone|plyr,"soldiers_interrogation_3", [], "I am just admiring the sights.", "soldiers_interrogation_4",[]],
-##  [anyone,"soldiers_interrogation_4", [], "Hmm. All right. You may go now. But be careful. There is a war going on. The Galaxy is unsafe for travellers.", "close_window",[(assign, "$g_leave_encounter",1)]],
+##  [anyone,"soldiers_interrogation_4", [], "Hmm. All right. You may go now. But be careful. There is a war going on. The roads are not safe for travellers.", "close_window",[(assign, "$g_leave_encounter",1)]],
   
 
   
@@ -13579,16 +13579,16 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "Warning: This line should never display.", "bandit_introduce",[]],
   [anyone,"bandit_introduce", [
       (store_random_in_range, ":rand", 11, 15),
-        (str_store_string, s11, "@I can smell a rich traveller a mile away. Methinks yours could do with some lightening, eh?"),
-        (str_store_string, s12, "@Why, it be another traveller, chance met upon the way! I should warn you, the Galaxy's a mite dangerous for a good {fellow/woman} like you. But for a small donation my boys and I'll make sure you get rightways to your destination, eh?"),
-        (str_store_string, s13, "@Well well, look at this! You'd best start coughing up some credits, friend, or me and my boys'll have to break you."),
-		(str_store_string, s14, "@There's a toll for passin' through this sector, payable to us, so if you don't mind we'll just be collectin' our due from your account..."),
+        (str_store_string, s11, "@I can smell a fat purse a mile away. Methinks yours could do with some lightening, eh?"),
+        (str_store_string, s12, "@Why, it be another traveller, chance met upon the road! I should warn you, country here's a mite dangerous for a good {fellow/woman} like you. But for a small donation my boys and I'll make sure you get rightways to your destination, eh?"),
+        (str_store_string, s13, "@Well well, look at this! You'd best start coughing up some silver, friend, or me and my boys'll have to break you."),
+		(str_store_string, s14, "@There's a toll for passin' through this land, payable to us, so if you don't mind we'll just be collectin' our due from your purse..."),
         (str_store_string_reg, s5, ":rand"),
 	#SW - removed snd_encouter_bandits
     #], "{s5}", "bandit_talk",[(play_sound,"snd_encounter_bandits")]],
 	 ], "{s5}", "bandit_talk",[]],
-  [anyone|plyr,"bandit_talk", [], "I'll give you nothing. Blast the scum!", "close_window",[[encounter_attack]]],
-  [anyone|plyr,"bandit_talk", [], "Let's not get carried away. We'll pay to avoid trouble.", "bandit_barter",[]],
+  [anyone|plyr,"bandit_talk", [], "I'll give you nothing but cold steel, you scum!", "close_window",[[encounter_attack]]],
+  [anyone|plyr,"bandit_talk", [], "There's no need to fight. I can pay for free passage.", "bandit_barter",[]],
   [anyone,"bandit_barter",
    [(store_relation, ":bandit_relation", "fac_player_faction", "$g_encountered_party_faction"),
     (ge, ":bandit_relation", -50),
@@ -13597,16 +13597,16 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
     (val_add, "$bandit_tribute", 100),
     (val_mul, "$bandit_tribute", 10),
     (assign, reg5, "$bandit_tribute")
-    ], "Money without blood, that's our favourite kind. Pay us {reg5} credits and we'll let you be on your way.", "bandit_barter_2",[]],
+    ], "Silver without blood, that's our favourite kind. Pay us {reg5} credits and we'll let you be on your way.", "bandit_barter_2",[]],
   [anyone|plyr,"bandit_barter_2", [[store_troop_gold,reg(2)],[ge,reg(2),"$bandit_tribute"],[assign,reg(5),"$bandit_tribute"]],
-   "Here're your credits, now let us go.", "bandit_barter_3a",[[troop_remove_gold, "trp_player","$bandit_tribute"]]],
+   "Very well, take it.", "bandit_barter_3a",[[troop_remove_gold, "trp_player","$bandit_tribute"]]],
   [anyone|plyr,"bandit_barter_2", [],
-   "I don't have that many credits with me", "bandit_barter_3b",[]],
+   "I don't have that much money with me", "bandit_barter_3b",[]],
   [anyone,"bandit_barter_3b", [],
    "That's too bad. I guess we'll just have to sell you into slavery. Take {him/her}, lads!", "close_window",[[encounter_attack]]],
 
   [anyone,"bandit_barter", [],
-   "Hey, I've heard of you! You slaughter us freebooters like womp rats, and now you expect us to let you go for a few stinking credits?\
+   "Hey, I've heard of you! You slaughter us freebooters like dogs, and now you expect us to let you go for a few stinking coins?\
  Forget it. You gave us no quarter, and you'll get none from us.", "close_window",[]],
 
 
@@ -13635,9 +13635,9 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone,"bandit_attack", [
       (store_random_in_range, ":rand", 11, 15),
         (str_store_string, s11, "@Another fool come to throw {him/her}self on my weapon, eh? Fine, let's fight!"),
-        (str_store_string, s12, "@We're not afraid of you. Time to bust some heads!"),
-        (str_store_string, s13, "@That was a mistake. Now I'm gonna have to make your death long and painful."),
-        (str_store_string, s14, "@That's fighting talk. Let's see you back it up with your blaster!"),
+        (str_store_string, s12, "@We're not afraid of you, {sirrah/wench}. Time to bust some heads!"),
+        (str_store_string, s13, "@That was a mistake. Now I'm going to have to make your death long and painful."),
+        (str_store_string, s14, "@Brave words. Let's see you back them up with deeds, cur!"),
         (str_store_string_reg, s5, ":rand"),
       ], "{s5}", "close_window",[]],
 
@@ -13647,9 +13647,9 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 #Quest dialogs
   
   [party_tpl|pt_troublesome_bandits,"start", [(quest_slot_eq, "qst_troublesome_bandits", slot_quest_target_party, "$g_encountered_party")],
-   "This must be your unlucky day indeed. We're the baddest guys you could have run into in this quadrant...", "troublesome_bandits_intro_1",[]],
+   "This must be your unlucky day indeed. We are the baddest guys you could have run into in these parts...", "troublesome_bandits_intro_1",[]],
   [anyone|plyr,"troublesome_bandits_intro_1", [],
-   "Heh. For me, you are nothing more than walking credits.\
+   "Heh. For me, you are nothing more than walking money bags.\
  A merchant in {s1} offered me good money for your heads.",
    "troublesome_bandits_intro_2", [(quest_get_slot, ":quest_giver_center", "qst_troublesome_bandits", slot_quest_giver_center),
                                    (str_store_party_name, s1, ":quest_giver_center")
@@ -13696,7 +13696,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                     (this_or_next|is_between,"$g_talk_troop",armor_merchants_begin, armor_merchants_end),
                     (             is_between,"$g_talk_troop",horse_merchants_begin, horse_merchants_end),
                     ],
-   "Greetings, {sir/madam}. How can I serve you today?", "town_merchant_talk",[]],
+   "Greetings, {your lordship/my lady}. How can I serve you today?", "town_merchant_talk",[]],
 
   [anyone,"start", [(this_or_next|is_between,"$g_talk_troop",weapon_merchants_begin,weapon_merchants_end),
                     (this_or_next|is_between,"$g_talk_troop",armor_merchants_begin, armor_merchants_end),
@@ -13736,7 +13736,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone,"start", [(eq, "$talk_context", 0),
                     (is_between,"$g_talk_troop",walkers_begin, walkers_end),
                     (party_slot_eq, "$current_town", slot_town_lord, "trp_player"),
-                     ], "Yes, {sir/madam}?", "town_dweller_talk",[(assign, "$welfare_inquired",0),(assign, "$rumors_inquired",0),(assign, "$info_inquired",0)]],
+                     ], "My {lord/lady}?", "town_dweller_talk",[(assign, "$welfare_inquired",0),(assign, "$rumors_inquired",0),(assign, "$info_inquired",0)]],
 
   [anyone,"start", [(eq, "$talk_context", 0),
                     (is_between,"$g_talk_troop",walkers_begin, walkers_end),
@@ -13791,7 +13791,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                       (call_script, "script_get_name_from_dna_to_s50", ":quest_target_dna"),
                                       (str_store_string, s4, s50),
                                       ],
-   "I am looking for a bounty hunter named {s4}. I was told they may be here.", "town_dweller_ask_fugitive",[]],
+   "I am looking for a bountyhunter named {s4}. I was told they may be here.", "town_dweller_ask_fugitive",[]],
   [anyone|plyr,"town_dweller_talk", [(check_quest_active, "qst_bounty_6"),
                                      (neg|check_quest_concluded, "qst_bounty_6"),
                                       (quest_slot_eq, "qst_bounty_6", slot_quest_target_center, "$current_town"),
@@ -13876,7 +13876,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
      (quest_get_slot, ":quest_giver", "qst_meet_spy_in_enemy_town", slot_quest_giver_troop),
      (str_store_troop_name, s4, ":quest_giver"),
   ],
-   "I've been expecting you. Here they are, make sure they reach {s4} intact and as quickly as your engines will take you.", "town_dweller_quest_meet_spy_in_enemy_town_chat_2",[
+   "I've been expecting you. Here they are, make sure they reach {s4} intact and without delay.", "town_dweller_quest_meet_spy_in_enemy_town_chat_2",[
      (call_script, "script_succeed_quest", "qst_meet_spy_in_enemy_town"),
      (call_script, "script_center_remove_walker_type_from_walkers", "$current_town", walkert_spy),
    ]],
@@ -13902,7 +13902,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                     (str_clear, s10),
                                     (try_begin),
                                       (party_slot_eq, "$current_town", slot_town_lord, "trp_player"),
-                                      (str_store_string, s10, "@{s6} Our {reg4?town:village} and the surrounding lands belong to you of course."),
+                                      (str_store_string, s10, "@{s6} Our {reg4?town:village} and the surrounding lands belong to you of course, my {lord/lady}."),
                                     (else_try),
                                       (party_get_slot, ":town_lord", "$current_town", slot_town_lord),
                                       (ge, ":town_lord", 0),
@@ -13931,7 +13931,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                       (val_add, reg20, 1),
                                     (try_end),
                                     (str_store_string, s11, "@{reg20?We mostly produce {s5} here:We don't produce much here these days}.\
- If you would like to learn more, you can speak with our planet {reg4?administrator:administrator}. He is nearby, right over there."),
+ If you would like to learn more, you can speak with our {reg4?guildmaster:village elder}. He is nearby, right over there."),
                                     ],
    "{s10} {s11}", "close_window",[]],
 
@@ -13966,7 +13966,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone,"town_dweller_poor_not_paid", [], "Yes {sir/madam}. I will do as you say.", "close_window",[]],
 
-  [anyone,"town_dweller_poor_paid", [], "{My ruler/My good lady}. \
+  [anyone,"town_dweller_poor_paid", [], "{My lord/My good lady}. \
  You are so good and generous. I will tell everyone how you helped us.", "close_window",
    [(call_script, "script_change_player_relation_with_center", "$g_encountered_party", 1),
     (call_script, "script_agent_get_town_walker_details", "$g_talk_agent"),
@@ -13978,15 +13978,15 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                          (assign, ":walker_type", reg0),
                                          (eq, ":walker_type", walkert_needs_money_helped)
                                          ],
-   "Thank you for your kindness {sir/madam}. With your help our lives will be better. I shall never forget you.", "close_window",[]],
+   "Thank you for your kindness {sir/madam}. With your help our lives will be better. I will pray for you everyday.", "close_window",[]],
 
   [anyone,"town_dweller_ask_situation", [(neg|party_slot_ge, "$current_town", slot_town_prosperity, 30)],
    "Times are hard, {sir/madam}. We work hard all day and yet we go to sleep hungry most nights.", "town_dweller_talk",[]],
   
   [anyone,"town_dweller_ask_situation", [(neg|party_slot_ge, "$current_town", slot_town_prosperity, 70)],
-   "Times are hard, {sir/madam}. But we must be thankful for what we have.", "town_dweller_talk",[]],
+   "Times are hard, {sir/madam}. But we must count our blessings.", "town_dweller_talk",[]],
   [anyone,"town_dweller_ask_situation", [],
-   "We are not doing too badly {sir/madam}. We are grateful for that.", "town_dweller_talk",[]],
+   "We are not doing too badly {sir/madam}. We must count our blessings.", "town_dweller_talk",[]],
 
   [anyone|plyr,"town_dweller_talk", [(eq, "$rumors_inquired", 0)], "What is the latest rumor around here?", "town_dweller_ask_rumor",[(assign, "$rumors_inquired", 1)]],
   [anyone,"town_dweller_ask_rumor", [(neg|party_slot_ge, "$current_town", slot_center_player_relation, -5)], "I don't know anything that would be of interest to you.", "town_dweller_talk",[]],
@@ -14026,19 +14026,19 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                     (is_between,"$g_talk_troop",regular_troops_begin, regular_troops_end),
                     (is_between,"$g_encountered_party_faction",kingdoms_begin, kingdoms_end),
                     (party_slot_eq,"$current_town",slot_town_lord, "trp_player"),
-                     ], "Your orders, {sir/madam}?", "hall_guard_talk",[]],
+                     ], "Your orders, {my lord/my lady}?", "hall_guard_talk",[]],
 
   [anyone,"start", [(eq, "$talk_context", tc_court_talk),
                     (is_between,"$g_talk_troop",regular_troops_begin, regular_troops_end),
                     (is_between,"$g_encountered_party_faction",kingdoms_begin, kingdoms_end),
-                     ], "Our master commands that we are silent when on duty, {sir/madam}.", "close_window",[]],
+                     ], "We are not supposed to talk while on guard, {sir/madam}.", "close_window",[]],
                      
   [anyone|plyr,"hall_guard_talk", [], "Stay on duty and let me know if anyone comes to see me.", "hall_guard_duty",[]],
-  [anyone,"hall_guard_duty", [], "Yes, {sir/madam}. As you wish.", "close_window",[]],
+  [anyone,"hall_guard_duty", [], "Yes, {my lord/my lady}. As you wish.", "close_window",[]],
   
-  [anyone|plyr,"hall_guard_talk", [], "I want you to arrest them immediately!", "hall_guard_arrest",[]],
+  [anyone|plyr,"hall_guard_talk", [], "I want you to arrest this man immediately!", "hall_guard_arrest",[]],
   [anyone,"hall_guard_arrest", [], "Who do you want arrested {sir/madam}?", "hall_guard_arrest_2",[]],
-  [anyone|plyr,"hall_guard_arrest_2", [], "Ah, never mind my high spirits.", "close_window",[]],
+  [anyone|plyr,"hall_guard_arrest_2", [], "Ah, never mind my high spirits lads.", "close_window",[]],
   [anyone|plyr,"hall_guard_arrest_2", [], "Forget it. I will find another way to deal with this.", "close_window",[]],
 
   [anyone,"enemy_defeated", [], "Arggh! I hate this.", "close_window",[]],
@@ -14077,7 +14077,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone,"regular_member_blackjack_4",[],"Pazaak is played with the same rules as Blackjack. The player closest to 21, without going over, wins.", "regular_member_blackjack_1",[]],
   [anyone|plyr,"regular_member_blackjack_2",[],"Never mind.", "member_chat",[]],
   # end of blackjack mod
-  [anyone,"view_regular_char_requested", [], "Okay {sir/madam}. Let me tell you all there is to know about me.", "do_regular_member_view_char",[[change_screen_view_character]]],
+  [anyone,"view_regular_char_requested", [], "Aye {sir/madam}. Let me tell you all there is to know about me.", "do_regular_member_view_char",[[change_screen_view_character]]],
   [anyone,"do_regular_member_view_char", [], "Anything else?", "regular_member_talk",[]],
   #[anyone|plyr,"regular_member_talk", [], "Nothing. Keep moving.", "close_window",[]],
   [anyone|plyr,"regular_member_talk", [], "Never mind, carry on.", "close_window",[]],
@@ -14170,7 +14170,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 #  [anyone|plyr,"employ_mercenary_2", [[neg|hero_can_join]], "I don't have any more room in my party right now. I will talk to you again later.", "employ_mercenary_giveup",[]],
 #  [anyone|plyr,"employ_mercenary_2", [[player_gold_ge,reg(0)],[hero_can_join]], "That's fine. Here's the {reg0} credits. From now on you work for me.", "employ_mercenary_commit",[[troop_remove_gold, "trp_player",reg(0)],[recruit_mercenary]]],
 #  [anyone,"employ_mercenary_giveup", [], "Suits me.", "free",[]],
-#  [anyone,"employ_mercenary_commit", [], "You got yourself the best fighter in the Galaxy.", "end",[]],
+#  [anyone,"employ_mercenary_commit", [], "You got yourself the best fighter in the land.", "end",[]],
 
 
   [anyone|plyr,"free", [[in_meta_mission]], "Good-bye.", "close_window",[]],

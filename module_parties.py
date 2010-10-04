@@ -1,3 +1,7 @@
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+# By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
+
 from header_common import *
 from header_parties import *
 from ID_troops import *
@@ -106,36 +110,45 @@ parties = [
   
 
   # Note - if you rename towns make sure to update the center_#_kingdom in module_strings.py
-  ("town_1","Mandalore",  icon_sw_town_green_water|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(13.68,64.51),[],170),
-  ("town_2","Byss",     icon_sw_town_green_water|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-78.27,-25.15),[], 120),  
-  ("town_3","Endor",   icon_sw_town_green|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-98.05,-60.50),[],80),
-  ("town_4","Corellia",     icon_sw_town_green|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-1.54,-45.30),[],290),
-  ("town_5","Naboo",  icon_sw_town_green_b|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(17.21,-91.04),[], 90),  
-  ("town_6","Kessel",   icon_sw_town_craters|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(122.77,43.28),[], 155),  
-  ("town_7","Dantooine",   icon_sw_town_green|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-98.21,97.20),[],240),
-  ("town_8","Geonosis", icon_sw_town_red_rock|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(123.03,-122.76),[], 175),  
-  ("town_9","Mon_Cal",   icon_sw_town_water|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(117.84,85.89),[],90),
-  ("town_10","Kashyyyk",   icon_sw_town_green_b|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(24.56,4.17),[], 310),  
-  ("town_11","Hoth",   icon_sw_town_snow|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-94.59,-124.59),[], 150),  
-  ("town_12","Gamorr", icon_sw_town_green_rock|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(104.51,-9.52),[],25),
-  ("town_13","Yavin_IV",icon_sw_town_green_b|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(70.49,104.30),[],60),
-  ("town_14","Tatooine",  icon_sw_town_plain|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(118.69,-80.91),[],135),
-  ("town_15","Reecee",  icon_sw_town_ice_rock|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-108.73,28.57),[],135),
-  ("town_16","Coruscant",  icon_sw_town_industrial|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-54.67,12.36),[],135),
-  ("town_17","Ryloth",  icon_sw_town_green_rock|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(73,-116.12),[], 135),  
-  ("town_18","Nal_Hutta",  icon_sw_town_green_rock|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(86.78,13.88),[],135),
-  ("town_19","Bothawui",  icon_sw_town_green_b|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(61.70,-38.90),[],135),
-  ("town_20","Mustafar",  icon_sw_town_volcanic|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-28.8,-129.40),[],135),
-  ("town_21","Kamino",  icon_sw_town_water|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(96.37,-56.80),[],135),
-
+  ("town_1","Mandalore",  icon_sw_swy_rePlanet_earth|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(13.68,64.51),[],170),
+  ("town_2","Byss",     icon_sw_swy_Planet_Endor|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-78.27,-25.15),[], 120),  
+  ("town_3","Endor",   icon_sw_swy_Planet_Endor|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-98.05,-60.50),[],80),
+  ("town_4","Corellia",     icon_sw_swy_rePlanet_kashyyyk|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-1.54,-45.30),[],290),
+  ("town_5","Naboo",  icon_sw_swy_rePlanet_kashyyyk|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(17.21,-91.04),[], 90),  
+  ("town_6","Kessel",   icon_sw_swy_Planet_Kessel|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(122.77,43.28),[], 155),  
+  ("town_7","Dantooine",   icon_sw_swy_rePlanet_wilderness|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-98.21,97.20),[],240),
+  ("town_8","Geonosis", icon_sw_swy_Planet_geonosis|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(123.03,-122.76),[], 175),  
+  ("town_9","Mon_Cal",   icon_sw_swy_rePlanet_water|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(117.84,85.89),[],90),
+  ("town_10","Kashyyyk",   icon_sw_swy_rePlanet_kashyyyk|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(24.56,4.17),[], 310),  
+  ("town_11","Hoth",   icon_sw_swy_rePlanet_snow|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-94.59,-124.59),[], 150),  
+  ("town_12","Gamorr", icon_sw_swy_rePlanet_gas|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(104.51,-9.52),[],25),
+  ("town_13","Yavin_IV",icon_sw_swy_rePlanet_wilderness|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(70.49,104.30),[],60),
+  ("town_14","Tatooine",  icon_sw_swy_Planet_Tatooine|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(118.69,-80.91),[],135),
+  ("town_15","Reecee",  icon_sw_swy_rePlanet_ice|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-108.73,28.57),[],135),
+  ("town_16","Coruscant",  icon_sw_swy_Planet_Coruscant|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-54.67,12.36),[],135),
+  ("town_17","Ryloth",  icon_sw_swy_Planet_Tatooine|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(73,-116.12),[], 135),  
+  ("town_18","Nal_Hutta",  icon_sw_swy_Planet_Tatooine|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(86.78,13.88),[],135),
+  ("town_19","Bothawui",  icon_sw_swy_rePlanet_kashyyyk|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(61.70,-38.90),[],135),
+  ("town_20","Mustafar",  icon_sw_swy_Planet_lava|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-28.8,-129.40),[],135),
+  ("town_21","Kamino",  icon_sw_swy_rePlanet_water|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(96.37,-56.80),[],135),
+  ## SWY 0.9.0.3 - Added Taris
+  ("town_22","Taris",  icon_sw_swy_Planet_Taris|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(2,8),[],135),
+  
+  ## SWY 0.9.0.4 - Added Raxus Prime and Sarapin
+  ("town_23","Raxus Prime",  icon_sw_swy_Planet_RaxusPrime|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(80,58),[],135),
+  ("town_24","Sarapin",  icon_sw_swy_Planet_Sarapin|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(60,78),[],135),
+  ("town_25","Hypori",  icon_sw_swy_Planet_Tatooine|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-60,-78),[],135),
+  ("town_26","Felucia",  icon_sw_swy_Planet_forest|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(93,-34),[],135),
+  ("town_27","Bespin",icon_sw_swy_rePlanet_gas|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-87.44,-93.66),[],50),
+  
 #   Aztaq_Outpost       
 #  Malabadi_Outpost
   # Note - if you rename castles make sure to update the center_#_kingdom in module_strings.py
-  ("castle_1","Bespin",icon_sw_planet_green|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-87.44,-93.66),[],50),
+#  ("castle_1","Bespin",icon_sw_swy_rePlanet_gas|pf_castle|pf_disabled|pf_no_label|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-87.44,-93.66),[],50),
   ("castle_2","Corellia_Outpost",icon_outpost_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-9.38,-50.53),[],75),
   ("castle_3","Yavin_IV_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(69.39,97.03),[],100),
-  ("castle_4","Dagobah",icon_sw_planet_green|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(30.77,-122.47),[],180),
-  ("castle_5","Endor_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-102.67,-54.09),[],90),
+  ("castle_4","Dagobah",icon_sw_swy_Planet_forest|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(30.77,-122.47),[],180),
+  ("castle_5","Death Star",icon_sw_swy_Death_Star|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-102.67,-54.09),[],90),
   ("castle_6","Endor_Outpost",icon_asteroid_base|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-93.99,-67.09),[],55),
   ("castle_7","Mon_Cal_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(104.38,87.90),[],45),
   ("castle_8","Ryloth_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(67.35,-106.50),[],30),
@@ -171,7 +184,9 @@ parties = [
   ("castle_38","Nal_Hutta_Outpost",icon_outpost_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(82.23,21.23),[],260),
   ("castle_39","Mon_Cal_Outpost",icon_outpost_b|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(126.61,78.28),[],280),
   ("castle_40","Tatooine_Outpost",icon_outpost_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(108.11,-73.07),[],260),
-
+#Rhen Var
+  ("castle_41","Rhen Var",icon_sw_swy_rePlanet_snow|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-100.11,63.07),[],260),
+  ("castle_42","Saleucami",icon_sw_swy_rePlanet_snow|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-108.11,-93.07),[],260),
 #     Rinimad      
 #              Rietal Derchios Gerdus
 # Tuavus   Pamir   vezona 
@@ -182,7 +197,7 @@ parties = [
   ("village_4","Ilum",  icon_sw_village_04|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-145.85,44.20),[],130),
   ("village_5","Sernpidal",  icon_sw_village_05|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-27.75,133.84),[],170),
   ("village_6","Velmor",  icon_sw_village_07|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(8.74,48.78),[],100),
-  ("village_7","Hoth_Moon",  icon_sw_village_06|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-80.03,-117.63),[],110),
+  ("village_7","Hoth_Moon",  icon_sw_swy_rePlanet_ice|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-80.03,-117.63),[],110),
   ("village_8","Bespin_Moon",  icon_sw_village_08|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-82.94,-101.98),[],120),
   ("village_9","Dubrillion",  icon_sw_village_09|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-74.15,124.18),[],130),
   ("village_10","Riflor",  icon_sw_village_10|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-96.48,-82.27),[],170),
@@ -191,7 +206,7 @@ parties = [
   ("village_12","Rakata_Prime",  icon_sw_village_12|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-138.50,0.18),[],110),
   ("village_13","Myrkr",  icon_sw_village_13|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-19.98,35.17),[],120),
   ("village_14","Ziost",  icon_sw_village_14|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(112.93,131.61),[],130),
-  ("village_15","Corellia_Moon",  icon_sw_village_15|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(1.07,-38.26),[],170),
+  ("village_15","Corellia_Moon",  icon_sw_swy_rePlanet_rock|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(1.07,-38.26),[],170),
   ("village_16","Vargnat",  icon_sw_village_16|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-51.94,-72.38),[],170),
   ("village_17","Lannik",  icon_sw_village_17|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-6.50,-29.11),[],35),
   ("village_18","Fondor",  icon_sw_village_18|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-55.08,-49.59),[],170),
@@ -207,20 +222,20 @@ parties = [
   ("village_27","Bilbringi",  icon_sw_village_04|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-96.26,40.82),[],170),
   ("village_28","Tynna",  icon_sw_village_05|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(27.61,-58.63),[],170),
   ("village_29","Dantooine_Moon",  icon_sw_village_07|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-107.40,105.75),[],170),
-  ("village_30","Corulag",  icon_sw_village_06|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-41.01,1.11),[],170),
+  ("village_30","Corulag",  icon_sw_swy_rePlanet_ice|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-41.01,1.11),[],170),
 
   ("village_31","Togoria",  icon_sw_village_08|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(48.01,24.47),[],100),
-  ("village_32","Zhar",  icon_sw_village_09|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(75.23,-92.34),[],110),
+  ("village_32","Gall",  icon_sw_village_09|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(75.23,-92.34),[],110),
   ("village_33","Muunulist",  icon_sw_village_10|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-131.31,88.06),[],120),
   ("village_34","Ruuria",  icon_sw_village_11|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(71.28,143.42),[],130),
   ("village_35","Iridonia",  icon_sw_village_12|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-125.63,53.15),[],170),
   ("village_36","Kessel_Moon",  icon_sw_village_21|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(134.13,40.79),[],170),
   ("village_37","Bimmsari",  icon_sw_village_13|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(67.11,1.98),[],170),
   ("village_38","Belkadan",  icon_sw_village_14|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-118.34,139.70),[],170),
-  ("village_39","Helska",  icon_sw_village_15|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-118.43,124.49),[],170),
+  ("village_39","Helska",  icon_sw_swy_rePlanet_rock|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-118.43,124.49),[],170),
   ("village_40","Saki",  icon_sw_village_16|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(56.34,-30.29),[],170),
 
-  ("village_41","Nar_Shadda",  icon_sw_village_17|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(82.22,6.68),[],100),
+  ("village_41","Nar_Shadda",  icon_sw_swy_NarShadda|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(82.22,6.68),[],100),
   ("village_42","Bothawui Moon",  icon_sw_village_01|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(66.38,-47.51),[],110),
   ("village_43","Alzoc_III",  icon_sw_village_18|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(96.32,-141.22),[],120),
   ("village_44","Ruusan",  icon_sw_village_19|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(10.82,-30.01),[],130),
@@ -234,7 +249,7 @@ parties = [
   ("village_51","Yaga_Minor",  icon_sw_village_03|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-135.01,65.11),[],100),
   ("village_52","Nar_Kreeta",  icon_sw_village_04|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(67.37,-14),[],110),
   ("village_53","Pzob",  icon_sw_village_05|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(133.03,-32.17),[],120),
-  ("village_54","Barab_I",  icon_sw_village_06|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(141.36,8.70),[],130),
+  ("village_54","Barab_I",  icon_sw_swy_rePlanet_ice|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(141.36,8.70),[],130),
   ("village_55","Lamaredd",  icon_sw_village_07|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(137.56,-132.27),[],170),
   ("village_56","Ithor",  icon_sw_village_08|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-83.07,67.51),[],170),
   ("village_57","Kuat",  icon_sw_village_09|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(5.32,-15.23),[],170),
@@ -245,7 +260,7 @@ parties = [
   ("village_61","Thisspias",  icon_sw_village_12|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-0.31,-11.03),[],100),
   ("village_62","Vjun",  icon_sw_village_13|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(77.34,70.70),[],100),
   ("village_63","Raxus Prime",  icon_sw_village_14|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(133.49,115.43),[],100),
-  ("village_64","Kamino Moon",  icon_sw_village_15|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(106.83,-61.80),[],100),
+  ("village_64","Kamino Moon",  icon_sw_swy_rePlanet_rock|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(106.83,-61.80),[],100),
   ("village_65","Mimban",  icon_sw_village_16|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(20.89,-48.58),[],100),
   ("village_66","Alaris_Prime",  icon_sw_village_07|pf_village,  no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(35.60,3.90),[],100),
   ("village_67","Wayland",  icon_sw_village_18|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-18.76,43.36),[],100),
@@ -259,7 +274,7 @@ parties = [
   ("village_74","Roon",  icon_sw_village_03|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(83.91,-55.59),[],15),
   ("village_75","Almania",  icon_sw_village_04|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(137.88,140.72),[],10),
   ("village_76","Obroa_Skai",  icon_sw_village_05|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(28.17,29.45),[],35),
-  ("village_77","Ord_Mantell",  icon_sw_village_06|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-84.92,52.16),[],160),
+  ("village_77","Ord_Mantell",  icon_sw_swy_rePlanet_ice|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-84.92,52.16),[],160),
   ("village_78","Charros_IV",  icon_sw_village_07|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(61.21,20.24),[],180),
   ("village_79","Reecee_Moon",  icon_sw_village_08|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-112.66,25.29),[],0),
   ("village_80","N'Zoth",  icon_sw_village_09|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-104.73,-4.95),[],40),
@@ -269,7 +284,7 @@ parties = [
   ("village_83","Xal_3",  icon_sw_village_12|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-120.15,-80.89),[],55),
   ("village_84","Byss_Moon",  icon_sw_village_13|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-76.02,-18.25),[],15),
   ("village_85","Phindar",  icon_sw_village_14|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(44.02,80.30),[],10),
-  ("village_86","Vaal",  icon_sw_village_15|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(113.09,118.84),[],35),
+  ("village_86","Vaal",  icon_sw_swy_rePlanet_rock|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(113.09,118.84),[],35),
   ("village_87","Serenno",  icon_sw_village_16|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(5.54,113.54),[],160),
   ("village_88","Derra_IV",  icon_sw_village_17|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-5.88,-66.15),[],180),
   ("village_89","Ryloth_Moon",  icon_sw_village_18|pf_village, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(63.70,-121.52),[],0),
@@ -306,6 +321,7 @@ parties = [
   ("Bridge_13","13",icon_bridge_b|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-69.26,141.42),[],100),
   ("Bridge_14","14",icon_bridge_b|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-51.50,71.45),[],100),
   ("Bridge_15","15",icon_bridge_b|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(103.87,-50.30),[],100),
+  
   
 #ship debris  
   ("Debris_1","1",icon_y_wing_debris|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-118.10,-113.10),[],100),
@@ -386,4 +402,9 @@ parties = [
   ("spaceship_cis_star_cruiser","Spaceship Array",icon_village_a|pf_disabled|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-139.00,-40.00),[]),  
   #this next ship is spaceship_end
   ("spaceship_end","Spaceship Array",icon_village_a|pf_disabled|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-139.00,-40.00),[]),
+  
+  
+    #Galaxy center sed for part_sys. Nevermind, particle system disapears when player moves the camear, no usable as galaxy surface
+  #("Galaxy_center","galaxy_center",icon_sw_galaxy|pf_is_static, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(0,0),[],100),
+  
 ]

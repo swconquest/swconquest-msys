@@ -1,3 +1,7 @@
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+# By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
+
 from header_common import *
 from header_operations import *
 from header_parties import *
@@ -31,6 +35,7 @@ num_merchandise_goods = 40
 
 
 triggers = [
+
 # Tutorial:
   (0.1, 0, ti_once, [(map_free,0)], [
 										#SW - added swc_readme menu
@@ -41,7 +46,8 @@ triggers = [
   
   (0.2, 0, ti_once, [(map_free,0)], [
 										#SW - added so kingdom1 will always start at war with kingdom2 (added a 1 at the end to fixed script error, since its the war/peace flag)
-										(call_script, "script_diplomacy_start_war_between_kingdoms", "fac_kingdom_1", "fac_kingdom_2",1)
+										#SWY - Created a new script, so now it not shows the nasty "X is in war versus Y"
+										(call_script, "script_swc_init_rebels_vs_empire", "fac_kingdom_1", "fac_kingdom_2",1)
 									]),
   
 ############################################################################################################

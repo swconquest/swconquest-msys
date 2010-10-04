@@ -1,3 +1,7 @@
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+# By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
+
 from header_common import *
 from header_scene_props import *
 from header_operations import *
@@ -79,16 +83,21 @@ scene_props = [
   ("sw_ship_hangar_open",0,"ship_hangar_open","bo_ship_hangar_open", []),
   ("sw_gun_turret",0,"gun_turret","bo_gun_turret", []),
   ("sw_chest1",0,"player_chest_sw","bo_player_chest_sw", []),
-  ("sw_box_a",0,"box_a_sw_sp","bo_box_a_sw_sp", []),
-  ("sw_box_a_square",0,"box_a_square","bo_box_a_square", []),
+  ("sw_box_a",sokf_dynamic,"box_a_sw_sp","bo_box_a_sw_sp", []),
+  ("sw_box_a",sokf_dynamic,"box_a_sw_sp","bo_box_a_sw_sp", []),
+  ("sw_box_a_square",sokf_dynamic,"box_a_square","bo_box_a_square", []),
+  ("sw_box_a_square_blue",sokf_dynamic,"box_a_square_blue","bo_box_a_square", []),
+  ("sw_box_a_square_brown",sokf_dynamic,"box_a_square_brown","bo_box_a_square", []),
+  ("sw_box_a_square_red",sokf_dynamic,"box_a_square_red","bo_box_a_square", []),
+  ("sw_box_a_square_yellow",sokf_dynamic,"box_a_square_yellow","bo_box_a_square", []),
   ("sw_bacta_tank",0,"bacta_tank","bo_bacta_tank", []),  
   ("sw_bacta_tank_new",0,"bacta_tank_new","bo_bacta_tank_new", []),
   ("sw_bacta_tank_new_heal",0,"bacta_tank_new","0", []),
   ("sw_antenna",0,"sw_antenna","bo_sw_antenna", []),  
-  ("sw_box_b",0,"sw_box_b","bo_sw_box_b", []),
-  ("sw_box_c",0,"sw_box_c","bo_sw_box_c", []),
-  ("sw_box_d",0,"sw_box_d","bo_sw_box_d", []),
-  ("sw_box_e",0,"sw_box_e","bo_sw_box_e", []),  
+  ("sw_box_b",sokf_dynamic,"sw_box_b","bo_sw_box_b", []),
+  ("sw_box_c",sokf_dynamic,"sw_box_c","bo_sw_box_c", []),
+  ("sw_box_d",sokf_dynamic,"sw_box_d","bo_sw_box_d", []),
+  ("sw_box_e",sokf_dynamic,"sw_box_e","bo_sw_box_e", []),  
   ("sw_part_a",0,"sw_part_a","bo_sw_part_a", []),  
   ("sw_part_b",0,"sw_part_b","bo_sw_part_b", []),  
   ("sw_tower_a",0,"sw_tower_a","bo_sw_tower_a", []),  
@@ -112,18 +121,18 @@ scene_props = [
   ("sw_hoth_trench1",0,"hoth_trench1","bo_hoth_trench1", []),
   ("sw_hoth_trench2",0,"hoth_trench2","bo_hoth_trench2", []),
   ("sw_hoth_trench3",0,"hoth_trench3","bo_hoth_trench3", []),
-  ("sw_hoth_turret1",0,"hoth_turret1","bo_hoth_turret1", []),
+  ("sw_hoth_turret1",0,"hoth_turret2","bo_hoth_turret2", []),
   ("sw_hoth_turret2",0,"hoth_turret2","bo_hoth_turret2", []),
   ("sw_building_prefab1",0,"building_prefab1","bo_building_prefab1", []),
   ("sw_building_prefab2",0,"building_prefab2","bo_building_prefab2", []),
   ("sw_building_prefab_ramp1",0,"building_prefab_ramp1","bo_building_prefab_ramp1", []),
   ("sw_terminal1",0,"terminal1","bo_terminal1", []),
   ("sw_terminal2",0,"terminal2","bo_terminal2", []),
-  ("sw_holocron_new_a",0,"holocron_new_a","bo_holocron_new", []),
-  ("sw_holocron_new_b",0,"holocron_new_b","bo_holocron_new", []),
-  ("sw_holocron_new_c",0,"holocron_new_c","bo_holocron_new", []),
-  ("sw_holocron_new_d",0,"holocron_new_d","bo_holocron_new", []),
-  ("sw_holocron_new_e",0,"holocron_new_e","bo_holocron_new", []),
+  ("sw_holocron_new_a",sokf_dynamic,"holocron_new_a","bo_holocron_new", []),
+  ("sw_holocron_new_b",sokf_dynamic,"holocron_new_b","bo_holocron_new", []),
+  ("sw_holocron_new_c",sokf_dynamic,"holocron_new_c","bo_holocron_new", []),
+  ("sw_holocron_new_d",sokf_dynamic,"holocron_new_d","bo_holocron_new", []),
+  ("sw_holocron_new_e",sokf_dynamic,"holocron_new_e","bo_holocron_new", []),
   ("sw_holocron_old_blue",0,"holocron_blue","bo_holocron_old", []),
   ("sw_holocron_old_green",0,"holocron_green","bo_holocron_old", []),
   ("sw_holocron_old_red",0,"holocron_red","bo_holocron_old", []),
@@ -183,9 +192,9 @@ scene_props = [
   ("sw_cantina_bar_with_items",0,"sw_cantina_bar_with_items","bo_sw_cantina_bar", []),    
   ("sw_table_a",0,"sw_table_a","bo_sw_table_a", []), 
   ("sw_beer_a",0,"sw_beer_a","0", []),
-  ("sw_glass_a",0,"sw_glass_a","0", []),
-  ("sw_glass_b",0,"sw_glass_b","0", []),
-  ("sw_glass_c",0,"sw_glass_c","0", []),
+  ("sw_glass_a",sokf_dynamic,"sw_glass_a","0", []),
+  ("sw_glass_b",sokf_dynamic,"sw_glass_b","0", []),
+  ("sw_glass_c",sokf_dynamic,"sw_glass_c","0", []),
   ("sw_plate_a",0,"sw_plate_a","0", []),
   ("sw_plate_a_full",0,"sw_plate_a_full","0", []),
   ("sw_arena_sign",0,"sw_arena_arms","0", []),  
@@ -299,8 +308,8 @@ scene_props = [
   ("sw_poster_v",0,"sw_poster_v","bo_sw_poster_a", []),
   #sw_ship_bed is sw_poster_end
   ("sw_ship_bed",0,"ship_bed","bo_ship_bed", []),
-  ("sw_ship_box1",0,"ship_box1","bo_ship_box1", []),
-  ("sw_ship_box2",0,"ship_box2","bo_ship_box2", []),
+  ("sw_ship_box1",sokf_dynamic,"ship_box1","bo_ship_box1", []),
+  ("sw_ship_box2",sokf_dynamic,"ship_box2","bo_ship_box2", []),
   ("sw_ship_comp1",0,"ship_comp1","bo_ship_comp1", []),
   ("sw_ship_comp2",0,"ship_comp2","bo_ship_comp2", []),
   ("sw_ship_door1a",0,"ship_door1a","bo_ship_door1a", []),
@@ -372,7 +381,7 @@ scene_props = [
    ],
    200), 	# adding extra number which will be used for hit_points - had to manually updated process_scene_props.py to use for this  
    #other
-  ("sw_ship_chest",0,"ship_chest","bo_ship_chest", []),
+  ("sw_ship_chest",sokf_dynamic,"ship_chest","bo_ship_chest", []),
   ("sw_ship_ventilation",0,"ship_ventilation","bo_ship_ventilation", []),
   ("sw_ship_space",0,"ship_space","bo_ship_space", []),
   ("sw_ship_keyboard",0,"ship_keyboard","bo_ship_keyboard", []),   
@@ -460,7 +469,8 @@ scene_props = [
   ("apptbridge",0,"apptbridge","bo_castle_drawbridges_open", []),  
   
   #from original star wars mod for 0.751
-  ("sw_moisture_vaporator",0,"moisture_vaporator","bo_moisture_vaporator", []),  
+  #("sw_moisture_vaporator",0,"moisture_vaporator","bo_moisture_vaporator", []),  New model by Swyter
+  ("sw_moisture_vaporator",0,"swy_moisturevaporator","bo_swy_moisturevaporator", []),
   ("sw_sandstone_building_a",0,"abuilding","bo_abuilding", []),
   ("sw_sandstone_building_b",0,"bbuilding","bo_bbuilding", []),
   ("sw_sandstone_building_c",0,"cbuilding","bo_cbuilding", []),
@@ -470,7 +480,7 @@ scene_props = [
   ("sw_tent_c",0,"tent_c","bo_tent_c", []),
 
   #tyrinius models
-  ("sw_microchip",0,"tyr_chip","bo_tyr_chip", []),  
+  ("sw_microchip",sokf_dynamic,"tyr_chip","bo_tyr_chip", []),  
   ("sw_bench_white",0,"tyr_bench","bo_tyr_bench", []),  
   ("sw_bench_white_no_collision",0,"tyr_bench","0", []),  
   ("sw_chair_white",0,"tyr_chair","bo_tyr_chair", []), 
@@ -480,13 +490,13 @@ scene_props = [
   ("sw_table_white",0,"tyr_table","bo_tyr_table", []),  
   
   #takijap models
-  ("sw_table_circle",0,"sw_table_circle","bo_sw_table_circle", []),  
+  ("sw_table_circle",sokf_dynamic,"sw_table_circle","bo_sw_table_circle", []),  
   ("sw_chair_a",0,"sw_chair_a","bo_sw_chair_a", []),
   ("sw_chair_a_no_collision",0,"sw_chair_a","0", []),  
   ("sw_bunker_a",0,"bunker_a","bo_bunker_a", []),
   ("sw_bench_a",0,"bench_a","bo_bench_a", []),
   ("sw_bench_curved_a",0,"bench_curved_a","bo_bench_curved_a", []),
-  ("sw_chair_b",0,"chair_b","bo_chair_b", []),
+  ("sw_chair_b",sokf_dynamic,"chair_b","bo_chair_b", []),
   ("sw_chair_b_no_collision",0,"chair_b","0", []),
   ("sw_office_chair_a",0,"office_chair_a","bo_office_chair_a", []),
   ("sw_office_chair_a_no_collision",0,"office_chair_a","0", []),
@@ -564,7 +574,7 @@ scene_props = [
           #(store_mul, ":blue", 3 * 45, ":scale"),
           (store_mul, ":red", 2 * 157, ":scale"),
           (store_mul, ":green", 2 * 157, ":scale"),
-          (store_mul, ":blue", 2 * 157, ":scale"),
+          (store_mul, ":blue", 2 * 165, ":scale"),
           (val_div, ":red", 100),
           (val_div, ":green", 100),
           (val_div, ":blue", 100),
@@ -693,8 +703,8 @@ scene_props = [
 
   ("carpet_with_pillows_a",0,"carpet_with_pillows_a","bo_carpet_with_pillows", []),
   ("carpet_with_pillows_b",0,"carpet_with_pillows_b","bo_carpet_with_pillows", []),
-  ("table_round_a",0,"table_round_a","bo_table_round_a", []),
-  ("table_round_b",0,"table_round_b","bo_table_round_b", []),
+  ("table_round_a",sokf_dynamic,"table_round_a","bo_table_round_a", []),
+  ("table_round_b",sokf_dynamic,"table_round_b","bo_table_round_b", []),
   ("fireplace_b",0,"fireplace_b","bo_fireplace_b", []),
   ("fireplace_c",0,"fireplace_c","bo_fireplace_c", []),
   ("sofa_a",0,"sofa_a","bo_sofa", []),
@@ -729,8 +739,8 @@ scene_props = [
   #SW - modified broom
   #("broom",0,"broom","0", []),
   ("broom", 0, "0", "0", []),
-  ("garlic",0,"garlic","0", []),
-  ("garlic_b",0,"garlic_b","0", []),
+  ("garlic",sokf_dynamic,"garlic","0", []),
+  ("garlic_b",sokf_dynamic,"garlic_b","0", []),
 
   #SW - modified destroy_a and destroy_b
   #("destroy_a",0,"destroy_a","0", []),
@@ -1186,7 +1196,7 @@ scene_props = [
   ("fireplace_a",0,"fireplace_a","bo_fireplace_a", []),
   #SW - modified barrel
   #("barrel",0,"barrel","bobarrel", []),
-  ("barrel",0,"sw_barrel","bo_sw_barrel", []),
+  ("barrel",sokf_dynamic,"sw_barrel","bo_sw_barrel", []),
   ("bench_tavern",0,"bench_tavern","bobench_tavern", []),
   ("bench_tavern_b",0,"bench_tavern_b","bo_bench_tavern_b", []),
   ("bowl_wood",0,"bowl_wood","0", []),
@@ -1207,7 +1217,7 @@ scene_props = [
   ("weapon_rack_big",0,"weapon_rack_big","boweapon_rack_big", []),
   #SW - modified tavern_barrel 
   #("tavern_barrel",0,"barrel","bobarrel", []),  
-  ("tavern_barrel",0,"sw_barrel","bo_sw_barrel", []),
+  ("tavern_barrel",sokf_dynamic,"sw_barrel","bo_sw_barrel", []),
   ("tavern_barrel_b",0,"tavern_barrel_b","bo_tavern_barrel_b", []),
   ("merchant_sign",0,"merchant_sign","bo_tavern_sign", []),
   ("tavern_sign",0,"tavern_sign","bo_tavern_sign", []),
@@ -1243,7 +1253,8 @@ scene_props = [
   ("wood_heap_b",0,"wood_heap_b","bo_wood_heap_b", []),
   #SW - modified water_well
   #("water_well_a",0,"water_well_a","bo_water_well_a", []),
-  ("water_well_a",0,"moisture_vaporator","bo_moisture_vaporator", []),
+  #("water_well_a",0,"moisture_vaporator","bo_moisture_vaporator", []),
+  ("water_well_a",0,"swy_moisturevaporator","bo_swy_moisturevaporator", []),
   ("net_a",0,"net_a","bo_net_a", []),
   ("net_b",0,"net_b","0", []),
 
@@ -1952,6 +1963,231 @@ scene_props = [
   ("missile",0,"laser_bolt_blue","0", []),
   ("rocket",0,"colonial_missile","0", []),
   ("rm_end",0,"colonial_missile","0", []),
+  
+  
+  
+##@> Swyter Scene Props - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+   ("swy_landing_arm",0,"sw_landing_arm","bo_sw_landing_arm", []),
+   ("swy_taris_build",0,"taris_build","bo_taris_build", []),
+   ("swy_tower1",0,"swy_tower1","bo_swy_tower1", []), 
+   ("swy_tower2",0,"swy_tower2","bo_swy_tower2", []),
+   ("swy_city_ground",0,"swy_city_ground","bo_swy_city_ground", []),
+   ("swy_city_ground2",0,"swy_city_ground2","bo_swy_city_ground", []),   
+   ("swy_city_ground3",0,"swy_city_ground3","bo_swy_city_ground", []),
+   ("swy_city_ground_bespin",0,"swy_city_ground_bespin","bo_swy_city_ground", []),
+   ("swy_city_ground_bespin2",0,"swy_city_ground_bespin2","bo_swy_city_ground", []),
+   ("swy_city_ground_hypori",0,"swy_city_ground_hypori","bo_swy_city_ground", []),
+   ("swy_city_ground_hypori2",0,"swy_city_ground_hypori2","bo_swy_city_ground", []),
+   ("swy_city_ground_sarapin",0,"swy_city_ground_sarapin","bo_swy_city_ground", []),
+   ("swy_city_wall",0,"swy_city_wall","bo_swy_city_wall", []),
+   ("swy_city_wall2",0,"swy_city_wall2","bo_swy_city_wall", []),
+   ("swy_city_wall3",0,"swy_city_wall3","bo_swy_city_wall", []),
+   ("swy_city_wall_bespin",0,"swy_city_wall_bespin","bo_swy_city_wall", []),
+   ("swy_city_wall_bespin2",0,"swy_city_wall_bespin2","bo_swy_city_wall", []),
+   ("swy_city_wall_hypori",0,"swy_city_wall_hypori","bo_swy_city_wall", []),
+   ("swy_city_wall_hypori2",0,"swy_city_wall_hypori2","bo_swy_city_wall", []),
+   ("swy_city_wall_sarapin",0,"swy_city_wall_sarapin","bo_swy_city_wall", []),
+   ("swy_palm",0,"swy_palm","bo_swy_palm", []),   
+   ("swy_saleucami_rock",0,"swy_saleucami_rock","bo_swy_saleucami_rock", []),   
+   ("swy_saleucami_rock2",0,"swy_saleucami_rock2","bo_swy_saleucami_rock2", []),   
+   #Bespin
+   ("swy_bespin_tibanna",0,"swy_bespin_tibanna",0, []),
+   #Hoth
+   ("swy_hoth_turret",0,"swy_hoth_turret","bo_swy_hoth_turret", []),
+   ("swy_hoth_turret_cannon",0,"swy_hoth_turret_cannon","bo_swy_hoth_turret_cannon", []),
+   ("swy_hoth_turret_base",0,"swy_hoth_turret_base","bo_swy_hoth_turret_base", []),
+   #Death Star
+   ("swy_turbolaser_battery",0,"swy_turbolaser_battery","bo_swy_turbolaser_battery", []),
+   ("swy_turbolaser_base",0,"swy_turbolaser_base","bo_swy_turbolaser_base", []),   
+   #Tatooine
+   ("swy_moisturevaporator",0,"swy_moisturevaporator","bo_swy_moisturevaporator", []),  
+  #Yavin
+   ("swy_rebel_panel",0,"swy_rebel_panel","bo_swy_rebel_panel", []),  
+   ("swy_rebel_panel2",0,"swy_rebel_panel2","bo_swy_rebel_panel", []),  
+   ("swy_rebel_panel_orange",0,"swy_rebel_panel_orange","bo_swy_rebel_panel", []),  
+   ("swy_rebel_panel_purple",0,"swy_rebel_panel_purple","bo_swy_rebel_panel", []),  
+  #Dantooine
+   ("swy_dant_ventilator",0,"swy_dant_ventilator",0, []),  
+   ("swy_dant_base_build",0,"swy_dant_base_build",0, []),  
+   ("swy_dant_dish",0,"swy_dant_dish",0, []),  
+  #Energy Shields
+   ("swy_deflector_shield",0,"swy_deflector_shield","bo_swy_deflector_shield",   #spr_hit_points don't work, max of 100 ?
+   [
+    (ti_on_scene_prop_hit,
+    [
+        (play_sound, "snd_deflector_shield_hit"),
+        (particle_system_burst, "psys_dummy_smoke", pos1, 100),		#percentage_burst_strength is 100
+    ]),	
+    (ti_on_scene_prop_init,
+    [
+        (play_sound, "snd_deflector_shield"),
+    ]),		
+   ]),
+   ("swy_deflector_shield_no_col",0,"swy_deflector_shield",0,   #spr_hit_points don't work, max of 100 ?
+   [
+    (ti_on_scene_prop_init,
+    [
+        (play_sound, "snd_deflector_shield"),
+    ]),		
+   ]),
+   
+   ("swy_deflector_shield_red",0,"swy_deflector_shield_red","bo_swy_deflector_shield",   #spr_hit_points don't work, max of 100 ?
+   [
+    (ti_on_scene_prop_hit,
+    [
+        (play_sound, "snd_deflector_shield_hit"),
+        (particle_system_burst, "psys_dummy_smoke", pos1, 100),		#percentage_burst_strength is 100
+    ]),	
+    (ti_on_scene_prop_init,
+    [
+        (play_sound, "snd_deflector_shield"),
+    ]),		
+   ]), 
+   ("swy_deflector_shield_red_no_col",0,"swy_deflector_shield_red",0,   #spr_hit_points don't work, max of 100 ?
+   [
+    (ti_on_scene_prop_init,
+    [
+        (play_sound, "snd_deflector_shield"),
+    ]),	
+   ]), 
+   
+   
+    ("swy_gate.sys",0,"ship_door2","bo_ship_door2", []),
+## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
+
+##@>  Barf Scene Props
+   ("barf_tower",0,"sw_taris_tower","bo_sw_taris_tower", []),
+   ("barf_tower2",0,"sw_taris_tower2","bo_sw_taris_tower", []),
+   ("barf_rock_1",0,"rock1","bo_rock1", []),
+   ("barf_rock_2",0,"rock2","bo_rock2", []),
+   ("barf_rock_3",0,"rock3","bo_rock3", []),
+   ("barf_rock_4",0,"rock4","bo_rock4", []),
+   ("barf_rock_5",0,"rock5","bo_rock5", []),
+   ("barf_rock_6",0,"rock6","bo_rock6", []),
+   ("barf_rock_7",0,"rock7","bo_rock7", []),
+   ("barf_rock_8",0,"rock8","bo_rock8", []),
+   ("barf_rock_9",0,"rock9","bo_rock9", []),
+   ("barf_rock_10",0,"rock10","bo_rock10", []),
+   ("barf_rock_11",0,"rock11","bo_rock11", []),
+   ("barf_rock_12",0,"rock12","bo_rock12", []),
+   ("barf_rock_13",0,"rock13","bo_rock13", []),
+   ("barf_rock_14",0,"rock14","bo_rock14", []),
+   ("barf_rock_15",0,"rock15","bo_rock15", []),
+   ("barf_rock_16",0,"rock16","bo_rock16", []),
+   ("barf_rock_17",0,"rock17","bo_rock17", []),
+   ("barf_rock_18",0,"rock18","bo_rock18", []),
+   ("barf_rock_19",0,"rock19","bo_rock19", []),
+   ("barf_rock_20",0,"rock20","bo_rock20", []),
+   ("barf_rock_21",0,"rock21","bo_rock21", []),
+   ("barf_rock_22",0,"rock22","bo_rock22", []),
+   ("barf_rock_23",0,"rock23","bo_rock23", []),
+   ("barf_rock_24",0,"rock24","bo_rock24", []),
+   
+   
+##@>  Yiyang Chen Props
+   ("kashyyyk_house",0,"kashyyyk_house",0, []),
+   ("kashyyyk_house_platform_bridge",0,"kashyyyk_house_platform_bridge",0, []),
+   ("kashyyyk_house_platform_down",0,"kashyyyk_house_platform_down",0, []),
+   ("kashyyyk_platform_a",0,"kashyyyk_platform_a",0, []),
+   ("kashyyyk_platform_eighth_fence_addon",0,"kashyyyk_platform_eighth_fence_addon",0, []),
+   ("kashyyyk_platform_eighth_fence_houseup_addon",0,"kashyyyk_platform_eighth_fence_houseup_addon",0, []),
+   ("kashyyyk_platform_eighth_platform",0,"kashyyyk_platform_eighth_platform",0, []),
+   ("kashyyyk_platform_house_a",0,"kashyyyk_platform_house_a",0, []),
+   ("kashyyyk_platform_house_b",0,"kashyyyk_platform_house_b",0, []),
+   ("kashyyyk_platform_house_bridge",0,"kashyyyk_platform_house_bridge",0, []),
+   ("kashyyyk_platform_offtree_a",0,"kashyyyk_platform_offtree_a",0, []),
+   ("kashyyyk_platform_sixteenth_fence",0,"kashyyyk_platform_sixteenth_fence",0, []),
+   ("kashyyyk_platform_sixteenth_fence_bridge",0,"kashyyyk_platform_sixteenth_fence_bridge",0, []),
+   ("kashyyyk_platform_sixteenth_platform",0,"kashyyyk_platform_sixteenth_platform",0, []),
+   ("kashyyyk_platform_stringer",0,"kashyyyk_platform_stringer",0, []),
+   ("kashyyyk_platform_stringer_bridge",0,"kashyyyk_platform_stringer_bridge",0, []),
+   ("kashyyyk_stairs",0,"kashyyyk_stairs",0, []),
+   ("kashyyyk_tree1",0,"kashyyyk_tree1",0, []),
+   ("kashyyyk_tree2",0,"kashyyyk_tree2",0, []),
+
+##@> Reskins   
+  ("revnshn_rhenvar_addon",0,"rhenvar_addon","bo_yavinaddon", []),
+  ("revnshn_rhenvar_pillar1",0,"rhenvar_pillar1","bo_yavinpillar1", []),
+  ("revnshn_rhenvar_pillar2",0,"rhenvar_pillar2","bo_yavinpillar2", []),
+  ("revnshn_rhenvar_spire",0,"rhenvar_spire","bo_yavinspire", []),
+  ("revnshn_rhenvar_statue1",0,"rhenvar_statue1","bo_yavinstatue1", []),
+  ("revnshn_rhenvar_statue2",0,"rhenvar_statue2","bo_yavinstatue2", []),
+  ("revnshn_rhenvar_statue3",0,"rhenvar_statue3","bo_yavinstatue3", []),
+  ("revnshn_rhenvar_steps",0,"rhenvar_steps","bo_yavinsteps", []),
+  ("revnshn_rhenvar_table1",0,"rhenvar_table1","bo_yavintable1", []),
+  ("revnshn_rhenvar_temple",0,"rhenvar_templeblend","bo_yavintempleblend", []),
+  ("revnshn_rhenvar_wall1",0,"rhenvar_wall1","bo_yavinwall1", []),
+  ("revnshn_rhenvar_wall2",0,"rhenvar_wall2","bo_yavinwall2", []),
+  ("revnshn_rhenvar_wall3",0,"rhenvar_wall3","bo_yavinwall3", []),
+  
+  ("revnshn_ziost_addon",0,"ziost_addon","bo_yavinaddon", []),
+  ("revnshn_ziost_pillar1",0,"ziost_pillar1","bo_yavinpillar1", []),
+  ("revnshn_ziost_pillar2",0,"ziost_pillar2","bo_yavinpillar2", []),
+  ("revnshn_ziost_spire",0,"ziost_spire","bo_yavinspire", []),
+  ("revnshn_ziost_statue1",0,"ziost_statue1","bo_yavinstatue1", []),
+  ("revnshn_ziost_statue2",0,"ziost_statue2","bo_yavinstatue2", []),
+  ("revnshn_ziost_statue3",0,"ziost_statue3","bo_yavinstatue3", []),
+  ("revnshn_ziost_steps",0,"ziost_steps","bo_yavinsteps", []),
+  ("revnshn_ziost_table1",0,"ziost_table1","bo_yavintable1", []),
+  ("revnshn_ziost_temple",0,"ziost_templeblend","bo_yavintempleblend", []),
+  ("revnshn_ziost_wall1",0,"ziost_wall1","bo_yavinwall1", []),
+  ("revnshn_ziost_wall2",0,"ziost_wall2","bo_yavinwall2", []),
+  ("revnshn_ziost_wall3",0,"ziost_wall3","bo_yavinwall3", []),
+  
+  
+  ("revnshn_dantooine_addon",0,"dantooine_addon","bo_yavinaddon", []),
+  ("revnshn_dantooine_pillar1",0,"dantooine_pillar1","bo_yavinpillar1", []),
+  ("revnshn_dantooine_pillar2",0,"dantooine_pillar2","bo_yavinpillar2", []),
+  ("revnshn_dantooine_spire",0,"dantooine_spire","bo_yavinspire", []),
+  ("revnshn_dantooine_statue1",0,"dantooine_statue1","bo_yavinstatue1", []),
+  ("revnshn_dantooine_statue2",0,"dantooine_statue2","bo_yavinstatue2", []),
+  ("revnshn_dantooine_statue3",0,"dantooine_statue3","bo_yavinstatue3", []),
+  ("revnshn_dantooine_steps",0,"dantooine_steps","bo_yavinsteps", []),
+  ("revnshn_dantooine_table1",0,"dantooine_table1","bo_yavintable1", []),
+  ("revnshn_dantooine_temple",0,"dantooine_templeblend","bo_yavintempleblend", []),
+  ("revnshn_dantooine_wall1",0,"dantooine_wall1","bo_yavinwall1", []),
+  ("revnshn_dantooine_wall2",0,"dantooine_wall2","bo_yavinwall2", []),
+  ("revnshn_dantooine_wall3",0,"dantooine_wall3","bo_yavinwall3", []),
+  
+  ("revnshn_korriban_1_addon",0,"korriban_1_addon","bo_yavinaddon", []),
+  ("revnshn_korriban_1_pillar1",0,"korriban_1_pillar1","bo_yavinpillar1", []),
+  ("revnshn_korriban_1_pillar2",0,"korriban_1_pillar2","bo_yavinpillar2", []),
+  ("revnshn_korriban_1_spire",0,"korriban_1_spire","bo_yavinspire", []),
+  ("revnshn_korriban_1_statue1",0,"korriban_1_statue1","bo_yavinstatue1", []),
+  ("revnshn_korriban_1_statue2",0,"korriban_1_statue2","bo_yavinstatue2", []),
+  ("revnshn_korriban_1_statue3",0,"korriban_1_statue3","bo_yavinstatue3", []),
+  ("revnshn_korriban_1_steps",0,"korriban_1_steps","bo_yavinsteps", []),
+  ("revnshn_korriban_1_table1",0,"korriban_1_table1","bo_yavintable1", []),
+  ("revnshn_korriban_1_temple",0,"korriban_1_templeblend","bo_yavintempleblend", []),
+  ("revnshn_korriban_1_wall1",0,"korriban_1_wall1","bo_yavinwall1", []),
+  ("revnshn_korriban_1_wall2",0,"korriban_1_wall2","bo_yavinwall2", []),
+  ("revnshn_korriban_1_wall3",0,"korriban_1_wall3","bo_yavinwall3", []),
+  
+  ("revnshn_korriban_2_addon",0,"korriban_2_addon","bo_yavinaddon", []),
+  ("revnshn_korriban_2_pillar1",0,"korriban_2_pillar1","bo_yavinpillar1", []),
+  ("revnshn_korriban_2_pillar2",0,"korriban_2_pillar2","bo_yavinpillar2", []),
+  ("revnshn_korriban_2_spire",0,"korriban_2_spire","bo_yavinspire", []),
+  ("revnshn_korriban_2_statue1",0,"korriban_2_statue1","bo_yavinstatue1", []),
+  ("revnshn_korriban_2_statue2",0,"korriban_2_statue2","bo_yavinstatue2", []),
+  ("revnshn_korriban_2_statue3",0,"korriban_2_statue3","bo_yavinstatue3", []),
+  ("revnshn_korriban_2_steps",0,"korriban_2_steps","bo_yavinsteps", []),
+  ("revnshn_korriban_2_table1",0,"korriban_2_table1","bo_yavintable1", []),
+  ("revnshn_korriban_2_temple",0,"korriban_2_templeblend","bo_yavintempleblend", []),
+  ("revnshn_korriban_2_wall1",0,"korriban_2_wall1","bo_yavinwall1", []),
+  ("revnshn_korriban_2_wall2",0,"korriban_2_wall2","bo_yavinwall2", []),
+  ("revnshn_korriban_2_wall3",0,"korriban_2_wall3","bo_yavinwall3", []),
+  
+##@> Skyboxes as scene props
+    ("skybox_cloud_1",0,"skybox_cloud_1_prop","0", []),
+    ("skybox_cloud_2",0,"skybox_cloud_2_prop","0", []),
+	("skybox_night_1",0,"skybox_night_1_prop","0", []),   
+	("skybox_sunset_1",0,"skybox_sunset_1_prop","0", []),
+	("skybox_space",0,"compass_prop","0", []),	
+	("skybox_vjun",0,"skybox_vjun","0", []),   
+	("skybox_kamino",0,"skybox_kamino","0", []),  
+	
+  #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  
 #----------------------------------------------------------------------
 #Highlander begin--------------------------------------
   ("scene_props_end",0,"0","0", []), #leave this at the last position

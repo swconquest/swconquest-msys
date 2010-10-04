@@ -1,3 +1,7 @@
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+# By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
+
 from ID_items import *
 from ID_quests import *
 from ID_factions import *
@@ -21,6 +25,7 @@ slot_item_intelligence_requirement= 4
 slot_item_difficulty              = 5
 #end Autoloot
 slot_item_alternate_weapon    	  = 6	#SW - for the common_toggle_weapon_capabilities code
+slot_item_ammo_clip		    	  = 7	#SWY - so we can easily manage all the ammo properties frame showing stuff
 
 ########################################################
 ##  AGENT SLOTS            #############################
@@ -31,7 +36,7 @@ slot_agent_target_x_pos           = 1
 slot_agent_target_y_pos           = 2
 slot_agent_is_alive_before_retreat= 3
 slot_agent_is_in_scripted_mode    = 4
-slot_agent_is_not_reinforcement   = 5
+slot_agent_is_not_reinforcement   = 5 
 slot_agent_tournament_point       = 6
 slot_agent_arena_team_set         = 7
 slot_agent_map_overlay_id         = 10
@@ -1009,7 +1014,7 @@ all_quests_begin = 0
 all_quests_end = "qst_quests_end"
 
 towns_begin = "p_town_1"
-castles_begin = "p_castle_1"
+castles_begin = "p_castle_2" # "p_castle_1"
 villages_begin = "p_village_1"
 
 towns_end = castles_begin
@@ -1075,6 +1080,19 @@ town14_walkers_end = "trp_town_walker_moncal"
 town17_walkers_begin = "trp_town_walker_twilek"
 town17_walkers_end = "trp_town_walker_chiss"
 
+#Added custom wakers by Swyter -->>
+iridonia_walkers_begin = "trp_town_walker_zabrak"
+iridonia_walkers_end = "trp_town_walker_zabrak"
+
+pzob_walkers_begin = "trp_town_walker_gamorrean"
+pzob_walkers_end = "trp_town_walker_gamorrean"
+
+rodia_walkers_begin = "trp_town_walker_rodian"
+rodia_walkers_end = "trp_town_walker_rodian"
+
+bothaw_moon_walkers_begin = "trp_town_walker_bothan"
+bothaw_moon_walkers_end = "trp_town_walker_bothan"
+#@>SWY-->>
 town_walkers_neutral_begin = town_walkers_begin
 town_walkers_neutral_end = "trp_town_walker_jawa"
 
@@ -1194,6 +1212,9 @@ banner_meshes_end_minus_one = "mesh_banner_c01"
 arms_meshes_begin = "mesh_arms_a01"
 arms_meshes_end_minus_one = "mesh_arms_f21"
 
+faction_meshes_begin = "mesh_pic_arms_swadian"
+faction_meshes_end_minus_one = "mesh_pic_arms_nord"
+
 custom_banner_charges_begin = "mesh_custom_banner_charge_01"
 custom_banner_charges_end = "mesh_tableau_mesh_custom_banner"
 
@@ -1305,7 +1326,7 @@ arena_grand_prize = 500
 
 #Tavern recruitment and ale
 merc_parties_begin = "p_town_merc_1"
-merc_parties_end = "p_castle_1"
+merc_parties_end = "p_castle_2" #"p_castle_1"
 
 ########################################################
 ##  COLOR CODES             ############################

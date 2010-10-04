@@ -1,3 +1,7 @@
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+# By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
+
 from header_skins import *
 from ID_particle_systems import *
 ####################################################################################################################
@@ -33,11 +37,13 @@ man_face_keys = [
 (250,0,0.8,-1.0, "Mouth-Nose Distance"),
 (200,0,-0.3,1.0, "Mouth Width"),
 (50,0,-1.5,1.0, "Cheeks"),
+(220,0,-0.1,0.9, "Neck Width"),
 
 (60,0,-0.4,1.35, "Nose Height"),
 (70,0,-0.6,0.7, "Nose Width"),
 (80,0,1.0,-0.1, "Nose Size"),
 (270,0,-0.5,1.0, "Nose Shape"),
+(290,0,0.0,1.0, "Nasal Curvature"),
 (90,0,-0.2,1.4, "Nose Bridge"),
 
 (100,0,-0.3,1.5, "Cheek Bones"),
@@ -51,9 +57,9 @@ man_face_keys = [
 (170,0,-0.1,1.9, "Eyebrow Height"),
 #SW - modified to use Barf's updated male_head model
 #(220,0,-0.1,0.9, "Eyebrow Depth"),
-(220,0,-0.1,0.9, "Neck Width"),
 (180,0,-1.1,1.6, "Eyebrow Shape"),
 (230,0,1.2,-0.7, "Temple Width"),
+#(310,0,-1.1,1.6, "Zabrak Horns"),
 
 (30,0,-0.6,0.9, "Face Depth"),
 (40,0,0.9,-0.6, "Face Ratio"),
@@ -115,8 +121,22 @@ sullustan_face_keys = []
 gamorrean_face_keys = []
 twilek_face_keys = []
 twilek_female_face_keys = woman_face_keys
-bothan_face_keys = []
-geonosian_face_keys = []
+bothan_face_keys = [
+
+(10,0,0.0,1.0, "Bothan Face Shape"),
+(30,0,0.0,1.0, "Bothan Mouth Forward"),
+(50,0,0.0,1.0, "Bothan Head Size"),
+(0,0,1.0,0.0, "Post-Edit"),
+]
+
+geonosian_face_keys = [
+
+(10,0,0.0,1.0, "Exoskeleton Shape"),
+(30,0,0.0,1.0, "Exoskeleton Forward"),
+(50,0,1.0,0.0, "Exoskeleton Size"),
+(0,0,1.0,0.0, "Post-Edit"),
+]
+
 clone_face_keys = []
 rancor_face_keys = []
 
@@ -155,9 +175,9 @@ skins = [
   (
     "man", 0,
     "man_body", "man_calf_l", "m_handL",
-    "male_head", man_face_keys,
+    "male_head_new", man_face_keys,
     #["man_hair_s","man_hair_m","man_hair_n","man_hair_o", "man_hair_y10", "man_hair_y12","man_hair_p","man_hair_r","man_hair_q","man_hair_v","man_hair_t","man_hair_y6","man_hair_y3","man_hair_y7","man_hair_y9","man_hair_y11","man_hair_u","man_hair_y","man_hair_y2","man_hair_y4"], #man_hair_meshes ,"man_hair_y5","man_hair_y8",
-	["man_hair_o", "man_hair_y10", "man_hair_y12","man_hair_u","man_hair_y4","man_hair_s","man_hair_n","man_hair_p","man_hair_r","man_hair_q","man_hair_v","man_hair_t","man_hair_y9","man_hair_y","man_hair_y11","man_hair_y2","man_hair_y3","man_hair_y6","man_hair_y7","man_hair_m","man_hair_y5","man_hair_y8"], #man_hair_meshes
+	["man_hair_o", "man_hair_y10", "man_hair_y12","man_hair_u","man_hair_y4","man_hair_s","man_hair_n","man_hair_p","man_hair_r","man_hair_q","man_hair_v","man_hair_t","man_hair_y9","man_hair_y","man_hair_y11","man_hair_y2","man_hair_y3","man_hair_y6","man_hair_y7","man_hair_m","man_hair_y5","man_hair_y8","zabrak_horns"], #man_hair_meshes
     #["beard_e","beard_d","beard_k","beard_l","beard_i","beard_j","beard_z","beard_m","beard_n","beard_y","beard_p","beard_o",   "beard_v", "beard_f", "beard_b", "beard_c","beard_t","beard_u","beard_r","beard_s","beard_a","beard_h","beard_g",], #beard meshes ,"beard_q"
 	["beard_i","beard_l","beard_j","beard_r","beard_h","beard_g","beard_d","beard_k","beard_m","beard_n","beard_y","beard_p","beard_o",   "beard_v", "beard_f", "beard_b", "beard_c","beard_t","beard_u","beard_s","beard_a","beard_e","beard_z","beard_q"], #beard meshes
     #["hair_blonde", "hair_red", "hair_brunette", "hair_black", "hair_white"], #hair textures
@@ -190,15 +210,16 @@ skins = [
 		("palpatine",0xffffffff,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),		
 		("twilek_face_bib",0x00e1d489,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),		
 		("chiss_face_a",0x00355bff,["hair_blonde"],[0xff120808, 0xff007080c]),
-		("weequay_face_a",0xff807c8a,["hair_blonde"],[0xff120808, 0xff007080c]),	# from I-V-I-O-R-T
-		("weequay_face_b",0xff807c8a,["hair_blonde"],[0xff120808, 0xff007080c])		# from I-V-I-O-R-T
+		("weequay_face_a",0xFF807c8a,["hair_blonde"],[0xFF120808, 0xFF007080c]),	# from I-V-I-O-R-T
+		("weequay_face_b",0xFF807c8a,["hair_blonde"],[0xFF120808, 0xFF007080c])		# from I-V-I-O-R-T
  
      ], #man_face_textures,
     [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_victory,"snd_man_victory")], #voice sounds
 	#SW - why was voice_warcry removed?  should we add it back in?
 	#[(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_warcry,"snd_man_victory"),(voice_victory,"snd_man_victory")], #voice sounds
     "skel_human", 1.0,
-    psys_game_blood,psys_game_blood_2,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
     #psys_game_blood_green,psys_game_blood_2_green,
     [[1.7, comp_greater_than, (1.0,face_width), (1.0,temple_width)], #constraints: ex: 1.7 > (face_width + temple_width)
      [0.3, comp_less_than, (1.0,face_width), (1.0,temple_width)],
@@ -214,8 +235,8 @@ skins = [
   (
     "woman", skf_use_morph_key_10,
     "woman_body",  "woman_calf_l", "f_handL",
-    "female_head", woman_face_keys,
-    ["woman_hair_p","woman_hair_n","woman_hair_o","woman_hair_q","woman_hair_r","woman_hair_t","woman_hair_s","woman_hair_buns"], #woman_hair_meshes
+    "female_head_new", woman_face_keys,
+    ["woman_hair_p","woman_hair_n","woman_hair_o","woman_hair_q","woman_hair_r","woman_hair_t","woman_hair_s","woman_hair_buns","zabrak_horns"], #woman_hair_meshes
 	#    ["woman_hair_a","woman_hair_b","woman_hair_c","woman_hair_d","woman_hair_e","woman_hair_f","woman_hair_g"], #woman_hair_meshes
     [],
     #["hair_blonde", "hair_red", "hair_brunette", "hair_black", "hair_white"], #hair textures
@@ -234,12 +255,15 @@ skins = [
      ("womanface_african",0xff808080,["hair_blonde"],[0xff120808, 0xff007080c]),	 
 	 ("sith_darth_maul_female",0x0097392c,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),	# from I-V-I-O-R-T
 	 ("chiss_female_face_a",0x00355bff,["hair_blonde"],[0xff120808, 0xff007080c]),
+	 ("woman_face_nightsister",0x00c2b59a,["hair_blonde"],[0xff120808, 0xff34312a]),
+	 ("woman_face_silri",0x00c2b59a,["hair_blonde"],[0xff120808, 0xff34312a]),
 #     ("womanface_midage",0xffe5eaf0,["hair_black","hair_brunette","hair_red","hair_white"],[0xffffcded, 0xffbbcded, 0xff99eebb]),
      ],#woman_face_textures
 # HC - Added in new sounds for snd_woman_die - #SW also added in voice_yell
     [(voice_die,"snd_woman_die"),(voice_hit,"snd_woman_hit"),(voice_grunt,"snd_woman_grunt"),(voice_grunt_long,"snd_woman_grunt_long"),(voice_yell,"snd_woman_yell"),(voice_victory,"snd_woman_victory")], #voice sounds
     "skel_human", 1.0,
-    psys_game_blood,psys_game_blood_2,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
   ),
 
 #SW - had to un-comment undead in order to get next skins to work, nevermind, I just modified my skin id's in head_troops.py
@@ -272,8 +296,10 @@ skins = [
 	 ], #undead_face_textures
      [(voice_die,"snd_jawa_die"),(voice_hit,"snd_jawa_hit"),(voice_grunt,"snd_jawa_grunt"),(voice_grunt_long,"snd_jawa_grunt_long"),(voice_yell,"snd_jawa_yell"),(voice_warcry,"snd_jawa_victory"),(voice_victory,"snd_jawa_victory")], #man voice sounds
      #"skel_human", 1.0,
-	 "skel_human", 0.8,		#attempting to make the hitbox a little smaller
+	 "skel_human", 0.56,		#attempting to make the hitbox a little smaller
 	 #"skel_jawa", 1.0,		#new skel_jawa skeleton
+	 psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
    ),
 
  #SW - new tusken skin
@@ -289,7 +315,9 @@ skins = [
 		("tusken_face_a",0xffffffff,[])
 	], #face_textures
      [(voice_die,"snd_tusken_die"),(voice_hit,"snd_tusken_hit"),(voice_grunt,"snd_tusken_grunt"),(voice_grunt_long,"snd_tusken_grunt_long"),(voice_yell,"snd_tusken_yell"),(voice_warcry,"snd_tusken_victory"),(voice_victory,"snd_tusken_victory")], #man voice sounds
-     "skel_human", 1.0,
+     "skel_human", 0.9,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
    ),
 
  #SW - new rodian skin
@@ -307,7 +335,9 @@ skins = [
 		("rodian_face_c",0xffffffff,[])
 	 ], #face_textures
      [(voice_die,"snd_rodian_die"),(voice_hit,"snd_rodian_hit"),(voice_grunt,"snd_rodian_grunt"),(voice_grunt_long,"snd_rodian_grunt_long"),(voice_yell,"snd_rodian_yell"),(voice_warcry,"snd_rodian_victory"),(voice_victory,"snd_rodian_victory")], #man voice sounds
-     "skel_human", 1.0,
+     "skel_human", 0.7,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
    ),
 
  #SW - new moncal skin
@@ -323,7 +353,9 @@ skins = [
      [("moncal_face_a",0xffffffff,[])
 	 ], #face_textures
      [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_victory,"snd_man_victory")], #man voice sounds
-     "skel_human", 1.0,
+     "skel_human", 1.3,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
    ),
 
  #SW - new trandoshan skin
@@ -345,6 +377,8 @@ skins = [
      [(voice_die,"snd_trandoshan_die"),(voice_hit,"snd_trandoshan_hit"),(voice_grunt,"snd_trandoshan_grunt"),(voice_grunt_long,"snd_trandoshan_grunt_long"),(voice_yell,"snd_trandoshan_yell"),(voice_warcry,"snd_trandoshan_victory"),(voice_victory,"snd_trandoshan_victory")], #man voice sounds
      "skel_human", 1.0,
 	 #psys_game_blood_green,psys_game_blood_2_green,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
    ),
 
  #SW - new rseries skin
@@ -361,11 +395,14 @@ skins = [
      [],
      [("droid_head",0xffffffff,[])
 	 ], #face_textures
-     [(voice_die,"snd_droid_die"),(voice_hit,"snd_droid_hit"),(voice_grunt,"snd_droid_grunt"),(voice_grunt_long,"snd_droid_grunt_long"),(voice_yell,"snd_droid_yell"),(voice_warcry,"snd_droid_victory"),(voice_victory,"snd_droid_victory")], #r2series voice sounds
+#     [(voice_die,"snd_droid_die"),(voice_hit,"snd_droid_hit"),(voice_grunt,"snd_droid_grunt"),(voice_grunt_long,"snd_droid_grunt_long"),(voice_yell,"snd_droid_yell"),(voice_warcry,"snd_droid_victory"),(voice_victory,"snd_droid_victory")], #r2series voice sounds
+     [(voice_die,"snd_battledroid_die"),(voice_hit,"snd_battledroid_hit"),(voice_grunt,"snd_battledroid_grunt"),(voice_grunt_long,"snd_battledroid_grunt_long"),(voice_yell,"snd_battledroid_yell"),(voice_warcry,"snd_battledroid_victory"),(voice_victory,"snd_battledroid_victory")], #r2series voice sounds
+
      #"skel_human", 1.0,
-	 "skel_human", 0.8,		#attempting to make the hitbox a little smaller
+	 "skel_human", 1.4,		#attempting to make the hitbox a little smaller
 	 #"skel_horse", 1.0,	# does doing this seem to cause the game to randomly crash?  seemed to happen a few times after I made this change, so not sure if its related.  AncientWanker confirmed this was an issue
-	 psys_droid_blood,psys_droid_blood_2,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+	 #psys_droid_blood,psys_droid_blood_2,
    ),
 
  #SW - new weequay skin (commented out since there is a limit on the number of skins, used a chiss face texture on the humans instead)
@@ -388,19 +425,22 @@ skins = [
      "wookiee", 0,
      "wookiee_body", "wookiee_calf_l", "wookiee_mittenL",
      #"wookiee_head_new_half", wookiee_face_keys,
-	 "wookiee_head", wookiee_face_keys,
+	 "wookiee_head_new_half", wookiee_face_keys,
      [],
      [],
      ["hair_blonde"], #hair textures NOTE - you MUST have a hair texture (even if it is not used) for the game not to crash
      [],
      [
-		#("wookiee_face_a_new",0xffffffff,[])
-		("wookiee_face_a",0xffffffff,[]),
-		("wookiee_face_b",0xffffffff,[])
+		("wookiee_face_a_new",0xffffffff,[]),
+		("wookiee_face_a_new2",0xffffffff,[]),
+		#("wookiee_face_a",0xffffffff,[]),
+		#("wookiee_face_b",0xffffffff,[])
 	 ], #face_textures
      [(voice_die,"snd_wookiee_die"),(voice_hit,"snd_wookiee_hit"),(voice_grunt,"snd_wookiee_grunt"),(voice_grunt_long,"snd_wookiee_grunt_long"),(voice_yell,"snd_wookiee_yell"),(voice_warcry,"snd_wookiee_victory"),(voice_victory,"snd_wookiee_victory")], #man voice sounds
-     "skel_human", 1.0,
+     "skel_human", 1.5,
 	 #"skel_wookiee", 1.0,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
    ),   
 
 #SW - new sullustan skin
@@ -416,6 +456,8 @@ skins = [
 	 ], #face_textures
      [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_sullustan_yell"),(voice_warcry,"snd_sullustan_victory"),(voice_victory,"snd_sullustan_victory")], #man voice sounds
      "skel_human", 1.0,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
    ),      
    
  #SW - new gamorrean skin
@@ -430,7 +472,9 @@ skins = [
      [("gamorrean_face_a",0xffffffff,[])
 	 ], #face_textures
      [(voice_die,"snd_gamorrean_die"),(voice_hit,"snd_gamorrean_hit"),(voice_grunt,"snd_gamorrean_grunt"),(voice_grunt_long,"snd_gamorrean_grunt_long"),(voice_yell,"snd_gamorrean_yell"),(voice_warcry,"snd_gamorrean_victory"),(voice_victory,"snd_gamorrean_victory")], #man voice sounds
-     "skel_human", 1.0,
+     "skel_human", 0.87,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
    ),   
 
  #SW - new twilek skin
@@ -455,6 +499,8 @@ skins = [
 	 ], #face_textures
      [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_victory,"snd_man_victory")], #man voice sounds
      "skel_human", 1.0,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
    ),
 
  #SW - new twilek female skin
@@ -478,6 +524,8 @@ skins = [
 # HC - Added in new sounds for snd_woman_die	#SW - also added in voice_yell
     [(voice_die,"snd_woman_die"),(voice_hit,"snd_woman_hit"),(voice_grunt,"snd_woman_grunt"),(voice_grunt_long,"snd_woman_grunt_long"),(voice_yell,"snd_twilek_female_yell"),(voice_victory,"snd_twilek_female_victory")], #voice sounds
     "skel_human", 1.0,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
   ),   
 
  #SW - new bothan skin
@@ -493,7 +541,9 @@ skins = [
      [("bothan_face_a",0xffffffff,[])
 	 ], #face_textures
      [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_victory,"snd_man_victory")], #man voice sounds
-     "skel_human", 1.0,
+     "skel_human", 0.9,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
    ),
 
  #SW - new geonosian skin
@@ -508,7 +558,7 @@ skins = [
      [("geonosian_face_a",0xffffffff,[])
 	 ], #face_textures
      [(voice_die,"snd_geonosian_die"),(voice_hit,"snd_geonosian_hit"),(voice_grunt,"snd_geonosian_grunt"),(voice_grunt_long,"snd_geonosian_grunt_long"),(voice_yell,"snd_geonosian_yell"),(voice_warcry,"snd_geonosian_victory"),(voice_victory,"snd_geonosian_victory")], #man voice sounds
-     "skel_human", 1.0,
+     "skel_human", 0.5,
    ),   
 
 	#SW - new rancor skin
@@ -523,8 +573,10 @@ skins = [
      [("transparent_body",0xffffffff,[])
 	 ], #face_textures
      [(voice_die,"snd_gamorrean_die"),(voice_hit,"snd_gamorrean_hit"),(voice_grunt,"snd_gamorrean_grunt"),(voice_grunt_long,"snd_gamorrean_grunt_long"),(voice_yell,"snd_gamorrean_yell"),(voice_warcry,"snd_gamorrean_victory"),(voice_victory,"snd_gamorrean_victory")], #man voice sounds
-     "skel_human", 1.0,
+     "skel_human", 0.6,
 	 #"skel_rancor", 1.0,	#new rancor skeleton
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
+    #psys_game_blood,psys_game_blood_2,
    ),   
 
    # #SW - new clone skin

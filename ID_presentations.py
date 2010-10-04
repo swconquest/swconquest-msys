@@ -23,3 +23,5 @@ prsnt_jq_companions_quickview = 21
 prsnt_starship = 22
 prsnt_ship_details = 23
 prsnt_key_assignment = 24
+prsnt_faction_selection = 25
+prsnt_class_selection = 26

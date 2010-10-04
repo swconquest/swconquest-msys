@@ -1,3 +1,7 @@
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+# By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
+
 from header_factions import *
 
 ####################################################################################################################
@@ -34,12 +38,16 @@ factions = [
 
   ("dark_knights","Dark Knights", 0, 0.5,[("innocents",-0.9),("player_faction",-0.4)], []),
 
-  ("culture_1",  "culture_1", 0, 0.9, [], []),
-  ("culture_2",  "culture_2", 0, 0.9, [], []),
-  ("culture_3",  "culture_3", 0, 0.9, [], []),
-#  ("culture_4",  "culture_4", 0, 0.9, [], []),
-#  ("culture_5",  "culture_5", 0, 0.9, [], []),
 
+  ("culture_1",  "culture_1", 0, 0.9, [], []),  ##@> Empire culture
+  ("culture_2",  "culture_2", 0, 0.9, [], []),  ##@> Rebel culture
+  ("culture_3",  "culture_3", 0, 0.9, [], []),  ##@> Hutt culture
+  ("culture_4",  "culture_4", 0, 0.9, [], []),  ##@> Wookie culture
+  ("culture_5",  "culture_5", 0, 0.9, [], []),  ##@> Mandalorian culture
+  ("culture_6",  "culture_6", 0, 0.9, [], []),  ##@> Clone culture
+  ("culture_7",  "culture_7", 0, 0.9, [], []),  ##@> Trandoshan culture  
+
+  
 #  ("swadian_caravans","Swadian Caravans", 0, 0.5,[("outlaws",-0.8), ("dark_knights",-0.2)], []),
 #  ("vaegir_caravans","Vaegir Caravans", 0, 0.5,[("outlaws",-0.8), ("dark_knights",-0.2)], []),
 
@@ -49,13 +57,13 @@ factions = [
   #Colors - 0xCC2211 = red, 0xDDDD33 = yellow, 0x33DDDD = blue, 0x33DD33 = green
   
   #SW - Swadia (Kingdom 1) = Galactic Empire
-  ("kingdom_1",  "Galactic Empire", 0, 0.9,   [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05),("kingdom_2", -0.4)], [], 0x33DDDD),  # BLUE
+  ("kingdom_1",  "Galactic Empire", 0, 0.9,   [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05),("kingdom_2", -0.4)], [], 0x33b3dd),  # BLUE old color: 33DDDD
   #("kingdom_1",  "Galactic Empire", 0, 0.9,   [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05),("kingdom_2", -0.5)], [], 0xCC2211),   # RED
   #SW - Vaegir (Kingdom 2) = Rebal Alliance
   #("kingdom_2",  "Rebel Alliance",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05),("kingdom_1", -0.4)], [], 0x33DD33),	#GREEN
   ("kingdom_2",  "Rebel Alliance",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05),("kingdom_1", -0.4)], [], 0xce0b0b),	#RED
   #SW  Khergit Khanate (Kingdom 3) = Hutt Cartel
-  ("kingdom_3",  "Hutt Cartel", 0, 0.9,       [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05)], [], 0xDD8844),	#ORANGE
+  ("kingdom_3",  "Hutt Cartel", 0, 0.9,       [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05)], [], 0xDD8844),	#ORANGE old color: DD8844
 #4 = Nords
 #  ("kingdom_4",  "Kingdom of Nords",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05)], [], 0xDDDD33),
 #5 = Rhodoks

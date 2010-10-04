@@ -17,6 +17,7 @@ tf_rodian           = 4
 tf_moncal           = 5
 tf_trandoshan       = 6
 tf_droid         = 7		#special, non-playable race
+tf_battledroid         = 7		#special, non-playable race
 tf_wookiee          = 8
 tf_sullustan        = 9
 tf_gamorrean          = 10
