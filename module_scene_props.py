@@ -983,7 +983,6 @@ scene_props = [
   #SW - modified arena_sign
   #("arena_sign",0,"arena_arms","0", []),
   ("arena_sign",0,"sw_arena_arms","0", []),
-
   ("castle_h_battlement_a",0,"castle_h_battlement_a","bo_castle_h_battlement_a", []),
   ("castle_h_battlement_b",0,"castle_h_battlement_b","bo_castle_h_battlement_b", []),
   ("castle_h_battlement_a2",0,"castle_h_battlement_a2","bo_castle_h_battlement_a2", []),
@@ -1967,10 +1966,6 @@ scene_props = [
   
   
 ##@> Swyter Scene Props - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-   ("swy_landing_arm",0,"sw_landing_arm","bo_sw_landing_arm", []),
-   ("swy_taris_build",0,"taris_build","bo_taris_build", []),
-   ("swy_tower1",0,"swy_tower1","bo_swy_tower1", []), 
-   ("swy_tower2",0,"swy_tower2","bo_swy_tower2", []),
    ("swy_city_ground",0,"swy_city_ground","bo_swy_city_ground", []),
    ("swy_city_ground2",0,"swy_city_ground2","bo_swy_city_ground", []),   
    ("swy_city_ground3",0,"swy_city_ground3","bo_swy_city_ground", []),
@@ -2053,6 +2048,14 @@ scene_props = [
    
    
     ("swy_gate.sys",0,"ship_door2","bo_ship_door2", []),
+	
+	#New holographic signs
+    ("swy_sign_arena",0,"swy_sign_arena",0, []),
+	("swy_sign_cantina",0,"swy_sign_cantina",0, []),
+	("swy_sign_shop",0,"swy_sign_shop",0, []),
+	("swy_sign_extra1",0,"swy_sign_extra1",0, []),
+	("swy_sign_extra2",0,"swy_sign_extra2",0, []),
+	("swy_sign_extra3",0,"swy_sign_extra3",0, []),	
 ## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 ##@>  Barf Scene Props
@@ -2083,7 +2086,7 @@ scene_props = [
    ("barf_rock_23",0,"rock23","bo_rock23", []),
    ("barf_rock_24",0,"rock24","bo_rock24", []),
    
-   
+## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 ##@>  Yiyang Chen Props
    ("kashyyyk_house",0,"kashyyyk_house",0, []),
    ("kashyyyk_house_platform_bridge",0,"kashyyyk_house_platform_bridge",0, []),
@@ -2104,7 +2107,39 @@ scene_props = [
    ("kashyyyk_stairs",0,"kashyyyk_stairs",0, []),
    ("kashyyyk_tree1",0,"kashyyyk_tree1",0, []),
    ("kashyyyk_tree2",0,"kashyyyk_tree2",0, []),
+   
+   ("coruscant1",0,"coruscant1",0, []),
+   ("coruscant2",0,"coruscant2",0, []),
+   ("coruscant3",0,"coruscant3",0, []),
+   ("coruscant4",0,"coruscant4",0, []),
+   ("coruscant5",0,"coruscant5",0, []),
+   ("coruscant6",0,"coruscant6",0, []),
+   ("coruscant7",0,"coruscant7",0, []),
+   ("coruscant8",0,"coruscant8",0, []),
+   ("coruscant9",0,"coruscant9",0, []),
 
+    ("taris_building_a_1_hw",0,"taris_building_a_1_hw",0, []),
+	("taris_building_a_2_hw",0,"taris_building_a_2_hw",0, []),
+	("taris_building_a_3_hw",0,"taris_building_a_3_hw",0, []),
+	("taris_building_a_1_aw",0,"taris_building_a_1_aw",0, []),
+	("taris_building_a_2_aw",0,"taris_building_a_2_aw",0, []),
+	("taris_building_a_3_aw",0,"taris_building_a_3_aw",0, []),
+	("taris_building_a_1_nw",0,"taris_building_a_1_nw",0, []),
+	("taris_building_a_2_nw",0,"taris_building_a_2_nw",0, []),
+	("taris_building_a_3_nw",0,"taris_building_a_3_nw",0, []),
+	("taris_building_b_1_hw",0,"taris_building_b_1_hw",0, []),
+	("taris_building_b_2_hw",0,"taris_building_b_2_hw",0, []),
+	("taris_building_b_3_hw",0,"taris_building_b_3_hw",0, []),
+	("taris_building_b_1_aw",0,"taris_building_b_1_aw",0, []),
+	("taris_building_b_2_aw",0,"taris_building_b_2_aw",0, []),
+	("taris_building_b_3_aw",0,"taris_building_b_3_aw",0, []),
+	("taris_building_b_1_nw",0,"taris_building_b_1_nw",0, []),
+	("taris_building_b_2_nw",0,"taris_building_b_2_nw",0, []),
+	("taris_building_b_3_nw",0,"taris_building_b_3_nw",0, []),
+	("taris_building_2_bridge",0,"taris_building_2_bridge",0, []),
+	("taris_platform",0,"taris_platform",0, []),
+	
+## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ##@> Reskins   
   ("revnshn_rhenvar_addon",0,"rhenvar_addon","bo_yavinaddon", []),
   ("revnshn_rhenvar_pillar1",0,"rhenvar_pillar1","bo_yavinpillar1", []),
@@ -2176,7 +2211,8 @@ scene_props = [
   ("revnshn_korriban_2_wall1",0,"korriban_2_wall1","bo_yavinwall1", []),
   ("revnshn_korriban_2_wall2",0,"korriban_2_wall2","bo_yavinwall2", []),
   ("revnshn_korriban_2_wall3",0,"korriban_2_wall3","bo_yavinwall3", []),
-  
+
+## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ##@> Skyboxes as scene props
     ("skybox_cloud_1",0,"skybox_cloud_1_prop","0", []),
     ("skybox_cloud_2",0,"skybox_cloud_2_prop","0", []),

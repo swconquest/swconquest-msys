@@ -1218,7 +1218,7 @@ scenes = [
     [],[], "outer_terrain_plain"),
   ("town_2_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000000300005000006d9b9000052560000620000004c92", 
     [],[], "outer_terrain_plain"),
-  ("town_3_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x00000002bc61d087400799e60000034e00004b34000059be",
+  ("town_3_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x00000006200005000008f23c0000753d00004f66000033c8", ## old code >> "0x00000002bc61d087400799e60000034e00004b34000059be"
     [],[], "outer_terrain_plain"),
   ("town_4_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
     [],[], "outer_terrain_plain"),	
@@ -1232,8 +1232,9 @@ scenes = [
     [],[], "outer_terrain_plain_1"),	#Geonosis
   ("town_9_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x00000000400005000006edb9000063dc80003f5a00005285", ## old code >> "0x0000000234430851c0085214000041fd0000149b000039f7",
     [],[],),
-  ("town_10_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x00000002bc61d087400799e60000034e00004b34000059be",
-    [],[], "outer_terrain_plain"),
+	
+  ("town_10_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x00000006200005000008f23c0000753d00004f66000033c8", ## old code >> "0x00000002bc61d087400799e60000034e00004b34000059be"
+    [],[],),
 	
 	#Hoth land battle       With trees: 0x0000000242c3d08f4008aa2a00003efe00004b34000059be   Without trees: 0x000000024003d08f0008aa2a00003efe00004b34000059be
   ("town_11_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x000000024003d08f0008aa2a00003efe00004b34000059be",
