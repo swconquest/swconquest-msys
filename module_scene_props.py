@@ -2056,6 +2056,11 @@ scene_props = [
 	("swy_sign_extra1",0,"swy_sign_extra1",0, []),
 	("swy_sign_extra2",0,"swy_sign_extra2",0, []),
 	("swy_sign_extra3",0,"swy_sign_extra3",0, []),	
+	
+	#Glasses
+	("swy_glass",0,"swy_glass",0, []),	
+	("swy_glass_curved",0,"swy_glass_curved",0, []),	
+	("swy_glass_rectangle",0,"swy_glass_rectangle",0, []),	
 ## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 
 ##@>  Barf Scene Props
@@ -2212,6 +2217,19 @@ scene_props = [
   ("revnshn_korriban_2_wall2",0,"korriban_2_wall2","bo_yavinwall2", []),
   ("revnshn_korriban_2_wall3",0,"korriban_2_wall3","bo_yavinwall3", []),
 
+  ("revnshn_sarapin_addon",0,"sarapin_addon","bo_yavinaddon", []),
+  ("revnshn_sarapin_pillar1",0,"sarapin_pillar1","bo_yavinpillar1", []),
+  ("revnshn_sarapin_pillar2",0,"sarapin_pillar2","bo_yavinpillar2", []),
+  ("revnshn_sarapin_spire",0,"sarapin_spire","bo_yavinspire", []),
+  ("revnshn_sarapin_statue1",0,"sarapin_statue1","bo_yavinstatue1", []),
+  ("revnshn_sarapin_statue2",0,"sarapin_statue2","bo_yavinstatue2", []),
+  ("revnshn_sarapin_statue3",0,"sarapin_statue3","bo_yavinstatue3", []),
+  ("revnshn_sarapin_steps",0,"sarapin_steps","bo_yavinsteps", []),
+  ("revnshn_sarapin_table1",0,"sarapin_table1","bo_yavintable1", []),
+  ("revnshn_sarapin_temple",0,"sarapin_templeblend","bo_yavintempleblend", []),
+  ("revnshn_sarapin_wall1",0,"sarapin_wall1","bo_yavinwall1", []),
+  ("revnshn_sarapin_wall2",0,"sarapin_wall2","bo_yavinwall2", []),
+  ("revnshn_sarapin_wall3",0,"sarapin_wall3","bo_yavinwall3", []),
 ## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ##@> Skyboxes as scene props
     ("skybox_cloud_1",0,"skybox_cloud_1_prop","0", []),

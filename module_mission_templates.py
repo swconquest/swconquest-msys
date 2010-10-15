@@ -4110,8 +4110,8 @@ sw_victory_defeat_conditions,
     ]),
 
 #@> Swyter Battle Speech
-   (4, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
-   (0, 5, ti_once, [], [(call_script,"script_battle_speech",1)]),
+   (3.6543, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
+   (0, 5.4332, ti_once, [], [(call_script,"script_battle_speech",1)]),
 
 #Motomataru's AI Start >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
