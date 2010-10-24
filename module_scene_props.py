@@ -60,6 +60,8 @@ scene_props = [
   ("sw_mercenary_raider",0,"mercenary_raider","bo_mercenary_raider", []),  
   ("sw_moncal_cruiser",0,"Moncal_Cruiser","bo_Moncal_Cruiser", []),  
   ("sw_corellian_gunship",0,"Cor_Gunship","bo_Cor_Gunship", []),  
+  ("sw_corellian_corvette",0,"swy_corellian_corvette","bo_Cor_Gunship", []),  
+  ("sw_nebulon",0,"swy_nebulon",0, []),  
   ("sw_shuttle",0,"shuttle","bo_shuttle", []),
   ("sw_asteroid_base",0,"asteroid_base","bo_asteroid_base", []),  
   ("sw_spacestation1",0,"spacestation1","bo_spacestation1", []),  
@@ -528,6 +530,32 @@ scene_props = [
   ("sw_planet_plain",0,"sw_planet_plain","bo_planet", []),
   ("sw_planet_snow",0,"sw_planet_snow","bo_planet", []),
   ("sw_planet_snow_water",0,"sw_snow_water","bo_planet", []),
+  
+	#New Swyter planets as scene props 
+  ("swy_Death_Star",0,"swy_Death_Star","bo_planet", []),
+  ("swy_Planet_Coruscant",0,"swy_Planet_Coruscant","bo_planet", []),
+  ("swy_Planet_Endor",0,"swy_Planet_Endor","bo_planet", []),
+  ("swy_Planet_Kessel",0,"swy_Planet_Kessel","bo_planet", []),
+  ("swy_Planet_RaxusPrime",0,"swy_Planet_RaxusPrime","bo_planet", []),
+  ("swy_Planet_Sarapin",0,"swy_Planet_Sarapin","bo_planet", []),
+  ("swy_Planet_Taris",0,"swy_Planet_Taris","bo_planet", []),
+  ("swy_Planet_Tatooine",0,"swy_Planet_Tatooine","bo_planet", []),
+  ("swy_Planet_forest",0,"swy_Planet_forest","bo_planet", []),
+  ("swy_Planet_frozen",0,"swy_Planet_frozen","bo_planet", []),
+  ("swy_Planet_geonosis",0,"swy_Planet_geonosis","bo_planet", []),
+  ("swy_Planet_lava",0,"swy_Planet_lava","bo_planet", []),
+  ("swy_rePlanet_craters",0,"swy_rePlanet_craters","bo_planet", []),
+  ("swy_rePlanet_earth",0,"swy_rePlanet_earth","bo_planet", []),
+  ("swy_Planet_lava",0,"swy_Planet_lava","bo_planet", []),
+  ("swy_rePlanet_earth",0,"swy_rePlanet_earth","bo_planet", []),
+  ("swy_rePlanet_gas",0,"swy_rePlanet_gas","bo_planet", []),
+  ("swy_rePlanet_ice",0,"swy_rePlanet_ice","bo_planet", []),
+  ("swy_rePlanet_kashyyyk",0,"swy_rePlanet_kashyyyk","bo_planet", []),
+  ("swy_rePlanet_rock",0,"swy_rePlanet_rock","bo_planet", []),
+  ("swy_rePlanet_snow",0,"swy_rePlanet_snow","bo_planet", []),
+  ("swy_rePlanet_water",0,"swy_rePlanet_water","bo_planet", []),
+  ("swy_rePlanet_wilderness",0,"swy_rePlanet_wilderness","bo_planet", []),
+  
   ("sw_skull_a",0,"sw_skull_a","0", []),
   ("sw_skull_b",0,"sw_skull_b","0", []),
   ("sw_skull_c",0,"sw_skull_c","0", []),
@@ -574,7 +602,7 @@ scene_props = [
           #(store_mul, ":blue", 3 * 45, ":scale"),
           (store_mul, ":red", 2 * 157, ":scale"),
           (store_mul, ":green", 2 * 157, ":scale"),
-          (store_mul, ":blue", 2 * 165, ":scale"),
+          (store_mul, ":blue", 2 * 167, ":scale"),
           (val_div, ":red", 100),
           (val_div, ":green", 100),
           (val_div, ":blue", 100),
@@ -1979,6 +2007,8 @@ scene_props = [
    ("swy_city_wall3",0,"swy_city_wall3","bo_swy_city_wall", []),
    ("swy_city_wall_bespin",0,"swy_city_wall_bespin","bo_swy_city_wall", []),
    ("swy_city_wall_bespin2",0,"swy_city_wall_bespin2","bo_swy_city_wall", []),
+   ("swy_city_wall_bespin3",0,"swy_city_wall_bespin3","bo_swy_city_wall", []),
+   ("swy_city_wall_bespin4",0,"swy_city_wall_bespin4","bo_swy_city_wall", []),
    ("swy_city_wall_hypori",0,"swy_city_wall_hypori","bo_swy_city_wall", []),
    ("swy_city_wall_hypori2",0,"swy_city_wall_hypori2","bo_swy_city_wall", []),
    ("swy_city_wall_sarapin",0,"swy_city_wall_sarapin","bo_swy_city_wall", []),
@@ -2239,9 +2269,32 @@ scene_props = [
 	("skybox_space",0,"compass_prop","0", []),	
 	("skybox_vjun",0,"skybox_vjun","0", []),   
 	("skybox_kamino",0,"skybox_kamino","0", []),  
-	
+	("skybox_volcanic",0,"skybox_volcanic","0", []),  
   #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-  
+
+## Some animated traffic stuff
+
+   ("swc_traffic",0,"swc_traffic",0,
+   [   (ti_on_scene_prop_init,[ 
+###############
+
+        (store_trigger_param_1, ":instance_no"),
+        (prop_instance_get_position, pos2, ":instance_no"),
+        (play_sound, "snd_dummy_destroyed"),
+		(particle_system_burst, "psys_explosion_fire", pos1, 100),		#percentage_burst_strength is 100
+        #(position_rotate_x, 5),			#use these if you wish to rotate it
+        #(position_rotate_y, 5),
+        #(position_rotate_z, 5),		
+        #(position_move_z, pos2, -1200),	#up/down
+		#(position_move_x, pos2, -200),		#left/right
+		(position_move_y, pos2, 2000),		#forward/back
+        (prop_instance_animate_to_position, ":instance_no", 2, 1000), #animate to position in10 seconds
+
+
+###############
+   ]),	]), 
+
+ 
 #----------------------------------------------------------------------
 #Highlander begin--------------------------------------
   ("scene_props_end",0,"0","0", []), #leave this at the last position

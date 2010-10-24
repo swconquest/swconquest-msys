@@ -1105,7 +1105,7 @@ town_walkers_rebel_end = "trp_town_walker_hutt_1"
 town_walkers_hutt_begin = "trp_town_walker_hutt_1"
 town_walkers_hutt_end = "trp_cantina_walker_1"
 
-village_walkers_begin = "trp_village_walker_1"
+village_walkers_begin = "trp_swminor_walker_1"
 village_walkers_end   = "trp_spy_walker_1"
 
 assassins_begin = "trp_assassin_male"
@@ -1122,7 +1122,7 @@ cantina_walkers_begin = "trp_cantina_walker_1"
 cantina_walkers_end = "trp_cantina_drinker_1"
 
 cantina_drinkers_begin = "trp_cantina_drinker_1"
-cantina_drinkers_end = "trp_village_walker_1"
+cantina_drinkers_end = "trp_swminor_walker_1"
 
 armor_merchants_begin  = "trp_town_1_armorer"
 armor_merchants_end    = "trp_town_1_weaponsmith"
@@ -1140,9 +1140,9 @@ horse_merchants_begin  = "trp_town_1_horse_merchant"
 horse_merchants_end    = "trp_town_1_mayor"
 
 mayors_begin           = "trp_town_1_mayor"
-mayors_end             = "trp_village_1_elder"
+mayors_end             = "trp_swminor_admin_1"
 
-village_elders_begin   = "trp_village_1_elder"
+village_elders_begin   = "trp_swminor_admin_1"
 village_elders_end     = "trp_merchants_end"
 
 

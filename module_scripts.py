@@ -1046,7 +1046,7 @@ scripts = [
         
         (store_sub, ":offset", ":village_no", villages_begin),
         
-        (store_add, ":exterior_scene_no", "scn_village_1", ":offset"),
+        (store_add, ":exterior_scene_no", "scn_swminor_1", ":offset"),
         (party_set_slot,":village_no", slot_castle_exterior, ":exterior_scene_no"),		#SW set village scene
         
         #SW debug
@@ -1055,7 +1055,7 @@ scripts = [
         # (assign, reg5, ":exterior_scene_no"), #SW debug
         # (display_log_message, "@village_no = {reg3}, offset = {reg4}, exterior_scene_no = {reg5}"),	#SW debug
         
-        (store_add, ":store_troop_no", "trp_village_1_elder", ":offset"),
+        (store_add, ":store_troop_no", "trp_swminor_admin_1", ":offset"),
         (party_set_slot,":village_no", slot_town_elder, ":store_troop_no"),
         
         (party_set_slot,":village_no", slot_party_type, spt_village),
@@ -8164,7 +8164,8 @@ scripts = [
           (gt, ":cur_banner", 0),
           (val_sub, ":cur_banner", banner_scene_props_begin),
           (val_add, ":cur_banner", banner_map_icons_begin),
-          (party_set_banner_icon, ":center_no", ":cur_banner"),
+          #@> Removed banners for planets / swy   (party_set_banner_icon, ":center_no", ":cur_banner"),
+		  
           # custom_banner_begin
           #        (troop_get_slot, ":flag_icon", ":lord_troop_id", slot_troop_custom_banner_map_flag_type),
           #        (ge, ":flag_icon", 0),
@@ -8958,7 +8959,16 @@ scripts = [
             (is_between, ":troop_no", "trp_knight_2_12", "trp_knight_2_22"),
             (party_set_icon, "$pout_party", "icon_rebel_transport"),
           (else_try),
-            (party_set_icon, "$pout_party", "icon_corellian_gunship"),
+			(eq,":troop_no","trp_knight_2_18"), # Antilles
+			(party_set_icon, "$pout_party", "icon_corellian_corvette"),
+		  (else_try),
+			(store_random_in_range,":chosen_ship",0,1),
+			(try_begin),
+				(eq,":chosen_ship",1),
+				(party_set_icon, "$pout_party", "icon_corellian_gunship"),
+			(else_try),
+				(party_set_icon, "$pout_party", "icon_corellian_corvette"),
+			(try_end),
           (try_end),
         (else_try),
           (eq, ":troop_faction_no", "fac_kingdom_3"), #Khergit Khanate = Hutt
@@ -9388,9 +9398,11 @@ scripts = [
               (try_begin),
                 (ge, ":village_raid_progress", 50),
                 (party_slot_eq, ":village_no", slot_village_smoke_added, 0),
-                (party_add_particle_system, ":village_no", "psys_map_village_fire"),
-                (party_add_particle_system, ":village_no", "psys_map_village_fire_smoke"),
-                (party_set_icon, ":village_no", "icon_village_burnt_a"),
+                #(party_add_particle_system, ":village_no", "psys_map_village_fire"),
+                #(party_add_particle_system, ":village_no", "psys_map_village_fire_smoke"),
+                #(party_set_icon, ":village_no", "icon_village_burnt_a"),
+				(party_add_particle_system, ":village_no", "psys_planet_icon_raided_effect"),
+				
                 (party_set_slot, ":village_no", slot_village_smoke_added, 1),
               (try_end),
               (try_begin),
@@ -9423,7 +9435,8 @@ scripts = [
               (ge, ":recover_progress", 10),
               (party_slot_eq, ":village_no", slot_village_smoke_added, 1),
               (party_clear_particle_systems, ":village_no"),
-              (party_add_particle_system, ":village_no", "psys_map_village_looted_smoke"),
+              #(party_add_particle_system, ":village_no", "psys_map_village_looted_smoke"),
+			  (party_add_particle_system, ":village_no", "psys_planet_icon_raided_effect"),
               (party_set_slot, ":village_no", slot_village_smoke_added, 2),
             (try_end),
             (try_begin),
@@ -9431,13 +9444,14 @@ scripts = [
               (party_slot_eq, ":village_no", slot_village_smoke_added, 2),
               (party_clear_particle_systems, ":village_no"),
               (party_set_slot, ":village_no", slot_village_smoke_added, 3),
-              (party_set_icon, ":village_no", "icon_village_deserted_a"),
+              #(party_set_icon, ":village_no", "icon_village_deserted_a"),
             (try_end),
             (try_begin),
               (gt, ":recover_progress", 100),
               (call_script, "script_village_set_state",  ":village_no", 0),#village back to normal
               (party_set_slot, ":village_no", slot_village_recover_progress, 0),
               (party_clear_particle_systems, ":village_no"),
+			  (party_add_particle_system, ":village_no", "psys_planet_icon_atmospheric_effect"),
               (party_set_slot, ":village_no", slot_village_smoke_added, 0),
               (party_set_icon, ":village_no", "icon_village_a"),
             (try_end),
@@ -28892,7 +28906,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_drive_max, 4),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_scanner_min, 1),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_scanner_max, 3),
-                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_combat_computer_min, 1),
+                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_combat_computer_min, 2),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_combat_computer_max, 3),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_troop_capacity_min, 1),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_troop_capacity_max, 3),
@@ -28904,6 +28918,28 @@ scripts = [
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_trade_computer_max, 0),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_cargo_capacity_min, 0),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_cargo_capacity_max, 0),
+                        #corellian_corvette
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_name, "str_spaceship_corellian_corvette_name"),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_price, 18000),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_desc, "str_spaceship_corellian_corvette_desc"),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_icon, "icon_corellian_corvette"),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_base_speed, 80),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_drive_min, 2),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_drive_max, 4),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_scanner_min, 1),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_scanner_max, 3),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_combat_computer_min, 1),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_combat_computer_max, 3),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_troop_capacity_min, 1),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_troop_capacity_max, 3),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_medical_bay_min, 1),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_medical_bay_max, 3),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_prisoner_capacity_min, 0),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_prisoner_capacity_max, 0),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_trade_computer_min, 0),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_trade_computer_max, 0),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_cargo_capacity_min, 0),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_cargo_capacity_max, 0),
                         #rebel transport
                         (party_set_slot, "p_spaceship_rebel_transport", slot_spaceship_name, "str_spaceship_rebel_transport_name"),
                         (party_set_slot, "p_spaceship_rebel_transport", slot_spaceship_price, 25000),
@@ -29280,6 +29316,29 @@ scripts = [
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_trade_computer_max, 4),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_cargo_capacity_min, 2),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_cargo_capacity_max, 4),
+                        #swy // nebulon
+						#spaceship_nebulon
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_name, "str_spaceship_nebulon_name"),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_price, 95000),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_desc, "str_spaceship_nebulon_desc"),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_icon, "icon_nebulon"),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_base_speed, 60),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_drive_min, 1),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_drive_max, 3),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_scanner_min, 2),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_scanner_max, 4),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_combat_computer_min, 1),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_combat_computer_max, 3),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_troop_capacity_min, 2),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_troop_capacity_max, 3),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_medical_bay_min, 1),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_medical_bay_max, 5),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_prisoner_capacity_min, 0),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_prisoner_capacity_max, 2),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_trade_computer_min, 0),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_trade_computer_max, 0),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_cargo_capacity_min, 1),
+                        (party_set_slot, "p_spaceship_nebulon", slot_spaceship_cargo_capacity_max, 2),
                         # end of assign slots
                         
                     ]),

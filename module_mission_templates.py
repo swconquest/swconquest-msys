@@ -599,6 +599,7 @@ common_battle_tab_press = (
     (try_begin),
       (eq, "$battle_won", 1),
       (call_script, "script_count_mission_casualties_from_agents"),
+	  (call_script, "script_flush_gatesys_cache"),
       (finish_mission,0),
 	(else_try),
 		(eq, "$pin_player_fallen", 1),
@@ -634,6 +635,7 @@ common_custom_battle_tab_press = (
     (try_begin),
       (neq, "$g_battle_result", 0),
       (call_script, "script_custom_battle_end"),
+	  (call_script, "script_flush_gatesys_cache"),
       (finish_mission),
     (else_try),
       (question_box,"str_give_up_fight"),
@@ -2826,6 +2828,7 @@ mission_templates = [
           (set_trigger_result,1)], []),
       (ti_tab_pressed, 0, 0, [
           (eq, "$black_jack",0),#plus blackjack
+		  (call_script, "script_flush_gatesys_cache"),
           (set_trigger_result,1)], []),
 
 		(1, 0, ti_once,[],
@@ -3845,7 +3848,7 @@ mission_templates = [
          (call_script, "script_change_banners_and_chest"),
          ]),
       (ti_inventory_key_pressed, 0, 0, [(set_trigger_result,1)], []),
-      (ti_tab_pressed, 0, 0, [(set_trigger_result,1)], []),
+      (ti_tab_pressed, 0, 0, [(call_script, "script_flush_gatesys_cache"),(set_trigger_result,1)], []),
       (0, 0, ti_once, [], [
         #(set_fog_distance, 150, 0xFF736252)
         (try_begin),
@@ -3912,6 +3915,7 @@ mission_templates = [
 
 	  #SWY - trigger to make unique agents behavior
 	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",1)]),
+	   common_gate_system,
 
     ],
   ),
@@ -3996,7 +4000,6 @@ mission_templates = [
 
 	#SWY - trigger to make unique agents behavior - custom scripting
 	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-
     ],
   ),
 
@@ -4103,11 +4106,8 @@ mission_templates = [
 
 sw_victory_defeat_conditions,
 
-  (4, 0, 0, [],
-  [
-    (eq,"$battle_won",1),
-    (display_message,"str_msg_battle_won"),
-    ]),
+  (4, 0, 0, [(eq,"$battle_won",1),],
+  [ (display_message,"str_msg_battle_won"), ]),
 
 #@> Swyter Battle Speech
    (3.6543, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
@@ -4187,7 +4187,7 @@ common_physics,
       common_music_situation_update,
       common_battle_check_friendly_kills,
 
-      (1, 0, 5, [(lt,"$defender_reinforcement_stage",2),
+      (1.223455, 0, 5.499003, [(lt,"$defender_reinforcement_stage",2),
                  (store_mission_timer_a,":mission_time"),
                  (ge,":mission_time",10),
                  (store_normalized_team_count,":num_defenders", 0),
@@ -4197,7 +4197,7 @@ common_physics,
                  ],
            [(add_reinforcements_to_entry,0,7),(val_add,"$defender_reinforcement_stage",1)]),
 
-      (1, 0, 5, [(lt,"$attacker_reinforcement_stage",2),
+      (1.997115, 0, 5.644421, [(lt,"$attacker_reinforcement_stage",2),
                  (store_mission_timer_a,":mission_time"),
                  (ge,":mission_time",10),
                  (store_normalized_team_count,":num_attackers", 1),
@@ -4208,7 +4208,7 @@ common_physics,
            [(add_reinforcements_to_entry,3,7),(val_add,"$attacker_reinforcement_stage",1)]),
 
 
-      (1, 4, ti_once, [(main_hero_fallen)],
+      (1.395044, 4.56644, ti_once, [(main_hero_fallen)],
           [
 			  (call_script,"script_battle_speech",3),
               (assign, "$pin_player_fallen", 1),
@@ -4294,7 +4294,7 @@ sw_deathcam_cycle_backwards,
 
 	  #SWY - trigger to make unique agents behavior - custom scripting
 	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-
+		common_gate_system,
 
     ],
   ),
@@ -5172,6 +5172,7 @@ sw_deathcam_cycle_backwards,
     ],
 ###>> Motomataru's AI
 #AI_triggers,
+common_gate_system
   ),
 
   (
@@ -5309,6 +5310,7 @@ sw_deathcam_cycle_backwards,
     ],
 ###>> Motomataru's AI
 #AI_triggers,
+common_gate_system
   ),
 
   (
@@ -5458,7 +5460,7 @@ sw_deathcam_cycle_backwards,
 ############################################################################################################
 ##### Custom Commander(CC)
 ############################################################################################################
-
+common_gate_system,
     ],
   ),
 
@@ -5552,7 +5554,7 @@ sw_deathcam_cycle_backwards,
 ############################################################################################################
 ##### Custom Commander(CC)
 ############################################################################################################
-
+common_gate_system,
     ],
   ),
 
@@ -5634,6 +5636,7 @@ sw_deathcam_cycle_backwards,
 ############################################################################################################
 ##### Custom Commander(CC)
 ############################################################################################################
+common_gate_system,
 
 ##      (15, 0, 0,
 ##       [
@@ -5758,6 +5761,8 @@ sw_deathcam_cycle_backwards,
       (ti_before_mission_start, 0, 0, [], [(call_script, "script_change_banners_and_chest"),
                                            (call_script, "script_remove_siege_objects"),
                                            ]),
+
+common_gate_system,
 
       (0, 0, ti_once, [],
        [

@@ -53,6 +53,7 @@ map_icons = [
   ("a_wing",mcn_no_shadow,"a_wing", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),	
   ("rebel_transport",mcn_no_shadow,"rebel_transport", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("corellian_gunship",mcn_no_shadow,"Cor_Gunship", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("corellian_corvette",mcn_no_shadow,"swy_corellian_corvette", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("moncal_cruiser",mcn_no_shadow,"Moncal_Cruiser", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("y_wing",mcn_no_shadow,"y_wing_gold", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
   #purchasable ships - hutt
@@ -62,6 +63,7 @@ map_icons = [
   ("hutt_trade",mcn_no_shadow,"Hutt_Trade", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("hutt_patrol",mcn_no_shadow,"Hutt_Patrol", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),
   #purchasable ships - other
+  ("nebulon",mcn_no_shadow,"swy_nebulon", cis_star_cruiser_scale,0),
   ("z95",mcn_no_shadow,"z96", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("scyk_fighter",mcn_no_shadow,"hutt_scyk_fighter", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
   ("mercenary_raider",mcn_no_shadow,"mercenary_raider", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),    

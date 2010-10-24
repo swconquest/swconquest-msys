@@ -4471,8 +4471,9 @@ game_menus = [
 		# (troop_add_item, "trp_player","itm_black_boots",0),
 		# (troop_add_item, "trp_player","itm_leather_boots",0),
 		(troop_add_item, "trp_player","itm_lightsaber_red_multikill",0),
-		(troop_add_item, "trp_player","itm_heavy_repeater",0),
 		(troop_add_item, "trp_player","itm_tfu_stormie",0),
+		
+		
 		
 		#Transparent Items
 		(troop_add_item, "trp_player","itm_transparent_body",0),
@@ -4507,19 +4508,20 @@ game_menus = [
 		
 		#items
         (troop_add_item, "trp_player","itm_protein_pack",0),
-		(troop_add_item, "trp_player","itm_protein_pack",0),
+		# (troop_add_item, "trp_player","itm_protein_pack",0),
         (troop_add_item, "trp_player","itm_carbohydrate_pack",0),
-		(troop_add_item, "trp_player","itm_carbohydrate_pack",0),
+		# (troop_add_item, "trp_player","itm_carbohydrate_pack",0),
 		(troop_add_item, "trp_player","itm_bacta_injector",0),
 		(troop_add_item, "trp_player","itm_bacta_capsule",0),
-		(troop_add_item, "trp_player","itm_bacta_capsule",0),
-		(troop_add_item, "trp_player","itm_bacta_capsule",0),
-		(troop_add_item, "trp_player","itm_bacta_capsule",0),
-		(troop_add_item, "trp_player","itm_bacta_capsule",0),
+		# (troop_add_item, "trp_player","itm_bacta_capsule",0),
+		# (troop_add_item, "trp_player","itm_bacta_capsule",0),
+		# (troop_add_item, "trp_player","itm_bacta_capsule",0),
+		# (troop_add_item, "trp_player","itm_bacta_capsule",0),
 		(troop_add_item, "trp_player","itm_ammo_belt_pistol",0),
 		(troop_add_item, "trp_player","itm_ammo_belt_rifle",0),
+		(troop_add_item, "trp_player","itm_speeder_rebel",0),
 		
-	    (display_message, "@gold & equipment added to player."),
+	    (display_message, "@Credits & equipment added to player."),
         ]
        ),
       
@@ -4532,6 +4534,20 @@ game_menus = [
       [
          (spawn_around_party, "p_main_party", "pt_looters"),
          (display_message, "@Party spawned nearby."),
+      ]
+      ),
+ 
+############## MF for testing end ####################	
+
+##@> Swyter > Custom Item adder
+      ("swy_item_adder",
+      [
+	  #(eq,"$cheat_mode",1)
+	  ],
+      "Swyter's Item adder",
+      [
+		 (start_presentation, "prsnt_typer"),
+         (troop_add_item, "trp_player",s10,0),
       ]
       ),
  

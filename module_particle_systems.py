@@ -1169,6 +1169,24 @@ particle_systems = [
      250,                       #rotation speed
      0.3                        #rotation damping
     ),
+
+
+	("planet_icon_raided_effect", psf_billboard_3d|psf_global_emit_dir|psf_always_emit|psf_randomize_size|psf_randomize_rotation, "prt_engine_particle",
+     2, 1.0, 0, 0, 0.0, 0.0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
+     (0.2, 0.1), (1, 0),        #alpha keys
+     (0.2, 0.5),(1, 0.8),      #red keys
+     (0.2, 0.1),(1, 0.0),       #green keys
+     (0.2, 0.1),(1, 0.0),      #blue keys
+     (0, 23),   (1, 24),          #scale keys
+     (0, 0, 0),           #emit box size
+     (0, 0, 0.0),               #emit velocity
+     0.0,                       #emit dir randomness
+     250,                       #rotation speed
+     0.3                        #rotation damping
+    ),
+
+
+
 	
 	
 	("moon_icon_atmospheric_effect", psf_billboard_3d|psf_global_emit_dir|psf_always_emit|psf_randomize_size|psf_randomize_rotation, "prt_engine_particle",
@@ -1200,19 +1218,19 @@ particle_systems = [
     ),
 	
 	
-		("galaxy", psf_global_emit_dir|psf_always_emit|psf_randomize_size, "galaxy_plane",
-     1, 1.0, 0, 0, 0.0, 0.0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
-     (0.2, 0.7), (1, 0),        #alpha keys
-     (0.2, 0.5),(1, 0.5),      #red keys
-     (0.2, 0.5),(1, 0.5),       #green keys
-     (0.2, 0.5),(1, 0.5),      #blue keys
-     (0, 1),   (1, 1),          #scale keys
-     (0.1, 0.1, 0.1),           #emit box size
-     (0, 0, 0.0),               #emit velocity
-     0.0,                       #emit dir randomness
-     250,                       #rotation speed
-     0                       #rotation damping
-    ),
+		# ("galaxy", psf_global_emit_dir|psf_always_emit|psf_randomize_size, "galaxy_plane",
+     # 1, 1.0, 0, 0, 0.0, 0.0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
+     # (0.2, 0.7), (1, 0),        #alpha keys
+     # (0.2, 0.5),(1, 0.5),      #red keys
+     # (0.2, 0.5),(1, 0.5),       #green keys
+     # (0.2, 0.5),(1, 0.5),      #blue keys
+     # (0, 1),   (1, 1),          #scale keys
+     # (0.1, 0.1, 0.1),           #emit box size
+     # (0, 0, 0.0),               #emit velocity
+     # 0.0,                       #emit dir randomness
+     # 250,                       #rotation speed
+     # 0                       #rotation damping
+    # ),
 
 	
 	
