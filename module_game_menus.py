@@ -16557,25 +16557,25 @@ game_menus = [
 	(assign, "$g_custom_battle_scene", "scn_custom_battle_3"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 4),
-	(assign, "$g_custom_battle_scene", "scn_town_26_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_swmain_26_land_battle"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 5),
-	(assign, "$g_custom_battle_scene", "scn_town_16_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_swmain_16_land_battle"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 6),
-	(assign, "$g_custom_battle_scene", "scn_town_14_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_swmain_14_land_battle"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 7),
-	(assign, "$g_custom_battle_scene", "scn_town_20_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_swmain_20_land_battle"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 8),
-	(assign, "$g_custom_battle_scene", "scn_town_7_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_swmain_7_land_battle"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 9),
-	(assign, "$g_custom_battle_scene", "scn_town_10_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_swmain_10_land_battle"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 10),
-	(assign, "$g_custom_battle_scene", "scn_town_23_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_swmain_23_land_battle"),
 	(end_try),
 
 
@@ -17366,7 +17366,7 @@ game_menus = [
 		
 			#modify/reset visitors
 			(modify_visitors_at_site,"scn_trade_merchants"),
-			#(modify_visitors_at_site,"scn_town_1_tavern"),
+			#(modify_visitors_at_site,"scn_swmain_1_tavern"),
 			(reset_visitors),
 			
 			#set the player entry point
@@ -17393,13 +17393,13 @@ game_menus = [
 			(store_random_in_range, ":random", 1, 5),
 			(try_begin),
 				(eq,":random",1),
-				(set_visitor, 38, "trp_town_walker_twilek_female_slave"),
+				(set_visitor, 38, "trp_swmain_walker_twilek_female_slave"),
 			(else_try),
 				(eq, ":random", 2),
-				(set_visitor, 38, "trp_town_walker_slave_dancer"),
+				(set_visitor, 38, "trp_swmain_walker_slave_dancer"),
 			(else_try),
 				(eq, ":random", 3),
-				(set_visitor, 38, "trp_town_walker_hutt_4"),
+				(set_visitor, 38, "trp_swmain_walker_hutt_4"),
 			(else_try),
 				#do nothing
 			(try_end),
@@ -17407,13 +17407,13 @@ game_menus = [
 			(store_random_in_range, ":random", 1, 5),
 			(try_begin),
 				(eq,":random",1),
-				(set_visitor, 39, "trp_town_walker_twilek_female_slave"),
+				(set_visitor, 39, "trp_swmain_walker_twilek_female_slave"),
 			(else_try),
 				(eq, ":random", 2),
-				(set_visitor, 39, "trp_town_walker_slave_dancer"),
+				(set_visitor, 39, "trp_swmain_walker_slave_dancer"),
 			(else_try),
 				(eq, ":random", 3),
-				(set_visitor, 39, "trp_town_walker_hutt_4"),
+				(set_visitor, 39, "trp_swmain_walker_hutt_4"),
 			(else_try),
 				#do nothing
 			(try_end),
@@ -17424,7 +17424,7 @@ game_menus = [
 			
 			#jump to the scene
 			(jump_to_scene,"scn_trade_merchants"),
-			#(jump_to_scene,"scn_town_1_tavern"),			
+			#(jump_to_scene,"scn_swmain_1_tavern"),			
 			
 			#start the scene
 			(change_screen_mission),			

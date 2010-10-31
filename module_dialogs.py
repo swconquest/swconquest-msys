@@ -114,7 +114,7 @@ dialogs = [
                      (assign, "$g_talk_troop_relation", reg0),
 
                      (try_begin),
-                       (this_or_next|is_between, "$g_talk_troop", village_elders_begin, village_elders_end),
+                       (this_or_next|is_between, "$g_talk_troop", planet_admins_begin, planet_admins_end),
                        (is_between, "$g_talk_troop", mayors_begin, mayors_end),
                        (party_get_slot, "$g_talk_troop_relation", "$current_town", slot_center_player_relation),
                      (try_end),
@@ -12153,7 +12153,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
 #Village elders
 
-  [anyone,"start", [(is_between,"$g_talk_troop",village_elders_begin,village_elders_end),
+  [anyone,"start", [(is_between,"$g_talk_troop",planet_admins_begin,planet_admins_end),
                     (store_partner_quest,":elder_quest"),
                     (eq,":elder_quest","qst_deliver_cattle"),
                     (check_quest_succeeded, ":elder_quest"),
@@ -12177,7 +12177,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
 ##  [anyone,"start",
 ##   [
-##     (is_between, "$g_talk_troop", village_elders_begin, village_elders_end),
+##     (is_between, "$g_talk_troop", planet_admins_begin, planet_admins_end),
 ##     (store_partner_quest, ":elder_quest"),
 ##     (eq, ":elder_quest", "qst_train_peasants_against_bandits"),
 ##     (check_quest_succeeded, ":elder_quest"),
@@ -12195,21 +12195,21 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
 
 
-  [anyone,"start", [(is_between,"$g_talk_troop", village_elders_begin, village_elders_end),(eq,"$g_talk_troop_met",0),
+  [anyone,"start", [(is_between,"$g_talk_troop", planet_admins_begin, planet_admins_end),(eq,"$g_talk_troop_met",0),
                     (str_store_party_name, s9, "$current_town")],
    "Good day, {sir/madam}, and welcome to {s9}. I am the administrator of this planet.", "village_elder_talk",[]],
 
-  [anyone,"start", [(is_between,"$g_talk_troop", village_elders_begin, village_elders_end),(eq,"$g_talk_troop_met",0),
+  [anyone,"start", [(is_between,"$g_talk_troop", planet_admins_begin, planet_admins_end),(eq,"$g_talk_troop_met",0),
                     (str_store_party_name, s9, "$current_town"),
                     (party_slot_eq, "$current_town", slot_town_lord, "trp_player")],
    "Welcome to {s9}, {playername}. We were rejoiced by the news that you are the new {chancellor/chancellor} of our minor planet.\
  I am the planet administrator and I would be honoured to serve you in any way I can.", "village_elder_talk",[]],
   
-  [anyone ,"start", [(is_between,"$g_talk_troop",village_elders_begin,village_elders_end),
+  [anyone ,"start", [(is_between,"$g_talk_troop",planet_admins_begin,planet_admins_end),
                      (party_slot_eq, "$current_town", slot_town_lord, "trp_player")],
    "{My chancellor/My chancellor}, you honour our minor planet with your presence.", "village_elder_talk",[]],
 
-  [anyone ,"start", [(is_between,"$g_talk_troop",village_elders_begin,village_elders_end)],
+  [anyone ,"start", [(is_between,"$g_talk_troop",planet_admins_begin,planet_admins_end)],
    "Good day, {sir/madam}.", "village_elder_talk",[]],
 
   [anyone ,"village_elder_pretalk", [],
@@ -13730,7 +13730,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone,"start", [
 					#(eq, "$talk_context", 0),
                     (this_or_next|is_between,"$g_talk_troop",slave_dancers_begin, slave_dancers_end),
-					(eq, "$g_talk_troop", "trp_town_walker_hutt_4"),
+					(eq, "$g_talk_troop", "trp_swmain_walker_hutt_4"),
                      ], "I'm sorry, but I'm not allowed to talk to anyone.", "close_window",[]],
   
   [anyone,"start", [(eq, "$talk_context", 0),

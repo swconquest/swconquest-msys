@@ -943,7 +943,7 @@ companions_begin = "trp_npc1"
 companions_end = "trp_kingdom_heroes_including_player_begin"
 
 soldiers_begin = "trp_wookiee"
-soldiers_end = "trp_town_walker_1"
+soldiers_end = "trp_swmain_walker_1"
 
 #Rebellion changes
 
@@ -1030,7 +1030,7 @@ centers_end   = villages_end
 training_grounds_begin   = "p_training_ground_1"
 training_grounds_end     = "p_Bridge_1"
 
-scenes_begin = "scn_town_1_center"
+scenes_begin = "scn_swmain_1_center"
 scenes_end = "scn_castle_1_exterior"
 
 spawn_points_begin = "p_zendar"
@@ -1050,59 +1050,59 @@ swadian_merc_parties_end   = "p_town_8_mercs"
 vaegir_merc_parties_begin  = "p_town_8_mercs"
 vaegir_merc_parties_end    = "p_zendar"
 
-arena_masters_begin    = "trp_town_1_arena_master"
-arena_masters_end      = "trp_town_1_armorer"
+arena_masters_begin    = "trp_swmain_1_arena_master"
+arena_masters_end      = "trp_swmain_1_armorer"
 
 training_gound_trainers_begin    = "trp_trainer_1"
 training_gound_trainers_end      = "trp_ransom_broker_1"
 
-town_walkers_begin = "trp_town_walker_1"
+town_walkers_begin = "trp_swmain_walker_1"
 town_walkers_end = "trp_cantina_walker_1"
 
-slave_dancers_begin = "trp_town_walker_twilek_female_slave"
-slave_dancers_end = "trp_town_walker_chiss"
+slave_dancers_begin = "trp_swmain_walker_twilek_female_slave"
+slave_dancers_end = "trp_swmain_walker_chiss"
 
-town8_walkers_begin = "trp_town_walker_geonosian"
-town8_walkers_end = "trp_town_walker_wookiee"
+town8_walkers_begin = "trp_swmain_walker_geonosian"
+town8_walkers_end = "trp_swmain_walker_wookiee"
 
-town9_walkers_begin = "trp_town_walker_moncal"
-town9_walkers_end = "trp_town_walker_geonosian"
+town9_walkers_begin = "trp_swmain_walker_moncal"
+town9_walkers_end = "trp_swmain_walker_geonosian"
 
-town10_walkers_begin = "trp_town_walker_wookiee"
-town10_walkers_end = "trp_town_walker_gamorrean"
+town10_walkers_begin = "trp_swmain_walker_wookiee"
+town10_walkers_end = "trp_swmain_walker_gamorrean"
 
-town12_walkers_begin = "trp_town_walker_gamorrean"
-town12_walkers_end = "trp_town_walker_empire_1"
+town12_walkers_begin = "trp_swmain_walker_gamorrean"
+town12_walkers_end = "trp_swmain_walker_empire_1"
 
-town14_walkers_begin = "trp_town_walker_1"		#includes a jawa
-town14_walkers_end = "trp_town_walker_moncal"
+town14_walkers_begin = "trp_swmain_walker_1"		#includes a jawa
+town14_walkers_end = "trp_swmain_walker_moncal"
 
-town17_walkers_begin = "trp_town_walker_twilek"
-town17_walkers_end = "trp_town_walker_chiss"
+town17_walkers_begin = "trp_swmain_walker_twilek"
+town17_walkers_end = "trp_swmain_walker_chiss"
 
 #Added custom wakers by Swyter -->>
-iridonia_walkers_begin = "trp_town_walker_zabrak"
-iridonia_walkers_end = "trp_town_walker_zabrak"
+iridonia_walkers_begin = "trp_swmain_walker_zabrak"
+iridonia_walkers_end = "trp_swmain_walker_zabrak"
 
-pzob_walkers_begin = "trp_town_walker_gamorrean"
-pzob_walkers_end = "trp_town_walker_gamorrean"
+pzob_walkers_begin = "trp_swmain_walker_gamorrean"
+pzob_walkers_end = "trp_swmain_walker_gamorrean"
 
-rodia_walkers_begin = "trp_town_walker_rodian"
-rodia_walkers_end = "trp_town_walker_rodian"
+rodia_walkers_begin = "trp_swmain_walker_rodian"
+rodia_walkers_end = "trp_swmain_walker_rodian"
 
-bothaw_moon_walkers_begin = "trp_town_walker_bothan"
-bothaw_moon_walkers_end = "trp_town_walker_bothan"
+bothaw_moon_walkers_begin = "trp_swmain_walker_bothan"
+bothaw_moon_walkers_end = "trp_swmain_walker_bothan"
 #@>SWY-->>
 town_walkers_neutral_begin = town_walkers_begin
-town_walkers_neutral_end = "trp_town_walker_jawa"
+town_walkers_neutral_end = "trp_swmain_walker_jawa"
 
-town_walkers_empire_begin = "trp_town_walker_empire_1"
-town_walkers_empire_end = "trp_town_walker_rebel_1"
+town_walkers_empire_begin = "trp_swmain_walker_empire_1"
+town_walkers_empire_end = "trp_swmain_walker_rebel_1"
 
-town_walkers_rebel_begin = "trp_town_walker_rebel_1"
-town_walkers_rebel_end = "trp_town_walker_hutt_1"
+town_walkers_rebel_begin = "trp_swmain_walker_rebel_1"
+town_walkers_rebel_end = "trp_swmain_walker_hutt_1"
 
-town_walkers_hutt_begin = "trp_town_walker_hutt_1"
+town_walkers_hutt_begin = "trp_swmain_walker_hutt_1"
 town_walkers_hutt_end = "trp_cantina_walker_1"
 
 village_walkers_begin = "trp_swminor_walker_1"
@@ -1124,26 +1124,26 @@ cantina_walkers_end = "trp_cantina_drinker_1"
 cantina_drinkers_begin = "trp_cantina_drinker_1"
 cantina_drinkers_end = "trp_swminor_walker_1"
 
-armor_merchants_begin  = "trp_town_1_armorer"
-armor_merchants_end    = "trp_town_1_weaponsmith"
+armor_merchants_begin  = "trp_swmain_1_armorer"
+armor_merchants_end    = "trp_swmain_1_weaponsmith"
 
-weapon_merchants_begin = "trp_town_1_weaponsmith"
-weapon_merchants_end   = "trp_town_1_tavernkeeper"
+weapon_merchants_begin = "trp_swmain_1_weaponsmith"
+weapon_merchants_end   = "trp_swmain_1_bartender"
 
-tavernkeepers_begin    = "trp_town_1_tavernkeeper"
-tavernkeepers_end      = "trp_town_1_merchant"
+tavernkeepers_begin    = "trp_swmain_1_bartender"
+tavernkeepers_end      = "trp_swmain_1_merchant"
 
-goods_merchants_begin  = "trp_town_1_merchant"
-goods_merchants_end    = "trp_town_1_horse_merchant"
+goods_merchants_begin  = "trp_swmain_1_merchant"
+goods_merchants_end    = "trp_swmain_1_horse_merchant"
 
-horse_merchants_begin  = "trp_town_1_horse_merchant"
-horse_merchants_end    = "trp_town_1_mayor"
+horse_merchants_begin  = "trp_swmain_1_horse_merchant"
+horse_merchants_end    = "trp_swmain_1_mayor"
 
-mayors_begin           = "trp_town_1_mayor"
+mayors_begin           = "trp_swmain_1_mayor"
 mayors_end             = "trp_swminor_admin_1"
 
-village_elders_begin   = "trp_swminor_admin_1"
-village_elders_end     = "trp_merchants_end"
+planet_admins_begin   = "trp_swminor_admin_1"
+planet_admins_end     = "trp_merchants_end"
 
 
 average_price_factor = 1000
