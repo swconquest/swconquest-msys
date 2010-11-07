@@ -23083,8 +23083,11 @@ scripts = [
                         (assign,reg(12),"trp_clone_trooper_2"),
                         (assign,reg(13),"trp_arc_trooper_3"),
                         (assign,reg(14),"trp_arc_trooper_4"),
-                        (assign,reg(15),"trp_b1series"),
-                        (assign,reg(16),"trp_clone_trooper_5"),
+						(assign,reg(15),"trp_clone_trooper_5"),
+                        (assign,reg(16),"trp_b1series"),
+						(assign,reg(17),"trp_b2series"),
+						(assign,reg(18),"trp_b2series_enhanced"),
+                        
                       (end_try),
                       
                   ]),
@@ -30145,7 +30148,13 @@ scripts = [
                             (agent_get_item_id,":vader_is_mounted", ":agent_no"),
                             (eq, ":vader_is_mounted", -1),
                             (agent_set_speed_limit,":agent_no",4),
-                            
+                          (else_try),
+                            #B2 Droids
+                            (this_or_next|eq, "trp_b2series", ":cur_agent_troop"),
+							(eq, "trp_b2series_enhanced", ":cur_agent_troop"),
+                            (agent_set_stand_animation, ":agent_no", "anim_b2_stand"),
+                            (agent_set_walk_forward_animation, ":agent_no", "anim_b2_walk"),
+							(agent_set_speed_limit,":agent_no",5),
                           (else_try),
                             #Hutt Dancer
                             (eq,":location_flag",1),

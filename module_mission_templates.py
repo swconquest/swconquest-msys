@@ -8119,7 +8119,8 @@ common_gate_system,
 	  common_toggle_weapon_capabilities,
 	  common_crouch_button,
 
-
+	  #SWY - trigger to make unique agents behavior - custom scripting
+	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
     ],
 ###>> Motomataru's AI
 #AI_triggers,
@@ -8206,6 +8207,8 @@ common_gate_system,
 	  common_toggle_weapon_capabilities,
 	  common_crouch_button,
 
+	  	  #SWY - trigger to make unique agents behavior - custom scripting
+	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
       ],
     ),
 
@@ -8280,6 +8283,8 @@ common_gate_system,
 	  common_toggle_weapon_capabilities,
 	  common_crouch_button,
 
+	  	  #SWY - trigger to make unique agents behavior - custom scripting
+	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
       ],
     ),
 
@@ -8372,6 +8377,8 @@ common_gate_system,
 	  common_toggle_weapon_capabilities,
 	  common_crouch_button,
 
+	  	  #SWY - trigger to make unique agents behavior - custom scripting
+	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
     ],
   ),
 
@@ -8603,6 +8610,10 @@ common_gate_system,
 	  common_use_jetpack,
 	  common_toggle_weapon_capabilities,
 	  common_crouch_button,
+	  
+	  #SWY - trigger to make unique agents behavior - custom scripting
+	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+	  
     ],
 ###>> Motomataru's AI
 #AI_triggers,
@@ -8807,6 +8818,10 @@ common_gate_system,
 	  common_toggle_weapon_capabilities,
 	  common_crouch_button,
 
+	  
+	  #SWY - trigger to make unique agents behavior - custom scripting
+	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),	  
+	  
     ],
 ###>> Motomataru's AI
 #AI_triggers,

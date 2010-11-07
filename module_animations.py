@@ -1417,8 +1417,8 @@ animations = [
  ["unused_human_anim_71", 0, [1.0, "anim_human", 0, 1, 0]],
  ["unused_human_anim_72", 0, [1.0, "anim_human", 0, 1, 0]],
  ["unused_human_anim_73", 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_74", 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_75", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_74", 0, [1.0, "anim_human", 0, 1, 0]],			#SWY - Commented out for b2's walk
+# ["unused_human_anim_75", 0, [1.0, "anim_human", 0, 1, 0]],			#SWY - Commented out for b2's stand
 # ["unused_human_anim_76", 0, [1.0, "anim_human", 0, 1, 0]],        #SWY - Commented out for vader's stand
 # ["unused_human_anim_77", 0, [1.0, "anim_human", 0, 1, 0]],		#had to comment out for slave_dance
 # ["unused_human_anim_78", 0, [1.0, "anim_human", 0, 1, 0]],		#hand to comment out for crouch_stop
@@ -1432,7 +1432,7 @@ animations = [
 
  ["slave_dance", 0,
    #[10.0, "dancer_stand", 0, 177, arf_blend_in_5], 
-   [10.0, "dancer_stand", 0, 177, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25],
+   [10.0, "dancer_stand", 0, 177, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.20],
  ],
 
  ["droid_walk_forward", acf_enforce_lowerbody,		#from walk_forward
@@ -1554,6 +1554,15 @@ animations = [
    [4, "swy_vader_stand", 0, 70, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25], #by Swyter
  ],
 
+   ["b2_stand", 0,
+   [4, "swy_b2_stand", 0, 70, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25], #by Swyter
+ ], 
+ 
+ ["b2_walk", acf_enforce_lowerbody,		#from walk_forward
+   #[1.0, "man_walk", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   [1.0, "swy_b2_walk", 0, 0, arf_use_walk_progress|arf_cyclic|blend_in_walk,pack2f(0.0,0.0), (0, 0, 0), 0.0],
+ ],
+ 
 #-------------------------------------------------------------------------------------------------------------------- 
  
 #SW - had to comment out 6 animations for shield bash kit to work
