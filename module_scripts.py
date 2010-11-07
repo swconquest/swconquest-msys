@@ -73,14 +73,14 @@ scripts = [
       (call_script, "script_give_center_to_faction_aux", "p_shipyard_fondor", "fac_trade_federation"),
       
       #SWY 0.9.0.4 Give new planets directly to the factions
-      (call_script, "script_give_center_to_faction_aux", "p_town_23", "fac_kingdom_3"),
-      (call_script, "script_give_center_to_faction_aux", "p_town_24", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_raxusprime", "fac_kingdom_3"),
+      (call_script, "script_give_center_to_faction_aux", "p_sarapin", "fac_kingdom_2"),
       (call_script, "script_give_center_to_faction_aux", "p_castle_41", "fac_kingdom_1"),
       #more...
-      (call_script, "script_give_center_to_faction_aux", "p_town_25", "fac_kingdom_3"),
-      (call_script, "script_give_center_to_faction_aux", "p_town_26", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_hypori", "fac_kingdom_3"),
+      (call_script, "script_give_center_to_faction_aux", "p_felucia", "fac_kingdom_1"),
       (call_script, "script_give_center_to_faction_aux", "p_castle_42", "fac_kingdom_3"),
-      (call_script, "script_give_center_to_faction_aux", "p_town_27", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_bespin", "fac_kingdom_2"),
       
       (faction_set_slot, "fac_player_supporters_faction", slot_faction_state, sfs_inactive),
       (assign, "$g_player_luck", 200),
@@ -518,7 +518,7 @@ scripts = [
       # Towns:
       (try_for_range, ":item_no", trade_goods_begin, trade_goods_end),
         (store_sub, ":offset", ":item_no", trade_goods_begin),
-        (val_add, ":offset", slot_town_trade_good_prices_begin),
+        (val_add, ":offset", slot_mainplanet_trade_good_prices_begin),
         (try_for_range, ":center_no", centers_begin, centers_end),
           (party_set_slot, ":center_no", ":offset", average_price_factor),
         (try_end),
@@ -527,339 +527,339 @@ scripts = [
         ##        (party_set_slot, "p_four_ways_inn", ":offset", average_price_factor),
       (try_end),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_1", "p_town_2"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_1", "p_town_4"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_1", "p_town_8"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_1", "p_town_9"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_1", "p_town_11"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_1", "p_town_12"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_1", "p_town_13"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_1", "p_town_15"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_1", "p_town_16"),
+      (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_byss"),
+      (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_corellia"),
+      (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_geonosis"),
+      (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_mon_cal"),
+      (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_hoth"),
+      (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_gamorr"),
+      (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_yavin_iv"),
+      (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_reecee"),
+      (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_coruscant"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_2", "p_town_4"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_2", "p_town_6"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_2", "p_town_8"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_2", "p_town_12"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_2", "p_town_13"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_2", "p_town_15"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_2", "p_town_16"),
+      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_corellia"),
+      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_kessel"),
+      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_geonosis"),
+      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_gamorr"),
+      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_yavin_iv"),
+      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_reecee"),
+      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_coruscant"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_3", "p_town_4"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_3", "p_town_5"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_3", "p_town_6"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_3", "p_town_7"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_3", "p_town_14"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_3", "p_town_15"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_3", "p_town_18"),
+      (call_script, "script_set_trade_route_between_centers", "p_endor", "p_corellia"),
+      (call_script, "script_set_trade_route_between_centers", "p_endor", "p_naboo"),
+      (call_script, "script_set_trade_route_between_centers", "p_endor", "p_kessel"),
+      (call_script, "script_set_trade_route_between_centers", "p_endor", "p_dantooine"),
+      (call_script, "script_set_trade_route_between_centers", "p_endor", "p_tatooine"),
+      (call_script, "script_set_trade_route_between_centers", "p_endor", "p_reecee"),
+      (call_script, "script_set_trade_route_between_centers", "p_endor", "p_nalhutta"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_4", "p_town_6"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_4", "p_town_12"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_4", "p_town_13"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_4", "p_town_15"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_4", "p_town_16"),
+      (call_script, "script_set_trade_route_between_centers", "p_corellia", "p_kessel"),
+      (call_script, "script_set_trade_route_between_centers", "p_corellia", "p_gamorr"),
+      (call_script, "script_set_trade_route_between_centers", "p_corellia", "p_yavin_iv"),
+      (call_script, "script_set_trade_route_between_centers", "p_corellia", "p_reecee"),
+      (call_script, "script_set_trade_route_between_centers", "p_corellia", "p_coruscant"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_5", "p_town_6"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_5", "p_town_7"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_5", "p_town_14"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_5", "p_town_15"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_5", "p_town_17"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_5", "p_town_18"),
+      (call_script, "script_set_trade_route_between_centers", "p_naboo", "p_kessel"),
+      (call_script, "script_set_trade_route_between_centers", "p_naboo", "p_dantooine"),
+      (call_script, "script_set_trade_route_between_centers", "p_naboo", "p_tatooine"),
+      (call_script, "script_set_trade_route_between_centers", "p_naboo", "p_reecee"),
+      (call_script, "script_set_trade_route_between_centers", "p_naboo", "p_ryloth"),
+      (call_script, "script_set_trade_route_between_centers", "p_naboo", "p_nalhutta"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_6", "p_town_7"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_6", "p_town_11"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_6", "p_town_13"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_6", "p_town_15"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_6", "p_town_16"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_6", "p_town_17"),
+      (call_script, "script_set_trade_route_between_centers", "p_kessel", "p_dantooine"),
+      (call_script, "script_set_trade_route_between_centers", "p_kessel", "p_hoth"),
+      (call_script, "script_set_trade_route_between_centers", "p_kessel", "p_yavin_iv"),
+      (call_script, "script_set_trade_route_between_centers", "p_kessel", "p_reecee"),
+      (call_script, "script_set_trade_route_between_centers", "p_kessel", "p_coruscant"),
+      (call_script, "script_set_trade_route_between_centers", "p_kessel", "p_ryloth"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_7", "p_town_10"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_7", "p_town_11"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_7", "p_town_13"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_7", "p_town_14"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_7", "p_town_15"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_7", "p_town_16"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_7", "p_town_17"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_7", "p_town_18"),
+      (call_script, "script_set_trade_route_between_centers", "p_dantooine", "p_kashyyyk"),
+      (call_script, "script_set_trade_route_between_centers", "p_dantooine", "p_hoth"),
+      (call_script, "script_set_trade_route_between_centers", "p_dantooine", "p_yavin_iv"),
+      (call_script, "script_set_trade_route_between_centers", "p_dantooine", "p_tatooine"),
+      (call_script, "script_set_trade_route_between_centers", "p_dantooine", "p_reecee"),
+      (call_script, "script_set_trade_route_between_centers", "p_dantooine", "p_coruscant"),
+      (call_script, "script_set_trade_route_between_centers", "p_dantooine", "p_ryloth"),
+      (call_script, "script_set_trade_route_between_centers", "p_dantooine", "p_nalhutta"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_8", "p_town_9"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_8", "p_town_11"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_8", "p_town_12"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_8", "p_town_13"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_8", "p_town_16"),
+      (call_script, "script_set_trade_route_between_centers", "p_geonosis", "p_mon_cal"),
+      (call_script, "script_set_trade_route_between_centers", "p_geonosis", "p_hoth"),
+      (call_script, "script_set_trade_route_between_centers", "p_geonosis", "p_gamorr"),
+      (call_script, "script_set_trade_route_between_centers", "p_geonosis", "p_yavin_iv"),
+      (call_script, "script_set_trade_route_between_centers", "p_geonosis", "p_coruscant"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_9", "p_town_11"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_9", "p_town_12"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_9", "p_town_13"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_9", "p_town_16"),
+      (call_script, "script_set_trade_route_between_centers", "p_mon_cal", "p_hoth"),
+      (call_script, "script_set_trade_route_between_centers", "p_mon_cal", "p_gamorr"),
+      (call_script, "script_set_trade_route_between_centers", "p_mon_cal", "p_yavin_iv"),
+      (call_script, "script_set_trade_route_between_centers", "p_mon_cal", "p_coruscant"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_10", "p_town_11"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_10", "p_town_14"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_10", "p_town_17"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_10", "p_town_18"),
+      (call_script, "script_set_trade_route_between_centers", "p_kashyyyk", "p_hoth"),
+      (call_script, "script_set_trade_route_between_centers", "p_kashyyyk", "p_tatooine"),
+      (call_script, "script_set_trade_route_between_centers", "p_kashyyyk", "p_ryloth"),
+      (call_script, "script_set_trade_route_between_centers", "p_kashyyyk", "p_nalhutta"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_11", "p_town_12"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_11", "p_town_13"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_11", "p_town_14"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_11", "p_town_16"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_11", "p_town_17"),
+      (call_script, "script_set_trade_route_between_centers", "p_hoth", "p_gamorr"),
+      (call_script, "script_set_trade_route_between_centers", "p_hoth", "p_yavin_iv"),
+      (call_script, "script_set_trade_route_between_centers", "p_hoth", "p_tatooine"),
+      (call_script, "script_set_trade_route_between_centers", "p_hoth", "p_coruscant"),
+      (call_script, "script_set_trade_route_between_centers", "p_hoth", "p_ryloth"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_12", "p_town_13"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_12", "p_town_16"),
+      (call_script, "script_set_trade_route_between_centers", "p_gamorr", "p_yavin_iv"),
+      (call_script, "script_set_trade_route_between_centers", "p_gamorr", "p_coruscant"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_13", "p_town_16"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_13", "p_town_17"),
+      (call_script, "script_set_trade_route_between_centers", "p_yavin_iv", "p_coruscant"),
+      (call_script, "script_set_trade_route_between_centers", "p_yavin_iv", "p_ryloth"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_14", "p_town_17"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_14", "p_town_18"),
+      (call_script, "script_set_trade_route_between_centers", "p_tatooine", "p_ryloth"),
+      (call_script, "script_set_trade_route_between_centers", "p_tatooine", "p_nalhutta"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_town_15", "p_town_16"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_16", "p_town_17"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_17", "p_town_18"),
+      (call_script, "script_set_trade_route_between_centers", "p_reecee", "p_coruscant"),
+      (call_script, "script_set_trade_route_between_centers", "p_coruscant", "p_ryloth"),
+      (call_script, "script_set_trade_route_between_centers", "p_ryloth", "p_nalhutta"),
       
       #new towns town_19, town_20, town_21
-      (call_script, "script_set_trade_route_between_centers", "p_town_19", "p_town_7"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_19", "p_town_10"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_20", "p_town_21"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_20", "p_town_8"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_21", "p_town_16"),
-      #(call_script, "script_set_trade_route_between_centers", "p_town_21", "p_town_20"),
+      (call_script, "script_set_trade_route_between_centers", "p_bothawui", "p_dantooine"),
+      (call_script, "script_set_trade_route_between_centers", "p_bothawui", "p_kashyyyk"),
+      (call_script, "script_set_trade_route_between_centers", "p_mustafar", "p_kamino"),
+      (call_script, "script_set_trade_route_between_centers", "p_mustafar", "p_geonosis"),
+      (call_script, "script_set_trade_route_between_centers", "p_kamino", "p_coruscant"),
+      #(call_script, "script_set_trade_route_between_centers", "p_kamino", "p_mustafar"),
       
       ##SWY - SWC 0.9.0.3 - Added Taris
-      (call_script, "script_set_trade_route_between_centers", "p_town_22", "p_town_21"),
+      (call_script, "script_set_trade_route_between_centers", "p_taris", "p_kamino"),
       
       ## SWY - 0.9.0.4 - Added Rexus Prime and Sarapin
-      (call_script, "script_set_trade_route_between_centers", "p_town_23", "p_town_12"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_24", "p_town_13"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_25", "p_town_8"),
-      (call_script, "script_set_trade_route_between_centers", "p_town_26", "p_town_2"),
+      (call_script, "script_set_trade_route_between_centers", "p_raxusprime", "p_gamorr"),
+      (call_script, "script_set_trade_route_between_centers", "p_sarapin", "p_yavin_iv"),
+      (call_script, "script_set_trade_route_between_centers", "p_hypori", "p_geonosis"),
+      (call_script, "script_set_trade_route_between_centers", "p_felucia", "p_byss"),
       
       (try_for_range, ":town_no", towns_begin, towns_end),
-        (party_set_slot, ":town_no", slot_town_tournament_max_teams, 4),
-        (party_set_slot, ":town_no", slot_town_tournament_max_team_size, 8),
+        (party_set_slot, ":town_no", slot_mainplanet_tournament_max_teams, 4),
+        (party_set_slot, ":town_no", slot_mainplanet_tournament_max_team_size, 8),
       (try_end),
-      (party_set_slot, "p_town_6", slot_town_tournament_max_team_size, 2),
+      (party_set_slot, "p_kessel", slot_mainplanet_tournament_max_team_size, 2),
       
       #start some tournaments
       (try_for_range, ":town_no", towns_begin, towns_end),
         (store_random_in_range, ":rand", 0, 100),
         (lt, ":rand", 20),
         (store_random_in_range, ":random_days", 12, 15),
-        (party_set_slot, ":town_no", slot_town_has_tournament, ":random_days"),
+        (party_set_slot, ":town_no", slot_mainplanet_has_tournament, ":random_days"),
       (try_end),
       
       
       
-      (party_set_slot,"p_town_1", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_1", slot_town_arena_melee_1_team_size,   1),
-      (party_set_slot,"p_town_1", slot_town_arena_melee_2_num_teams,   4),
-      (party_set_slot,"p_town_1", slot_town_arena_melee_2_team_size,   1),
-      (party_set_slot,"p_town_1", slot_town_arena_melee_3_num_teams,   4),
-      (party_set_slot,"p_town_1", slot_town_arena_melee_3_team_size,   1),
-      (call_script, "script_center_change_trade_good_production", "p_town_1", "itm_linen", 110, 0),
+      (party_set_slot,"p_mandalore", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_mandalore", slot_mainplanet_arena_melee_1_team_size,   1),
+      (party_set_slot,"p_mandalore", slot_mainplanet_arena_melee_2_num_teams,   4),
+      (party_set_slot,"p_mandalore", slot_mainplanet_arena_melee_2_team_size,   1),
+      (party_set_slot,"p_mandalore", slot_mainplanet_arena_melee_3_num_teams,   4),
+      (party_set_slot,"p_mandalore", slot_mainplanet_arena_melee_3_team_size,   1),
+      (call_script, "script_center_change_trade_good_production", "p_mandalore", "itm_linen", 110, 0),
       
-      (party_set_slot,"p_town_2", slot_town_arena_melee_1_num_teams,   4),
-      (party_set_slot,"p_town_2", slot_town_arena_melee_1_team_size,   4),
-      (party_set_slot,"p_town_2", slot_town_arena_melee_2_num_teams,   4),
-      (party_set_slot,"p_town_2", slot_town_arena_melee_2_team_size,   6),
-      (party_set_slot,"p_town_2", slot_town_arena_melee_3_num_teams,   4),
-      (party_set_slot,"p_town_2", slot_town_arena_melee_3_team_size,   8),
-      (call_script, "script_center_change_trade_good_production", "p_town_2", "itm_smoked_fish", 130, 0),
+      (party_set_slot,"p_byss", slot_mainplanet_arena_melee_1_num_teams,   4),
+      (party_set_slot,"p_byss", slot_mainplanet_arena_melee_1_team_size,   4),
+      (party_set_slot,"p_byss", slot_mainplanet_arena_melee_2_num_teams,   4),
+      (party_set_slot,"p_byss", slot_mainplanet_arena_melee_2_team_size,   6),
+      (party_set_slot,"p_byss", slot_mainplanet_arena_melee_3_num_teams,   4),
+      (party_set_slot,"p_byss", slot_mainplanet_arena_melee_3_team_size,   8),
+      (call_script, "script_center_change_trade_good_production", "p_byss", "itm_smoked_fish", 130, 0),
       
-      (party_set_slot,"p_town_3", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_3", slot_town_arena_melee_1_team_size,   8),
-      (party_set_slot,"p_town_3", slot_town_arena_melee_2_num_teams,   2),
-      (party_set_slot,"p_town_3", slot_town_arena_melee_2_team_size,   8),
-      (party_set_slot,"p_town_3", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_3", slot_town_arena_melee_3_team_size,   8),
-      (call_script, "script_center_change_trade_good_production", "p_town_3", "itm_wine", 120, 0),
+      (party_set_slot,"p_endor", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_endor", slot_mainplanet_arena_melee_1_team_size,   8),
+      (party_set_slot,"p_endor", slot_mainplanet_arena_melee_2_num_teams,   2),
+      (party_set_slot,"p_endor", slot_mainplanet_arena_melee_2_team_size,   8),
+      (party_set_slot,"p_endor", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_endor", slot_mainplanet_arena_melee_3_team_size,   8),
+      (call_script, "script_center_change_trade_good_production", "p_endor", "itm_wine", 120, 0),
       
-      (party_set_slot,"p_town_4", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_4", slot_town_arena_melee_1_team_size,   8),
-      (party_set_slot,"p_town_4", slot_town_arena_melee_2_num_teams,   3),
-      (party_set_slot,"p_town_4", slot_town_arena_melee_2_team_size,   8),
-      (party_set_slot,"p_town_4", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_4", slot_town_arena_melee_3_team_size,   5),
-      (call_script, "script_center_change_trade_good_production", "p_town_4", "itm_oil", 130, 0),
+      (party_set_slot,"p_corellia", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_corellia", slot_mainplanet_arena_melee_1_team_size,   8),
+      (party_set_slot,"p_corellia", slot_mainplanet_arena_melee_2_num_teams,   3),
+      (party_set_slot,"p_corellia", slot_mainplanet_arena_melee_2_team_size,   8),
+      (party_set_slot,"p_corellia", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_corellia", slot_mainplanet_arena_melee_3_team_size,   5),
+      (call_script, "script_center_change_trade_good_production", "p_corellia", "itm_oil", 130, 0),
       
-      (party_set_slot,"p_town_5", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_5", slot_town_arena_melee_1_team_size,   3),
-      (party_set_slot,"p_town_5", slot_town_arena_melee_2_num_teams,   2),
-      (party_set_slot,"p_town_5", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_5", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_5", slot_town_arena_melee_3_team_size,   8),
-      (call_script, "script_center_change_trade_good_production", "p_town_5", "itm_velvet", 80, 0),
+      (party_set_slot,"p_naboo", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_naboo", slot_mainplanet_arena_melee_1_team_size,   3),
+      (party_set_slot,"p_naboo", slot_mainplanet_arena_melee_2_num_teams,   2),
+      (party_set_slot,"p_naboo", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_naboo", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_naboo", slot_mainplanet_arena_melee_3_team_size,   8),
+      (call_script, "script_center_change_trade_good_production", "p_naboo", "itm_velvet", 80, 0),
       
-      (party_set_slot,"p_town_6", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_6", slot_town_arena_melee_1_team_size,   4),
-      (party_set_slot,"p_town_6", slot_town_arena_melee_2_num_teams,   3),
-      (party_set_slot,"p_town_6", slot_town_arena_melee_2_team_size,   4),
-      (party_set_slot,"p_town_6", slot_town_arena_melee_3_num_teams,   3),
-      (party_set_slot,"p_town_6", slot_town_arena_melee_3_team_size,   6),
-      (call_script, "script_center_change_trade_good_production", "p_town_6", "itm_ale", 130, 0),
+      (party_set_slot,"p_kessel", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_kessel", slot_mainplanet_arena_melee_1_team_size,   4),
+      (party_set_slot,"p_kessel", slot_mainplanet_arena_melee_2_num_teams,   3),
+      (party_set_slot,"p_kessel", slot_mainplanet_arena_melee_2_team_size,   4),
+      (party_set_slot,"p_kessel", slot_mainplanet_arena_melee_3_num_teams,   3),
+      (party_set_slot,"p_kessel", slot_mainplanet_arena_melee_3_team_size,   6),
+      (call_script, "script_center_change_trade_good_production", "p_kessel", "itm_ale", 130, 0),
       
-      (party_set_slot,"p_town_7", slot_town_arena_melee_1_num_teams,   4),
-      (party_set_slot,"p_town_7", slot_town_arena_melee_1_team_size,   4),
-      (party_set_slot,"p_town_7", slot_town_arena_melee_2_num_teams,   4),
-      (party_set_slot,"p_town_7", slot_town_arena_melee_2_team_size,   6),
-      (party_set_slot,"p_town_7", slot_town_arena_melee_3_num_teams,   4),
-      (party_set_slot,"p_town_7", slot_town_arena_melee_3_team_size,   8),
-      (call_script, "script_center_change_trade_good_production", "p_town_7", "itm_grain", 140, 0),
-      (call_script, "script_center_change_trade_good_production", "p_town_7", "itm_flour", 110, 0),
+      (party_set_slot,"p_dantooine", slot_mainplanet_arena_melee_1_num_teams,   4),
+      (party_set_slot,"p_dantooine", slot_mainplanet_arena_melee_1_team_size,   4),
+      (party_set_slot,"p_dantooine", slot_mainplanet_arena_melee_2_num_teams,   4),
+      (party_set_slot,"p_dantooine", slot_mainplanet_arena_melee_2_team_size,   6),
+      (party_set_slot,"p_dantooine", slot_mainplanet_arena_melee_3_num_teams,   4),
+      (party_set_slot,"p_dantooine", slot_mainplanet_arena_melee_3_team_size,   8),
+      (call_script, "script_center_change_trade_good_production", "p_dantooine", "itm_grain", 140, 0),
+      (call_script, "script_center_change_trade_good_production", "p_dantooine", "itm_flour", 110, 0),
       
-      (party_set_slot,"p_town_8", slot_town_arena_melee_1_num_teams,   3),
-      (party_set_slot,"p_town_8", slot_town_arena_melee_1_team_size,   1),
-      (party_set_slot,"p_town_8", slot_town_arena_melee_2_num_teams,   3),
-      (party_set_slot,"p_town_8", slot_town_arena_melee_2_team_size,   3),
-      (party_set_slot,"p_town_8", slot_town_arena_melee_3_num_teams,   3),
-      (party_set_slot,"p_town_8", slot_town_arena_melee_3_team_size,   7),
-      (call_script, "script_center_change_trade_good_production", "p_town_8", "itm_wool", 130, 0),
+      (party_set_slot,"p_geonosis", slot_mainplanet_arena_melee_1_num_teams,   3),
+      (party_set_slot,"p_geonosis", slot_mainplanet_arena_melee_1_team_size,   1),
+      (party_set_slot,"p_geonosis", slot_mainplanet_arena_melee_2_num_teams,   3),
+      (party_set_slot,"p_geonosis", slot_mainplanet_arena_melee_2_team_size,   3),
+      (party_set_slot,"p_geonosis", slot_mainplanet_arena_melee_3_num_teams,   3),
+      (party_set_slot,"p_geonosis", slot_mainplanet_arena_melee_3_team_size,   7),
+      (call_script, "script_center_change_trade_good_production", "p_geonosis", "itm_wool", 130, 0),
       
-      (party_set_slot,"p_town_9", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_9", slot_town_arena_melee_1_team_size,   2),
-      (party_set_slot,"p_town_9", slot_town_arena_melee_2_num_teams,   2),
-      (party_set_slot,"p_town_9", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_9", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_9", slot_town_arena_melee_3_team_size,   8),
-      (call_script, "script_center_change_trade_good_production", "p_town_9", "itm_furs", 135, 0),
+      (party_set_slot,"p_mon_cal", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_mon_cal", slot_mainplanet_arena_melee_1_team_size,   2),
+      (party_set_slot,"p_mon_cal", slot_mainplanet_arena_melee_2_num_teams,   2),
+      (party_set_slot,"p_mon_cal", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_mon_cal", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_mon_cal", slot_mainplanet_arena_melee_3_team_size,   8),
+      (call_script, "script_center_change_trade_good_production", "p_mon_cal", "itm_furs", 135, 0),
       
-      (party_set_slot,"p_town_10", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_10", slot_town_arena_melee_1_team_size,   3),
-      (party_set_slot,"p_town_10", slot_town_arena_melee_2_num_teams,   2),
-      (party_set_slot,"p_town_10", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_10", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_10", slot_town_arena_melee_3_team_size,   8),
-      (call_script, "script_center_change_trade_good_production", "p_town_10", "itm_spice", 86, 0),
+      (party_set_slot,"p_kashyyyk", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_kashyyyk", slot_mainplanet_arena_melee_1_team_size,   3),
+      (party_set_slot,"p_kashyyyk", slot_mainplanet_arena_melee_2_num_teams,   2),
+      (party_set_slot,"p_kashyyyk", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_kashyyyk", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_kashyyyk", slot_mainplanet_arena_melee_3_team_size,   8),
+      (call_script, "script_center_change_trade_good_production", "p_kashyyyk", "itm_spice", 86, 0),
       
-      (party_set_slot,"p_town_11", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_11", slot_town_arena_melee_1_team_size,   8),
-      (party_set_slot,"p_town_11", slot_town_arena_melee_2_num_teams,   3),
-      (party_set_slot,"p_town_11", slot_town_arena_melee_2_team_size,   4),
-      (party_set_slot,"p_town_11", slot_town_arena_melee_3_num_teams,   3),
-      (party_set_slot,"p_town_11", slot_town_arena_melee_3_team_size,   6),
-      (call_script, "script_center_change_trade_good_production", "p_town_11", "itm_iron", 130, 0),
+      (party_set_slot,"p_hoth", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_hoth", slot_mainplanet_arena_melee_1_team_size,   8),
+      (party_set_slot,"p_hoth", slot_mainplanet_arena_melee_2_num_teams,   3),
+      (party_set_slot,"p_hoth", slot_mainplanet_arena_melee_2_team_size,   4),
+      (party_set_slot,"p_hoth", slot_mainplanet_arena_melee_3_num_teams,   3),
+      (party_set_slot,"p_hoth", slot_mainplanet_arena_melee_3_team_size,   6),
+      (call_script, "script_center_change_trade_good_production", "p_hoth", "itm_iron", 130, 0),
       
-      (party_set_slot,"p_town_12", slot_town_arena_melee_1_num_teams,   3),
-      (party_set_slot,"p_town_12", slot_town_arena_melee_1_team_size,   8),
-      (party_set_slot,"p_town_12", slot_town_arena_melee_2_num_teams,   4),
-      (party_set_slot,"p_town_12", slot_town_arena_melee_2_team_size,   6),
-      (party_set_slot,"p_town_12", slot_town_arena_melee_3_num_teams,   4),
-      (party_set_slot,"p_town_12", slot_town_arena_melee_3_team_size,   5),
-      (call_script, "script_center_change_trade_good_production", "p_town_12", "itm_smoked_fish", 140, 0),
+      (party_set_slot,"p_gamorr", slot_mainplanet_arena_melee_1_num_teams,   3),
+      (party_set_slot,"p_gamorr", slot_mainplanet_arena_melee_1_team_size,   8),
+      (party_set_slot,"p_gamorr", slot_mainplanet_arena_melee_2_num_teams,   4),
+      (party_set_slot,"p_gamorr", slot_mainplanet_arena_melee_2_team_size,   6),
+      (party_set_slot,"p_gamorr", slot_mainplanet_arena_melee_3_num_teams,   4),
+      (party_set_slot,"p_gamorr", slot_mainplanet_arena_melee_3_team_size,   5),
+      (call_script, "script_center_change_trade_good_production", "p_gamorr", "itm_smoked_fish", 140, 0),
       
-      (party_set_slot,"p_town_13", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_13", slot_town_arena_melee_1_team_size,   8),
-      (party_set_slot,"p_town_13", slot_town_arena_melee_2_num_teams,   4),
-      (party_set_slot,"p_town_13", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_13", slot_town_arena_melee_3_num_teams,   4),
-      (party_set_slot,"p_town_13", slot_town_arena_melee_3_team_size,   7),
-      (call_script, "script_center_change_trade_good_production", "p_town_13", "itm_dried_meat", 120, 0),
+      (party_set_slot,"p_yavin_iv", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_yavin_iv", slot_mainplanet_arena_melee_1_team_size,   8),
+      (party_set_slot,"p_yavin_iv", slot_mainplanet_arena_melee_2_num_teams,   4),
+      (party_set_slot,"p_yavin_iv", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_yavin_iv", slot_mainplanet_arena_melee_3_num_teams,   4),
+      (party_set_slot,"p_yavin_iv", slot_mainplanet_arena_melee_3_team_size,   7),
+      (call_script, "script_center_change_trade_good_production", "p_yavin_iv", "itm_dried_meat", 120, 0),
       
-      (party_set_slot,"p_town_14", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_14", slot_town_arena_melee_1_team_size,   4),
-      (party_set_slot,"p_town_14", slot_town_arena_melee_2_num_teams,   2),
-      (party_set_slot,"p_town_14", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_14", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_14", slot_town_arena_melee_3_team_size,   6),
-      (call_script, "script_center_change_trade_good_production", "p_town_14", "itm_pottery", 120, 0),
+      (party_set_slot,"p_tatooine", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_tatooine", slot_mainplanet_arena_melee_1_team_size,   4),
+      (party_set_slot,"p_tatooine", slot_mainplanet_arena_melee_2_num_teams,   2),
+      (party_set_slot,"p_tatooine", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_tatooine", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_tatooine", slot_mainplanet_arena_melee_3_team_size,   6),
+      (call_script, "script_center_change_trade_good_production", "p_tatooine", "itm_pottery", 120, 0),
       
-      (party_set_slot,"p_town_15", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_15", slot_town_arena_melee_1_team_size,   8),
-      (party_set_slot,"p_town_15", slot_town_arena_melee_2_num_teams,   3),
-      (party_set_slot,"p_town_15", slot_town_arena_melee_2_team_size,   4),
-      (party_set_slot,"p_town_15", slot_town_arena_melee_3_num_teams,   3),
-      (party_set_slot,"p_town_15", slot_town_arena_melee_3_team_size,   6),
-      (call_script, "script_center_change_trade_good_production", "p_town_15", "itm_cheese", 100, 0),
+      (party_set_slot,"p_reecee", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_reecee", slot_mainplanet_arena_melee_1_team_size,   8),
+      (party_set_slot,"p_reecee", slot_mainplanet_arena_melee_2_num_teams,   3),
+      (party_set_slot,"p_reecee", slot_mainplanet_arena_melee_2_team_size,   4),
+      (party_set_slot,"p_reecee", slot_mainplanet_arena_melee_3_num_teams,   3),
+      (party_set_slot,"p_reecee", slot_mainplanet_arena_melee_3_team_size,   6),
+      (call_script, "script_center_change_trade_good_production", "p_reecee", "itm_cheese", 100, 0),
       
-      (party_set_slot,"p_town_16", slot_town_arena_melee_1_num_teams,   3),
-      (party_set_slot,"p_town_16", slot_town_arena_melee_1_team_size,   8),
-      (party_set_slot,"p_town_16", slot_town_arena_melee_2_num_teams,   4),
-      (party_set_slot,"p_town_16", slot_town_arena_melee_2_team_size,   6),
-      (party_set_slot,"p_town_16", slot_town_arena_melee_3_num_teams,   4),
-      (party_set_slot,"p_town_16", slot_town_arena_melee_3_team_size,   5),
-      (call_script, "script_center_change_trade_good_production", "p_town_16", "itm_tools", 100, 0),
+      (party_set_slot,"p_coruscant", slot_mainplanet_arena_melee_1_num_teams,   3),
+      (party_set_slot,"p_coruscant", slot_mainplanet_arena_melee_1_team_size,   8),
+      (party_set_slot,"p_coruscant", slot_mainplanet_arena_melee_2_num_teams,   4),
+      (party_set_slot,"p_coruscant", slot_mainplanet_arena_melee_2_team_size,   6),
+      (party_set_slot,"p_coruscant", slot_mainplanet_arena_melee_3_num_teams,   4),
+      (party_set_slot,"p_coruscant", slot_mainplanet_arena_melee_3_team_size,   5),
+      (call_script, "script_center_change_trade_good_production", "p_coruscant", "itm_tools", 100, 0),
       
-      (party_set_slot,"p_town_17", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_17", slot_town_arena_melee_1_team_size,   8),
-      (party_set_slot,"p_town_17", slot_town_arena_melee_2_num_teams,   4),
-      (party_set_slot,"p_town_17", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_17", slot_town_arena_melee_3_num_teams,   4),
-      (party_set_slot,"p_town_17", slot_town_arena_melee_3_team_size,   7),
-      (call_script, "script_center_change_trade_good_production", "p_town_17", "itm_salt", 100, 0),
+      (party_set_slot,"p_ryloth", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_ryloth", slot_mainplanet_arena_melee_1_team_size,   8),
+      (party_set_slot,"p_ryloth", slot_mainplanet_arena_melee_2_num_teams,   4),
+      (party_set_slot,"p_ryloth", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_ryloth", slot_mainplanet_arena_melee_3_num_teams,   4),
+      (party_set_slot,"p_ryloth", slot_mainplanet_arena_melee_3_team_size,   7),
+      (call_script, "script_center_change_trade_good_production", "p_ryloth", "itm_salt", 100, 0),
       
-      (party_set_slot,"p_town_18", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_18", slot_town_arena_melee_1_team_size,   4),
-      (party_set_slot,"p_town_18", slot_town_arena_melee_2_num_teams,   2),
-      (party_set_slot,"p_town_18", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_18", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_18", slot_town_arena_melee_3_team_size,   6),
-      (call_script, "script_center_change_trade_good_production", "p_town_18", "itm_oil", 125, 0),
+      (party_set_slot,"p_nalhutta", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_nalhutta", slot_mainplanet_arena_melee_1_team_size,   4),
+      (party_set_slot,"p_nalhutta", slot_mainplanet_arena_melee_2_num_teams,   2),
+      (party_set_slot,"p_nalhutta", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_nalhutta", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_nalhutta", slot_mainplanet_arena_melee_3_team_size,   6),
+      (call_script, "script_center_change_trade_good_production", "p_nalhutta", "itm_oil", 125, 0),
       
       #SW - new town data, town_19, town_20, town_21
       #town_19
-      (party_set_slot,"p_town_19", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_19", slot_town_arena_melee_1_team_size,   4),
-      (party_set_slot,"p_town_19", slot_town_arena_melee_2_num_teams,   2),
-      (party_set_slot,"p_town_19", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_19", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_19", slot_town_arena_melee_3_team_size,   6),
-      (call_script, "script_center_change_trade_good_production", "p_town_19", "itm_cheese", 125, 0),
+      (party_set_slot,"p_bothawui", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_bothawui", slot_mainplanet_arena_melee_1_team_size,   4),
+      (party_set_slot,"p_bothawui", slot_mainplanet_arena_melee_2_num_teams,   2),
+      (party_set_slot,"p_bothawui", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_bothawui", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_bothawui", slot_mainplanet_arena_melee_3_team_size,   6),
+      (call_script, "script_center_change_trade_good_production", "p_bothawui", "itm_cheese", 125, 0),
       #own_20
-      (party_set_slot,"p_town_20", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_20", slot_town_arena_melee_1_team_size,   4),
-      (party_set_slot,"p_town_20", slot_town_arena_melee_2_num_teams,   2),
-      (party_set_slot,"p_town_20", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_20", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_20", slot_town_arena_melee_3_team_size,   6),
-      (call_script, "script_center_change_trade_good_production", "p_town_20", "itm_oil", 125, 0),
+      (party_set_slot,"p_mustafar", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_mustafar", slot_mainplanet_arena_melee_1_team_size,   4),
+      (party_set_slot,"p_mustafar", slot_mainplanet_arena_melee_2_num_teams,   2),
+      (party_set_slot,"p_mustafar", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_mustafar", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_mustafar", slot_mainplanet_arena_melee_3_team_size,   6),
+      (call_script, "script_center_change_trade_good_production", "p_mustafar", "itm_oil", 125, 0),
       #town_21
-      (party_set_slot,"p_town_21", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_21", slot_town_arena_melee_1_team_size,   4),
-      (party_set_slot,"p_town_21", slot_town_arena_melee_2_num_teams,   2),
-      (party_set_slot,"p_town_21", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_21", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_21", slot_town_arena_melee_3_team_size,   6),
-      (call_script, "script_center_change_trade_good_production", "p_town_21", "itm_tools", 125, 0),
+      (party_set_slot,"p_kamino", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_kamino", slot_mainplanet_arena_melee_1_team_size,   4),
+      (party_set_slot,"p_kamino", slot_mainplanet_arena_melee_2_num_teams,   2),
+      (party_set_slot,"p_kamino", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_kamino", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_kamino", slot_mainplanet_arena_melee_3_team_size,   6),
+      (call_script, "script_center_change_trade_good_production", "p_kamino", "itm_tools", 125, 0),
       #town_22 - Taris - Added By Swyter
-      (party_set_slot,"p_town_22", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_22", slot_town_arena_melee_1_team_size,   4),
-      (party_set_slot,"p_town_22", slot_town_arena_melee_2_num_teams,   2),
-      (party_set_slot,"p_town_22", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_22", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_22", slot_town_arena_melee_3_team_size,   6),
-      (call_script, "script_center_change_trade_good_production", "p_town_22", "itm_tools", 125, 0),
+      (party_set_slot,"p_taris", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_taris", slot_mainplanet_arena_melee_1_team_size,   4),
+      (party_set_slot,"p_taris", slot_mainplanet_arena_melee_2_num_teams,   2),
+      (party_set_slot,"p_taris", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_taris", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_taris", slot_mainplanet_arena_melee_3_team_size,   6),
+      (call_script, "script_center_change_trade_good_production", "p_taris", "itm_tools", 125, 0),
       #town_23 - Raxus Prime - Added By Swyter
-      (party_set_slot,"p_town_23", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_23", slot_town_arena_melee_1_team_size,   4),
-      (party_set_slot,"p_town_23", slot_town_arena_melee_2_num_teams,   2),
-      (party_set_slot,"p_town_23", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_23", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_23", slot_town_arena_melee_3_team_size,   6),
-      (call_script, "script_center_change_trade_good_production", "p_town_23", "itm_iron", 125, 0),
+      (party_set_slot,"p_raxusprime", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_raxusprime", slot_mainplanet_arena_melee_1_team_size,   4),
+      (party_set_slot,"p_raxusprime", slot_mainplanet_arena_melee_2_num_teams,   2),
+      (party_set_slot,"p_raxusprime", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_raxusprime", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_raxusprime", slot_mainplanet_arena_melee_3_team_size,   6),
+      (call_script, "script_center_change_trade_good_production", "p_raxusprime", "itm_iron", 125, 0),
       #town_24 - Sarapin - Added By Swyter
-      (party_set_slot,"p_town_24", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_24", slot_town_arena_melee_1_team_size,   4),
-      (party_set_slot,"p_town_24", slot_town_arena_melee_2_num_teams,   2),
-      (party_set_slot,"p_town_24", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_24", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_24", slot_town_arena_melee_3_team_size,   6),
-      (call_script, "script_center_change_trade_good_production", "p_town_24", "itm_tools", 125, 0),
+      (party_set_slot,"p_sarapin", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_sarapin", slot_mainplanet_arena_melee_1_team_size,   4),
+      (party_set_slot,"p_sarapin", slot_mainplanet_arena_melee_2_num_teams,   2),
+      (party_set_slot,"p_sarapin", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_sarapin", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_sarapin", slot_mainplanet_arena_melee_3_team_size,   6),
+      (call_script, "script_center_change_trade_good_production", "p_sarapin", "itm_tools", 125, 0),
       #town_25 - hypori
-      (party_set_slot,"p_town_25", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_25", slot_town_arena_melee_1_team_size,   4),
-      (party_set_slot,"p_town_25", slot_town_arena_melee_2_num_teams,   2),
-      (party_set_slot,"p_town_25", slot_town_arena_melee_2_team_size,   5),
-      (party_set_slot,"p_town_25", slot_town_arena_melee_3_num_teams,   2),
-      (party_set_slot,"p_town_25", slot_town_arena_melee_3_team_size,   6),
-      (call_script, "script_center_change_trade_good_production", "p_town_25", "itm_pottery", 120, 0),
+      (party_set_slot,"p_hypori", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_hypori", slot_mainplanet_arena_melee_1_team_size,   4),
+      (party_set_slot,"p_hypori", slot_mainplanet_arena_melee_2_num_teams,   2),
+      (party_set_slot,"p_hypori", slot_mainplanet_arena_melee_2_team_size,   5),
+      (party_set_slot,"p_hypori", slot_mainplanet_arena_melee_3_num_teams,   2),
+      (party_set_slot,"p_hypori", slot_mainplanet_arena_melee_3_team_size,   6),
+      (call_script, "script_center_change_trade_good_production", "p_hypori", "itm_pottery", 120, 0),
       #town_26 - Felucia
-      (party_set_slot,"p_town_26", slot_town_arena_melee_1_num_teams,   2),
-      (party_set_slot,"p_town_26", slot_town_arena_melee_1_team_size,   8),
-      (party_set_slot,"p_town_26", slot_town_arena_melee_2_num_teams,   3),
-      (party_set_slot,"p_town_26", slot_town_arena_melee_2_team_size,   4),
-      (party_set_slot,"p_town_26", slot_town_arena_melee_3_num_teams,   3),
-      (party_set_slot,"p_town_26", slot_town_arena_melee_3_team_size,   6),
-      (call_script, "script_center_change_trade_good_production", "p_town_26", "itm_oil", 100, 0),
+      (party_set_slot,"p_felucia", slot_mainplanet_arena_melee_1_num_teams,   2),
+      (party_set_slot,"p_felucia", slot_mainplanet_arena_melee_1_team_size,   8),
+      (party_set_slot,"p_felucia", slot_mainplanet_arena_melee_2_num_teams,   3),
+      (party_set_slot,"p_felucia", slot_mainplanet_arena_melee_2_team_size,   4),
+      (party_set_slot,"p_felucia", slot_mainplanet_arena_melee_3_num_teams,   3),
+      (party_set_slot,"p_felucia", slot_mainplanet_arena_melee_3_team_size,   6),
+      (call_script, "script_center_change_trade_good_production", "p_felucia", "itm_oil", 100, 0),
       
       (try_for_range, ":unused", 0, 1),
         (call_script, "script_average_trade_good_productions"),
@@ -898,50 +898,50 @@ scripts = [
         (store_sub, ":offset", ":town_no", towns_begin),
         (party_set_slot,":town_no", slot_party_type, spt_town),
         #        (store_add, ":cur_object_no", "trp_town_1_seneschal", ":offset"),
-        #        (party_set_slot,":town_no", slot_town_seneschal, ":cur_object_no"),
+        #        (party_set_slot,":town_no", slot_mainplanet_seneschal, ":cur_object_no"),
         
         #Tavern recruitment and ale START 1/3
         (store_add, ":cur_object_no", "p_town_merc_1", ":offset"),
-        (party_set_slot,":town_no", slot_town_mercs,":cur_object_no"),
+        (party_set_slot,":town_no", slot_mainplanet_mercs,":cur_object_no"),
         #Tavern recruitment and ale END 1/3
         
-        (store_add, ":cur_object_no", "scn_swmain_1_center", ":offset"),
-        (party_set_slot,":town_no", slot_town_center, ":cur_object_no"),
-        (store_add, ":cur_object_no", "scn_swmain_1_castle", ":offset"),
-        (party_set_slot,":town_no", slot_town_castle, ":cur_object_no"),
-        (store_add, ":cur_object_no", "scn_swmain_1_prison", ":offset"),
-        (party_set_slot,":town_no", slot_town_prison, ":cur_object_no"),
-        (store_add, ":cur_object_no", "scn_swmain_1_center", ":offset"),
+        (store_add, ":cur_object_no", "scn_mainplanet_1_center", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_center, ":cur_object_no"),
+        (store_add, ":cur_object_no", "scn_mainplanet_1_castle", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_castle, ":cur_object_no"),
+        (store_add, ":cur_object_no", "scn_mainplanet_1_prison", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_prison, ":cur_object_no"),
+        (store_add, ":cur_object_no", "scn_mainplanet_1_center", ":offset"),
         #(store_add, ":cur_object_no", "scn_town_1_walls", ":offset"),   #switched walls to use center scenes
-        (party_set_slot,":town_no", slot_town_walls, ":cur_object_no"),
-        (store_add, ":cur_object_no", "scn_swmain_1_cantina", ":offset"),
-        (party_set_slot,":town_no", slot_town_tavern, ":cur_object_no"),
-        (store_add, ":cur_object_no", "scn_swmain_1_store", ":offset"),
-        (party_set_slot,":town_no", slot_town_store, ":cur_object_no"),
-        (store_add, ":cur_object_no", "scn_swmain_1_arena", ":offset"),
-        (party_set_slot,":town_no", slot_town_arena, ":cur_object_no"),
-        (store_add, ":cur_object_no", "scn_swmain_1_alley", ":offset"),
-        (party_set_slot,":town_no", slot_town_alley, ":cur_object_no"),
-        (store_add, ":cur_object_no", "trp_swmain_1_mayor", ":offset"),
-        (party_set_slot,":town_no", slot_town_elder, ":cur_object_no"),
-        (store_add, ":cur_object_no", "trp_swmain_1_bartender", ":offset"),
-        (party_set_slot,":town_no", slot_town_tavernkeeper, ":cur_object_no"),
-        (store_add, ":cur_object_no", "trp_swmain_1_weaponsmith", ":offset"),
-        (party_set_slot,":town_no", slot_town_weaponsmith, ":cur_object_no"),
-        (store_add, ":cur_object_no", "trp_swmain_1_armorer", ":offset"),
-        (party_set_slot,":town_no", slot_town_armorer, ":cur_object_no"),
-        (store_add, ":cur_object_no", "trp_swmain_1_merchant", ":offset"),
-        (party_set_slot,":town_no", slot_town_merchant, ":cur_object_no"),
-        (store_add, ":cur_object_no", "trp_swmain_1_horse_merchant", ":offset"),
-        (party_set_slot,":town_no", slot_town_horse_merchant, ":cur_object_no"),
-        (store_add, ":cur_object_no", "scn_swmain_1_center", ":offset"),
-        (party_set_slot,":town_no", slot_town_center, ":cur_object_no"),
-        (party_set_slot,":town_no", slot_town_reinforcement_party_template, "pt_center_reinforcements"),
+        (party_set_slot,":town_no", slot_mainplanet_walls, ":cur_object_no"),
+        (store_add, ":cur_object_no", "scn_mainplanet_1_cantina", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_tavern, ":cur_object_no"),
+        (store_add, ":cur_object_no", "scn_mainplanet_1_store", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_store, ":cur_object_no"),
+        (store_add, ":cur_object_no", "scn_mainplanet_1_arena", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_arena, ":cur_object_no"),
+        (store_add, ":cur_object_no", "scn_mainplanet_1_alley", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_alley, ":cur_object_no"),
+        (store_add, ":cur_object_no", "trp_mainplanet_1_mayor", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_elder, ":cur_object_no"),
+        (store_add, ":cur_object_no", "trp_mainplanet_1_bartender", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_tavernkeeper, ":cur_object_no"),
+        (store_add, ":cur_object_no", "trp_mainplanet_1_weaponsmith", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_weaponsmith, ":cur_object_no"),
+        (store_add, ":cur_object_no", "trp_mainplanet_1_armorer", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_armorer, ":cur_object_no"),
+        (store_add, ":cur_object_no", "trp_mainplanet_1_merchant", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_merchant, ":cur_object_no"),
+        (store_add, ":cur_object_no", "trp_mainplanet_1_horse_merchant", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_horse_merchant, ":cur_object_no"),
+        (store_add, ":cur_object_no", "scn_mainplanet_1_center", ":offset"),
+        (party_set_slot,":town_no", slot_mainplanet_center, ":cur_object_no"),
+        (party_set_slot,":town_no", slot_mainplanet_reinforcement_party_template, "pt_center_reinforcements"),
       (try_end),
       
       #SW - modified to use arena_melee_fight only (nevermind, apprently no longer exists in 1.x?)
-      #(party_set_slot,"p_town_1", slot_town_arena_template, "mt_arena_melee_fight_no_ranged"),
-      #(party_set_slot,"p_town_1", slot_town_arena_template, "mt_arena_melee_fight"),
+      #(party_set_slot,"p_mandalore", slot_mainplanet_arena_template, "mt_arena_melee_fight_no_ranged"),
+      #(party_set_slot,"p_mandalore", slot_mainplanet_arena_template, "mt_arena_melee_fight"),
       
       # Castles
       (try_for_range, ":castle_no", castles_begin, castles_end),
@@ -949,24 +949,24 @@ scripts = [
         (val_mul, ":offset", 3),
         
         #        (store_add, ":senechal_troop_no", "trp_castle_1_seneschal", ":offset"),
-        #        (party_set_slot,":castle_no", slot_town_seneschal, ":senechal_troop_no"),
-        (store_add, ":exterior_scene_no", "scn_castle_2_exterior", ":offset"),
-        (party_set_slot,":castle_no", slot_castle_exterior, ":exterior_scene_no"),
-        (store_add, ":interior_scene_no", "scn_castle_2_interior", ":offset"),
-        (party_set_slot,":castle_no", slot_town_castle, ":interior_scene_no"),
-        (store_add, ":interior_scene_no", "scn_castle_2_prison", ":offset"),
-        (party_set_slot,":castle_no", slot_town_prison, ":interior_scene_no"),
+        #        (party_set_slot,":castle_no", slot_mainplanet_seneschal, ":senechal_troop_no"),
+        (store_add, ":exterior_scene_no", "scn_spacestation_2_exterior", ":offset"),
+        (party_set_slot,":castle_no", slot_spacestation_exterior, ":exterior_scene_no"),
+        (store_add, ":interior_scene_no", "scn_spacestation_2_interior", ":offset"),
+        (party_set_slot,":castle_no", slot_mainplanet_castle, ":interior_scene_no"),
+        (store_add, ":interior_scene_no", "scn_spacestation_2_prison", ":offset"),
+        (party_set_slot,":castle_no", slot_mainplanet_prison, ":interior_scene_no"),
         
-        (party_set_slot,":castle_no", slot_town_reinforcement_party_template, "pt_center_reinforcements"),
+        (party_set_slot,":castle_no", slot_mainplanet_reinforcement_party_template, "pt_center_reinforcements"),
         (party_set_slot,":castle_no", slot_party_type, spt_castle),
         (party_set_slot,":castle_no", slot_center_is_besieged_by, -1),
       (try_end),
       
       # Set which castles need to be attacked with siege towers.
       #SW - commented out ability to use siege towers
-      # (party_set_slot,"p_town_1", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_town_13", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_town_16", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_mandalore", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_yavin_iv", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_coruscant", slot_center_siege_with_belfry,   1),
       
       # (party_set_slot,"p_castle_1", slot_center_siege_with_belfry,   1),
       # (party_set_slot,"p_castle_2", slot_center_siege_with_belfry,   1),
@@ -1034,10 +1034,10 @@ scripts = [
       
       (try_for_range, ":village_no", villages_begin, villages_end),
         (store_random_in_range, ":random_land_quality", 0, 5),
-        (party_set_slot, ":village_no", slot_village_land_quality, ":random_land_quality"),
+        (party_set_slot, ":village_no", slot_minorplanet_land_quality, ":random_land_quality"),
         
         (store_random_in_range, ":random_cattle", 25, 75),
-        (party_set_slot, ":village_no", slot_village_number_of_cattle, ":random_cattle"),
+        (party_set_slot, ":village_no", slot_minorplanet_number_of_cattle, ":random_cattle"),
         #Reassigning the cattle production in the village
         (store_sub, ":production", ":random_cattle", 10),
         (val_div, ":production", 2),
@@ -1046,8 +1046,8 @@ scripts = [
         
         (store_sub, ":offset", ":village_no", villages_begin),
         
-        (store_add, ":exterior_scene_no", "scn_swminor_1", ":offset"),
-        (party_set_slot,":village_no", slot_castle_exterior, ":exterior_scene_no"),		#SW set village scene
+        (store_add, ":exterior_scene_no", "scn_minorplanet_1", ":offset"),
+        (party_set_slot,":village_no", slot_spacestation_exterior, ":exterior_scene_no"),		#SW set village scene
         
         #SW debug
         # (assign, reg3, ":village_no"), #SW debug
@@ -1055,11 +1055,11 @@ scripts = [
         # (assign, reg5, ":exterior_scene_no"), #SW debug
         # (display_log_message, "@village_no = {reg3}, offset = {reg4}, exterior_scene_no = {reg5}"),	#SW debug
         
-        (store_add, ":store_troop_no", "trp_swminor_admin_1", ":offset"),
-        (party_set_slot,":village_no", slot_town_elder, ":store_troop_no"),
+        (store_add, ":store_troop_no", "trp_minorplanet_admin_1", ":offset"),
+        (party_set_slot,":village_no", slot_mainplanet_elder, ":store_troop_no"),
         
         (party_set_slot,":village_no", slot_party_type, spt_village),
-        (party_set_slot,":village_no", slot_village_raided_by, -1),
+        (party_set_slot,":village_no", slot_minorplanet_raided_by, -1),
         
         (call_script, "script_refresh_village_merchant_inventory", ":village_no"),
         (call_script, "script_refresh_village_merchant_inventory", ":village_no"),
@@ -1071,7 +1071,7 @@ scripts = [
       (try_end),
       
       
-      #      (store_sub, ":item_to_slot", slot_town_trade_good_productions_begin, trade_goods_begin),
+      #      (store_sub, ":item_to_slot", slot_mainplanet_trade_good_productions_begin, trade_goods_begin),
       #      (try_for_range, ":center_no", centers_begin, centers_end),
       #        (str_clear, s3),
       #        (this_or_next|is_between, ":center_no", towns_begin, towns_end),
@@ -1101,7 +1101,7 @@ scripts = [
           (val_add, ":prosperity", 20),
         (try_end),
         (val_clamp, ":prosperity", 0, 100),
-        (party_set_slot, ":center_no", slot_town_prosperity, ":prosperity"),
+        (party_set_slot, ":center_no", slot_mainplanet_prosperity, ":prosperity"),
       (try_end),
       
       #SW - moved after script_give_center_to_lord to have faction specific soldiers
@@ -1216,34 +1216,34 @@ scripts = [
       
       #SW - modified script_give_center_to_lord
       #TEST
-      #(call_script, "script_give_center_to_lord", "p_town_1",  "trp_player", 0),
-      #(call_script, "script_give_center_to_lord", "p_town_2",  "trp_player", 0),
-      #(call_script, "script_give_center_to_lord", "p_town_3",  "trp_player", 0),
-      #(call_script, "script_give_center_to_lord", "p_town_4",  "trp_player", 0),
-      (call_script, "script_give_center_to_lord", "p_town_1",  "trp_knight_1_4", 0),
-      (call_script, "script_give_center_to_lord", "p_town_2",  "trp_knight_1_7", 0),
-      (call_script, "script_give_center_to_lord", "p_town_3",  "trp_knight_1_3", 0),
-      (call_script, "script_give_center_to_lord", "p_town_4",  "trp_knight_1_2", 0),
-      (call_script, "script_give_center_to_lord", "p_town_5",  "trp_knight_1_1", 0),
-      (call_script, "script_give_center_to_lord", "p_town_6",  "trp_knight_1_14", 0),
-      (call_script, "script_give_center_to_lord", "p_town_7",  "trp_knight_2_11", 0),
-      (call_script, "script_give_center_to_lord", "p_town_8",  "trp_knight_1_5", 0),
-      (call_script, "script_give_center_to_lord", "p_town_9",  "trp_knight_2_9", 0),
-      (call_script, "script_give_center_to_lord", "p_town_10", "trp_knight_2_4", 0),
-      (call_script, "script_give_center_to_lord", "p_town_11", "trp_knight_2_3", 0),
-      (call_script, "script_give_center_to_lord", "p_town_12", "trp_knight_3_10", 0),
-      (call_script, "script_give_center_to_lord", "p_town_13", "trp_kingdom_2_lord", 0),
-      (call_script, "script_give_center_to_lord", "p_town_14", "trp_kingdom_3_lord", 0),
-      (call_script, "script_give_center_to_lord", "p_town_15", "trp_knight_1_10", 0),
-      (call_script, "script_give_center_to_lord", "p_town_16", "trp_kingdom_1_lord", 0),
-      (call_script, "script_give_center_to_lord", "p_town_17", "trp_knight_3_1", 0),
-      (call_script, "script_give_center_to_lord", "p_town_18", "trp_knight_3_2", 0),
+      #(call_script, "script_give_center_to_lord", "p_mandalore",  "trp_player", 0),
+      #(call_script, "script_give_center_to_lord", "p_byss",  "trp_player", 0),
+      #(call_script, "script_give_center_to_lord", "p_endor",  "trp_player", 0),
+      #(call_script, "script_give_center_to_lord", "p_corellia",  "trp_player", 0),
+      (call_script, "script_give_center_to_lord", "p_mandalore",  "trp_knight_1_4", 0),
+      (call_script, "script_give_center_to_lord", "p_byss",  "trp_knight_1_7", 0),
+      (call_script, "script_give_center_to_lord", "p_endor",  "trp_knight_1_3", 0),
+      (call_script, "script_give_center_to_lord", "p_corellia",  "trp_knight_1_2", 0),
+      (call_script, "script_give_center_to_lord", "p_naboo",  "trp_knight_1_1", 0),
+      (call_script, "script_give_center_to_lord", "p_kessel",  "trp_knight_1_14", 0),
+      (call_script, "script_give_center_to_lord", "p_dantooine",  "trp_knight_2_11", 0),
+      (call_script, "script_give_center_to_lord", "p_geonosis",  "trp_knight_1_5", 0),
+      (call_script, "script_give_center_to_lord", "p_mon_cal",  "trp_knight_2_9", 0),
+      (call_script, "script_give_center_to_lord", "p_kashyyyk", "trp_knight_2_4", 0),
+      (call_script, "script_give_center_to_lord", "p_hoth", "trp_knight_2_3", 0),
+      (call_script, "script_give_center_to_lord", "p_gamorr", "trp_knight_3_10", 0),
+      (call_script, "script_give_center_to_lord", "p_yavin_iv", "trp_kingdom_2_lord", 0),
+      (call_script, "script_give_center_to_lord", "p_tatooine", "trp_kingdom_3_lord", 0),
+      (call_script, "script_give_center_to_lord", "p_reecee", "trp_knight_1_10", 0),
+      (call_script, "script_give_center_to_lord", "p_coruscant", "trp_kingdom_1_lord", 0),
+      (call_script, "script_give_center_to_lord", "p_ryloth", "trp_knight_3_1", 0),
+      (call_script, "script_give_center_to_lord", "p_nalhutta", "trp_knight_3_2", 0),
       #SW - new towns, town_19, town_20, town_21
-      (call_script, "script_give_center_to_lord", "p_town_19", "trp_knight_2_12", 0),
-      (call_script, "script_give_center_to_lord", "p_town_20", "trp_knight_1_17", 0),
-      (call_script, "script_give_center_to_lord", "p_town_21", "trp_knight_1_20", 0),
+      (call_script, "script_give_center_to_lord", "p_bothawui", "trp_knight_2_12", 0),
+      (call_script, "script_give_center_to_lord", "p_mustafar", "trp_knight_1_17", 0),
+      (call_script, "script_give_center_to_lord", "p_kamino", "trp_knight_1_20", 0),
       #SWY SWC 0.9.0.3 - Added Taris
-      (call_script, "script_give_center_to_lord", "p_town_22", "trp_knight_taris", 0),
+      (call_script, "script_give_center_to_lord", "p_taris", "trp_knight_taris", 0),
       
       #SW - modified script_give_center_to_faction_aux so outposts (ie. castles) go to different factions (1=empire, 2=rebel, 3=hutt)
       #(call_script, "script_give_center_to_faction_aux", "p_castle_1", "fac_kingdom_2"),
@@ -1305,13 +1305,13 @@ scripts = [
         (assign, ":min_dist", 999999),
         (assign, ":min_dist_village", -1),
         (try_for_range, ":cur_village", villages_begin, villages_end),
-          (neg|party_slot_ge, ":cur_village", slot_village_bound_center, 1), #skip villages which are already bound.
+          (neg|party_slot_ge, ":cur_village", slot_minorplanet_bound_center, 1), #skip villages which are already bound.
           (store_distance_to_party_from_party, ":cur_dist", ":cur_village", ":cur_center"),
           (lt, ":cur_dist", ":min_dist"),
           (assign, ":min_dist", ":cur_dist"),
           (assign, ":min_dist_village", ":cur_village"),
         (try_end),
-        (party_set_slot, ":min_dist_village", slot_village_bound_center, ":cur_center"),
+        (party_set_slot, ":min_dist_village", slot_minorplanet_bound_center, ":cur_center"),
         (store_faction_of_party, ":town_faction", ":cur_center"),
         (call_script, "script_give_center_to_faction_aux", ":min_dist_village", ":town_faction"),
       (try_end),
@@ -1339,7 +1339,7 @@ scripts = [
       
       #pass 2: Give other villages to closest town.
       (try_for_range, ":cur_village", villages_begin, villages_end),
-        (neg|party_slot_ge, ":cur_village", slot_village_bound_center, 1), #skip villages which are already bound.
+        (neg|party_slot_ge, ":cur_village", slot_minorplanet_bound_center, 1), #skip villages which are already bound.
         (assign, ":min_dist", 999999),
         (assign, ":min_dist_town", -1),
         (try_for_range, ":cur_town", towns_begin, towns_end),
@@ -1348,7 +1348,7 @@ scripts = [
           (assign, ":min_dist", ":cur_dist"),
           (assign, ":min_dist_town", ":cur_town"),
         (try_end),
-        (party_set_slot, ":cur_village", slot_village_bound_center, ":min_dist_town"),
+        (party_set_slot, ":cur_village", slot_minorplanet_bound_center, ":min_dist_town"),
         (store_faction_of_party, ":town_faction", ":min_dist_town"),
         (call_script, "script_give_center_to_faction_aux", ":cur_village", ":town_faction"),
       (try_end),
@@ -1446,7 +1446,7 @@ scripts = [
           (is_between, ":center_no", towns_begin, towns_end),
           (val_mul, ":initial_wealth", 2),
         (try_end),
-        (party_set_slot, ":center_no", slot_town_wealth, ":initial_wealth"),
+        (party_set_slot, ":center_no", slot_mainplanet_wealth, ":initial_wealth"),
         
         (assign, ":garrison_strength", 13),
         (try_begin),
@@ -1471,13 +1471,13 @@ scripts = [
         (party_set_slot, ":center_no", slot_party_food_store, ":food_store_limit"),
         
         #create lord parties
-        (party_get_slot, ":center_lord", ":center_no", slot_town_lord),
+        (party_get_slot, ":center_lord", ":center_no", slot_mainplanet_lord),
         (ge, ":center_lord", 1),
         (troop_slot_eq, ":center_lord", slot_troop_leaded_party, 0),
         (call_script, "script_create_kingdom_hero_party", ":center_lord", ":center_no"),
         (assign, ":lords_party", "$pout_party"),
         (party_attach_to_party, ":lords_party", ":center_no"),
-        (party_set_slot, ":center_no", slot_town_player_odds, 1000),
+        (party_set_slot, ":center_no", slot_mainplanet_player_odds, 1000),
       (try_end),
       
       (call_script, "script_complete_family_relations"),
@@ -1625,7 +1625,7 @@ scripts = [
       
       (set_spawn_radius, 50),
       (try_for_range, ":unused", 0, 25),
-        (spawn_around_party,"p_main_party","pt_looters"),
+        (spawn_around_party,"p_main_party","pt_jawas"),
       (try_end),
       
       (try_for_range, ":unused", 0, 6),
@@ -1669,8 +1669,8 @@ scripts = [
       (try_end),
       
       ##      (assign, "$players_kingdom", "fac_kingdom_1"),
-      ##      (call_script, "script_give_center_to_lord", "p_town_7", "trp_player", 0),
-      ##      (call_script, "script_give_center_to_lord", "p_town_16", "trp_player", 0),
+      ##      (call_script, "script_give_center_to_lord", "p_dantooine", "trp_player", 0),
+      ##      (call_script, "script_give_center_to_lord", "p_coruscant", "trp_player", 0),
       ####      (call_script, "script_give_center_to_lord", "p_castle_10", "trp_player", 0),
       ##      (assign, "$g_castle_requested_by_player", "p_castle_10"),
       (call_script, "script_get_player_party_morale_values"),
@@ -2281,7 +2281,7 @@ scripts = [
         (is_between, "$g_encountered_party", centers_begin, centers_end),
         (is_between, ":item_kind_id", trade_goods_begin, trade_goods_end),
         (store_sub, ":item_slot_no", ":item_kind_id", trade_goods_begin),
-        (val_add, ":item_slot_no", slot_town_trade_good_prices_begin),
+        (val_add, ":item_slot_no", slot_mainplanet_trade_good_prices_begin),
         (party_get_slot, ":price_factor", "$g_encountered_party", ":item_slot_no"),
         (val_mul, ":price_factor", 100), #normalize price factor to range 0..100
         (val_div, ":price_factor", average_price_factor),
@@ -2314,7 +2314,7 @@ scripts = [
         (is_between, "$g_encountered_party", centers_begin, centers_end),
         (is_between, ":item_kind_id", trade_goods_begin, trade_goods_end),
         (store_sub, ":item_slot_no", ":item_kind_id", trade_goods_begin),
-        (val_add, ":item_slot_no", slot_town_trade_good_prices_begin),
+        (val_add, ":item_slot_no", slot_mainplanet_trade_good_prices_begin),
         (party_get_slot, ":price_factor", "$g_encountered_party", ":item_slot_no"),
         (val_mul, ":price_factor", 100),#normalize price factor to range 0..100
         (val_div, ":price_factor", average_price_factor),
@@ -2408,7 +2408,7 @@ scripts = [
       (try_begin),
         (is_between, ":item_kind_id", trade_goods_begin, trade_goods_end),
         (store_sub, ":item_slot_no", ":item_kind_id", trade_goods_begin),
-        (val_add, ":item_slot_no", slot_town_trade_good_prices_begin),
+        (val_add, ":item_slot_no", slot_mainplanet_trade_good_prices_begin),
         (party_get_slot, ":multiplier", "$g_encountered_party", ":item_slot_no"),
         (try_begin),
           (eq, ":reclaim_mode", 0),
@@ -2432,7 +2432,7 @@ scripts = [
       (try_begin),
         (is_between, ":item_kind_id", trade_goods_begin, trade_goods_end),
         (store_sub, ":item_slot_no", ":item_kind_id", trade_goods_begin),
-        (val_add, ":item_slot_no", slot_town_trade_good_prices_begin),
+        (val_add, ":item_slot_no", slot_mainplanet_trade_good_prices_begin),
         (party_get_slot, ":multiplier", "$g_encountered_party", ":item_slot_no"),
         (try_begin),
           (eq, ":return_mode", 0),
@@ -3175,6 +3175,7 @@ scripts = [
         (item_set_slot,"itm_dlt19",slot_item_ammo_clip,6),
         (item_set_slot,"itm_dlt19_scope",slot_item_ammo_clip,6),
         (item_set_slot,"itm_dlt20a",slot_item_ammo_clip,30),
+		(item_set_slot,"itm_e17d",slot_item_ammo_clip,5),
         (item_set_slot,"itm_dc15a",slot_item_ammo_clip,500),
         (item_set_slot,"itm_dc15a_hip",slot_item_ammo_clip,500),
         (item_set_slot,"itm_dc15s",slot_item_ammo_clip,500),
@@ -3801,7 +3802,7 @@ scripts = [
       (store_script_param, ":center_no_2", 2),
       (assign, ":center_1_added", 0),
       (assign, ":center_2_added", 0),
-      (try_for_range, ":cur_slot", slot_town_trade_routes_begin, slot_town_trade_routes_end),
+      (try_for_range, ":cur_slot", slot_mainplanet_trade_routes_begin, slot_mainplanet_trade_routes_end),
         (try_begin),
           (eq, ":center_1_added", 0),
           (party_slot_eq, ":center_no_1", ":cur_slot", 0),
@@ -3849,7 +3850,7 @@ scripts = [
         (val_sub, ":production_rate", ":random_num"),
       (try_end),
       (val_sub, ":item_no", trade_goods_begin),
-      (val_add, ":item_no", slot_town_trade_good_productions_begin),
+      (val_add, ":item_no", slot_mainplanet_trade_good_productions_begin),
       
       (party_get_slot, ":old_production_rate", ":center_no", ":item_no"),
       (val_add, ":production_rate", ":old_production_rate"),
@@ -3860,8 +3861,8 @@ scripts = [
   # INPUT: none
   ("average_trade_good_productions",
     [
-      (store_sub, ":item_to_slot", slot_town_trade_good_productions_begin, trade_goods_begin),
-      #      (store_sub, ":item_to_price_slot", slot_town_trade_good_prices_begin, trade_goods_begin),
+      (store_sub, ":item_to_slot", slot_mainplanet_trade_good_productions_begin, trade_goods_begin),
+      #      (store_sub, ":item_to_price_slot", slot_mainplanet_trade_good_prices_begin, trade_goods_begin),
       (try_for_range, ":center_no", towns_begin, towns_end),
         (this_or_next|is_between, ":center_no", towns_begin, towns_end),
         (is_between, ":center_no", villages_begin, villages_end),
@@ -3897,7 +3898,7 @@ scripts = [
   # INPUT: none
   ("normalize_trade_good_productions",
     [
-      (store_sub, ":item_to_slot", slot_town_trade_good_productions_begin, trade_goods_begin),
+      (store_sub, ":item_to_slot", slot_mainplanet_trade_good_productions_begin, trade_goods_begin),
       (try_for_range, ":cur_good", trade_goods_begin, trade_goods_end),
         (assign, ":total_production", 0),
         (assign, ":num_centers", 0),
@@ -3944,9 +3945,9 @@ scripts = [
       (store_script_param, ":center_no", 1),
       (try_for_range, ":cur_good", trade_goods_begin, trade_goods_end),
         (store_sub, ":cur_good_slot", ":cur_good", trade_goods_begin),
-        (val_add, ":cur_good_slot", slot_town_trade_good_productions_begin),
+        (val_add, ":cur_good_slot", slot_mainplanet_trade_good_productions_begin),
         (store_sub, ":cur_good_price_slot", ":cur_good", trade_goods_begin),
-        (val_add, ":cur_good_price_slot", slot_town_trade_good_prices_begin),
+        (val_add, ":cur_good_price_slot", slot_mainplanet_trade_good_prices_begin),
         (party_get_slot, ":production", ":center_no", ":cur_good_slot"),
         (party_get_slot, ":cur_price", ":center_no", ":cur_good_price_slot"),
         (try_begin),
@@ -3994,7 +3995,7 @@ scripts = [
       
       #Adding tax revenue to the center
       (party_get_slot, ":accumulated_tariffs", ":center_no", slot_center_accumulated_tariffs),
-      (party_get_slot, ":prosperity", ":center_no", slot_town_prosperity),
+      (party_get_slot, ":prosperity", ":center_no", slot_mainplanet_prosperity),
       (store_add, ":tax_gain", ":prosperity", 10),
       (val_mul, ":tax_gain", ":total_change"),
       (val_div, ":tax_gain", 2200), #(10 + prosperity) / 110 * 5% of the merchant's revenue.
@@ -4003,7 +4004,7 @@ scripts = [
       
       #      (try_begin),
       #        (is_between, ":center_no", towns_begin, towns_end),
-      #        (party_get_slot, ":merchant",":center_no",slot_town_merchant),
+      #        (party_get_slot, ":merchant",":center_no",slot_mainplanet_merchant),
       #        (gt, ":merchant", 0),
       #        (store_mul, ":merchant_profit", ":total_change", 1),
       #        (val_div, ":merchant_profit", 2),
@@ -4192,7 +4193,7 @@ scripts = [
           (assign, ":range_min", food_begin),
           (assign, ":range_max", food_end),
         (try_end),
-        (store_sub, ":item_to_price_slot", slot_town_trade_good_prices_begin, trade_goods_begin),
+        (store_sub, ":item_to_price_slot", slot_mainplanet_trade_good_prices_begin, trade_goods_begin),
         (try_for_range, ":cur_goods", ":range_min", ":range_max"),
           (store_add, ":cur_price_slot", ":cur_goods", ":item_to_price_slot"),
           (party_get_slot, ":cur_price", "$g_enemy_party", ":cur_price_slot"),
@@ -4918,7 +4919,7 @@ scripts = [
       (assign, ":owned_castles", 0),
       (assign, ":owned_villages", 0),
       (try_for_range_backwards, ":cur_center", centers_begin, centers_end),
-        (party_slot_eq, ":cur_center", slot_town_lord, ":troop_no"),
+        (party_slot_eq, ":cur_center", slot_mainplanet_lord, ":troop_no"),
         (try_begin),
           (party_slot_eq, ":cur_center", slot_party_type, spt_town),
           (val_add, ":owned_towns", 1),
@@ -5716,7 +5717,7 @@ scripts = [
           (eq, ":cur_faction", ":faction_no"),
           (party_slot_eq, ":cur_center", slot_center_is_besieged_by, -1),
           (val_add, ":no_centers", 1),
-          (party_slot_eq, ":cur_center", slot_town_lord, ":troop_no"),
+          (party_slot_eq, ":cur_center", slot_mainplanet_lord, ":troop_no"),
           (val_add, ":no_centers", 1000),
         (try_end),
         (gt, ":no_centers", 0), #Fail if there are no centers
@@ -5728,7 +5729,7 @@ scripts = [
           (party_slot_eq, ":cur_center", slot_center_is_besieged_by, -1),
           (val_sub, ":random_center", 1),
           (try_begin),
-            (party_slot_eq, ":cur_center", slot_town_lord, ":troop_no"),
+            (party_slot_eq, ":cur_center", slot_mainplanet_lord, ":troop_no"),
             (val_sub, ":random_center", 1000),
           (try_end),
           (lt, ":random_center", 0),
@@ -5848,7 +5849,7 @@ scripts = [
         (store_script_param, ":faction_no", 2),
         (assign, ":result", -1),
         (assign, ":no_towns", 0),
-        (try_for_range, ":cur_slot", slot_town_trade_routes_begin, slot_town_trade_routes_end),
+        (try_for_range, ":cur_slot", slot_mainplanet_trade_routes_begin, slot_mainplanet_trade_routes_end),
           (party_get_slot, ":cur_town", ":town_no", ":cur_slot"),
           (gt, ":cur_town", 0),
           (store_faction_of_party, ":cur_faction", ":cur_town"),
@@ -5858,7 +5859,7 @@ scripts = [
         (try_end),
         (gt, ":no_towns", 0), #Fail if there are no towns
         (store_random_in_range, ":random_town", 0, ":no_towns"),
-        (try_for_range, ":cur_slot", slot_town_trade_routes_begin, slot_town_trade_routes_end),
+        (try_for_range, ":cur_slot", slot_mainplanet_trade_routes_begin, slot_mainplanet_trade_routes_end),
           (eq, ":result", -1),
           (party_get_slot, ":cur_town", ":town_no", ":cur_slot"),
           (gt, ":cur_town", 0),
@@ -6088,7 +6089,7 @@ scripts = [
               #The quest giver is the village elder
               (call_script, "script_get_troop_item_amount", ":giver_troop", "itm_grain"),
               (eq, reg0, 0),
-              (neg|party_slot_ge, ":giver_center_no", slot_town_prosperity, 40),
+              (neg|party_slot_ge, ":giver_center_no", slot_mainplanet_prosperity, 40),
               (assign, ":quest_target_center", ":giver_center_no"),
               (store_random_in_range, ":quest_target_amount", 4, 8),
               (assign, ":quest_expiration_days", 30),
@@ -6101,7 +6102,7 @@ scripts = [
             (try_begin),
               (is_between, ":giver_center_no", villages_begin, villages_end),
               #The quest giver is the village elder
-              (party_get_slot, ":num_cattle", ":giver_center_no", slot_village_number_of_cattle),
+              (party_get_slot, ":num_cattle", ":giver_center_no", slot_minorplanet_number_of_cattle),
               (lt, ":num_cattle", 50),
               (assign, ":quest_target_center", ":giver_center_no"),
               (store_random_in_range, ":quest_target_amount", 5, 10),
@@ -6229,14 +6230,14 @@ scripts = [
             (assign, ":quest_dont_give_again_period", 100),
             (assign, ":result", ":quest_no"),
           (else_try),
-            (eq, ":quest_no", "qst_deal_with_looters"),
+            (eq, ":quest_no", "qst_deal_with_jawas"),
             (is_between, ":player_level", 0, 15),
             (is_between, ":giver_center_no", centers_begin, centers_end),
             (store_faction_of_party, ":cur_object_faction", ":giver_center_no"),
-            (store_num_parties_destroyed_by_player, ":num_looters_destroyed", "pt_looters"),
-            (party_template_set_slot,"pt_looters",slot_party_template_num_killed,":num_looters_destroyed"),
+            (store_num_parties_destroyed_by_player, ":num_jawas_destroyed", "pt_jawas"),
+            (party_template_set_slot,"pt_jawas",slot_party_template_num_killed,":num_jawas_destroyed"),
             (quest_set_slot,"$random_merchant_quest_no",slot_quest_current_state,0),
-            (quest_set_slot,"$random_merchant_quest_no",slot_quest_target_party_template,"pt_looters"),
+            (quest_set_slot,"$random_merchant_quest_no",slot_quest_target_party_template,"pt_jawas"),
             (assign, ":quest_gold_reward", 500),
             (assign, ":quest_xp_reward", 500),
             (assign, ":quest_expiration_days", 20),
@@ -6610,8 +6611,8 @@ scripts = [
               (assign, ":end_cond", villages_end),
               (assign, ":cur_target_center", -1),
               (try_for_range, ":cur_village", villages_begin, ":end_cond"),
-                (party_slot_eq, ":cur_village", slot_town_lord, ":giver_troop"),
-                (party_slot_eq, ":cur_village", slot_village_infested_by_bandits, 1),
+                (party_slot_eq, ":cur_village", slot_mainplanet_lord, ":giver_troop"),
+                (party_slot_eq, ":cur_village", slot_minorplanet_infested_by_bandits, 1),
                 (assign, ":cur_target_center", ":cur_village"),
                 (assign, ":end_cond", 0),
               (try_end),
@@ -6738,7 +6739,7 @@ scripts = [
               
               (assign, ":cur_object_center", -1),
               (try_for_range, ":cur_village", villages_begin, villages_end),
-                (party_slot_eq, ":cur_village", slot_town_lord, ":giver_troop"),
+                (party_slot_eq, ":cur_village", slot_mainplanet_lord, ":giver_troop"),
                 (store_distance_to_party_from_party, ":dist", ":cur_village", ":giver_center_no"),
                 (lt, ":dist", 25),
                 (assign, ":cur_object_center", ":cur_village"),
@@ -6894,7 +6895,7 @@ scripts = [
             ##            (eq, 1,0), #TODO: disable this for now
             ##            (ge, ":player_level", 10),
             ##            (is_between, ":giver_center_no", towns_begin, towns_end),#Skip if quest giver's center is not a town
-            ##            (party_slot_eq, ":giver_center_no", slot_town_lord, ":giver_troop"),#Skip if the current center is not ruled by the quest giver
+            ##            (party_slot_eq, ":giver_center_no", slot_mainplanet_lord, ":giver_troop"),#Skip if the current center is not ruled by the quest giver
             ##            (call_script, "script_cf_get_random_kingdom_hero", ":giver_faction_no"),#Can fail
             ##
             ##            (assign, ":quest_target_troop", reg0),
@@ -6925,7 +6926,7 @@ scripts = [
             ##            (eq, 1,0), #TODO: disable this for now
             ##            (ge, ":player_level", 10),
             ##            (is_between, ":giver_center_no", towns_begin, towns_end),#Skip if quest giver's center is not a town
-            ##            (party_slot_eq, ":giver_center_no", slot_town_lord, ":giver_troop"),#Skip if the current center is not ruled by the quest giver
+            ##            (party_slot_eq, ":giver_center_no", slot_mainplanet_lord, ":giver_troop"),#Skip if the current center is not ruled by the quest giver
             ##
             ##            (assign, ":quest_target_center", ":giver_center_no"),
             ##            (assign, ":quest_importance", 1),
@@ -7003,7 +7004,7 @@ scripts = [
                 (assign, ":cur_target_center", -1),
                 (call_script, "script_get_troop_attached_party", ":cur_target_troop"),
                 (is_between, reg0, towns_begin, towns_end),
-                (party_slot_eq, reg0, slot_town_lord, ":cur_target_troop"),
+                (party_slot_eq, reg0, slot_mainplanet_lord, ":cur_target_troop"),
                 (assign, ":cur_target_center", reg0),
                 
                 (assign, ":try_times", -1),#Exit the second loop
@@ -7310,7 +7311,7 @@ scripts = [
     ##      (try_for_range, ":center_no", centers_begin, centers_end),
     ##        (store_faction_of_party, ":cur_faction", ":center_no"),
     ##        (eq, ":cur_faction", ":faction_no"),
-    ##        (party_get_slot, ":cur_lord", ":center_no", slot_town_lord),
+    ##        (party_get_slot, ":cur_lord", ":center_no", slot_mainplanet_lord),
     ##        (is_between, ":cur_lord", heroes_begin, heroes_end),
     ##        (val_add, ":count_heroes", 1),
     ##      (try_end),
@@ -7321,7 +7322,7 @@ scripts = [
     ##        (eq, ":result", -1),
     ##        (store_faction_of_party, ":cur_faction", ":center_no"),
     ##        (eq, ":cur_faction", ":faction_no"),
-    ##        (party_get_slot, ":cur_lord", ":center_no", slot_town_lord),
+    ##        (party_get_slot, ":cur_lord", ":center_no", slot_mainplanet_lord),
     ##        (is_between, ":cur_lord", heroes_begin, heroes_end),
     ##        (val_add, ":count_heroes", 1),
     ##        (lt, ":random_hero", ":count_heroes"),
@@ -8017,7 +8018,7 @@ scripts = [
           (try_for_range, ":cur_village", villages_begin, villages_end),
             (store_faction_of_party, ":cur_village_faction", ":cur_village"),
             (eq, ":cur_village_faction", "fac_player_supporters_faction"),
-            (neg|party_slot_eq, ":cur_village", slot_town_lord, "trp_player"),
+            (neg|party_slot_eq, ":cur_village", slot_mainplanet_lord, "trp_player"),
             (call_script, "script_give_center_to_lord", ":cur_village", "trp_player", 0),
           (try_end),
         (try_end),
@@ -8036,14 +8037,14 @@ scripts = [
         
         (try_begin),
           (party_slot_eq, ":center_no", slot_party_type, spt_village),
-          (party_get_slot, ":farmer_party", ":center_no", slot_village_farmer_party),
+          (party_get_slot, ":farmer_party", ":center_no", slot_minorplanet_farmer_party),
           (gt, ":farmer_party", 0),
           (party_is_active, ":farmer_party"),
           (party_set_faction, ":farmer_party", ":faction_no"),
         (try_end),
         
-        (party_get_slot, ":old_town_lord", ":center_no", slot_town_lord),
-        (party_set_slot, ":center_no", slot_town_lord, stl_unassigned),
+        (party_get_slot, ":old_town_lord", ":center_no", slot_mainplanet_lord),
+        (party_set_slot, ":center_no", slot_mainplanet_lord, stl_unassigned),
         (party_set_banner_icon, ":center_no", 0),#Removing banner
         
         (call_script, "script_update_faction_notes", ":old_faction"),
@@ -8055,7 +8056,7 @@ scripts = [
         (try_end),
         
         (try_for_range, ":other_center", centers_begin, centers_end),
-          (party_slot_eq, ":other_center", slot_village_bound_center, ":center_no"),
+          (party_slot_eq, ":other_center", slot_minorplanet_bound_center, ":center_no"),
           (call_script, "script_give_center_to_faction_aux", ":other_center", ":faction_no"),
         (try_end),
     ]),
@@ -8076,30 +8077,30 @@ scripts = [
         
         (troop_set_faction, ":troop_no", ":faction_no"),
         (try_for_range, ":center_no", walled_centers_begin, walled_centers_end),
-          (party_slot_eq, ":center_no", slot_town_lord, ":troop_no"),
+          (party_slot_eq, ":center_no", slot_mainplanet_lord, ":troop_no"),
           (party_set_faction, ":center_no", ":faction_no"),
           (try_for_range, ":village_no", villages_begin, villages_end),
-            (party_slot_eq, ":village_no", slot_village_bound_center, ":center_no"),
+            (party_slot_eq, ":village_no", slot_minorplanet_bound_center, ":center_no"),
             (party_set_faction, ":village_no", ":faction_no"),
-            (party_get_slot, ":farmer_party_no", ":village_no", slot_village_farmer_party),
+            (party_get_slot, ":farmer_party_no", ":village_no", slot_minorplanet_farmer_party),
             (try_begin),
               (gt, ":farmer_party_no", 0),
               (party_is_active, ":farmer_party_no"),
               (party_set_faction, ":farmer_party_no", ":faction_no"),
             (try_end),
             (try_begin),
-              (party_get_slot, ":old_town_lord", ":village_no", slot_town_lord),
+              (party_get_slot, ":old_town_lord", ":village_no", slot_mainplanet_lord),
               (neq, ":old_town_lord", ":troop_no"),
-              (party_set_slot, ":village_no", slot_town_lord, stl_unassigned),
+              (party_set_slot, ":village_no", slot_mainplanet_lord, stl_unassigned),
             (try_end),
           (try_end),
         (try_end),
         (try_for_range, ":village_no", villages_begin, villages_end),
-          (party_slot_eq, ":village_no", slot_town_lord, ":troop_no"),
+          (party_slot_eq, ":village_no", slot_mainplanet_lord, ":troop_no"),
           (store_faction_of_party, ":village_faction", ":village_no"),
           (try_begin),
             (neq, ":village_faction", ":faction_no"),
-            (party_set_slot, ":village_no", slot_town_lord, stl_unassigned),
+            (party_set_slot, ":village_no", slot_mainplanet_lord, stl_unassigned),
           (try_end),
         (try_end),
         (try_begin),
@@ -8131,7 +8132,7 @@ scripts = [
         (store_script_param, ":lord_troop_id", 2),
         (store_script_param, ":add_garrison", 3),
         
-        (party_get_slot, ":old_lord_troop_id", ":center_no", slot_town_lord),
+        (party_get_slot, ":old_lord_troop_id", ":center_no", slot_mainplanet_lord),
         
         (store_troop_faction, ":lord_troop_faction", ":lord_troop_id"),
         (try_begin),
@@ -8145,11 +8146,11 @@ scripts = [
         (else_try),
           (party_set_faction, ":center_no", ":lord_troop_faction"),
         (try_end),
-        (party_set_slot, ":center_no", slot_town_lord, ":lord_troop_id"),
+        (party_set_slot, ":center_no", slot_mainplanet_lord, ":lord_troop_id"),
         
         (try_begin),
           (party_slot_eq, ":center_no", slot_party_type, spt_village),
-          (party_get_slot, ":farmer_party_no", ":center_no", slot_village_farmer_party),
+          (party_get_slot, ":farmer_party_no", ":center_no", slot_minorplanet_farmer_party),
           (gt, ":farmer_party_no", 0),
           (party_is_active, ":farmer_party_no"),
           (store_faction_of_party, ":center_faction", ":center_no"),
@@ -8215,7 +8216,7 @@ scripts = [
         (try_begin),
           (party_slot_eq, ":center_no", slot_party_type, spt_castle),
           (try_for_range, ":cur_village", villages_begin, villages_end),
-            (party_slot_eq, ":cur_village", slot_village_bound_center, ":center_no"),
+            (party_slot_eq, ":cur_village", slot_minorplanet_bound_center, ":center_no"),
             (call_script, "script_give_center_to_lord", ":cur_village", ":lord_troop_id", 0),
           (try_end),
         (try_end),
@@ -8278,7 +8279,7 @@ scripts = [
         (store_script_param_1, ":troop_no"),
         (assign, ":result", 0),
         (try_for_range, ":center_no", centers_begin, centers_end),
-          (party_slot_eq, ":center_no", slot_town_lord, ":troop_no"),
+          (party_slot_eq, ":center_no", slot_mainplanet_lord, ":troop_no"),
           (val_add, ":result", 1),
         (try_end),
         (assign, reg0, ":result"),
@@ -8518,7 +8519,7 @@ scripts = [
           (try_begin),
             (this_or_next|party_slot_eq, ":party_no", slot_party_type, spt_town),
             (party_slot_eq, ":party_no", slot_party_type, spt_castle),
-            (party_slot_eq, ":party_no", slot_town_lord, "trp_player"),
+            (party_slot_eq, ":party_no", slot_mainplanet_lord, "trp_player"),
             (assign, ":garrison_troop", 1),
           (try_end),
           (this_or_next|eq, ":party_no", "p_main_party"),
@@ -8606,7 +8607,7 @@ scripts = [
         #SW - commented out this since I fixed the code with kingdom management (nevermind, testing if it is still required)
         (try_begin),
           (eq, ":party_faction", "fac_player_supporters_faction"),
-          (party_get_slot, ":town_lord", ":party_no", slot_town_lord),
+          (party_get_slot, ":town_lord", ":party_no", slot_mainplanet_lord),
           (try_begin),
             (gt, ":town_lord", 0),
             (troop_get_slot, ":party_faction", ":town_lord", slot_troop_original_faction),
@@ -8776,7 +8777,7 @@ scripts = [
     ##      (party_set_ai_behavior, "$pout_party", ai_bhvr_travel_to_party),
     ##      (party_set_ai_object, "$pout_party", ":center_no"),
     ##      (party_set_flags, "$pout_party", pf_default_behavior, 0),
-    ##      (store_sub, ":item_to_price_slot", slot_town_trade_good_prices_begin, trade_goods_begin),
+    ##      (store_sub, ":item_to_price_slot", slot_mainplanet_trade_good_prices_begin, trade_goods_begin),
     ##      (try_for_range, ":cur_goods", trade_goods_begin, trade_goods_end),
     ##        (store_add, ":cur_goods_price_slot", ":cur_goods", ":item_to_price_slot"),
     ##        (party_set_slot, "$pout_party", ":cur_goods_price_slot", average_price_factor),
@@ -8831,9 +8832,9 @@ scripts = [
           (call_script, "script_game_event_buy_item", "itm_cattle_meat", 0),
         (try_end),
         
-        (party_get_slot, ":num_cattle", ":village_no", slot_village_number_of_cattle),
+        (party_get_slot, ":num_cattle", ":village_no", slot_minorplanet_number_of_cattle),
         (val_sub, ":num_cattle", ":amount"),
-        (party_set_slot, ":village_no", slot_village_number_of_cattle, ":num_cattle"),
+        (party_set_slot, ":village_no", slot_minorplanet_number_of_cattle, ":num_cattle"),
         (store_mul, ":cost", ":single_cost", ":amount"),
         (troop_remove_gold, "trp_player", ":cost"),
         
@@ -9176,7 +9177,7 @@ scripts = [
             (party_set_ai_behavior,":result",ai_bhvr_travel_to_party),
             (party_set_ai_object,":result",":spawn_center"),
             (party_set_flags, ":result", pf_default_behavior, 1),
-            (store_sub, ":item_to_price_slot", slot_town_trade_good_prices_begin, trade_goods_begin),
+            (store_sub, ":item_to_price_slot", slot_mainplanet_trade_good_prices_begin, trade_goods_begin),
             (try_for_range, ":cur_goods", trade_goods_begin, trade_goods_end),
               (store_add, ":cur_goods_price_slot", ":cur_goods", ":item_to_price_slot"),
               (party_set_slot, ":result", ":cur_goods_price_slot", average_price_factor),
@@ -9273,9 +9274,9 @@ scripts = [
     ("refresh_village_merchant_inventory",
       [
         (store_script_param_1, ":village_no"),
-        (party_get_slot, ":merchant_troop", ":village_no", slot_town_elder),
+        (party_get_slot, ":merchant_troop", ":village_no", slot_mainplanet_elder),
         (reset_item_probabilities,0),
-        (store_sub, ":item_to_price_slot", slot_town_trade_good_prices_begin, trade_goods_begin),
+        (store_sub, ":item_to_price_slot", slot_mainplanet_trade_good_prices_begin, trade_goods_begin),
         (try_for_range, ":cur_goods", trade_goods_begin, trade_goods_end),
           (store_add, ":cur_price_slot", ":cur_goods", ":item_to_price_slot"),
           (party_get_slot, ":cur_price", ":village_no", ":cur_price_slot"),
@@ -9328,24 +9329,24 @@ scripts = [
       [
         (store_script_param_1, ":village_no"),
         (store_script_param_2, ":new_state"),
-        #      (party_get_slot, ":old_state", ":village_no", slot_village_state),
+        #      (party_get_slot, ":old_state", ":village_no", slot_minorplanet_state),
         (try_begin),
           (eq, ":new_state", 0),
           (party_set_extra_text, ":village_no", "str_empty_string"),
-          (party_set_slot, ":village_no", slot_village_raided_by, -1),
+          (party_set_slot, ":village_no", slot_minorplanet_raided_by, -1),
         (else_try),
           (eq, ":new_state", svs_being_raided),
           (party_set_extra_text, ":village_no", "@(Being Raided)"),
         (else_try),
           (eq, ":new_state", svs_looted),
           (party_set_extra_text, ":village_no", "@(Looted)"),
-          (party_set_slot, ":village_no", slot_village_raided_by, -1),
+          (party_set_slot, ":village_no", slot_minorplanet_raided_by, -1),
           (call_script, "script_change_center_prosperity", ":village_no", -30),
         (else_try),
           (eq, ":new_state", svs_under_siege),
           (party_set_extra_text, ":village_no", "@(Under Siege)"),
         (try_end),
-        (party_set_slot, ":village_no", slot_village_state, ":new_state"),
+        (party_set_slot, ":village_no", slot_minorplanet_state, ":new_state"),
     ]),
     
     
@@ -9356,17 +9357,17 @@ scripts = [
     ("process_village_raids",
       [
         (try_for_range, ":village_no", villages_begin, villages_end),
-          (party_get_slot, ":village_raid_progress", ":village_no", slot_village_raid_progress),
+          (party_get_slot, ":village_raid_progress", ":village_no", slot_minorplanet_raid_progress),
           (try_begin),
-            (party_slot_eq, ":village_no", slot_village_state, 0), #village is normal
+            (party_slot_eq, ":village_no", slot_minorplanet_state, 0), #village is normal
             (val_sub, ":village_raid_progress", 5),
             (val_max, ":village_raid_progress", 0),
-            (party_set_slot, ":village_no", slot_village_raid_progress, ":village_raid_progress"),
+            (party_set_slot, ":village_no", slot_minorplanet_raid_progress, ":village_raid_progress"),
           (else_try),
-            (party_slot_eq, ":village_no", slot_village_state, svs_being_raided), #village is being raided
+            (party_slot_eq, ":village_no", slot_minorplanet_state, svs_being_raided), #village is being raided
             # End raid unless there is an enemy party nearby
             (assign, ":raid_ended", 1),
-            (party_get_slot, ":raider_party", ":village_no", slot_village_raided_by),
+            (party_get_slot, ":raider_party", ":village_no", slot_minorplanet_raided_by),
             (try_begin),
               (ge, ":raider_party", 0),
               (party_is_active, ":raider_party"),
@@ -9379,13 +9380,13 @@ scripts = [
             (try_begin),
               (eq, ":raid_ended", 1),
               (call_script, "script_village_set_state",  ":village_no", 0), #clear raid flag
-              (party_set_slot, ":village_no", slot_village_smoke_added, 0),
+              (party_set_slot, ":village_no", slot_minorplanet_smoke_added, 0),
               (party_clear_particle_systems, ":village_no"),
             (else_try),
               (assign, ":raid_progress_increase", 11),
-              (party_get_slot, ":looter_party", ":village_no", slot_village_raided_by),
+              (party_get_slot, ":jawa_party", ":village_no", slot_minorplanet_raided_by),
               (try_begin),
-                (party_get_skill_level, ":looting_skill", ":looter_party", "skl_looting"),
+                (party_get_skill_level, ":looting_skill", ":jawa_party", "skl_looting"),
                 (val_add, ":raid_progress_increase", ":looting_skill"),
               (try_end),
               (try_begin),
@@ -9394,32 +9395,32 @@ scripts = [
                 (val_div, ":raid_progress_increase", 100),
               (try_end),
               (val_add, ":village_raid_progress", ":raid_progress_increase"),
-              (party_set_slot, ":village_no", slot_village_raid_progress, ":village_raid_progress"),
+              (party_set_slot, ":village_no", slot_minorplanet_raid_progress, ":village_raid_progress"),
               (try_begin),
                 (ge, ":village_raid_progress", 50),
-                (party_slot_eq, ":village_no", slot_village_smoke_added, 0),
+                (party_slot_eq, ":village_no", slot_minorplanet_smoke_added, 0),
                 #(party_add_particle_system, ":village_no", "psys_map_village_fire"),
                 #(party_add_particle_system, ":village_no", "psys_map_village_fire_smoke"),
                 #(party_set_icon, ":village_no", "icon_village_burnt_a"),
 				(party_add_particle_system, ":village_no", "psys_planet_icon_raided_effect"),
 				
-                (party_set_slot, ":village_no", slot_village_smoke_added, 1),
+                (party_set_slot, ":village_no", slot_minorplanet_smoke_added, 1),
               (try_end),
               (try_begin),
                 (gt, ":village_raid_progress", 100),
                 (str_store_party_name_link, s1, ":village_no"),
-                (party_stack_get_troop_id, ":raid_leader", ":looter_party"),
+                (party_stack_get_troop_id, ":raid_leader", ":jawa_party"),
                 (ge, ":raid_leader", 0),
-                (str_store_party_name, s2, ":looter_party"),
+                (str_store_party_name, s2, ":jawa_party"),
                 # HC - Select the message color based on the circumstances. reg20 holds the color.
                 (call_script, "script_get_message_color", news_village_looted, ":village_no"),
                 (display_log_message, "@The planet of {s1} has been looted by {s2}.", reg20),
                 (call_script, "script_village_set_state",  ":village_no", svs_looted),
-                (party_set_slot, ":village_no", slot_village_raid_progress, 0),
-                (party_set_slot, ":village_no", slot_village_recover_progress, 0),
+                (party_set_slot, ":village_no", slot_minorplanet_raid_progress, 0),
+                (party_set_slot, ":village_no", slot_minorplanet_recover_progress, 0),
                 (try_begin),
                   (store_faction_of_party, ":village_faction", ":village_no"),
-                  (this_or_next|party_slot_eq, ":village_no", slot_town_lord, "trp_player"),
+                  (this_or_next|party_slot_eq, ":village_no", slot_mainplanet_lord, "trp_player"),
                   (eq, ":village_faction", "fac_player_supporters_faction"),
                   (call_script, "script_add_notification_menu", "mnu_notification_village_raided", ":village_no", ":raid_leader"),
                 (try_end),
@@ -9427,32 +9428,32 @@ scripts = [
               (try_end),
             (try_end),
           (else_try),
-            (party_slot_eq, ":village_no", slot_village_state, svs_looted), #village is looted
-            (party_get_slot, ":recover_progress", ":village_no", slot_village_recover_progress),
+            (party_slot_eq, ":village_no", slot_minorplanet_state, svs_looted), #village is looted
+            (party_get_slot, ":recover_progress", ":village_no", slot_minorplanet_recover_progress),
             (val_add, ":recover_progress", 1),
-            (party_set_slot, ":village_no", slot_village_recover_progress, ":recover_progress"), #village looted
+            (party_set_slot, ":village_no", slot_minorplanet_recover_progress, ":recover_progress"), #village looted
             (try_begin),
               (ge, ":recover_progress", 10),
-              (party_slot_eq, ":village_no", slot_village_smoke_added, 1),
+              (party_slot_eq, ":village_no", slot_minorplanet_smoke_added, 1),
               (party_clear_particle_systems, ":village_no"),
               #(party_add_particle_system, ":village_no", "psys_map_village_looted_smoke"),
 			  (party_add_particle_system, ":village_no", "psys_planet_icon_raided_effect"),
-              (party_set_slot, ":village_no", slot_village_smoke_added, 2),
+              (party_set_slot, ":village_no", slot_minorplanet_smoke_added, 2),
             (try_end),
             (try_begin),
               (gt, ":recover_progress", 50),
-              (party_slot_eq, ":village_no", slot_village_smoke_added, 2),
+              (party_slot_eq, ":village_no", slot_minorplanet_smoke_added, 2),
               (party_clear_particle_systems, ":village_no"),
-              (party_set_slot, ":village_no", slot_village_smoke_added, 3),
+              (party_set_slot, ":village_no", slot_minorplanet_smoke_added, 3),
               #(party_set_icon, ":village_no", "icon_village_deserted_a"),
             (try_end),
             (try_begin),
               (gt, ":recover_progress", 100),
               (call_script, "script_village_set_state",  ":village_no", 0),#village back to normal
-              (party_set_slot, ":village_no", slot_village_recover_progress, 0),
+              (party_set_slot, ":village_no", slot_minorplanet_recover_progress, 0),
               (party_clear_particle_systems, ":village_no"),
 			  (party_add_particle_system, ":village_no", "psys_planet_icon_atmospheric_effect"),
-              (party_set_slot, ":village_no", slot_village_smoke_added, 0),
+              (party_set_slot, ":village_no", slot_minorplanet_smoke_added, 0),
               (party_set_icon, ":village_no", "icon_village_a"),
             (try_end),
           (try_end),
@@ -9599,14 +9600,14 @@ scripts = [
         (try_end),
         (try_for_range, ":center_no", centers_begin, centers_end),
           (store_faction_of_party, ":center_faction", ":center_no"),
-          (this_or_next|party_slot_eq, ":center_no", slot_town_lord, "trp_player"),
+          (this_or_next|party_slot_eq, ":center_no", slot_mainplanet_lord, "trp_player"),
           (eq, ":center_faction", "$players_kingdom"),
           (party_get_slot, ":enemy_party", ":center_no", slot_center_last_spotted_enemy),
           (ge, ":enemy_party", 0),
           (store_distance_to_party_from_party, ":dist", "p_main_party", ":center_no"),
           (assign, ":has_messenger", 0),
           (try_begin),
-            (this_or_next|party_slot_eq, ":center_no", slot_town_lord, "trp_player"),
+            (this_or_next|party_slot_eq, ":center_no", slot_mainplanet_lord, "trp_player"),
             (eq, ":center_faction", "fac_player_supporters_faction"),
             (party_slot_eq, ":center_no", slot_center_has_messenger_post, 1),
             (assign, ":has_messenger", 1),
@@ -10255,7 +10256,7 @@ scripts = [
             (try_end),
             (try_begin),
               (is_between, ":cur_center_no", centers_begin, centers_end), #already in our center
-              (party_slot_eq,  ":cur_center_no", slot_town_lord, ":troop_no"),
+              (party_slot_eq,  ":cur_center_no", slot_mainplanet_lord, ":troop_no"),
               (assign, ":target_move_to_home_center", ":cur_center_no"),
               (assign, ":chance_move_to_home_center", 100),
             (try_end),
@@ -10310,7 +10311,7 @@ scripts = [
                   (call_script, "script_cf_select_random_walled_center_with_faction_and_less_strength_priority", ":faction_no", ":old_target_move_to_other_center"),
                   (assign, ":target_move_to_other_center", reg0),
                   (assign, ":chance_move_to_other_center", 10),
-                  (party_get_slot, ":lord_of_center", ":target_move_to_other_center", slot_town_lord),
+                  (party_get_slot, ":lord_of_center", ":target_move_to_other_center", slot_mainplanet_lord),
                   (try_begin),
                     (call_script, "script_cf_troop_check_troop_is_enemy", ":troop_no", ":lord_of_center"),
                     (assign, ":chance_move_to_other_center", 1),
@@ -10377,7 +10378,7 @@ scripts = [
               (val_max, ":dist_factor", 10),
               (assign, ":raid_factor", 100),
               (try_begin),
-                (party_slot_eq, ":village_no", slot_village_state, svs_being_raided),
+                (party_slot_eq, ":village_no", slot_minorplanet_state, svs_being_raided),
                 (assign, ":raid_factor", 1),
               (try_end),
               (store_mul, ":village_point", ":faction_factor", ":dist_factor"),
@@ -10414,7 +10415,7 @@ scripts = [
               (val_max, ":dist_factor", 10),
               (assign, ":raid_factor", 100),
               (try_begin),
-                (party_slot_eq, ":village_no", slot_village_state, svs_being_raided),
+                (party_slot_eq, ":village_no", slot_minorplanet_state, svs_being_raided),
                 (assign, ":raid_factor", 1),
               (try_end),
               (store_mul, ":village_point", ":faction_factor", ":dist_factor"),
@@ -10450,11 +10451,11 @@ scripts = [
               (lt, reg0, 0),
               (assign, ":raided_by_self", 0),
               (try_begin),
-                (party_slot_eq, ":enemy_village_no", slot_village_state, svs_being_raided),
-                (party_slot_eq, ":enemy_village_no", slot_village_raided_by, ":party_no"),
+                (party_slot_eq, ":enemy_village_no", slot_minorplanet_state, svs_being_raided),
+                (party_slot_eq, ":enemy_village_no", slot_minorplanet_raided_by, ":party_no"),
                 (assign, ":raided_by_self", 1),
               (try_end),
-              (this_or_next|party_slot_eq, ":enemy_village_no", slot_village_state, 0), #village is not already raided
+              (this_or_next|party_slot_eq, ":enemy_village_no", slot_minorplanet_state, 0), #village is not already raided
               (eq, ":raided_by_self", 1),
               (store_distance_to_party_from_party, ":dist", ":enemy_village_no", ":party_no"),
               (store_sub, ":dist_factor", 75, ":dist"),
@@ -10471,11 +10472,11 @@ scripts = [
               (lt, reg0, 0),
               (assign, ":raided_by_self", 0),
               (try_begin),
-                (party_slot_eq, ":enemy_village_no", slot_village_state, svs_being_raided),
-                (party_slot_eq, ":enemy_village_no", slot_village_raided_by, ":party_no"),
+                (party_slot_eq, ":enemy_village_no", slot_minorplanet_state, svs_being_raided),
+                (party_slot_eq, ":enemy_village_no", slot_minorplanet_raided_by, ":party_no"),
                 (assign, ":raided_by_self", 1),
               (try_end),
-              (this_or_next|party_slot_eq, ":enemy_village_no", slot_village_state, 0), #village is not already raided
+              (this_or_next|party_slot_eq, ":enemy_village_no", slot_minorplanet_state, 0), #village is not already raided
               (eq, ":raided_by_self", 1),
               (store_distance_to_party_from_party, ":dist", ":enemy_village_no", ":party_no"),
               (store_sub, ":dist_factor", 75, ":dist"),
@@ -10553,7 +10554,7 @@ scripts = [
               (val_mul, ":center_score", ":dist_factor"),
               
               (try_begin),
-                (party_slot_eq, ":enemy_walled_center", slot_town_lord, "trp_player"),
+                (party_slot_eq, ":enemy_walled_center", slot_mainplanet_lord, "trp_player"),
                 (call_script, "script_troop_get_player_relation", ":troop_no"),
                 (assign, ":player_relation", reg0),
                 #(troop_get_slot, ":player_relation", ":troop_no", slot_troop_player_relation),
@@ -10610,7 +10611,7 @@ scripts = [
                 (val_mul, ":this_center_score", 100),
               (try_end),
               (try_begin),
-                (party_slot_eq, ":center_no", slot_town_lord, ":troop_no"),
+                (party_slot_eq, ":center_no", slot_mainplanet_lord, ":troop_no"),
                 (val_mul, ":this_center_score", 2),
               (try_end),
               (try_begin),
@@ -10783,7 +10784,7 @@ scripts = [
             #(display_log_message, "@{s1} has been besieged by {s2} of {s3}.", 0xFF2222),
             (try_begin),
               (store_faction_of_party, ":ai_object_faction", ":ai_object"),
-              (this_or_next|party_slot_eq, ":ai_object", slot_town_lord, "trp_player"),
+              (this_or_next|party_slot_eq, ":ai_object", slot_mainplanet_lord, "trp_player"),
               (eq, ":ai_object_faction", "fac_player_supporters_faction"),
               (call_script, "script_add_notification_menu", "mnu_notification_center_under_siege", ":ai_object", ":troop_no"),
             (try_end),
@@ -10819,7 +10820,7 @@ scripts = [
             (eq, ":selected_village", 0),
             (store_faction_of_party, ":enemy_village_faction", ":enemy_village_no"),
             (try_begin),
-              (party_slot_eq, ":enemy_village_no", slot_town_lord, "trp_player"),
+              (party_slot_eq, ":enemy_village_no", slot_mainplanet_lord, "trp_player"),
               (store_relation, ":reln", "fac_player_supporters_faction", ":faction_no"),
             (else_try),
               (store_relation, ":reln", ":enemy_village_faction", ":faction_no"),
@@ -10827,7 +10828,7 @@ scripts = [
             (lt, ":reln", 0),
             (store_distance_to_party_from_party, ":dist", ":enemy_village_no", ":party_no"),
             (lt, ":dist", 15),
-            (party_slot_eq, ":enemy_village_no", slot_village_state, 0), #village is not already raided
+            (party_slot_eq, ":enemy_village_no", slot_minorplanet_state, 0), #village is not already raided
             #CHANGE STATE TO RAID THIS VILLAGE
             (assign, ":selected_village", ":enemy_village_no"),
           (try_end),
@@ -10857,12 +10858,12 @@ scripts = [
             (store_distance_to_party_from_party, ":distance", ":party_no", ":ai_object"),
             (lt, ":distance", 2),
             (try_begin),
-              (party_slot_eq, ":ai_object", slot_village_state, 0),
+              (party_slot_eq, ":ai_object", slot_minorplanet_state, 0),
               (call_script, "script_village_set_state", ":ai_object", svs_being_raided),
-              (party_set_slot, ":ai_object", slot_village_raided_by, ":party_no"),
+              (party_set_slot, ":ai_object", slot_minorplanet_raided_by, ":party_no"),
               (try_begin),
                 (store_faction_of_party, ":village_faction", ":ai_object"),
-                (this_or_next|party_slot_eq, ":ai_object", slot_town_lord, "trp_player"),
+                (this_or_next|party_slot_eq, ":ai_object", slot_mainplanet_lord, "trp_player"),
                 (eq, ":village_faction", "fac_player_supporters_faction"),
                 (store_distance_to_party_from_party, ":dist", "p_main_party", ":ai_object"),
                 (this_or_next|lt, ":dist", 30),
@@ -10870,7 +10871,7 @@ scripts = [
                 (call_script, "script_add_notification_menu", "mnu_notification_village_raid_started", ":ai_object", ":troop_no"),
               (try_end),
             (else_try),
-              (party_slot_eq, ":ai_object", slot_village_state, svs_being_raided),
+              (party_slot_eq, ":ai_object", slot_minorplanet_state, svs_being_raided),
             (else_try),
               #if anything other than being_raided leave
               (party_set_slot, ":party_no", slot_party_ai_substate, 0),
@@ -11063,7 +11064,7 @@ scripts = [
         (store_faction_of_party, ":center_faction", ":center_no"),
         (store_relation, ":reln", ":center_faction", ":target_faction_no"),
         (try_begin),
-          (party_slot_eq, ":center_no", slot_town_lord, "trp_player"),
+          (party_slot_eq, ":center_no", slot_mainplanet_lord, "trp_player"),
           (store_relation, ":reln", "fac_player_supporters_faction", ":target_faction_no"),
         (try_end),
         (assign, reg0, ":reln"),
@@ -11242,7 +11243,7 @@ scripts = [
             (gt, ":center_score", 1500),
             (val_min, ":center_score", 20000),#20 times stronger means an easy victory, distance is more important
             (try_begin),
-              (party_slot_eq, ":enemy_walled_center", slot_town_lord, "trp_player"),
+              (party_slot_eq, ":enemy_walled_center", slot_mainplanet_lord, "trp_player"),
               (call_script, "script_troop_get_player_relation", ":faction_marshall"),
               (assign, ":player_relation", reg0),
               #(troop_get_slot, ":player_relation", ":faction_marshall", slot_troop_player_relation),
@@ -11301,8 +11302,8 @@ scripts = [
             (lt, reg0, 0),
             (store_distance_to_party_from_party, ":dist", ":enemy_village_no", ":faction_marshall_party"),
             (lt, ":dist", 120),
-            (this_or_next|party_slot_eq, ":enemy_village_no", slot_village_state, 0), #village is not already raided
-            (party_slot_eq, ":enemy_village_no", slot_village_state, svs_being_raided),
+            (this_or_next|party_slot_eq, ":enemy_village_no", slot_minorplanet_state, 0), #village is not already raided
+            (party_slot_eq, ":enemy_village_no", slot_minorplanet_state, svs_being_raided),
             (store_sub, ":dist_point", 150, ":dist"),
             (val_add, ":num_village_points", ":dist_point"),
             (eq, ":enemy_village_no", ":old_target_raiding_village"),
@@ -11316,8 +11317,8 @@ scripts = [
             (lt, reg0, 0),
             (store_distance_to_party_from_party, ":dist", ":enemy_village_no", ":faction_marshall_party"),
             (lt, ":dist", 120),
-            (this_or_next|party_slot_eq, ":enemy_village_no", slot_village_state, 0), #village is not already raided
-            (party_slot_eq, ":enemy_village_no", slot_village_state, svs_being_raided),
+            (this_or_next|party_slot_eq, ":enemy_village_no", slot_minorplanet_state, 0), #village is not already raided
+            (party_slot_eq, ":enemy_village_no", slot_minorplanet_state, svs_being_raided),
             (store_sub, ":dist_point", 150, ":dist"),
             (val_sub, ":random_village_no", ":dist_point"),
             (try_begin),
@@ -11428,7 +11429,7 @@ scripts = [
             (try_begin),
               (party_slot_eq, ":center_no", slot_party_type, spt_village),
               (try_begin),
-                (party_slot_eq, ":center_no", slot_village_state, svs_being_raided),
+                (party_slot_eq, ":center_no", slot_minorplanet_state, svs_being_raided),
                 (val_mul, ":attack_army_score", 3),
               (try_end),
             (else_try),
@@ -12890,7 +12891,7 @@ scripts = [
         (try_for_range, ":town_no", towns_begin, towns_end),
           (store_sub, ":offset", ":town_no", towns_begin),
           
-          (store_add, ":cur_object_no", "scn_swmain_1_land_battle", ":offset"),
+          (store_add, ":cur_object_no", "scn_mainplanet_1_land_battle", ":offset"),
           (eq, ":closest_town", ":town_no"),
           (assign, ":scene_to_use", ":cur_object_no"),
           
@@ -12905,82 +12906,82 @@ scripts = [
         
         ##@> SWY: commented out the Hokie's code, now optimized and automatically finds the correct scene without the need of adding the correlation manually!
         # (try_begin),
-        # (eq, ":closest_town", "p_town_1"),				#Mandalore
+        # (eq, ":closest_town", "p_mandalore"),				#Mandalore
         # (assign, ":scene_to_use", "scn_town_1_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_2"),				#Byss
+        # (eq, ":closest_town", "p_byss"),				#Byss
         # (assign, ":scene_to_use", "scn_town_2_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_3"),				#Endor
+        # (eq, ":closest_town", "p_endor"),				#Endor
         # (assign, ":scene_to_use", "scn_town_3_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_4"),				#Corellia
+        # (eq, ":closest_town", "p_corellia"),				#Corellia
         # (assign, ":scene_to_use", "scn_town_4_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_5"),				#Naboo
+        # (eq, ":closest_town", "p_naboo"),				#Naboo
         # (assign, ":scene_to_use", "scn_town_5_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_6"),				#Kessel
+        # (eq, ":closest_town", "p_kessel"),				#Kessel
         # (assign, ":scene_to_use", "scn_town_6_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_7"),				#Dantooine
+        # (eq, ":closest_town", "p_dantooine"),				#Dantooine
         # (assign, ":scene_to_use", "scn_town_7_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_8"),				#Geonosis
+        # (eq, ":closest_town", "p_geonosis"),				#Geonosis
         # (assign, ":scene_to_use", "scn_town_8_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_9"),				#Mon Cal
+        # (eq, ":closest_town", "p_mon_cal"),				#Mon Cal
         # (assign, ":scene_to_use", "scn_town_9_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_10"),				#Kashyyyk
+        # (eq, ":closest_town", "p_kashyyyk"),				#Kashyyyk
         # (assign, ":scene_to_use", "scn_town_10_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_11"),				#Hoth
+        # (eq, ":closest_town", "p_hoth"),				#Hoth
         # (assign, ":scene_to_use", "scn_town_11_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_12"),				#Gamorr
+        # (eq, ":closest_town", "p_gamorr"),				#Gamorr
         # (assign, ":scene_to_use", "scn_town_12_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_13"),				#Yavin IV
+        # (eq, ":closest_town", "p_yavin_iv"),				#Yavin IV
         # (assign, ":scene_to_use", "scn_town_13_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_14"),				#Tatooine
+        # (eq, ":closest_town", "p_tatooine"),				#Tatooine
         # (assign, ":scene_to_use", "scn_town_14_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_15"),				#Reecee
+        # (eq, ":closest_town", "p_reecee"),				#Reecee
         # (assign, ":scene_to_use", "scn_town_15_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_16"),				#Coruscant
+        # (eq, ":closest_town", "p_coruscant"),				#Coruscant
         # (assign, ":scene_to_use", "scn_town_16_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_17"),				#Ryloth
+        # (eq, ":closest_town", "p_ryloth"),				#Ryloth
         # (assign, ":scene_to_use", "scn_town_17_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_18"),				#Nal Hutta
+        # (eq, ":closest_town", "p_nalhutta"),				#Nal Hutta
         # (assign, ":scene_to_use", "scn_town_18_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_19"),				#Bothawui
+        # (eq, ":closest_town", "p_bothawui"),				#Bothawui
         # (assign, ":scene_to_use", "scn_town_19_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_20"),				#Mustafar
+        # (eq, ":closest_town", "p_mustafar"),				#Mustafar
         # (assign, ":scene_to_use", "scn_town_20_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_21"),				#new plantes by Swyter [Revan Shan's suggestion]
+        # (eq, ":closest_town", "p_kamino"),				#new plantes by Swyter [Revan Shan's suggestion]
         # (assign, ":scene_to_use", "scn_town_21_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_22"),				#new plantes by Swyter [Revan Shan's suggestion]
+        # (eq, ":closest_town", "p_taris"),				#new plantes by Swyter [Revan Shan's suggestion]
         # (assign, ":scene_to_use", "scn_town_22_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_23"),				#new plantes by Swyter [Revan Shan's suggestion]
+        # (eq, ":closest_town", "p_raxusprime"),				#new plantes by Swyter [Revan Shan's suggestion]
         # (assign, ":scene_to_use", "scn_town_23_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_24"),				#new plantes by Swyter [Revan Shan's suggestion]
+        # (eq, ":closest_town", "p_sarapin"),				#new plantes by Swyter [Revan Shan's suggestion]
         # (assign, ":scene_to_use", "scn_town_24_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_25"),				#new plantes by Swyter [Revan Shan's suggestion]
+        # (eq, ":closest_town", "p_hypori"),				#new plantes by Swyter [Revan Shan's suggestion]
         # (assign, ":scene_to_use", "scn_town_25_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_26"),				#new plantes by Swyter [Revan Shan's suggestion]
+        # (eq, ":closest_town", "p_felucia"),				#new plantes by Swyter [Revan Shan's suggestion]
         # (assign, ":scene_to_use", "scn_town_26_land_battle"),
         # (else_try),
         # (assign, ":scene_to_use", "scn_random_scene_plain"),
@@ -12992,22 +12993,22 @@ scripts = [
         
         
         # (try_begin),
-        # (this_or_next|eq, ":closest_town", "p_town_3"),	#Endor
-        # (eq, ":closest_town", "p_town_10"),				#Kashyyyk
+        # (this_or_next|eq, ":closest_town", "p_endor"),	#Endor
+        # (eq, ":closest_town", "p_kashyyyk"),				#Kashyyyk
         # (assign, ":scene_to_use", "scn_random_scene_plain_forest"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_11"),				#Hoth
+        # (eq, ":closest_town", "p_hoth"),				#Hoth
         # (assign, ":scene_to_use", "scn_random_scene_snow"),
         # (else_try),
-        # (this_or_next|eq, ":closest_town", "p_town_14"),	#Tatooine
-        # (eq, ":closest_town", "p_town_17"),				#Ryloth
+        # (this_or_next|eq, ":closest_town", "p_tatooine"),	#Tatooine
+        # (eq, ":closest_town", "p_ryloth"),				#Ryloth
         # (assign, ":scene_to_use", "scn_random_scene_desert"),
         # (else_try),
-        # (this_or_next|eq, ":closest_town", "p_town_12"),	#Gamorr
-        # (eq, ":closest_town", "p_town_18"),				#Nal Hutta
+        # (this_or_next|eq, ":closest_town", "p_gamorr"),	#Gamorr
+        # (eq, ":closest_town", "p_nalhutta"),				#Nal Hutta
         # (assign, ":scene_to_use", "scn_random_scene_steppe"),
         # (else_try),
-        # (eq, ":closest_town", "p_town_9"),				#Mon Cal
+        # (eq, ":closest_town", "p_mon_cal"),				#Mon Cal
         # (assign, ":scene_to_use", "scn_random_scene_water"),
         # (else_try),
         # (assign, ":scene_to_use", "scn_random_scene_plain"),
@@ -13063,7 +13064,7 @@ scripts = [
         (store_script_param_2, ":mission_template_no"),
         
         (set_jump_mission,":mission_template_no"),
-        (party_get_slot, ":dungeon_scene", ":center_no", slot_town_prison),
+        (party_get_slot, ":dungeon_scene", ":center_no", slot_mainplanet_prison),
         
         (modify_visitors_at_site,":dungeon_scene"),(reset_visitors),
         (assign, ":cur_pos", 16),
@@ -13092,7 +13093,7 @@ scripts = [
         (assign, "$talk_context", tc_court_talk),
         
         (set_jump_mission,"mt_visit_town_castle"),
-        (party_get_slot, ":castle_scene", ":center_no", slot_town_castle),
+        (party_get_slot, ":castle_scene", ":center_no", slot_mainplanet_castle),
         (modify_visitors_at_site,":castle_scene"),
         (reset_visitors),
         #Adding guards
@@ -13105,8 +13106,8 @@ scripts = [
         (try_end),
         
         (try_begin),
-          (this_or_next|eq, "$current_town", "p_town_11"),
-          (eq, "$current_town", "p_town_13"),
+          (this_or_next|eq, "$current_town", "p_hoth"),
+          (eq, "$current_town", "p_yavin_iv"),
           
           (set_visitor, 5, ":guard_troop"),
           (set_visitor, 6, ":guard_troop"),
@@ -13149,21 +13150,21 @@ scripts = [
         #SW - new code for slave_dancers
         (store_faction_of_party, ":center_faction", "$current_town"),
         (try_begin),
-          # (this_or_next|eq, "$current_town", "p_town_12"),
-          # (this_or_next|eq, "$current_town", "p_town_14"),
-          # (this_or_next|eq, "$current_town", "p_town_17"),
-          # (eq, "$current_town", "p_town_18"),
+          # (this_or_next|eq, "$current_town", "p_gamorr"),
+          # (this_or_next|eq, "$current_town", "p_tatooine"),
+          # (this_or_next|eq, "$current_town", "p_ryloth"),
+          # (eq, "$current_town", "p_nalhutta"),
           (eq, ":center_faction", "fac_kingdom_3"),
           (store_random_in_range, ":random", 1, 5),
           (try_begin),
             (eq,":random",1),
-            (set_visitor, 38, "trp_swmain_walker_twilek_female_slave"),
+            (set_visitor, 38, "trp_mainplanet_walker_twilek_female_slave"),
           (else_try),
             (eq, ":random", 2),
-            (set_visitor, 38, "trp_swmain_walker_slave_dancer"),
+            (set_visitor, 38, "trp_mainplanet_walker_slave_dancer"),
           (else_try),
             (eq, ":random", 3),
-            (set_visitor, 38, "trp_swmain_walker_hutt_4"),
+            (set_visitor, 38, "trp_mainplanet_walker_hutt_4"),
           (else_try),
             #do nothing
           (try_end),
@@ -13171,13 +13172,13 @@ scripts = [
           (store_random_in_range, ":random", 1, 5),
           (try_begin),
             (eq,":random",1),
-            (set_visitor, 39, "trp_swmain_walker_twilek_female_slave"),
+            (set_visitor, 39, "trp_mainplanet_walker_twilek_female_slave"),
           (else_try),
             (eq, ":random", 2),
-            (set_visitor, 39, "trp_swmain_walker_slave_dancer"),
+            (set_visitor, 39, "trp_mainplanet_walker_slave_dancer"),
           (else_try),
             (eq, ":random", 3),
-            (set_visitor, 39, "trp_swmain_walker_hutt_4"),
+            (set_visitor, 39, "trp_mainplanet_walker_hutt_4"),
           (else_try),
             #do nothing
           (try_end),
@@ -13772,10 +13773,10 @@ scripts = [
           (assign, ":quest_return_penalty", -4),
           (assign, ":quest_expire_penalty", -5),
         (else_try),
-          (eq, ":quest_no", "qst_deal_with_looters"),
+          (eq, ":quest_no", "qst_deal_with_jawas"),
           (try_for_parties, ":cur_party_no"),
             (party_get_template_id, ":cur_party_template", ":cur_party_no"),
-            (eq, ":cur_party_template", "pt_looters"),
+            (eq, ":cur_party_template", "pt_jawas"),
             (party_set_flags, ":cur_party_no", pf_quest_party, 0),
           (try_end),
           (assign, ":quest_return_penalty", -4),
@@ -14414,7 +14415,7 @@ scripts = [
         (try_for_range, ":center_no", centers_begin, centers_end),
           (store_faction_of_party, ":faction_no", ":center_no"),
           (eq, ":faction_no", "fac_player_supporters_faction"),
-          (party_slot_eq, ":center_no", slot_town_claimed_by_player, 0),
+          (party_slot_eq, ":center_no", slot_mainplanet_claimed_by_player, 0),
           (party_get_num_companion_stacks, ":num_stacks", ":center_no"),
           (ge, ":num_stacks", 1), #castle is garrisoned
           (assign, reg1, ":center_no"),
@@ -14465,7 +14466,7 @@ scripts = [
         (assign, ":center_count", 0),
         (try_for_range, ":center_no", centers_begin, centers_end),
           (eq, ":result", -1),
-          (party_slot_eq, ":center_no", slot_town_lord, ":troop_no"),
+          (party_slot_eq, ":center_no", slot_mainplanet_lord, ":troop_no"),
           (val_add, ":center_count", 1),
           (gt, ":center_count", ":random_center"),
           (assign, ":result", ":center_no"),
@@ -14483,7 +14484,7 @@ scripts = [
         
         (assign, ":num_centers", 0),
         (try_for_range, ":center_no", walled_centers_begin, walled_centers_end),
-          (party_slot_eq, ":center_no", slot_town_lord, ":troop_no"),
+          (party_slot_eq, ":center_no", slot_mainplanet_lord, ":troop_no"),
           (party_slot_eq, ":center_no", slot_center_is_besieged_by, -1),
           (val_add, ":num_centers", 1),
           (try_begin),
@@ -14502,7 +14503,7 @@ scripts = [
         (assign, ":result", -1),
         (try_for_range, ":center_no", walled_centers_begin, walled_centers_end),
           (eq, ":result", -1),
-          (party_slot_eq, ":center_no", slot_town_lord, ":troop_no"),
+          (party_slot_eq, ":center_no", slot_mainplanet_lord, ":troop_no"),
           (party_slot_eq, ":center_no", slot_center_is_besieged_by, -1),
           (val_sub, ":random_center", 1),
           (try_begin),
@@ -14534,7 +14535,7 @@ scripts = [
         (assign, ":num_centers", 0),
         (try_for_range, ":center_no", centers_begin, centers_end),
           (neg|party_slot_eq, ":center_no", slot_party_type, spt_castle),
-          (party_slot_eq, ":center_no", slot_town_lord, ":troop_no"),
+          (party_slot_eq, ":center_no", slot_mainplanet_lord, ":troop_no"),
           (neq, ":center_no", ":except_center_no"),
           (val_add, ":num_centers", 1),
         (try_end),
@@ -14544,7 +14545,7 @@ scripts = [
         (assign, ":end_cond", centers_end),
         (try_for_range, ":center_no", centers_begin, ":end_cond"),
           (neg|party_slot_eq, ":center_no", slot_party_type, spt_castle),
-          (party_slot_eq, ":center_no", slot_town_lord, ":troop_no"),
+          (party_slot_eq, ":center_no", slot_mainplanet_lord, ":troop_no"),
           (neq, ":center_no", ":except_center_no"),
           (val_sub, ":random_center", 1),
           (lt, ":random_center", 0),
@@ -15213,7 +15214,7 @@ scripts = [
     ##  ("print_productions_above_or_below_50",
     ##    [(store_script_param_1, ":center_no"),
     ##      (store_script_param_2, ":sign"),
-    ##      (store_sub, ":item_to_slot", slot_town_trade_good_productions_begin, trade_goods_begin),
+    ##      (store_sub, ":item_to_slot", slot_mainplanet_trade_good_productions_begin, trade_goods_begin),
     ##      (assign, ":cur_print_index", 0),
     ##      (try_for_range, ":cur_goods", trade_goods_begin, trade_goods_end),
     ##        (store_add, ":cur_good_slot", ":cur_goods", ":item_to_slot"),
@@ -15244,7 +15245,7 @@ scripts = [
     # Input: none
     # Output: none
     ("change_banners_and_chest",
-      [(party_get_slot, ":cur_leader", "$g_encountered_party", slot_town_lord),
+      [(party_get_slot, ":cur_leader", "$g_encountered_party", slot_mainplanet_lord),
         (try_begin),
           (ge, ":cur_leader", 0),
           #normal_banner_begin
@@ -15397,27 +15398,27 @@ scripts = [
         (else_try),	#town/castle
           
           (try_begin),
-            (eq, ":center_no", "p_town_8"), #condition to set town specific walkers instead of regular walkers in town
+            (eq, ":center_no", "p_geonosis"), #condition to set town specific walkers instead of regular walkers in town
             (assign, ":town_walkers_modified_begin",town8_walkers_begin),
             (assign, ":town_walkers_modified_end",town8_walkers_end),
           (else_try),
-            (eq, ":center_no", "p_town_9"), #condition to set town specific walkers instead of regular walkers in town
+            (eq, ":center_no", "p_mon_cal"), #condition to set town specific walkers instead of regular walkers in town
             (assign, ":town_walkers_modified_begin",town9_walkers_begin),
             (assign, ":town_walkers_modified_end",town9_walkers_end),
           (else_try),
-            (eq, ":center_no", "p_town_10"), #condition to set town specific walkers instead of regular walkers in town
+            (eq, ":center_no", "p_kashyyyk"), #condition to set town specific walkers instead of regular walkers in town
             (assign, ":town_walkers_modified_begin",town10_walkers_begin),
             (assign, ":town_walkers_modified_end",town10_walkers_end),
           (else_try),
-            (eq, ":center_no", "p_town_12"), #condition to set town specific walkers instead of regular walkers in town
+            (eq, ":center_no", "p_gamorr"), #condition to set town specific walkers instead of regular walkers in town
             (assign, ":town_walkers_modified_begin",town12_walkers_begin),
             (assign, ":town_walkers_modified_end",town12_walkers_end),
           (else_try),
-            (eq, ":center_no", "p_town_14"), #condition to set town specific walkers instead of regular walkers in town
+            (eq, ":center_no", "p_tatooine"), #condition to set town specific walkers instead of regular walkers in town
             (assign, ":town_walkers_modified_begin",town14_walkers_begin),
             (assign, ":town_walkers_modified_end",town14_walkers_end),
           (else_try),
-            (eq, ":center_no", "p_town_17"), #condition to set town specific walkers instead of regular walkers in town
+            (eq, ":center_no", "p_ryloth"), #condition to set town specific walkers instead of regular walkers in town
             (assign, ":town_walkers_modified_begin",town17_walkers_begin),
             (assign, ":town_walkers_modified_end",town17_walkers_end),
           (else_try),
@@ -15635,9 +15636,9 @@ scripts = [
           (eq, "$sneaked_into_town", 0),#Skip if sneaked
           (try_begin),
             (party_slot_eq, "$current_town", slot_party_type, spt_village),
-            (party_get_slot, ":cur_scene", "$current_town", slot_castle_exterior),
+            (party_get_slot, ":cur_scene", "$current_town", slot_spacestation_exterior),
           (else_try),
-            (party_get_slot, ":cur_scene", "$current_town", slot_town_center),
+            (party_get_slot, ":cur_scene", "$current_town", slot_mainplanet_center),
           (try_end),
           (modify_visitors_at_site, ":cur_scene"),
           (reset_visitors),
@@ -17071,10 +17072,10 @@ scripts = [
             (assign, ":center_owned", 0),
             (try_begin),
               (eq, ":troop_no", "trp_player"),
-              (party_slot_eq, ":cur_center", slot_town_lord, stl_reserved_for_player),
+              (party_slot_eq, ":cur_center", slot_mainplanet_lord, stl_reserved_for_player),
               (assign, ":center_owned", 1),
             (try_end),
-            (this_or_next|party_slot_eq, ":cur_center", slot_town_lord, ":troop_no"),
+            (this_or_next|party_slot_eq, ":cur_center", slot_mainplanet_lord, ":troop_no"),
             (eq, ":center_owned", 1),
             (try_begin),
               (party_slot_eq, ":cur_center", slot_party_type, spt_town),
@@ -17114,7 +17115,7 @@ scripts = [
       # Output: none
       ("assign_lords_to_empty_centers",
         [(try_for_range, ":cur_center", centers_begin, centers_end),
-            (party_get_slot, ":center_lord", ":cur_center", slot_town_lord),
+            (party_get_slot, ":center_lord", ":cur_center", slot_mainplanet_lord),
             (this_or_next|eq, ":center_lord", stl_unassigned),
             (eq, ":center_lord", stl_rejected_by_player),
             
@@ -17152,12 +17153,12 @@ scripts = [
               (call_script, "script_give_center_to_lord", ":cur_center", ":best_lord", 1),
             (else_try),
               (eq, ":best_lord", stl_reserved_for_player),
-              (party_set_slot, ":cur_center", slot_town_lord, stl_reserved_for_player),
+              (party_set_slot, ":cur_center", slot_mainplanet_lord, stl_reserved_for_player),
               (try_begin),
                 (party_slot_eq, ":cur_center", slot_party_type, spt_castle),
                 (try_for_range, ":cur_village", villages_begin, villages_end),
-                  (party_slot_eq, ":cur_village", slot_village_bound_center, ":cur_center"),
-                  (party_set_slot, ":cur_village", slot_town_lord, stl_reserved_for_player),
+                  (party_slot_eq, ":cur_village", slot_minorplanet_bound_center, ":cur_center"),
+                  (party_set_slot, ":cur_village", slot_mainplanet_lord, stl_reserved_for_player),
                 (try_end),
               (try_end),
             (try_end),
@@ -17170,7 +17171,7 @@ scripts = [
       # Output: reg0 = party_no
       ("create_village_farmer_party",
         [(store_script_param, ":village_no", 1),
-          (party_get_slot, ":town_no", ":village_no", slot_village_market_town),
+          (party_get_slot, ":town_no", ":village_no", slot_minorplanet_market_town),
           
           (store_faction_of_party, ":party_faction", ":town_no"),
           (set_spawn_radius, 0),
@@ -17185,7 +17186,7 @@ scripts = [
           (party_set_ai_behavior, ":new_party", ai_bhvr_travel_to_party),
           (party_set_ai_object, ":new_party", ":town_no"),
           (party_set_flags, ":new_party", pf_default_behavior, 0),
-          (store_sub, ":item_to_price_slot", slot_town_trade_good_prices_begin, trade_goods_begin),
+          (store_sub, ":item_to_price_slot", slot_mainplanet_trade_good_prices_begin, trade_goods_begin),
           (try_for_range, ":cur_goods", trade_goods_begin, trade_goods_end),
             (store_add, ":cur_good_price_slot", ":cur_goods", ":item_to_price_slot"),
             (party_get_slot, ":cur_village_price", ":village_no", ":cur_good_price_slot"),
@@ -17203,7 +17204,7 @@ scripts = [
           (store_script_param, ":center_no", 2),
           (store_script_param, ":percentage_change", 3),
           (assign, ":total_change", 0),
-          (store_sub, ":item_to_price_slot", slot_town_trade_good_prices_begin, trade_goods_begin),
+          (store_sub, ":item_to_price_slot", slot_mainplanet_trade_good_prices_begin, trade_goods_begin),
           (try_for_range, ":cur_good", trade_goods_begin, trade_goods_end),
             (store_add, ":cur_good_price_slot", ":cur_good", ":item_to_price_slot"),
             (party_get_slot, ":cur_merchant_price", ":party_no", ":cur_good_price_slot"),
@@ -17255,7 +17256,7 @@ scripts = [
           (try_end),
           (try_for_range, ":cur_center", centers_begin, centers_end),
             #Give center to kingdom if player is the owner
-            (party_slot_eq, ":cur_center", slot_town_lord, "trp_player"),
+            (party_slot_eq, ":cur_center", slot_mainplanet_lord, "trp_player"),
             (party_set_faction, ":cur_center", ":faction_no"),
           (try_end),
           (try_for_range, ":quest_no", lord_quests_begin, lord_quests_end),
@@ -17290,18 +17291,18 @@ scripts = [
           (try_begin),
             (neq, ":give_back_fiefs", 0),
             (try_for_range, ":cur_center", centers_begin, centers_end),
-              (party_slot_eq, ":cur_center", slot_town_lord, "trp_player"),
+              (party_slot_eq, ":cur_center", slot_mainplanet_lord, "trp_player"),
               (call_script, "script_give_center_to_faction", ":cur_center", ":old_kingdom"),
             (try_end),
           (else_try),
             (try_for_range, ":cur_center", centers_begin, centers_end),
-              (party_slot_eq, ":cur_center", slot_town_lord, "trp_player"),
+              (party_slot_eq, ":cur_center", slot_mainplanet_lord, "trp_player"),
               (call_script, "script_give_center_to_faction", ":cur_center", "fac_player_supporters_faction"),
             (try_end),
             (try_for_range, ":cur_center", villages_begin, villages_end),
-              (party_get_slot, ":cur_bound_center", ":cur_center", slot_village_bound_center),
-              (party_slot_eq, ":cur_center", slot_town_lord, "trp_player"),
-              (neg|party_slot_eq, ":cur_bound_center", slot_town_lord, "trp_player"),
+              (party_get_slot, ":cur_bound_center", ":cur_center", slot_minorplanet_bound_center),
+              (party_slot_eq, ":cur_center", slot_mainplanet_lord, "trp_player"),
+              (neg|party_slot_eq, ":cur_bound_center", slot_mainplanet_lord, "trp_player"),
               (call_script, "script_give_center_to_faction", ":cur_center", ":old_kingdom"),
             (try_end),
             (store_relation, ":reln", "fac_player_supporters_faction", ":old_kingdom"),
@@ -17390,7 +17391,7 @@ scripts = [
       # #own kingdom start-----------------------------------
       # (try_begin),
       # (gt,":player_center",0),
-      # (val_sub,":player_center","p_town_1"),
+      # (val_sub,":player_center","p_mandalore"),
       # (val_add,":player_center","str_center_1_kingdom"),
       # (str_store_string,s1, ":player_center"),
       # (faction_set_name, "fac_player_supporters_faction", "@{s1}"),
@@ -17636,7 +17637,7 @@ scripts = [
               (assign, ":min_dist_town", ":cur_town"),
             (try_end),
             (gt, ":min_dist_town", -1),
-            (party_set_slot, ":cur_village", slot_village_market_town, ":min_dist_town"),
+            (party_set_slot, ":cur_village", slot_minorplanet_market_town, ":min_dist_town"),
           (try_end),
       ]),
       
@@ -17774,7 +17775,7 @@ scripts = [
           (try_end),
           
           #SW - commented out trp_ramun_the_slave_trader and moved them to the trade federation base
-          #(party_set_slot,"p_town_2",slot_center_ransom_broker,"trp_ramun_the_slave_trader"),
+          #(party_set_slot,"p_byss",slot_center_ransom_broker,"trp_ramun_the_slave_trader"),
       ]),
       
       #script_update_tavern_travelers
@@ -17814,7 +17815,7 @@ scripts = [
                 (lt, ":cur_state", 3),
                 (quest_set_slot, "qst_eliminate_bandits_infesting_village", slot_quest_current_state, ":cur_state"),
               (else_try),
-                (party_set_slot, ":village_no", slot_village_infested_by_bandits, 0),
+                (party_set_slot, ":village_no", slot_minorplanet_infested_by_bandits, 0),
                 (call_script, "script_abort_quest", "qst_eliminate_bandits_infesting_village", 2),
               (try_end),
             (else_try),
@@ -17826,11 +17827,11 @@ scripts = [
                 (lt, ":cur_state", 3),
                 (quest_set_slot, "qst_deal_with_bandits_at_lords_village", slot_quest_current_state, ":cur_state"),
               (else_try),
-                (party_set_slot, ":village_no", slot_village_infested_by_bandits, 0),
+                (party_set_slot, ":village_no", slot_minorplanet_infested_by_bandits, 0),
                 (call_script, "script_abort_quest", "qst_deal_with_bandits_at_lords_village", 2),
               (try_end),
             (else_try),
-              (party_set_slot, ":village_no", slot_village_infested_by_bandits, 0),
+              (party_set_slot, ":village_no", slot_minorplanet_infested_by_bandits, 0),
               (store_random_in_range, ":random_no", 0, 100),
               (lt, ":random_no", 3),
               (store_random_in_range, ":random_no", 0, 3),
@@ -17839,11 +17840,11 @@ scripts = [
                 (assign, ":bandit_troop", "trp_bandit"),
               (else_try),
                 (eq, ":random_no", 1),
-                (assign, ":bandit_troop", "trp_mountain_bandit_3"),
+                (assign, ":bandit_troop", "trp_black_sun_pirate_3"),
               (else_try),
-                (assign, ":bandit_troop", "trp_forest_bandit"),
+                (assign, ":bandit_troop", "trp_blazing_claw_pirate"),
               (try_end),
-              (party_set_slot, ":village_no", slot_village_infested_by_bandits, ":bandit_troop"),
+              (party_set_slot, ":village_no", slot_minorplanet_infested_by_bandits, ":bandit_troop"),
               #Reduce prosperity of the village by 3
               (call_script, "script_change_center_prosperity", ":village_no", -3),
               (try_begin),
@@ -18070,7 +18071,7 @@ scripts = [
             (assign, ":num_centers", 0),
             (str_store_string, s58, "@nowhere"),
             (try_for_range_backwards, ":cur_center", centers_begin, centers_end),
-              (party_slot_eq, ":cur_center", slot_town_lord, ":troop_no"),
+              (party_slot_eq, ":cur_center", slot_mainplanet_lord, ":troop_no"),
               (try_begin),
                 (eq, ":num_centers", 0),
                 (str_store_party_name_link, s58, ":cur_center"),
@@ -18134,7 +18135,7 @@ scripts = [
       ("update_center_notes",
         [(store_script_param, ":center_no", 1),
           
-          (party_get_slot, ":lord_troop", ":center_no", slot_town_lord),
+          (party_get_slot, ":lord_troop", ":center_no", slot_mainplanet_lord),
           (try_begin),
             (ge, ":lord_troop", 0),
             (store_troop_faction, ":lord_faction", ":lord_troop"),
@@ -18152,7 +18153,7 @@ scripts = [
               (str_store_string, s51, "@The planet of {s50}"),
             (else_try),
               (party_slot_eq, ":center_no", slot_party_type, spt_village),
-              (party_get_slot, ":bound_center", ":center_no", slot_village_bound_center),
+              (party_get_slot, ":bound_center", ":center_no", slot_minorplanet_bound_center),
               (str_store_party_name_link, s52, ":bound_center"),
               (str_store_string, s51, "@The planet of {s50} near {s52}"),
             (else_try),
@@ -18167,7 +18168,7 @@ scripts = [
           (else_try),
             (assign, ":num_villages", 0),
             (try_for_range_backwards, ":village_no", villages_begin, villages_end),
-              (party_slot_eq, ":village_no", slot_village_bound_center, ":center_no"),
+              (party_slot_eq, ":village_no", slot_minorplanet_bound_center, ":center_no"),
               (try_begin),
                 (eq, ":num_villages", 0),
                 (str_store_party_name_link, s8, ":village_no"),
@@ -18274,7 +18275,7 @@ scripts = [
               (assign, ":banner_mesh", "mesh_banners_default_c"),
             (else_try),
               (is_between, ":agent_party", centers_begin, centers_end),
-              (party_get_slot, ":town_lord", "$g_encountered_party", slot_town_lord),
+              (party_get_slot, ":town_lord", "$g_encountered_party", slot_mainplanet_lord),
               (ge, ":town_lord", 0),
               (assign, ":banner_troop", ":town_lord"),
             (else_try),
@@ -18294,7 +18295,7 @@ scripts = [
           (else_try), #can't find party, this can be a town guard
             (neq, ":troop_no", "trp_player"),
             (is_between, "$g_encountered_party", walled_centers_begin, walled_centers_end),
-            (party_get_slot, ":town_lord", "$g_encountered_party", slot_town_lord),
+            (party_get_slot, ":town_lord", "$g_encountered_party", slot_mainplanet_lord),
             (ge, ":town_lord", 0),
             (assign, ":banner_troop", ":town_lord"),
           (try_end),
@@ -18351,7 +18352,7 @@ scripts = [
       ##           (assign, ":banner_troop", -3),
       ##         (else_try),
       ##           (is_between, ":agent_party", centers_begin, centers_end),
-      ##           (party_get_slot, ":town_lord", "$g_encountered_party", slot_town_lord),
+      ##           (party_get_slot, ":town_lord", "$g_encountered_party", slot_mainplanet_lord),
       ##           (ge, ":town_lord", 0),
       ##           (assign, ":banner_troop", ":town_lord"),
       ##         (else_try),
@@ -18370,7 +18371,7 @@ scripts = [
       ##       (else_try), #can't find party, this can be a town guard
       ##         (neq, ":troop_no", "trp_player"),
       ##         (is_between, "$g_encountered_party", walled_centers_begin, walled_centers_end),
-      ##         (party_get_slot, ":town_lord", "$g_encountered_party", slot_town_lord),
+      ##         (party_get_slot, ":town_lord", "$g_encountered_party", slot_mainplanet_lord),
       ##         (ge, ":town_lord", 0),
       ##         (assign, ":banner_troop", ":town_lord"),
       ##       (try_end),
@@ -18650,7 +18651,7 @@ scripts = [
       # OUTPUT: none
       ("get_prosperity_text_to_s50",
         [(store_script_param, ":center_no", 1),
-          (party_get_slot, ":prosperity", ":center_no", slot_town_prosperity),
+          (party_get_slot, ":prosperity", ":center_no", slot_mainplanet_prosperity),
           (val_div, ":prosperity", 20),
           (try_begin),
             (eq, ":prosperity", 0),
@@ -18675,34 +18676,34 @@ scripts = [
       ("spawn_bandits",
         [(set_spawn_radius,1),
           (try_begin),
-            (store_num_parties_of_template, ":num_parties", "pt_mountain_bandits"),
+            (store_num_parties_of_template, ":num_parties", "pt_black_sun_pirates"),
             #SW - increased num_parties for spawn_bandits from 14 to 16
             (lt,":num_parties",16),
             #SW - modified so spawn point is somewhat random
             (store_random_in_range, ":rand", 0, 100),
             (try_begin),
               (lt, ":rand", 75),	#75% chance to spawn in one of the bandits primary locations
-              (store_random,":spawn_point",num_mountain_bandit_spawn_points),
-              (val_add,":spawn_point","p_mountain_bandit_spawn_point"),
+              (store_random,":spawn_point",num_black_sun_pirate_spawn_points),
+              (val_add,":spawn_point","p_black_sun_pirate_spawn_point"),
             (else_try),			#25% chance for bandit to spawn around a random village
               (store_random_in_range,":spawn_point",villages_begin,villages_end),
             (try_end),
-            (spawn_around_party,":spawn_point","pt_mountain_bandits"),
+            (spawn_around_party,":spawn_point","pt_black_sun_pirates"),
           (try_end),
           (try_begin),
-            (store_num_parties_of_template, ":num_parties", "pt_forest_bandits"),
+            (store_num_parties_of_template, ":num_parties", "pt_blazing_claw_pirates"),
             #SW - increased num_parties for spawn_bandits from 14 to 16
             (lt,":num_parties",16),
             #SW - modified so spawn point is somewhat random
             (store_random_in_range, ":rand", 0, 100),
             (try_begin),
               (lt, ":rand", 75),	#75% chance to spawn in one of the bandits primary locations
-              (store_random,":spawn_point",num_forest_bandit_spawn_points),
-              (val_add,":spawn_point","p_forest_bandit_spawn_point"),
+              (store_random,":spawn_point",num_blazing_claw_pirate_spawn_points),
+              (val_add,":spawn_point","p_blazing_claw_pirate_spawn_point"),
             (else_try),			#25% chance for bandit to spawn around a random village
               (store_random_in_range,":spawn_point",villages_begin,villages_end),
             (try_end),
-            (spawn_around_party,":spawn_point","pt_forest_bandits"),
+            (spawn_around_party,":spawn_point","pt_blazing_claw_pirates"),
           (try_end),
           (try_begin),
             (store_num_parties_of_template, ":num_parties", "pt_sea_raiders"),
@@ -18735,14 +18736,14 @@ scripts = [
             (spawn_around_party,":spawn_point","pt_steppe_bandits"),
           (try_end),
           (try_begin),
-            (store_num_parties_of_template, ":num_parties", "pt_looters"),
-            #SW - lowered num_parties for looters from 23 to 20
+            (store_num_parties_of_template, ":num_parties", "pt_jawas"),
+            #SW - lowered num_parties for jawas from 23 to 20
             (lt,":num_parties",20),
-            (store_random_in_range,":spawn_point",villages_begin,villages_end), #spawn looters twice to have lots of them at the beginning
-            (spawn_around_party,":spawn_point","pt_looters"),
+            (store_random_in_range,":spawn_point",villages_begin,villages_end), #spawn jawas twice to have lots of them at the beginning
+            (spawn_around_party,":spawn_point","pt_jawas"),
             (assign, ":spawned_party_id", reg0),
             (try_begin),
-              (check_quest_active, "qst_deal_with_looters"),
+              (check_quest_active, "qst_deal_with_jawas"),
               (party_set_flags, ":spawned_party_id", pf_quest_party, 1),
             (else_try),
               (party_set_flags, ":spawned_party_id", pf_quest_party, 0),
@@ -18966,9 +18967,9 @@ scripts = [
       
       # inserted by obi 2009-04-28 --> recruit clones, droid and force sensitves
       ("cf_village_recruit_clones_cond",
-        [(neg|party_slot_eq, "$current_town", slot_village_state, svs_looted),
-          (neg|party_slot_eq, "$current_town", slot_village_state, svs_being_raided),
-          (neg|party_slot_ge, "$current_town", slot_village_infested_by_bandits, 1),
+        [(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
+          (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
+          (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
           (party_slot_eq, "$current_town", slot_center_has_clone_chambers, 1),
           #SW - modified to take restrictions out of displaying recruit game menu
           # (store_faction_of_party, ":village_faction", "$current_town"),
@@ -18987,9 +18988,9 @@ scripts = [
       ]),
       
       ("cf_village_recruit_force_sensitives_cond",
-        [(neg|party_slot_eq, "$current_town", slot_village_state, svs_looted),
-          (neg|party_slot_eq, "$current_town", slot_village_state, svs_being_raided),
-          (neg|party_slot_ge, "$current_town", slot_village_infested_by_bandits, 1),
+        [(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
+          (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
+          (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
           (party_slot_eq, "$current_town", slot_center_has_temple, 1),
           #SW - modified to take restrictions out of displaying recruit game menu
           # (store_faction_of_party, ":village_faction", "$current_town"),
@@ -19008,9 +19009,9 @@ scripts = [
       ]),
       
       ("cf_village_recruit_droids_cond",
-        [(neg|party_slot_eq, "$current_town", slot_village_state, svs_looted),
-          (neg|party_slot_eq, "$current_town", slot_village_state, svs_being_raided),
-          (neg|party_slot_ge, "$current_town", slot_village_infested_by_bandits, 1),
+        [(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
+          (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
+          (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
           (party_slot_eq, "$current_town", slot_center_has_droid_foundry, 1),
           #SW - modified to take restrictions out of displaying recruit game menu
           # (store_faction_of_party, ":village_faction", "$current_town"),
@@ -19028,9 +19029,9 @@ scripts = [
           # (ge, ":free_capacity", 1),
       ]),
       ("cf_village_recruit_rancors_cond",
-        [(neg|party_slot_eq, "$current_town", slot_village_state, svs_looted),
-          (neg|party_slot_eq, "$current_town", slot_village_state, svs_being_raided),
-          (neg|party_slot_ge, "$current_town", slot_village_infested_by_bandits, 1),
+        [(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
+          (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
+          (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
           (party_slot_eq, "$current_town", slot_center_has_rancor_pit, 1),
           #SW - modified to take restrictions out of displaying recruit game menu
           # (store_faction_of_party, ":village_faction", "$current_town"),
@@ -19053,9 +19054,9 @@ scripts = [
       # INPUT: none
       # OUTPUT: none
       ("cf_village_recruit_volunteers_cond",
-        [(neg|party_slot_eq, "$current_town", slot_village_state, svs_looted),
-          (neg|party_slot_eq, "$current_town", slot_village_state, svs_being_raided),
-          (neg|party_slot_ge, "$current_town", slot_village_infested_by_bandits, 1),
+        [(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
+          (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
+          (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
           #SW - modified to take most restrictions out of displaying recruit game menu
           #(store_faction_of_party, ":village_faction", "$current_town"),
           # (party_get_slot, ":center_relation", "$current_town", slot_center_player_relation),
@@ -19206,7 +19207,7 @@ scripts = [
       ("change_center_prosperity",
         [(store_script_param, ":center_no", 1),
           (store_script_param, ":difference", 2),
-          (party_get_slot, ":prosperity", ":center_no", slot_town_prosperity),
+          (party_get_slot, ":prosperity", ":center_no", slot_mainplanet_prosperity),
           (store_add, ":new_prosperity", ":prosperity", ":difference"),
           (val_clamp, ":new_prosperity", 0, 100),
           (store_div, ":old_state", ":prosperity", 20),
@@ -19216,7 +19217,7 @@ scripts = [
             (str_store_party_name_link, s2, ":center_no"),
             (call_script, "script_get_prosperity_text_to_s50", ":center_no"),
             (str_store_string, s3, s50),
-            (party_set_slot, ":center_no", slot_town_prosperity, ":new_prosperity"),
+            (party_set_slot, ":center_no", slot_mainplanet_prosperity, ":new_prosperity"),
             (call_script, "script_get_prosperity_text_to_s50", ":center_no"),
             (str_store_string, s4, s50),
             # HC - TODO: Determine if the player owns ":center_no".
@@ -19226,7 +19227,7 @@ scripts = [
             #(display_message, "@Prosperity of {s2} has changed from {s3} to {s4}."),
             (call_script, "script_update_center_notes", ":center_no"),
           (else_try),
-            (party_set_slot, ":center_no", slot_town_prosperity, ":new_prosperity"),
+            (party_set_slot, ":center_no", slot_mainplanet_prosperity, ":new_prosperity"),
           (try_end),
       ]),
       
@@ -19242,16 +19243,16 @@ scripts = [
               (party_slot_eq, ":center_no", slot_center_has_fish_pond, 1),
               (val_add, ":ideal", 5),
             (try_end),
-            (party_get_slot, ":land_quality", ":center_no", slot_village_land_quality),
+            (party_get_slot, ":land_quality", ":center_no", slot_minorplanet_land_quality),
             (val_mul, ":land_quality", 3),
             (val_add, ":ideal", ":land_quality"),
-            (party_get_slot, ":num_cattle", ":center_no", slot_village_number_of_cattle),
+            (party_get_slot, ":num_cattle", ":center_no", slot_minorplanet_number_of_cattle),
             (val_div, ":num_cattle", 20),
             (val_add, ":ideal", ":num_cattle"),
           (else_try),
             (try_for_range, ":village_no", villages_begin, villages_end),
-              (party_slot_eq, ":village_no", slot_village_bound_center, ":center_no"),
-              (party_get_slot, ":prosperity", ":village_no", slot_town_prosperity),
+              (party_slot_eq, ":village_no", slot_minorplanet_bound_center, ":center_no"),
+              (party_get_slot, ":prosperity", ":village_no", slot_mainplanet_prosperity),
               (val_div, ":prosperity", 20),
               (val_add, ":ideal", ":prosperity"),
             (try_end),
@@ -19269,7 +19270,7 @@ scripts = [
           (try_for_range, ":village_no", villages_begin, villages_end),
             (store_faction_of_party, ":village_faction", ":village_no"),
             (eq, ":village_faction", ":faction_no"),
-            (party_get_slot, ":prosperity", ":village_no", slot_town_prosperity),
+            (party_get_slot, ":prosperity", ":village_no", slot_mainplanet_prosperity),
             (lt, ":prosperity", ":min_prosperity"),
             (assign, ":min_prosperity", ":prosperity"),
             (assign, ":min_prosperity_village", ":village_no"),
@@ -19313,7 +19314,7 @@ scripts = [
           (troop_set_slot, "trp_npc2", slot_troop_personalityclash_object, "trp_npc5"), #marnid - beheshtur
           (troop_set_slot, "trp_npc2", slot_troop_personalityclash2_object, "trp_npc9"), #marnid - alayen
           (troop_set_slot, "trp_npc2", slot_troop_personalitymatch_object, "trp_npc1"),  #marnid - borcha
-          (troop_set_slot, "trp_npc2", slot_troop_home, "p_town_1"), #Sargoth
+          (troop_set_slot, "trp_npc2", slot_troop_home, "p_mandalore"), #Sargoth
           (troop_set_slot, "trp_npc2", slot_troop_payment_request, 0),
           
           #
@@ -19324,7 +19325,7 @@ scripts = [
           (troop_set_slot, "trp_npc3", slot_troop_personalityclash_object, "trp_npc14"), #Ymira - artimenner
           (troop_set_slot, "trp_npc3", slot_troop_personalityclash2_object, "trp_npc8"), #Ymira - matheld
           (troop_set_slot, "trp_npc3", slot_troop_personalitymatch_object, "trp_npc9"), #Ymira - alayen
-          (troop_set_slot, "trp_npc3", slot_troop_home, "p_town_3"), #Veluca
+          (troop_set_slot, "trp_npc3", slot_troop_home, "p_endor"), #Veluca
           (troop_set_slot, "trp_npc3", slot_troop_payment_request, 0),
           
           (troop_set_slot, "trp_npc4", slot_troop_morality_type, tmt_aristocratic), #Rolf
@@ -19344,7 +19345,7 @@ scripts = [
           (troop_set_slot, "trp_npc5", slot_troop_personalityclash_object, "trp_npc2"),  #beheshtur - marnid
           (troop_set_slot, "trp_npc5", slot_troop_personalityclash2_object, "trp_npc11"),  #beheshtur- katrin
           (troop_set_slot, "trp_npc5", slot_troop_personalitymatch_object, "trp_npc4"),  #beheshtur - rolf
-          (troop_set_slot, "trp_npc5", slot_troop_home, "p_town_14"), #Halmar
+          (troop_set_slot, "trp_npc5", slot_troop_home, "p_tatooine"), #Halmar
           (troop_set_slot, "trp_npc5", slot_troop_payment_request, 400),
           
           (troop_set_slot, "trp_npc6", slot_troop_morality_type, tmt_humanitarian), #firenz
@@ -19354,7 +19355,7 @@ scripts = [
           (troop_set_slot, "trp_npc6", slot_troop_personalityclash_object, "trp_npc11"), #firenz
           (troop_set_slot, "trp_npc6", slot_troop_personalityclash2_object, "trp_npc13"), #firenz - nizar
           (troop_set_slot, "trp_npc6", slot_troop_personalitymatch_object, "trp_npc12"),  #firenz - jeremus
-          (troop_set_slot, "trp_npc6", slot_troop_home, "p_town_4"), #Suno
+          (troop_set_slot, "trp_npc6", slot_troop_home, "p_corellia"), #Suno
           (troop_set_slot, "trp_npc6", slot_troop_payment_request, 0),
           
           (troop_set_slot, "trp_npc7", slot_troop_morality_type, tmt_egalitarian),  #deshavi
@@ -19384,7 +19385,7 @@ scripts = [
           (troop_set_slot, "trp_npc9", slot_troop_personalityclash_object, "trp_npc13"), #alayen
           (troop_set_slot, "trp_npc9", slot_troop_personalityclash2_object, "trp_npc2"), #alayen - marnid
           (troop_set_slot, "trp_npc9", slot_troop_personalitymatch_object, "trp_npc3"),  #alayen - ymira
-          (troop_set_slot, "trp_npc9", slot_troop_home, "p_town_13"), #Rivacheg
+          (troop_set_slot, "trp_npc9", slot_troop_home, "p_yavin_iv"), #Rivacheg
           (troop_set_slot, "trp_npc9", slot_troop_payment_request, 300),
           
           (troop_set_slot, "trp_npc10", slot_troop_morality_type, tmt_humanitarian), #bunduk
@@ -19404,7 +19405,7 @@ scripts = [
           (troop_set_slot, "trp_npc11", slot_troop_personalityclash_object, "trp_npc6"),  #katrin
           (troop_set_slot, "trp_npc11", slot_troop_personalityclash2_object, "trp_npc5"),  #katrin - beheshtur
           (troop_set_slot, "trp_npc11", slot_troop_personalitymatch_object, "trp_npc10"),  #bunduk - katrin
-          (troop_set_slot, "trp_npc11", slot_troop_home, "p_town_6"), #Praven
+          (troop_set_slot, "trp_npc11", slot_troop_home, "p_kessel"), #Praven
           (troop_set_slot, "trp_npc11", slot_troop_payment_request, 100),
           
           (troop_set_slot, "trp_npc12", slot_troop_morality_type, tmt_humanitarian), #jerem
@@ -19465,7 +19466,7 @@ scripts = [
           (troop_set_slot, "trp_npc17", slot_troop_personalityclash_object, "trp_npc11"), #firenz
           (troop_set_slot, "trp_npc17", slot_troop_personalityclash2_object, "trp_npc13"), #firenz - nizar
           (troop_set_slot, "trp_npc17", slot_troop_personalitymatch_object, "trp_npc12"),  #firenz - jeremus
-          (troop_set_slot, "trp_npc17", slot_troop_home, "p_town_4"), #Suno
+          (troop_set_slot, "trp_npc17", slot_troop_home, "p_corellia"), #Suno
           (troop_set_slot, "trp_npc17", slot_troop_payment_request, 0),
           
           #SW - new Droid NPC's
@@ -19476,7 +19477,7 @@ scripts = [
           (troop_set_slot, "trp_npc18", slot_troop_personalityclash_object, "trp_npc11"), #firenz
           (troop_set_slot, "trp_npc18", slot_troop_personalityclash2_object, "trp_npc13"), #firenz - nizar
           (troop_set_slot, "trp_npc18", slot_troop_personalitymatch_object, "trp_npc12"),  #firenz - jeremus
-          (troop_set_slot, "trp_npc18", slot_troop_home, "p_town_4"), #Suno
+          (troop_set_slot, "trp_npc18", slot_troop_home, "p_corellia"), #Suno
           (troop_set_slot, "trp_npc18", slot_troop_payment_request, 0),
           
           #SW - new Droid NPC's ?  do I need to change this?
@@ -19521,11 +19522,11 @@ scripts = [
           # (troop_set_slot, "trp_kingdom_4_pretender",  slot_troop_original_faction, "fac_kingdom_4"),
           # (troop_set_slot, "trp_kingdom_5_pretender",  slot_troop_original_faction, "fac_kingdom_5"),
           
-          # (troop_set_slot, "trp_kingdom_1_pretender", slot_troop_support_base,     "p_town_4"), #suno
-          # (troop_set_slot, "trp_kingdom_2_pretender", slot_troop_support_base,     "p_town_11"), #curaw
-          # (troop_set_slot, "trp_kingdom_3_pretender", slot_troop_support_base,     "p_town_18"), #town_18
-          # (troop_set_slot, "trp_kingdom_4_pretender", slot_troop_support_base,     "p_town_12"), #wercheg
-          # (troop_set_slot, "trp_kingdom_5_pretender", slot_troop_support_base,     "p_town_3"), #veluca
+          # (troop_set_slot, "trp_kingdom_1_pretender", slot_troop_support_base,     "p_corellia"), #suno
+          # (troop_set_slot, "trp_kingdom_2_pretender", slot_troop_support_base,     "p_hoth"), #curaw
+          # (troop_set_slot, "trp_kingdom_3_pretender", slot_troop_support_base,     "p_nalhutta"), #town_18
+          # (troop_set_slot, "trp_kingdom_4_pretender", slot_troop_support_base,     "p_gamorr"), #wercheg
+          # (troop_set_slot, "trp_kingdom_5_pretender", slot_troop_support_base,     "p_endor"), #veluca
           (try_for_range, ":pretender", pretenders_begin, pretenders_end),
             (troop_set_slot, ":pretender", slot_lord_reputation_type, lrep_none),
           (try_end),
@@ -19884,7 +19885,7 @@ scripts = [
           
           (assign, ":num_center_points", 0),
           (try_for_range, ":cur_center", centers_begin, centers_end),
-            (party_slot_eq, ":cur_center", slot_town_lord, ":troop_no"),
+            (party_slot_eq, ":cur_center", slot_mainplanet_lord, ":troop_no"),
             (try_begin),
               (party_slot_eq, ":cur_center", slot_party_type, spt_town),
               (val_add, ":num_center_points", 4),
@@ -20142,7 +20143,7 @@ scripts = [
             (assign, reg0, 0),
             (try_begin),
               (this_or_next|eq, ":party_no", "p_main_party"),
-              (party_slot_eq, ":party_no", slot_town_lord, "trp_player"),
+              (party_slot_eq, ":party_no", slot_mainplanet_lord, "trp_player"),
               (assign, reg0, 1),
             (try_end),
             (store_troop_faction, ":troop_faction", ":stack_troop"),
@@ -20290,9 +20291,9 @@ scripts = [
         [
           (call_script, "script_get_num_tournament_participants"),
           (assign, ":num_participants", reg0),
-          (party_get_slot, ":town_max_teams", "$current_town", slot_town_tournament_max_teams),
+          (party_get_slot, ":town_max_teams", "$current_town", slot_mainplanet_tournament_max_teams),
           (val_add, ":town_max_teams", 1),
-          (party_get_slot, ":town_max_team_size", "$current_town", slot_town_tournament_max_team_size),
+          (party_get_slot, ":town_max_team_size", "$current_town", slot_mainplanet_tournament_max_team_size),
           (val_add, ":town_max_team_size", 1),
           (assign, ":max_teams", ":num_participants"),
           (val_min, ":max_teams", ":town_max_teams"),
@@ -20480,7 +20481,7 @@ scripts = [
       # Output: reg0 = win_amount_with_100_denars
       ("get_win_amount_for_tournament_bet",
         [
-          (party_get_slot, ":player_odds", "$current_town", slot_town_player_odds),
+          (party_get_slot, ":player_odds", "$current_town", slot_mainplanet_player_odds),
           (try_begin),
             (eq, "$g_tournament_cur_tier", 0),
             (assign, ":win_amount", 120),
@@ -20535,7 +20536,7 @@ scripts = [
           (store_add, ":num_men_effect", reg0, 10),
           (val_div, ":num_men_effect", 10),
           (val_add, ":can_steal", ":num_men_effect"),
-          (party_get_slot, ":num_cattle", ":village_no", slot_village_number_of_cattle),
+          (party_get_slot, ":num_cattle", ":village_no", slot_minorplanet_number_of_cattle),
           (val_min, ":can_steal", ":num_cattle"),
           (assign, reg0, ":can_steal"),
       ]),
@@ -21174,9 +21175,9 @@ scripts = [
             (val_sub, ":cur_req", ":num_added"),
             (try_begin),
               (party_slot_eq, ":party_no", slot_party_type, spt_village),
-              (party_get_slot, ":village_cattle_amount", ":party_no", slot_village_number_of_cattle),
+              (party_get_slot, ":village_cattle_amount", ":party_no", slot_minorplanet_number_of_cattle),
               (val_add, ":village_cattle_amount", ":num_added"),
-              (party_set_slot, ":party_no", slot_village_number_of_cattle, ":village_cattle_amount"),
+              (party_set_slot, ":party_no", slot_minorplanet_number_of_cattle, ":village_cattle_amount"),
             (try_end),
             (assign, reg3, ":num_added"),
             (str_store_party_name_link, s1, ":party_no"),
@@ -21209,7 +21210,7 @@ scripts = [
                 (store_sub, ":range", towns_end, towns_begin),
                 (store_mod, ":random_center", ":rumor_id", ":range"),
                 (val_add, ":random_center", towns_begin),
-                (party_slot_ge, ":random_center", slot_town_has_tournament, 1),
+                (party_slot_ge, ":random_center", slot_mainplanet_has_tournament, 1),
                 (neq, ":random_center", "$current_town"),
                 (str_store_party_name, s62, ":random_center"),
                 (str_store_string, s61, "@I heard that there will be a tournament in {s62} soon."),
@@ -21234,7 +21235,7 @@ scripts = [
                 (store_sub, ":range", trade_goods_end, trade_goods_begin),
                 (store_add, ":random_trade_good", ":rumor_id", ":cur_day"),
                 (store_mod, ":random_trade_good", ":random_trade_good", ":range"),
-                (store_add, ":random_trade_good_slot", ":random_trade_good", slot_town_trade_good_prices_begin),
+                (store_add, ":random_trade_good_slot", ":random_trade_good", slot_mainplanet_trade_good_prices_begin),
                 (val_add, ":random_trade_good", trade_goods_begin),
                 (store_mul, ":min_price", average_price_factor, 3),
                 (val_div, ":min_price", 4),
@@ -21262,7 +21263,7 @@ scripts = [
                 (store_sub, ":range", trade_goods_end, trade_goods_begin),
                 (store_add, ":random_trade_good", ":rumor_id", ":cur_day"),
                 (store_mod, ":random_trade_good", ":random_trade_good", ":range"),
-                (store_add, ":random_trade_good_slot", ":random_trade_good", slot_town_trade_good_prices_begin),
+                (store_add, ":random_trade_good_slot", ":random_trade_good", slot_mainplanet_trade_good_prices_begin),
                 (val_add, ":random_trade_good", trade_goods_begin),
                 (store_mul, ":max_price", average_price_factor, 5),
                 (val_div, ":max_price", 4),
@@ -21318,7 +21319,7 @@ scripts = [
           (assign, ":troop_object_faction", -1),
           (try_begin),
             (gt, ":center_object", 0),
-            (party_get_slot, ":center_object_lord", ":center_object", slot_town_lord),
+            (party_get_slot, ":center_object_lord", ":center_object", slot_mainplanet_lord),
             (store_faction_of_party, ":center_object_faction", ":center_object"),
           (try_end),
           (try_begin),
@@ -22719,8 +22720,8 @@ scripts = [
                         (this_or_next|eq, ":faction_no", "fac_outlaws"),
                         (this_or_next|eq, ":faction_no", "fac_peasant_rebels"),
                         (this_or_next|eq, ":faction_no", "fac_deserters"),
-                        (this_or_next|eq, ":faction_no", "fac_mountain_bandits"),
-                        (eq, ":faction_no", "fac_forest_bandits"),
+                        (this_or_next|eq, ":faction_no", "fac_black_sun_pirates"),
+                        (eq, ":faction_no", "fac_blazing_claw_pirates"),
                         (assign, ":result", mtf_culture_6),
                       (else_try),
                         (assign, ":result", 0), #no culture, including player with no bindings to another kingdom
@@ -24889,7 +24890,7 @@ scripts = [
                         # news_center_prosperity_changed = 9
                         # ":entity" is the center number
                         (eq, ":news_type", news_center_prosperity_changed),
-                        (party_get_slot, ":center_lord", ":entity", slot_town_lord),
+                        (party_get_slot, ":center_lord", ":entity", slot_mainplanet_lord),
                         (try_begin),
                           (eq, ":center_lord", "trp_player"),
                           (assign, ":color", color_good_news),
@@ -25869,7 +25870,7 @@ scripts = [
                       (assign, "$last_training_fight_town", "$current_town"),
                       (store_current_hours,"$training_fight_time"),
                       (assign, "$g_mt_mode", abm_training),
-                      (party_get_slot, ":scene","$current_town",slot_town_arena),
+                      (party_get_slot, ":scene","$current_town",slot_mainplanet_arena),
                       (modify_visitors_at_site,":scene"),
                       (reset_visitors),
                       (store_random_in_range, "$g_player_entry_point", 32, 40),
@@ -26208,61 +26209,61 @@ scripts = [
                       (try_begin), # same mnu_town is used for towns and castles
                         (party_slot_eq,":c_town",slot_party_type, spt_town),
                         (try_begin),
-                          (eq, ":c_town", "p_town_3"),				#Endor
-                          (set_background_mesh, "mesh_pic_fullscreen_town_endor"),
+                          (eq, ":c_town", "p_endor"),				#Endor
+                          (set_background_mesh, "mesh_pic_fullscreen_mainplanet_endor"),
                         (else_try),
-                          (eq, ":c_town", "p_town_8"),				#Geonosis
-                          (set_background_mesh, "mesh_pic_fullscreen_town_tatooine"),
+                          (eq, ":c_town", "p_geonosis"),				#Geonosis
+                          (set_background_mesh, "mesh_pic_fullscreen_mainplanet_tatooine"),
                         (else_try),
-                          (eq, ":c_town", "p_town_9"),				#Mon Cal
-                          (set_background_mesh, "mesh_pic_fullscreen_town_1"),
+                          (eq, ":c_town", "p_mon_cal"),				#Mon Cal
+                          (set_background_mesh, "mesh_pic_fullscreen_mainplanet_1"),
                         (else_try),
-                          (eq, ":c_town", "p_town_10"),				#Kashyyk
-                          (set_background_mesh, "mesh_pic_fullscreen_town_kashyyk"),
+                          (eq, ":c_town", "p_kashyyyk"),				#Kashyyk
+                          (set_background_mesh, "mesh_pic_fullscreen_mainplanet_kashyyk"),
                         (else_try),
-                          (eq, ":c_town", "p_town_11"),				#Hoth
-                          (set_background_mesh, "mesh_pic_fullscreen_town_hoth"),
+                          (eq, ":c_town", "p_hoth"),				#Hoth
+                          (set_background_mesh, "mesh_pic_fullscreen_mainplanet_hoth"),
                         (else_try),
-                          (eq, ":c_town", "p_town_12"),				#Gamorr
-                          (set_background_mesh, "mesh_pic_fullscreen_town_gamorr"),
+                          (eq, ":c_town", "p_gamorr"),				#Gamorr
+                          (set_background_mesh, "mesh_pic_fullscreen_mainplanet_gamorr"),
                         (else_try),
-                          (eq, ":c_town", "p_town_13"),				#Yavin 4
-                          (set_background_mesh, "mesh_pic_fullscreen_town_endor"),
+                          (eq, ":c_town", "p_yavin_iv"),				#Yavin 4
+                          (set_background_mesh, "mesh_pic_fullscreen_mainplanet_endor"),
                         (else_try),
-                          (eq, ":c_town", "p_town_14"),				#Tatooine
-                          (set_background_mesh, "mesh_pic_fullscreen_town_tatooine"),
+                          (eq, ":c_town", "p_tatooine"),				#Tatooine
+                          (set_background_mesh, "mesh_pic_fullscreen_mainplanet_tatooine"),
                         (else_try),
-                          (eq, ":c_town", "p_town_17"),				#Ryloth
-                          (set_background_mesh, "mesh_pic_fullscreen_town_tatooine"),
+                          (eq, ":c_town", "p_ryloth"),				#Ryloth
+                          (set_background_mesh, "mesh_pic_fullscreen_mainplanet_tatooine"),
                         (else_try),
-                          (eq, ":c_town", "p_town_21"),				#Kamino
-                          (set_background_mesh, "mesh_pic_fullscreen_town_kamino"),
+                          (eq, ":c_town", "p_kamino"),				#Kamino
+                          (set_background_mesh, "mesh_pic_fullscreen_mainplanet_kamino"),
                         (else_try),
-                          (eq, ":c_town", "p_town_27"),				#Bespin
-                          (set_background_mesh, "mesh_pic_fullscreen_castle"),
+                          (eq, ":c_town", "p_bespin"),				#Bespin
+                          (set_background_mesh, "mesh_pic_fullscreen_mainplanet_bespin"),
                         (else_try),
                           (store_random_in_range, ":rand", 0, 100),
                           (try_begin),
                             (lt, ":rand", 33),
-                            (set_background_mesh, "mesh_pic_fullscreen_town_1"),
+                            (set_background_mesh, "mesh_pic_fullscreen_mainplanet_1"),
                           (else_try),
                             (lt, ":rand", 66),
-                            (set_background_mesh, "mesh_pic_fullscreen_town_2"),
+                            (set_background_mesh, "mesh_pic_fullscreen_mainplanet_2"),
                           (else_try),
-                            (set_background_mesh, "mesh_pic_fullscreen_town_3"),
+                            (set_background_mesh, "mesh_pic_fullscreen_mainplanet_3"),
                           (try_end),
                         (try_end),
                       (else_try),
                         (party_slot_eq,":c_town",slot_party_type, spt_castle),
-                        (set_background_mesh, "mesh_pic_fullscreen_castle"),
+                        (set_background_mesh, "mesh_pic_fullscreen_spacestation"),
                       (else_try),
                         (party_slot_eq,":c_town",slot_party_type, spt_village),
                         (store_random_in_range, ":rand", 0, 100),
                         (try_begin),
                           (lt, ":rand", 50),
-                          (set_background_mesh, "mesh_pic_fullscreen_village_1"),
+                          (set_background_mesh, "mesh_pic_fullscreen_minorplanet_1"),
                         (else_try),
-                          (set_background_mesh, "mesh_pic_fullscreen_village_2"),
+                          (set_background_mesh, "mesh_pic_fullscreen_minorplanet_2"),
                         (try_end),
                       (else_try),
                         (set_background_mesh, "mesh_pic_fullscreen_default"),
@@ -26279,31 +26280,31 @@ scripts = [
                       (try_begin), # same mnu_town is used for towns and castles
                         (party_slot_eq,":c_town",slot_party_type, spt_town),
                         (try_begin),
-                          (eq, ":c_town", "p_town_9"),				#Mon Cal
+                          (eq, ":c_town", "p_mon_cal"),				#Mon Cal
                           (store_random_in_range, ":random", 50, 100),
                           (set_rain,1,":random"),
                         (else_try),
-                          (eq, ":c_town", "p_town_11"),				#Hoth
+                          (eq, ":c_town", "p_hoth"),				#Hoth
                           (store_random_in_range, ":random", 60, 100),
                           (set_rain,2,":random"),
                         (else_try),
-                          (eq, ":c_town", "p_town_21"),				#Kamino
+                          (eq, ":c_town", "p_kamino"),				#Kamino
                           (store_random_in_range, ":random", 79, 100),
                           (set_rain,1,100),
-                          (set_fog_distance, 55, 0xFFcccccc),
+                          (set_fog_distance, 20, 0xFFFFFFFF),
                         (else_try),
                           (eq, ":c_town", "p_village_62"),				#vjun
                           (store_random_in_range, ":random", 79, 100),
                           (set_rain,1,100),
-                          (set_fog_distance, 55, 0xFFcccccc),
+                          (set_fog_distance, 40, 0xFFFFFFFF),
                         (else_try),
-                          (this_or_next|eq, ":c_town", "p_town_8"),				#Geonosis / without atmosferic effects
-                          (this_or_next|eq, ":c_town", "p_town_6"),				#Kessel   / without atmosferic effects
-                          (this_or_next|eq, ":c_town", "p_town_14"),				#Tatooine / without atmosferic effects
-                          (this_or_next|eq, ":c_town", "p_town_17"),				#Ryloth   / without atmosferic effects
-                          (this_or_next|eq, ":c_town", "p_town_20"),				#Mustafar / without atmosferic effects
-                          (this_or_next|eq, ":c_town", "p_town_24"),				#Sarapin  / without atmosferic effects
-                          (eq, ":c_town", "p_town_25"),			            	#Hypori   / without atmosferic effects
+                          (this_or_next|eq, ":c_town", "p_geonosis"),			#Geonosis / without atmosferic effects
+                          (this_or_next|eq, ":c_town", "p_kessel"),				#Kessel   / without atmosferic effects
+                          (this_or_next|eq, ":c_town", "p_tatooine"),			#Tatooine / without atmosferic effects
+                          (this_or_next|eq, ":c_town", "p_ryloth"),				#Ryloth   / without atmosferic effects
+                          (this_or_next|eq, ":c_town", "p_mustafar"),			#Mustafar / without atmosferic effects
+                          (this_or_next|eq, ":c_town", "p_sarapin"),			#Sarapin  / without atmosferic effects
+                          (eq, ":c_town", "p_hypori"),			            	#Hypori   / without atmosferic effects
                           (set_rain,0,0),
                         (try_end),
                       (try_end),
@@ -26334,27 +26335,27 @@ scripts = [
                           #modified town_walkers so certain planets only have certain walkers - example code originally posted by Keedo420
                           # NOTE - any changes to this script must be updated in both the center_set_walker_to_type and fix_town_walker scripts
                           (try_begin),
-                            (eq, ":center_no", "p_town_8"), #condition to set town specific walkers instead of regular walkers in town
+                            (eq, ":center_no", "p_geonosis"), #condition to set town specific walkers instead of regular walkers in town
                             (assign, ":town_walkers_modified_begin",town8_walkers_begin),
                             (assign, ":town_walkers_modified_end",town8_walkers_end),
                           (else_try),
-                            (eq, ":center_no", "p_town_9"), #condition to set town specific walkers instead of regular walkers in town
+                            (eq, ":center_no", "p_mon_cal"), #condition to set town specific walkers instead of regular walkers in town
                             (assign, ":town_walkers_modified_begin",town9_walkers_begin),
                             (assign, ":town_walkers_modified_end",town9_walkers_end),
                           (else_try),
-                            (eq, ":center_no", "p_town_10"), #condition to set town specific walkers instead of regular walkers in town
+                            (eq, ":center_no", "p_kashyyyk"), #condition to set town specific walkers instead of regular walkers in town
                             (assign, ":town_walkers_modified_begin",town10_walkers_begin),
                             (assign, ":town_walkers_modified_end",town10_walkers_end),
                           (else_try),
-                            (eq, ":center_no", "p_town_12"), #condition to set town specific walkers instead of regular walkers in town
+                            (eq, ":center_no", "p_gamorr"), #condition to set town specific walkers instead of regular walkers in town
                             (assign, ":town_walkers_modified_begin",town12_walkers_begin),
                             (assign, ":town_walkers_modified_end",town12_walkers_end),
                           (else_try),
-                            (eq, ":center_no", "p_town_14"), #condition to set town specific walkers instead of regular walkers in town
+                            (eq, ":center_no", "p_tatooine"), #condition to set town specific walkers instead of regular walkers in town
                             (assign, ":town_walkers_modified_begin",town14_walkers_begin),
                             (assign, ":town_walkers_modified_end",town14_walkers_end),
                           (else_try),
-                            (eq, ":center_no", "p_town_17"), #condition to set town specific walkers instead of regular walkers in town
+                            (eq, ":center_no", "p_ryloth"), #condition to set town specific walkers instead of regular walkers in town
                             (assign, ":town_walkers_modified_begin",town17_walkers_begin),
                             (assign, ":town_walkers_modified_end",town17_walkers_end),
                           (else_try),
@@ -26779,30 +26780,30 @@ scripts = [
                       (try_end),
                       
                       #empire
-                      (call_script, "script_init_patrol_settings", "p_town_16", 3), #coruscant
-                      (call_script, "script_init_patrol_settings", "p_town_8", 2), #Geonosis
-                      (call_script, "script_init_patrol_settings", "p_town_4", 3), #corellia
-                      (call_script, "script_init_patrol_settings", "p_town_15", 1), #reecee
-                      (call_script, "script_init_patrol_settings", "p_town_2", 1), #byss
-                      (call_script, "script_init_patrol_settings", "p_town_1", 2), #mandalore
-                      (call_script, "script_init_patrol_settings", "p_town_6", 1), #kessel
-                      (call_script, "script_init_patrol_settings", "p_town_3", 3), #Endor
-                      (call_script, "script_init_patrol_settings", "p_town_20", 1), #Mustafar
-                      (call_script, "script_init_patrol_settings", "p_town_21", 1), #Kamino
-                      (call_script, "script_init_patrol_settings", "p_town_22", 1), #Taris
+                      (call_script, "script_init_patrol_settings", "p_coruscant", 3), #coruscant
+                      (call_script, "script_init_patrol_settings", "p_geonosis", 2), #Geonosis
+                      (call_script, "script_init_patrol_settings", "p_corellia", 3), #corellia
+                      (call_script, "script_init_patrol_settings", "p_reecee", 1), #reecee
+                      (call_script, "script_init_patrol_settings", "p_byss", 1), #byss
+                      (call_script, "script_init_patrol_settings", "p_mandalore", 2), #mandalore
+                      (call_script, "script_init_patrol_settings", "p_kessel", 1), #kessel
+                      (call_script, "script_init_patrol_settings", "p_endor", 3), #Endor
+                      (call_script, "script_init_patrol_settings", "p_mustafar", 1), #Mustafar
+                      (call_script, "script_init_patrol_settings", "p_kamino", 1), #Kamino
+                      (call_script, "script_init_patrol_settings", "p_taris", 1), #Taris
                       #rebels
-                      (call_script, "script_init_patrol_settings", "p_town_7", 2), #dantooine
-                      (call_script, "script_init_patrol_settings", "p_town_10", 2), #kashyyyk
-                      (call_script, "script_init_patrol_settings", "p_town_9", 1),  #Mon Cal
-                      (call_script, "script_init_patrol_settings", "p_town_11", 3), #hoth
-                      (call_script, "script_init_patrol_settings", "p_town_5", 3), #yavin IV
-                      (call_script, "script_init_patrol_settings", "p_town_19", 1), #Bothawui
+                      (call_script, "script_init_patrol_settings", "p_dantooine", 2), #dantooine
+                      (call_script, "script_init_patrol_settings", "p_kashyyyk", 2), #kashyyyk
+                      (call_script, "script_init_patrol_settings", "p_mon_cal", 1),  #Mon Cal
+                      (call_script, "script_init_patrol_settings", "p_hoth", 3), #hoth
+                      (call_script, "script_init_patrol_settings", "p_naboo", 3), #yavin IV
+                      (call_script, "script_init_patrol_settings", "p_bothawui", 1), #Bothawui
                       
                       #hutt
-                      (call_script, "script_init_patrol_settings", "p_town_18", 2), #nal hutta
-                      (call_script, "script_init_patrol_settings", "p_town_17", 1), #Ryloth
-                      (call_script, "script_init_patrol_settings", "p_town_14", 3), #Tatooine
-                      (call_script, "script_init_patrol_settings", "p_town_12", 2), #Gamorr
+                      (call_script, "script_init_patrol_settings", "p_nalhutta", 2), #nal hutta
+                      (call_script, "script_init_patrol_settings", "p_ryloth", 1), #Ryloth
+                      (call_script, "script_init_patrol_settings", "p_tatooine", 3), #Tatooine
+                      (call_script, "script_init_patrol_settings", "p_gamorr", 2), #Gamorr
                   ]),
                   
                   #setting the patrol faction troops for each faction.
@@ -28435,11 +28436,11 @@ scripts = [
                           (eq, ":choice", 0),	#town/castle/village
                           #set the enemy_troop depending on the location
                           (try_begin),
-                            (eq, "$current_town", "p_town_10"),		#Kashyyyk
-                            (assign,"$g_enemy_troop","trp_manhunter"),
+                            (eq, "$current_town", "p_kashyyyk"),		#Kashyyyk
+                            (assign,"$g_enemy_troop","trp_bountyhunter"),
                             (store_random_in_range, ":enemy_troop_count", 10, 20),
                           (else_try),
-                            (eq, "$current_town", "p_town_14"),		#Tatooine
+                            (eq, "$current_town", "p_tatooine"),		#Tatooine
                             (assign,"$g_enemy_troop","trp_tusken_1"),
                             (store_random_in_range, ":enemy_troop_count", 15, 30),
                           (else_try),
@@ -28695,11 +28696,10 @@ scripts = [
                     ("setup_spaceship_slots",
                       [
                         
-                        #assign slots for spaceships
                         #--------------------------------- EMPIRE ------------------------------------------------------------------------------------------------------------------------
                         #tie_fighter
                         (party_set_slot, "p_spaceship_tie_fighter", slot_spaceship_name, "str_spaceship_tie_fighter_name"),
-                        (party_set_slot, "p_spaceship_tie_fighter", slot_spaceship_price, 4000),
+                        (party_set_slot, "p_spaceship_tie_fighter", slot_spaceship_price, 17000),
                         (party_set_slot, "p_spaceship_tie_fighter", slot_spaceship_desc, "str_spaceship_tie_fighter_desc"),
                         (party_set_slot, "p_spaceship_tie_fighter", slot_spaceship_icon, "icon_tie_fighter"),
                         (party_set_slot, "p_spaceship_tie_fighter", slot_spaceship_base_speed, 85),
@@ -28721,7 +28721,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_tie_fighter", slot_spaceship_cargo_capacity_max, 0),
                         #imperial shuttle
                         (party_set_slot, "p_spaceship_imperial_shuttle", slot_spaceship_name, "str_spaceship_imperial_shuttle_name"),
-                        (party_set_slot, "p_spaceship_imperial_shuttle", slot_spaceship_price, 15000),
+                        (party_set_slot, "p_spaceship_imperial_shuttle", slot_spaceship_price, 30000),
                         (party_set_slot, "p_spaceship_imperial_shuttle", slot_spaceship_desc, "str_spaceship_imperial_shuttle_desc"),
                         (party_set_slot, "p_spaceship_imperial_shuttle", slot_spaceship_icon, "icon_imperial_shuttle"),
                         (party_set_slot, "p_spaceship_imperial_shuttle", slot_spaceship_base_speed, 81),
@@ -28743,7 +28743,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_imperial_shuttle", slot_spaceship_cargo_capacity_max, 0),
                         #imperial trade frigate
                         (party_set_slot, "p_spaceship_imperial_trade_frigate", slot_spaceship_name, "str_spaceship_imperial_trade_frigate_name"),
-                        (party_set_slot, "p_spaceship_imperial_trade_frigate", slot_spaceship_price, 12000),
+                        (party_set_slot, "p_spaceship_imperial_trade_frigate", slot_spaceship_price, 48000),
                         (party_set_slot, "p_spaceship_imperial_trade_frigate", slot_spaceship_desc, "str_spaceship_imperial_trade_frigate_desc"),
                         (party_set_slot, "p_spaceship_imperial_trade_frigate", slot_spaceship_icon, "icon_imperial_trade_frigate"),
                         (party_set_slot, "p_spaceship_imperial_trade_frigate", slot_spaceship_base_speed, 70),
@@ -28765,7 +28765,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_imperial_trade_frigate", slot_spaceship_cargo_capacity_max, 5),
                         #imperial_dreadnaught_frigate
                         (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_name, "str_spaceship_imperial_dreadnaught_frigate_name"),
-                        (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_price, 20000),
+                        (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_price, 60000),
                         (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_desc, "str_spaceship_imperial_dreadnaught_frigate_desc"),
                         (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_icon, "icon_imperial_dreadnaught_frigate"),
                         (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_base_speed, 60),
@@ -28774,11 +28774,11 @@ scripts = [
                         (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_scanner_min, 1),
                         (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_scanner_max, 2),
                         (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_combat_computer_min, 1),
-                        (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_combat_computer_max, 2),
+                        (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_combat_computer_max, 3),
                         (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_troop_capacity_min, 1),
-                        (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_troop_capacity_max, 2),
+                        (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_troop_capacity_max, 3),
                         (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_medical_bay_min, 0),
-                        (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_medical_bay_max, 0),
+                        (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_medical_bay_max, 1),
                         (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_prisoner_capacity_min, 1),
                         (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_prisoner_capacity_max, 2),
                         (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_trade_computer_min, 0),
@@ -28787,7 +28787,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_imperial_dreadnaught_frigate", slot_spaceship_cargo_capacity_max, 3),
                         #imperial victory-II frigate
                         (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_name, "str_spaceship_imperial_victory_c2_frigate_name"),
-                        (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_price, 30000),
+                        (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_price, 90000),
                         (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_desc, "str_spaceship_imperial_victory_c2_frigate_desc"),
                         (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_icon, "icon_imperial_victory_c2_frigate"),
                         (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_base_speed, 60),
@@ -28800,7 +28800,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_troop_capacity_min, 1),
                         (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_troop_capacity_max, 3),
                         (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_medical_bay_min, 0),
-                        (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_medical_bay_max, 0),
+                        (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_medical_bay_max, 1),
                         (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_prisoner_capacity_min, 1),
                         (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_prisoner_capacity_max, 3),
                         (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_trade_computer_min, 0),
@@ -28809,7 +28809,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_imperial_victory_c2_frigate", slot_spaceship_cargo_capacity_max, 4),
                         #imperial star destroyer
                         (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_name, "str_spaceship_imperial_star_destroyer_name"),
-                        (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_price, 45000),
+                        (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_price, 170000),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_desc, "str_spaceship_imperial_star_destroyer_desc"),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_icon, "icon_imperial_star_destroyer"),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_base_speed, 63),
@@ -28820,18 +28820,18 @@ scripts = [
                         (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_combat_computer_min, 2),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_combat_computer_max, 4),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_troop_capacity_min, 2),
-                        (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_troop_capacity_max, 6),
+                        (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_troop_capacity_max, 5),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_medical_bay_min, 1),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_medical_bay_max, 2),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_prisoner_capacity_min, 2),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_prisoner_capacity_max, 4),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_trade_computer_min, 0),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_trade_computer_max, 0),
-                        (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_cargo_capacity_min, 0),
-                        (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_cargo_capacity_max, 0),
+                        (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_cargo_capacity_min, 2),
+                        (party_set_slot, "p_spaceship_imperial_star_destroyer", slot_spaceship_cargo_capacity_max, 5),
                         #imperial star destroyer interdictor
                         (party_set_slot, "p_spaceship_imperial_star_destroyer_interdictor", slot_spaceship_name, "str_spaceship_imperial_star_destroyer_interdictor_name"),
-                        (party_set_slot, "p_spaceship_imperial_star_destroyer_interdictor", slot_spaceship_price, 50000),
+                        (party_set_slot, "p_spaceship_imperial_star_destroyer_interdictor", slot_spaceship_price, 150000),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer_interdictor", slot_spaceship_desc, "str_spaceship_imperial_star_destroyer_interdictor_desc"),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer_interdictor", slot_spaceship_icon, "icon_imperial_star_destroyer_interdictor"),
                         (party_set_slot, "p_spaceship_imperial_star_destroyer_interdictor", slot_spaceship_base_speed, 65),
@@ -28854,7 +28854,7 @@ scripts = [
                         #--------------------------------- REBEL ------------------------------------------------------------------------------------------------------------------------
                         #a_wing
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_name, "str_spaceship_a_wing_name"),
-                        (party_set_slot, "p_spaceship_a_wing", slot_spaceship_price, 8500),
+                        (party_set_slot, "p_spaceship_a_wing", slot_spaceship_price, 25500),
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_desc, "str_spaceship_a_wing_desc"),
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_icon, "icon_a_wing"),
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_base_speed, 96),
@@ -28862,8 +28862,8 @@ scripts = [
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_drive_max, 6),
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_scanner_min, 1),
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_scanner_max, 3),
-                        (party_set_slot, "p_spaceship_a_wing", slot_spaceship_combat_computer_min, 0),
-                        (party_set_slot, "p_spaceship_a_wing", slot_spaceship_combat_computer_max, 0),
+                        (party_set_slot, "p_spaceship_a_wing", slot_spaceship_combat_computer_min, 1),
+                        (party_set_slot, "p_spaceship_a_wing", slot_spaceship_combat_computer_max, 2),
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_troop_capacity_min, 0),
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_troop_capacity_max, 0),
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_medical_bay_min, 0),
@@ -28876,7 +28876,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_cargo_capacity_max, 0),
                         #y_wing
                         (party_set_slot, "p_spaceship_y_wing", slot_spaceship_name, "str_spaceship_y_wing_name"),
-                        (party_set_slot, "p_spaceship_y_wing", slot_spaceship_price, 9000),
+                        (party_set_slot, "p_spaceship_y_wing", slot_spaceship_price, 27000),
                         (party_set_slot, "p_spaceship_y_wing", slot_spaceship_desc, "str_spaceship_y_wing_desc"),
                         (party_set_slot, "p_spaceship_y_wing", slot_spaceship_icon, "icon_y_wing"),
                         (party_set_slot, "p_spaceship_y_wing", slot_spaceship_base_speed, 90),
@@ -28885,7 +28885,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_y_wing", slot_spaceship_scanner_min, 1),
                         (party_set_slot, "p_spaceship_y_wing", slot_spaceship_scanner_max, 3),
                         (party_set_slot, "p_spaceship_y_wing", slot_spaceship_combat_computer_min, 1),
-                        (party_set_slot, "p_spaceship_y_wing", slot_spaceship_combat_computer_max, 2),
+                        (party_set_slot, "p_spaceship_y_wing", slot_spaceship_combat_computer_max, 4),
                         (party_set_slot, "p_spaceship_y_wing", slot_spaceship_troop_capacity_min, 0),
                         (party_set_slot, "p_spaceship_y_wing", slot_spaceship_troop_capacity_max, 0),
                         (party_set_slot, "p_spaceship_y_wing", slot_spaceship_medical_bay_min, 0),
@@ -28898,32 +28898,32 @@ scripts = [
                         (party_set_slot, "p_spaceship_y_wing", slot_spaceship_cargo_capacity_max, 0),
                         #corellian_gunship
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_name, "str_spaceship_corellian_gunship_name"),
-                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_price, 18000),
+                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_price, 84000),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_desc, "str_spaceship_corellian_gunship_desc"),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_icon, "icon_corellian_gunship"),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_base_speed, 75),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_drive_min, 2),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_drive_max, 4),
-                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_scanner_min, 1),
-                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_scanner_max, 3),
+                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_scanner_min, 2),
+                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_scanner_max, 4),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_combat_computer_min, 2),
-                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_combat_computer_max, 3),
-                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_troop_capacity_min, 1),
-                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_troop_capacity_max, 3),
-                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_medical_bay_min, 1),
-                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_medical_bay_max, 3),
+                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_combat_computer_max, 4),
+                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_troop_capacity_min, 0),
+                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_troop_capacity_max, 0),
+                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_medical_bay_min, 0),
+                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_medical_bay_max, 1),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_prisoner_capacity_min, 0),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_prisoner_capacity_max, 0),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_trade_computer_min, 0),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_trade_computer_max, 0),
                         (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_cargo_capacity_min, 0),
-                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_cargo_capacity_max, 0),
+                        (party_set_slot, "p_spaceship_corellian_gunship", slot_spaceship_cargo_capacity_max, 1),
                         #corellian_corvette
                         (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_name, "str_spaceship_corellian_corvette_name"),
-                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_price, 18000),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_price, 54000),
                         (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_desc, "str_spaceship_corellian_corvette_desc"),
                         (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_icon, "icon_corellian_corvette"),
-                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_base_speed, 80),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_base_speed, 75),
                         (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_drive_min, 2),
                         (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_drive_max, 4),
                         (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_scanner_min, 1),
@@ -28938,11 +28938,11 @@ scripts = [
                         (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_prisoner_capacity_max, 0),
                         (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_trade_computer_min, 0),
                         (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_trade_computer_max, 0),
-                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_cargo_capacity_min, 0),
-                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_cargo_capacity_max, 0),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_cargo_capacity_min, 1),
+                        (party_set_slot, "p_spaceship_corellian_corvette", slot_spaceship_cargo_capacity_max, 2),
                         #rebel transport
                         (party_set_slot, "p_spaceship_rebel_transport", slot_spaceship_name, "str_spaceship_rebel_transport_name"),
-                        (party_set_slot, "p_spaceship_rebel_transport", slot_spaceship_price, 25000),
+                        (party_set_slot, "p_spaceship_rebel_transport", slot_spaceship_price, 70000),
                         (party_set_slot, "p_spaceship_rebel_transport", slot_spaceship_desc, "str_spaceship_rebel_transport_desc"),
                         (party_set_slot, "p_spaceship_rebel_transport", slot_spaceship_icon, "icon_rebel_transport"),
                         (party_set_slot, "p_spaceship_rebel_transport", slot_spaceship_base_speed, 65),
@@ -28964,7 +28964,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_rebel_transport", slot_spaceship_cargo_capacity_max, 4),
                         #moncal_cruiser
                         (party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_name, "str_spaceship_moncal_cruiser_name"),
-                        (party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_price, 32000),
+                        (party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_price, 96000),
                         (party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_desc, "str_spaceship_moncal_cruiser_desc"),
                         (party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_icon, "icon_moncal_cruiser"),
                         (party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_base_speed, 70),
@@ -28983,11 +28983,11 @@ scripts = [
                         (party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_trade_computer_min, 0),
                         (party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_trade_computer_max, 0),
                         (party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_cargo_capacity_min, 0),
-                        (party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_cargo_capacity_max, 0),
+                        (party_set_slot, "p_spaceship_moncal_cruiser", slot_spaceship_cargo_capacity_max, 3),
                         #--------------------------------- HUTT ------------------------------------------------------------------------------------------------------------------------
                         #hutt_patrol
                         (party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_name, "str_spaceship_hutt_patrol_name"),
-                        (party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_price, 7000),
+                        (party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_price, 21000),
                         (party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_desc, "str_spaceship_hutt_patrol_desc"),
                         (party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_icon, "icon_hutt_patrol"),
                         (party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_base_speed, 88),
@@ -29009,7 +29009,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_hutt_patrol", slot_spaceship_cargo_capacity_max, 0),
                         #hutt_trade
                         (party_set_slot, "p_spaceship_hutt_trade", slot_spaceship_name, "str_spaceship_hutt_trade_name"),
-                        (party_set_slot, "p_spaceship_hutt_trade", slot_spaceship_price, 14000),
+                        (party_set_slot, "p_spaceship_hutt_trade", slot_spaceship_price, 42000),
                         (party_set_slot, "p_spaceship_hutt_trade", slot_spaceship_desc, "str_spaceship_hutt_trade_desc"),
                         (party_set_slot, "p_spaceship_hutt_trade", slot_spaceship_icon, "icon_hutt_trade"),
                         (party_set_slot, "p_spaceship_hutt_trade", slot_spaceship_base_speed, 55),
@@ -29031,7 +29031,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_hutt_trade", slot_spaceship_cargo_capacity_max, 6),
                         #hutt_frigate_mk1
                         (party_set_slot, "p_spaceship_hutt_frigate_mk1", slot_spaceship_name, "str_spaceship_hutt_frigate_mk1_name"),
-                        (party_set_slot, "p_spaceship_hutt_frigate_mk1", slot_spaceship_price, 15000),
+                        (party_set_slot, "p_spaceship_hutt_frigate_mk1", slot_spaceship_price, 45000),
                         (party_set_slot, "p_spaceship_hutt_frigate_mk1", slot_spaceship_desc, "str_spaceship_hutt_frigate_mk1_desc"),
                         (party_set_slot, "p_spaceship_hutt_frigate_mk1", slot_spaceship_icon, "icon_hutt_frigate_mk1"),
                         (party_set_slot, "p_spaceship_hutt_frigate_mk1", slot_spaceship_base_speed, 63),
@@ -29053,7 +29053,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_hutt_frigate_mk1", slot_spaceship_cargo_capacity_max, 3),
                         #hutt_frigate_mk2
                         (party_set_slot, "p_spaceship_hutt_frigate_mk2", slot_spaceship_name, "str_spaceship_hutt_frigate_mk2_name"),
-                        (party_set_slot, "p_spaceship_hutt_frigate_mk2", slot_spaceship_price, 20000),
+                        (party_set_slot, "p_spaceship_hutt_frigate_mk2", slot_spaceship_price, 60000),
                         (party_set_slot, "p_spaceship_hutt_frigate_mk2", slot_spaceship_desc, "str_spaceship_hutt_frigate_mk2_desc"),
                         (party_set_slot, "p_spaceship_hutt_frigate_mk2", slot_spaceship_icon, "icon_hutt_frigate_mk2"),
                         (party_set_slot, "p_spaceship_hutt_frigate_mk2", slot_spaceship_base_speed, 63),
@@ -29075,7 +29075,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_hutt_frigate_mk2", slot_spaceship_cargo_capacity_max, 3),
                         #hutt cruiser
                         (party_set_slot, "p_spaceship_hutt_cruiser", slot_spaceship_name, "str_spaceship_hutt_cruiser_name"),
-                        (party_set_slot, "p_spaceship_hutt_cruiser", slot_spaceship_price, 22500),
+                        (party_set_slot, "p_spaceship_hutt_cruiser", slot_spaceship_price, 67500),
                         (party_set_slot, "p_spaceship_hutt_cruiser", slot_spaceship_desc, "str_spaceship_hutt_cruiser_desc"),
                         (party_set_slot, "p_spaceship_hutt_cruiser", slot_spaceship_icon, "icon_hutt_cruiser"),
                         (party_set_slot, "p_spaceship_hutt_cruiser", slot_spaceship_base_speed, 63),
@@ -29098,7 +29098,7 @@ scripts = [
                         #--------------------------------- OTHER ------------------------------------------------------------------------------------------------------------------------
                         #civilian_transport
                         (party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_name, "str_spaceship_civilian_transport_name"),
-                        (party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_price, 3500),
+                        (party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_price, 10500),
                         (party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_desc, "str_spaceship_civilian_transport_desc"),
                         (party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_icon, "icon_civilian_transport"),
                         (party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_base_speed, 75),
@@ -29120,7 +29120,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_civilian_transport", slot_spaceship_cargo_capacity_max, 2),
                         #civilian_cruiser
                         (party_set_slot, "p_spaceship_civilian_cruiser", slot_spaceship_name, "str_spaceship_civilian_cruiser_name"),
-                        (party_set_slot, "p_spaceship_civilian_cruiser", slot_spaceship_price, 10000),
+                        (party_set_slot, "p_spaceship_civilian_cruiser", slot_spaceship_price, 30000),
                         (party_set_slot, "p_spaceship_civilian_cruiser", slot_spaceship_desc, "str_spaceship_civilian_cruiser_desc"),
                         (party_set_slot, "p_spaceship_civilian_cruiser", slot_spaceship_icon, "icon_civilian_cruiser"),
                         (party_set_slot, "p_spaceship_civilian_cruiser", slot_spaceship_base_speed, 55),
@@ -29142,7 +29142,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_civilian_cruiser", slot_spaceship_cargo_capacity_max, 3),
                         #z95
                         (party_set_slot, "p_spaceship_z95", slot_spaceship_name, "str_spaceship_z95_name"),
-                        (party_set_slot, "p_spaceship_z95", slot_spaceship_price, 5500),
+                        (party_set_slot, "p_spaceship_z95", slot_spaceship_price, 18000),
                         (party_set_slot, "p_spaceship_z95", slot_spaceship_desc, "str_spaceship_z95_desc"),
                         (party_set_slot, "p_spaceship_z95", slot_spaceship_icon, "icon_z95"),
                         (party_set_slot, "p_spaceship_z95", slot_spaceship_base_speed, 91),
@@ -29164,7 +29164,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_z95", slot_spaceship_cargo_capacity_max, 0),
                         #scyk_fighter
                         (party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_name, "str_spaceship_scyk_fighter_name"),
-                        (party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_price, 6000),
+                        (party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_price, 16500),
                         (party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_desc, "str_spaceship_scyk_fighter_desc"),
                         (party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_icon, "icon_scyk_fighter"),
                         (party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_base_speed, 92),
@@ -29186,7 +29186,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_scyk_fighter", slot_spaceship_cargo_capacity_max, 0),
                         #mercenary_shuttle
                         (party_set_slot, "p_spaceship_mercenary_shuttle", slot_spaceship_name, "str_spaceship_mercenary_shuttle_name"),
-                        (party_set_slot, "p_spaceship_mercenary_shuttle", slot_spaceship_price, 4000),
+                        (party_set_slot, "p_spaceship_mercenary_shuttle", slot_spaceship_price, 12000),
                         (party_set_slot, "p_spaceship_mercenary_shuttle", slot_spaceship_desc, "str_spaceship_mercenary_shuttle_desc"),
                         (party_set_slot, "p_spaceship_mercenary_shuttle", slot_spaceship_icon, "icon_mercenary_shuttle"),
                         (party_set_slot, "p_spaceship_mercenary_shuttle", slot_spaceship_base_speed, 80),
@@ -29208,7 +29208,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_mercenary_shuttle", slot_spaceship_cargo_capacity_max, 2),
                         #mercenary_fighter
                         (party_set_slot, "p_spaceship_mercenary_fighter", slot_spaceship_name, "str_spaceship_mercenary_fighter_name"),
-                        (party_set_slot, "p_spaceship_mercenary_fighter", slot_spaceship_price, 4500),
+                        (party_set_slot, "p_spaceship_mercenary_fighter", slot_spaceship_price, 13000),
                         (party_set_slot, "p_spaceship_mercenary_fighter", slot_spaceship_desc, "str_spaceship_mercenary_fighter_desc"),
                         (party_set_slot, "p_spaceship_mercenary_fighter", slot_spaceship_icon, "icon_mercenary_fighter"),
                         (party_set_slot, "p_spaceship_mercenary_fighter", slot_spaceship_base_speed, 88),
@@ -29230,7 +29230,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_mercenary_fighter", slot_spaceship_cargo_capacity_max, 0),
                         #mercenary_raider
                         (party_set_slot, "p_spaceship_mercenary_raider", slot_spaceship_name, "str_spaceship_mercenary_raider_name"),
-                        (party_set_slot, "p_spaceship_mercenary_raider", slot_spaceship_price, 8000),
+                        (party_set_slot, "p_spaceship_mercenary_raider", slot_spaceship_price, 16000),
                         (party_set_slot, "p_spaceship_mercenary_raider", slot_spaceship_desc, "str_spaceship_mercenary_raider_desc"),
                         (party_set_slot, "p_spaceship_mercenary_raider", slot_spaceship_icon, "icon_mercenary_raider"),
                         (party_set_slot, "p_spaceship_mercenary_raider", slot_spaceship_base_speed, 91),
@@ -29252,7 +29252,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_mercenary_raider", slot_spaceship_cargo_capacity_max, 0),
                         #freighter
                         (party_set_slot, "p_spaceship_freighter", slot_spaceship_name, "str_spaceship_freighter_name"),
-                        (party_set_slot, "p_spaceship_freighter", slot_spaceship_price, 9000),
+                        (party_set_slot, "p_spaceship_freighter", slot_spaceship_price, 27000),
                         (party_set_slot, "p_spaceship_freighter", slot_spaceship_desc, "str_spaceship_freighter_desc"),
                         (party_set_slot, "p_spaceship_freighter", slot_spaceship_icon, "icon_freighter"),
                         (party_set_slot, "p_spaceship_freighter", slot_spaceship_base_speed, 63),
@@ -29274,7 +29274,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_freighter", slot_spaceship_cargo_capacity_max, 5),
                         #bulk_freighter
                         (party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_name, "str_spaceship_bulk_freighter_name"),
-                        (party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_price, 10500),
+                        (party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_price, 31500),
                         (party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_desc, "str_spaceship_bulk_freighter_desc"),
                         (party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_icon, "icon_bulk_freighter"),
                         (party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_base_speed, 65),
@@ -29296,7 +29296,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_bulk_freighter", slot_spaceship_cargo_capacity_max, 6),
                         #cis_star_cruiser
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_name, "str_spaceship_cis_star_cruiser_name"),
-                        (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_price, 40000),
+                        (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_price, 200000),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_desc, "str_spaceship_cis_star_cruiser_desc"),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_icon, "icon_cis_star_cruiser"),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_base_speed, 50),
@@ -29305,17 +29305,17 @@ scripts = [
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_scanner_min, 1),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_scanner_max, 3),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_combat_computer_min, 1),
-                        (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_combat_computer_max, 2),
+                        (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_combat_computer_max, 3),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_troop_capacity_min, 2),
-                        (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_troop_capacity_max, 5),
+                        (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_troop_capacity_max, 6),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_medical_bay_min, 1),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_medical_bay_max, 3),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_prisoner_capacity_min, 1),
-                        (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_prisoner_capacity_max, 2),
+                        (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_prisoner_capacity_max, 4),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_trade_computer_min, 2),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_trade_computer_max, 4),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_cargo_capacity_min, 2),
-                        (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_cargo_capacity_max, 4),
+                        (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_cargo_capacity_max, 5),
                         #swy // nebulon
 						#spaceship_nebulon
                         (party_set_slot, "p_spaceship_nebulon", slot_spaceship_name, "str_spaceship_nebulon_name"),

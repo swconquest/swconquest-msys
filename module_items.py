@@ -432,9 +432,9 @@ items = [
 ["heraldic_mail_with_tabard", "Heraldic_Mail_with_Tabard", [("heraldic_armor_d",0)], itp_type_body_armor  |itp_covers_legs ,0,
  675 , weight(21)|abundance(100)|head_armor(0)|body_armor(51)|leg_armor(15)|difficulty(7) ,imodbits_armor,
  [(ti_on_init_item, [(store_trigger_param_1, ":agent_no"),(store_trigger_param_2, ":troop_no"),(call_script, "script_shield_item_set_banner", "tableau_heraldic_armor_d", ":agent_no", ":troop_no")])]],
-["turret_hat_ruby", "Turret Hat", [("turret_hat_r",0)], itp_type_head_armor  |itp_civilian|itp_fit_to_head ,0, 70 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ], 
-["turret_hat_blue", "Turret Hat", [("turret_hat_b",0)], itp_type_head_armor  |itp_civilian|itp_fit_to_head ,0, 80 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ], 
-["turret_hat_green", "Barbette", [("turret_hat_g",0)],itp_merchandise|itp_type_head_armor|itp_civilian|itp_fit_to_head,0,70, weight(0.5)|abundance(100)|head_armor(6)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
+#["turret_hat_ruby", "Turret Hat", [("turret_hat_r",0)], itp_type_head_armor  |itp_civilian|itp_fit_to_head ,0, 70 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ], 
+#["turret_hat_blue", "Turret Hat", [("turret_hat_b",0)], itp_type_head_armor  |itp_civilian|itp_fit_to_head ,0, 80 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ], 
+#["turret_hat_green", "Barbette", [("turret_hat_g",0)],itp_merchandise|itp_type_head_armor|itp_civilian|itp_fit_to_head,0,70, weight(0.5)|abundance(100)|head_armor(6)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
 ["head_wrappings","head_wrapping",[("head_wrapping",0)],itp_type_head_armor|itp_fit_to_head,0,16, weight(0.25)|head_armor(3),imodbit_tattered | imodbit_ragged | imodbit_sturdy | imodbit_thick],
 ["court_hat", "Turret Hat", [("court_hat",0)], itp_type_head_armor  |itp_civilian|itp_fit_to_head ,0, 80 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ], 
 ["wimple_a", "Wimple", [("wimple_a",0)],itp_merchandise|itp_type_head_armor|itp_civilian|itp_fit_to_head,0,10, weight(0.5)|abundance(100)|head_armor(4)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
@@ -1410,7 +1410,7 @@ items = [
  1000 , weight(60)|abundance(0)|head_armor(15)|body_armor(45)|leg_armor(15)|difficulty(0) ,imodbits_none ], 
 ["3poseries_grey", "3PO-Series Grey", [("C3PO_fullbody_grey",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
  1000 , weight(60)|abundance(0)|head_armor(15)|body_armor(45)|leg_armor(15)|difficulty(0) ,imodbits_none ],  
-["3poseries_attack","3PO-Series Melee Attack", [("transparent",0),("C3PO_hand_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary, itc_dagger, 
+["3poseries_attack","3PO-Series Melee Attack", [("transparent",0),("C3PO_gold_hand_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary, itc_dagger, 
 250 , weight(1)|abundance(0)|difficulty(0)|spd_rtng(50) | weapon_length(15)|swing_damage(5, blunt) | thrust_damage(4, blunt),imodbits_none ], 
 
 #b1 battledroid & others
@@ -2162,6 +2162,9 @@ items = [
 ["dlt20a", "DLT-20A", [("DLT20A",0),("DLT20A_inventory",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_spear|itcf_reload_musket, 
 	1300 , weight(6.7)|abundance(100)|difficulty(0)|spd_rtng(100) | shoot_speed(190) | thrust_damage(55 ,pierce)|max_ammo(30)|accuracy(97),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,4),(position_move_y, pos1,5)])]], 
+["e17d", "E-17d", [("uio0000_E-17d",0),("uio0000_E-17d_inv",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_musket|itcf_carry_spear|itcf_reload_musket, 
+	735 , weight(3.72)|abundance(90)|difficulty(0)|spd_rtng(70) | shoot_speed(170) | thrust_damage(60 ,pierce)|max_ammo(5)|accuracy(110),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,4),(position_move_y, pos1,5)])]],
 #TEST - DC15a particle effects
 # ["dc15a", "DC-15A", [("DC15A",0)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_sword_back|itcf_reload_musket, 
 	# 435 , weight(3.5)|abundance(100)|difficulty(0)|spd_rtng(90) | shoot_speed(190) | thrust_damage(60 ,pierce)|max_ammo(10)|accuracy(96),imodbits_gun,
@@ -2681,7 +2684,7 @@ items = [
 #SW - green lizard (ie. dewback) from Fantasy Mod and courtesy of Highelf
 #["dewback","Dewback", [("dewback",0)], itp_merchandise|itp_type_horse, 0, 1200,abundance(110)|hit_points(100)|body_armor(35)|difficulty(2)|horse_speed(38)|horse_maneuver(35)|horse_charge(15),imodbits_horse_basic],
 ["speeder","Civilian 74-Z Speeder Bike", [("speeder_a",0)],                        itp_merchandise|itp_type_horse, 0, 1000,abundance(100)|hit_points(30)|body_armor(0)|difficulty(0)|horse_speed(65)|horse_maneuver(45)|horse_charge(15),imodbits_speeder_basic],
-["speeder_rebel","Military 74-Z Speeder Bike", [("speeder_b_norig",0)],               itp_merchandise|itp_type_horse, 0, 1500,abundance(90)|hit_points(40)|body_armor(10)|difficulty(1)|horse_speed(75)|horse_maneuver(55)|horse_charge(20),imodbits_speeder],
+["speeder_rebel","Military 74-Z Speeder Bike", [("speeder_b",0)],               itp_merchandise|itp_type_horse, 0, 1500,abundance(90)|hit_points(40)|body_armor(10)|difficulty(1)|horse_speed(75)|horse_maneuver(55)|horse_charge(20),imodbits_speeder],
 ["speeder_imperial","Military Z4-Z Speeder Bike", [("speeder_e",0)],      itp_merchandise|itp_type_horse, 0, 1500,abundance(90)|hit_points(40)|body_armor(10)|difficulty(1)|horse_speed(75)|horse_maneuver(55)|horse_charge(20),imodbits_speeder],
 ["speeder_hutt","Military Z4-Z Speeder Bike", [("speeder_d",0)],              itp_merchandise|itp_type_horse, 0, 1500,abundance(90)|hit_points(40)|body_armor(10)|difficulty(1)|horse_speed(75)|horse_maneuver(55)|horse_charge(20),imodbits_speeder],
 ["speeder_shadow","Shadow 74-Z Speeder Bike", [("speeder_c",0)], itp_merchandise|itp_type_horse, 0, 2000,abundance(80)|hit_points(60)|body_armor(30)|difficulty(2)|horse_speed(85)|horse_maneuver(65)|horse_charge(25),imodbits_speeder],

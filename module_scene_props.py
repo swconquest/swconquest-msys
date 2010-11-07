@@ -65,11 +65,11 @@ scene_props = [
   ("sw_shuttle",0,"shuttle","bo_shuttle", []),
   ("sw_asteroid_base",0,"asteroid_base","bo_asteroid_base", []),  
   ("sw_spacestation1",0,"spacestation1","bo_spacestation1", []),  
-  ("sw_spacestation2",0,"spacestation2","bo_spacestation2", []),  
-  ("sw_spacestation3",0,"spacestation3","bo_spacestation3", []),  
+  ("sw_spacestation2",0,"spacestation1_grey","bo_spacestation2", []),  
+  ("sw_spacestation3",0,"spacestation3","bo_spacestation2", []),  
   ("sw_spacestation4",0,"spacestation4","bo_spacestation4", []),  
   ("sw_spacestation5",0,"spacestation5","bo_spacestation5", []),  
-  ("sw_stormtrooper_transport",0,"stormtrooper_transport","bo_stormtrooper_transport", []),  
+ # ("sw_stormtrooper_transport",0,"stormtrooper_transport","bo_stormtrooper_transport", []),  
   ("sw_tie_fighter",0,"tie_fighter","bo_tie_fighter", []),  
   ("sw_tie_fighter_debris",0,"tie_fighter_debris","bo_tie_fighter_debris", []),  
   ("sw_CIS_star_cruiser",0,"CIS_Station","bo_CIS_Station", []),  
@@ -521,15 +521,15 @@ scene_props = [
   ("sw_sith_statue_white",0,"sith_statue_white","bo_sith_statue", []),
   
   #other
-  ("sw_planet_craters",0,"sw_planet_craters","bo_planet", []),
-  ("sw_planet_farmland",0,"sw_planet_farmland","bo_planet", []),
-  ("sw_planet_gas",0,"sw_planet_gas","bo_planet", []),
-  ("sw_planet_green",0,"sw_planet_green","bo_planet", []),
-  ("sw_planet_green_water",0,"sw_planet_green_water","bo_planet", []),
-  ("sw_planet_industrial",0,"sw_planet_industrial","bo_planet", []),
-  ("sw_planet_plain",0,"sw_planet_plain","bo_planet", []),
-  ("sw_planet_snow",0,"sw_planet_snow","bo_planet", []),
-  ("sw_planet_snow_water",0,"sw_snow_water","bo_planet", []),
+  # ("sw_planet_craters",0,"sw_planet_craters","bo_planet", []),
+  # ("sw_planet_farmland",0,"sw_planet_farmland","bo_planet", []),
+  # ("sw_planet_gas",0,"sw_planet_gas","bo_planet", []),
+  # ("sw_planet_green",0,"sw_planet_green","bo_planet", []),
+  # ("sw_planet_green_water",0,"sw_planet_green_water","bo_planet", []),
+  # ("sw_planet_industrial",0,"sw_planet_industrial","bo_planet", []),
+  # ("sw_planet_plain",0,"sw_planet_plain","bo_planet", []),
+  # ("sw_planet_snow",0,"sw_planet_snow","bo_planet", []),
+  # ("sw_planet_snow_water",0,"sw_snow_water","bo_planet", []),
   
 	#New Swyter planets as scene props 
   ("swy_Death_Star",0,"swy_Death_Star","bo_planet", []),
@@ -841,7 +841,7 @@ scene_props = [
   ("village_shed_a",0,"village_shed_a","bo_village_shed_a", []),
   ("village_shed_b",0,"village_shed_b","bo_village_shed_b", []),
 
-  ("trunks_snowy",0,"trunks_snowy","0", []),
+#  ("trunks_snowy",0,"trunks_snowy","0", []),
 
 
 
@@ -1068,7 +1068,7 @@ scene_props = [
    [
      (ti_on_init_scene_prop,
       [
-        (party_get_slot, ":leader_troop", "$g_encountered_party", slot_town_lord),
+        (party_get_slot, ":leader_troop", "$g_encountered_party", slot_mainplanet_lord),
         (try_begin),
           (ge, ":leader_troop", 0),
           (cur_scene_prop_set_tableau_material, "tableau_custom_banner_default", ":leader_troop"),
@@ -1079,7 +1079,7 @@ scene_props = [
    [
      (ti_on_init_scene_prop,
       [
-        (party_get_slot, ":leader_troop", "$g_encountered_party", slot_town_lord),
+        (party_get_slot, ":leader_troop", "$g_encountered_party", slot_mainplanet_lord),
         (try_begin),
           (ge, ":leader_troop", 0),
           (cur_scene_prop_set_tableau_material, "tableau_custom_banner_default", ":leader_troop"),
@@ -1968,7 +1968,7 @@ scene_props = [
 #  ("cylon_heavy_raider",0,"heavy_raider","0", []),
   #add everything crashable here:(asteroids and etc.)
 
-  ("col_end",0,"target_arrow","0", []),
+  ("col_end",0,"0","0", []),
 
 #  ("galactica",0,"galactica","0", []),
 #  ("pegasus",0,"pegasus","0", []),
@@ -1988,8 +1988,8 @@ scene_props = [
   ("target_end",sokf_invisible,"target_arrow","0", []),
 
   ("missile",0,"laser_bolt_blue","0", []),
-  ("rocket",0,"colonial_missile","0", []),
-  ("rm_end",0,"colonial_missile","0", []),
+  ("rocket",0,"0","0", []),
+  ("rm_end",0,"0","0", []),
   
   
   
@@ -2279,7 +2279,7 @@ scene_props = [
 ###############
 
         (store_trigger_param_1, ":instance_no"),
-        (prop_instance_get_position, pos2, ":instance_no"),
+        (prop_instance_get_position, pos1, ":instance_no"),
         (play_sound, "snd_dummy_destroyed"),
 		(particle_system_burst, "psys_explosion_fire", pos1, 100),		#percentage_burst_strength is 100
         #(position_rotate_x, 5),			#use these if you wish to rotate it
@@ -2287,8 +2287,8 @@ scene_props = [
         #(position_rotate_z, 5),		
         #(position_move_z, pos2, -1200),	#up/down
 		#(position_move_x, pos2, -200),		#left/right
-		(position_move_y, pos2, 2000),		#forward/back
-        (prop_instance_animate_to_position, ":instance_no", 2, 1000), #animate to position in10 seconds
+		(position_move_y, pos1, 2000),		#forward/back
+        (prop_instance_animate_to_position, ":instance_no", 1, 1000), #animate to position in10 seconds
 
 
 ###############

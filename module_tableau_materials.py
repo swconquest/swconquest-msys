@@ -520,7 +520,7 @@ tableaus = [
        (position_set_z, pos8, 300),
        (cur_tableau_add_point_light, pos8, 550,500,450),
 
-##       (party_get_slot, ":troop_no", ":center_no", slot_town_lord),
+##       (party_get_slot, ":troop_no", ":center_no", slot_mainplanet_lord),
 ##       (try_begin),
 ##         (ge, ":troop_no", 0),
 ##         (troop_get_slot, ":banner_spr", ":troop_no", slot_troop_banner_scene_prop),
@@ -984,7 +984,7 @@ tableaus = [
 			# (position_move_z, pos5, 400, 0),
 		# (else_try),
 			# (this_or_next|eq, ":ship_icon", "icon_z96"),
-			# (this_or_next|eq, ":ship_icon", "icon_manhunter"),
+			# (this_or_next|eq, ":ship_icon", "icon_bountyhunter"),
 			# (eq, ":ship_icon", "icon_freighter"),
 			# (position_move_z, pos5, 100, 0),
 		# (else_try),

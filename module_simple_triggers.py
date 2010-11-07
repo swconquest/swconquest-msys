@@ -136,7 +136,7 @@ simple_triggers = [
 	   #(set_fog_distance,100000000),
 	   
 	   ##SW - scene debug
-	   #(party_get_slot, ":village_id", "p_village_66", slot_castle_exterior),
+	   #(party_get_slot, ":village_id", "p_village_66", slot_spacestation_exterior),
        #(assign, reg7, ":village_id"), #diagnostic only
        #(display_message, "@Village 66 = {reg7}"),#diagnostic only
     ]),
@@ -174,14 +174,14 @@ simple_triggers = [
         (map_free), #we have been attacked during raid
         (assign,"$g_player_raiding_village",0),
       (else_try),
-        (this_or_next|party_slot_eq, "$g_player_raiding_village", slot_village_state, svs_looted),
-        (party_slot_eq, "$g_player_raiding_village", slot_village_state, svs_deserted),
+        (this_or_next|party_slot_eq, "$g_player_raiding_village", slot_minorplanet_state, svs_looted),
+        (party_slot_eq, "$g_player_raiding_village", slot_minorplanet_state, svs_deserted),
         (start_encounter, "$g_player_raiding_village"),
         (rest_for_hours, 0),
         (assign,"$g_player_raiding_village",0),
         (assign,"$g_player_raid_complete",1),
       (else_try),
-        (party_slot_eq, "$g_player_raiding_village", slot_village_state, svs_being_raided),
+        (party_slot_eq, "$g_player_raiding_village", slot_minorplanet_state, svs_being_raided),
         (rest_for_hours, 3, 5, 1), #rest while attackable
       (else_try),
         (rest_for_hours, 0, 0, 0), #stop resting - abort
@@ -425,10 +425,10 @@ simple_triggers = [
        (try_end),
        (try_for_range, ":center_no", walled_centers_begin, walled_centers_end),
          #If non-player center, adding income to wealth
-         (neg|party_slot_eq, ":center_no", slot_town_lord, "trp_player"), #center does not belong to player.
-         (party_slot_ge, ":center_no", slot_town_lord, 1), #center belongs to someone.
-         (party_get_slot, ":cur_wealth", ":center_no", slot_town_wealth),
-         (party_get_slot, ":prosperity", ":center_no", slot_town_prosperity),
+         (neg|party_slot_eq, ":center_no", slot_mainplanet_lord, "trp_player"), #center does not belong to player.
+         (party_slot_ge, ":center_no", slot_mainplanet_lord, 1), #center belongs to someone.
+         (party_get_slot, ":cur_wealth", ":center_no", slot_mainplanet_wealth),
+         (party_get_slot, ":prosperity", ":center_no", slot_mainplanet_prosperity),
          (store_mul, ":added_wealth", ":prosperity", 15),
          (val_add, ":added_wealth", 700),
          (try_begin),
@@ -440,7 +440,7 @@ simple_triggers = [
          (call_script, "script_calculate_weekly_party_wage", ":center_no"),
          (val_sub, ":cur_wealth", reg0),
          (val_max, ":cur_wealth", 0),
-         (party_set_slot, ":center_no", slot_town_wealth, ":cur_wealth"),
+         (party_set_slot, ":center_no", slot_mainplanet_wealth, ":cur_wealth"),
        (try_end),
     ]),
 
@@ -457,16 +457,16 @@ simple_triggers = [
          (call_script, "script_hire_men_to_kingdom_hero_party", ":troop_no"), #Hiring men with current wealth
        (try_end),
        (try_for_range, ":center_no", walled_centers_begin, walled_centers_end),
-         (neg|party_slot_eq, ":center_no", slot_town_lord, "trp_player"), #center does not belong to player.
-         (party_slot_ge, ":center_no", slot_town_lord, 1), #center belongs to someone.
-         (party_get_slot, ":cur_wealth", ":center_no", slot_town_wealth),
+         (neg|party_slot_eq, ":center_no", slot_mainplanet_lord, "trp_player"), #center does not belong to player.
+         (party_slot_ge, ":center_no", slot_mainplanet_lord, 1), #center belongs to someone.
+         (party_get_slot, ":cur_wealth", ":center_no", slot_mainplanet_wealth),
          (party_slot_eq, ":center_no", slot_center_is_besieged_by, -1), #center not under siege
          (assign, ":hiring_budget", ":cur_wealth"),
          (val_div, ":hiring_budget", 5),
          (gt, ":hiring_budget", reinforcement_cost),
          (call_script, "script_cf_reinforce_party", ":center_no"),
          (val_sub, ":cur_wealth", reinforcement_cost),
-         (party_set_slot, ":center_no", slot_town_wealth, ":cur_wealth"),
+         (party_set_slot, ":center_no", slot_mainplanet_wealth, ":cur_wealth"),
        (try_end),
     ]),
 
@@ -475,7 +475,7 @@ simple_triggers = [
    [(try_for_range, ":center_no", centers_begin, centers_end),
       (call_script, "script_get_center_ideal_prosperity", ":center_no"),
       (assign, ":ideal_prosperity", reg0),
-      (party_get_slot, ":prosperity", ":center_no", slot_town_prosperity),
+      (party_get_slot, ":prosperity", ":center_no", slot_mainplanet_prosperity),
       (try_begin),
         (gt, ":prosperity", ":ideal_prosperity"),
         (call_script, "script_change_center_prosperity", ":center_no", -1),
@@ -529,7 +529,7 @@ simple_triggers = [
        (try_for_range, ":center_no", walled_centers_begin, walled_centers_end),
          (store_random_in_range, ":rand", 0, 100),
          (lt, ":rand", 10),
-         (party_get_slot, ":center_lord", ":center_no", slot_town_lord),
+         (party_get_slot, ":center_lord", ":center_no", slot_mainplanet_lord),
          (neq, ":center_lord", "trp_player"),
          (party_upgrade_with_xp, ":center_no", 3000),
        (try_end),
@@ -896,19 +896,19 @@ simple_triggers = [
     ]),
 
   #Refreshing village defenders
-  #Clearing slot_village_player_can_not_steal_cattle flags
+  #Clearing slot_minorplanet_player_can_not_steal_cattle flags
    (48,
    [
       (try_for_range, ":village_no", villages_begin, villages_end),
         (call_script, "script_refresh_village_defenders", ":village_no"),
-        (party_set_slot, ":village_no", slot_village_player_can_not_steal_cattle, 0),
+        (party_set_slot, ":village_no", slot_minorplanet_player_can_not_steal_cattle, 0),
       (try_end),
     ]),
 
   # Refresh number of cattle in villages
   (24,
    [(try_for_range, ":village_no", villages_begin, villages_end),
-      (party_get_slot, ":num_cattle", ":village_no", slot_village_number_of_cattle),
+      (party_get_slot, ":num_cattle", ":village_no", slot_minorplanet_number_of_cattle),
       (store_random_in_range, ":random_no", 0, 100),
       (try_begin),
         (lt, ":random_no", 3),#famine
@@ -940,7 +940,7 @@ simple_triggers = [
         (val_add, ":num_cattle", ":random_no"),
       (try_end),
       (val_clamp, ":num_cattle", 0, 101),
-      (party_set_slot, ":village_no", slot_village_number_of_cattle, ":num_cattle"),
+      (party_set_slot, ":village_no", slot_minorplanet_number_of_cattle, ":num_cattle"),
       #Reassigning the cattle production in the village
       (store_sub, ":production", ":num_cattle", 10),
       (val_div, ":production", 2),
@@ -957,7 +957,7 @@ simple_triggers = [
         (try_begin),
           (party_slot_eq, ":center_no", slot_party_type, spt_village),
           (try_begin),
-            (party_slot_eq, ":center_no", slot_village_state, svs_normal),
+            (party_slot_eq, ":center_no", slot_minorplanet_state, svs_normal),
             (assign, ":cur_rents", 500),
           (try_end),
         (else_try),
@@ -967,7 +967,7 @@ simple_triggers = [
           (party_slot_eq, ":center_no", slot_party_type, spt_town),
           (assign, ":cur_rents", 1000),
         (try_end),
-        (party_get_slot, ":prosperity", ":center_no", slot_town_prosperity),
+        (party_get_slot, ":prosperity", ":center_no", slot_mainplanet_prosperity),
         (store_add, ":multiplier", 10, ":prosperity"),
         (val_mul, ":cur_rents", ":multiplier"),
         (val_div, ":cur_rents", 110),#Prosperity of 100 gives the default values
@@ -977,7 +977,7 @@ simple_triggers = [
 
       #Adding earnings to town lords' wealths.
       (try_for_range, ":center_no", centers_begin, centers_end),
-        (party_get_slot, ":town_lord", ":center_no", slot_town_lord),
+        (party_get_slot, ":town_lord", ":center_no", slot_mainplanet_lord),
         (neq, ":town_lord", "trp_player"),
         (is_between, ":town_lord", kingdom_heroes_begin, kingdom_heroes_end),
         (party_get_slot, ":accumulated_rents", ":center_no", slot_center_accumulated_rents),
@@ -1191,7 +1191,7 @@ simple_triggers = [
    [
        (call_script, "script_randomly_make_prisoner_heroes_escape_from_party", "p_main_party", 50),
        (try_for_range, ":center_no", walled_centers_begin, walled_centers_end),
-##         (party_slot_eq, ":center_no", slot_town_lord, "trp_player"),
+##         (party_slot_eq, ":center_no", slot_mainplanet_lord, "trp_player"),
          (assign, ":chance", 30),
          (try_begin),
            (party_slot_eq, ":center_no", slot_center_has_prisoner_tower, 1),
@@ -1209,9 +1209,9 @@ simple_triggers = [
       (eq, "$g_center_taken_by_player_faction", -1),
       (store_faction_of_party, ":center_faction", ":center_no"),
       (eq, ":center_faction", "fac_player_supporters_faction"),
-      (this_or_next|party_slot_eq, ":center_no", slot_town_lord, stl_reserved_for_player),
-      (this_or_next|party_slot_eq, ":center_no", slot_town_lord, stl_unassigned),
-      (party_slot_eq, ":center_no", slot_town_lord, stl_rejected_by_player),
+      (this_or_next|party_slot_eq, ":center_no", slot_mainplanet_lord, stl_reserved_for_player),
+      (this_or_next|party_slot_eq, ":center_no", slot_mainplanet_lord, stl_unassigned),
+      (party_slot_eq, ":center_no", slot_mainplanet_lord, stl_rejected_by_player),
       (assign, "$g_center_taken_by_player_faction", ":center_no"),
     (try_end),
     (ge, "$g_center_taken_by_player_faction", 0),
@@ -1266,14 +1266,14 @@ simple_triggers = [
   (24,
    [
        (try_for_range, ":village_no", villages_begin, villages_end),
-         (party_slot_eq, ":village_no", slot_village_state, svs_normal),
-         (party_get_slot, ":farmer_party", ":village_no", slot_village_farmer_party),
+         (party_slot_eq, ":village_no", slot_minorplanet_state, svs_normal),
+         (party_get_slot, ":farmer_party", ":village_no", slot_minorplanet_farmer_party),
          (this_or_next|eq, ":farmer_party", 0),
          (neg|party_is_active, ":farmer_party"),
          (store_random_in_range, ":random_no", 0, 100),
          (lt, ":random_no", 30),
          (call_script, "script_create_village_farmer_party", ":village_no"),
-         (party_set_slot, ":village_no", slot_village_farmer_party, reg0),
+         (party_set_slot, ":village_no", slot_minorplanet_farmer_party, reg0),
 #         (str_store_party_name, s1, ":village_no"),
 #         (display_message, "@Village farmers created at {s1}."),
        (try_end),
@@ -1286,7 +1286,7 @@ simple_triggers = [
        (call_script, "script_update_trade_good_prices"),
  # Updating player odds
        (try_for_range, ":cur_center", centers_begin, centers_end),
-         (party_get_slot, ":player_odds", ":cur_center", slot_town_player_odds),
+         (party_get_slot, ":player_odds", ":cur_center", slot_mainplanet_player_odds),
          (try_begin),
            (gt, ":player_odds", 1000),
            (val_mul, ":player_odds", 95),
@@ -1298,7 +1298,7 @@ simple_triggers = [
            (val_div, ":player_odds", 100),
            (val_min, ":player_odds", 1000),
          (try_end),
-         (party_set_slot, ":cur_center", slot_town_player_odds, ":player_odds"),
+         (party_set_slot, ":cur_center", slot_mainplanet_player_odds, ":player_odds"),
        (try_end),
     ]),
 
@@ -1388,7 +1388,7 @@ simple_triggers = [
              (lt, ":random_no", 5),
              (call_script, "script_do_party_center_trade", ":party_no", ":home_center", 50),
              (assign, ":total_change", reg0),
-             (party_get_slot, ":prosperity", ":home_center", slot_town_prosperity),
+             (party_get_slot, ":prosperity", ":home_center", slot_mainplanet_prosperity),
              (val_add, ":prosperity", 30),
              (val_mul, ":total_change", ":prosperity"),
              (val_div, ":total_change", 2600), #(30 + prosperity) / 130 * 5% of the sales.
@@ -1399,7 +1399,7 @@ simple_triggers = [
              (party_set_slot, ":home_center", slot_center_accumulated_tariffs, ":accumulated_tariffs"),
       
              #Moving farmers to the home town
-             (party_get_slot, ":market_town", ":home_center", slot_village_market_town),
+             (party_get_slot, ":market_town", ":home_center", slot_minorplanet_market_town),
              (party_set_slot, ":party_no", slot_party_ai_object, ":market_town"),
              (party_set_slot, ":party_no", slot_party_ai_state, spai_trading_with_town),
              (party_set_ai_behavior, ":party_no", ai_bhvr_travel_to_party),
@@ -1418,7 +1418,7 @@ simple_triggers = [
 
              (call_script, "script_do_party_center_trade", ":party_no", ":cur_ai_object", 10),
              (assign, ":total_change", reg0),
-             (party_get_slot, ":prosperity", ":cur_ai_object", slot_town_prosperity),
+             (party_get_slot, ":prosperity", ":cur_ai_object", slot_mainplanet_prosperity),
              (val_add, ":prosperity", 30),
              (val_mul, ":total_change", ":prosperity"),
              (val_div, ":total_change", 2600), #(30 + prosperity) / 130 * 5% of the sales.
@@ -1776,7 +1776,7 @@ simple_triggers = [
     (eq, reg0, 0),#no prisoners offered
     (assign, ":end_cond", walled_centers_end),
     (try_for_range, ":center_no", walled_centers_begin, ":end_cond"),
-      (party_slot_eq, ":center_no", slot_town_lord, "trp_player"),
+      (party_slot_eq, ":center_no", slot_mainplanet_lord, "trp_player"),
       (call_script, "script_offer_ransom_amount_to_player_for_prisoners_in_party", ":center_no"),
       (eq, reg0, 1),#a prisoner is offered
       (assign, ":end_cond", 0),#break
@@ -1787,7 +1787,7 @@ simple_triggers = [
   (72,
    [(assign, "$g_ransom_offer_rejected", 0),
     (try_for_range, ":center_no", walled_centers_begin, walled_centers_end),
-      (party_get_slot, ":town_lord", ":center_no", slot_town_lord),
+      (party_get_slot, ":town_lord", ":center_no", slot_mainplanet_lord),
       (gt, ":town_lord", 0),
       (party_get_num_prisoner_stacks, ":num_stacks", ":center_no"),
       (try_for_range_backwards, ":i_stack", 0, ":num_stacks"),
@@ -1858,7 +1858,7 @@ simple_triggers = [
       (store_random_in_range, ":rand", 0, 100),
       (try_begin),
         (lt, ":rand", 70),
-        (neg|party_slot_ge, ":center_no", slot_town_prosperity, 60),
+        (neg|party_slot_ge, ":center_no", slot_mainplanet_prosperity, 60),
         (call_script, "script_cf_center_get_free_walker", ":center_no"),
         (call_script, "script_center_set_walker_to_type", ":center_no", reg0, walkert_needs_money),
       (try_end),
@@ -1877,7 +1877,7 @@ simple_triggers = [
       (party_set_slot, ":center_no", slot_center_current_improvement, 0),
       (call_script, "script_get_improvement_details", ":cur_improvement"),
       (try_begin),
-        (party_slot_eq, ":center_no", slot_town_lord, "trp_player"),
+        (party_slot_eq, ":center_no", slot_mainplanet_lord, "trp_player"),
         (str_store_party_name, s4, ":center_no"),
         (display_log_message, "@Building of {s0} in {s4} has been completed.", color_quest_and_faction_news),
       (try_end),
@@ -1894,7 +1894,7 @@ simple_triggers = [
   (24,
    [(assign, ":num_active_tournaments", 0),
     (try_for_range, ":center_no", towns_begin, towns_end),
-      (party_get_slot, ":has_tournament", ":center_no", slot_town_has_tournament),
+      (party_get_slot, ":has_tournament", ":center_no", slot_mainplanet_has_tournament),
       (try_begin),
         (eq, ":has_tournament", 1),#tournament ended, simulate
         (call_script, "script_fill_tournament_participants_troop", ":center_no", 0),
@@ -1914,7 +1914,7 @@ simple_triggers = [
       (try_end),
       (val_sub, ":has_tournament", 1),
       (val_max, ":has_tournament", 0),
-      (party_set_slot, ":center_no", slot_town_has_tournament, ":has_tournament"),
+      (party_set_slot, ":center_no", slot_mainplanet_has_tournament, ":has_tournament"),
       (try_begin),
         (gt, ":has_tournament", 0),
         (val_add, ":num_active_tournaments", 1),
@@ -1945,9 +1945,9 @@ simple_triggers = [
             (assign, ":bandit_troop", "trp_bandit"),
           (else_try),
             (eq, ":random_no", 1),
-            (assign, ":bandit_troop", "trp_mountain_bandit_3"),
+            (assign, ":bandit_troop", "trp_black_sun_pirate_3"),
           (else_try),
-            (assign, ":bandit_troop", "trp_forest_bandit"),
+            (assign, ":bandit_troop", "trp_blazing_claw_pirate"),
           (try_end),
           (party_set_slot, ":center_no", slot_center_has_bandits, ":bandit_troop"),
           (try_begin),
@@ -1981,7 +1981,7 @@ simple_triggers = [
       (lt, ":random_no", 30),
       (store_random_in_range, ":random_town", towns_begin, towns_end),
       (store_random_in_range, ":random_days", 12, 15),
-      (party_set_slot, ":random_town", slot_town_has_tournament, ":random_days"),
+      (party_set_slot, ":random_town", slot_mainplanet_has_tournament, ":random_days"),
       (try_begin),
         (eq, "$cheat_mode", 1),
         (str_store_party_name, s1, ":random_town"),
@@ -1996,7 +1996,7 @@ simple_triggers = [
     (assign, ":done", 0),
     (try_for_range, ":center_no", centers_begin, centers_end),
       (eq, ":done", 0),
-      (party_slot_eq, ":center_no", slot_town_lord, stl_reserved_for_player),
+      (party_slot_eq, ":center_no", slot_mainplanet_lord, stl_reserved_for_player),
       (assign, "$g_center_to_give_to_player", ":center_no"),
       (try_begin),
         (eq, "$g_center_to_give_to_player", "$g_castle_requested_by_player"),
@@ -2008,7 +2008,7 @@ simple_triggers = [
       (assign, ":done", 1),
     (else_try),
       (eq, ":center_no", "$g_castle_requested_by_player"),
-      (party_slot_ge, ":center_no", slot_town_lord, kingdom_heroes_begin),
+      (party_slot_ge, ":center_no", slot_mainplanet_lord, kingdom_heroes_begin),
       (assign, "$g_castle_requested_by_player", 0),
       (store_faction_of_party, ":faction", ":center_no"),
       (eq, ":faction", "$players_kingdom"),
@@ -2023,7 +2023,7 @@ simple_triggers = [
    [(neg|map_free),
     (is_currently_night),
     (ge, "$g_last_rest_center", 0),
-    (neg|party_slot_eq, "$g_last_rest_center", slot_town_lord, "trp_player"),
+    (neg|party_slot_eq, "$g_last_rest_center", slot_mainplanet_lord, "trp_player"),
     (store_current_hours, ":cur_hours"),
     (ge, ":cur_hours", "$g_last_rest_payment_until"),
     (store_add, "$g_last_rest_payment_until", ":cur_hours", 24),
@@ -2033,9 +2033,9 @@ simple_triggers = [
     (val_add, ":total_cost", 1),
 	#SW - increased cost to rest in towns
 	(try_begin),
-		(this_or_next|eq,"$g_last_rest_center","p_town_4"),
-		(this_or_next|eq,"$g_last_rest_center","p_town_5"),
-		(eq,"$g_last_rest_center","p_town_16"),
+		(this_or_next|eq,"$g_last_rest_center","p_corellia"),
+		(this_or_next|eq,"$g_last_rest_center","p_naboo"),
+		(eq,"$g_last_rest_center","p_coruscant"),
 		(val_mul, ":total_cost", 3),
 	(else_try),
 		(val_mul, ":total_cost", 2),
@@ -2238,7 +2238,7 @@ simple_triggers = [
 # School
   (30 * 24,
    [(try_for_range, ":cur_village", villages_begin, villages_end),
-      (party_slot_eq, ":cur_village", slot_town_lord, "trp_player"),
+      (party_slot_eq, ":cur_village", slot_mainplanet_lord, "trp_player"),
       (party_get_slot, ":cur_relation", ":cur_village", slot_center_player_relation),
 	  # HC - Changed relation increase from from 1 to 3
       (val_add, ":cur_relation", 3),
@@ -2305,7 +2305,7 @@ simple_triggers = [
      (ge, ":level", 8),
      (assign, ":cur_target_amount", 2),
      (try_for_range, ":cur_center", centers_begin, centers_end),
-       (party_slot_eq, ":cur_center", slot_town_lord, "trp_player"),
+       (party_slot_eq, ":cur_center", slot_mainplanet_lord, "trp_player"),
        (try_begin),
          (party_slot_eq, ":cur_center", slot_party_type, spt_town),
          (val_add, ":cur_target_amount", 3),
@@ -2618,7 +2618,7 @@ simple_triggers = [
        (else_try),
          #Continue collecting taxes
          (assign, ":max_collected_tax", "$qst_collect_taxes_hourly_income"),
-         (party_get_slot, ":prosperity", "$g_encountered_party", slot_town_prosperity),
+         (party_get_slot, ":prosperity", "$g_encountered_party", slot_mainplanet_prosperity),
          (store_add, ":multiplier", 30, ":prosperity"),
          (val_mul, ":max_collected_tax", ":multiplier"),
          (val_div, ":max_collected_tax", 80),#Prosperity of 50 gives the default values
@@ -2772,7 +2772,7 @@ simple_triggers = [
           (party_get_cur_town, ":cur_center_no", ":party_no"),
         (try_end),
         (this_or_next|neg|is_between, ":cur_center_no", centers_begin, centers_end),
-        (party_slot_eq, ":cur_center_no", slot_town_lord, ":troop_no"),
+        (party_slot_eq, ":cur_center_no", slot_mainplanet_lord, ":troop_no"),
     
         #checking if the party is away from his original faction parties
         (assign, ":end_cond", kingdom_heroes_end),
@@ -2825,7 +2825,7 @@ simple_triggers = [
 			  # (display_message, "@base lvl is {reg1}"),
 			  (is_between, ":base_lvl", 1, 4),
 			  # don't spawn patrol for towns that are under siege
-			  #(party_get_slot, ":siege_state", ":cur_base", slot_village_state),	#stage is always zero for player sieges (bug), use slot_center_is_besieged_by as a workaround
+			  #(party_get_slot, ":siege_state", ":cur_base", slot_minorplanet_state),	#stage is always zero for player sieges (bug), use slot_center_is_besieged_by as a workaround
 			  #(neq, ":siege_state", svs_under_siege),
 			  (party_get_slot, ":besieger_party", ":cur_base", slot_center_is_besieged_by),
 			  (lt, ":besieger_party", 0), #town is not under siege
@@ -2862,7 +2862,7 @@ simple_triggers = [
 				(party_get_slot, ":base_lvl", ":cur_base", slot_center_has_patrol),
 				(is_between, ":base_lvl", 1, 4),
 				(store_faction_of_party, ":cur_base_faction", ":cur_base"),
-				#(party_get_slot, ":siege_state", ":cur_base", slot_village_state),	#state is always zero for player sieges, use slot_center_is_besieged_by as a workaround
+				#(party_get_slot, ":siege_state", ":cur_base", slot_minorplanet_state),	#state is always zero for player sieges, use slot_center_is_besieged_by as a workaround
 				(party_get_slot, ":besieger_party", ":cur_base", slot_center_is_besieged_by),
 				(try_for_parties,":cur_patrol"), #go through all parties to find patrols
 					(party_get_template_id,":cur_party_template",":cur_patrol"),
@@ -3025,9 +3025,9 @@ simple_triggers = [
 		(store_num_parties_of_template, ":num_parties", "pt_independent_traders"),
 		(lt, ":num_parties", 5),
 		(set_spawn_radius, 5),
-		(spawn_around_party,"p_town_18","pt_independent_traders"),
+		(spawn_around_party,"p_nalhutta","pt_independent_traders"),
 		(assign, ":cur_party", reg0),
-		(party_set_slot, ":cur_party", slot_party_home_center, "p_town_18"), #set the home base to Nal Hutta
+		(party_set_slot, ":cur_party", slot_party_home_center, "p_nalhutta"), #set the home base to Nal Hutta
 		(party_set_faction, ":cur_party", "fac_trade_federation"),
 		(call_script, "script_decide_next_trader_destination", ":cur_party"),
 #		(display_message, "@spawned a trader, id is {reg0}"), #test
@@ -3041,7 +3041,7 @@ simple_triggers = [
 		(get_party_ai_current_behavior,":cur_behavior",":cur_party"),
 		(get_party_ai_object,":cur_object",":cur_party"),
 		(party_get_slot, ":cur_home_base", ":cur_party", slot_party_home_center),
-		(party_get_slot, ":cur_wealth", ":cur_object", slot_town_wealth),
+		(party_get_slot, ":cur_wealth", ":cur_object", slot_mainplanet_wealth),
 #		(assign, reg26, ":cur_object"), #test
 #		(assign, reg33, ":cur_behavior"),
 #		(display_message, "@this is {reg28}. My behvior is {reg33}, my object is {reg26}"),
@@ -3175,7 +3175,7 @@ simple_triggers = [
 			(try_begin),
 				(gt, ":total_bill", 0),
 				(val_add, ":cur_wealth", ":total_bill"),
-				(party_set_slot, ":cur_home_base", slot_town_wealth, ":cur_wealth"),
+				(party_set_slot, ":cur_home_base", slot_mainplanet_wealth, ":cur_wealth"),
 #				(assign, reg31, ":total_bill"),
 #				(assign, reg32, ":cur_wealth"),
 #				(display_message, "@{reg28} paid a bill of {reg31} making the total wealth {reg32}"),
@@ -3207,7 +3207,7 @@ simple_triggers = [
 	(str_clear, s3),
 	(assign, ":total_tax", 0),
 	(try_for_range, ":center_no", centers_begin, centers_end),
-	  (party_slot_eq, ":center_no", slot_town_lord, "trp_player"),
+	  (party_slot_eq, ":center_no", slot_mainplanet_lord, "trp_player"),
 	  (party_get_slot, ":accumulated_rents", ":center_no", slot_center_accumulated_rents),
 	  (party_get_slot, ":accumulated_tariffs", ":center_no", slot_center_accumulated_tariffs),
 	  (val_add, ":total_tax", ":accumulated_rents"),

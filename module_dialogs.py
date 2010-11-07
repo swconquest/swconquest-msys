@@ -350,9 +350,9 @@ dialogs = [
 
 
 ##  [party_tpl|pt_peasant,"start", [(eq,"$talk_context",tc_party_encounter)], "Greetings traveller.", "peasant_talk_1",[(play_sound,"snd_encounter_farmers")]],
-##  [party_tpl|pt_peasant|plyr,"peasant_talk_1", [[eq,"$quest_accepted_zendar_looters"]], "Greetings to you too.", "close_window",[(assign, "$g_leave_encounter",1)]],
-##  [party_tpl|pt_peasant|plyr,"peasant_talk_1", [[neq,"$quest_accepted_zendar_looters"],[eq,"$peasant_misunderstanding_said"]], "I have been charged with hunting down outlaws in this area...", "peasant_talk_2",[[assign,"$peasant_misunderstanding_said",1]]],
-##  [party_tpl|pt_peasant|plyr,"peasant_talk_1", [[neq,"$quest_accepted_zendar_looters"],[neq,"$peasant_misunderstanding_said"]], "Greetings. I am hunting outlaws. Have you seen any around here?", "peasant_talk_2b",[]],
+##  [party_tpl|pt_peasant|plyr,"peasant_talk_1", [[eq,"$quest_accepted_zendar_jawas"]], "Greetings to you too.", "close_window",[(assign, "$g_leave_encounter",1)]],
+##  [party_tpl|pt_peasant|plyr,"peasant_talk_1", [[neq,"$quest_accepted_zendar_jawas"],[eq,"$peasant_misunderstanding_said"]], "I have been charged with hunting down outlaws in this area...", "peasant_talk_2",[[assign,"$peasant_misunderstanding_said",1]]],
+##  [party_tpl|pt_peasant|plyr,"peasant_talk_1", [[neq,"$quest_accepted_zendar_jawas"],[neq,"$peasant_misunderstanding_said"]], "Greetings. I am hunting outlaws. Have you seen any around here?", "peasant_talk_2b",[]],
 ##  [party_tpl|pt_peasant,"peasant_talk_2", [], "I swear {sir/madam}. I am not an outlaw... I am just a simple nerf herder. I am taking my goods to the market, see.", "peasant_talk_3",[]],
 ##  [party_tpl|pt_peasant|plyr,"peasant_talk_3", [], "I was just going to ask if you saw any outlaws around here.", "peasant_talk_4",[]],
 ##  [party_tpl|pt_peasant,"peasant_talk_4", [], "Oh... phew... yes, outlaws are everywhere. They are making life miserable for us.\
@@ -360,26 +360,26 @@ dialogs = [
 ##  [party_tpl|pt_peasant,"peasant_talk_2b", [], "Outlaws? They are everywhere. They are making life miserable for us.\
 ## I wish you luck in killing them all.", "close_window",[(assign, "$g_leave_encounter",1)]],
 
-  [party_tpl|pt_manhunters,"start", [(eq,"$talk_context",tc_party_encounter)], "Hey, you there! You seen any smugglers around here?", "manhunter_talk_b",[]],
-  [party_tpl|pt_manhunters|plyr,"manhunter_talk_b", [], "Yes, they went this way about an hour ago.", "manhunter_talk_b1",[]],
-  [party_tpl|pt_manhunters,"manhunter_talk_b1", [], "I knew it! Come on, lads, lets go get these bastards! Thanks a lot, friend.", "close_window",[(assign, "$g_leave_encounter",1)]],
-  [party_tpl|pt_manhunters|plyr,"manhunter_talk_b", [], "No, haven't seen any outlaws lately.", "manhunter_talk_b2",[]],
-  [party_tpl|pt_manhunters,"manhunter_talk_b2", [], "Bah. They're holed up in this sector like womp rats, but we'll smoke them out yet. Sooner or later.", "close_window",[(assign, "$g_leave_encounter",1)]],
+  [party_tpl|pt_bountyhunters,"start", [(eq,"$talk_context",tc_party_encounter)], "Hey, you there! You seen any smugglers around here?", "bountyhunter_talk_b",[]],
+  [party_tpl|pt_bountyhunters|plyr,"bountyhunter_talk_b", [], "Yes, they went this way about an hour ago.", "bountyhunter_talk_b1",[]],
+  [party_tpl|pt_bountyhunters,"bountyhunter_talk_b1", [], "I knew it! Come on, lads, lets go get these bastards! Thanks a lot, friend.", "close_window",[(assign, "$g_leave_encounter",1)]],
+  [party_tpl|pt_bountyhunters|plyr,"bountyhunter_talk_b", [], "No, haven't seen any outlaws lately.", "bountyhunter_talk_b2",[]],
+  [party_tpl|pt_bountyhunters,"bountyhunter_talk_b2", [], "Bah. They're holed up in this sector like womp rats, but we'll smoke them out yet. Sooner or later.", "close_window",[(assign, "$g_leave_encounter",1)]],
 
-  [party_tpl|pt_looters|auto_proceed,"start", [(eq,"$talk_context",tc_party_encounter)], "Warning: This line should never be displayed.", "looters_1",[
-#SW - modified looters/jawa dialogs
+  [party_tpl|pt_jawas|auto_proceed,"start", [(eq,"$talk_context",tc_party_encounter)], "Warning: This line should never be displayed.", "jawas_1",[
+#SW - modified jawas/jawa dialogs
 	(str_store_string, s11, "@Utinni!"),
 	(str_store_string, s12, "@Guak wa Neenee Cha Ba?"),
 	(str_store_string, s13, "@Bo Shuda!"),	
 	(store_random_in_range, ":random", 11, 14),
 	(str_store_string_reg, s4, ":random"),
-#SW - modified looters encounter	
+#SW - modified jawas encounter	
 	(play_sound, "snd_jawa_victory")
   ]],
-  [party_tpl|pt_looters,"looters_1", [], "{s4}", "looters_2",[]],
-  [party_tpl|pt_looters|plyr,"looters_2", [[store_character_level,reg(1),"trp_player"],[lt,reg(1),4]], "I'm not afraid of you lot. Fight me if you dare!", "close_window",
+  [party_tpl|pt_jawas,"jawas_1", [], "{s4}", "jawas_2",[]],
+  [party_tpl|pt_jawas|plyr,"jawas_2", [[store_character_level,reg(1),"trp_player"],[lt,reg(1),4]], "I'm not afraid of you lot. Fight me if you dare!", "close_window",
    [[encounter_attack]]],
-  [party_tpl|pt_looters|plyr,"looters_2", [[store_character_level,reg(1),"trp_player"],[ge,reg(1),4]], "You'll have nothing of mine but a blaster bolt between the eyes, scum.", "close_window",
+  [party_tpl|pt_jawas|plyr,"jawas_2", [[store_character_level,reg(1),"trp_player"],[ge,reg(1),4]], "You'll have nothing of mine but a blaster bolt between the eyes, scum.", "close_window",
    [[encounter_attack]]],
 
   [party_tpl|pt_village_farmers,"start", [(eq,"$talk_context",tc_party_encounter),
@@ -388,7 +388,7 @@ dialogs = [
    " Good {sir/lady}, we're only poor farmers from the planet of {s11}. {reg1?We are taking our products to the market at {s12}.:We are returning from the market at {s12} back to our planet.}", "village_farmer_talk",
    [(party_get_slot, ":target_center", "$g_encountered_party", slot_party_ai_object),
     (party_get_slot, ":home_center", "$g_encountered_party", slot_party_home_center),
-    (party_get_slot, ":market_town", ":home_center", slot_village_market_town),
+    (party_get_slot, ":market_town", ":home_center", slot_minorplanet_market_town),
     (str_store_party_name, s11, ":home_center"),
     (str_store_party_name, s12, ":market_town"),
     (assign, reg1, 1),
@@ -400,8 +400,8 @@ dialogs = [
 
   [anyone|plyr,"village_farmer_talk", [], "We'll see how poor you are after I take what you've got!", "close_window",
    [(party_get_slot, ":home_center", "$g_encountered_party", slot_party_home_center),
-    (party_get_slot, ":market_town", ":home_center", slot_village_market_town),
-    (party_get_slot, ":village_owner", ":home_center", slot_town_lord),
+    (party_get_slot, ":market_town", ":home_center", slot_minorplanet_market_town),
+    (party_get_slot, ":village_owner", ":home_center", slot_mainplanet_lord),
     (call_script, "script_change_player_relation_with_center", ":home_center", -4),
     (call_script, "script_change_player_relation_with_center", ":market_town", -2),
     (call_script, "script_change_player_relation_with_troop", ":village_owner", -2),
@@ -791,7 +791,7 @@ dialogs = [
        (store_faction_of_party, ":cur_faction", ":cur_center"),
        (eq, ":cur_faction", "fac_player_supporters_faction"),
        (assign, ":has_center", 1),
-       (neg|party_slot_eq, ":cur_center", slot_town_lord, "trp_player"),
+       (neg|party_slot_eq, ":cur_center", slot_mainplanet_lord, "trp_player"),
        (call_script, "script_give_center_to_lord", ":cur_center", "trp_player", 0),
      (try_end),
      (party_remove_members, "p_main_party", "$supported_pretender", 1),
@@ -2515,13 +2515,13 @@ dialogs = [
                      (try_for_range, ":town", towns_begin, towns_end),
                         (store_faction_of_party, ":town_faction", ":town"),
                         (eq, ":town_faction", ":rebellion_target_faction"),
-                        (party_get_slot, ":siege_state", ":town", slot_village_state),
+                        (party_get_slot, ":siege_state", ":town", slot_minorplanet_state),
                         (neq, ":siege_state", svs_under_siege),
                         (try_begin),
-                            (party_slot_ge, ":town", slot_town_rebellion_readiness, 30),
+                            (party_slot_ge, ":town", slot_mainplanet_rebellion_readiness, 30),
                             (assign, "$town_to_rebel", ":town"),
                         (else_try),
-#                            (party_get_slot, ":contact", ":town", slot_town_rebellion_contact), 
+#                            (party_get_slot, ":contact", ":town", slot_mainplanet_rebellion_contact), 
 #                            (lt, ":contact", 2),
                             (assign, "$town_to_approach", ":town"),
                             (assign, ":support_base_is_available", 1),
@@ -2648,7 +2648,7 @@ dialogs = [
    "[Abracadabra - the planet is ready]", "pretender_discuss_rebellion", [
                      (troop_get_slot, ":support_base", "$g_talk_troop", slot_troop_support_base),
 
-                     (party_set_slot, ":support_base", slot_town_rebellion_readiness, 40),
+                     (party_set_slot, ":support_base", slot_mainplanet_rebellion_readiness, 40),
      ]],
 
   [anyone|plyr ,"pretender_town_quest", [                    
@@ -2788,7 +2788,7 @@ dialogs = [
                           (assign, ":num_centers", 0),
                           (str_clear, s8),
                           (try_for_range_backwards, ":cur_center", centers_begin, centers_end),
-                            (party_slot_eq, ":cur_center", slot_town_lord, "$g_talk_troop"),
+                            (party_slot_eq, ":cur_center", slot_mainplanet_lord, "$g_talk_troop"),
                             (try_begin),
                               (eq, ":num_centers", 0),
                               (str_store_party_name, s8, ":cur_center"),
@@ -3667,7 +3667,7 @@ dialogs = [
 ##    (val_sub, ":wealth", 6000),
 ##    (troop_set_slot, "$g_talk_troop", slot_troop_wealth, ":wealth"),
 ##    (call_script, "script_troop_add_gold", "trp_player", 5000),
-##    (party_set_slot, "$center_wanted_to_be_bought", slot_town_lord, "$g_talk_troop"),
+##    (party_set_slot, "$center_wanted_to_be_bought", slot_mainplanet_lord, "$g_talk_troop"),
 ##    #Changing center faction
 ##    (party_set_faction, "$center_wanted_to_be_bought", "$g_talk_troop_faction"),
 ##    (set_spawn_radius, 1),
@@ -3689,7 +3689,7 @@ dialogs = [
 ##   "As you wish {playername}. But don't forget, the great lords of the Galaxy won't like a low born {man/woman} like you holding such a system without their consent.\
 ## It is the nature of this Galaxy {playername}. Everyone should know their place.", "lord_pretalk", []],
 
-  [anyone,"lord_start", [(party_slot_eq, "$g_encountered_party",slot_town_lord, "$g_talk_troop"),#we are talking to Town's Lord.
+  [anyone,"lord_start", [(party_slot_eq, "$g_encountered_party",slot_mainplanet_lord, "$g_talk_troop"),#we are talking to Town's Lord.
                          (ge,"$g_talk_troop_faction_relation",0),
                          (neq, "$g_ransom_offer_rejected", 1),
                          (lt, "$g_encountered_party_2", 0), #town is not under siege
@@ -3940,7 +3940,7 @@ dialogs = [
     (assign, "$g_leave_encounter", 1),
     (try_begin),
       (is_between, "$g_encountered_party", towns_begin, towns_end),
-      (party_get_slot, ":arena_scene", "$g_encountered_party", slot_town_arena),
+      (party_get_slot, ":arena_scene", "$g_encountered_party", slot_mainplanet_arena),
     (else_try),
       (assign, ":closest_dist", 100000),
       (assign, ":closest_town", -1),
@@ -3950,7 +3950,7 @@ dialogs = [
         (assign, ":closest_dist", ":dist"),
         (assign, ":closest_town", ":cur_town"),
       (try_end),
-      (party_get_slot, ":arena_scene", ":closest_town", slot_town_arena),
+      (party_get_slot, ":arena_scene", ":closest_town", slot_mainplanet_arena),
     (try_end),
     (modify_visitors_at_site, ":arena_scene"),
     (reset_visitors),
@@ -4094,7 +4094,7 @@ dialogs = [
 ##  [anyone|plyr,"lord_talk", [(troop_slot_eq, "$g_talk_troop", slot_troop_is_prisoner, 0),
 ##                             (ge,"$g_talk_troop_faction_relation",0),
 ##                             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_castle),
-##                             (party_slot_eq, "$g_encountered_party", slot_town_lord, "$g_talk_troop"),
+##                             (party_slot_eq, "$g_encountered_party", slot_mainplanet_lord, "$g_talk_troop"),
 ##                             (eq, "$g_permitted_to_center",0),
 ##                             (party_get_num_companions, reg7, "p_main_party"),
 ##                             (val_sub, reg7, 1),
@@ -6304,7 +6304,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
 ##                                    (party_slot_eq, ":center_no", slot_party_type, spt_castle),
 ##                                    (store_faction_of_party, ":faction_no", ":center_no"),
 ##                                    (eq, ":faction_no", "fac_player_supporters_faction"),
-##                                    (party_slot_eq, ":center_no", slot_town_claimed_by_player, 1),
+##                                    (party_slot_eq, ":center_no", slot_mainplanet_claimed_by_player, 1),
 ##                                    (val_add, ":number_of_claimed_centers", 1),
 ##                                  (try_end),
 ##                                  (lt, ":number_of_claimed_centers", "$g_player_permitted_castles"),
@@ -6321,7 +6321,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
 ## I will never act in a way to cause you harm, and I will be at your side to fight your enemies should you need me.", "lord_claim_center_direct_3", []],
 ##  [anyone,"lord_claim_center_direct_3", [],  "You have given your oath of fealty {playername}. I accept your oath and give you the fief of {s4}.\
 ## Rule it wisely and protect it against our enemies.", "lord_claim_center_direct_4", [
-##     (party_set_slot, "$center_to_be_claimed", slot_town_claimed_by_player, 1),
+##     (party_set_slot, "$center_to_be_claimed", slot_mainplanet_claimed_by_player, 1),
 ##     (call_script, "script_give_center_to_lord", "$center_to_be_claimed", "trp_player")]],
 ##  [anyone|plyr,"lord_claim_center_direct_4", [],  "I thank you lord.", "close_window", [(assign, "$g_leave_encounter",1)]],
 
@@ -8361,14 +8361,14 @@ They are going around making terrible accusations against me, impugning my honou
 ##
 ##
 ##  [anyone,"seneschal_supplies_given", [],
-##   "TODO: Thank you.", "seneschal_pretalk",[(party_get_slot, ":town_siege_days", "$g_encountered_party", slot_town_siege_days),
+##   "TODO: Thank you.", "seneschal_pretalk",[(party_get_slot, ":town_siege_days", "$g_encountered_party", slot_mainplanet_siege_days),
 ##                                            (quest_get_slot, ":target_amount", "qst_deliver_supply_to_center_under_siege", slot_quest_target_amount),
 ##                                            (val_sub, ":town_siege_days", ":target_amount"),
 ##                                            (try_begin),
 ##                                              (lt, ":town_siege_days", 0),
 ##                                              (assign, ":town_siege_days", 0),
 ##                                            (try_end),
-##                                            (party_set_slot, "$g_encountered_party", slot_town_siege_days, ":town_siege_days"),
+##                                            (party_set_slot, "$g_encountered_party", slot_mainplanet_siege_days, ":town_siege_days"),
 ##                                            (troop_remove_items, "trp_player", "itm_siege_supply", ":target_amount"),
 ##                                            (call_script, "script_finish_quest", "qst_deliver_supply_to_center_under_siege", 100)]],
 ##
@@ -8379,13 +8379,13 @@ They are going around making terrible accusations against me, impugning my honou
 ##                                                                  (val_mul, ":percentage_completed", ":no_supplies"),
 ##                                                                  (val_div, ":percentage_completed", ":target_amount"),
 ##                                                                  (call_script, "script_finish_quest", "qst_deliver_supply_to_center_under_siege", ":percentage_completed"),
-##                                                                  (party_get_slot, ":town_siege_days", "$g_encountered_party", slot_town_siege_days),
+##                                                                  (party_get_slot, ":town_siege_days", "$g_encountered_party", slot_mainplanet_siege_days),
 ##                                                                  (val_sub, ":town_siege_days", ":no_supplies"),
 ##                                                                  (try_begin),
 ##                                                                    (lt, ":town_siege_days", 0),
 ##                                                                    (assign, ":town_siege_days", 0),
 ##                                                                  (try_end),
-##                                                                  (party_set_slot, "$g_encountered_party", slot_town_siege_days, ":town_siege_days"),
+##                                                                  (party_set_slot, "$g_encountered_party", slot_mainplanet_siege_days, ":town_siege_days"),
 ##                                                                  (troop_remove_items, "trp_player", "itm_siege_supply", ":no_supplies"),
 ##                                                                  (call_script, "script_end_quest", "qst_deliver_supply_to_center_under_siege")]],
 ##
@@ -8698,7 +8698,7 @@ They are going around making terrible accusations against me, impugning my honou
 # Prison Guards
   [anyone,"start", [(eq, "$talk_context", 0),(faction_slot_eq, "$g_encountered_party_faction", slot_faction_prison_guard_troop, "$g_talk_troop"),
                     (this_or_next|eq, "$g_encountered_party_faction", "fac_player_supporters_faction"),
-                    (             party_slot_eq, "$g_encountered_party", slot_town_lord, "trp_player")
+                    (             party_slot_eq, "$g_encountered_party", slot_mainplanet_lord, "trp_player")
                     ],
    "Good day commander. Will you be visiting the prison?", "prison_guard_players",[]],
   [anyone|plyr,"prison_guard_players", [],
@@ -8733,7 +8733,7 @@ They are going around making terrible accusations against me, impugning my honou
                                                                               (try_end)]],
   
   [anyone,"prison_guard_visit_prison", [(this_or_next|faction_slot_eq, "$g_encountered_party_faction",slot_faction_marshall,"trp_player"),
-                                        (this_or_next|party_slot_eq, "$g_encountered_party", slot_town_lord, "trp_player"),
+                                        (this_or_next|party_slot_eq, "$g_encountered_party", slot_mainplanet_lord, "trp_player"),
                                         (eq, "$g_encountered_party_faction", "$players_kingdom"),
                                         ],
    "Of course, {sir/madam}. Go in.", "close_window",[(call_script, "script_enter_dungeon", "$current_town", "mt_visit_town_castle")]],
@@ -8761,7 +8761,7 @@ They are going around making terrible accusations against me, impugning my honou
 # Castle Guards
   [anyone,"start", [(eq, "$talk_context", 0),(faction_slot_eq, "$g_encountered_party_faction", slot_faction_castle_guard_troop, "$g_talk_troop"),
                     (this_or_next|eq, "$g_encountered_party_faction", "fac_player_supporters_faction"),
-                    (             party_slot_eq, "$g_encountered_party", slot_town_lord, "trp_player")
+                    (             party_slot_eq, "$g_encountered_party", slot_mainplanet_lord, "trp_player")
                     ],
    "Your orders, {commander/commander}?", "castle_guard_players",[]],
   [anyone|plyr,"castle_guard_players", [],
@@ -8884,12 +8884,12 @@ They are going around making terrible accusations against me, impugning my honou
 
   [anyone|plyr,"castle_gate_guard_talk", [(ge, "$g_encountered_party_relation", 0)], 
   "We need shelter for the night. Will you let us in?", "castle_gate_open",[]],
-  [anyone|plyr,"castle_gate_guard_talk", [(party_slot_ge, "$g_encountered_party", slot_town_lord, 1)], "I want to speak with the ruler of this planet.", "request_meeting_castle_lord",[]],
+  [anyone|plyr,"castle_gate_guard_talk", [(party_slot_ge, "$g_encountered_party", slot_mainplanet_lord, 1)], "I want to speak with the ruler of this planet.", "request_meeting_castle_lord",[]],
   [anyone|plyr,"castle_gate_guard_talk", [], "I want to speak with someone in the main hall.", "request_meeting_other",[]],
 
   [anyone|plyr,"castle_gate_guard_talk", [], "[Leave]", "close_window",[]],
 
-  [anyone,"request_meeting_castle_lord", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),
+  [anyone,"request_meeting_castle_lord", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
                                          (call_script, "script_get_troop_attached_party", ":castle_lord"),
                                          (eq, "$g_encountered_party", reg0),
                                          (str_store_troop_name, s2, ":castle_lord"),
@@ -8924,7 +8924,7 @@ They are going around making terrible accusations against me, impugning my honou
 
   [anyone,"request_meeting_6", [(str_store_troop_name, s2, "$lord_requested_to_talk_to")], "{s2} says he will not see you. Begone now.", "close_window",[]],
 
-  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),
+  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
                                          (call_script, "script_get_troop_attached_party", ":castle_lord"),
                                          (eq, "$g_encountered_party", reg0),
                                          (ge, "$g_encountered_party_relation", 0),
@@ -8937,7 +8937,7 @@ They are going around making terrible accusations against me, impugning my honou
  Come on in. I am lowering the shields for you.", "close_window",[(assign,"$g_permitted_to_center",1)]],
 
 
-  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),
+  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
                                          (call_script, "script_get_troop_attached_party", ":castle_lord"),
                                          (neq, "$g_encountered_party", reg0),
                                          (ge, "$g_encountered_party_relation", 0),
@@ -8950,14 +8950,14 @@ They are going around making terrible accusations against me, impugning my honou
  But I think he would approve of you refuelling here.\
  Come on in. I am lowering the shields for you. Begin your descent.", "close_window",[(assign,"$g_permitted_to_center",1)]],
  
-  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),
+  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
                                (call_script, "script_troop_get_player_relation", ":castle_lord"),
                                (assign, ":castle_lord_relation", reg0),
                                #(troop_get_slot, ":castle_lord_relation", ":castle_lord", slot_troop_player_relation),
                                (ge, ":castle_lord_relation", -2),
                                          ],  "Come on in. I am lowering the shields for you.", "close_window",[(assign,"$g_permitted_to_center",1)]],
                                          
-  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),
+  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
                                (call_script, "script_troop_get_player_relation", ":castle_lord"),
                                (assign, ":castle_lord_relation", reg0),
                                #(troop_get_slot, ":castle_lord_relation", ":castle_lord", slot_troop_player_relation),
@@ -8966,7 +8966,7 @@ They are going around making terrible accusations against me, impugning my honou
                                          ],  "Come on in. But make sure your troops behave sensibly within the walls.\
  My ruler, {s2} does not want trouble here.", "close_window",[(assign,"$g_permitted_to_center",1)]],
  
-  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),
+  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
                                (str_store_troop_name, s2, ":castle_lord"),
   ],  "My ruler, {s2} does not want you here. Leave now or we will open fire.", "close_window",[]],
 
@@ -8982,7 +8982,7 @@ They are going around making terrible accusations against me, impugning my honou
   
 #  [anyone|plyr,"request_meeting_1", [(ge, "$g_encountered_party_faction", 0)], "Open the gates and let me in!", "request_meeting_open_gates",[]],
   
-#  [anyone|plyr,"request_meeting_1", [(party_slot_ge, "$g_encountered_party", slot_town_lord, 1)], "I want to speak with the ruler of this planet.", "request_meeting_castle_lord",[]],
+#  [anyone|plyr,"request_meeting_1", [(party_slot_ge, "$g_encountered_party", slot_mainplanet_lord, 1)], "I want to speak with the ruler of this planet.", "request_meeting_castle_lord",[]],
 #  [anyone|plyr,"request_meeting_1", [], "I want to speak with someone in the main hall.", "request_meeting_other",[]],
 
 ##### TODO: QUESTS COMMENT OUT BEGIN
@@ -9008,7 +9008,7 @@ They are going around making terrible accusations against me, impugning my honou
 ##    (val_mul, ":reward", ":quest_target_amount"),
 ##    (val_div, ":reward", 2),
 ##    (call_script, "script_troop_add_gold", "trp_player",":reward"),
-##    (party_get_slot, ":cur_lord", "$g_encountered_party", slot_town_lord),#Removing gold from the town owner's wealth
+##    (party_get_slot, ":cur_lord", "$g_encountered_party", slot_mainplanet_lord),#Removing gold from the town owner's wealth
 ##    (troop_get_slot, ":cur_wealth", ":cur_lord", slot_troop_wealth),
 ##    (val_sub, ":cur_wealth", ":reward"),
 ##    (troop_set_slot, ":cur_lord", slot_troop_wealth, ":cur_wealth"),
@@ -9040,7 +9040,7 @@ They are going around making terrible accusations against me, impugning my honou
 ##    (val_mul, ":reward", ":num_prisoners"),
 ##    (val_div, ":reward", 2),
 ##    (call_script, "script_troop_add_gold", "trp_player",":reward"),
-##    (party_get_slot, ":cur_lord", "$g_encountered_party", slot_town_lord),#Removing gold from the town owner's wealth
+##    (party_get_slot, ":cur_lord", "$g_encountered_party", slot_mainplanet_lord),#Removing gold from the town owner's wealth
 ##    (troop_get_slot, ":cur_wealth", ":cur_lord", slot_troop_wealth),
 ##    (val_sub, ":cur_wealth", ":reward"),
 ##    (troop_set_slot, ":cur_lord", slot_troop_wealth, ":cur_wealth"),
@@ -9066,13 +9066,13 @@ They are going around making terrible accusations against me, impugning my honou
 
 
   
-##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),
+##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
 ##                                         (call_script, "script_get_troop_attached_party", ":castle_lord"),
 ##                                         (eq, "$g_encountered_party", reg0),
 ##                                         (str_store_troop_name, 1, ":castle_lord")
 ##                                         ],  "My ruler {s1} is in the main hall now. You must ask his permission to enter.", "request_meeting_pretalk",[]],
 ##
-##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),
+##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
 ##                                         (call_script, "script_get_troop_attached_party", ":castle_lord"),
 ##                                         (neq, "$g_encountered_party", reg0),
 ##                                         (ge, "$g_encountered_party_relation", 0),
@@ -9083,7 +9083,7 @@ They are going around making terrible accusations against me, impugning my honou
 ## But I think he would approve of you refuelling here, {sir/madam}.\
 ## Come on in. I am lowering the shields for your descent.", "close_window",[]],
 ##  
-##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_town_lord),(str_store_troop_name, 1, ":castle_lord")],
+##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),(str_store_troop_name, 1, ":castle_lord")],
 ##   "My ruler {s1} is not in the main hall now. I can't allow you in without his orders.", "request_meeting_pretalk",[]],
   
 
@@ -9587,9 +9587,9 @@ They are going around making terrible accusations against me, impugning my honou
 #Runaway Peasants
 
 
-  [party_tpl|pt_runaway_serfs,"start", [(party_slot_eq, "$g_encountered_party", slot_town_center, 0)],#slot_town_center is used for first time meeting
+  [party_tpl|pt_runaway_serfs,"start", [(party_slot_eq, "$g_encountered_party", slot_mainplanet_center, 0)],#slot_mainplanet_center is used for first time meeting
    "Good day {sir/madam}.", "runaway_serf_intro_1",
-   [(party_set_slot, "$g_encountered_party", slot_town_center, 1)]],
+   [(party_set_slot, "$g_encountered_party", slot_mainplanet_center, 1)]],
   
   [anyone|plyr,"runaway_serf_intro_1", [(quest_get_slot, ":lord", "qst_bring_back_runaway_serfs", slot_quest_giver_troop),
                                         (str_store_troop_name, s4, ":lord")],
@@ -9620,23 +9620,23 @@ They are going around making terrible accusations against me, impugning my honou
     (assign, "$g_leave_encounter",1)]],
   
   [anyone,"runaway_serf_let_go", [], "Such a great act of kindness, {sir/madam}. We will not forget your help.", "close_window",
-   [(party_set_slot, "$g_encountered_party", slot_town_castle, 1),
+   [(party_set_slot, "$g_encountered_party", slot_mainplanet_castle, 1),
     (assign, "$g_leave_encounter",1)]],
   
 
-  [party_tpl|pt_runaway_serfs,"start", [(party_slot_eq, "$g_encountered_party", slot_town_castle, 1),
+  [party_tpl|pt_runaway_serfs,"start", [(party_slot_eq, "$g_encountered_party", slot_mainplanet_castle, 1),
                                         ],
    "Good day {sir/madam}. Don't worry. If anyone asks, we haven't seen you.", "runaway_serf_reconsider",[]],
 
   [anyone|plyr,"runaway_serf_reconsider", [], "I have changed my mind. You must back to your planet!", "runaway_serf_go_back",
-   [(party_set_slot, "$g_encountered_party", slot_town_castle, 0),
+   [(party_set_slot, "$g_encountered_party", slot_mainplanet_castle, 0),
     (quest_get_slot, ":quest_object_center", "qst_bring_back_runaway_serfs", slot_quest_object_center),
     (call_script, "script_change_player_relation_with_center", ":quest_object_center", -2)]],
 
   [anyone|plyr,"runaway_serf_reconsider", [], "Good. Go quickly now before I change my mind.", "runaway_serf_let_go",[]],
   
   
-  [party_tpl|pt_runaway_serfs,"start", [(party_slot_eq, "$g_encountered_party", slot_town_castle, 0),
+  [party_tpl|pt_runaway_serfs,"start", [(party_slot_eq, "$g_encountered_party", slot_mainplanet_castle, 0),
                                         (get_party_ai_object, ":cur_ai_object"),
                                         (quest_get_slot, ":home_center", "qst_bring_back_runaway_serfs", slot_quest_object_center),
                                         (neq, ":home_center", ":cur_ai_object")],
@@ -9871,7 +9871,7 @@ They are going around making terrible accusations against me, impugning my honou
    [
    #Tavern recruitment START
     (store_encountered_party,reg(2)),
-    (party_get_slot,"$tavernkeeper_party",reg(2),slot_town_mercs),
+    (party_get_slot,"$tavernkeeper_party",reg(2),slot_mainplanet_mercs),
 	#Tavern recruitment END
     ]],
   
@@ -10614,12 +10614,12 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                      (neg|check_quest_active, "qst_deal_with_bandits_at_lords_village"),
                      (assign, ":end_cond", villages_end),
                      (try_for_range, ":cur_village", villages_begin, ":end_cond"),
-                       (party_slot_eq, ":cur_village", slot_village_bound_center, "$g_encountered_party"),
-                       (party_slot_ge, ":cur_village", slot_village_infested_by_bandits, 1),
+                       (party_slot_eq, ":cur_village", slot_minorplanet_bound_center, "$g_encountered_party"),
+                       (party_slot_ge, ":cur_village", slot_minorplanet_infested_by_bandits, 1),
                        (str_store_party_name, s1, ":cur_village"),
                        (quest_set_slot, "qst_eliminate_bandits_infesting_village", slot_quest_target_center, ":cur_village"),
                        (quest_set_slot, "qst_eliminate_bandits_infesting_village", slot_quest_current_state, 0),
-                       (party_get_slot, ":village_elder", ":cur_village", slot_town_elder),
+                       (party_get_slot, ":village_elder", ":cur_village", slot_mainplanet_elder),
                        (quest_set_slot, "qst_eliminate_bandits_infesting_village", slot_quest_giver_troop, ":village_elder"),
                        (quest_set_slot, "qst_eliminate_bandits_infesting_village", slot_quest_giver_center, ":cur_village"),
                        (assign, ":end_cond", 0),
@@ -11038,7 +11038,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##                                                             (assign, ":cur_center_2", reg0),
 ##                                                             (this_or_next|eq, ":cur_center", ":center_no"),
 ##                                                             (eq, ":cur_center_2", ":center_no"),
-##                                                             (neg|party_slot_eq, ":center_no", slot_town_lord, ":troop_no"),#Neglect the ruler of the center
+##                                                             (neg|party_slot_eq, ":center_no", slot_mainplanet_lord, ":troop_no"),#Neglect the ruler of the center
 ##                                                             (str_store_troop_name, s1, ":troop_no")],
 ##   "{s1}", "crook_request_meeting_3", [(store_repeat_object, "$selected_troop")]],
 ##
@@ -11060,7 +11060,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##   "TODO: I don't have that much money.", "crook_search_person_5_2",[]],
 ##
 ##  [anyone, "crook_search_person_5_1", [],
-##   "TODO: Ok.", "close_window",[(party_get_slot, ":town_alley", "$g_encountered_party", slot_town_alley),
+##   "TODO: Ok.", "close_window",[(party_get_slot, ":town_alley", "$g_encountered_party", slot_mainplanet_alley),
 ##                                (modify_visitors_at_site,":town_alley"),(reset_visitors),
 ##                                (set_visitor,0,"trp_player"),
 ##                                (set_visitor,17,"$selected_troop"),
@@ -11222,130 +11222,130 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "It was my pleasure, {s65}.", "close_window",[]],
 
 # Ryan BEGIN
-  [anyone,"mayor_begin", [(check_quest_active, "qst_deal_with_looters"),
-                          (quest_slot_eq, "qst_deal_with_looters", slot_quest_giver_troop, "$g_talk_troop"),
+  [anyone,"mayor_begin", [(check_quest_active, "qst_deal_with_jawas"),
+                          (quest_slot_eq, "qst_deal_with_jawas", slot_quest_giver_troop, "$g_talk_troop"),
                          ],
-   "Ah, {playername}. Have you any progress to report?", "mayor_looters_quest_response",
+   "Ah, {playername}. Have you any progress to report?", "mayor_jawas_quest_response",
    [
     ]],
 
-  [anyone|plyr,"mayor_looters_quest_response",
+  [anyone|plyr,"mayor_jawas_quest_response",
    [
-     (store_num_parties_destroyed_by_player, ":num_looters_destroyed", "pt_looters"),
-     (party_template_get_slot,":previous_looters_destroyed","pt_looters",slot_party_template_num_killed),
-     (val_sub,":num_looters_destroyed",":previous_looters_destroyed"),
-     (quest_get_slot,":looters_paid_for","qst_deal_with_looters",slot_quest_current_state),
-     (lt,":looters_paid_for",":num_looters_destroyed"),
+     (store_num_parties_destroyed_by_player, ":num_jawas_destroyed", "pt_jawas"),
+     (party_template_get_slot,":previous_jawas_destroyed","pt_jawas",slot_party_template_num_killed),
+     (val_sub,":num_jawas_destroyed",":previous_jawas_destroyed"),
+     (quest_get_slot,":jawas_paid_for","qst_deal_with_jawas",slot_quest_current_state),
+     (lt,":jawas_paid_for",":num_jawas_destroyed"),
      ],
-   "I've killed some looters.", "mayor_looters_quest_destroyed",[]],
-  [anyone|plyr,"mayor_looters_quest_response", [(eq,1,0)
+   "I've killed some jawas.", "mayor_jawas_quest_destroyed",[]],
+  [anyone|plyr,"mayor_jawas_quest_response", [(eq,1,0)
   ],
-   "I've brought you some goods.", "mayor_looters_quest_goods",[]],
-  [anyone|plyr,"mayor_looters_quest_response", [
+   "I've brought you some goods.", "mayor_jawas_quest_goods",[]],
+  [anyone|plyr,"mayor_jawas_quest_response", [
   ],
    "Not yet, sir. Good-bye.", "close_window",[]],
 
-  [anyone,"mayor_looters_quest_destroyed", [],
+  [anyone,"mayor_jawas_quest_destroyed", [],
    "Oh yes, my scouts saw the whole thing. That should make anyone else think twice before turning to piracy!\
  The bounty is 40 credits for every band, so that makes {reg1} in total. Here is your money, as promised.",
-   "mayor_looters_quest_destroyed_2",[
-      (store_num_parties_destroyed_by_player, ":num_looters_destroyed", "pt_looters"),
-      (party_template_get_slot,":previous_looters_destroyed","pt_looters",slot_party_template_num_killed),
-      (val_sub,":num_looters_destroyed",":previous_looters_destroyed"),
-      (quest_get_slot,":looters_paid_for","qst_deal_with_looters",slot_quest_current_state),
-      (store_sub,":looter_bounty",":num_looters_destroyed",":looters_paid_for"),
-      (val_mul,":looter_bounty",40),
-      (assign,reg1,":looter_bounty"),
-      (call_script, "script_troop_add_gold","trp_player",":looter_bounty"),
-      (assign,":looters_paid_for",":num_looters_destroyed"),
-      (quest_set_slot,"qst_deal_with_looters",slot_quest_current_state,":looters_paid_for"),
+   "mayor_jawas_quest_destroyed_2",[
+      (store_num_parties_destroyed_by_player, ":num_jawas_destroyed", "pt_jawas"),
+      (party_template_get_slot,":previous_jawas_destroyed","pt_jawas",slot_party_template_num_killed),
+      (val_sub,":num_jawas_destroyed",":previous_jawas_destroyed"),
+      (quest_get_slot,":jawas_paid_for","qst_deal_with_jawas",slot_quest_current_state),
+      (store_sub,":jawa_bounty",":num_jawas_destroyed",":jawas_paid_for"),
+      (val_mul,":jawa_bounty",40),
+      (assign,reg1,":jawa_bounty"),
+      (call_script, "script_troop_add_gold","trp_player",":jawa_bounty"),
+      (assign,":jawas_paid_for",":num_jawas_destroyed"),
+      (quest_set_slot,"qst_deal_with_jawas",slot_quest_current_state,":jawas_paid_for"),
       ]],
-  [anyone,"mayor_looters_quest_destroyed_2", [
-      (quest_get_slot,":total_looters","qst_deal_with_looters",slot_quest_target_amount),
-      (quest_slot_ge,"qst_deal_with_looters",slot_quest_current_state,":total_looters"), # looters paid for >= total looters
-      (quest_get_slot,":xp_reward","qst_deal_with_looters",slot_quest_xp_reward),
-      (quest_get_slot,":gold_reward","qst_deal_with_looters",slot_quest_gold_reward),
+  [anyone,"mayor_jawas_quest_destroyed_2", [
+      (quest_get_slot,":total_jawas","qst_deal_with_jawas",slot_quest_target_amount),
+      (quest_slot_ge,"qst_deal_with_jawas",slot_quest_current_state,":total_jawas"), # jawas paid for >= total jawas
+      (quest_get_slot,":xp_reward","qst_deal_with_jawas",slot_quest_xp_reward),
+      (quest_get_slot,":gold_reward","qst_deal_with_jawas",slot_quest_gold_reward),
       (add_xp_as_reward, ":xp_reward"),
       (call_script, "script_troop_add_gold","trp_player",":gold_reward"),
       (call_script, "script_change_troop_renown", "trp_player", 1),
       (call_script, "script_change_player_relation_with_center", "$current_town", 5),
-      (call_script, "script_end_quest", "qst_deal_with_looters"),
+      (call_script, "script_end_quest", "qst_deal_with_jawas"),
       (try_for_parties, ":cur_party_no"),
         (party_get_template_id, ":cur_party_template", ":cur_party_no"),
-        (eq, ":cur_party_template", "pt_looters"),
+        (eq, ":cur_party_template", "pt_jawas"),
         (party_set_flags, ":cur_party_no", pf_quest_party, 0),
       (try_end),
   ],
-   "And that's not the only good news! Thanks to you, the looters have ceased to be a threat. We've not had a single attack reported for some time now.\
+   "And that's not the only good news! Thanks to you, the jawas have ceased to be a threat. We've not had a single attack reported for some time now.\
    If there are any of them left, they've either run off or gone deep into hiding. That's good for business,\
    and what's good for business is good for the planet!\
    I think that concludes our arrangement, {playername}. Please accept these credits as a token of my gratitude. Thank you, and good-bye.",
    "close_window",[
       ]],
-  [anyone,"mayor_looters_quest_destroyed_2", [],
+  [anyone,"mayor_jawas_quest_destroyed_2", [],
    "Anything else you need?",
-   "mayor_looters_quest_response",[
+   "mayor_jawas_quest_response",[
       ]],
 
-  [anyone,"mayor_looters_quest_goods", [
-      (quest_get_slot,reg1,"qst_deal_with_looters",slot_quest_target_item),
+  [anyone,"mayor_jawas_quest_goods", [
+      (quest_get_slot,reg1,"qst_deal_with_jawas",slot_quest_target_item),
   ],
    "Hah, I knew I could count on you! Just tell me which item to take from your baggage, and I'll send some troops to collect it.\
  I still need {reg1} credits' worth of goods.",
-   "mayor_looters_quest_goods_response",[
+   "mayor_jawas_quest_goods_response",[
       ]],
-  [anyone|plyr|repeat_for_100,"mayor_looters_quest_goods_response", [
+  [anyone|plyr|repeat_for_100,"mayor_jawas_quest_goods_response", [
       (store_repeat_object,":goods"),
       (val_add,":goods",trade_goods_begin),
       (is_between,":goods",trade_goods_begin,trade_goods_end),
       (player_has_item,":goods"),
       (str_store_item_name,s5,":goods"),
   ],
-   "{s5}.", "mayor_looters_quest_goods_2",[
+   "{s5}.", "mayor_jawas_quest_goods_2",[
       (store_repeat_object,":goods"),
       (val_add,":goods",trade_goods_begin),
       (troop_remove_items,"trp_player",":goods",1),
       (assign,":value",reg0),
       (call_script, "script_troop_add_gold","trp_player",":value"),
-      (quest_get_slot,":gold_num","qst_deal_with_looters",slot_quest_target_item),
+      (quest_get_slot,":gold_num","qst_deal_with_jawas",slot_quest_target_item),
       (val_sub,":gold_num",":value"),
-      (quest_set_slot,"qst_deal_with_looters",slot_quest_target_item,":gold_num"),
+      (quest_set_slot,"qst_deal_with_jawas",slot_quest_target_item,":gold_num"),
       (str_store_item_name,s6,":goods"),
    ]],
-  [anyone|plyr,"mayor_looters_quest_goods_response", [
+  [anyone|plyr,"mayor_jawas_quest_goods_response", [
   ],
-   "Nothing at the moment, sir.", "mayor_looters_quest_goods_3",[]],
+   "Nothing at the moment, sir.", "mayor_jawas_quest_goods_3",[]],
 
-  [anyone,"mayor_looters_quest_goods_3", [
+  [anyone,"mayor_jawas_quest_goods_3", [
   ],
    "Anything else you need?",
-   "mayor_looters_quest_response",[
+   "mayor_jawas_quest_response",[
       ]],
 
-  [anyone,"mayor_looters_quest_goods_2", [
-      (quest_slot_ge,"qst_deal_with_looters",slot_quest_target_item,1),
-      (quest_get_slot,reg1,"qst_deal_with_looters",slot_quest_target_item),
+  [anyone,"mayor_jawas_quest_goods_2", [
+      (quest_slot_ge,"qst_deal_with_jawas",slot_quest_target_item,1),
+      (quest_get_slot,reg1,"qst_deal_with_jawas",slot_quest_target_item),
   ],
    "Excellent, here is the money for your {s6}. Do you have any more goods to give me? I still need {reg1} credits' worth of goods.",
-   "mayor_looters_quest_goods_response",[
+   "mayor_jawas_quest_goods_response",[
       ]],
-  [anyone,"mayor_looters_quest_goods_2", [
-      (neg|quest_slot_ge,"qst_deal_with_looters",slot_quest_target_item,1),
-      (quest_get_slot,":xp_reward","qst_deal_with_looters",slot_quest_xp_reward),
-      (quest_get_slot,":gold_reward","qst_deal_with_looters",slot_quest_gold_reward),
+  [anyone,"mayor_jawas_quest_goods_2", [
+      (neg|quest_slot_ge,"qst_deal_with_jawas",slot_quest_target_item,1),
+      (quest_get_slot,":xp_reward","qst_deal_with_jawas",slot_quest_xp_reward),
+      (quest_get_slot,":gold_reward","qst_deal_with_jawas",slot_quest_gold_reward),
       (add_xp_as_reward, ":xp_reward"),
       (call_script, "script_troop_add_gold","trp_player",":gold_reward"),
 #      (call_script, "script_change_troop_renown", "trp_player", 1),
       (call_script, "script_change_player_relation_with_center", "$current_town", 3),
-      (call_script, "script_end_quest", "qst_deal_with_looters"),
+      (call_script, "script_end_quest", "qst_deal_with_jawas"),
       (try_for_parties, ":cur_party_no"),
         (party_get_template_id, ":cur_party_template", ":cur_party_no"),
-        (eq, ":cur_party_template", "pt_looters"),
+        (eq, ":cur_party_template", "pt_jawas"),
         (party_set_flags, ":cur_party_no", pf_quest_party, 0),
       (try_end),
   ],
    "Well done, {playername}, that's the last of the goods I need. Here is the money for your {s6}, and a small bonus for helping me out.\
- I'm afraid I won't be paying for any more goods, nor bounties on looters, but you're welcome to keep hunting the bastards if any remain.\
+ I'm afraid I won't be paying for any more goods, nor bounties on jawas, but you're welcome to keep hunting the bastards if any remain.\
  Thank you for your help, I won't forget it.",
    "close_window",[
       ]],
@@ -11475,7 +11475,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
  I can help you find a job if you are looking for some honest work.", "mayor_info_talk",[(assign, "$mayor_info_lord_told",0)]],
 
   [anyone|plyr,"mayor_info_talk",[(eq, "$mayor_info_lord_told",0)], "Who rules this planet?", "mayor_info_lord",[]],
-  [anyone, "mayor_info_lord", [(party_get_slot, ":town_lord","$current_town",slot_town_lord),(str_store_troop_name, s10, ":town_lord")],
+  [anyone, "mayor_info_lord", [(party_get_slot, ":town_lord","$current_town",slot_mainplanet_lord),(str_store_troop_name, s10, ":town_lord")],
    "Our planet's ruler and protector is {s10}. He owns the main hall and sometimes resides there, and collects taxes from this planet.\
  However we regulate ourselves in most of the matters that concern ourselves.\
  As the planet's administrator I have the authority to decide those things.", "mayor_info_talk",[(assign, "$mayor_info_lord_told",1)]],
@@ -11506,16 +11506,16 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##############################
 
 # Ryan BEGIN
-  # deal with looters
+  # deal with jawas
   [anyone,"merchant_quest_requested",
    [
-     (eq,"$random_merchant_quest_no","qst_deal_with_looters"),
+     (eq,"$random_merchant_quest_no","qst_deal_with_jawas"),
      ],
    "Well, you look able enough. I think I might have something you could do.", "merchant_quest_brief", []],
 
   [anyone,"merchant_quest_brief",
    [
-     (eq,"$random_merchant_quest_no","qst_deal_with_looters"),
+     (eq,"$random_merchant_quest_no","qst_deal_with_jawas"),
      (try_begin),
        (party_slot_eq,"$g_encountered_party",slot_party_type,spt_town),
        (str_store_string,s5,"@town"),
@@ -11527,13 +11527,13 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "We've had some fighting near the {s5} lately, with all the chaos that comes with it,\
  and that's led some of our less upstanding locals to try and make their fortune out of looting the shops and farms during the confusion.\
  A lot of valuable goods were taken. I need somebody to teach those bastards a lesson.\
- Sound like your kind of work?", "merchant_quest_looters_choice", []],
+ Sound like your kind of work?", "merchant_quest_jawas_choice", []],
 
-  [anyone|plyr,"merchant_quest_looters_choice", [], "Yes, I'll do it.", "merchant_quest_looters_brief", []],
+  [anyone|plyr,"merchant_quest_jawas_choice", [], "Yes, I'll do it.", "merchant_quest_jawas_brief", []],
 
-  [anyone|plyr,"merchant_quest_looters_choice", [], "I'm afraid I can't take the job at the moment.", "merchant_quest_stall",[]],
+  [anyone|plyr,"merchant_quest_jawas_choice", [], "I'm afraid I can't take the job at the moment.", "merchant_quest_stall",[]],
 
-  [anyone,"merchant_quest_looters_brief", [
+  [anyone,"merchant_quest_jawas_brief", [
    (try_begin),
    (party_slot_eq,"$g_encountered_party",slot_party_type,spt_town),
    (str_store_string,s5,"@town"),
@@ -11542,28 +11542,28 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    (str_store_string,s5,"@village"),
    (try_end),
 
-#     (party_get_slot,":merchant","$current_town",slot_town_merchant),
+#     (party_get_slot,":merchant","$current_town",slot_mainplanet_merchant),
 #     (troop_clear_inventory,":merchant"),
-   (store_random_in_range,":random_num_looters",3,7),
-   (quest_set_slot,"qst_deal_with_looters",slot_quest_target_amount,":random_num_looters"),
-   (try_for_range,":unused",0,":random_num_looters"),
+   (store_random_in_range,":random_num_jawas",3,7),
+   (quest_set_slot,"qst_deal_with_jawas",slot_quest_target_amount,":random_num_jawas"),
+   (try_for_range,":unused",0,":random_num_jawas"),
      (store_random_in_range,":random_radius",5,14),
      (set_spawn_radius,":random_radius"),
-     (spawn_around_party,"$g_encountered_party","pt_looters"),
+     (spawn_around_party,"$g_encountered_party","pt_jawas"),
      (party_set_flags, reg0, pf_quest_party, 1),
    (try_end),
    (str_store_troop_name_link, s9, "$g_talk_troop"),
    (str_store_party_name_link, s13, "$g_encountered_party"),
    (str_store_party_name, s4, "$g_encountered_party"),
-   (setup_quest_text, "qst_deal_with_looters"),
-   (str_store_string, s2, "@The administrator of {s13} has asked you to deal with looters in the surrounding system."),
-   (call_script, "script_start_quest", "qst_deal_with_looters", "$g_talk_troop"),
+   (setup_quest_text, "qst_deal_with_jawas"),
+   (str_store_string, s2, "@The administrator of {s13} has asked you to deal with jawas in the surrounding system."),
+   (call_script, "script_start_quest", "qst_deal_with_jawas", "$g_talk_troop"),
    (assign, "$g_leave_encounter",1),
   ],
-   "Excellent! You'll find the looters roaming around this sector, probably trying to rob more good people.\
+   "Excellent! You'll find the jawas roaming around this sector, probably trying to rob more good people.\
  Kill or capture the bastards, I don't care what you do with them.\
- I'll pay you a bounty of 40 credits on every band of looters you destroy,\
- until all the looters are dealt with.", "close_window",
+ I'll pay you a bounty of 40 credits on every band of jawas you destroy,\
+ until all the jawas are dealt with.", "close_window",
    []],
 # Ryan END
 
@@ -12161,7 +12161,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "My good {sir/madam}. Our planet is grateful for your help. Thanks to the herd of {reg5} nerfs you have brought, we can now raise our own herd.", "village_elder_deliver_cattle_thank",
    [(add_xp_as_reward, 400),
     (quest_get_slot, ":num_cattle", "qst_deliver_cattle", slot_quest_target_amount),
-    (party_set_slot, "$current_town", slot_village_number_of_cattle, ":num_cattle"),
+    (party_set_slot, "$current_town", slot_minorplanet_number_of_cattle, ":num_cattle"),
     (call_script, "script_change_center_prosperity", "$current_town", 4),
     (call_script, "script_change_player_relation_with_center", "$current_town", 5),
     (call_script, "script_end_quest", "qst_deliver_cattle"),
@@ -12201,12 +12201,12 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone,"start", [(is_between,"$g_talk_troop", planet_admins_begin, planet_admins_end),(eq,"$g_talk_troop_met",0),
                     (str_store_party_name, s9, "$current_town"),
-                    (party_slot_eq, "$current_town", slot_town_lord, "trp_player")],
+                    (party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player")],
    "Welcome to {s9}, {playername}. We were rejoiced by the news that you are the new {chancellor/chancellor} of our minor planet.\
  I am the planet administrator and I would be honoured to serve you in any way I can.", "village_elder_talk",[]],
   
   [anyone ,"start", [(is_between,"$g_talk_troop",planet_admins_begin,planet_admins_end),
-                     (party_slot_eq, "$current_town", slot_town_lord, "trp_player")],
+                     (party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player")],
    "{My chancellor/My chancellor}, you honour our minor planet with your presence.", "village_elder_talk",[]],
 
   [anyone ,"start", [(is_between,"$g_talk_troop",planet_admins_begin,planet_admins_end)],
@@ -12286,8 +12286,8 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone|plyr,"village_elder_talk", [(ge, "$g_talk_troop_faction_relation", 0),(store_partner_quest,":elder_quest"),(lt,":elder_quest",0)],
    "Do you have any tasks I can help you with?", "village_elder_request_mission_ask",[]],
 
-  [anyone|plyr,"village_elder_talk", [(party_slot_eq, "$current_town", slot_village_state, 0),
-                                      (neg|party_slot_ge, "$current_town", slot_village_infested_by_bandits, 1),],
+  [anyone|plyr,"village_elder_talk", [(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
+                                      (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),],
    "I want to buy some supplies. I will pay with gold.", "village_elder_trade_begin",[]],
 
 
@@ -12298,8 +12298,8 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone ,"village_elder_trade", [],
    "We have some food and other supplies in our storehouse. Come have a look.", "village_elder_pretalk",[(change_screen_trade, "$g_talk_troop"),]],
 
-  [anyone|plyr,"village_elder_trade_talk", [(party_slot_eq, "$current_town", slot_village_state, 0),
-                                      (neg|party_slot_ge, "$current_town", slot_village_infested_by_bandits, 1),
+  [anyone|plyr,"village_elder_trade_talk", [(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
+                                      (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
                                       (assign, ":quest_village", 0),
                                       (try_begin),
                                         (check_quest_active, "qst_deliver_cattle"),
@@ -12403,7 +12403,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
 
 
-  [anyone ,"village_elder_buy_cattle", [(party_get_slot, reg5, "$g_encountered_party", slot_village_number_of_cattle),
+  [anyone ,"village_elder_buy_cattle", [(party_get_slot, reg5, "$g_encountered_party", slot_minorplanet_number_of_cattle),
                                         (gt, reg5, 0),
                                         (store_item_value, ":cattle_cost", "itm_cattle_meat"),
                                         (call_script, "script_game_get_item_buy_price_factor", "itm_cattle_meat"),
@@ -12419,14 +12419,14 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "I am afraid we have no nerfs within this sector.", "village_elder_buy_cattle_2",[]],
 
 
-  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_village_number_of_cattle),
+  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
                                               (ge, ":num_cattle", 1),
                                               (store_troop_gold, ":gold", "trp_player"),
                                               (ge, ":gold", "$temp"),],
    "One.", "village_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 1, "$temp"),
                                                        ]],
   
-  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_village_number_of_cattle),
+  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
                                               (ge, ":num_cattle", 2),
                                               (store_troop_gold, ":gold", "trp_player"),
                                               (store_mul, ":cost", "$temp", 2),
@@ -12434,7 +12434,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "Two.", "village_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 2, "$temp"),
                                                        ]],
   
-  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_village_number_of_cattle),
+  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
                                               (ge, ":num_cattle", 3),
                                               (store_troop_gold, ":gold", "trp_player"),
                                               (store_mul, ":cost", "$temp", 3),
@@ -12442,7 +12442,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "Three.", "village_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 3, "$temp"),
                                                        ]],
   
-  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_village_number_of_cattle),
+  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
                                               (ge, ":num_cattle", 4),
                                               (store_troop_gold, ":gold", "trp_player"),
                                               (store_mul, ":cost", "$temp", 4),
@@ -12450,7 +12450,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "Four.", "village_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 4, "$temp"),
                                                        ]],
   
-  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_village_number_of_cattle),
+  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
                                               (ge, ":num_cattle", 5),
                                               (store_troop_gold, ":gold", "trp_player"),
                                               (store_mul, ":cost", "$temp", 5),
@@ -12698,7 +12698,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 #Goods Merchants
   
   [anyone ,"start", [(is_between,"$g_talk_troop",goods_merchants_begin,goods_merchants_end),
-                     (party_slot_eq, "$current_town", slot_town_lord, "trp_player")],
+                     (party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player")],
    "You honour my humble shop with your presence.", "goods_merchant_talk",[]],
   [anyone ,"start", [(is_between,"$g_talk_troop",goods_merchants_begin,goods_merchants_end)],
    "Welcome {sir/madam}. What can I do for you?", "goods_merchant_talk",[]],
@@ -12746,60 +12746,60 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##"You can buy tools from here at a very good price.\
 ## The best place to sell them would be Tulga. Heard they pay quite well for tools over there.\
 ## And next time you come here bring some salt. I will pay well for salt.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [(store_encountered_party,reg(1)),(eq,reg(1),"p_town_1")],
+##  [anyone,"goods_merchant_town_info", [(store_encountered_party,reg(1)),(eq,reg(1),"p_mandalore")],
 ##"Sargoth is famous for its fine linen. Many caravans come here to buy that.\
 ## I heard you can sell it at Halmar and make a nice profit.\
 ## And next time you come here bring some iron. I will pay well for iron.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_town_2"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_byss"]],
 ##"I can sell you some smoked fish with a special price.\
 ## I heard that caravans take smoked fish to Uxkhal and make a good profit.\
 ## And next time you come here bring some wool. I will pay you well for wool.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_town_3"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_endor"]],
 ##"I can sell you some wine with a special price.\
 ## I heard that caravans buy wine from here and sell it at Wercheg, making a good profit.\
 ## And next time you come here, bring some dried meat. I will pay you well for dried meat.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_town_4"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_corellia"]],
 ##"I have a stock of oil which I can sell you with a good price.\
 ## They say they offer a fortune for oil in Rivacheg, so maybe you can sell it there.\
 ## And next time you come here, bring some furs. I will pay you well for furs.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_town_5"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_naboo"]],
 ##"Jelkala is famous for its velvet. Many caravans come here to buy that.\
 ## They say merchants will buy it at insane prices in Reyvadin, so maybe you can take it there.\
 ## And next time you come here, bring some pottery. I will pay you well for pottery.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_town_6"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_kessel"]],
 ##"We produce some excellent ale here in Praven. Most caravans come here to buy that.\
 ## They say that the folks at Khudan will sell their right arms for ale, so maybe you can take it there.\
 ## And next time you come here, bring some spice. I have sold out my stock of spice and I will pay you well for it.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_town_7"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_dantooine"]],
 ##"We produce mostly wheat here in Uxkhal. I would suggest you buy that.\
 ## I heard you can sell it with a good profit in Tulga, so maybe you can take it there.\
 ## And next time you come here, bring some smoked fish. I will pay you well for it.", "goods_merchant_town_info_completed",[]],
 ##
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_town_8"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_geonosis"]],
 ##"Most caravans come to Reyvadin to buy wool.\
 ## I heard that they take it to Tihr where they pay well for wool.\
 ## And next time you come here, bring some velvet. I will buy it from you at a good price.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_town_9"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_mon_cal"]],
 ##"Most caravans come to Khudan to buy furs.\
 ## I heard that they take it to Suno where they pay well for it.\
 ## And next time you come here, bring some ale. I will buy it from you at a good price.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_town_10"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_kashyyyk"]],
 ##"Most caravans come to Tulga to buy spice.\
 ## They say that in Praven they pay well for spice, so you may think of selling it to the mechants there.\
 ## And next time you come here, bring some wheat. I will buy it from you at a good price.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_town_11"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_hoth"]],
 ##"We mine a lot of iron here in Curaw. I would suggest you buy that.\
 ## I heard you can take it to Sargoth and sell it with a good profit.\
 ## And next time you come here, bring some dried meat. I will pay you well for it.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_town_12"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_gamorr"]],
 ##"I can sell you some smoked fish with a special price.\
 ## I heard that caravans take smoked fish to Uxkhal and make a good profit.\
 ## And next time you come here bring some wine. I will pay you well for wine.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_town_13"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_yavin_iv"]],
 ##"I have a stock of dried meat which I can sell you with a good price.\
 ## They say they pay very well for dried meat in Veluca, so maybe you can sell it there.\
 ## And next time you come here, bring some oil. I have sold out my stock of oil and I will pay you well for it.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_town_14"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_tatooine"]],
 ##"We produce some good quality pottery here in Halmar. Most caravans come here to buy that.\
 ## I heard that caravans buy pottery from here and sell it at Jelkala, making a good profit.\
 ## And next time you come here, bring some linen. I have sold out my stock of linen and I will pay you well for it.", "goods_merchant_town_info_completed",[]],
@@ -12809,8 +12809,8 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##
 ##  [anyone,"goods_merchant_town_info", [
 ##                                       (store_encountered_party,reg(9)),
-##                                       (party_get_slot,reg(5),reg(9),slot_town_export_good),
-##                                       (party_get_slot,reg(6),reg(9),slot_town_import_good),
+##                                       (party_get_slot,reg(5),reg(9),slot_mainplanet_export_good),
+##                                       (party_get_slot,reg(6),reg(9),slot_mainplanet_import_good),
 ##                                       (ge,reg(5),1),
 ##                                       (ge,reg(6),1),
 ##                                       (str_store_item_name,1,reg(5)),
@@ -12821,7 +12821,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##
 ##  [anyone,"goods_merchant_town_info", [
 ##                                       (store_encountered_party,reg(9)),
-##                                       (party_get_slot,reg(5),reg(9),slot_town_export_good),
+##                                       (party_get_slot,reg(5),reg(9),slot_mainplanet_export_good),
 ##                                       (ge,reg(5),1),
 ##                                       (str_store_item_name,1,reg(5)),
 ##                                       ],
@@ -12829,7 +12829,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##
 ##  [anyone,"goods_merchant_town_info", [
 ##                                       (store_encountered_party,reg(9)),
-##                                       (party_get_slot,reg(6),reg(9),slot_town_import_good),
+##                                       (party_get_slot,reg(6),reg(9),slot_mainplanet_import_good),
 ##                                       (ge,reg(6),1),
 ##                                       (str_store_item_name,2,reg(6)),
 ##                                       ],
@@ -13171,7 +13171,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone,"arena_master_spar_start_it_up", [], "Here you go then. Good luck.", "close_window",
    [
-     (party_get_slot, ":arena_scene", "$current_town", slot_town_arena),
+     (party_get_slot, ":arena_scene", "$current_town", slot_mainplanet_arena),
      (modify_visitors_at_site, ":arena_scene"),
      (reset_visitors),
      (try_for_range,":num",1,33),
@@ -13192,7 +13192,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    [
        (assign, ":num_tournaments", 0),
        (try_for_range_backwards, ":town_no", towns_begin, towns_end),
-         (party_slot_ge, ":town_no", slot_town_has_tournament, 1),
+         (party_slot_ge, ":town_no", slot_mainplanet_has_tournament, 1),
          (val_add, ":num_tournaments", 1),
          (try_begin),
            (eq, ":num_tournaments", 1),
@@ -13280,18 +13280,18 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 # "That was exciting wasn't it? Nothing like a good fight to get the blood flowing.", "arena_master_pre_talk",[(assign,"$waiting_for_arena_fight_result",0)]],
 
 ##  [anyone,"arena_master_melee", [], "The next arena fight will start in a while. Hurry up if you want to take part in it.", "arena_master_melee_talk",[
-##    (party_get_slot, ":arena_cur_tier","$current_town",slot_town_arena_melee_cur_tier),
+##    (party_get_slot, ":arena_cur_tier","$current_town",slot_mainplanet_arena_melee_cur_tier),
 ##    (try_begin), #reg3 = num teams, reg4 = team size
 ##      (eq, ":arena_cur_tier", 0),
-##      (party_get_slot, "$_num_teams","$current_town",slot_town_arena_melee_1_num_teams),
-##      (party_get_slot, "$_team_size","$current_town",slot_town_arena_melee_1_team_size),
+##      (party_get_slot, "$_num_teams","$current_town",slot_mainplanet_arena_melee_1_num_teams),
+##      (party_get_slot, "$_team_size","$current_town",slot_mainplanet_arena_melee_1_team_size),
 ##    (else_try),
 ##      (eq, ":arena_cur_tier", 1),
-##      (party_get_slot, "$_num_teams","$current_town",slot_town_arena_melee_2_num_teams),
-##      (party_get_slot, "$_team_size","$current_town",slot_town_arena_melee_2_team_size),
+##      (party_get_slot, "$_num_teams","$current_town",slot_mainplanet_arena_melee_2_num_teams),
+##      (party_get_slot, "$_team_size","$current_town",slot_mainplanet_arena_melee_2_team_size),
 ##    (else_try),
-##      (party_get_slot, "$_num_teams","$current_town",slot_town_arena_melee_3_num_teams),
-##      (party_get_slot, "$_team_size","$current_town",slot_town_arena_melee_3_team_size),
+##      (party_get_slot, "$_num_teams","$current_town",slot_mainplanet_arena_melee_3_num_teams),
+##      (party_get_slot, "$_team_size","$current_town",slot_mainplanet_arena_melee_3_team_size),
 ##    (try_end),
 ##   ]],
 ##  [anyone|plyr,"arena_master_melee_talk", [], "I want to join the next fight", "arena_master_next_melee_join",[(assign,"$arena_join_or_watch",0)]],
@@ -13302,7 +13302,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##  [anyone,"arena_master_next_melee_join", [
 ##    (assign,"$arena_bet_amount"),
 ##    (assign,"$arena_bet_team",0),
-##    (party_get_slot, ":player_odds", "$g_encountered_party", slot_town_player_odds),
+##    (party_get_slot, ":player_odds", "$g_encountered_party", slot_mainplanet_player_odds),
 ##    (store_div, ":divider", ":player_odds", 20),
 ##    (store_mul, ":odds_simple", ":divider", 20),
 ##    (val_sub, ":odds_simple", ":player_odds"),
@@ -13355,7 +13355,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##   "arena_master_start_fight",[(assign,"$arena_bet_team",3)]],
 ##  [anyone,"arena_master_bet_placed", [], "That's good. Let me record that. If you win, you'll get {reg5} credits.", "arena_master_start_fight",
 ##   [(store_mul,"$arena_win_amount", "$arena_bet_amount", "$_num_teams"),
-##    (party_get_slot, ":player_odds", "$g_encountered_party", slot_town_player_odds),
+##    (party_get_slot, ":player_odds", "$g_encountered_party", slot_mainplanet_player_odds),
 ##    (val_sub, "$arena_win_amount", "$arena_bet_amount"),
 ##    (val_mul, "$arena_win_amount", ":player_odds"),
 ##    (val_div, "$arena_win_amount", 1000),
@@ -13368,7 +13368,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##  [anyone,"arena_master_start_fight", [], "Very well. The fight starts in a moment. Good luck.", "close_window",
 ##   [
 ##    (store_encountered_party,"$current_town"),
-##    (party_get_slot, ":arena_scene","$current_town",slot_town_arena),
+##    (party_get_slot, ":arena_scene","$current_town",slot_mainplanet_arena),
 ##    (modify_visitors_at_site,":arena_scene"),
 ##    (reset_visitors),
 ##
@@ -13448,14 +13448,14 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##    (assign, "$arena_winner_team", -1),
 ##    (assign, "$waiting_for_arena_fight_result", 1),
 ##    (assign, "$g_mt_mode", abm_fight),
-##    (party_get_slot, reg(6),"$current_town",slot_town_arena_melee_cur_tier),
+##    (party_get_slot, reg(6),"$current_town",slot_mainplanet_arena_melee_cur_tier),
 ##    (val_add,reg(6),1),
 ##    (val_mod,reg(6),3),
-##    (party_set_slot, "$current_town",slot_town_arena_melee_cur_tier, reg(6)),
+##    (party_set_slot, "$current_town",slot_mainplanet_arena_melee_cur_tier, reg(6)),
 ###    (set_jump_mission,"mt_arena_melee_fight"),
-##    (party_get_slot, ":arena_mission_template", "$current_town", slot_town_arena_template),
+##    (party_get_slot, ":arena_mission_template", "$current_town", slot_mainplanet_arena_template),
 ##    (set_jump_mission, ":arena_mission_template"),
-##    (party_get_slot, reg(7), "$current_town", slot_town_arena),
+##    (party_get_slot, reg(7), "$current_town", slot_mainplanet_arena),
 ##    (jump_to_scene, reg(7)),
 ##    ]],
 
@@ -13555,7 +13555,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   
 
 # Bandits
-##  [party_tpl|pt_mountain_bandits,"start", [(this_or_next|eq, "$g_encountered_party_template", "pt_mountain_bandits"),(eq, "$g_encountered_party_template", "pt_forest_bandits"),
+##  [party_tpl|pt_black_sun_pirates,"start", [(this_or_next|eq, "$g_encountered_party_template", "pt_black_sun_pirates"),(eq, "$g_encountered_party_template", "pt_blazing_claw_pirates"),
 ##                                           (eq,"$talk_context",tc_party_encounter),
 ##                                           (party_get_slot,":protected_until_hours", "$g_encountered_party",slot_party_ignore_player_until),
 ##                                           (store_current_hours,":cur_hours"),
@@ -13573,9 +13573,9 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##    ]],
 
 # Ryan BEGIN
-  [party_tpl|pt_mountain_bandits|auto_proceed,"start", [(eq,"$talk_context",tc_party_encounter),(encountered_party_is_attacker)],
+  [party_tpl|pt_black_sun_pirates|auto_proceed,"start", [(eq,"$talk_context",tc_party_encounter),(encountered_party_is_attacker)],
    "Warning: This line should never display.", "bandit_introduce",[]],
-  [party_tpl|pt_forest_bandits|auto_proceed,"start", [(eq,"$talk_context",tc_party_encounter),(encountered_party_is_attacker)],
+  [party_tpl|pt_blazing_claw_pirates|auto_proceed,"start", [(eq,"$talk_context",tc_party_encounter),(encountered_party_is_attacker)],
    "Warning: This line should never display.", "bandit_introduce",[]],
   [anyone,"bandit_introduce", [
       (store_random_in_range, ":rand", 11, 15),
@@ -13620,7 +13620,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
     ]],
   
 
-  [anyone,"start", [(this_or_next|eq, "$g_encountered_party_template", "pt_mountain_bandits"),(eq, "$g_encountered_party_template", "pt_forest_bandits")],
+  [anyone,"start", [(this_or_next|eq, "$g_encountered_party_template", "pt_black_sun_pirates"),(eq, "$g_encountered_party_template", "pt_blazing_claw_pirates")],
    "Eh? What is it?", "bandit_meet",[]],
 
   [anyone|plyr,"bandit_meet", [], "Your luck has run out, wretch. Prepare to die!", "bandit_attack",
@@ -13675,9 +13675,9 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
 
 # Ryan BEGIN
-  [anyone,"sell_prisoner_outlaws", [[store_troop_kind_count,0,"trp_looter"],[ge,reg(0),1],[assign,reg(1),reg(0)],[val_mul,reg(1),10],[val_mul,reg(2),reg(0)],[val_mul,reg(2),10]],
-   "Hmmm. 10 credits for each looter makes {reg1} credits for all {reg0} of them.", "sell_prisoner_outlaws",
-   [[call_script, "script_troop_add_gold", "trp_player",reg(1)],[add_xp_to_troop,reg(2)],[remove_member_from_party,"trp_looter"]]],
+  [anyone,"sell_prisoner_outlaws", [[store_troop_kind_count,0,"trp_jawa"],[ge,reg(0),1],[assign,reg(1),reg(0)],[val_mul,reg(1),10],[val_mul,reg(2),reg(0)],[val_mul,reg(2),10]],
+   "Hmmm. 10 credits for each jawa makes {reg1} credits for all {reg0} of them.", "sell_prisoner_outlaws",
+   [[call_script, "script_troop_add_gold", "trp_player",reg(1)],[add_xp_to_troop,reg(2)],[remove_member_from_party,"trp_jawa"]]],
   [anyone,"sell_prisoner_outlaws", [[store_troop_kind_count,0,"trp_bandit"],[ge,reg(0),1],[assign,reg(1),reg(0)],[val_mul,reg(1),20],[assign,reg(2),reg(0)],[val_mul,reg(2),20]],
    "Let me see. You've brought {reg0} bandits, so 20 credits for each comes up to {reg1} credits.", "sell_prisoner_outlaws",
    [[call_script, "script_troop_add_gold", "trp_player",reg(1)],[add_xp_to_troop,reg(2)],[remove_member_from_party,"trp_bandit"]]],
@@ -13691,7 +13691,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone,"prisoner_chat_2", [], "No, I swear I won't.", "close_window",[]],
 
 
-  [anyone,"start", [(party_slot_eq, "$current_town", slot_town_lord, "trp_player"),
+  [anyone,"start", [(party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player"),
                     (this_or_next|is_between,"$g_talk_troop",weapon_merchants_begin,weapon_merchants_end),
                     (this_or_next|is_between,"$g_talk_troop",armor_merchants_begin, armor_merchants_end),
                     (             is_between,"$g_talk_troop",horse_merchants_begin, horse_merchants_end),
@@ -13730,12 +13730,12 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone,"start", [
 					#(eq, "$talk_context", 0),
                     (this_or_next|is_between,"$g_talk_troop",slave_dancers_begin, slave_dancers_end),
-					(eq, "$g_talk_troop", "trp_swmain_walker_hutt_4"),
+					(eq, "$g_talk_troop", "trp_mainplanet_walker_hutt_4"),
                      ], "I'm sorry, but I'm not allowed to talk to anyone.", "close_window",[]],
   
   [anyone,"start", [(eq, "$talk_context", 0),
                     (is_between,"$g_talk_troop",walkers_begin, walkers_end),
-                    (party_slot_eq, "$current_town", slot_town_lord, "trp_player"),
+                    (party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player"),
                      ], "Yes, {sir/madam}?", "town_dweller_talk",[(assign, "$welfare_inquired",0),(assign, "$rumors_inquired",0),(assign, "$info_inquired",0)]],
 
   [anyone,"start", [(eq, "$talk_context", 0),
@@ -13901,10 +13901,10 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                     (str_store_string, s6, "@This is the {reg4?town:village} of {s5}, {sir/madam}."),
                                     (str_clear, s10),
                                     (try_begin),
-                                      (party_slot_eq, "$current_town", slot_town_lord, "trp_player"),
+                                      (party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player"),
                                       (str_store_string, s10, "@{s6} Our {reg4?town:village} and the surrounding lands belong to you of course."),
                                     (else_try),
-                                      (party_get_slot, ":town_lord", "$current_town", slot_town_lord),
+                                      (party_get_slot, ":town_lord", "$current_town", slot_mainplanet_lord),
                                       (ge, ":town_lord", 0),
                                       (str_store_troop_name, s7, ":town_lord"),
                                       (store_troop_faction, ":town_lord_faction", ":town_lord"),
@@ -13915,7 +13915,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                     (assign, reg20, 0),
                                     (try_for_range, ":cur_good", trade_goods_begin, trade_goods_end),
                                       (store_sub, ":cur_good_slot", ":cur_good", trade_goods_begin),
-                                      (val_add, ":cur_good_slot", slot_town_trade_good_productions_begin),
+                                      (val_add, ":cur_good_slot", slot_mainplanet_trade_good_productions_begin),
                                       (party_get_slot, ":production", "$g_encountered_party", ":cur_good_slot"),
                                       (ge, ":production", 10),
                                       (str_store_item_name, s3, ":cur_good"),
@@ -13980,10 +13980,10 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                          ],
    "Thank you for your kindness {sir/madam}. With your help our lives will be better. I shall never forget you.", "close_window",[]],
 
-  [anyone,"town_dweller_ask_situation", [(neg|party_slot_ge, "$current_town", slot_town_prosperity, 30)],
+  [anyone,"town_dweller_ask_situation", [(neg|party_slot_ge, "$current_town", slot_mainplanet_prosperity, 30)],
    "Times are hard, {sir/madam}. We work hard all day and yet we go to sleep hungry most nights.", "town_dweller_talk",[]],
   
-  [anyone,"town_dweller_ask_situation", [(neg|party_slot_ge, "$current_town", slot_town_prosperity, 70)],
+  [anyone,"town_dweller_ask_situation", [(neg|party_slot_ge, "$current_town", slot_mainplanet_prosperity, 70)],
    "Times are hard, {sir/madam}. But we must be thankful for what we have.", "town_dweller_talk",[]],
   [anyone,"town_dweller_ask_situation", [],
    "We are not doing too badly {sir/madam}. We are grateful for that.", "town_dweller_talk",[]],
@@ -14002,7 +14002,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone,"start", [(eq, "$talk_context", 0),
                     (is_between,"$g_talk_troop",regular_troops_begin, regular_troops_end),
-                    (party_slot_eq,"$current_town",slot_town_lord, "trp_player"),
+                    (party_slot_eq,"$current_town",slot_mainplanet_lord, "trp_player"),
                      ], "Yes {sir/madam}?", "player_castle_guard_talk",[]],
   [anyone|plyr,"player_castle_guard_talk", [], "How goes the watch, soldier?", "player_castle_guard_talk_2",[]],
   [anyone,"player_castle_guard_talk_2", [], "All is quiet {sir/madam}. Nothing to report.", "player_castle_guard_talk_3",[]],
@@ -14025,7 +14025,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone,"start", [(eq, "$talk_context", tc_court_talk),
                     (is_between,"$g_talk_troop",regular_troops_begin, regular_troops_end),
                     (is_between,"$g_encountered_party_faction",kingdoms_begin, kingdoms_end),
-                    (party_slot_eq,"$current_town",slot_town_lord, "trp_player"),
+                    (party_slot_eq,"$current_town",slot_mainplanet_lord, "trp_player"),
                      ], "Your orders, {sir/madam}?", "hall_guard_talk",[]],
 
   [anyone,"start", [(eq, "$talk_context", tc_court_talk),
@@ -14098,7 +14098,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 		#SW - updated noise to be tusken_victory
       #(eq,"$g_encountered_party_template","pt_steppe_bandits"),
       #(play_sound, "snd_encounter_steppe_bandits"),
-      (eq,"$g_encountered_party_template","pt_mountain_bandits"),
+      (eq,"$g_encountered_party_template","pt_black_sun_pirates"),
       (play_sound, "snd_tusken_victory"),	  
     (try_end)]],
   [anyone|plyr,"party_encounter_hostile_attacker", [

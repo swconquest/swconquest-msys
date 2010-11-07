@@ -202,7 +202,7 @@ map_icons = [
      (ti_on_init_map_icon,
       [
         (store_trigger_param_1, ":party_no"),
-        (party_get_slot, ":leader_troop", ":party_no", slot_town_lord),
+        (party_get_slot, ":leader_troop", ":party_no", slot_mainplanet_lord),
         (try_begin),
           (ge, ":leader_troop", 0),
           (cur_map_icon_set_tableau_material, "tableau_custom_banner_square", ":leader_troop"),
@@ -214,7 +214,7 @@ map_icons = [
      (ti_on_init_map_icon,
       [
         (store_trigger_param_1, ":party_no"),
-        (party_get_slot, ":leader_troop", ":party_no", slot_town_lord),
+        (party_get_slot, ":leader_troop", ":party_no", slot_mainplanet_lord),
         (try_begin),
           (ge, ":leader_troop", 0),
           (cur_map_icon_set_tableau_material, "tableau_custom_banner_short", ":leader_troop"),
@@ -226,7 +226,7 @@ map_icons = [
      (ti_on_init_map_icon,
       [
         (store_trigger_param_1, ":party_no"),
-        (party_get_slot, ":leader_troop", ":party_no", slot_town_lord),
+        (party_get_slot, ":leader_troop", ":party_no", slot_mainplanet_lord),
         (try_begin),
           (ge, ":leader_troop", 0),
           (cur_map_icon_set_tableau_material, "tableau_custom_banner_tall", ":leader_troop"),

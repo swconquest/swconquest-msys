@@ -91,11 +91,11 @@ triggers = [
                       (troop_add_merchandise,"trp_salt_mine_merchant",itp_type_goods,num_merchandise_goods),
 
                       # Add trade goods to merchant inventories
-#                      (store_sub, ":item_to_production_slot", slot_town_trade_good_productions_begin, trade_goods_begin),
-                      (store_sub, ":item_to_price_slot", slot_town_trade_good_prices_begin, trade_goods_begin),
+#                      (store_sub, ":item_to_production_slot", slot_mainplanet_trade_good_productions_begin, trade_goods_begin),
+                      (store_sub, ":item_to_price_slot", slot_mainplanet_trade_good_prices_begin, trade_goods_begin),
 
                       (try_for_range,":cur_center",towns_begin,towns_end),
-                        (party_get_slot,":cur_merchant",":cur_center",slot_town_merchant),
+                        (party_get_slot,":cur_merchant",":cur_center",slot_mainplanet_merchant),
                         (reset_item_probabilities,100),
                         (try_for_range, ":cur_goods", trade_goods_begin, trade_goods_end),
 #                          (store_add, ":cur_production_slot", ":cur_goods", ":item_to_production_slot"),
@@ -248,10 +248,10 @@ triggers = [
 #    ]),
 
 
-  (5.7, 0, 0.0, [(store_num_parties_created,reg(3),"pt_manhunters"),
-                 (lt,reg(3),num_max_zendar_manhunters),
-                 (store_num_parties_of_template, reg(2), "pt_manhunters"), (lt,reg(2),3)],
-                       [(set_spawn_radius,1),(spawn_around_party,"p_zendar","pt_manhunters")]),
+  (5.7, 0, 0.0, [(store_num_parties_created,reg(3),"pt_bountyhunters"),
+                 (lt,reg(3),num_max_zendar_bountyhunters),
+                 (store_num_parties_of_template, reg(2), "pt_bountyhunters"), (lt,reg(2),3)],
+                       [(set_spawn_radius,1),(spawn_around_party,"p_zendar","pt_bountyhunters")]),
 #  (5.2, 0, 0.0, [(store_num_parties_created,reg(3),"pt_peasant"),(lt,reg(3),num_max_zendar_peasants),
 #                 (store_num_parties_of_template, reg(2), "pt_peasant"), (lt,reg(2),3)],
 #                          [(set_spawn_radius,1),(spawn_around_party,"p_zendar","pt_peasant")]),
@@ -539,7 +539,7 @@ triggers = [
 
 ##  (0, 0, ti_once,
 ##   [
-##       (entering_town,"p_town_1"),
+##       (entering_town,"p_mandalore"),
 ##       (main_party_has_troop,"trp_borcha"),
 ##       (eq,"$borcha_freed",0)
 ##    ],

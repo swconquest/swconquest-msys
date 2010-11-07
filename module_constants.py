@@ -124,29 +124,29 @@ slot_party_ignore_player_until = 3
 slot_party_ai_state            = 4
 slot_party_ai_object           = 5
 
-slot_town_belongs_to_kingdom   = 6
-slot_town_lord                 = 7
+slot_mainplanet_belongs_to_kingdom   = 6
+slot_mainplanet_lord                 = 7
 slot_party_ai_substate         = 8
-slot_town_claimed_by_player    = 9
+slot_mainplanet_claimed_by_player    = 9
 
-slot_cattle_driven_by_player = slot_town_lord #hack
+slot_cattle_driven_by_player = slot_mainplanet_lord #hack
 
-slot_town_center        = 10
-slot_town_castle        = 11
-slot_town_prison        = 12
-slot_town_tavern        = 13
-slot_town_store         = 14
-slot_town_arena         = 16
-slot_town_alley         = 17
-slot_town_walls         = 18
+slot_mainplanet_center        = 10
+slot_mainplanet_castle        = 11
+slot_mainplanet_prison        = 12
+slot_mainplanet_tavern        = 13
+slot_mainplanet_store         = 14
+slot_mainplanet_arena         = 16
+slot_mainplanet_alley         = 17
+slot_mainplanet_walls         = 18
 slot_center_culture     = 19
 
-slot_town_tavernkeeper  = 20
-slot_town_weaponsmith   = 21
-slot_town_armorer       = 22
-slot_town_merchant      = 23
-slot_town_horse_merchant= 24
-slot_town_elder         = 25
+slot_mainplanet_tavernkeeper  = 20
+slot_mainplanet_weaponsmith   = 21
+slot_mainplanet_armorer       = 22
+slot_mainplanet_merchant      = 23
+slot_mainplanet_horse_merchant= 24
+slot_mainplanet_elder         = 25
 slot_center_player_relation = 26
 
 slot_center_siege_with_belfry = 27
@@ -158,25 +158,25 @@ slot_party_following_player    = 31
 slot_party_follow_player_until_time = 32
 slot_party_dont_follow_player_until_time = 33
 
-slot_village_raided_by        = 34
-slot_village_state            = 35 #svs_normal, svs_being_raided, svs_looted, svs_recovering, svs_deserted
-slot_village_raid_progress    = 36
-slot_village_recover_progress = 37
-slot_village_smoke_added      = 38
+slot_minorplanet_raided_by        = 34
+slot_minorplanet_state            = 35 #svs_normal, svs_being_raided, svs_looted, svs_recovering, svs_deserted
+slot_minorplanet_raid_progress    = 36
+slot_minorplanet_recover_progress = 37
+slot_minorplanet_smoke_added      = 38
 
-slot_village_infested_by_bandits   = 39
+slot_minorplanet_infested_by_bandits   = 39
 
 slot_center_last_player_alarm_hour = 42
 
-slot_village_land_quality          = 44
-slot_village_number_of_cattle      = 45
-slot_village_player_can_not_steal_cattle = 46
+slot_minorplanet_land_quality          = 44
+slot_minorplanet_number_of_cattle      = 45
+slot_minorplanet_player_can_not_steal_cattle = 46
 
 slot_center_accumulated_rents      = 47
 slot_center_accumulated_tariffs    = 48
-slot_town_wealth        = 49
-slot_town_prosperity    = 50
-slot_town_player_odds   = 51
+slot_mainplanet_wealth        = 49
+slot_mainplanet_prosperity    = 50
+slot_mainplanet_player_odds   = 51
 
 
 slot_party_last_toll_paid_hours = 52
@@ -189,7 +189,7 @@ slot_party_nearby_friend_strength = 57
 slot_party_nearby_enemy_strength = 58
 slot_party_follower_strength = 59
 
-slot_town_reinforcement_party_template = 60
+slot_mainplanet_reinforcement_party_template = 60
 slot_center_original_faction      = 61
 slot_center_ex_faction            = 62
 
@@ -198,12 +198,12 @@ slot_center_siege_begin_hours     = 64 #used for sieges
 slot_center_siege_hardness        = 65
 
 #Tavern recruitment START
-slot_town_mercs = 66
+slot_mainplanet_mercs = 66
 #Tavern recruitment END
 
-slot_castle_exterior    = slot_town_center
+slot_spacestation_exterior    = slot_mainplanet_center
 
-#slot_town_rebellion_contact   = 76
+#slot_mainplanet_rebellion_contact   = 76
 #trs_not_yet_approached  = 0
 #trs_approached_before   = 1
 #trs_approached_recently = 2
@@ -214,19 +214,19 @@ argument_ruler   = 2
 argument_benefit = 3
 argument_victory = 4
 
-slot_town_rebellion_readiness = 77
+slot_mainplanet_rebellion_readiness = 77
 #(readiness can be a negative number if the rebellion has been defeated)
 
-slot_town_arena_melee_mission_tpl = 78
-slot_town_arena_torny_mission_tpl = 79
-slot_town_arena_melee_1_num_teams = 80
-slot_town_arena_melee_1_team_size = 81
-slot_town_arena_melee_2_num_teams = 82
-slot_town_arena_melee_2_team_size = 83
-slot_town_arena_melee_3_num_teams = 84
-slot_town_arena_melee_3_team_size = 85
-slot_town_arena_melee_cur_tier    = 86
-##slot_town_arena_template	  = 87
+slot_mainplanet_arena_melee_mission_tpl = 78
+slot_mainplanet_arena_torny_mission_tpl = 79
+slot_mainplanet_arena_melee_1_num_teams = 80
+slot_mainplanet_arena_melee_1_team_size = 81
+slot_mainplanet_arena_melee_2_num_teams = 82
+slot_mainplanet_arena_melee_2_team_size = 83
+slot_mainplanet_arena_melee_3_num_teams = 84
+slot_mainplanet_arena_melee_3_team_size = 85
+slot_mainplanet_arena_melee_cur_tier    = 86
+##slot_mainplanet_arena_template	  = 87
 
 slot_center_npc_volunteer_troop_type   = 90
 slot_center_npc_volunteer_troop_amount = 91
@@ -255,9 +255,9 @@ slot_party_looted_item_3_modifier = 117
 slot_party_looted_item_4_modifier = 118
 slot_party_looted_item_5_modifier = 119
 
-slot_village_bound_center         = 120
-slot_village_market_town          = 121
-slot_village_farmer_party         = 122
+slot_minorplanet_bound_center         = 120
+slot_minorplanet_market_town          = 121
+slot_minorplanet_farmer_party         = 122
 slot_party_home_center            = 123
 
 slot_center_current_improvement   = 124
@@ -287,9 +287,9 @@ walled_center_improvements_begin = slot_center_has_messenger_post
 walled_center_improvements_end               = 139
 
 slot_center_has_bandits                        = 149
-slot_town_has_tournament                     = 150
-slot_town_tournament_max_teams               = 151
-slot_town_tournament_max_team_size           = 152
+slot_mainplanet_has_tournament                     = 150
+slot_mainplanet_tournament_max_teams               = 151
+slot_mainplanet_tournament_max_team_size           = 152
 
 slot_center_faction_when_oath_renounced      = 155
 
@@ -326,28 +326,28 @@ slot_center_walker_7_type                    = 187
 slot_center_walker_8_type                    = 188
 slot_center_walker_9_type                    = 189
 
-slot_town_trade_route_1           = 190
-slot_town_trade_route_2           = 191
-slot_town_trade_route_3           = 192
-slot_town_trade_route_4           = 193
-slot_town_trade_route_5           = 194
-slot_town_trade_route_6           = 195
-slot_town_trade_route_7           = 196
-slot_town_trade_route_8           = 197
-slot_town_trade_route_9           = 198
-slot_town_trade_route_10          = 199
-slot_town_trade_route_11          = 200
-slot_town_trade_route_12          = 201
-slot_town_trade_route_13          = 202
-slot_town_trade_route_14          = 203
-slot_town_trade_route_15          = 204
-slot_town_trade_routes_begin = slot_town_trade_route_1
-slot_town_trade_routes_end = slot_town_trade_route_15 + 1
+slot_mainplanet_trade_route_1           = 190
+slot_mainplanet_trade_route_2           = 191
+slot_mainplanet_trade_route_3           = 192
+slot_mainplanet_trade_route_4           = 193
+slot_mainplanet_trade_route_5           = 194
+slot_mainplanet_trade_route_6           = 195
+slot_mainplanet_trade_route_7           = 196
+slot_mainplanet_trade_route_8           = 197
+slot_mainplanet_trade_route_9           = 198
+slot_mainplanet_trade_route_10          = 199
+slot_mainplanet_trade_route_11          = 200
+slot_mainplanet_trade_route_12          = 201
+slot_mainplanet_trade_route_13          = 202
+slot_mainplanet_trade_route_14          = 203
+slot_mainplanet_trade_route_15          = 204
+slot_mainplanet_trade_routes_begin = slot_mainplanet_trade_route_1
+slot_mainplanet_trade_routes_end = slot_mainplanet_trade_route_15 + 1
 
 
 num_trade_goods = itm_siege_supply - itm_smoked_fish
-slot_town_trade_good_productions_begin       = 205
-slot_town_trade_good_prices_begin            = slot_town_trade_good_productions_begin + num_trade_goods + 1
+slot_mainplanet_trade_good_productions_begin       = 205
+slot_mainplanet_trade_good_prices_begin            = slot_mainplanet_trade_good_productions_begin + num_trade_goods + 1
 
 #SW MF - extra slots for battle stations test - these are party slots
 slot_center_turrets				=206	
@@ -448,7 +448,7 @@ spai_retreating_to_center       = 14
 ##spai_trading_within_kingdom     = 15
 spai_recruiting_troops          = 16
 
-#slot_village_state values
+#slot_minorplanet_state values
 svs_normal                      = 0
 svs_being_raided                = 1
 svs_looted                      = 2
@@ -943,7 +943,7 @@ companions_begin = "trp_npc1"
 companions_end = "trp_kingdom_heroes_including_player_begin"
 
 soldiers_begin = "trp_wookiee"
-soldiers_end = "trp_swmain_walker_1"
+soldiers_end = "trp_mainplanet_walker_1"
 
 #Rebellion changes
 
@@ -1013,7 +1013,7 @@ army_quests_end   = lady_quests_begin
 all_quests_begin = 0
 all_quests_end = "qst_quests_end"
 
-towns_begin = "p_town_1"
+towns_begin = "p_mandalore"
 castles_begin = "p_castle_2" # "p_castle_1"
 villages_begin = "p_village_1"
 
@@ -1030,8 +1030,8 @@ centers_end   = villages_end
 training_grounds_begin   = "p_training_ground_1"
 training_grounds_end     = "p_Bridge_1"
 
-scenes_begin = "scn_swmain_1_center"
-scenes_end = "scn_castle_1_exterior"
+scenes_begin = "scn_mainplanet_1_center"
+scenes_end = "scn_spacestation_1_exterior"
 
 spawn_points_begin = "p_zendar"
 spawn_points_end = "p_spawn_points_end"
@@ -1041,8 +1041,8 @@ regular_troops_end         = "trp_tournament_master"
 
 #SW
 #MF - added this one to use with party speed script.
-bandits_begin = "trp_looter"
-bandits_end = "trp_manhunter"
+bandits_begin = "trp_jawa"
+bandits_end = "trp_bountyhunter"
 
 swadian_merc_parties_begin = "p_town_1_mercs"
 swadian_merc_parties_end   = "p_town_8_mercs"
@@ -1050,62 +1050,62 @@ swadian_merc_parties_end   = "p_town_8_mercs"
 vaegir_merc_parties_begin  = "p_town_8_mercs"
 vaegir_merc_parties_end    = "p_zendar"
 
-arena_masters_begin    = "trp_swmain_1_arena_master"
-arena_masters_end      = "trp_swmain_1_armorer"
+arena_masters_begin    = "trp_mainplanet_1_arena_master"
+arena_masters_end      = "trp_mainplanet_1_armorer"
 
 training_gound_trainers_begin    = "trp_trainer_1"
 training_gound_trainers_end      = "trp_ransom_broker_1"
 
-town_walkers_begin = "trp_swmain_walker_1"
+town_walkers_begin = "trp_mainplanet_walker_1"
 town_walkers_end = "trp_cantina_walker_1"
 
-slave_dancers_begin = "trp_swmain_walker_twilek_female_slave"
-slave_dancers_end = "trp_swmain_walker_chiss"
+slave_dancers_begin = "trp_mainplanet_walker_twilek_female_slave"
+slave_dancers_end = "trp_mainplanet_walker_chiss"
 
-town8_walkers_begin = "trp_swmain_walker_geonosian"
-town8_walkers_end = "trp_swmain_walker_wookiee"
+town8_walkers_begin = "trp_mainplanet_walker_geonosian"
+town8_walkers_end = "trp_mainplanet_walker_wookiee"
 
-town9_walkers_begin = "trp_swmain_walker_moncal"
-town9_walkers_end = "trp_swmain_walker_geonosian"
+town9_walkers_begin = "trp_mainplanet_walker_moncal"
+town9_walkers_end = "trp_mainplanet_walker_geonosian"
 
-town10_walkers_begin = "trp_swmain_walker_wookiee"
-town10_walkers_end = "trp_swmain_walker_gamorrean"
+town10_walkers_begin = "trp_mainplanet_walker_wookiee"
+town10_walkers_end = "trp_mainplanet_walker_gamorrean"
 
-town12_walkers_begin = "trp_swmain_walker_gamorrean"
-town12_walkers_end = "trp_swmain_walker_empire_1"
+town12_walkers_begin = "trp_mainplanet_walker_gamorrean"
+town12_walkers_end = "trp_mainplanet_walker_empire_1"
 
-town14_walkers_begin = "trp_swmain_walker_1"		#includes a jawa
-town14_walkers_end = "trp_swmain_walker_moncal"
+town14_walkers_begin = "trp_mainplanet_walker_1"		#includes a jawa
+town14_walkers_end = "trp_mainplanet_walker_moncal"
 
-town17_walkers_begin = "trp_swmain_walker_twilek"
-town17_walkers_end = "trp_swmain_walker_chiss"
+town17_walkers_begin = "trp_mainplanet_walker_twilek"
+town17_walkers_end = "trp_mainplanet_walker_chiss"
 
 #Added custom wakers by Swyter -->>
-iridonia_walkers_begin = "trp_swmain_walker_zabrak"
-iridonia_walkers_end = "trp_swmain_walker_zabrak"
+iridonia_walkers_begin = "trp_mainplanet_walker_zabrak"
+iridonia_walkers_end = "trp_mainplanet_walker_zabrak"
 
-pzob_walkers_begin = "trp_swmain_walker_gamorrean"
-pzob_walkers_end = "trp_swmain_walker_gamorrean"
+pzob_walkers_begin = "trp_mainplanet_walker_gamorrean"
+pzob_walkers_end = "trp_mainplanet_walker_gamorrean"
 
-rodia_walkers_begin = "trp_swmain_walker_rodian"
-rodia_walkers_end = "trp_swmain_walker_rodian"
+rodia_walkers_begin = "trp_mainplanet_walker_rodian"
+rodia_walkers_end = "trp_mainplanet_walker_rodian"
 
-bothaw_moon_walkers_begin = "trp_swmain_walker_bothan"
-bothaw_moon_walkers_end = "trp_swmain_walker_bothan"
+bothaw_moon_walkers_begin = "trp_mainplanet_walker_bothan"
+bothaw_moon_walkers_end = "trp_mainplanet_walker_bothan"
 #@>SWY-->>
 town_walkers_neutral_begin = town_walkers_begin
-town_walkers_neutral_end = "trp_swmain_walker_jawa"
+town_walkers_neutral_end = "trp_mainplanet_walker_jawa"
 
-town_walkers_empire_begin = "trp_swmain_walker_empire_1"
-town_walkers_empire_end = "trp_swmain_walker_rebel_1"
+town_walkers_empire_begin = "trp_mainplanet_walker_empire_1"
+town_walkers_empire_end = "trp_mainplanet_walker_rebel_1"
 
-town_walkers_rebel_begin = "trp_swmain_walker_rebel_1"
-town_walkers_rebel_end = "trp_swmain_walker_hutt_1"
+town_walkers_rebel_begin = "trp_mainplanet_walker_rebel_1"
+town_walkers_rebel_end = "trp_mainplanet_walker_hutt_1"
 
-town_walkers_hutt_begin = "trp_swmain_walker_hutt_1"
+town_walkers_hutt_begin = "trp_mainplanet_walker_hutt_1"
 town_walkers_hutt_end = "trp_cantina_walker_1"
 
-village_walkers_begin = "trp_swminor_walker_1"
+village_walkers_begin = "trp_minorplanet_walker_1"
 village_walkers_end   = "trp_spy_walker_1"
 
 assassins_begin = "trp_assassin_male"
@@ -1122,27 +1122,27 @@ cantina_walkers_begin = "trp_cantina_walker_1"
 cantina_walkers_end = "trp_cantina_drinker_1"
 
 cantina_drinkers_begin = "trp_cantina_drinker_1"
-cantina_drinkers_end = "trp_swminor_walker_1"
+cantina_drinkers_end = "trp_minorplanet_walker_1"
 
-armor_merchants_begin  = "trp_swmain_1_armorer"
-armor_merchants_end    = "trp_swmain_1_weaponsmith"
+armor_merchants_begin  = "trp_mainplanet_1_armorer"
+armor_merchants_end    = "trp_mainplanet_1_weaponsmith"
 
-weapon_merchants_begin = "trp_swmain_1_weaponsmith"
-weapon_merchants_end   = "trp_swmain_1_bartender"
+weapon_merchants_begin = "trp_mainplanet_1_weaponsmith"
+weapon_merchants_end   = "trp_mainplanet_1_bartender"
 
-tavernkeepers_begin    = "trp_swmain_1_bartender"
-tavernkeepers_end      = "trp_swmain_1_merchant"
+tavernkeepers_begin    = "trp_mainplanet_1_bartender"
+tavernkeepers_end      = "trp_mainplanet_1_merchant"
 
-goods_merchants_begin  = "trp_swmain_1_merchant"
-goods_merchants_end    = "trp_swmain_1_horse_merchant"
+goods_merchants_begin  = "trp_mainplanet_1_merchant"
+goods_merchants_end    = "trp_mainplanet_1_horse_merchant"
 
-horse_merchants_begin  = "trp_swmain_1_horse_merchant"
-horse_merchants_end    = "trp_swmain_1_mayor"
+horse_merchants_begin  = "trp_mainplanet_1_horse_merchant"
+horse_merchants_end    = "trp_mainplanet_1_mayor"
 
-mayors_begin           = "trp_swmain_1_mayor"
-mayors_end             = "trp_swminor_admin_1"
+mayors_begin           = "trp_mainplanet_1_mayor"
+mayors_end             = "trp_minorplanet_admin_1"
 
-planet_admins_begin   = "trp_swminor_admin_1"
+planet_admins_begin   = "trp_minorplanet_admin_1"
 planet_admins_end     = "trp_merchants_end"
 
 
@@ -1192,6 +1192,10 @@ lightsaber_noise_end = "itm_melee_punch"
 #SW for spaceship
 spaceship_empire_begin = "p_spaceship_tie_fighter"
 spaceship_empire_end = "p_spaceship_a_wing"
+spaceship_rebel_corel_begin = "p_spaceship_corellian_gunship"
+spaceship_rebel_corel_end = "p_spaceship_hutt_patrol"
+spaceship_rebel_moncal_begin = "p_spaceship_moncal_cruiser"
+spaceship_rebel_moncal_end = "p_spaceship_rebel_transport"
 spaceship_rebel_begin = "p_spaceship_a_wing"
 spaceship_rebel_end = "p_spaceship_hutt_patrol"
 spaceship_hutt_begin = "p_spaceship_hutt_patrol"
@@ -1250,7 +1254,7 @@ num_merchandise_goods = 40
 
 num_max_river_pirates = 25
 num_max_zendar_peasants = 25
-num_max_zendar_manhunters = 10
+num_max_zendar_bountyhunters = 10
 
 num_max_dp_bandits = 10
 num_max_refugees = 10
@@ -1265,8 +1269,8 @@ num_max_rebel_peasants = 25
 num_max_frightened_farmers = 50
 num_max_undead_messengers  = 20
 
-num_forest_bandit_spawn_points = 3
-num_mountain_bandit_spawn_points = 3
+num_blazing_claw_pirate_spawn_points = 3
+num_black_sun_pirate_spawn_points = 3
 num_steppe_bandit_spawn_points = 3
 num_black_khergit_spawn_points = 1
 num_sea_raider_spawn_points = 3

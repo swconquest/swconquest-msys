@@ -2458,11 +2458,11 @@ tournament_triggers = [
 ##               (ge,"$arena_bet_amount",1),
 ##               (store_div, ":player_odds_sub", "$arena_win_amount", 2),
 ##             (try_end),
-##             (party_get_slot, ":player_odds", "$g_encountered_party", slot_town_player_odds),
+##             (party_get_slot, ":player_odds", "$g_encountered_party", slot_mainplanet_player_odds),
 ##             (val_add, ":player_odds_sub", 5),
 ##             (val_sub, ":player_odds", ":player_odds_sub"),
 ##             (val_max, ":player_odds", 250),
-##             (party_set_slot, "$g_encountered_party", slot_town_player_odds, ":player_odds"),
+##             (party_set_slot, "$g_encountered_party", slot_mainplanet_player_odds, ":player_odds"),
 ##           (else_try),
 ##             #Fight lost, increase odds
 ##             (assign, ":player_odds_add", 0),
@@ -2470,17 +2470,17 @@ tournament_triggers = [
 ##               (ge,"$arena_bet_amount",1),
 ##               (store_div, ":player_odds_add", "$arena_win_amount", 2),
 ##             (try_end),
-##             (party_get_slot, ":player_odds", "$g_encountered_party", slot_town_player_odds),
+##             (party_get_slot, ":player_odds", "$g_encountered_party", slot_mainplanet_player_odds),
 ##             (val_add, ":player_odds_add", 5),
 ##             (val_add, ":player_odds", ":player_odds_add"),
 ##             (val_min, ":player_odds", 4000),
-##             (party_set_slot, "$g_encountered_party", slot_town_player_odds, ":player_odds"),
+##             (party_set_slot, "$g_encountered_party", slot_mainplanet_player_odds, ":player_odds"),
 ##           (try_end),
 ##           (store_remaining_team_no,"$arena_winner_team"),
 ##           (assign, "$g_mt_mode", abm_visit),
-##           (party_get_slot, ":arena_mission_template", "$current_town", slot_town_arena_template),
+##           (party_get_slot, ":arena_mission_template", "$current_town", slot_mainplanet_arena_template),
 ##           (set_jump_mission, ":arena_mission_template"),
-##           (party_get_slot, ":arena_scene", "$current_town", slot_town_arena),
+##           (party_get_slot, ":arena_scene", "$current_town", slot_mainplanet_arena),
 ##           (modify_visitors_at_site, ":arena_scene"),
 ##           (reset_visitors),
 ##           (set_visitor, 35, "trp_veteran_fighter"),
@@ -2542,7 +2542,7 @@ tournament_triggers = [
        (try_end),
        (assign, "$g_mt_mode", abm_visit),
        (set_jump_mission, "mt_arena_melee_fight"),
-       (party_get_slot, ":arena_scene", "$current_town", slot_town_arena),
+       (party_get_slot, ":arena_scene", "$current_town", slot_mainplanet_arena),
        (modify_visitors_at_site, ":arena_scene"),
        (reset_visitors),
        (set_visitor, 35, "trp_veteran_fighter"),
@@ -3018,17 +3018,17 @@ mission_templates = [
 			#set music depending on the location
 			#SW - attempting to add town specific music (this concept doesn't seem to work at all?  I had to add that persist until finished flag...)
 			(try_begin),
-				(this_or_next|eq, "$current_town", "p_town_3"),		#Endor
-				(eq, "$current_town", "p_town_7"),		#Dantooine
+				(this_or_next|eq, "$current_town", "p_endor"),		#Endor
+				(eq, "$current_town", "p_dantooine"),		#Dantooine
 				(play_track, "track_town_endor", 2),	# 0 = default, 1 = fade out current track, 2 = stop current track
 			(else_try),
-				(this_or_next|eq, "$current_town", "p_town_12"),		#Gamorr
-				(this_or_next|eq, "$current_town", "p_town_10"),		#Kashyyyk
-				(eq, "$current_town", "p_town_18"),		#Nal_Hutta
+				(this_or_next|eq, "$current_town", "p_gamorr"),		#Gamorr
+				(this_or_next|eq, "$current_town", "p_kashyyyk"),		#Kashyyyk
+				(eq, "$current_town", "p_nalhutta"),		#Nal_Hutta
 				(play_track, "track_town_wookiee", 2),	# 0 = default, 1 = fade out current track, 2 = stop current track
 			(else_try),
-				(this_or_next|eq, "$current_town", "p_town_14"),		#Tatooine
-				(eq, "$current_town", "p_town_17"),		#Ryloth
+				(this_or_next|eq, "$current_town", "p_tatooine"),		#Tatooine
+				(eq, "$current_town", "p_ryloth"),		#Ryloth
 				(play_track, "track_town_desert", 2),	# 0 = default, 1 = fade out current track, 2 = stop current track
 				#(play_track, "track_town_test", 2),		# 0 = default, 1 = fade out current track, 2 = stop current track
 			(try_end),
@@ -6366,7 +6366,7 @@ common_gate_system,
        (eq,":answer",0),
        (assign, "$g_mt_mode", abm_visit),
        (set_jump_mission, "mt_arena_melee_fight"),
-       (party_get_slot, ":arena_scene", "$current_town", slot_town_arena),
+       (party_get_slot, ":arena_scene", "$current_town", slot_mainplanet_arena),
        (modify_visitors_at_site, ":arena_scene"),
        (reset_visitors),
        (set_visitor, 35, "trp_veteran_fighter"),
@@ -6421,7 +6421,7 @@ common_gate_system,
        (try_end),
        (assign, "$g_mt_mode", abm_visit),
        (set_jump_mission, "mt_arena_melee_fight"),
-       (party_get_slot, ":arena_scene", "$current_town", slot_town_arena),
+       (party_get_slot, ":arena_scene", "$current_town", slot_mainplanet_arena),
        (modify_visitors_at_site, ":arena_scene"),
        (reset_visitors),
        (set_visitor, 35, "trp_veteran_fighter"),

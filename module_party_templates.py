@@ -43,24 +43,24 @@ party_templates = [
 ##  ("vaegir_nobleman","Vaegir Nobleman",icon_vaegir_knight|carries_goods(10)|pf_quest_party,0,fac_commoners,merchant_personality,[(trp_nobleman,1,1),(trp_vaegir_knight,2,6),(trp_vaegir_horseman,4,12)]),
 ##  ("swadian_nobleman","Swadian Nobleman",icon_gray_knight|carries_goods(10)|pf_quest_party,0,fac_commoners,merchant_personality,[(trp_nobleman,1,1),(trp_swadian_knight,2,6),(trp_swadian_man_at_arms,4,12)]),
 # Ryan BEGIN
-  #("looters","Jawas",icon_tusken|carries_goods(8),0,fac_outlaws,bandit_personality,[(trp_looter,12,24)]),
-  ("looters","Jawas",icon_mercenary_shuttle_brown|carries_goods(8),0,fac_outlaws,bandit_personality,[(trp_looter,8,16),(trp_looter_2,5,10),(trp_looter_3,2,4),(trp_r2series,0,1,pmf_is_prisoner),(trp_3poseries,0,1,pmf_is_prisoner)]),  
+  #("jawas","Jawas",icon_tusken|carries_goods(8),0,fac_outlaws,bandit_personality,[(trp_jawa,12,24)]),
+  ("jawas","Jawas",icon_mercenary_shuttle_brown|carries_goods(8),0,fac_outlaws,bandit_personality,[(trp_jawa,8,16),(trp_jawa_2,5,10),(trp_jawa_3,2,4),(trp_r2series,0,1,pmf_is_prisoner),(trp_3poseries,0,1,pmf_is_prisoner)]),  
   
 # Ryan END
-#SW - switched Manhunters to Trandoshan Slavers
+#SW - switched bountyhunters to Trandoshan Slavers
 ##  ("peasant","Peasant",icon_peasant,0,fac_commoners,merchant_personality,[(trp_farmer,1,6),(trp_peasant_woman,0,7)]),
 #  ("black_khergit_raiders","Black Khergit Raiders",icon_khergit_horseman_b|carries_goods(2),0,fac_black_khergits,bandit_personality,[(trp_black_khergit_guard,1,10),(trp_black_khergit_horseman,5,5)]),
 
-  ("manhunters","Trandoshan Slavers",icon_z95,0,fac_manhunters,soldier_personality,[(trp_manhunter,25,50),(trp_wookiee,0,1,pmf_is_prisoner)]),
+  ("bountyhunters","Trandoshan Slavers",icon_z95,0,fac_bountyhunters,soldier_personality,[(trp_bountyhunter,25,50),(trp_wookiee,0,1,pmf_is_prisoner)]),
   ("steppe_bandits","Night Fangs Pirates",icon_mercenary_shuttle|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_steppe_bandit,5,25),(trp_steppe_bandit_female,4,8),(trp_trandoshan,1,5),(trp_twilek,1,5),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
-  ("forest_bandits","Blazing Claw Pirates",icon_mercenary_fighter|carries_goods(2),0,fac_forest_bandits,bandit_personality,[(trp_forest_bandit,5,25),(trp_forest_bandit_female,4,8),(trp_rodian,1,5),(trp_sullustan_1,1,5),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
+  ("blazing_claw_pirates","Blazing Claw Pirates",icon_mercenary_fighter|carries_goods(2),0,fac_blazing_claw_pirates,bandit_personality,[(trp_blazing_claw_pirate,5,25),(trp_blazing_claw_pirate_female,4,8),(trp_rodian,1,5),(trp_sullustan_1,1,5),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
   ("sea_raiders","Tusken Raiders",icon_mercenary_raider_brown|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_tusken_1,10,25),(trp_tusken_2,5,10)]),  
-  ("mountain_bandits","Black Sun Pirates",icon_mercenary_raider|carries_goods(2),0,fac_mountain_bandits,bandit_personality,[(trp_mountain_bandit_1,10,20),(trp_mountain_bandit_2,5,10),(trp_mountain_bandit_3,5,10),(trp_mountain_bandit_4,1,10),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
+  ("black_sun_pirates","Black Sun Pirates",icon_mercenary_raider|carries_goods(2),0,fac_black_sun_pirates,bandit_personality,[(trp_black_sun_pirate_1,10,20),(trp_black_sun_pirate_2,5,10),(trp_black_sun_pirate_3,5,10),(trp_black_sun_pirate_4,1,10),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
   
 #SW - new outlaw party templates with Imperial Troops (nevermind, back to regular bandits)
 #  ("steppe_bandits","Imperial Scouts",icon_axeman|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_imperial_stormtrooper_mounted,8,15),(trp_imperial_scout_trooper,10,20)]),
-#  ("forest_bandits","Imperial War Party",icon_axeman|carries_goods(2),0,fac_forest_bandits,bandit_personality,[(trp_imperial_stormtrooper,20,30),(trp_imperial_scout_trooper,10,15),(trp_sith_apprentice,5,10),(trp_sith_master,5,10)]),
-#  ("mountain_bandits","Imperial Raiders",icon_axeman|carries_goods(2),0,fac_mountain_bandits,bandit_personality,[(trp_imperial_trooper,5,20),(trp_imperial_recruit,5,30)]),
+#  ("blazing_claw_pirates","Imperial War Party",icon_axeman|carries_goods(2),0,fac_blazing_claw_pirates,bandit_personality,[(trp_imperial_stormtrooper,20,30),(trp_imperial_scout_trooper,10,15),(trp_sith_apprentice,5,10),(trp_sith_master,5,10)]),
+#  ("black_sun_pirates","Imperial Raiders",icon_axeman|carries_goods(2),0,fac_black_sun_pirates,bandit_personality,[(trp_imperial_trooper,5,20),(trp_imperial_recruit,5,30)]),
 #  ("sea_raiders","Imperial Patrol",icon_axeman|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_imperial_stormtrooper,5,20),(trp_imperial_trooper,5,10),(trp_imperial_scout_trooper,5,10),(trp_sith_apprentice,2,4),(trp_sith_master,2,4)]),
 
   ("deserters","Deserters",icon_z95|carries_goods(3),0,fac_deserters,bandit_personality,[]),

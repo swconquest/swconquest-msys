@@ -20,7 +20,7 @@ from header_factions import *
 #  7) Faction color (default is gray)
 ####################################################################################################################
 
-default_kingdom_relations = [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.05),("mountain_bandits", -0.02),("forest_bandits", -0.02)]
+default_kingdom_relations = [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.05),("black_sun_pirates", -0.02),("blazing_claw_pirates", -0.02)]
 factions = [
   ("no_faction","No Faction",0, 0.9, [], []),
   ("commoners","Commoners",0, 0.1,[("player_faction",0.1)], []),
@@ -32,11 +32,11 @@ factions = [
   ("merchants","Merchants", ff_always_hide_label, 0.5,[("outlaws",-0.5),], []),
 
 #SW MF added new factions  
-  ("trade_federation","Independent", ff_always_hide_label, 0.5,[("outlaws",-0.5),("peasant_rebels", -0.1),("deserters", -0.2),("mountain_bandits", -0.5),("forest_bandits", -0.5),("slavers", 0.1),("manhunters", 0.1)], [],0xDDDD33),
-  #("privateers", "Privateers", 0, 0.5, [("outlaws",-0.5),("peasant_rebels", -0.1),("deserters", -0.2),("mountain_bandits", -0.5),("forest_bandits", -0.5),("slavers", 0.1),("manhunters", 0.1)], [],0xCC2211),
-  #("bounty_hunters", "Bounty Hunters", 0, 0.5, [("outlaws",0),("mountain_bandits", 0),("forest_bandits", 0)],[],0x96CDCD),
+  ("trade_federation","Independent", ff_always_hide_label, 0.5,[("outlaws",-0.5),("peasant_rebels", -0.1),("deserters", -0.2),("black_sun_pirates", -0.5),("blazing_claw_pirates", -0.5),("slavers", 0.1),("bountyhunters", 0.1)], [],0xDDDD33),
+  #("privateers", "Privateers", 0, 0.5, [("outlaws",-0.5),("peasant_rebels", -0.1),("deserters", -0.2),("black_sun_pirates", -0.5),("blazing_claw_pirates", -0.5),("slavers", 0.1),("bountyhunters", 0.1)], [],0xCC2211),
+  #("bounty_hunters", "Bounty Hunters", 0, 0.5, [("outlaws",0),("black_sun_pirates", 0),("blazing_claw_pirates", 0)],[],0x96CDCD),
 
-  ("dark_knights","Dark Knights", 0, 0.5,[("innocents",-0.9),("player_faction",-0.4)], []),
+  #("dark_knights","Dark Knights", 0, 0.5,[("innocents",-0.9),("player_faction",-0.4)], []),
 
 
   ("culture_1",  "culture_1", 0, 0.9, [], []),  ##@> Empire culture
@@ -52,28 +52,28 @@ factions = [
 #  ("vaegir_caravans","Vaegir Caravans", 0, 0.5,[("outlaws",-0.8), ("dark_knights",-0.2)], []),
 
   ("player_faction","Player Faction",0, 0.9, [], [], 0xC0C0FF),
-  ("player_supporters_faction","Player Faction",0, 0.9, [("player_faction",1.00),("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05)], []),
+  ("player_supporters_faction","Player Faction",0, 0.9, [("player_faction",1.00),("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05)], []),
 
   #Colors - 0xCC2211 = red, 0xDDDD33 = yellow, 0x33DDDD = blue, 0x33DD33 = green
   
   #SW - Swadia (Kingdom 1) = Galactic Empire
-  ("kingdom_1",  "Galactic Empire", 0, 0.9,   [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05),("kingdom_2", -0.4)], [], 0x33b3dd),  # BLUE old color: 33DDDD
-  #("kingdom_1",  "Galactic Empire", 0, 0.9,   [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05),("kingdom_2", -0.5)], [], 0xCC2211),   # RED
+  ("kingdom_1",  "Galactic Empire", 0, 0.9,   [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05),("kingdom_2", -0.4)], [], 0x33b3dd),  # BLUE old color: 33DDDD
+  #("kingdom_1",  "Galactic Empire", 0, 0.9,   [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05),("kingdom_2", -0.5)], [], 0xCC2211),   # RED
   #SW - Vaegir (Kingdom 2) = Rebal Alliance
-  #("kingdom_2",  "Rebel Alliance",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05),("kingdom_1", -0.4)], [], 0x33DD33),	#GREEN
-  ("kingdom_2",  "Rebel Alliance",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05),("kingdom_1", -0.4)], [], 0xce0b0b),	#RED
+  #("kingdom_2",  "Rebel Alliance",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05),("kingdom_1", -0.4)], [], 0x33DD33),	#GREEN
+  ("kingdom_2",  "Rebel Alliance",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05),("kingdom_1", -0.4)], [], 0xce0b0b),	#RED
   #SW  Khergit Khanate (Kingdom 3) = Hutt Cartel
-  ("kingdom_3",  "Hutt Cartel", 0, 0.9,       [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05)], [], 0xDD8844),	#ORANGE old color: DD8844
+  ("kingdom_3",  "Hutt Cartel", 0, 0.9,       [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05)], [], 0xDD8844),	#ORANGE old color: DD8844
 #4 = Nords
-#  ("kingdom_4",  "Kingdom of Nords",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05)], [], 0xDDDD33),
+#  ("kingdom_4",  "Kingdom of Nords",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05)], [], 0xDDDD33),
 #5 = Rhodoks
-#  ("kingdom_5",  "Kingdom of Rhodoks",  0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05)], [], 0x33DDDD),
+#  ("kingdom_5",  "Kingdom of Rhodoks",  0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05)], [], 0x33DDDD),
 
-##  ("kingdom_1_rebels",  "Swadian rebels", 0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05)], [], 0xCC2211),
-##  ("kingdom_2_rebels",  "Vaegir rebels",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05)], [], 0xCC2211),
-##  ("kingdom_3_rebels",  "Khergit rebels", 0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05)], [], 0xCC2211),
-##  ("kingdom_4_rebels",  "Nord rebels",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05)], [], 0xCC2211),
-##  ("kingdom_5_rebels",  "Rhodok rebels",  0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("mountain_bandits", -0.05),("forest_bandits", -0.05)], [], 0xCC2211),
+##  ("kingdom_1_rebels",  "Swadian rebels", 0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05)], [], 0xCC2211),
+##  ("kingdom_2_rebels",  "Vaegir rebels",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05)], [], 0xCC2211),
+##  ("kingdom_3_rebels",  "Khergit rebels", 0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05)], [], 0xCC2211),
+##  ("kingdom_4_rebels",  "Nord rebels",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05)], [], 0xCC2211),
+##  ("kingdom_5_rebels",  "Rhodok rebels",  0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05)], [], 0xCC2211),
 
   ("kingdoms_end","kingdoms_end", 0, 0,[], []),
 
@@ -84,10 +84,10 @@ factions = [
 
 ##  ("rebel_peasants","Rebel Peasants", 0, 0.5,[("vaegirs",-0.5),("player_faction",0.0)], []),
 
-  ("manhunters","Manhunters", 0, 0.5,[("outlaws",-0.6),("player_faction",0.1)], []),
-  ("deserters","Deserters", 0, 0.5,[("manhunters",-0.6),("merchants",-0.5),("player_faction",-0.1)], [], 0xFF99CC),
-  ("mountain_bandits","Mountain Bandits", 0, 0.5,[("commoners",-0.2),("merchants",-0.5),("manhunters",-0.6),("player_faction",-0.15)], [], 0xFFFF66),
-  ("forest_bandits","Forest Bandits", 0, 0.5,[("commoners",-0.2),("merchants",-0.5),("manhunters",-0.6),("player_faction",-0.15)], [], 0xFFFF66),
+  ("bountyhunters","bountyhunters", 0, 0.5,[("outlaws",-0.6),("player_faction",0.1)], []),
+  ("deserters","Deserters", 0, 0.5,[("bountyhunters",-0.6),("merchants",-0.5),("player_faction",-0.1)], [], 0xFF99CC),
+  ("black_sun_pirates","Black Sun Pirates", 0, 0.5,[("commoners",-0.2),("merchants",-0.5),("bountyhunters",-0.6),("player_faction",-0.15)], [], 0xFFFF66),
+  ("blazing_claw_pirates","Blazing Claw Pirates", 0, 0.5,[("commoners",-0.2),("merchants",-0.5),("bountyhunters",-0.6),("player_faction",-0.15)], [], 0xFFFF66),
 
   ("undeads","Undeads", max_player_rating(-30), 0.5,[("commoners",-0.7),("player_faction",-0.5)], []),
   ("slavers","Slavers", 0, 0.1, [], []),
