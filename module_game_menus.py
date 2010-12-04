@@ -42,14 +42,14 @@ from header_terrain_types import *
 # Note: The first Menu is the initial character creation menu.
 ####################################################################################################################
 ##
-###@> SWY 0.9.0.3 Change color of every menu, from black to HEX 071423 (dark blue)
+###@> SWY 0.9.0.3 Change color of every menu, from black to HEX 000d2c (dark blue)
 ##
-##  menu_text_color(0xFF000000)  >  menu_text_color(0xFF071423)
+##  menu_text_color(0xFF000000)  >  menu_text_color(0xFF000d2c)
 ##
 game_menus = [
 #This needs to be the first window!!!
   (
-    "start_game_1",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "start_game_1",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     #"A long time ago, in a galaxy far, far away...^^Welcome, to Star Wars Calradia, a mod for Mount&Blade.^^Before you can start playing the game you must create a character. To begin, select your character's gender.",
 	#"A long time ago, in a galaxy far, far away...^^Welcome, to Star Wars Calradia, a mod for Mount&Blade. Before you can start playing the game you must create a character.^^You were born on the planet Zolan, home to a humanoid species known as Clawdites, but often referred to as Changelings. As one of the few shape-shifting species in the galaxy you can choose what form to begin your adventure as...",
 	"A long time ago, in a galaxy far, far away...^^Welcome, to Star Wars: Conquest, a mod for Mount&Blade. Before you can start playing the game you must create a character. Please choose your race:",
@@ -285,7 +285,7 @@ game_menus = [
   ),
 #This needs to be the second window!!!
   (
-    "start_phase_2",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "start_phase_2",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
 #    "During your travels, you come accross a group of wandering men looking for a leader. You...",
 #
     # "You arrive at Calradia, a land torn between rival kingdoms battling each other for supremacy,\
@@ -407,7 +407,7 @@ game_menus = [
   ),
 # This needs to be the third window!!!  
   (
-    "start_game_3",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "start_game_3",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "Choose your scenario:",
     "none",
     [
@@ -506,7 +506,7 @@ game_menus = [
 
 # This needs to be the fourth window!!!
   (
-    "tutorial",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "tutorial",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "You approach a field where the locals are training with weapons. You can practice here to improve your combat skills.",
     "none",
     [(set_passage_menu, "mnu_tutorial"),
@@ -593,7 +593,7 @@ game_menus = [
   ),
 
 # This needs to be the fifth window!!!  
-  ("reports",menu_text_color(0xFF071423),
+  ("reports",menu_text_color(0xFF000d2c),
    "Character Renown: {reg5}^Honor Rating: {reg6}^Party Morale: {reg8}^Party Size Limit: {reg7}^",
    "none",
    [(call_script, "script_game_get_party_companion_limit"),
@@ -678,7 +678,7 @@ game_menus = [
   
   (
     #SW - Modified many things about the Quick Battles (items, troops, player stats, etc)  
-    "custom_battle_2",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "custom_battle_2",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s16}",
     "none",
     [
@@ -1017,7 +1017,7 @@ game_menus = [
 
 
   (
-    "custom_battle_end",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "custom_battle_end",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "The battle is over. {s1} Your side killed {reg5} enemies and lost {reg6} troops over the battle. You personally slew {reg7} men in the fighting.",
     "none",
     [(music_set_situation, 0),
@@ -1042,7 +1042,7 @@ game_menus = [
 #-------------------------------------------------------------------------------------------------
 #SW - new quick start menu
   (
-    "start_character_0",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "start_character_0",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "You spent your early years traveling around the galaxy with your parents. Your father was...",
     "none",
     [
@@ -1105,7 +1105,7 @@ game_menus = [
 
 #------------------------------------------------------------------------------------------------
   (
-    "start_character_faction",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "start_character_faction",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "As you grew older you decided to...",
     "none",
     [
@@ -1146,7 +1146,7 @@ game_menus = [
   
 #-------------------------------------------------------------------------------------------------
   # (
-    # "start_character_1",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    # "start_character_1",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     # "You were born a long time ago, in a galaxy far, far away. Your father was...",
     # "none",
     # [
@@ -1229,7 +1229,7 @@ game_menus = [
     # ]
   # ),
   # (
-    # "start_character_2",menu_text_color(0xFF071423),
+    # "start_character_2",menu_text_color(0xFF000d2c),
     # "{s10}^^ You started to learn about the world almost as soon as you could walk and talk. You spent your early life as...",
     # "none",
     # [],
@@ -1346,7 +1346,7 @@ game_menus = [
     # ]
   # ),
   # (
-    # "start_character_3",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    # "start_character_3",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     # "{s11}^^ Then, as a young adult, life changed as it always does. You became...",
     # "none",
     # [(assign, reg3, "$character_gender"),],
@@ -1481,7 +1481,7 @@ game_menus = [
   # ),
 
   # (
-    # "start_character_4",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    # "start_character_4",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     # "{s12}^^But soon everything changed and you decided to strike out on your own as an adventurer. What made you take this decision was...",
     # #Finally, what made you decide to strike out on your own as an adventurer?",
     # "none",
@@ -1544,7 +1544,7 @@ game_menus = [
     # ]
   # ),
   (
-    "choose_skill",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "choose_skill",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s13}",
     "none",
     [(assign,"$current_string_reg",10)],
@@ -1594,7 +1594,7 @@ game_menus = [
 ##             (troop_raise_attribute, "trp_player",ca_agility,1),
 ##             (troop_raise_attribute, "trp_player",ca_strength,1),
 ##             (troop_raise_skill, "trp_player",skl_power_strike,2),
-##             (troop_raise_proficiency, "trp_player",menu_text_color(0xFF071423),30),
+##             (troop_raise_proficiency, "trp_player",menu_text_color(0xFF000d2c),30),
 ##             (troop_raise_proficiency, "trp_player",1,20),
 ##           (else_try),
 ##             (eq, "$starting_skill", 2),
@@ -1607,7 +1607,7 @@ game_menus = [
 ##             (troop_raise_skill, "trp_player",skl_first_aid,1),
 ##             (troop_raise_skill, "trp_player",skl_wound_treatment,1),
 ##             (troop_add_item, "trp_player","itm_winged_mace",0),
-##             (troop_raise_proficiency, "trp_player",menu_text_color(0xFF071423),15),
+##             (troop_raise_proficiency, "trp_player",menu_text_color(0xFF000d2c),15),
 ##             (troop_raise_proficiency, "trp_player",1,15),
 ##             (troop_raise_proficiency, "trp_player",2,15),
 ##           (try_end),
@@ -2049,7 +2049,7 @@ game_menus = [
 # ##        (troop_raise_skill, "trp_player",skl_wound_treatment,1),
 # ##        (troop_raise_skill, "trp_player",skl_leadership,1),
 # ##        (troop_raise_skill, "trp_player",skl_prisoner_management,1),
-# ##        (troop_raise_proficiency, "trp_player",menu_text_color(0xFF071423),10),
+# ##        (troop_raise_proficiency, "trp_player",menu_text_color(0xFF000d2c),10),
 # ##        (troop_add_item, "trp_player","itm_robe",0),
 # ##        (troop_add_item, "trp_player","itm_wrapping_boots",0),
 # ##        (troop_add_item, "trp_player","itm_club",0),
@@ -2110,7 +2110,7 @@ game_menus = [
 # ##        (troop_raise_attribute, "trp_player",ca_charisma,3),
 # ##        (troop_raise_attribute, "trp_player",ca_agility,1),
 # ##        (troop_raise_skill, "trp_player",skl_weapon_master,1),
-# ##        (troop_raise_proficiency, "trp_player",menu_text_color(0xFF071423),15),
+# ##        (troop_raise_proficiency, "trp_player",menu_text_color(0xFF000d2c),15),
 # ##        (troop_raise_proficiency, "trp_player",2,10),
 # ##        (troop_raise_proficiency, "trp_player",4,10),
 # ##        (call_script,"script_change_troop_renown", "trp_player", 20),
@@ -2120,7 +2120,7 @@ game_menus = [
 # ##        (troop_raise_attribute, "trp_player",ca_charisma,2),
 # ##        (troop_raise_skill, "trp_player",skl_leadership,1),
 # ##        (troop_raise_skill, "trp_player",skl_tactics,1),
-# ##        (troop_raise_proficiency, "trp_player",menu_text_color(0xFF071423),10),
+# ##        (troop_raise_proficiency, "trp_player",menu_text_color(0xFF000d2c),10),
 # ##        (troop_raise_proficiency, "trp_player",1,10),
 # ##        (call_script,"script_change_troop_renown", "trp_player", 15),
 # ##	(else_try),
@@ -2153,7 +2153,7 @@ game_menus = [
 # ##        (try_end),
 # ##        (troop_add_item, "trp_player","itm_short_sword",0),
 # ##        (troop_add_item, "trp_player","itm_wooden_shield",imod_battered),
-# ##        (troop_raise_proficiency, "trp_player",menu_text_color(0xFF071423),10),
+# ##        (troop_raise_proficiency, "trp_player",menu_text_color(0xFF000d2c),10),
 # ##        (troop_raise_proficiency, "trp_player",4,10),
 # ##    (else_try),
 # ##        (eq,"$background_answer_3",2),
@@ -2497,7 +2497,7 @@ game_menus = [
   ),
 
   (
-    "past_life_explanation",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "past_life_explanation",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s3}",
     "none",
     [
@@ -2528,14 +2528,14 @@ game_menus = [
   ),
 
   (
-    "auto_return",menu_text_color(0xFF071423),
+    "auto_return",menu_text_color(0xFF000d2c),
     "This menu automatically returns to caller.",
     "none",
     [(change_screen_return, 0)],
     [
     ]
   ),
-  ("morale_report",menu_text_color(0xFF071423),
+  ("morale_report",menu_text_color(0xFF000d2c),
    "{s1}",
    "none",
    [(call_script, "script_get_player_party_morale_values"),
@@ -2597,13 +2597,13 @@ game_menus = [
       ]
   ),
 
-  ("faction_orders",menu_text_color(0xFF071423),
+  ("faction_orders",menu_text_color(0xFF000d2c),
    "{s9}",
    "none",
    [
      (str_clear, s9),
      (store_current_hours, ":cur_hours"),
-     (try_for_range, ":faction_no", kingdoms_begin, kingdoms_end),
+     (try_for_range, ":faction_no", factions_begin, factions_end),
        (faction_slot_eq, ":faction_no", slot_faction_state, sfs_active),
        (neq, ":faction_no", "fac_player_supporters_faction"),
        (faction_get_slot, ":faction_ai_state", ":faction_no", slot_faction_ai_state),
@@ -2643,8 +2643,8 @@ game_menus = [
        (str_store_string, s9, "@{s9}{s10}^Current state: {s11}^Marshall: {s12}^Since the last offensive: {reg1} hours^Offensive maximum followers: {reg2}^^"),
      (try_end),
      (try_begin),
-       (neg|is_between, "$g_cheat_selected_faction", kingdoms_begin, kingdoms_end),
-       (call_script, "script_get_next_active_kingdom", kingdoms_end),
+       (neg|is_between, "$g_cheat_selected_faction", factions_begin, factions_end),
+       (call_script, "script_get_next_active_kingdom", factions_end),
        (assign, "$g_cheat_selected_faction", reg0),
      (try_end),
      (str_store_faction_name, s10, "$g_cheat_selected_faction"),
@@ -2704,7 +2704,7 @@ game_menus = [
   ),
 
   
-  ("character_report",menu_text_color(0xFF071423),
+  ("character_report",menu_text_color(0xFF000d2c),
    "{s9}",
    "none",
    [(try_begin),
@@ -2795,7 +2795,7 @@ game_menus = [
       ]
   ),
 
-  ("party_size_report",menu_text_color(0xFF071423),
+  ("party_size_report",menu_text_color(0xFF000d2c),
    "{s1}",
    "none",
    [(call_script, "script_game_get_party_companion_limit"),
@@ -2839,11 +2839,11 @@ game_menus = [
       ]
   ),
 
-  ("faction_relations_report",menu_text_color(0xFF071423),
+  ("faction_relations_report",menu_text_color(0xFF000d2c),
    "{s1}",
    "none",
    [(str_clear, s2),
-    (try_for_range, ":cur_kingdom", kingdoms_begin, kingdoms_end),
+    (try_for_range, ":cur_kingdom", factions_begin, factions_end),
       (faction_slot_eq, ":cur_kingdom", slot_faction_state, sfs_active),
       (neq, ":cur_kingdom", "fac_player_supporters_faction"),
       (store_relation, ":cur_relation", "fac_player_supporters_faction", ":cur_kingdom"),
@@ -2916,7 +2916,7 @@ game_menus = [
   ),
 
 
-  ("camp",menu_text_color(0xFF071423)|mnf_scale_picture,
+  ("camp",menu_text_color(0xFF000d2c)|mnf_scale_picture,
    #"You set up camp. What do you want to do?",
    "It's {s1} on day {reg0} of your adventure.^^{s9}^^What do you want to do?",
    "none",
@@ -3058,7 +3058,7 @@ game_menus = [
       ]
   ),
 
-  ("walk_around_choose",menu_text_color(0xFF071423),
+  ("walk_around_choose",menu_text_color(0xFF000d2c),
    "What area of the ship do you want to walk around?",
    "none",
    [],
@@ -3111,7 +3111,7 @@ game_menus = [
   ),
   
 #Own kingdom start------------------------------
-  ("own_kingdom",menu_text_color(0xFF071423),
+  ("own_kingdom",menu_text_color(0xFF000d2c),
    "Choose an action:",
    "none",
    [
@@ -3199,7 +3199,7 @@ game_menus = [
       ]
   ),
   
-  ("change_culture",menu_text_color(0xFF071423),
+  ("change_culture",menu_text_color(0xFF000d2c),
    "Choose a culture:^^^The culture of your Kingdom determine the guards in your territories, the type of recruits from your planets, and the soldiers in your commanders armies.",	#SW - modified
    "none",
    [],
@@ -3270,7 +3270,7 @@ game_menus = [
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_wookiee_messenger"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_wookiee_warrior"),		
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_wookiee_berserker"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_castle_guard_troop, "trp_bacca_warrior"),
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_bacca_warrior"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_kingdom_wookiee_reinforcements_a"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_kingdom_wookiee_reinforcements_b"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_kingdom_wookiee_reinforcements_c"),		  
@@ -3288,7 +3288,7 @@ game_menus = [
         (faction_set_slot, "fac_neutral",  slot_faction_messenger_troop, "trp_wookiee_messenger"),
         (faction_set_slot, "fac_neutral",  slot_faction_guard_troop, "trp_wookiee_warrior"),		
         (faction_set_slot, "fac_neutral",  slot_faction_prison_guard_troop, "trp_wookiee_berserker"),
-        (faction_set_slot, "fac_neutral",  slot_faction_castle_guard_troop, "trp_bacca_warrior"),
+        (faction_set_slot, "fac_neutral",  slot_faction_spacestation_guard_troop, "trp_bacca_warrior"),
         (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_kingdom_wookiee_reinforcements_a"),
         (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_kingdom_wookiee_reinforcements_b"),
         (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_kingdom_wookiee_reinforcements_c"),		  
@@ -3356,7 +3356,7 @@ game_menus = [
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_mandalorian_messenger"),		
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_mandalorian_soldier"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_mandalorian_commando"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_castle_guard_troop, "trp_mandalorian_crusader"),
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_mandalorian_crusader"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_kingdom_mandalorian_reinforcements_a"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_kingdom_mandalorian_reinforcements_b"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_kingdom_mandalorian_reinforcements_c"),		  
@@ -3374,7 +3374,7 @@ game_menus = [
         (faction_set_slot, "fac_neutral",  slot_faction_messenger_troop, "trp_mandalorian_messenger"),
         (faction_set_slot, "fac_neutral",  slot_faction_guard_troop, "trp_mandalorian_soldier"),		
         (faction_set_slot, "fac_neutral",  slot_faction_prison_guard_troop, "trp_mandalorian_commando"),
-        (faction_set_slot, "fac_neutral",  slot_faction_castle_guard_troop, "trp_mandalorian_crusader"),
+        (faction_set_slot, "fac_neutral",  slot_faction_spacestation_guard_troop, "trp_mandalorian_crusader"),
         (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_kingdom_mandalorian_reinforcements_a"),
         (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_kingdom_mandalorian_reinforcements_b"),
         (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_kingdom_mandalorian_reinforcements_c"),		  
@@ -3456,7 +3456,7 @@ game_menus = [
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_clone_messenger"),		
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_clone_trooper_1"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_arc_trooper_3"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_castle_guard_troop, "trp_arc_trooper_4"),
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_arc_trooper_4"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_kingdom_clone_reinforcements_a"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_kingdom_clone_reinforcements_b"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_kingdom_clone_reinforcements_c"),		  
@@ -3474,7 +3474,7 @@ game_menus = [
         (faction_set_slot, "fac_neutral",  slot_faction_messenger_troop, "trp_clone_messenger"),
         (faction_set_slot, "fac_neutral",  slot_faction_guard_troop, "trp_clone_trooper_1"),
         (faction_set_slot, "fac_neutral",  slot_faction_prison_guard_troop, "trp_arc_trooper_3"),
-        (faction_set_slot, "fac_neutral",  slot_faction_castle_guard_troop, "trp_arc_trooper_4"),
+        (faction_set_slot, "fac_neutral",  slot_faction_spacestation_guard_troop, "trp_arc_trooper_4"),
         (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_kingdom_clone_reinforcements_a"),
         (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_kingdom_clone_reinforcements_b"),
         (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_kingdom_clone_reinforcements_c"),		  
@@ -3559,7 +3559,7 @@ game_menus = [
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_trandoshan_messenger"),		
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_trandoshan_warrior"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_trandoshan_hunter"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_castle_guard_troop, "trp_trandoshan_bounty_hunter"),
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_trandoshan_bounty_hunter"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_kingdom_trandoshan_reinforcements_a"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_kingdom_trandoshan_reinforcements_b"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_kingdom_trandoshan_reinforcements_c"),		  
@@ -3577,7 +3577,7 @@ game_menus = [
         (faction_set_slot, "fac_neutral",  slot_faction_messenger_troop, "trp_trandoshan_messenger"),
         (faction_set_slot, "fac_neutral",  slot_faction_guard_troop, "trp_trandoshan_warrior"),
         (faction_set_slot, "fac_neutral",  slot_faction_prison_guard_troop, "trp_trandoshan_hunter"),
-        (faction_set_slot, "fac_neutral",  slot_faction_castle_guard_troop, "trp_trandoshan_bounty_hunter"),
+        (faction_set_slot, "fac_neutral",  slot_faction_spacestation_guard_troop, "trp_trandoshan_bounty_hunter"),
         (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_kingdom_trandoshan_reinforcements_a"),
         (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_kingdom_trandoshan_reinforcements_b"),
         (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_kingdom_trandoshan_reinforcements_c"),		  
@@ -3638,7 +3638,7 @@ game_menus = [
 	
   ]),
 #############################################################################################################		  
-  ("manage_fiefs",menu_text_color(0xFF071423),
+  ("manage_fiefs",menu_text_color(0xFF000d2c),
    "Choose a territory ({reg1} to {reg2}):",	#SW modified
    "none",
    [
@@ -3791,7 +3791,7 @@ game_menus = [
        ),
       ]
   ),
-  ("manage_fiefs_2",menu_text_color(0xFF071423),
+  ("manage_fiefs_2",menu_text_color(0xFF000d2c),
    "Give to commander ({reg1} to {reg2}):",	#SW modified
    "none",
    [
@@ -3940,7 +3940,7 @@ game_menus = [
 
 ##############################################################################
 #SWC configuration menu
-  ("camp_configuration",menu_text_color(0xFF071423),
+  ("camp_configuration",menu_text_color(0xFF000d2c),
    "Star Wars: Conquest Configuration Menu",
    "none",
 	 [
@@ -4106,7 +4106,7 @@ game_menus = [
 
     (
 	#code from Expanded Gameplay III
-    "setup_keys",menu_text_color(0xFF071423),
+    "setup_keys",menu_text_color(0xFF000d2c),
     "Choose ability and then press a key to assign/change its key binding. To unassign key choose ability and press ESC",
     "none",
     [ 
@@ -4191,7 +4191,7 @@ game_menus = [
   ),		
   
 ##############################################################################  
-  ("camp_cheat",menu_text_color(0xFF071423),
+  ("camp_cheat",menu_text_color(0xFF000d2c),
    #"Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. If you enable this option then additonal CHEAT menu's will also appear in other game menu's. Please do not report any bugs with this functionality since it is for testing only.",
    "Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. Please do not report any bugs with this functionality since it is for testing only.",
    "none",
@@ -4255,7 +4255,7 @@ game_menus = [
 	  ],
 	  "Relocate player to a random planet.",
        [
-		(store_random_in_range, ":random_town", towns_begin, towns_end),
+		(store_random_in_range, ":random_town", mainplanets_begin, mainplanets_end),
 		(str_clear, s1),
 		(str_store_party_name, s1, ":random_town"),
 		(display_message, "@Player was moved to {s1}."),
@@ -4268,7 +4268,7 @@ game_menus = [
 	  # [(eq,"$cheat_mode",1)],
 	  # "Give player a random planet.",
        # [
-		# (store_random_in_range, ":random_town", towns_begin, towns_end),
+		# (store_random_in_range, ":random_town", mainplanets_begin, mainplanets_end),
 		# (str_clear, s1),
 		# (str_store_party_name, s1, ":random_town"),
 		# (display_message, "@Player is now the ruler of {s1}."),
@@ -4565,7 +4565,7 @@ game_menus = [
 	  ],
 	  "Build all village upgrades.",
        [
-		(try_for_range, ":cur_place", villages_begin, villages_end),
+		(try_for_range, ":cur_place", minorplanet_begin, minorplanet_end),
 			(party_set_slot, ":cur_place", slot_center_has_clone_chambers, 1),
 			(party_set_slot, ":cur_place", slot_center_has_temple, 1),
 			(party_set_slot, ":cur_place", slot_center_has_droid_foundry, 1),
@@ -4600,7 +4600,7 @@ game_menus = [
 	]
   ),
   
-  ("camp_cheat_2",menu_text_color(0xFF071423),
+  ("camp_cheat_2",menu_text_color(0xFF000d2c),
    #"Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. If you enable this then additonal CHEAT menu's will also appear in other game menu's.",
    "Modding/Cheat Menu (for development use):^^This menu is intended for development use while we are working on improving this mod. Please do not report any bugs with this functionality since it is for testing only.",
    "none",
@@ -4613,7 +4613,7 @@ game_menus = [
 	  ],
 	  "Infest all villages with bandits.",
        [
-		(try_for_range, ":cur_place", villages_begin, villages_end),
+		(try_for_range, ":cur_place", minorplanet_begin, minorplanet_end),
 			(party_set_slot, ":cur_place", slot_minorplanet_infested_by_bandits, "trp_bandit"),
         (try_end),
 		(display_message, "@All planets are now infested by bandits."),
@@ -4626,7 +4626,7 @@ game_menus = [
 	  ],
 	  "Increase relationship with all villages.",
        [
-		(try_for_range, ":cur_place", villages_begin, villages_end),
+		(try_for_range, ":cur_place", minorplanet_begin, minorplanet_end),
 			(party_set_slot, ":cur_place", slot_center_player_relation, 100),
         (try_end),
 		(display_message, "@All village relationships were increased to 100."),
@@ -4639,7 +4639,7 @@ game_menus = [
 	  ],
 	  "Decrease relationship with all villages.",
        [
-		(try_for_range, ":cur_place", villages_begin, villages_end),
+		(try_for_range, ":cur_place", minorplanet_begin, minorplanet_end),
 			(party_set_slot, ":cur_place", slot_center_player_relation, -100),
         (try_end),
 		(display_message, "@All village relationships were decreased to -100."),
@@ -4655,7 +4655,7 @@ game_menus = [
 		#SW - script_setup_random_scene is based on the closest town, determine its name
 		(assign, ":closest_dist",100000),
 		(assign, ":closest_town", -1),
-		(try_for_range, ":cur_town", towns_begin, towns_end),
+		(try_for_range, ":cur_town", mainplanets_begin, mainplanets_end),
 			(store_distance_to_party_from_party, ":dist", ":cur_town","p_main_party"),
 			(lt, ":dist", ":closest_dist"),
 				(assign, ":closest_dist", ":dist"),
@@ -4678,7 +4678,7 @@ game_menus = [
 		#SW - script_setup_random_scene is based on the closest town, determine its name
 		(assign, ":closest_dist",100000),
 		(assign, ":closest_town", -1),
-		(try_for_range, ":cur_town", towns_begin, towns_end),
+		(try_for_range, ":cur_town", mainplanets_begin, mainplanets_end),
 			(store_distance_to_party_from_party, ":dist", ":cur_town","p_main_party"),
 			(lt, ":dist", ":closest_dist"),
 				(assign, ":closest_dist", ":dist"),
@@ -4701,7 +4701,7 @@ game_menus = [
 		#SW - script_setup_random_scene is based on the closest town, determine its name
 		(assign, ":closest_dist",100000),
 		(assign, ":closest_town", -1),
-		(try_for_range, ":cur_town", towns_begin, towns_end),
+		(try_for_range, ":cur_town", mainplanets_begin, mainplanets_end),
 			(store_distance_to_party_from_party, ":dist", ":cur_town","p_main_party"),
 			(lt, ":dist", ":closest_dist"),
 				(assign, ":closest_dist", ":dist"),
@@ -4724,7 +4724,7 @@ game_menus = [
 		#SW - script_setup_random_scene is based on the closest town, determine its name
 		(assign, ":closest_dist",100000),
 		(assign, ":closest_town", -1),
-		(try_for_range, ":cur_town", towns_begin, towns_end),
+		(try_for_range, ":cur_town", mainplanets_begin, mainplanets_end),
 			(store_distance_to_party_from_party, ":dist", ":cur_town","p_main_party"),
 			(lt, ":dist", ":closest_dist"),
 				(assign, ":closest_dist", ":dist"),
@@ -4747,7 +4747,7 @@ game_menus = [
 		#SW - script_setup_random_scene is based on the closest town, determine its name
 		(assign, ":closest_dist",100000),
 		(assign, ":closest_town", -1),
-		(try_for_range, ":cur_town", towns_begin, towns_end),
+		(try_for_range, ":cur_town", mainplanets_begin, mainplanets_end),
 			(store_distance_to_party_from_party, ":dist", ":cur_town","p_main_party"),
 			(lt, ":dist", ":closest_dist"),
 				(assign, ":closest_dist", ":dist"),
@@ -4785,7 +4785,7 @@ game_menus = [
   ),
 
 ##############################################################################
-  ("camp_action",menu_text_color(0xFF071423),
+  ("camp_action",menu_text_color(0xFF000d2c),
    "Choose an action:",
    "none",
    [
@@ -5016,7 +5016,7 @@ game_menus = [
     #### export/import NPCs end ####  
 #################################################################################################	
   
-  ("camp_recruit_prisoners",menu_text_color(0xFF071423),
+  ("camp_recruit_prisoners",menu_text_color(0xFF000d2c),
    "You offer your prisoners freedom if they agree to join you as soldiers. {s18}",
    "none",
    [(assign, ":num_regular_prisoner_slots", 0),
@@ -5100,7 +5100,7 @@ game_menus = [
       ]
   ),
   
-  ("camp_no_prisoners",menu_text_color(0xFF071423),
+  ("camp_no_prisoners",menu_text_color(0xFF000d2c),
    "You have no prisoners to recruit from.",
    "none",
    [],
@@ -5112,7 +5112,7 @@ game_menus = [
       ]
   ),
 
-  ("camp_action_read_book",menu_text_color(0xFF071423),
+  ("camp_action_read_book",menu_text_color(0xFF000d2c),
   #SW - modified read book menu
    "Choose a holocron to view:",
    "none",
@@ -5181,7 +5181,7 @@ game_menus = [
       ]
   ),
 
-  # ("camp_action_change_ship",menu_text_color(0xFF071423),
+  # ("camp_action_change_ship",menu_text_color(0xFF000d2c),
   # #SW - modified so you can choose your own spaceship
    # "Choose the spaceship you want to buy:",
    # "none",
@@ -5350,7 +5350,7 @@ game_menus = [
       # ]
   # ),  
 
-  ("camp_action_change_race",menu_text_color(0xFF071423),
+  ("camp_action_change_race",menu_text_color(0xFF000d2c),
   #SW - modified so you can change your race
    #"You were born on the planet Zolan, home to a humanoid species known as Clawdites, but often referred to as Changelings. As one of the few shape-shifting species in the galaxy you can change your form and appearance.^^Note: You should review your character in the face generator after making this change.",
    "Please choose your race:^^Note: You should review your character in the face generator after making this change.",
@@ -5485,7 +5485,7 @@ game_menus = [
     ]
   ),
   
-  ("camp_action_read_book_start",menu_text_color(0xFF071423),
+  ("camp_action_read_book_start",menu_text_color(0xFF000d2c),
    "{s1}",
    "none",
    [(assign, ":new_book", "$temp"),
@@ -5511,7 +5511,7 @@ game_menus = [
   ),
 
 
-  ("retirement_verify",menu_text_color(0xFF071423),
+  ("retirement_verify",menu_text_color(0xFF000d2c),
    "You are at day {reg0}. Your current luck is {reg1}. Are you sure you want to retire?",
    "none",
    [
@@ -5532,7 +5532,7 @@ game_menus = [
       ]
   ),
 
-  ("end_game",menu_text_color(0xFF071423),
+  ("end_game",menu_text_color(0xFF000d2c),
    "The decision is made, and you resolve to give up your adventurer's\
  life and settle down. You sell off your weapons and armour, gather up\
  all your money, and ride off into the sunset....",
@@ -5549,7 +5549,7 @@ game_menus = [
 
   #SW MF modified to add option to take money out of bank account.
   (
-    "pay_day",menu_text_color(0xFF071423)|mnf_scale_picture|mnf_disable_all_keys,
+    "pay_day",menu_text_color(0xFF000d2c)|mnf_scale_picture|mnf_disable_all_keys,
     "{s1}.",
     "none",
     [
@@ -5687,7 +5687,7 @@ game_menus = [
 	  ]),
   
 ]),  
-  ("cattle_herd",menu_text_color(0xFF071423)|mnf_scale_picture,
+  ("cattle_herd",menu_text_color(0xFF000d2c)|mnf_scale_picture,
    "You encounter a nerf herd.",
    "none",
    [#SW - commented out snd_cow_moo
@@ -5729,7 +5729,7 @@ game_menus = [
       ]
   ),
 
-  ("cattle_herd_kill",menu_text_color(0xFF071423),
+  ("cattle_herd_kill",menu_text_color(0xFF000d2c),
    "How many animals do you want to slaughter?",
    "none",
    [(party_get_num_companions, reg5, "$g_encountered_party")],
@@ -5776,7 +5776,7 @@ game_menus = [
       ]
   ),
 
-  ("cattle_herd_kill_end",menu_text_color(0xFF071423),
+  ("cattle_herd_kill_end",menu_text_color(0xFF000d2c),
    "You shouldn't be reading this.",
    "none",
    [(change_screen_return)],
@@ -5785,7 +5785,7 @@ game_menus = [
   ),
 
 
-  ("arena_duel_fight",menu_text_color(0xFF071423),
+  ("arena_duel_fight",menu_text_color(0xFF000d2c),
    "You and your opponent prepare to fight for honour.",
    "none",
    [],
@@ -5801,7 +5801,7 @@ game_menus = [
 ############################### Duel Mod by MartinF Start  ##############################
 
 
-("duel_menu",menu_text_color(0xFF071423),
+("duel_menu",menu_text_color(0xFF000d2c),
    "{s1}{s2}",
    "none",
    [
@@ -5834,12 +5834,12 @@ game_menus = [
    [
       ("start_fight",[(eq, "$g_duel_result", 0)],"Start the duel.",
        [(try_begin),     
-          (is_between, "$g_encountered_party", towns_begin, towns_end),     
+          (is_between, "$g_encountered_party", mainplanets_begin, mainplanets_end),     
             (party_get_slot, ":arena_scene", "$g_encountered_party", slot_mainplanet_arena),   
         (else_try),     
             (assign, ":closest_dist", 100000),     
             (assign, ":closest_town", -1),     
-            (try_for_range, ":cur_town", towns_begin, towns_end),       
+            (try_for_range, ":cur_town", mainplanets_begin, mainplanets_end),       
                 (store_distance_to_party_from_party, ":dist", ":cur_town", "p_main_party"),       
                 (lt, ":dist", ":closest_dist"),       
                 (assign, ":closest_dist", ":dist"),       
@@ -5874,7 +5874,7 @@ game_menus = [
 ############################### Duel Mod End  ##############################
   
   (
-    "simple_encounter",menu_text_color(0xFF071423)|mnf_enable_hot_keys|mnf_scale_picture,
+    "simple_encounter",menu_text_color(0xFF000d2c)|mnf_enable_hot_keys|mnf_scale_picture,
     "{s2} You have {reg10} troops fit for battle against their {reg11}.",
     "none",
     [
@@ -5888,23 +5888,23 @@ game_menus = [
           (assign, "$g_encounter_type", 0),
           (try_begin),
             (party_slot_eq, "$g_enemy_party", slot_party_ai_state, spai_raiding_around_center),
-            (party_get_slot, ":village_no", "$g_enemy_party", slot_party_ai_object),
-            (store_distance_to_party_from_party, ":dist", ":village_no", "$g_enemy_party"),
+            (party_get_slot, ":minorplanet_no", "$g_enemy_party", slot_party_ai_object),
+            (store_distance_to_party_from_party, ":dist", ":minorplanet_no", "$g_enemy_party"),
             (try_begin),
               (lt, ":dist", raid_distance),
-              (assign, "$g_encounter_is_in_village", ":village_no"),
-              (assign, "$g_encounter_type", enctype_fighting_against_village_raid),
+              (assign, "$g_encounter_is_in_village", ":minorplanet_no"),
+              (assign, "$g_encounter_type", enctype_fighting_against_minorplanet_raid),
             (try_end),
           (try_end),
           (try_begin),
             (gt, "$g_player_raiding_village", 0),
             (assign, "$g_encounter_is_in_village", "$g_player_raiding_village"),
-            (assign, "$g_encounter_type", enctype_catched_during_village_raid),
+            (assign, "$g_encounter_type", enctype_catched_during_minorplanet_raid),
             (party_quick_attach_to_current_battle, "$g_encounter_is_in_village", 1), #attach as enemy
             (str_store_string, s1, "@Villagers"),
             (display_message, "str_s1_joined_battle_enemy"),
           (else_try),
-            (eq, "$g_encounter_type", enctype_fighting_against_village_raid),
+            (eq, "$g_encounter_type", enctype_fighting_against_minorplanet_raid),
             (party_quick_attach_to_current_battle, "$g_encounter_is_in_village", 0), #attach as friend
             (str_store_string, s1, "@Villagers"),
             (display_message, "str_s1_joined_battle_friend"),
@@ -5961,11 +5961,11 @@ game_menus = [
             (eq, "$g_encounter_type", 0),
             (str_store_string, s2,"@You have encountered {s1}."),
           (else_try),
-            (eq, "$g_encounter_type", enctype_fighting_against_village_raid),
+            (eq, "$g_encounter_type", enctype_fighting_against_minorplanet_raid),
             (str_store_party_name, s3, "$g_encounter_is_in_village"),
             (str_store_string, s2,"@You have engaged {s1} while they were raiding {s3}."),
           (else_try),
-            (eq, "$g_encounter_type", enctype_catched_during_village_raid),
+            (eq, "$g_encounter_type", enctype_catched_during_minorplanet_raid),
             (str_store_party_name, s3, "$g_encounter_is_in_village"),
             (str_store_string, s2,"@You were caught by {s1} while your forces were raiding {s3}."),
           (try_end),
@@ -6060,7 +6060,7 @@ game_menus = [
 		#SW - script_setup_random_scene is based on the closest town, determine its name
 		(assign, ":closest_dist",100000),
 		(assign, ":closest_town", -1),
-		(try_for_range, ":cur_town", towns_begin, towns_end),
+		(try_for_range, ":cur_town", mainplanets_begin, mainplanets_end),
 			(store_distance_to_party_from_party, ":dist", ":cur_town","p_main_party"),
 			(lt, ":dist", ":closest_dist"),
 				(assign, ":closest_dist", ":dist"),
@@ -6079,15 +6079,15 @@ game_menus = [
                                 (set_battle_advantage, reg0),
                                 (set_party_battle_mode),
                                 (try_begin),
-                                  (eq, "$g_encounter_type", enctype_fighting_against_village_raid),
-                                  (assign, "$g_village_raid_evil", 0),
-                                  (set_jump_mission,"mt_village_raid"),
+                                  (eq, "$g_encounter_type", enctype_fighting_against_minorplanet_raid),
+                                  (assign, "$g_minorplanet_raid_evil", 0),
+                                  (set_jump_mission,"mt_minorplanet_raid"),
                                   (party_get_slot, ":scene_to_use", "$g_encounter_is_in_village", slot_spacestation_exterior),
                                   (jump_to_scene, ":scene_to_use"),
                                 (else_try),
-                                  (eq, "$g_encounter_type", enctype_catched_during_village_raid),
-                                  (assign, "$g_village_raid_evil", 0),
-                                  (set_jump_mission,"mt_village_raid"),
+                                  (eq, "$g_encounter_type", enctype_catched_during_minorplanet_raid),
+                                  (assign, "$g_minorplanet_raid_evil", 0),
+                                  (set_jump_mission,"mt_minorplanet_raid"),
                                   (party_get_slot, ":scene_to_use", "$g_encounter_is_in_village", slot_spacestation_exterior),
                                   (jump_to_scene, ":scene_to_use"),
                                 (else_try),
@@ -6120,13 +6120,13 @@ game_menus = [
                                 (set_battle_advantage, reg0),
                                 (set_party_battle_mode),
                                 (try_begin),
-                                  (eq, "$g_encounter_type", enctype_fighting_against_village_raid),
-                                  (set_jump_mission,"mt_village_raid"),
+                                  (eq, "$g_encounter_type", enctype_fighting_against_minorplanet_raid),
+                                  (set_jump_mission,"mt_minorplanet_raid"),
                                   (party_get_slot, ":scene_to_use", "$g_encounter_is_in_village", slot_spacestation_exterior),
                                   (jump_to_scene, ":scene_to_use"),
                                 (else_try),
-                                  (eq, "$g_encounter_type", enctype_catched_during_village_raid),
-                                  (set_jump_mission,"mt_village_raid"),
+                                  (eq, "$g_encounter_type", enctype_catched_during_minorplanet_raid),
+                                  (set_jump_mission,"mt_minorplanet_raid"),
                                   (party_get_slot, ":scene_to_use", "$g_encounter_is_in_village", slot_spacestation_exterior),
                                   (jump_to_scene, ":scene_to_use"),
                                 (else_try),
@@ -6214,7 +6214,7 @@ game_menus = [
 ############################################################################################################
 
   (
-    "change_commander",menu_text_color(0xFF071423),
+    "change_commander",menu_text_color(0xFF000d2c),
     "Please reselect a companion as the commander for the comming battle.^^Current:{s7}.",
     "none",
   [
@@ -6310,7 +6310,7 @@ game_menus = [
 ############################################################################################################
   
   (
-    "encounter_retreat_confirm",menu_text_color(0xFF071423),
+    "encounter_retreat_confirm",menu_text_color(0xFF000d2c),
     "As the party member with the highest tactics skill,\
  ({reg2}), {reg3?you devise:{s3} devises} a plan that will allow you and your men to escape with your lives,\
  but you'll have to leave {reg4} soldiers behind to stop the enemy from giving chase.",
@@ -6353,7 +6353,7 @@ game_menus = [
     ]
   ),
   (
-    "encounter_retreat",menu_text_color(0xFF071423),
+    "encounter_retreat",menu_text_color(0xFF000d2c),
     "You tell {reg4} of your troops to hold the enemy while you retreat with the rest of your party.",
     "none",
     [
@@ -6375,7 +6375,7 @@ game_menus = [
     ]
   ),
   (
-    "order_attack_begin",menu_text_color(0xFF071423),
+    "order_attack_begin",menu_text_color(0xFF000d2c),
     "Your troops prepare to attack the enemy.",
     "none",
     [],
@@ -6388,7 +6388,7 @@ game_menus = [
     ]
   ),
   (
-    "order_attack_2",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "order_attack_2",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s4}^^Your casualties: {s8}^^Enemy casualties: {s9}",
     "none",
     [
@@ -6460,7 +6460,7 @@ game_menus = [
   ),
 
   (
-    "battle_debrief",menu_text_color(0xFF071423)|mnf_scale_picture|mnf_disable_all_keys,
+    "battle_debrief",menu_text_color(0xFF000d2c)|mnf_scale_picture|mnf_disable_all_keys,
     "{s11}^^Your Casualties:{s8}{s10}^^Enemy Casualties:{s9}",
     "none",
     [
@@ -6568,7 +6568,7 @@ game_menus = [
 
   
   (
-    "total_victory",menu_text_color(0xFF071423),
+    "total_victory",menu_text_color(0xFF000d2c),
     "You shouldn't be reading this... {s9}",
     "none",
     [
@@ -6811,7 +6811,7 @@ game_menus = [
   ),
 
   (
-    "enemy_slipped_away",menu_text_color(0xFF071423),
+    "enemy_slipped_away",menu_text_color(0xFF000d2c),
     "{s17}",
     "none",
     [],
@@ -6821,7 +6821,7 @@ game_menus = [
   ),
 
   (
-    "total_defeat",menu_text_color(0xFF071423),
+    "total_defeat",menu_text_color(0xFF000d2c),
     "You shouldn't be reading this...",
     "none",
     [
@@ -6881,7 +6881,7 @@ game_menus = [
   ),
 
   (
-    "permanent_damage",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "permanent_damage",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s0}",
     "none",
     [
@@ -6961,7 +6961,7 @@ game_menus = [
   ),
   
   (
-    "pre_join",menu_text_color(0xFF071423),
+    "pre_join",menu_text_color(0xFF000d2c),
     "You come across a battle between {s2} and {s1}. You decide to...",
     "none",
     [
@@ -6999,7 +6999,7 @@ game_menus = [
     ]
   ),
   (
-    "join_battle",menu_text_color(0xFF071423),
+    "join_battle",menu_text_color(0xFF000d2c),
     "You are helping the {s2} against the {s1}. You have {reg10} troops fit for battle against the enemy's {reg11}.",
     "none",
     [
@@ -7147,7 +7147,7 @@ game_menus = [
 
 
   (
-    "join_order_attack",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "join_order_attack",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s4}^^Your casualties: {s8}^^Allies' casualties: {s9}^^Enemy casualties: {s10}",
     "none",
     [
@@ -7209,7 +7209,7 @@ game_menus = [
   
 # Towns
   (
-    "zendar",menu_text_color(0xFF071423)|mnf_auto_enter,
+    "zendar",menu_text_color(0xFF000d2c)|mnf_auto_enter,
     "You enter the town of Zendar.",
     "none",
     [(reset_price_rates,0),(set_price_rate_for_item,"itm_tools",70),(set_price_rate_for_item,"itm_salt",140)],
@@ -7229,7 +7229,7 @@ game_menus = [
     ]
   ),
   (
-    "salt_mine",menu_text_color(0xFF071423)|mnf_auto_enter,
+    "salt_mine",menu_text_color(0xFF000d2c)|mnf_auto_enter,
     "You enter the salt mine.",
     "none",
     [(reset_price_rates,0),(set_price_rate_for_item,"itm_salt",55)],
@@ -7239,7 +7239,7 @@ game_menus = [
     ]
   ),
   (
-    "four_ways_inn",menu_text_color(0xFF071423)|mnf_auto_enter,
+    "four_ways_inn",menu_text_color(0xFF000d2c)|mnf_auto_enter,
     "You arrive at the Four Ways Inn.",
     "none",
     [],
@@ -7251,7 +7251,7 @@ game_menus = [
     ]
   ),
   (
-    "test_scene",menu_text_color(0xFF071423)|mnf_auto_enter,
+    "test_scene",menu_text_color(0xFF000d2c)|mnf_auto_enter,
     "You enter the test scene.",
     "none",
     [],
@@ -7262,7 +7262,7 @@ game_menus = [
     ]
   ),
   (
-    "battlefields",menu_text_color(0xFF071423),
+    "battlefields",menu_text_color(0xFF000d2c),
     "Select a field...",
     "none",
     [],
@@ -7277,7 +7277,7 @@ game_menus = [
     ]
   ),
   (
-    "dhorak_keep",menu_text_color(0xFF071423),
+    "dhorak_keep",menu_text_color(0xFF000d2c),
 #    "Dhorak Keep, the stronghold of the bandits stands overlooking the barren wilderness.",
     "You enter the Dhorak Keep",
     "none",
@@ -7289,7 +7289,7 @@ game_menus = [
   ),
   
 ##  (
-##    "center_under_attack_while_resting",menu_text_color(0xFF071423),
+##    "center_under_attack_while_resting",menu_text_color(0xFF000d2c),
 ##    "{s1} has been besieged by {s2}, and the enemy seems to be preparing for an assault!\
 ## What will you do?",
 ##    "none",
@@ -7314,7 +7314,7 @@ game_menus = [
 ##  ),
 
   (
-    "join_siege_outside",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "join_siege_outside",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "{s1} has come under siege by {s2}.",
     "none",
     [
@@ -7357,7 +7357,7 @@ game_menus = [
     ]
   ),
   (
-    "cut_siege_without_fight",menu_text_color(0xFF071423),
+    "cut_siege_without_fight",menu_text_color(0xFF000d2c),
     "The besiegers let you approach the entrance without challenge.",
     "none",
     [],
@@ -7367,12 +7367,12 @@ game_menus = [
                                    (eq, "$g_encountered_party_faction", "$players_kingdom"),
                                    (jump_to_menu, "mnu_town"),
                                  (else_try),
-                                   (jump_to_menu, "mnu_castle_outside"),
+                                   (jump_to_menu, "mnu_spacestation_outside"),
                                  (try_end)]),
       ]
   ),
   (
-    "besiegers_camp_with_allies",menu_text_color(0xFF071423),
+    "besiegers_camp_with_allies",menu_text_color(0xFF000d2c),
     "{s1} remains under siege. The banners of {s2} fly above the camp of the besiegers,\
  where you and your men are welcomed.",
     "none",
@@ -7404,7 +7404,7 @@ game_menus = [
           (try_end),
           (this_or_next|eq, ":enemy_finished", 1),
           (eq, "$g_enemy_surrenders", 1),
-##          (assign, "$g_next_menu", -1),#"mnu_castle_taken_by_friends"),
+##          (assign, "$g_next_menu", -1),#"mnu_spacestation_taken_by_friends"),
 ##          (jump_to_menu, "mnu_total_victory"),
           (call_script, "script_party_wound_all_members", "$g_enemy_party"),
           (leave_encounter),
@@ -7471,7 +7471,7 @@ game_menus = [
              (assign, "$g_player_follow_army_warnings", 0),
            (try_end),
            (try_begin),
-             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
+             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
              (party_get_slot, ":battle_scene", "$g_encountered_party", slot_mainplanet_walls),
            (else_try),
              (party_get_slot, ":battle_scene", "$g_encountered_party", slot_spacestation_exterior),
@@ -7483,14 +7483,14 @@ game_menus = [
            (set_party_battle_mode),
            (try_begin),
              (party_slot_eq, "$g_encountered_party", slot_center_siege_with_belfry, 1),
-             (set_jump_mission,"mt_castle_attack_walls_belfry"),
+             (set_jump_mission,"mt_spacestation_attack_walls_belfry"),
            (else_try),
-             (set_jump_mission,"mt_castle_attack_walls_ladder"),
+             (set_jump_mission,"mt_spacestation_attack_walls_ladder"),
            (try_end),
            (jump_to_scene,":battle_scene"),
            (assign, "$g_siege_final_menu", "mnu_besiegers_camp_with_allies"),
            (assign, "$g_siege_battle_state", 1),
-           (assign, "$g_next_menu", "mnu_castle_besiege_inner_battle"),
+           (assign, "$g_next_menu", "mnu_spacestation_besiege_inner_battle"),
 ##           (assign, "$g_next_menu", "mnu_besiegers_camp_with_allies"),
            (jump_to_menu, "mnu_battle_debrief"),
            (change_screen_mission),
@@ -7514,13 +7514,13 @@ game_menus = [
            (call_script, "script_start_quest", "qst_follow_army", ":faction_marshall"),
            (assign, "$g_player_follow_army_warnings", 0),
          (try_end),
-         (jump_to_menu,"mnu_castle_attack_walls_with_allies_simulate")]),
+         (jump_to_menu,"mnu_spacestation_attack_walls_with_allies_simulate")]),
       ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
     ]
   ),
 
   (
-    "castle_outside",menu_text_color(0xFF071423),
+    "spacestation_outside",menu_text_color(0xFF000d2c),
     "You are outside {s2}.{s11} {s3} {s4}",
     "none",
     [
@@ -7615,14 +7615,14 @@ game_menus = [
         (try_end),
 
         (party_get_num_companions, reg(7),"p_collective_enemy"),
-        (assign,"$castle_undefended",0),
+        (assign,"$spacestation_undefended",0),
         (str_clear, s3),
         (try_begin),
           (eq,reg(7),0),
-          (assign,"$castle_undefended",1),
+          (assign,"$spacestation_undefended",1),
 #          (party_set_faction,"$g_encountered_party","fac_neutral"),
 #          (party_set_slot, "$g_encountered_party", slot_mainplanet_lord, stl_unassigned),
-          (str_store_string, s3, "str_castle_is_abondened"),
+          (str_store_string, s3, "str_spacestation_is_abondened"),
         (else_try),
           (eq,"$g_encountered_party_faction","fac_player_supporters_faction"),
           (str_store_string, s3, "str_place_is_occupied_by_player"),
@@ -7674,7 +7674,7 @@ game_menus = [
 ##          (set_visitor,17,":cur_lord"),
 ##          (set_jump_mission,"mt_conversation_encounter"),
 ##          (jump_to_scene,"scn_conversation_scene"),
-##          (assign, "$talk_context", tc_castle_gate_lord),
+##          (assign, "$talk_context", tc_spacestation_gate_lord),
 ##          (change_screen_map_conversation, ":cur_lord"),
         (else_try),
           (eq, "$g_town_visit_after_rest", 1),
@@ -7687,20 +7687,20 @@ game_menus = [
         (else_try),
           (party_slot_eq,"$g_encountered_party", slot_party_type,spt_castle),
           (ge, "$g_encountered_party_relation", 0),
-          (this_or_next|eq,"$castle_undefended",1),
+          (this_or_next|eq,"$spacestation_undefended",1),
           (eq, "$g_permitted_to_center",1),
           (jump_to_menu, "mnu_town"),
         (else_try),
-          (party_slot_eq,"$g_encountered_party", slot_party_type,spt_town),
+          (party_slot_eq,"$g_encountered_party", slot_party_type,spt_mainplanet),
           (ge, "$g_encountered_party_relation", 0),
           (jump_to_menu, "mnu_town"),
         (else_try),
           (eq, "$g_player_besiege_town", "$g_encountered_party"),
-          (jump_to_menu, "mnu_castle_besiege"),
+          (jump_to_menu, "mnu_spacestation_besiege"),
         (try_end),
         ],
     [
-#        ("talk_to_castle_commander",[
+#        ("talk_to_spacestation_commander",[
 #            (party_get_num_companions, ":no_companions", "$g_encountered_party"),
 #            (ge, ":no_companions", 1),
 #            (eq,"$ruler_meeting_denied",0), #this variable is removed
@@ -7713,13 +7713,13 @@ game_menus = [
 #             (set_visitor,17,reg(6),reg(7)),
 #             (set_jump_mission,"mt_conversation_encounter"),
 #             (jump_to_scene,"scn_conversation_scene"),
-#             (assign, "$talk_context", tc_castle_commander),
+#             (assign, "$talk_context", tc_spacestation_commander),
 #             (change_screen_map_conversation, reg(6))
 #             ]),
       ("approach_gates",[(this_or_next|eq,"$entry_to_town_forbidden",1),
                           (party_slot_eq,"$g_encountered_party", slot_party_type,spt_castle)],
        "Approach the planet and contact the guards.",[
-                                                  (jump_to_menu, "mnu_castle_guard"),
+                                                  (jump_to_menu, "mnu_spacestation_guard"),
 ##                                                   (modify_visitors_at_site,"scn_conversation_scene"),(reset_visitors),
 ##                                                   (set_visitor,0,"trp_player"),
 ##                                                   (store_faction_of_party, ":cur_faction", "$g_encountered_party"),
@@ -7727,11 +7727,11 @@ game_menus = [
 ##                                                   (set_visitor,17,":cur_guard"),
 ##                                                   (set_jump_mission,"mt_conversation_encounter"),
 ##                                                   (jump_to_scene,"scn_conversation_scene"),
-##                                                   (assign, "$talk_context", tc_castle_gate),
+##                                                   (assign, "$talk_context", tc_spacestation_gate),
 ##                                                   (change_screen_map_conversation, ":cur_guard")
                                                    ]),
       
-      ("town_sneak",[(party_slot_eq,"$g_encountered_party", slot_party_type,spt_town),
+      ("town_sneak",[(party_slot_eq,"$g_encountered_party", slot_party_type,spt_mainplanet),
                      (eq,"$entry_to_town_forbidden",1),
                      (eq,"$cant_sneak_into_town",0)],
        "Disguise yourself and try to sneak onto the planet.",
@@ -7755,7 +7755,7 @@ game_menus = [
            (jump_to_menu,"mnu_sneak_into_town_caught"),
          (try_end)
          ]),
-      ("castle_start_siege",
+      ("spacestation_start_siege",
        [
            (this_or_next|party_slot_eq, "$g_encountered_party", slot_center_is_besieged_by, -1),
            (             party_slot_eq, "$g_encountered_party", slot_center_is_besieged_by, "p_main_party"),
@@ -7765,7 +7765,7 @@ game_menus = [
            (call_script, "script_party_count_fit_for_battle","p_main_party"),
            (gt, reg(0), 5),
            (try_begin),
-             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
+             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
              (assign, reg6, 1),
            (else_try),
              (assign, reg6, 0),
@@ -7778,10 +7778,10 @@ game_menus = [
          (val_min, ":relation", -40),
          (call_script, "script_set_player_relation_with_faction", "$g_encountered_party_faction", ":relation"),
          (call_script, "script_update_all_notes"),
-         (jump_to_menu, "mnu_castle_besiege"),
+         (jump_to_menu, "mnu_spacestation_besiege"),
          ]),
 
-      ("cheat_castle_start_siege",
+      ("cheat_spacestation_start_siege",
        [
          (eq, "$cheat_mode", 1),
          (this_or_next|party_slot_eq, "$g_encountered_party", slot_center_is_besieged_by, -1),
@@ -7792,7 +7792,7 @@ game_menus = [
          (call_script, "script_party_count_fit_for_battle","p_main_party"),
          (gt, reg(0), 1),
          (try_begin),
-           (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
+           (party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
            (assign, reg6, 1),
          (else_try),
            (assign, reg6, 0),
@@ -7801,21 +7801,21 @@ game_menus = [
        "CHEAT: Besiege the {reg6?town:castle}...",
        [
            (assign,"$g_player_besiege_town","$g_encountered_party"),
-           (jump_to_menu, "mnu_castle_besiege"),
+           (jump_to_menu, "mnu_spacestation_besiege"),
            ]),
 
-      ("castle_leave",[],"Leave.",[(change_screen_return,0)]),
-      ("castle_cheat_interior",[(eq, "$cheat_mode", 1)], "CHEAT! Interior.",[(set_jump_mission,"mt_ai_training"),
-                                                       (party_get_slot, ":castle_scene", "$current_town", slot_mainplanet_castle),
-                                                       (jump_to_scene,":castle_scene"),
+      ("spacestation_leave",[],"Leave.",[(change_screen_return,0)]),
+      ("spacestation_cheat_interior",[(eq, "$cheat_mode", 1)], "CHEAT! Interior.",[(set_jump_mission,"mt_ai_training"),
+                                                       (party_get_slot, ":spacestation_scene", "$current_town", slot_mainplanet_castle),
+                                                       (jump_to_scene,":spacestation_scene"),
                                                        (change_screen_mission)]),
-      ("castle_cheat_exterior",[(eq, "$cheat_mode", 1)], "CHEAT! Exterior.",[
+      ("spacestation_cheat_exterior",[(eq, "$cheat_mode", 1)], "CHEAT! Exterior.",[
 #                                                       (set_jump_mission,"mt_town_default"),
                                                        (set_jump_mission,"mt_ai_training"),
-                                                       (party_get_slot, ":castle_scene", "$current_town", slot_spacestation_exterior),
-                                                       (jump_to_scene,":castle_scene"),
+                                                       (party_get_slot, ":spacestation_scene", "$current_town", slot_spacestation_exterior),
+                                                       (jump_to_scene,":spacestation_scene"),
                                                        (change_screen_mission)]),
-      ("castle_cheat_town_walls",[(eq, "$cheat_mode", 1),(party_slot_eq,"$current_town",slot_party_type, spt_town),], "CHEAT! Town Walls.",
+      ("spacestation_cheat_town_walls",[(eq, "$cheat_mode", 1),(party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),], "CHEAT! Town Walls.",
        [
          (party_get_slot, ":scene", "$current_town", slot_mainplanet_walls),
          (set_jump_mission,"mt_ai_training"),
@@ -7825,7 +7825,7 @@ game_menus = [
     ]
   ),
    (
-    "castle_guard",menu_text_color(0xFF071423),
+    "spacestation_guard",menu_text_color(0xFF000d2c),
     "You approach the landing bay. The guards on the observation posts watch you closely.",
     "none",
     [
@@ -7839,26 +7839,26 @@ game_menus = [
                           (ge, "$g_encountered_party_relation", 0)],
        #SW - modified dialog
 	   "Request entry to the site.",
-       [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
+       [(party_get_slot, ":spacestation_lord", "$g_encountered_party", slot_mainplanet_lord),
         (try_begin),
-          (lt, ":castle_lord", 0),
-          (jump_to_menu, "mnu_castle_entry_granted"),
+          (lt, ":spacestation_lord", 0),
+          (jump_to_menu, "mnu_spacestation_entry_granted"),
         (else_try),
-          (call_script, "script_troop_get_player_relation", ":castle_lord"),
-          (assign, ":castle_lord_relation", reg0),
-          #(troop_get_slot, ":castle_lord_relation", ":castle_lord", slot_troop_player_relation),
+          (call_script, "script_troop_get_player_relation", ":spacestation_lord"),
+          (assign, ":spacestation_lord_relation", reg0),
+          #(troop_get_slot, ":spacestation_lord_relation", ":spacestation_lord", slot_troop_player_relation),
           (try_begin),
-            (gt, ":castle_lord_relation", -15),
-            (jump_to_menu, "mnu_castle_entry_granted"),
+            (gt, ":spacestation_lord_relation", -15),
+            (jump_to_menu, "mnu_spacestation_entry_granted"),
           (else_try),
-            (jump_to_menu, "mnu_castle_entry_denied"),
+            (jump_to_menu, "mnu_spacestation_entry_denied"),
           (try_end),
         (try_end),
        ]),
       ("request_meeting_commander",[],
        "Request a meeting with someone.",
        [
-          (jump_to_menu, "mnu_castle_meeting"),
+          (jump_to_menu, "mnu_spacestation_meeting"),
        ]),
       ("guard_leave",[],
        "Leave.",
@@ -7866,7 +7866,7 @@ game_menus = [
     ]
   ),
   (
-    "castle_entry_granted",menu_text_color(0xFF071423),
+    "spacestation_entry_granted",menu_text_color(0xFF000d2c),
     "After a brief wait, the guards lower the shields for you and allow your party to land.",
     "none",
     [
@@ -7882,7 +7882,7 @@ game_menus = [
     ]
   ),
   (
-    "castle_entry_denied",menu_text_color(0xFF071423),
+    "spacestation_entry_denied",menu_text_color(0xFF000d2c),
     "The lord of this planet has forbidden you from landing on the surface,\
  and the guard sergeant informs you that his men will fire if you attempt to come any closer.",
     "none",
@@ -7893,43 +7893,43 @@ game_menus = [
     [
       ("continue",[],
        "Continue...",
-       [(jump_to_menu,"mnu_castle_guard")]),
+       [(jump_to_menu,"mnu_spacestation_guard")]),
     ]
   ),
   (
-    "castle_meeting",menu_text_color(0xFF071423),
+    "spacestation_meeting",menu_text_color(0xFF000d2c),
     "With whom do you want to meet?",
     "none",
     [
 		#SW - display a new menu background
 		(call_script, "script_display_fullscreen_background", "$current_town"),	
 	
-        (assign, "$num_castle_meeting_troops", 0),
+        (assign, "$num_spacestation_meeting_troops", 0),
         (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
           (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
           (call_script, "script_get_troop_attached_party", ":troop_no"),
           (eq, "$g_encountered_party", reg0),
-          (troop_set_slot, "trp_temp_array_a", "$num_castle_meeting_troops", ":troop_no"),
-          (val_add, "$num_castle_meeting_troops", 1),
+          (troop_set_slot, "trp_temp_array_a", "$num_spacestation_meeting_troops", ":troop_no"),
+          (val_add, "$num_spacestation_meeting_troops", 1),
         (try_end),
     ],
     [
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 0),(troop_get_slot, ":troop_no", "trp_temp_array_a", 0),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 0),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 1),(troop_get_slot, ":troop_no", "trp_temp_array_a", 1),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 1),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 2),(troop_get_slot, ":troop_no", "trp_temp_array_a", 2),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 2),(jump_to_menu,"mnu_castle_meeting_selected")]),
-      ("guard_meet_s5",[(gt, "$num_castle_meeting_troops", 3),(troop_get_slot, ":troop_no", "trp_temp_array_a", 3),(str_store_troop_name, s5, ":troop_no")],
-       "{s5}.",[(troop_get_slot, "$castle_meeting_selected_troop", "trp_temp_array_a", 3),(jump_to_menu,"mnu_castle_meeting_selected")]),
+      ("guard_meet_s5",[(gt, "$num_spacestation_meeting_troops", 0),(troop_get_slot, ":troop_no", "trp_temp_array_a", 0),(str_store_troop_name, s5, ":troop_no")],
+       "{s5}.",[(troop_get_slot, "$spacestation_meeting_selected_troop", "trp_temp_array_a", 0),(jump_to_menu,"mnu_spacestation_meeting_selected")]),
+      ("guard_meet_s5",[(gt, "$num_spacestation_meeting_troops", 1),(troop_get_slot, ":troop_no", "trp_temp_array_a", 1),(str_store_troop_name, s5, ":troop_no")],
+       "{s5}.",[(troop_get_slot, "$spacestation_meeting_selected_troop", "trp_temp_array_a", 1),(jump_to_menu,"mnu_spacestation_meeting_selected")]),
+      ("guard_meet_s5",[(gt, "$num_spacestation_meeting_troops", 2),(troop_get_slot, ":troop_no", "trp_temp_array_a", 2),(str_store_troop_name, s5, ":troop_no")],
+       "{s5}.",[(troop_get_slot, "$spacestation_meeting_selected_troop", "trp_temp_array_a", 2),(jump_to_menu,"mnu_spacestation_meeting_selected")]),
+      ("guard_meet_s5",[(gt, "$num_spacestation_meeting_troops", 3),(troop_get_slot, ":troop_no", "trp_temp_array_a", 3),(str_store_troop_name, s5, ":troop_no")],
+       "{s5}.",[(troop_get_slot, "$spacestation_meeting_selected_troop", "trp_temp_array_a", 3),(jump_to_menu,"mnu_spacestation_meeting_selected")]),
       
       ("forget_it",[],
        "Forget it.",
-       [(jump_to_menu,"mnu_castle_guard")]),
+       [(jump_to_menu,"mnu_spacestation_guard")]),
     ]
   ),
   (
-    "castle_meeting_selected",menu_text_color(0xFF071423),
+    "spacestation_meeting_selected",menu_text_color(0xFF000d2c),
     #"Your request for a meeting is relayed inside, and finally {s6} appears in the courtyard to speak with you.",
 	"Your request for a meeting is relayed inside, and finally they appear to speak with you.",
     "none",
@@ -7937,26 +7937,26 @@ game_menus = [
 		#SW - display a new menu background
 		(call_script, "script_display_fullscreen_background", "$current_town"),	
 	
-		(str_store_troop_name, s6, "$castle_meeting_selected_troop")
+		(str_store_troop_name, s6, "$spacestation_meeting_selected_troop")
 	],
     [
       ("continue",[],
        "Continue...",
-       [(jump_to_menu, "mnu_castle_outside"),
+       [(jump_to_menu, "mnu_spacestation_outside"),
         (modify_visitors_at_site,"scn_conversation_scene"),(reset_visitors),
         (set_visitor,0,"trp_player"),
-        (set_visitor,17,"$castle_meeting_selected_troop"),
+        (set_visitor,17,"$spacestation_meeting_selected_troop"),
         (set_jump_mission,"mt_conversation_encounter"),
         (jump_to_scene,"scn_conversation_scene"),
-        (assign, "$talk_context", tc_castle_gate),
-        (change_screen_map_conversation, "$castle_meeting_selected_troop"),
+        (assign, "$talk_context", tc_spacestation_gate),
+        (change_screen_map_conversation, "$spacestation_meeting_selected_troop"),
         ]),
     ]
   ),
 
 
    (
-    "castle_besiege",menu_text_color(0xFF071423)|mnf_enable_hot_keys|mnf_scale_picture,
+    "spacestation_besiege",menu_text_color(0xFF000d2c)|mnf_enable_hot_keys|mnf_scale_picture,
     "You are laying siege to {s1}. {s2} {s3}",
     "none",
     [
@@ -7996,7 +7996,7 @@ game_menus = [
         (store_div, reg3, ":town_food_store", ":food_consumption"),
 
         (try_begin),
-          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
+          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
           (assign, reg6, 1),
         (else_try),
           (assign, reg6, 0),
@@ -8037,9 +8037,9 @@ game_menus = [
         
         #Check if enemy leaves the castle to us...
         (try_begin),
-          (eq, "$g_castle_left_to_player",1), #we come here after dialog. Empty the castle and send parties away.
-          (assign, "$g_castle_left_to_player",0),
-          (store_faction_of_party, ":castle_faction", "$g_encountered_party"),
+          (eq, "$g_spacestation_left_to_player",1), #we come here after dialog. Empty the castle and send parties away.
+          (assign, "$g_spacestation_left_to_player",0),
+          (store_faction_of_party, ":spacestation_faction", "$g_encountered_party"),
           (party_set_faction,"$g_encountered_party","fac_neutral"), #temporarily erase faction so that it is not the closest town
           (party_get_num_attached_parties, ":num_attached_parties_to_castle","$g_encountered_party"),
           (try_for_range_backwards, ":iap", 0, ":num_attached_parties_to_castle"),
@@ -8060,7 +8060,7 @@ game_menus = [
           (change_screen_return),
           (party_collect_attachments_to_party, "$g_encountered_party", "p_collective_enemy"), #recalculate so that
           (call_script, "script_party_copy", "p_encountered_party_backup", "p_collective_enemy"), #leaving troops will not be considered as captured
-          (party_set_faction,"$g_encountered_party",":castle_faction"), 
+          (party_set_faction,"$g_encountered_party",":spacestation_faction"), 
         (try_end),
 
         #Check for victory or defeat....
@@ -8089,14 +8089,14 @@ game_menus = [
           (try_end),
           (this_or_next|eq, ":enemy_finished", 1),
           (eq, "$g_enemy_surrenders", 1),
-          (assign, "$g_next_menu", "mnu_castle_taken"),
+          (assign, "$g_next_menu", "mnu_spacestation_taken"),
           (jump_to_menu, "mnu_total_victory"),
         (else_try),
           (call_script, "script_party_count_members_with_full_health", "p_main_party"),
           (assign, ":main_party_fit_regulars", reg(0)),
           (eq, "$g_battle_result", -1),
           (eq, ":main_party_fit_regulars", 0), #all lost
-          (assign, "$g_next_menu", "mnu_captivity_start_castle_defeat"),
+          (assign, "$g_next_menu", "mnu_captivity_start_spacestation_defeat"),
           (jump_to_menu, "mnu_total_defeat"),
         (try_end),
     ],
@@ -8104,8 +8104,8 @@ game_menus = [
       ("siege_request_meeting",[(eq, "$cant_talk_to_enemy", 0)],"Call for a meeting with the castle commander.", [
           (assign, "$cant_talk_to_enemy", 1),
           (assign, "$g_enemy_surrenders",0),
-          (assign, "$g_castle_left_to_player",0),
-          (assign, "$talk_context", tc_castle_commander),
+          (assign, "$g_spacestation_left_to_player",0),
+          (assign, "$talk_context", tc_spacestation_commander),
           (party_get_num_attached_parties, ":num_attached_parties_to_castle","$g_encountered_party"),
           (try_begin),
             (gt, ":num_attached_parties_to_castle", 0),
@@ -8134,7 +8134,7 @@ game_menus = [
 ##### Custom Commander(CC)
 ############################################################################################################
     
-      ("commander_change_castle_besiege",
+      ("commander_change_spacestation_besiege",
         [
           (ge, "$g_siege_method", 1),
           (store_current_hours, ":cur_hours"),
@@ -8143,7 +8143,7 @@ game_menus = [
         ],
         "Change the commander.(Current:{s7})",
         [
-          (assign, "$g_next_menu", "mnu_castle_besiege"),
+          (assign, "$g_next_menu", "mnu_spacestation_besiege"),
           (assign, "$change_commander_menu_offset", 0),
           (jump_to_menu, "mnu_change_commander"),
         ]),
@@ -8152,7 +8152,7 @@ game_menus = [
 ##### Custom Commander(CC)
 ############################################################################################################
 		  
-      ("castle_lead_attack",
+      ("spacestation_lead_attack",
        [
 ############################################################################################################
 ##### Custom Commander(CC)
@@ -8169,7 +8169,7 @@ game_menus = [
          ],
        "Lead your soldiers in an assault.", [
            (try_begin),
-             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
+             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
              (party_get_slot, ":battle_scene", "$g_encountered_party", slot_mainplanet_walls),
            (else_try),
              (party_get_slot, ":battle_scene", "$g_encountered_party", slot_spacestation_exterior),
@@ -8185,26 +8185,26 @@ game_menus = [
            (try_begin),
              (le, ":battle_advantage", -4), #we are outnumbered, defenders sally out
              (eq, "$g_siege_sallied_out_once", 0),
-             (set_jump_mission,"mt_castle_attack_walls_defenders_sally"),
+             (set_jump_mission,"mt_spacestation_attack_walls_defenders_sally"),
              (assign, "$g_siege_battle_state", 0),
              (assign, ":siege_sally", 1),
            (else_try),
              (party_slot_eq, "$current_town", slot_center_siege_with_belfry, 1),
-             (set_jump_mission,"mt_castle_attack_walls_belfry"),
+             (set_jump_mission,"mt_spacestation_attack_walls_belfry"),
            (else_try),
-             (set_jump_mission,"mt_castle_attack_walls_ladder"),
+             (set_jump_mission,"mt_spacestation_attack_walls_ladder"),
            (try_end),
            (assign, "$cant_talk_to_enemy", 0),           
-           (assign, "$g_siege_final_menu", "mnu_castle_besiege"),
-           (assign, "$g_next_menu", "mnu_castle_besiege_inner_battle"),
+           (assign, "$g_siege_final_menu", "mnu_spacestation_besiege"),
+           (assign, "$g_next_menu", "mnu_spacestation_besiege_inner_battle"),
            (assign, "$g_siege_method", 0), #reset siege timer
            (jump_to_scene,":battle_scene"),
            (try_begin),
              (eq, ":siege_sally", 1),
              (jump_to_menu, "mnu_siege_attack_meets_sally"),
            (else_try),
-#           (jump_to_menu,"mnu_castle_outside"),
-##           (assign, "$g_next_menu", "mnu_castle_besiege"),
+#           (jump_to_menu,"mnu_spacestation_outside"),
+##           (assign, "$g_next_menu", "mnu_spacestation_besiege"),
              (jump_to_menu, "mnu_battle_debrief"),
              (change_screen_mission),
            (try_end),
@@ -8216,7 +8216,7 @@ game_menus = [
          (store_current_hours, ":cur_hours"),
          (ge, ":cur_hours",  "$g_siege_method_finish_hours"),
          ],
-       "Order your soldiers to attack while you stay back...", [(assign, "$cant_talk_to_enemy", 0),(jump_to_menu,"mnu_castle_attack_walls_simulate")]),
+       "Order your soldiers to attack while you stay back...", [(assign, "$cant_talk_to_enemy", 0),(jump_to_menu,"mnu_spacestation_attack_walls_simulate")]),
 
       ("build_ladders",[(party_slot_eq, "$current_town", slot_center_siege_with_belfry, 0),(eq, "$g_siege_method", 0)],
        #SW - modified menu name
@@ -8226,13 +8226,13 @@ game_menus = [
       ("build_siege_tower",[(party_slot_eq, "$current_town", slot_center_siege_with_belfry, 1),(eq, "$g_siege_method", 0)],
        "Build a siege tower.", [(jump_to_menu,"mnu_construct_siege_tower")]),
 
-      ("cheat_castle_lead_attack",[(eq, "$cheat_mode", 1),
+      ("cheat_spacestation_lead_attack",[(eq, "$cheat_mode", 1),
                                    (eq, "$g_siege_method", 0)],
        "CHEAT: Instant build equipments.",
        [
          (assign, "$g_siege_method", 1),
          (assign, "$g_siege_method_finish_hours", 0),
-         (jump_to_menu, "mnu_castle_besiege"),
+         (jump_to_menu, "mnu_spacestation_besiege"),
        ]),
 
       
@@ -8245,7 +8245,7 @@ game_menus = [
   ),
   
   (
-    "siege_attack_meets_sally",menu_text_color(0xFF071423),
+    "siege_attack_meets_sally",menu_text_color(0xFF000d2c),
     "The defenders sally out to meet your assault.",
     "none",
     [
@@ -8261,7 +8261,7 @@ game_menus = [
   ),
 
    (
-    "castle_besiege_inner_battle",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "spacestation_besiege_inner_battle",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "{s1}",
     "none",
     [
@@ -8294,7 +8294,7 @@ game_menus = [
           (jump_to_menu, "$g_siege_final_menu"),
         (else_try),
           (call_script, "script_encounter_calculate_fit"),
-          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
+          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
           (try_begin),
             (eq, "$g_siege_battle_state", 0),
             (eq, ":result", 1),
@@ -8335,7 +8335,7 @@ game_menus = [
        "Continue...",
        [
            (try_begin),
-             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
+             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
              (try_begin),
                (eq, "$g_siege_battle_state", 1),
                (party_get_slot, ":battle_scene", "$g_encountered_party", slot_mainplanet_center),
@@ -8353,7 +8353,7 @@ game_menus = [
            (set_party_battle_mode),
            (jump_to_scene, ":battle_scene"),
            (val_add, "$g_siege_battle_state", 1),
-           (assign, "$g_next_menu", "mnu_castle_besiege_inner_battle"),
+           (assign, "$g_next_menu", "mnu_spacestation_besiege_inner_battle"),
            (jump_to_menu, "mnu_battle_debrief"),
            (change_screen_mission),
        ]),
@@ -8362,7 +8362,7 @@ game_menus = [
 
   
   (
-    "construct_ladders",menu_text_color(0xFF071423),
+    "construct_ladders",menu_text_color(0xFF000d2c),
 	#SW - modified game menu
     #"As the party member with the highest Engineer skill ({reg2}), {reg3?you estimate:{s3} estimates} that it will take\
  #{reg4} hours to build enough scaling ladders for the assault.",
@@ -8402,13 +8402,13 @@ game_menus = [
            (change_screen_return),
            ]),
       ("go_back",[],
-       "Go back.", [(jump_to_menu,"mnu_castle_besiege")]),
+       "Go back.", [(jump_to_menu,"mnu_spacestation_besiege")]),
         ],
   ),
 
   
   (
-    "construct_siege_tower",menu_text_color(0xFF071423),
+    "construct_siege_tower",menu_text_color(0xFF000d2c),
     "As the party member with the highest Engineer skill ({reg2}), {reg3?you estimate:{s3} estimates} that building a siege tower will take\
  {reg4} hours.",
     "none",
@@ -8442,12 +8442,12 @@ game_menus = [
            (change_screen_return),
            ]),
       ("go_back",[],
-       "Go back.", [(jump_to_menu,"mnu_castle_besiege")]),
+       "Go back.", [(jump_to_menu,"mnu_spacestation_besiege")]),
         ],
   ),
 
    (
-    "castle_attack_walls_simulate",menu_text_color(0xFF071423)|mnf_scale_picture|mnf_disable_all_keys,
+    "spacestation_attack_walls_simulate",menu_text_color(0xFF000d2c)|mnf_scale_picture|mnf_disable_all_keys,
     "{s4}^^Your casualties:{s8}^^Enemy casualties were: {s9}",
     "none",
     [
@@ -8502,21 +8502,21 @@ game_menus = [
 ##      ("lead_next_wave",[(eq, "$no_soldiers_left", 0)],"Lead the next wave of attack personally.", [
 ##           (party_get_slot, ":battle_scene", "$g_encountered_party", slot_spacestation_exterior),
 ##           (set_party_battle_mode),
-##           (set_jump_mission,"mt_castle_attack_walls"),
+##           (set_jump_mission,"mt_spacestation_attack_walls"),
 ##           (jump_to_scene,":battle_scene"),
-##           (jump_to_menu,"mnu_castle_outside"),
+##           (jump_to_menu,"mnu_spacestation_outside"),
 ##           (change_screen_mission),
 ##       ]),
 ##      ("continue_attacking",[(eq, "$no_soldiers_left", 0)],"Order your soldiers to keep attacking...", [
-##                                    (jump_to_menu,"mnu_castle_attack_walls_3"),
+##                                    (jump_to_menu,"mnu_spacestation_attack_walls_3"),
 ##                                    ]),
-##      ("call_soldiers_back",[(eq, "$no_soldiers_left", 0)],"Call your soldiers back.",[(jump_to_menu,"mnu_castle_outside")]),
-      ("continue",[],"Continue...",[(jump_to_menu,"mnu_castle_besiege")]),
+##      ("call_soldiers_back",[(eq, "$no_soldiers_left", 0)],"Call your soldiers back.",[(jump_to_menu,"mnu_spacestation_outside")]),
+      ("continue",[],"Continue...",[(jump_to_menu,"mnu_spacestation_besiege")]),
     ]
   ),
   
    (
-    "castle_attack_walls_with_allies_simulate",menu_text_color(0xFF071423)|mnf_scale_picture|mnf_disable_all_keys,
+    "spacestation_attack_walls_with_allies_simulate",menu_text_color(0xFF000d2c)|mnf_scale_picture|mnf_disable_all_keys,
     "{s4}^^Your casualties: {s8}^^Allies' casualties: {s9}^^Enemy casualties: {s10}",
     "none",
     [
@@ -8599,7 +8599,7 @@ game_menus = [
   ),
 
   (
-    "castle_taken_by_friends",menu_text_color(0xFF071423),
+    "spacestation_taken_by_friends",menu_text_color(0xFF000d2c),
     "Nothing to see here.",
     "none",
     [
@@ -8620,7 +8620,7 @@ game_menus = [
 
 
   (
-    "castle_taken",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "spacestation_taken",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s3} has fallen to your troops, and you now have full control of the {reg2?town:castle}.\
 {reg1? It would seem that there is nothing stopping you from taking it for yourself...:}",# Only visible when castle is taken without being a vassal of a kingdom.
     "none",
@@ -8628,18 +8628,18 @@ game_menus = [
         (party_clear, "$g_encountered_party"),
         (call_script, "script_lift_siege", "$g_encountered_party", 0),
         (assign, "$g_player_besiege_town", -1),
-        (call_script, "script_add_log_entry", logent_castle_captured_by_player, "trp_player",  "$g_encountered_party", 0, "$g_encountered_party_faction"),
+        (call_script, "script_add_log_entry", logent_spacestation_captured_by_player, "trp_player",  "$g_encountered_party", 0, "$g_encountered_party_faction"),
         (party_set_slot, "$g_encountered_party", slot_center_last_taken_by_troop, "trp_player"),
         #Reduce prosperity of the center by 5
         (call_script, "script_change_center_prosperity", "$g_encountered_party", -5),
         (call_script, "script_change_troop_renown", "trp_player", 5),
-        (call_script, "script_add_log_entry", logent_castle_captured_by_player, "trp_player", "$g_encountered_party", -1, "$g_encountered_party_faction"),
+        (call_script, "script_add_log_entry", logent_spacestation_captured_by_player, "trp_player", "$g_encountered_party", -1, "$g_encountered_party_faction"),
         (try_begin),
-          (is_between, "$players_kingdom", kingdoms_begin, kingdoms_end),
+          (is_between, "$players_kingdom", factions_begin, factions_end),
           (neq, "$players_kingdom", "fac_player_supporters_faction"),
           (call_script, "script_give_center_to_faction", "$g_encountered_party", "$players_kingdom"),
           (call_script, "script_order_best_besieger_party_to_guard_center", "$g_encountered_party", "$players_kingdom"),
-          (jump_to_menu, "mnu_castle_taken_2"),
+          (jump_to_menu, "mnu_spacestation_taken_2"),
         (else_try),
           (call_script, "script_give_center_to_faction", "$g_encountered_party", "fac_player_supporters_faction"),
           (call_script, "script_order_best_besieger_party_to_guard_center", "$g_encountered_party", "fac_player_supporters_faction"),
@@ -8652,7 +8652,7 @@ game_menus = [
         (try_end),
         (assign, reg2, 0),
         (try_begin),
-          (is_between, "$g_encountered_party", towns_begin, towns_end),
+          (is_between, "$g_encountered_party", mainplanets_begin, mainplanets_end),
           (assign, reg2, 1),
         (try_end),
     ],
@@ -8665,7 +8665,7 @@ game_menus = [
     ],
   ),
   (
-    "castle_taken_2",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "spacestation_taken_2",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s3} has fallen to your troops, and you now have full control of the castle.\
  It is time to send word to {s9} about your victory. {s5}",
     "none",
@@ -8678,21 +8678,21 @@ game_menus = [
           (eq, "$player_has_homage", 0),
           (assign, reg8, 0),
           (try_begin),
-            (party_slot_eq, "$g_encountered_party", spt_town),
+            (party_slot_eq, "$g_encountered_party", spt_mainplanet),
             (assign, reg8, 1),
           (try_end),
           (str_store_string, s5, "@However, since you are not a sworn {man/follower} of {s9}, there is no chance he would recognize you as the {lord/lady} of this {reg8?town:castle}."),
         (try_end),
     ],
     [
-      ("castle_taken_claim",[(eq, "$player_has_homage", 1)],"Request that {s3} be awarded to you.",
+      ("spacestation_taken_claim",[(eq, "$player_has_homage", 1)],"Request that {s3} be awarded to you.",
        [
         (party_set_slot, "$g_encountered_party", slot_center_last_taken_by_troop, "trp_player"),
-        (assign, "$g_castle_requested_by_player", "$current_town"),
+        (assign, "$g_spacestation_requested_by_player", "$current_town"),
         (assign, "$auto_enter_town", "$g_encountered_party"),
         (change_screen_return),
         ]),
-      ("castle_taken_no_claim",[],"Ask no rewards.",
+      ("spacestation_taken_no_claim",[],"Ask no rewards.",
        [
         (party_set_slot, "$g_encountered_party", slot_center_last_taken_by_troop, -1),
         (assign, "$auto_enter_town", "$g_encountered_party"),
@@ -8703,7 +8703,7 @@ game_menus = [
   ),
 
   (
-    "requested_castle_granted_to_player",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "requested_spacestation_granted_to_player",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "You receive a message from your liege, {s3}.^^\
  {reg4?She:He} has decided to grant {s2}{reg3? and the nearby planet of {s4}:} to you, with all due incomes and titles,\
  to hold in {reg4?her:his} name for as long as you maintain your oath of homage.",
@@ -8715,7 +8715,7 @@ game_menus = [
      (try_begin),
        (party_slot_eq, "$g_center_to_give_to_player", slot_party_type, spt_castle),
        (assign, reg3, 1),
-       (try_for_range, ":cur_village", villages_begin, villages_end),
+       (try_for_range, ":cur_village", minorplanet_begin, minorplanet_end),
          (party_slot_eq, ":cur_village", slot_minorplanet_bound_center, "$g_center_to_give_to_player"),
          (str_store_party_name, s4, ":cur_village"),
        (try_end),
@@ -8733,7 +8733,7 @@ game_menus = [
   ),
   
   (
-    "requested_castle_granted_to_another",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "requested_spacestation_granted_to_another",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "You receive a message from your monarch, {s3}.^^\
  'I was most pleased to hear of your valiant efforts in the capture of {s2}. Your victory has gladdened all our hearts.\
  You also requested me to give you ownership of the castle, but that is a favour which I fear I cannot grant,\
@@ -8764,7 +8764,7 @@ game_menus = [
   ),
 
   (
-    "leave_faction",menu_text_color(0xFF071423),
+    "leave_faction",menu_text_color(0xFF000d2c),
     "Renouncing your oath is a grave act. Your lord may condemn you and confiscate your lands and holdings.\
  However, if you return them of your own free will, he may let the betrayal go without a fight.",
     "none",
@@ -8808,7 +8808,7 @@ game_menus = [
   ),
 
   (
-    "give_center_to_player",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "give_center_to_player",menu_text_color(0xFF000d2c)|mnf_scale_picture,
 	  #SW - modified fiefs to territories
     "Your lord offers to extend your territories!\
  {s1} sends word that he is willing to grant {s2} to you in payment for your loyal service,\
@@ -8833,7 +8833,7 @@ game_menus = [
   ),
   
   (
-    "give_center_to_player_2",menu_text_color(0xFF071423),
+    "give_center_to_player_2",menu_text_color(0xFF000d2c),
     "With a brief ceremony, you are officially confirmed as the new lord of {s2}{reg3? and its bound planet {s4}:}.\
  {reg3?They:It} will make a fine part of your fiefdom.\
  You can now claim the rents and revenues from your personal estates there, draft soldiers from the populace,\
@@ -8846,7 +8846,7 @@ game_menus = [
       (assign, reg3, 0),
       (try_begin),
         (party_slot_eq, "$g_center_to_give_to_player", slot_party_type, spt_castle),
-        (try_for_range, ":cur_village", villages_begin, villages_end),
+        (try_for_range, ":cur_village", minorplanet_begin, minorplanet_end),
           (party_slot_eq, ":cur_village", slot_minorplanet_bound_center, "$g_center_to_give_to_player"),
           (str_store_party_name, s4, ":cur_village"),
           (assign, reg3, 1),
@@ -8862,7 +8862,7 @@ game_menus = [
 
 
   (
-    "oath_fulfilled",menu_text_color(0xFF071423),
+    "oath_fulfilled",menu_text_color(0xFF000d2c),
     "You had a contract with {s1} to serve him for a certain duration.\
  Your contract has now expired. What will you do?",
     "none",
@@ -8888,7 +8888,7 @@ game_menus = [
   
 
 ##  (
-##    "castle_garrison_stationed",menu_text_color(0xFF071423),
+##    "spacestation_garrison_stationed",menu_text_color(0xFF000d2c),
 ###    "The rest of the castle garrison recognizes that their situation is hopeless and surrenders. {s1} is at your mercy now. What do you want to do with this castle?",
 ##    "_",
 ##    "none",
@@ -8899,7 +8899,7 @@ game_menus = [
 ##  ),
 
 ##  (
-##    "castle_choose_captain",menu_text_color(0xFF071423),
+##    "spacestation_choose_captain",menu_text_color(0xFF000d2c),
 ##    "You will need to assign one of your companions as the castellan. Who will it be?",
 ##    "none",
 ##    [
@@ -8917,37 +8917,37 @@ game_menus = [
 ##    ],
 ##    [
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 0),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 0),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 0),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 1),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 1),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 1),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 2),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 2),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 2),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 3),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 3),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 3),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 4),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 4),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 4),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 5),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 5),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 5),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 6),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 6),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 6),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 7),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 7),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 7),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 8),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 8),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 8),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 9),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 9),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 9),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 10),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 10),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 10),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 11),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 11),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 11),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 12),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 12),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 12),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 13),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 13),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 13),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 14),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 14),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 14),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      ("castellan_candidate",  [(troop_get_slot, ":captain", "trp_temp_troop", 15),(gt,":captain",0),(str_store_troop_name, s5,":captain")],
-##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 15),(jump_to_menu,"mnu_castle_captain_chosen")]),
+##         "{s5}",    [(troop_get_slot, "$selected_castellan", "trp_temp_troop", 15),(jump_to_menu,"mnu_spacestation_captain_chosen")]),
 ##      
 ##      ("cancel",[],
 ##         "Cancel...",
@@ -8955,7 +8955,7 @@ game_menus = [
 ##    ],
 ##  ),
 ##  (
-##    "castle_captain_chosen",menu_text_color(0xFF071423),
+##    "spacestation_captain_chosen",menu_text_color(0xFF000d2c),
 ##    "h this castle?",
 ##    "none",
 ##    [
@@ -8973,7 +8973,7 @@ game_menus = [
 ##  ),
 
 ##  (
-##    "under_siege_attacked_continue",menu_text_color(0xFF071423),
+##    "under_siege_attacked_continue",menu_text_color(0xFF000d2c),
 ##    "Nothing to see here.",
 ##    "none",
 ##    [
@@ -9043,7 +9043,7 @@ game_menus = [
 
 
   (
-    "siege_started_defender",menu_text_color(0xFF071423),
+    "siege_started_defender",menu_text_color(0xFF000d2c),
     "{s1} is launching an assault against the walls of {s2}. You have {reg10} troops fit for battle against the enemy's {reg11}. You decide to...",
     "none",
     [
@@ -9176,7 +9176,7 @@ game_menus = [
               (party_set_next_battle_simulation_time, "$g_encountered_party", -1),
               (assign, "$g_battle_result", 0),
               (try_begin),
-                (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
+                (party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
                 (party_get_slot, ":battle_scene", "$g_encountered_party", slot_mainplanet_walls),
               (else_try),
                 (party_get_slot, ":battle_scene", "$g_encountered_party", slot_spacestation_exterior),
@@ -9188,9 +9188,9 @@ game_menus = [
               (set_party_battle_mode),
               (try_begin),
                 (party_slot_eq, "$current_town", slot_center_siege_with_belfry, 1),
-                (set_jump_mission,"mt_castle_attack_walls_belfry"),
+                (set_jump_mission,"mt_spacestation_attack_walls_belfry"),
               (else_try),
-                (set_jump_mission,"mt_castle_attack_walls_ladder"),
+                (set_jump_mission,"mt_spacestation_attack_walls_ladder"),
               (try_end),
               (jump_to_scene,":battle_scene"),
               (assign, "$g_next_menu", "mnu_siege_started_defender"),
@@ -9222,7 +9222,7 @@ game_menus = [
   ),
 
   (
-    "siege_join_defense",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "siege_join_defense",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s4}^^Your casualties: {s8}^^Allies' casualties: {s9}^^Enemy casualties: {s10}",
     "none",
     [
@@ -9283,7 +9283,7 @@ game_menus = [
   ),
 
   (
-    "enter_your_own_castle",menu_text_color(0xFF071423),
+    "enter_your_own_castle",menu_text_color(0xFF000d2c),
     "As you approach, you are spotted by the planet guards, who welcome you and lower the shields for their {lord/lady}.",
     "none",
     [
@@ -9298,7 +9298,7 @@ game_menus = [
 
 
   (
-    "village",menu_text_color(0xFF071423)|mnf_enable_hot_keys,
+    "village",menu_text_color(0xFF000d2c)|mnf_enable_hot_keys,
     "{s10}{s11}{s6}{s7}",
     "none",
     [
@@ -9320,7 +9320,7 @@ game_menus = [
           (neq, "$g_player_raiding_village",  "$current_town"),
           (assign, "$g_player_raiding_village", 0),
         (else_try),
-          (jump_to_menu, "mnu_village_loot_continue"),
+          (jump_to_menu, "mnu_minorplanet_loot_continue"),
         (try_end),
 
         (try_begin),#Fix for collecting taxes
@@ -9345,7 +9345,7 @@ game_menus = [
           (party_get_slot, ":prosperity", "$current_town", slot_mainplanet_prosperity),
           (val_add, ":prosperity", 5),
           (store_div, ":str_offset", ":prosperity", 10),
-          (store_add, ":str_id", "str_village_prosperity_0",  ":str_offset"),
+          (store_add, ":str_id", "str_minorplanet_prosperity_0",  ":str_offset"),
           (str_store_string, s10, ":str_id"),
         (try_end),
 
@@ -9375,12 +9375,12 @@ game_menus = [
           (party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
           (party_get_slot, ":bandit_troop", "$current_town", slot_minorplanet_infested_by_bandits),
           (store_character_level, ":player_level", "trp_player"),
-          (store_add, "$qst_eliminate_bandits_infesting_village_num_bandits", ":player_level", 10),
-          (val_mul, "$qst_eliminate_bandits_infesting_village_num_bandits", 12),
-          (val_div, "$qst_eliminate_bandits_infesting_village_num_bandits", 10),
-          (store_random_in_range, "$qst_eliminate_bandits_infesting_village_num_villagers", 25, 30),
-          (assign, reg8, "$qst_eliminate_bandits_infesting_village_num_bandits"),
-          (str_store_troop_name_by_count, s35, ":bandit_troop", "$qst_eliminate_bandits_infesting_village_num_bandits"),
+          (store_add, "$qst_eliminate_bandits_infesting_minorplanet_num_bandits", ":player_level", 10),
+          (val_mul, "$qst_eliminate_bandits_infesting_minorplanet_num_bandits", 12),
+          (val_div, "$qst_eliminate_bandits_infesting_minorplanet_num_bandits", 10),
+          (store_random_in_range, "$qst_eliminate_bandits_infesting_minorplanet_num_villagers", 25, 30),
+          (assign, reg8, "$qst_eliminate_bandits_infesting_minorplanet_num_bandits"),
+          (str_store_troop_name_by_count, s35, ":bandit_troop", "$qst_eliminate_bandits_infesting_minorplanet_num_bandits"),
           (str_store_string, s6, "@ The planet is infested by {reg8} {s35}."),
           (try_begin),
             (eq, ":bandit_troop", "trp_blazing_claw_pirate"),
@@ -9414,13 +9414,13 @@ game_menus = [
           # (try_begin),
             # (this_or_next|eq, ":cur_terrain", rt_steppe),
             # (             eq, ":cur_terrain", rt_steppe_forest),
-            # (set_background_mesh, "mesh_pic_village_s"),
+            # (set_background_mesh, "mesh_pic_minorplanet_s"),
           # (else_try),
             # (this_or_next|eq, ":cur_terrain", rt_snow),
             # (             eq, ":cur_terrain", rt_snow_forest),
-            # (set_background_mesh, "mesh_pic_village_w"),
+            # (set_background_mesh, "mesh_pic_minorplanet_w"),
           # (else_try),
-            # (set_background_mesh, "mesh_pic_village_p"),
+            # (set_background_mesh, "mesh_pic_minorplanet_p"),
           # (try_end),
 			#SW - display a new menu background
 			(call_script, "script_display_fullscreen_background", "$current_town"),			  
@@ -9429,7 +9429,7 @@ game_menus = [
         (try_begin),
           (eq, "$g_player_raid_complete", 1),
           (assign, "$g_player_raid_complete", 0),
-          (jump_to_menu, "mnu_village_loot_complete"),
+          (jump_to_menu, "mnu_minorplanet_loot_complete"),
         (else_try),
           (party_get_slot, ":raider_party", "$current_town", slot_minorplanet_raided_by),
           (gt, ":raider_party", 0),
@@ -9460,7 +9460,7 @@ game_menus = [
         (try_end),
     ],
     [
-      ("village_manage",[(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
+      ("minorplanet_manage",[(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
                          (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
                          (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
                          (party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player")]
@@ -9473,7 +9473,7 @@ game_menus = [
         ]),
 
 #SW - Talk to village elder START      
-      ("village_elder_talk",[(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
+      ("minorplanet_elder_talk",[(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
                          (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
                          (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),]
        ,"Speak with the Planet Administrator.",
@@ -9481,11 +9481,11 @@ game_menus = [
          (try_begin),
            (call_script, "script_cf_enter_center_location_bandit_check"),
          (else_try),
-           (party_get_slot, ":village_scene", "$current_town", slot_spacestation_exterior),
-           (modify_visitors_at_site,":village_scene"),
+           (party_get_slot, ":minorplanet_scene", "$current_town", slot_spacestation_exterior),
+           (modify_visitors_at_site,":minorplanet_scene"),
            (reset_visitors),
-           (party_get_slot, ":village_elder_troop", "$current_town",slot_mainplanet_elder),
-           (set_visitor, 11, ":village_elder_troop"),
+           (party_get_slot, ":minorplanet_elder_troop", "$current_town",slot_mainplanet_elder),
+           (set_visitor, 11, ":minorplanet_elder_troop"),
 
            (call_script, "script_init_town_walkers"),
 
@@ -9498,16 +9498,16 @@ game_menus = [
              (set_visitor, 45, "trp_fugitive"),
            (try_end),
 
-           (set_jump_mission,"mt_village_center"),
-           (jump_to_scene,":village_scene"),
+           (set_jump_mission,"mt_minorplanet_center"),
+           (jump_to_scene,":minorplanet_scene"),
 
-           (change_screen_map_conversation, ":village_elder_troop"),
+           (change_screen_map_conversation, ":minorplanet_elder_troop"),
          (try_end),
         ],"Door to the village center."),
 #SW - Talk to village elder END
 		
 # inserted by obi 2009-04-28 --> recruit clones, droids, force sensitives
-		("recruit_clones",[(call_script, "script_cf_village_recruit_clones_cond"),]
+		("recruit_clones",[(call_script, "script_cf_minorplanet_recruit_clones_cond"),]
        ,"Recruit Clones.",
        [
          (try_begin),
@@ -9516,7 +9516,7 @@ game_menus = [
            (jump_to_menu, "mnu_recruit_clones"),
          (try_end),
         ]),
-		("recruit_force_sensitive",[(call_script, "script_cf_village_recruit_force_sensitives_cond"),]
+		("recruit_force_sensitive",[(call_script, "script_cf_minorplanet_recruit_force_sensitives_cond"),]
        ,"Recruit Force-Sensitives.",
        [
          (try_begin),
@@ -9525,7 +9525,7 @@ game_menus = [
            (jump_to_menu, "mnu_recruit_force_sensitives"),
          (try_end),
         ]),
-		("recruit_droid",[(call_script, "script_cf_village_recruit_droids_cond"),]
+		("recruit_droid",[(call_script, "script_cf_minorplanet_recruit_droids_cond"),]
        ,"Build Battle Droids.",
        [
          (try_begin),
@@ -9535,7 +9535,7 @@ game_menus = [
 		   (jump_to_menu, "mnu_recruit_droids_pre"),
          (try_end),
         ]),
-		("recruit_rancor",[(call_script, "script_cf_village_recruit_rancors_cond"),]
+		("recruit_rancor",[(call_script, "script_cf_minorplanet_recruit_rancors_cond"),]
        ,"Recruit Baby Rancors.",
        [
          (try_begin),
@@ -9545,7 +9545,7 @@ game_menus = [
          (try_end),
         ]),		
 # end of insert
-      ("recruit_volunteers",[(call_script, "script_cf_village_recruit_volunteers_cond"),]
+      ("recruit_volunteers",[(call_script, "script_cf_minorplanet_recruit_volunteers_cond"),]
        ,"Recruit Volunteers.",
        [
          (try_begin),
@@ -9554,7 +9554,7 @@ game_menus = [
            (jump_to_menu, "mnu_recruit_volunteers"),
          (try_end),
         ]),
-      ("village_center",[(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
+      ("minorplanet_center",[(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
                          (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
                          (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),]
        #,"Go to the center.",
@@ -9567,11 +9567,11 @@ game_menus = [
          (try_begin),
            (call_script, "script_cf_enter_center_location_bandit_check"),
          (else_try),
-           (party_get_slot, ":village_scene", "$current_town", slot_spacestation_exterior),	#:village_scene
-           (modify_visitors_at_site,":village_scene"),
+           (party_get_slot, ":minorplanet_scene", "$current_town", slot_spacestation_exterior),	#:minorplanet_scene
+           (modify_visitors_at_site,":minorplanet_scene"),
            (reset_visitors),
-           (party_get_slot, ":village_elder_troop", "$current_town",slot_mainplanet_elder),
-           (set_visitor, 11, ":village_elder_troop"),
+           (party_get_slot, ":minorplanet_elder_troop", "$current_town",slot_mainplanet_elder),
+           (set_visitor, 11, ":minorplanet_elder_troop"),
 
            (call_script, "script_init_town_walkers"),
 
@@ -9665,13 +9665,13 @@ game_menus = [
 				# (play_track, "track_town_test", 2),		# 0 = default, 1 = fade out current track, 2 = stop current track
 			# (try_end),
 		   
-           (set_jump_mission,"mt_village_center"),
-           (jump_to_scene,":village_scene"),
+           (set_jump_mission,"mt_minorplanet_center"),
+           (jump_to_scene,":minorplanet_scene"),
            (change_screen_mission),
          (try_end),
         ],"Door to the center."),
 		
-      ("village_buy_food",[(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
+      ("minorplanet_buy_food",[(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
                            (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
                            ],"Buy supplies from the inhabitants.",
        [
@@ -9687,7 +9687,7 @@ game_menus = [
 ##### Custom Commander(CC)
 ############################################################################################################
     
-      ("commander_change_village_attack_bandits",
+      ("commander_change_minorplanet_attack_bandits",
       [
         (party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
         (str_store_troop_name,s7,"$g_player_troop"),
@@ -9703,26 +9703,26 @@ game_menus = [
 ##### Custom Commander(CC)
 ############################################################################################################		 
 		 
-      ("village_attack_bandits",[(party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),],
+      ("minorplanet_attack_bandits",[(party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),],
        "Attack the bandits.",
        [(party_get_slot, ":bandit_troop", "$current_town", slot_minorplanet_infested_by_bandits),
         (party_get_slot, ":scene_to_use", "$current_town", slot_spacestation_exterior),
         (modify_visitors_at_site,":scene_to_use"),
         (reset_visitors),
-        (set_visitors, 0, ":bandit_troop", "$qst_eliminate_bandits_infesting_village_num_bandits"),
-        (set_visitors, 2, "trp_farmer", "$qst_eliminate_bandits_infesting_village_num_villagers"),
+        (set_visitors, 0, ":bandit_troop", "$qst_eliminate_bandits_infesting_minorplanet_num_bandits"),
+        (set_visitors, 2, "trp_farmer", "$qst_eliminate_bandits_infesting_minorplanet_num_villagers"),
         (set_party_battle_mode),
         (set_battle_advantage, 0),
         (assign, "$g_battle_result", 0),
-        (set_jump_mission,"mt_village_attack_bandits"),
+        (set_jump_mission,"mt_minorplanet_attack_bandits"),
         (jump_to_scene, ":scene_to_use"),
-        (assign, "$g_next_menu", "mnu_village_infest_bandits_result"),
+        (assign, "$g_next_menu", "mnu_minorplanet_infest_bandits_result"),
         (jump_to_menu, "mnu_battle_debrief"),
         (assign, "$g_mt_mode", vba_normal),
         (change_screen_mission),
         ]),
 
-      ("village_wait",
+      ("minorplanet_wait",
        [(party_slot_eq, "$current_town", slot_center_has_manor, 1),
         (party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player"),
         ],
@@ -9754,27 +9754,27 @@ game_menus = [
          ], "Train the peasants.",
        [(jump_to_menu, "mnu_train_peasants_against_bandits"),]),
 
-      ("village_hostile_action",[(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
+      ("minorplanet_hostile_action",[(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
                                  (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),], "Take a hostile action.",
-       [(jump_to_menu,"mnu_village_hostile_action"),
+       [(jump_to_menu,"mnu_minorplanet_hostile_action"),
            ]),
       
-      ("village_reports",[(eq, "$cheat_mode", 1),], "CHEAT! Show reports.",
+      ("minorplanet_reports",[(eq, "$cheat_mode", 1),], "CHEAT! Show reports.",
        [(jump_to_menu,"mnu_center_reports"),
            ]),
-      ("village_leave",[],"Leave...",[(change_screen_return,0)]),
+      ("minorplanet_leave",[],"Leave...",[(change_screen_return,0)]),
       
     ],
   ),
 
 
   (
-    "village_hostile_action",menu_text_color(0xFF071423),
+    "minorplanet_hostile_action",menu_text_color(0xFF000d2c),
     "What action do you have in mind?",
     "none",
     [],
     [
-      ("village_take_food",[
+      ("minorplanet_take_food",[
           (party_slot_eq, "$current_town", slot_minorplanet_state, 0),
           (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
           (party_get_slot, ":merchant_troop", "$current_town", slot_mainplanet_elder),
@@ -9787,9 +9787,9 @@ game_menus = [
           (eq, ":town_stores_not_empty", 1),
           ],"Force the peasants to give you supplies.",
        [
-           (jump_to_menu, "mnu_village_take_food_confirm")
+           (jump_to_menu, "mnu_minorplanet_take_food_confirm")
         ]),
-      ("village_steal_cattle",
+      ("minorplanet_steal_cattle",
        [
           (party_slot_eq, "$current_town", slot_minorplanet_state, 0),
           (party_slot_eq, "$current_town", slot_minorplanet_player_can_not_steal_cattle, 0),
@@ -9800,9 +9800,9 @@ game_menus = [
 		  #SW - modified menu
           ],"Steal nerfs.",
        [
-           (jump_to_menu, "mnu_village_steal_cattle_confirm")
+           (jump_to_menu, "mnu_minorplanet_steal_cattle_confirm")
         ]),
-      ("village_loot",[(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
+      ("minorplanet_loot",[(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
                        (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
                        (store_faction_of_party, ":center_faction", "$current_town"),
                        (store_relation, ":reln", "fac_player_supporters_faction", ":center_faction"),
@@ -9812,7 +9812,7 @@ game_menus = [
        [
 #           (party_clear, "$current_town"),
 #           (party_add_template, "$current_town", "pt_villagers_in_raid"),
-           (jump_to_menu, "mnu_village_start_attack"),
+           (jump_to_menu, "mnu_minorplanet_start_attack"),
            ]),
       ("forget_it",[],
       "Forget it.",[(jump_to_menu,"mnu_village")]),
@@ -9823,7 +9823,7 @@ game_menus = [
 
 # inserted by obi 2009-04-28 --> recruit clones, droids, force sensitives
 	(
-    "recruit_clones",menu_text_color(0xFF071423),
+    "recruit_clones",menu_text_color(0xFF000d2c),
     "{s18}",
     "none",
     [
@@ -9861,7 +9861,7 @@ game_menus = [
 						]),
       ("recruit_them",	[(gt, reg5, 0)],
 						"Recruit {reg5} of them ({reg6} credits).",[
-						(call_script, "script_village_recruit_volunteers_clones"),
+						(call_script, "script_minorplanet_recruit_volunteers_clones"),
 						(jump_to_menu,"mnu_village"),
                         ]),
       ("forget_it",		[(gt, reg5, 0)],
@@ -9871,7 +9871,7 @@ game_menus = [
     ],
   ),
 	(
-    "recruit_force_sensitives",menu_text_color(0xFF071423),
+    "recruit_force_sensitives",menu_text_color(0xFF000d2c),
     "{s18}",
     "none",
     [
@@ -9918,7 +9918,7 @@ game_menus = [
 						]),
       ("recruit_them",	[(gt, reg5, 0)],
 						"Recruit {reg5} of them ({reg6} credits).",[
-						(call_script, "script_village_recruit_volunteers_force_sensitives"),
+						(call_script, "script_minorplanet_recruit_volunteers_force_sensitives"),
 						(jump_to_menu,"mnu_village"),
                         ]),
       ("forget_it",		[(gt, reg5, 0)],
@@ -9929,7 +9929,7 @@ game_menus = [
   ),
 
 	(
-    "recruit_droids_pre",menu_text_color(0xFF071423),
+    "recruit_droids_pre",menu_text_color(0xFF000d2c),
     #"What type of Battle Droids do you want to build?",
 	"{s18}",
     "none",
@@ -9981,7 +9981,7 @@ game_menus = [
     ],
   ),  
 	(
-    "recruit_droids",menu_text_color(0xFF071423),
+    "recruit_droids",menu_text_color(0xFF000d2c),
     "{s18}",
     "none",
     [
@@ -10019,7 +10019,7 @@ game_menus = [
 						]),
       ("recruit_them",	[(gt, reg5, 0)],
 						"Recruit {reg5} of them ({reg6} credits).",[
-						(call_script, "script_village_recruit_volunteers_droids"),
+						(call_script, "script_minorplanet_recruit_volunteers_droids"),
 						(jump_to_menu,"mnu_village"),
                         ]),
       ("forget_it",		[(gt, reg5, 0)],
@@ -10029,7 +10029,7 @@ game_menus = [
     ],
   ),
 	(
-    "recruit_rancors",menu_text_color(0xFF071423),
+    "recruit_rancors",menu_text_color(0xFF000d2c),
     "{s18}",
     "none",
     [
@@ -10068,7 +10068,7 @@ game_menus = [
 						]),
       ("recruit_them",	[(gt, reg5, 0)],
 						"Recruit {reg5} of them ({reg6} credits).",[
-						(call_script, "script_village_recruit_volunteers_rancors"),
+						(call_script, "script_minorplanet_recruit_volunteers_rancors"),
 						(jump_to_menu,"mnu_village"),
                         ]),
       ("forget_it",		[(gt, reg5, 0)],
@@ -10080,7 +10080,7 @@ game_menus = [
 # end of insert
 	(
 	#SW - modified recruit_volunteers game menu
-    "recruit_volunteers",menu_text_color(0xFF071423),
+    "recruit_volunteers",menu_text_color(0xFF000d2c),
     "{s18}",
     "none",
     [
@@ -10135,7 +10135,7 @@ game_menus = [
 						]),
       ("recruit_them",	[(gt, reg5, 0)],
 						"Recruit {reg5} of them ({reg6} credits).",[
-						(call_script, "script_village_recruit_volunteers_recruit"),
+						(call_script, "script_minorplanet_recruit_volunteers_recruit"),
 						(jump_to_menu,"mnu_village"),
                         ]),
       ("forget_it",		[(gt, reg5, 0)],
@@ -10145,7 +10145,7 @@ game_menus = [
     ],
   ),
   (
-    "village_hunt_down_fugitive_defeated",menu_text_color(0xFF071423),
+    "minorplanet_hunt_down_fugitive_defeated",menu_text_color(0xFF000d2c),
     "A heavy blow from the fugitive sends you to the ground, and your vision spins and goes dark.\
  Time passes. When you open your eyes again you find yourself battered and bloody,\
  but luckily none of the wounds appear to be lethal.",
@@ -10157,12 +10157,12 @@ game_menus = [
   ),
 
   (
-    "village_infest_bandits_result",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "minorplanet_infest_bandits_result",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "{s9}",
     "none",
     [(try_begin),
        (eq, "$g_battle_result", 1),
-       (jump_to_menu, "mnu_village_infestation_removed"),
+       (jump_to_menu, "mnu_minorplanet_infestation_removed"),
      (else_try),
        (str_store_string, s9, "@Try as you might, you could not defeat the bandits.\
  Infuriated, they raze part of the planet to the ground to punish the peasants,\
@@ -10173,7 +10173,7 @@ game_menus = [
     [
       ("continue",[],"Continue...",
        [(party_set_slot, "$g_encountered_party", slot_minorplanet_infested_by_bandits, 0),
-        (call_script, "script_village_set_state",  "$current_town", svs_looted),
+        (call_script, "script_minorplanet_set_state",  "$current_town", svs_looted),
         (party_set_slot, "$current_town", slot_minorplanet_raid_progress, 0),
         (party_set_slot, "$current_town", slot_minorplanet_recover_progress, 0),
         (try_begin),
@@ -10195,7 +10195,7 @@ game_menus = [
 
 
   (
-    "village_infestation_removed",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "minorplanet_infestation_removed",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "In a battle worthy of song, you and your men drive the bandits out of the village, making it safe once more.\
  The villagers have little left in the way of wealth after their ordeal,\
  but they offer you all they can find.",
@@ -10203,7 +10203,7 @@ game_menus = [
     [(party_get_slot, ":bandit_troop", "$g_encountered_party", slot_minorplanet_infested_by_bandits),
      (party_set_slot, "$g_encountered_party", slot_minorplanet_infested_by_bandits, 0),
      (party_clear, "p_temp_party"),
-     (party_add_members, "p_temp_party", ":bandit_troop", "$qst_eliminate_bandits_infesting_village_num_bandits"),
+     (party_add_members, "p_temp_party", ":bandit_troop", "$qst_eliminate_bandits_infesting_minorplanet_num_bandits"),
      (assign, "$g_strength_contribution_of_player", 50),
      (call_script, "script_party_give_xp_and_gold", "p_temp_party"),
      (try_begin),
@@ -10230,33 +10230,33 @@ game_menus = [
      (try_end),
     ],
     [
-      ("village_bandits_defeated_accept",[],"Take it as your just due.",[(jump_to_menu, "mnu_village"),
+      ("minorplanet_bandits_defeated_accept",[],"Take it as your just due.",[(jump_to_menu, "mnu_village"),
                                                                          (party_get_slot, ":merchant_troop", "$current_town", slot_mainplanet_elder),
                                                                          (troop_sort_inventory, ":merchant_troop"),
                                                                          (change_screen_loot, ":merchant_troop"),
                                                                        ]),
-      ("village_bandits_defeated_cont",[],  "Refuse, stating that they need these items more than you do.",[(call_script, "script_change_player_relation_with_center", "$g_encountered_party", 3),
+      ("minorplanet_bandits_defeated_cont",[],  "Refuse, stating that they need these items more than you do.",[(call_script, "script_change_player_relation_with_center", "$g_encountered_party", 3),
                                                                                                             (jump_to_menu, "mnu_village")]),
     ],
   ),
 
   (
-    "center_manage",menu_text_color(0xFF071423),
+    "center_manage",menu_text_color(0xFF000d2c),
     "{s19}^{reg6?^^You are\
  currently building {s7}. The building will be completed after {reg8} day{reg9?s:}.:}",
     "none",
     [(assign, ":num_improvements", 0),
      (str_clear, s18),
      (try_begin),
-       (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
-       (assign, ":begin", village_improvements_begin),
-       (assign, ":end", village_improvements_end),
+       (party_slot_eq, "$g_encountered_party", slot_party_type, spt_minorplanet),
+       (assign, ":begin", minorplanet_improvements_begin),
+       (assign, ":end", minorplanet_improvements_end),
        #(str_store_string, s17, "@village"),
 	   (str_store_string, s17, "@planet"),
      (else_try),
        (assign, ":begin", walled_center_improvements_begin),
        (assign, ":end", walled_center_improvements_end),
-       (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
+       (party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
        #(str_store_string, s17, "@town"),
 	   (str_store_string, s17, "@planet"),
      (else_try),
@@ -10301,50 +10301,50 @@ game_menus = [
     [
 # inserted by obi 2009-04-28 --> recruit clones, droids, force sensitives
 			("center_build_temple",[(eq, reg6, 0),
-                             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
+                             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_minorplanet),
                              (party_slot_eq, "$g_encountered_party", slot_center_has_temple, 0),
                                   ],
        "Build a Force-Sensitive Temple.",[(assign, "$g_improvement_type", slot_center_has_temple),
                          (jump_to_menu, "mnu_center_improve"),]),
       ("center_build_clone_chambers",[(eq, reg6, 0),
-                             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
+                             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_minorplanet),
                              (party_slot_eq, "$g_encountered_party", slot_center_has_clone_chambers, 0),
                                   ],
        "Build Clone Chambers.",[(assign, "$g_improvement_type", slot_center_has_clone_chambers),
                          (jump_to_menu, "mnu_center_improve"),]),
       ("center_build_droid_foundry",[(eq, reg6, 0),
-                             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
+                             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_minorplanet),
                              (party_slot_eq, "$g_encountered_party", slot_center_has_droid_foundry, 0),
                                   ],
        "Build a Droid Foundry.",[(assign, "$g_improvement_type", slot_center_has_droid_foundry),
                          (jump_to_menu, "mnu_center_improve"),]),
       ("center_build_rancor_pit",[(eq, reg6, 0),
-                             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
+                             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_minorplanet),
                              (party_slot_eq, "$g_encountered_party", slot_center_has_rancor_pit, 0),
                                   ],
        "Build a Rancor Pit.",[(assign, "$g_improvement_type", slot_center_has_rancor_pit),
                          (jump_to_menu, "mnu_center_improve"),]),						 
 # end of insert		
       ("center_build_manor",[(eq, reg6, 0),
-                             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
+                             (party_slot_eq, "$g_encountered_party", slot_party_type, spt_minorplanet),
                              (party_slot_eq, "$g_encountered_party", slot_center_has_manor, 0),
                                   ],
        "Build a Palace.",[(assign, "$g_improvement_type", slot_center_has_manor),
                          (jump_to_menu, "mnu_center_improve"),]),
       ("center_build_fish_pond",[(eq, reg6, 0),
-                                 (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
+                                 (party_slot_eq, "$g_encountered_party", slot_party_type, spt_minorplanet),
                                  (party_slot_eq, "$g_encountered_party", slot_center_has_fish_pond, 0),
                                   ],
        "Build a Industrial Factory.",[(assign, "$g_improvement_type", slot_center_has_fish_pond),
                              (jump_to_menu, "mnu_center_improve"),]),
       ("center_build_watch_tower",[(eq, reg6, 0),
-                                   (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
+                                   (party_slot_eq, "$g_encountered_party", slot_party_type, spt_minorplanet),
                                    (party_slot_eq, "$g_encountered_party", slot_center_has_watch_tower, 0),
                                   ],
        "Build a Radar Station.",[(assign, "$g_improvement_type", slot_center_has_watch_tower),
                                (jump_to_menu, "mnu_center_improve"),]),
       ("center_build_school",[(eq, reg6, 0),
-                              (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
+                              (party_slot_eq, "$g_encountered_party", slot_party_type, spt_minorplanet),
                               (party_slot_eq, "$g_encountered_party", slot_center_has_school, 0),
                                   ],
        "Build a Educational Facility.",[(assign, "$g_improvement_type", slot_center_has_school),
@@ -10355,7 +10355,7 @@ game_menus = [
        "Build a Communications Center.",[(assign, "$g_improvement_type", slot_center_has_messenger_post),
                                   (jump_to_menu, "mnu_center_improve"),]),
       ("center_build_prisoner_tower",[(eq, reg6, 0),
-                                      (this_or_next|party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
+                                      (this_or_next|party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
                                       (party_slot_eq, "$g_encountered_party", slot_party_type, spt_castle),
                                       (party_slot_eq, "$g_encountered_party", slot_center_has_prisoner_tower, 0),
                                        ],
@@ -10367,7 +10367,7 @@ game_menus = [
   ),
 
   (
-    "center_improve",menu_text_color(0xFF071423),
+    "center_improve",menu_text_color(0xFF000d2c),
     "{s19} As the party member with the highest engineer skill ({reg2}), {reg3?you reckon:{s3} reckons} that building the {s4} will cost you\
  {reg5} credits and will take {reg6} days.",
     "none",
@@ -10421,7 +10421,7 @@ game_menus = [
   ),
 
   (
-    "town_bandits_failed",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "town_bandits_failed",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s4} {s5}",
     "none",
     [
@@ -10450,7 +10450,7 @@ game_menus = [
   ),
 
   (
-    "town_bandits_succeeded",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "town_bandits_succeeded",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "The bandits fall before you as wheat to a scythe! Soon you stand alone in the streets\
  while most of your attackers lie unconscious, dead or dying.\
  Searching the bodies, you find a purse which must have belonged to a previous victim of these brutes.\
@@ -10477,7 +10477,7 @@ game_menus = [
 
   
    (
-    "village_steal_cattle_confirm",menu_text_color(0xFF071423),
+    "minorplanet_steal_cattle_confirm",menu_text_color(0xFF000d2c),
     "As the party member with the highest looting skill ({reg2}), {reg3?you reckon:{s1} reckons} that you can steal as many as {reg4} nerfs from the village's herd.",
     "none",
     [
@@ -10495,10 +10495,10 @@ game_menus = [
       (assign, reg4, reg0),
       ],
     [
-      ("village_steal_cattle_confirm",[],"Go on.",
+      ("minorplanet_steal_cattle_confirm",[],"Go on.",
        [
          (rest_for_hours_interactive, 3, 5, 1), #rest while attackable
-         (assign, "$auto_menu", "mnu_village_steal_cattle"),
+         (assign, "$auto_menu", "mnu_minorplanet_steal_cattle"),
          (change_screen_return),
          ]),
       ("forget_it",[],"Forget it.",[(change_screen_return)]),
@@ -10506,7 +10506,7 @@ game_menus = [
   ),
 
   (
-    "village_steal_cattle",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "minorplanet_steal_cattle",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s1}",
     "none",
     [
@@ -10545,26 +10545,26 @@ game_menus = [
   
 
    (
-    "village_take_food_confirm",menu_text_color(0xFF071423),
+    "minorplanet_take_food_confirm",menu_text_color(0xFF000d2c),
     "It will be difficult to force and threaten the peasants into giving their precious supplies. You think you will need at least one hour.",
     #TODO: mention looting skill?
     "none",
     [],
     [
-      ("village_take_food_confirm",[],"Go ahead.",
+      ("minorplanet_take_food_confirm",[],"Go ahead.",
        [
          (rest_for_hours_interactive, 1, 5, 0), #rest while not attackable
          (assign, "$auto_enter_town", "$current_town"),
          (assign, "$g_town_visit_after_rest", 1),
-         (assign, "$auto_enter_menu_in_center", "mnu_village_take_food"),
+         (assign, "$auto_enter_menu_in_center", "mnu_minorplanet_take_food"),
          (change_screen_return),
          ]),
-      ("forget_it",[],"Forget it.",[(jump_to_menu, "mnu_village_hostile_action")]),
+      ("forget_it",[],"Forget it.",[(jump_to_menu, "mnu_minorplanet_hostile_action")]),
     ],
   ),
 
   (
-    "village_take_food",menu_text_color(0xFF071423),
+    "minorplanet_take_food",menu_text_color(0xFF000d2c),
     "The villagers grudgingly bring out what they have for you.",
     "none",
     [
@@ -10576,7 +10576,7 @@ game_menus = [
          (lt, ":player_party_size", 6),
          (ge, ":villagers_party_size", 40),
          (neg|party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player"),
-         (jump_to_menu, "mnu_village_start_attack"),
+         (jump_to_menu, "mnu_minorplanet_start_attack"),
        (try_end),
     ],
     [
@@ -10591,10 +10591,10 @@ game_menus = [
              (call_script, "script_change_player_relation_with_center", "$current_town", -3),
            (try_end),
          (try_end),
-         (party_get_slot, ":village_lord", "$current_town", slot_mainplanet_lord),
+         (party_get_slot, ":minorplanet_lord", "$current_town", slot_mainplanet_lord),
          (try_begin),
-           (gt,  ":village_lord", 1),
-          (call_script, "script_change_player_relation_with_troop", ":village_lord", -1),
+           (gt,  ":minorplanet_lord", 1),
+          (call_script, "script_change_player_relation_with_troop", ":minorplanet_lord", -1),
           (try_end),
          (party_get_slot, ":merchant_troop", "$current_town", slot_mainplanet_elder),
          (party_get_skill_level, ":player_party_looting", "p_main_party", "skl_looting"),
@@ -10610,8 +10610,8 @@ game_menus = [
          (call_script, "script_objectionable_action", tmt_humanitarian, "str_steal_from_villagers"),
 #NPC companion changes end
 #Troop commentary changes begin
-#          (store_faction_of_party,":village_faction",  "$current_town"),
-          (call_script, "script_add_log_entry", logent_village_extorted, "trp_player",  "$current_town", -1, -1),
+#          (store_faction_of_party,":minorplanet_faction",  "$current_town"),
+          (call_script, "script_add_log_entry", logent_minorplanet_extorted, "trp_player",  "$current_town", -1, -1),
 #Troop commentary changes end          
 
          (jump_to_menu, "mnu_village"),
@@ -10624,7 +10624,7 @@ game_menus = [
 
 
   (
-    "village_start_attack",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "minorplanet_start_attack",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "Some of the angry villagers grab their tools and prepare to resist you.\
  It looks like you'll have a fight on your hands if you continue.",
     "none",
@@ -10636,7 +10636,7 @@ game_menus = [
        
        (try_begin),
          (gt, ":player_party_size", 25),
-         (jump_to_menu, "mnu_village_loot_no_resist"),
+         (jump_to_menu, "mnu_minorplanet_loot_no_resist"),
        (else_try),
          (this_or_next|eq, ":villagers_party_size", 0),
          (eq, "$g_battle_result", 1),
@@ -10648,14 +10648,14 @@ game_menus = [
            (gt, ":town_lord", 0),
            (call_script, "script_change_player_relation_with_troop", ":town_lord", -3),
          (try_end),
-         (jump_to_menu, "mnu_village_loot_no_resist"),
+         (jump_to_menu, "mnu_minorplanet_loot_no_resist"),
        (else_try),
          (eq, "$g_battle_result", -1),
-         (jump_to_menu, "mnu_village_loot_defeat"),
+         (jump_to_menu, "mnu_minorplanet_loot_defeat"),
        (try_end),
     ],
     [
-      ("village_raid_attack",[],"Charge them.",[
+      ("minorplanet_raid_attack",[],"Charge them.",[
           (store_random_in_range, ":enmity", -10, -5),
           (call_script, "script_change_player_relation_with_center", "$current_town", ":enmity"),
           (try_begin),
@@ -10667,11 +10667,11 @@ game_menus = [
           (set_battle_advantage, reg0),
           (set_party_battle_mode),
           (assign, "$g_battle_result", 0),
-          (assign, "$g_village_raid_evil", 1),
-          (set_jump_mission,"mt_village_raid"),
+          (assign, "$g_minorplanet_raid_evil", 1),
+          (set_jump_mission,"mt_minorplanet_raid"),
           (party_get_slot, ":scene_to_use", "$current_town", slot_spacestation_exterior),
           (jump_to_scene, ":scene_to_use"),
-          (assign, "$g_next_menu", "mnu_village_start_attack"),
+          (assign, "$g_next_menu", "mnu_minorplanet_start_attack"),
 
 ###NPC companion changes begin
            (call_script, "script_objectionable_action", tmt_humanitarian, "str_loot_village"),
@@ -10680,47 +10680,47 @@ game_menus = [
           (jump_to_menu, "mnu_battle_debrief"),
           (change_screen_mission),
           ]),
-      ("village_raid_leave",[],"Leave this planet alone.",[(change_screen_return)]),
+      ("minorplanet_raid_leave",[],"Leave this planet alone.",[(change_screen_return)]),
     ],
   ),
   
   (
-    "village_loot_no_resist",menu_text_color(0xFF071423),
+    "minorplanet_loot_no_resist",menu_text_color(0xFF000d2c),
     "The villagers here are few and frightened, and they quickly scatter and run before you.\
  The planet is at your mercy.",
     "none",
     [],
     [
-      ("village_loot",[], "Plunder the planet, then raze it.",
+      ("minorplanet_loot",[], "Plunder the planet, then raze it.",
        [
-          (call_script, "script_village_set_state", "$current_town", svs_being_raided),
+          (call_script, "script_minorplanet_set_state", "$current_town", svs_being_raided),
           (party_set_slot, "$current_town", slot_minorplanet_raided_by, "p_main_party"),
           (assign,"$g_player_raiding_village","$current_town"),
           (rest_for_hours, 3, 5, 1), #rest while attackable (3 hours will be extended by the trigger)
           (change_screen_return),
            ]),
-      ("village_raid_leave",[],"Leave this village alone.",[(change_screen_return)]),
+      ("minorplanet_raid_leave",[],"Leave this village alone.",[(change_screen_return)]),
     ],
   ),
   (
-    "village_loot_complete",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "minorplanet_loot_complete",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "On your orders your troops sack the village, pillaging everything of any value,\
  and then put the buildings to the torch. From the coins and valuables that are found, you get your share of {reg1} credits.",
     "none",
     [
-        (party_get_slot, ":village_lord", "$current_town", slot_mainplanet_lord),
+        (party_get_slot, ":minorplanet_lord", "$current_town", slot_mainplanet_lord),
         (try_begin),
-          (gt,  ":village_lord", 0),
-          (call_script, "script_change_player_relation_with_troop", ":village_lord", -5),
+          (gt,  ":minorplanet_lord", 0),
+          (call_script, "script_change_player_relation_with_troop", ":minorplanet_lord", -5),
         (try_end),
         (store_random_in_range, ":enmity", -40, -20),
         (call_script, "script_change_player_relation_with_center", "$current_town", ":enmity"),
 
-        (store_faction_of_party, ":village_faction", "$current_town"),
-        (store_relation, ":relation", ":village_faction", "fac_player_supporters_faction"),
+        (store_faction_of_party, ":minorplanet_faction", "$current_town"),
+        (store_relation, ":relation", ":minorplanet_faction", "fac_player_supporters_faction"),
         (try_begin),
           (lt, ":relation", 0),
-          (call_script, "script_change_player_relation_with_faction", ":village_faction", -3),
+          (call_script, "script_change_player_relation_with_faction", ":minorplanet_faction", -3),
         (try_end),
         (store_random_in_range, ":morale_increase", 10, 20),
         (call_script, "script_change_player_party_morale", ":morale_increase"),
@@ -10757,7 +10757,7 @@ game_menus = [
     ],
   ),
   (
-    "village_loot_defeat",menu_text_color(0xFF071423),
+    "minorplanet_loot_defeat",menu_text_color(0xFF000d2c),
     "Fighting with courage and determination, the villagers manage to hold together and drive off your forces.",
     "none",
     [],
@@ -10767,7 +10767,7 @@ game_menus = [
   ),
   
   (
-    "village_loot_continue",menu_text_color(0xFF071423),
+    "minorplanet_loot_continue",menu_text_color(0xFF000d2c),
     "Do you wish to continue looting this village?",
     "none",
     [],
@@ -10775,7 +10775,7 @@ game_menus = [
       ("disembark_yes",[],"Yes.",[ (rest_for_hours, 3, 5, 1), #rest while attackable (3 hours will be extended by the trigger)
                               (change_screen_return),
                               ]),
-      ("disembark_no",[],"No.",[(call_script, "script_village_set_state", "$current_town", 0),
+      ("disembark_no",[],"No.",[(call_script, "script_minorplanet_set_state", "$current_town", 0),
                             (party_set_slot, "$current_town", slot_minorplanet_raided_by, -1),
                             (assign, "$g_player_raiding_village", 0),
                             (change_screen_return)]),
@@ -10783,7 +10783,7 @@ game_menus = [
   ),
   
   (
-    "close",menu_text_color(0xFF071423),
+    "close",menu_text_color(0xFF000d2c),
     "Nothing.",
     "none",
     [
@@ -10793,7 +10793,7 @@ game_menus = [
   ),
   
   (
-    "center_tax",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "center_tax",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     #"You receive the accumulated rents and taxes of this fief, amounting to {reg1} credits.",
 	"You receive the accumulated rents and taxes of all your planets, amounting to {reg1} credits.",
     "none",
@@ -10829,7 +10829,7 @@ game_menus = [
       ("continue",[], "Continue...",
        [
            (try_begin),
-             (party_slot_eq, "$current_town", slot_party_type, spt_village),
+             (party_slot_eq, "$current_town", slot_party_type, spt_minorplanet),
              (jump_to_menu, "mnu_village"),
            (else_try),
              (jump_to_menu, "mnu_town"),
@@ -10839,7 +10839,7 @@ game_menus = [
   ),
 
   (
-    "town",menu_text_color(0xFF071423)|mnf_enable_hot_keys,
+    "town",menu_text_color(0xFF000d2c)|mnf_enable_hot_keys,
     "{s10}{s11}{s12}{s13}",
     "none",
     [
@@ -10926,7 +10926,7 @@ game_menus = [
         (try_end),
         
         (try_begin),
-          (party_slot_eq,"$current_town",slot_party_type, spt_town),
+          (party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
           (str_store_string, s60, s2),
           (party_get_slot, ":prosperity", "$current_town", slot_mainplanet_prosperity),
           (val_add, ":prosperity", 5),
@@ -10962,7 +10962,7 @@ game_menus = [
 
         (str_clear, s12),
         (try_begin),
-          (party_slot_eq,"$current_town",slot_party_type, spt_town),
+          (party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
           (party_get_slot, ":center_relation", "$current_town", slot_center_player_relation),
           (call_script, "script_describe_center_relation_to_s3", ":center_relation"),
           (assign, reg9, ":center_relation"),
@@ -10983,7 +10983,7 @@ game_menus = [
           (assign,"$town_nighttime",0),
         (else_try),
           (assign,"$town_nighttime",1),
-          (party_slot_eq,"$current_town",slot_party_type, spt_town),
+          (party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
           (str_store_string, s13, "str_town_nighttime"),
         (try_end),
 
@@ -10994,15 +10994,15 @@ game_menus = [
           (str_store_string, s13, "@{s13} A tournament will be held here soon."),
         (try_end),
 
-        (assign,"$castle_undefended",0),
-        (party_get_num_companions, ":castle_garrison_size", "p_collective_enemy"),
+        (assign,"$spacestation_undefended",0),
+        (party_get_num_companions, ":spacestation_garrison_size", "p_collective_enemy"),
         (try_begin),
-          (eq,":castle_garrison_size",0),
-          (assign,"$castle_undefended",1),
+          (eq,":spacestation_garrison_size",0),
+          (assign,"$spacestation_undefended",1),
         (try_end),
         ],
     [
-      ("castle_castle",[(party_slot_eq,"$current_town",slot_party_type, spt_castle)],"Go to the main hall.",
+      ("spacestation_castle",[(party_slot_eq,"$current_town",slot_party_type, spt_castle)],"Go to the main hall.",
        [
            (try_begin),
              (eq,"$all_doors_locked",1),
@@ -11028,10 +11028,10 @@ game_menus = [
         ]),
       
       ("town_castle",[
-          (party_slot_eq,"$current_town",slot_party_type, spt_town),
+          (party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
           (eq,"$entry_to_town_forbidden",0),
-#          (party_get_slot, ":castle_scene", "$current_town", slot_mainplanet_castle),
-#          (scene_slot_ge, ":castle_scene", slot_scene_visited, 1), #check if scene has been visited before to allow entry from menu. Otherwise scene will only be accessible from the town center.
+#          (party_get_slot, ":spacestation_scene", "$current_town", slot_mainplanet_castle),
+#          (scene_slot_ge, ":spacestation_scene", slot_scene_visited, 1), #check if scene has been visited before to allow entry from menu. Otherwise scene will only be accessible from the town center.
           ],"Go to the main hall.",
        [
            (try_begin),
@@ -11039,8 +11039,8 @@ game_menus = [
              (eq, "$sneaked_into_town", 1),
              (display_message,"str_door_locked",0xFFFFAAAA),
            (else_try),
-#             (party_get_slot, ":castle_scene", "$current_town", slot_mainplanet_castle),
-#             (scene_slot_eq, ":castle_scene", slot_scene_visited, 0),
+#             (party_get_slot, ":spacestation_scene", "$current_town", slot_mainplanet_castle),
+#             (scene_slot_eq, ":spacestation_scene", slot_scene_visited, 0),
 #             (display_message,"str_door_locked",0xFFFFAAAA),
 #           (else_try),
              (assign, "$town_entered", 1),
@@ -11049,7 +11049,7 @@ game_menus = [
         ], "Door to the main hall."),
       
       ("town_center",[
-          (party_slot_eq,"$current_town",slot_party_type, spt_town),
+          (party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
           (this_or_next|eq,"$entry_to_town_forbidden",0),
           (eq, "$sneaked_into_town",1)]
        #,"Take a walk around the streets.",
@@ -11083,13 +11083,13 @@ game_menus = [
 				 (assign,":troop_prison_guard","trp_bodyguard"),
 			   (try_end),
 			   #SW - modified how the faction is determined
-               #(faction_get_slot, ":troop_castle_guard", "$g_encountered_party_faction", slot_faction_castle_guard_troop),
-			   (faction_get_slot, ":troop_castle_guard", ":town_faction", slot_faction_castle_guard_troop),
+               #(faction_get_slot, ":troop_spacestation_guard", "$g_encountered_party_faction", slot_faction_spacestation_guard_troop),
+			   (faction_get_slot, ":troop_spacestation_guard", ":town_faction", slot_faction_spacestation_guard_troop),
 			   (try_begin),	#SW - added code incase there is no faction slot (ie. player faction)
-			     (le,":troop_castle_guard", 0),
-				 (assign,":troop_castle_guard","trp_bodyguard"),
+			     (le,":troop_spacestation_guard", 0),
+				 (assign,":troop_spacestation_guard","trp_bodyguard"),
 			   (try_end),			   
-               (set_visitor, 23, ":troop_castle_guard"),
+               (set_visitor, 23, ":troop_spacestation_guard"),
                (set_visitor, 24, ":troop_prison_guard"),
              (try_end),
              (faction_get_slot, ":tier_2_troop", ":town_faction", slot_faction_tier_2_troop),
@@ -11186,7 +11186,7 @@ game_menus = [
         ],"Door to the center."),
 
       ("town_tavern",[
-          (party_slot_eq,"$current_town",slot_party_type, spt_town),
+          (party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
           (this_or_next|eq,"$entry_to_town_forbidden",0),
           (eq, "$sneaked_into_town",1),
 #          (party_get_slot, ":scene", "$current_town", slot_mainplanet_tavern),
@@ -11270,8 +11270,8 @@ game_menus = [
              (try_begin),
                (neg|check_quest_active, "qst_eliminate_bandits_infesting_village"),
                (neg|check_quest_active, "qst_deal_with_bandits_at_lords_village"),
-               (assign, ":end_cond", villages_end),
-               (try_for_range, ":cur_village", villages_begin, ":end_cond"),
+               (assign, ":end_cond", minorplanet_end),
+               (try_for_range, ":cur_village", minorplanet_begin, ":end_cond"),
                  (party_slot_eq, ":cur_village", slot_minorplanet_bound_center, "$current_town"),
                  (party_slot_ge, ":cur_village", slot_minorplanet_infested_by_bandits, 1),
                  (neg|party_slot_eq, ":cur_village", slot_mainplanet_lord, "trp_player"),
@@ -11340,7 +11340,7 @@ game_menus = [
 #        ]),
       
       ("town_merchant",
-       [(party_slot_eq,"$current_town",slot_party_type, spt_town),
+       [(party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
            (eq, 1, 0),
            (eq,"$town_nighttime",0),
            (this_or_next|eq,"$entry_to_town_forbidden",0),
@@ -11373,7 +11373,7 @@ game_menus = [
         ],"Door to the shop."),
       ("town_arena",
        [
-		(party_slot_eq,"$current_town",slot_party_type, spt_town),
+		(party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
         (eq, "$sneaked_into_town", 0),
 #           (party_get_slot, ":scene", "$current_town", slot_mainplanet_arena),
 #           (scene_slot_eq,  ":scene", slot_scene_visited, 1), #check if scene has been visited before to allow entry from menu. Otherwise scene will only be accessible from the town center.
@@ -11424,10 +11424,10 @@ game_menus = [
 		#],"Door to the dungeon."),
 		],"Door to the prison."),
       
-      ("castle_inspect", [
+      ("spacestation_inspect", [
          (party_slot_eq,"$current_town",slot_party_type, spt_castle),
 #           (this_or_next|ge, "$g_encountered_party_relation", 0),
-#           (eq,"$castle_undefended",1),
+#           (eq,"$spacestation_undefended",1),
           ],
 		#SW - modified menu
        #"Take a walk around the courtyard.",
@@ -11435,8 +11435,8 @@ game_menus = [
        [
            (assign, "$talk_context", tc_town_talk),
            
-           (party_get_slot, ":cur_castle_exterior", "$current_town", slot_spacestation_exterior),
-           (modify_visitors_at_site,":cur_castle_exterior"),(reset_visitors),
+           (party_get_slot, ":cur_spacestation_exterior", "$current_town", slot_spacestation_exterior),
+           (modify_visitors_at_site,":cur_spacestation_exterior"),(reset_visitors),
 
            (try_begin),
              (neq, "$g_encountered_party_faction", "fac_player_supporters_faction"),
@@ -11482,14 +11482,14 @@ game_menus = [
            (try_end),
            (set_jump_entry,1),
            
-           (set_jump_mission,"mt_castle_visit"),
-           (jump_to_scene,":cur_castle_exterior"),
+           (set_jump_mission,"mt_spacestation_visit"),
+           (jump_to_scene,":cur_spacestation_exterior"),
            (change_screen_mission),
         #], "To the castle courtyard."),
 		], "To the site."),
       ("trade_with_merchants",
        [
-           (party_slot_eq,"$current_town",slot_party_type, spt_town)
+           (party_slot_eq,"$current_town",slot_party_type, spt_mainplanet)
         ],
          "Go to the marketplace.",
          [
@@ -11515,7 +11515,7 @@ game_menus = [
            (jump_to_menu, "mnu_center_manage"),
         ]),
 
-     ("castle_station_troops",
+     ("spacestation_station_troops",
       [
           (party_slot_eq,"$current_town",slot_mainplanet_lord, "trp_player"),
        ],
@@ -11525,11 +11525,11 @@ game_menus = [
           ]),
 
 
-      ("castle_wait",
+      ("spacestation_wait",
        [
 #           (party_slot_eq,"$current_town",slot_party_type, spt_castle),
            (this_or_next|ge, "$g_encountered_party_relation", 0),
-           (eq,"$castle_undefended",1),
+           (eq,"$spacestation_undefended",1),
            (assign, ":can_rest", 1),
            (str_clear, s1),
            (try_begin),
@@ -11571,7 +11571,7 @@ game_menus = [
 ##      ("rest_until_morning",
 ##       [
 ##           (this_or_next|ge, "$g_encountered_party_relation", 0),
-##           (eq,"$castle_undefended",1),
+##           (eq,"$spacestation_undefended",1),
 ##           (store_time_of_day,reg(1)),(neg|is_between,reg(1), 5, 18),
 ##           (eq, "$g_defending_against_siege", 0),
 ##        ],
@@ -11590,7 +11590,7 @@ game_menus = [
 ##      ("rest_until_evening",
 ##       [
 ##           (this_or_next|ge, "$g_encountered_party_relation", 0),
-##           (eq,"$castle_undefended",1),
+##           (eq,"$spacestation_undefended",1),
 ##           (store_time_of_day,reg(1)), (is_between,reg(1), 5, 18),
 ##           (eq, "$g_defending_against_siege", 0),
 ##        ],
@@ -11605,7 +11605,7 @@ game_menus = [
 ##           (change_screen_return),
 ##          ]),
       ("town_alley",
-       [(party_slot_eq,"$current_town",slot_party_type, spt_town),
+       [(party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
         (eq, "$cheat_mode", 1),
            ],
        "CHEAT: Go to the alley.",
@@ -11633,12 +11633,12 @@ game_menus = [
           ],"Leave Area."),
 #      ("siege_leave",[(eq, "$g_defending_against_siege", 1)],"Try to break out...",[(jump_to_menu,"mnu_siege_break_out")]),#TODO: Go to Menu here.
 
-      ("castle_cheat_interior",[(eq, "$cheat_mode", 1)], "CHEAT! Interior.",[
+      ("spacestation_cheat_interior",[(eq, "$cheat_mode", 1)], "CHEAT! Interior.",[
                                                        (set_jump_mission,"mt_ai_training"),
-                                                       (party_get_slot, ":castle_scene", "$current_town", slot_mainplanet_castle),
-                                                       (jump_to_scene,":castle_scene"),
+                                                       (party_get_slot, ":spacestation_scene", "$current_town", slot_mainplanet_castle),
+                                                       (jump_to_scene,":spacestation_scene"),
                                                        (change_screen_mission)]),
-      ("castle_cheat_town_exterior",[(eq, "$cheat_mode", 1)], "CHEAT! Exterior.",[
+      ("spacestation_cheat_town_exterior",[(eq, "$cheat_mode", 1)], "CHEAT! Exterior.",[
                                                        (try_begin),
                                                          (party_slot_eq,"$current_town",slot_party_type, spt_castle),
                                                          (party_get_slot, ":scene", "$current_town", slot_spacestation_exterior),
@@ -11648,12 +11648,12 @@ game_menus = [
                                                        (set_jump_mission,"mt_ai_training"),
                                                        (jump_to_scene,":scene"),
                                                        (change_screen_mission)]),
-      ("castle_cheat_dungeon",[(eq, "$cheat_mode", 1)], "CHEAT! Prison.",[
+      ("spacestation_cheat_dungeon",[(eq, "$cheat_mode", 1)], "CHEAT! Prison.",[
                                                        (set_jump_mission,"mt_ai_training"),
-                                                       (party_get_slot, ":castle_scene", "$current_town", slot_mainplanet_prison),
-                                                       (jump_to_scene,":castle_scene"),
+                                                       (party_get_slot, ":spacestation_scene", "$current_town", slot_mainplanet_prison),
+                                                       (jump_to_scene,":spacestation_scene"),
                                                        (change_screen_mission)]),
-      ("castle_cheat_town_walls",[(eq, "$cheat_mode", 1),(party_slot_eq,"$current_town",slot_party_type, spt_town),], "CHEAT! Town Walls.",[
+      ("spacestation_cheat_town_walls",[(eq, "$cheat_mode", 1),(party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),], "CHEAT! Town Walls.",[
                                                        (party_get_slot, ":scene", "$current_town", slot_mainplanet_walls),
                                                        (set_jump_mission,"mt_ai_training"),
                                                        (jump_to_scene,":scene"),
@@ -11667,7 +11667,7 @@ game_menus = [
          (call_script, "script_party_count_fit_for_battle","p_main_party"),
          (gt, reg(0), 1),
          (try_begin),
-           (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
+           (party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
            (assign, reg6, 1),
          (else_try),
            (assign, reg6, 0),
@@ -11676,7 +11676,7 @@ game_menus = [
        "CHEAT: Besiege the {reg6?town:castle}...",
        [
            (assign,"$g_player_besiege_town","$g_encountered_party"),
-           (jump_to_menu, "mnu_castle_besiege"),
+           (jump_to_menu, "mnu_spacestation_besiege"),
            ]),
 
 
@@ -11684,7 +11684,7 @@ game_menus = [
        [(jump_to_menu,"mnu_center_reports"),
            ]),
 
-      ("sail_from_port",[(party_slot_eq,"$current_town",slot_party_type, spt_town),
+      ("sail_from_port",[(party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
                          (eq, "$cheat_mode", 1),
 #                         (party_slot_eq,"$current_town",slot_mainplanet_near_shore, 1),
                          ], "CHEAT! Sail from port.",
@@ -11701,7 +11701,7 @@ game_menus = [
   ),
 
   (
-    "town_tournament_lost",menu_text_color(0xFF071423),
+    "town_tournament_lost",menu_text_color(0xFF000d2c),
     "You have been eliminated from the tournament.",
     "none",
     [
@@ -11714,7 +11714,7 @@ game_menus = [
   ),
 
   (
-    "town_tournament_won",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "town_tournament_won",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "You have won the tournament of {s3}! You are filled with pride as the crowd cheers your name.\
  In addition to honour, fame and glory, you earn a prize of {reg9} credits. {s8}",
     "none",
@@ -11749,7 +11749,7 @@ game_menus = [
   ),
   
   (
-    "town_tournament_won_by_another",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "town_tournament_won_by_another",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "As the only {reg3?fighter:man} to remain undefeated this day, {s1} wins the lists and the glory of this tournament.",
     "none",
     [   (call_script, "script_get_num_tournament_participants"),
@@ -11772,7 +11772,7 @@ game_menus = [
   ),
 
   (
-    "town_tournament",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "town_tournament",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s1}You are at tier {reg0} of the tournament, with {reg1} participants remaining. In the next round, there will be {reg2} teams with {reg3} {reg4?fighters:fighter} each.",
     "none",
     [
@@ -11872,8 +11872,8 @@ game_menus = [
 
            (party_get_slot, ":town_original_faction", "$current_town", slot_center_original_faction),
            (assign, ":town_index_within_faction", 0),
-           (assign, ":end_cond", towns_end),
-           (try_for_range, ":cur_town", towns_begin, ":end_cond"),
+           (assign, ":end_cond", mainplanets_end),
+           (try_for_range, ":cur_town", mainplanets_begin, ":end_cond"),
              (try_begin),
                (eq, ":cur_town", "$current_town"),
                (assign, ":end_cond", 0), #break
@@ -11969,7 +11969,7 @@ game_menus = [
   ),
 
   (
-    "tournament_withdraw_verify",menu_text_color(0xFF071423),
+    "tournament_withdraw_verify",menu_text_color(0xFF000d2c),
     "Are you sure you want to withdraw from the tournament?",
     "none",
     [],
@@ -11984,7 +11984,7 @@ game_menus = [
   ),
 
   (
-    "tournament_bet",menu_text_color(0xFF071423),
+    "tournament_bet",menu_text_color(0xFF000d2c),
     "The odds against you are {reg5} to {reg6}.{reg1? You have already bet {reg1} credits on yourself, and if you win, you will earn {reg2} credits.:} How much do you want to bet?",
     "none",
     [
@@ -12060,7 +12060,7 @@ game_menus = [
   ),
 
   (
-    "tournament_bet_confirm",menu_text_color(0xFF071423),
+    "tournament_bet_confirm",menu_text_color(0xFF000d2c),
     "If you bet {reg1} denars, you will earn {reg2} credits if you win the tournament. Is that all right?",
     "none",
     [
@@ -12087,7 +12087,7 @@ game_menus = [
   ),
   
   (
-    "tournament_participants",menu_text_color(0xFF071423),
+    "tournament_participants",menu_text_color(0xFF000d2c),
     "You ask one of the criers for the names of the tournament participants. They are:^{s11}",
     "none",
     [
@@ -12110,7 +12110,7 @@ game_menus = [
 
 
   (
-    "collect_taxes",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "collect_taxes",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "As the party member with the highest trade skill ({reg2}), {reg3?you expect:{s1} expects} that collecting taxes from here will take {reg4} days...",
     "none",
     [(call_script, "script_get_max_skill_of_player_party", "skl_trade"),
@@ -12126,7 +12126,7 @@ game_menus = [
      (try_end),
      (assign, ":tax_quest_expected_revenue", 3000),
      (try_begin),
-       (party_slot_eq, "$current_town", slot_party_type, spt_town),
+       (party_slot_eq, "$current_town", slot_party_type, spt_mainplanet),
        (assign, ":tax_quest_expected_revenue", 6000),
      (try_end),
 
@@ -12134,7 +12134,7 @@ game_menus = [
        (quest_slot_eq, "qst_collect_taxes", slot_quest_current_state, 0),
        (store_add, ":max_skill_plus_thirty", ":max_skill", 30),
        (try_begin),
-         (party_slot_eq, "$current_town", slot_party_type, spt_town),
+         (party_slot_eq, "$current_town", slot_party_type, spt_mainplanet),
          (store_div, "$qst_collect_taxes_total_hours", 24* 7 * 30, ":max_skill_plus_thirty"),
        (else_try),
          #Village
@@ -12185,7 +12185,7 @@ game_menus = [
         ]),
       ("collect_later", [], "Put it off until later.",
        [(try_begin),
-          (party_slot_eq, "$current_town", slot_party_type, spt_town),
+          (party_slot_eq, "$current_town", slot_party_type, spt_mainplanet),
           (jump_to_menu, "mnu_town"),
         (else_try),
           (jump_to_menu, "mnu_village"),
@@ -12195,7 +12195,7 @@ game_menus = [
   ),
 
   (
-    "collect_taxes_complete",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "collect_taxes_complete",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "You've collected {reg3} credits in taxes from {s3}. {s19} will be expecting you to take the money to him.",
     "none",
     [(str_store_party_name, s3, "$current_town"),
@@ -12216,7 +12216,7 @@ game_menus = [
   ),
 
   (
-    "collect_taxes_rebels_killed",menu_text_color(0xFF071423),
+    "collect_taxes_rebels_killed",menu_text_color(0xFF000d2c),
     "Your quick action and strong arm have successfully put down the revolt.\
  Surely, anyone with a mind to rebel against you will think better of it after this.",
     "none",
@@ -12230,7 +12230,7 @@ game_menus = [
   ),
 
   (
-    "collect_taxes_failed",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "collect_taxes_failed",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "You could collect only {reg3} credits as tax from {s3} before the revolt broke out.\
  {s1} won't be happy, but some silver will placate him better than nothing at all...",
     "none",
@@ -12250,7 +12250,7 @@ game_menus = [
   ),
 
   (
-    "collect_taxes_revolt_warning",menu_text_color(0xFF071423),
+    "collect_taxes_revolt_warning",menu_text_color(0xFF000d2c),
     "The people of {s3} are outraged at your demands and decry it as nothing more than extortion.\
  They're getting very restless, and they may react badly if you keep pressing them.",
     "none",
@@ -12269,14 +12269,14 @@ game_menus = [
   ),
 
   (
-    "collect_taxes_revolt",menu_text_color(0xFF071423),
+    "collect_taxes_revolt",menu_text_color(0xFF000d2c),
     "You are interrupted while collecting the taxes at {s3}. A large band of angry {reg9?peasants:townsmen} is marching nearer,\
  shouting about the exorbitant taxes and waving torches and weapons. It looks like they aim to fight you!",
     "none",
     [(str_store_party_name, s3, "$current_town"),
      (assign, reg9, 0),
      (try_begin),
-       (party_slot_eq, "$current_town", slot_party_type, spt_village),
+       (party_slot_eq, "$current_town", slot_party_type, spt_minorplanet),
        (assign, reg9, 1),
      (try_end),
      ],
@@ -12285,7 +12285,7 @@ game_menus = [
        [(set_jump_mission,"mt_back_alley_revolt"),
         (quest_get_slot, ":target_center", "qst_collect_taxes", slot_quest_target_center),
         (try_begin),
-          (party_slot_eq, ":target_center", slot_party_type, spt_town),
+          (party_slot_eq, ":target_center", slot_party_type, spt_mainplanet),
           (party_get_slot, ":town_alley", ":target_center", slot_mainplanet_alley),
         (else_try),
           (party_get_slot, ":town_alley", ":target_center", slot_spacestation_exterior),
@@ -12305,7 +12305,7 @@ game_menus = [
 
 # They must learn field discipline and the steadiness to follow orders in combat before they can be thought to use arms.",
   (
-    "train_peasants_against_bandits",menu_text_color(0xFF071423),
+    "train_peasants_against_bandits",menu_text_color(0xFF000d2c),
     "As the party member with the highest training skill ({reg2}), {reg3?you expect:{s1} expects} that getting some peasants ready for practice will take {reg4} hours.",
     "none",
     [(call_script, "script_get_max_skill_of_player_party", "skl_trainer"),
@@ -12341,7 +12341,7 @@ game_menus = [
   ), 
 
   (
-    "train_peasants_against_bandits_ready",menu_text_color(0xFF071423),
+    "train_peasants_against_bandits_ready",menu_text_color(0xFF000d2c),
     "You put the peasants through the basics of soldiering, discipline and obedience.\
  You think {reg0} of them {reg1?have:has} fully grasped the training and {reg1?are:is} ready for some practice.",
     "none",
@@ -12364,15 +12364,15 @@ game_menus = [
     [
       ("peasant_start_practice", [], "Start the practice fight.",
        [
-         (set_jump_mission,"mt_village_training"),
+         (set_jump_mission,"mt_minorplanet_training"),
          (quest_get_slot, ":target_center", "qst_train_peasants_against_bandits", slot_quest_target_center),
-         (party_get_slot, ":village_scene", ":target_center", slot_spacestation_exterior),
-         (modify_visitors_at_site, ":village_scene"),
+         (party_get_slot, ":minorplanet_scene", ":target_center", slot_spacestation_exterior),
+         (modify_visitors_at_site, ":minorplanet_scene"),
          (reset_visitors),
          (set_visitor, 0, "trp_player"),
          (set_visitors, 1, "trp_trainee_peasant", "$g_train_peasants_against_bandits_num_peasants"),
          (set_jump_entry, 11),
-         (jump_to_scene, ":village_scene"),
+         (jump_to_scene, ":minorplanet_scene"),
          (jump_to_menu, "mnu_train_peasants_against_bandits_training_result"),
          (music_set_situation, 0),
          (change_screen_mission),
@@ -12381,7 +12381,7 @@ game_menus = [
     ),
 
   (
-    "train_peasants_against_bandits_training_result",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "train_peasants_against_bandits_training_result",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s0}",
     "none",
     [
@@ -12412,7 +12412,7 @@ game_menus = [
     ),
 
   (
-    "train_peasants_against_bandits_attack",menu_text_color(0xFF071423),
+    "train_peasants_against_bandits_attack",menu_text_color(0xFF000d2c),
     "As you get ready to continue the training, a sentry from the planet runs up to you, shouting alarums.\
  The bandits have been spotted on the horizon, riding hard for {s3}.\
  The administrator begs that you organize your newly-trained militia and face them.",
@@ -12447,7 +12447,7 @@ game_menus = [
         (set_party_battle_mode),
         (set_battle_advantage, 0),
         (assign, "$g_battle_result", 0),
-        (set_jump_mission,"mt_village_attack_bandits"),
+        (set_jump_mission,"mt_minorplanet_attack_bandits"),
         (jump_to_scene, ":scene_to_use"),
         (assign, "$g_next_menu", "mnu_train_peasants_against_bandits_attack_result"),
         (jump_to_menu, "mnu_battle_debrief"),
@@ -12458,7 +12458,7 @@ game_menus = [
     ),
 
   (
-    "train_peasants_against_bandits_attack_result",menu_text_color(0xFF071423)|mnf_scale_picture|mnf_disable_all_keys,
+    "train_peasants_against_bandits_attack_result",menu_text_color(0xFF000d2c)|mnf_scale_picture|mnf_disable_all_keys,
     "{s9}",
     "none",
     [
@@ -12480,7 +12480,7 @@ game_menus = [
     [
       ("continue", [], "Continue...",
        [(try_begin),
-          (call_script, "script_village_set_state",  "$current_town", svs_looted),
+          (call_script, "script_minorplanet_set_state",  "$current_town", svs_looted),
           (party_set_slot, "$current_town", slot_minorplanet_raid_progress, 0),
           (party_set_slot, "$current_town", slot_minorplanet_recover_progress, 0),
           (call_script, "script_change_player_relation_with_center", "$g_encountered_party", -3),
@@ -12492,7 +12492,7 @@ game_menus = [
     ),
 
    (
-    "train_peasants_against_bandits_success",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "train_peasants_against_bandits_success",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "The bandits are broken!\
  Those few who remain run off with their tails between their legs,\
  terrified of the peasants and their new champion.\
@@ -12512,12 +12512,12 @@ game_menus = [
      (call_script, "script_add_log_entry", logent_helped_peasants, "trp_player",  "$current_town", -1, -1),
     ],
     [
-      ("village_bandits_defeated_accept",[],"Take it as your just due.",[(jump_to_menu, "mnu_auto_return_to_map"),
+      ("minorplanet_bandits_defeated_accept",[],"Take it as your just due.",[(jump_to_menu, "mnu_auto_return_to_map"),
                                                                          (party_get_slot, ":merchant_troop", "$current_town", slot_mainplanet_elder),
                                                                          (troop_sort_inventory, ":merchant_troop"),
                                                                          (change_screen_loot, ":merchant_troop"),
                                                                        ]),
-      ("village_bandits_defeated_cont",[],  "Refuse, stating that they need these items more than you do.",[(call_script, "script_change_player_relation_with_center", "$g_encountered_party", 3),
+      ("minorplanet_bandits_defeated_cont",[],  "Refuse, stating that they need these items more than you do.",[(call_script, "script_change_player_relation_with_center", "$g_encountered_party", 3),
                                                                                                              (call_script, "script_change_player_honor", 1),
                                                                                                                 (change_screen_map)]),
     ],
@@ -12525,7 +12525,7 @@ game_menus = [
 
 
   (
-    "disembark",menu_text_color(0xFF071423),
+    "disembark",menu_text_color(0xFF000d2c),
     "Do you wish to disembark?",
     "none",
     [],
@@ -12563,7 +12563,7 @@ game_menus = [
   ),
 
   (
-    "ship_reembark",menu_text_color(0xFF071423),
+    "ship_reembark",menu_text_color(0xFF000d2c),
     "Do you wish to embark?",
     "none",
     [],
@@ -12585,7 +12585,7 @@ game_menus = [
   ),
 
   (
-    "center_reports",menu_text_color(0xFF071423),
+    "center_reports",menu_text_color(0xFF000d2c),
     "Town Name: {s1}^Rent Income: {reg1} credits^Tariff Income: {reg2} credits^Food Stock: for {reg3} days",
     "none",
     [(party_get_slot, ":town_food_store", "$g_encountered_party", slot_party_food_store),
@@ -12603,7 +12603,7 @@ game_menus = [
       
       ("go_back_dot",[],"Go back.",
        [(try_begin),
-          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
+          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_minorplanet),
           (jump_to_menu, "mnu_village"),
         (else_try),
           (jump_to_menu, "mnu_town"),
@@ -12613,7 +12613,7 @@ game_menus = [
   ),
     
   (
-    "price_and_production",menu_text_color(0xFF071423),
+    "price_and_production",menu_text_color(0xFF000d2c),
     "Productions are:^{s1}^^Price factors are:^{s2}",
     "none",
     [(str_store_string, s1, "@ "),
@@ -12635,7 +12635,7 @@ game_menus = [
     [
       ("go_back_dot",[],"Go back.",
        [(try_begin),
-          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
+          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_minorplanet),
           (jump_to_menu, "mnu_village"),
         (else_try),
           (jump_to_menu, "mnu_town"),
@@ -12645,7 +12645,7 @@ game_menus = [
   ),
   
   (
-    "town_trade",menu_text_color(0xFF071423),
+    "town_trade",menu_text_color(0xFF000d2c),
     "You head towards the marketplace.",
     "none",
     [],
@@ -12709,7 +12709,7 @@ game_menus = [
   ),
 
   (
-    "town_trade_assessment_begin",menu_text_color(0xFF071423),
+    "town_trade_assessment_begin",menu_text_color(0xFF000d2c),
     "You overhear several discussions about the price of trade goods across the local area.\
  You listen closely, trying to work out the best deals around.",
     "none",
@@ -12731,7 +12731,7 @@ game_menus = [
   ),
 
   (
-    "town_trade_assessment",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+    "town_trade_assessment",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "As the party member with the highest trade skill ({reg2}), {reg3?you try to figure out:{s1} tries to figure out} the best goods to trade in. {s2}",
     "none",
     [(call_script, "script_get_max_skill_of_player_party", "skl_trade"),
@@ -12749,7 +12749,7 @@ game_menus = [
      (assign, ":best_result_3_town", -1),
      (assign, ":best_result_3_profit", 0),
 
-     (store_sub, ":num_towns", towns_end, towns_begin),
+     (store_sub, ":num_towns", mainplanets_end, mainplanets_begin),
      (store_sub, ":num_goods", trade_goods_end, trade_goods_begin),
      (store_mul, ":max_iteration", ":num_towns", ":num_goods"),
      (val_mul, ":max_iteration", ":max_skill"),
@@ -12759,7 +12759,7 @@ game_menus = [
 
      (try_for_range, ":unused", 0, ":max_iteration"),
        (store_random_in_range, ":random_trade_good", trade_goods_begin, trade_goods_end),
-       (store_random_in_range, ":random_town", towns_begin, towns_end),
+       (store_random_in_range, ":random_town", mainplanets_begin, mainplanets_end),
        (assign, ":already_best", 0),
        (try_begin),
          (eq, ":random_trade_good", ":best_result_1_item"),
@@ -12869,7 +12869,7 @@ game_menus = [
   ),
 
   (
-    "sneak_into_town_suceeded",menu_text_color(0xFF071423),
+    "sneak_into_town_suceeded",menu_text_color(0xFF000d2c),
     "Disguised in the garments of a citizen, you fool the guards and make your way onto the planet.",
     "none",
     [
@@ -12885,12 +12885,12 @@ game_menus = [
     ]
   ),
   (
-    "sneak_into_town_caught",menu_text_color(0xFF071423),
+    "sneak_into_town_caught",menu_text_color(0xFF000d2c),
     "As you try to sneak in, one of the guards recognizes you and raises the alarm!\
  You must flee back to your ship before all the guards come down on you!",
     "none",
     [
-       (assign,"$auto_menu","mnu_captivity_start_castle_surrender"),
+       (assign,"$auto_menu","mnu_captivity_start_spacestation_surrender"),
     ],
     [
       ("sneak_caught_fight",[],"Try to fight your way out!",
@@ -12922,19 +12922,19 @@ game_menus = [
            (set_visitor,3,reg(2)),
            (set_visitor,4,reg(3)),
            (set_jump_mission,"mt_sneak_caught_fight"),
- #          (jump_to_menu,"mnu_captivity_start_castle_defeat"),
+ #          (jump_to_menu,"mnu_captivity_start_spacestation_defeat"),
            (set_passage_menu,"mnu_town"),
            (jump_to_scene,":sneak_scene"),
            (change_screen_mission),
         ]),
       ("sneak_caught_surrender",[],"Surrender.",
        [
-           (jump_to_menu,"mnu_captivity_start_castle_surrender"),
+           (jump_to_menu,"mnu_captivity_start_spacestation_surrender"),
         ]),
     ]
   ),
   (
-    "sneak_into_town_caught_dispersed_guards",menu_text_color(0xFF071423),
+    "sneak_into_town_caught_dispersed_guards",menu_text_color(0xFF000d2c),
     "You drive off the guards and cover your trail before running off, easily losing your pursuers in the maze of streets.",
     "none",
     [],
@@ -12948,7 +12948,7 @@ game_menus = [
     ]
   ),
   (
-    "sneak_into_town_caught_ran_away",menu_text_color(0xFF071423),
+    "sneak_into_town_caught_ran_away",menu_text_color(0xFF000d2c),
     "You make your way back to your ship and quickly retreat to the safety of the stars.",
     "none",
     [],
@@ -12965,7 +12965,7 @@ game_menus = [
 
 
   (
-    "enemy_offer_ransom_for_prisoner",menu_text_color(0xFF071423),
+    "enemy_offer_ransom_for_prisoner",menu_text_color(0xFF000d2c),
     "{s2} offers you a sum of {reg12} credits if you are willing to sell him {s1}.",
     "none",
     [(call_script, "script_calculate_ransom_amount_for_troop", "$g_ransom_offer_troop"),
@@ -12994,7 +12994,7 @@ game_menus = [
 
 
   (
-    "training_ground",menu_text_color(0xFF071423),
+    "training_ground",menu_text_color(0xFF000d2c),
     "You approach a training field where you can practice your martial skills. What kind of training do you want to do?",
     "none",
     [
@@ -13090,7 +13090,7 @@ game_menus = [
     ]
   ),
 
-  ("training_ground_selection_details_melee_1",menu_text_color(0xFF071423),
+  ("training_ground_selection_details_melee_1",menu_text_color(0xFF000d2c),
    "How many opponents will you go against?",
    "none",
    [
@@ -13126,7 +13126,7 @@ game_menus = [
       ]
   ),
 
-  ("training_ground_selection_details_melee_2",menu_text_color(0xFF071423),
+  ("training_ground_selection_details_melee_2",menu_text_color(0xFF000d2c),
    "Choose your opponent #{reg1}:",
    "none",
    [
@@ -13185,7 +13185,7 @@ game_menus = [
 
 
   #SW - modified mounted training weapons
-  ("training_ground_selection_details_mounted",menu_text_color(0xFF071423),
+  ("training_ground_selection_details_mounted",menu_text_color(0xFF000d2c),
    "What kind of weapon do you want to train with?",
    "none",
    [],
@@ -13214,7 +13214,7 @@ game_menus = [
   ),
 
 
-  ("training_ground_selection_details_ranged_1",menu_text_color(0xFF071423),
+  ("training_ground_selection_details_ranged_1",menu_text_color(0xFF000d2c),
    "What kind of ranged weapon do you want to train with?",
    "none",
    [],
@@ -13246,7 +13246,7 @@ game_menus = [
   ),
 
 
-  ("training_ground_selection_details_ranged_2",menu_text_color(0xFF071423),
+  ("training_ground_selection_details_ranged_2",menu_text_color(0xFF000d2c),
    "What range do you want to practice at?",
    "none",
    [],
@@ -13287,7 +13287,7 @@ game_menus = [
   ),
 
 
-  ("training_ground_description",menu_text_color(0xFF071423),
+  ("training_ground_description",menu_text_color(0xFF000d2c),
    "{s0}",
    "none",
    [],
@@ -13302,7 +13302,7 @@ game_menus = [
       ]
   ),
 
-  ("training_ground_training_result",menu_text_color(0xFF071423)|mnf_disable_all_keys,
+  ("training_ground_training_result",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
    "{s7}{s2}",
    "none",
    [
@@ -13403,7 +13403,7 @@ game_menus = [
       ]
    ),
   
-  ("marshall_selection_candidate_ask",menu_text_color(0xFF071423),
+  ("marshall_selection_candidate_ask",menu_text_color(0xFF000d2c),
    "{s15} will soon select a new marshall for {s23}. Some of the lords have suggested your name as a likely candidate.",
    "none",
    [
@@ -13462,7 +13462,7 @@ game_menus = [
 #####################################################################
 #####################################################################
   (
-    "captivity_avoid_wilderness",menu_text_color(0xFF071423),
+    "captivity_avoid_wilderness",menu_text_color(0xFF000d2c),
     "Suddenly all the world goes black around you.\
  Many hours later you regain your conciousness and find yourself at the spot you fell.\
  Your enemies must have taken you up for dead and left you there.\
@@ -13476,7 +13476,7 @@ game_menus = [
   ),
 
   (
-    "captivity_start_wilderness",menu_text_color(0xFF071423),
+    "captivity_start_wilderness",menu_text_color(0xFF000d2c),
     "Stub",
     "none",
     [
@@ -13492,7 +13492,7 @@ game_menus = [
   ),
   
   (
-    "captivity_start_wilderness_surrender",menu_text_color(0xFF071423),
+    "captivity_start_wilderness_surrender",menu_text_color(0xFF000d2c),
     "Stub",
     "none",
     [
@@ -13504,7 +13504,7 @@ game_menus = [
     []
   ),
   (
-    "captivity_start_wilderness_defeat",menu_text_color(0xFF071423),
+    "captivity_start_wilderness_defeat",menu_text_color(0xFF000d2c),
     "Your enemies take you prisoner.",
     "none",
     [
@@ -13516,44 +13516,44 @@ game_menus = [
     []
   ),
   (
-    "captivity_start_castle_surrender",menu_text_color(0xFF071423),
+    "captivity_start_spacestation_surrender",menu_text_color(0xFF000d2c),
     "Stub",
     "none",
     [
        (assign, "$g_player_is_captive", 1),
        (assign,"$auto_menu",-1),
        (assign, "$capturer_party", "$g_encountered_party"),
-       (jump_to_menu, "mnu_captivity_castle_taken_prisoner"),
+       (jump_to_menu, "mnu_captivity_spacestation_taken_prisoner"),
       ],
     []
   ),
   (
-    "captivity_start_castle_defeat",menu_text_color(0xFF071423),
+    "captivity_start_spacestation_defeat",menu_text_color(0xFF000d2c),
     "Stub",
     "none",
     [
        (assign, "$g_player_is_captive", 1),
        (assign,"$auto_menu",-1),
        (assign, "$capturer_party", "$g_encountered_party"),
-       (jump_to_menu, "mnu_captivity_castle_taken_prisoner"),
+       (jump_to_menu, "mnu_captivity_spacestation_taken_prisoner"),
       ],
     []
   ),
   (
-    "captivity_start_under_siege_defeat",menu_text_color(0xFF071423),
+    "captivity_start_under_siege_defeat",menu_text_color(0xFF000d2c),
     "Your enemies take you prisoner.",
     "none",
     [
        (assign, "$g_player_is_captive", 1),
        (assign,"$auto_menu",-1),
        (assign, "$capturer_party", "$g_encountered_party"),
-       (jump_to_menu, "mnu_captivity_castle_taken_prisoner"),
+       (jump_to_menu, "mnu_captivity_spacestation_taken_prisoner"),
     ],
     []
   ),
   
   (
-    "captivity_wilderness_taken_prisoner",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "captivity_wilderness_taken_prisoner",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "Your enemies take you prisoner.",
     "none",
     [
@@ -13573,10 +13573,10 @@ game_menus = [
            (store_faction_of_party, ":victorious_faction", "$g_encountered_party"),
            (troop_set_slot, ":npc", slot_troop_playerparty_history_string, ":victorious_faction"),
            (troop_set_health, ":npc", 100),
-           (store_random_in_range, ":rand_town", towns_begin, towns_end),
+           (store_random_in_range, ":rand_town", mainplanets_begin, mainplanets_end),
            (troop_set_slot, ":npc", slot_troop_cur_center, ":rand_town"),
            (assign, ":nearest_town_dist", 1000),
-           (try_for_range, ":town_no", towns_begin, towns_end),
+           (try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
              (store_faction_of_party, ":town_fac", ":town_no"),
              (store_relation, ":reln", ":town_fac", "fac_player_faction"),
              (ge, ":reln", 0),
@@ -13598,14 +13598,14 @@ game_menus = [
       ]
   ),
   (
-    "captivity_wilderness_check",menu_text_color(0xFF071423),
+    "captivity_wilderness_check",menu_text_color(0xFF000d2c),
     "stub",
     "none",
     [(jump_to_menu,"mnu_captivity_end_wilderness_escape")],
     []
   ),
   (
-    "captivity_end_wilderness_escape",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "captivity_end_wilderness_escape",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "After painful days of being dragged about as a prisoner, you find a chance and escape from your captors!",
     "none",
     [
@@ -13635,7 +13635,7 @@ game_menus = [
     ]
   ),
   (
-    "captivity_castle_taken_prisoner",menu_text_color(0xFF071423),
+    "captivity_spacestation_taken_prisoner",menu_text_color(0xFF000d2c),
     "You are quickly surrounded by guards who take away your weapons. With curses and insults, they throw you into the dungeon where you must while away the miserable days of your captivity.",
     "none",
     [
@@ -13654,13 +13654,13 @@ game_menus = [
            (store_random_in_range, ":random_hours", 16, 22),
            (call_script, "script_event_player_captured_as_prisoner"),
            (call_script, "script_stay_captive_for_hours", ":random_hours"),
-           (assign,"$auto_menu", "mnu_captivity_castle_check"),
+           (assign,"$auto_menu", "mnu_captivity_spacestation_check"),
            (change_screen_return)
         ]),
     ]
   ),
   (
-    "captivity_rescue_lord_taken_prisoner",menu_text_color(0xFF071423),
+    "captivity_rescue_lord_taken_prisoner",menu_text_color(0xFF000d2c),
     "You remain in disguise for as long as possible before revealing yourself.\
  The guards are outraged and beat you savagely before throwing you back into the cell for God knows how long...",
     "none",
@@ -13680,13 +13680,13 @@ game_menus = [
            (store_random_in_range, ":random_hours", 16, 22),
            (call_script, "script_event_player_captured_as_prisoner"),
            (call_script, "script_stay_captive_for_hours", ":random_hours"),
-           (assign,"$auto_menu", "mnu_captivity_castle_check"),
+           (assign,"$auto_menu", "mnu_captivity_spacestation_check"),
            (change_screen_return),
         ]),
     ]
   ),
   (
-    "captivity_castle_check",menu_text_color(0xFF071423),
+    "captivity_spacestation_check",menu_text_color(0xFF000d2c),
     "stub",
     "none",
     [
@@ -13702,13 +13702,13 @@ game_menus = [
           (lt, reg(7), 7),
           (jump_to_menu,"mnu_captivity_end_exchanged_with_prisoner"),
         (else_try),
-          (jump_to_menu,"mnu_captivity_castle_remain"),
+          (jump_to_menu,"mnu_captivity_spacestation_remain"),
         (try_end),
     ],
     []
   ),
   (
-    "captivity_end_exchanged_with_prisoner",menu_text_color(0xFF071423),
+    "captivity_end_exchanged_with_prisoner",menu_text_color(0xFF000d2c),
     "After days of imprisonment, you are finally set free when your captors exchange you with another prisoner.",
     "none",
     [
@@ -13731,7 +13731,7 @@ game_menus = [
     ]
   ),
   (
-    "captivity_end_propose_ransom",menu_text_color(0xFF071423),
+    "captivity_end_propose_ransom",menu_text_color(0xFF000d2c),
     "You spend long hours in the sunless dank of the dungeon, more than you can count.\
  Suddenly one of your captors enters your cell with an offer;\
  he proposes to free you in return for {reg5} credits of your hidden wealth. You decide to...",
@@ -13764,13 +13764,13 @@ game_menus = [
            (assign, "$g_player_is_captive", 1),
            (store_random_in_range, reg(8), 16, 22),
            (call_script, "script_stay_captive_for_hours", reg8),
-           (assign,"$auto_menu", "mnu_captivity_castle_check"),
+           (assign,"$auto_menu", "mnu_captivity_spacestation_check"),
            (change_screen_return),
         ]),
     ]
   ),
   (
-    "captivity_castle_remain",menu_text_color(0xFF071423)|mnf_scale_picture|mnf_disable_all_keys,
+    "captivity_spacestation_remain",menu_text_color(0xFF000d2c)|mnf_scale_picture|mnf_disable_all_keys,
     "More days pass in the darkness of your cell. You get through them as best you can,\
  enduring the kicks and curses of the guards, watching your underfed body waste away more and more...",
     "none",
@@ -13784,7 +13784,7 @@ game_menus = [
         (try_end),
         (store_random_in_range, ":random_hours", 16, 22),
         (call_script, "script_stay_captive_for_hours", ":random_hours"),
-        (assign,"$auto_menu", "mnu_captivity_castle_check"),
+        (assign,"$auto_menu", "mnu_captivity_spacestation_check"),
         
     ],
     [
@@ -13797,7 +13797,7 @@ game_menus = [
   ),
 
   (
-    "kingdom_army_quest_report_to_army",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "kingdom_army_quest_report_to_army",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "{s8} sends word that he wishes you to join his new military campaign.\
  You need to bring at least {reg13} troops to the army,\
  and are instructed to raise more men with all due haste if you do not have enough.",
@@ -13832,7 +13832,7 @@ game_menus = [
   ),
 
   (
-    "kingdom_army_quest_messenger",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "kingdom_army_quest_messenger",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "{s8} sends word that he wishes to speak with you about a task he needs performed.\
  He requests you to come and see him as soon as possible.",
     "none",
@@ -13849,7 +13849,7 @@ game_menus = [
   ),
 
   (
-    "kingdom_army_quest_join_siege_order",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "kingdom_army_quest_join_siege_order",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "{s8} sends word that you are to join the siege of {s9} in preparation for a full assault.\
  Your troops are to take {s9} at all costs.",
     "none",
@@ -13877,7 +13877,7 @@ game_menus = [
   ),
 
   (
-    "kingdom_army_follow_failed",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "kingdom_army_follow_failed",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "You have disobeyed orders and failed to follow {s8}. In anger he has disbanded you from the army,\
  and sends a stern warning that your actions will not be forgotten.",
     "none",
@@ -13897,7 +13897,7 @@ game_menus = [
 
 
   (
-    "invite_player_to_faction_without_center",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "invite_player_to_faction_without_center",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "You receive an offer of vassalage!^^\
  {s8} of {s9} has sent a royal herald to bring you an invititation in his own hand.\
  You would be granted the honour of becoming a vassal {lord/lady} of {s9},\
@@ -13938,7 +13938,7 @@ game_menus = [
   
 
   (
-    "invite_player_to_faction",menu_text_color(0xFF071423)|mnf_scale_picture,
+    "invite_player_to_faction",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "You receive an offer of vassalage!^^\
  {s8} of {s9} has sent a royal herald to bring you an invititation in his own hand.\
  You would be granted the honour of becoming a vassal {lord/lady} of {s9},\
@@ -13978,7 +13978,7 @@ game_menus = [
   ),
   
   (
-    "invite_player_to_faction_accepted",menu_text_color(0xFF071423),
+    "invite_player_to_faction_accepted",menu_text_color(0xFF000d2c),
     "In order to become a vassal, you must swear an oath of homage to {s3}.\
  You shall have to find him and give him your oath in person. {s5}",
     "none",
@@ -13995,7 +13995,7 @@ game_menus = [
   ),
 
   (
-    "question_peace_offer",menu_text_color(0xFF071423),
+    "question_peace_offer",menu_text_color(0xFF000d2c),
     "You Receive a Peace Offer^^{s1} offers you a peace agreement. What is your answer?",
     "none",
     [
@@ -14021,7 +14021,7 @@ game_menus = [
   ),
 
   (
-    "notification_player_faction_active",menu_text_color(0xFF071423),
+    "notification_player_faction_active",menu_text_color(0xFF000d2c),
     "You now posess land in your name without being tied to any kingdom, as a masterless warlord who knows no higher authority.\
  Enjoy this freedom, but know that the kings of the land will not look to you kindly and will make every attempt to dispose of you.\
  You may find life very difficult without the protection of a kingdom.",
@@ -14041,7 +14041,7 @@ game_menus = [
   ),  
 
   (
-    "notification_player_faction_deactive",menu_text_color(0xFF071423),
+    "notification_player_faction_deactive",menu_text_color(0xFF000d2c),
     "You no longer hold any land.",
     "none",
     [
@@ -14059,7 +14059,7 @@ game_menus = [
   ),
 
   (
-    "notification_center_under_siege",menu_text_color(0xFF071423),
+    "notification_center_under_siege",menu_text_color(0xFF000d2c),
     "{s1} has been besieged by {s2} of {s3}!",
     "none",
     [
@@ -14081,7 +14081,7 @@ game_menus = [
   ),  
 
   (
-    "notification_village_raided",menu_text_color(0xFF071423),
+    "notification_minorplanet_raided",menu_text_color(0xFF000d2c),
     #"Enemies have Laid Waste to a Fief^^{s1} has been raided by {s2} of {s3}!",
 	"Enemies have Laid Waste to a territory.^^{s1} has been raided by {s2} of {s3}!",
     "none",
@@ -14104,7 +14104,7 @@ game_menus = [
   ),  
 
   (
-    "notification_village_raid_started",menu_text_color(0xFF071423),
+    "notification_minorplanet_raid_started",menu_text_color(0xFF000d2c),
     "Your planet is under Attack!^^{s2} of {s3} is laying waste to {s1}.",
     "none",
     [
@@ -14126,7 +14126,7 @@ game_menus = [
   ),
 
   (
-    "notification_one_faction_left",menu_text_color(0xFF071423),
+    "notification_one_faction_left",menu_text_color(0xFF000d2c),
     "Calradia Conquered by One Kingdom^^{s1} has defeated all rivals and stands as the sole kingdom.",
     "none",
     [
@@ -14136,7 +14136,7 @@ game_menus = [
       (position_set_y, pos0, 30),
       (position_set_z, pos0, 170),
       (try_begin),
-        (is_between, "$g_notification_menu_var1", "fac_kingdom_1", kingdoms_end), #Excluding player kingdom
+        (is_between, "$g_notification_menu_var1", "fac_kingdom_1", factions_end), #Excluding player kingdom
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_for_menu", "$g_notification_menu_var1", pos0),
       (else_try),
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "$g_notification_menu_var1", pos0),
@@ -14150,7 +14150,7 @@ game_menus = [
   ),
   
   (
-    "notification_oath_renounced_faction_defeated",menu_text_color(0xFF071423),
+    "notification_oath_renounced_faction_defeated",menu_text_color(0xFF000d2c),
     "Your Old Faction was Defeated^^You won the battle against {s1}! This ends your struggle which started after you renounced your oath to them.",
     "none",
     [
@@ -14160,7 +14160,7 @@ game_menus = [
       (position_set_y, pos0, 30),
       (position_set_z, pos0, 170),
       (try_begin),
-        (is_between, "$g_notification_menu_var1", "fac_kingdom_1", kingdoms_end), #Excluding player kingdom
+        (is_between, "$g_notification_menu_var1", "fac_kingdom_1", factions_end), #Excluding player kingdom
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_for_menu", "$g_notification_menu_var1", pos0),
       (else_try),
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "$g_notification_menu_var1", pos0),
@@ -14174,7 +14174,7 @@ game_menus = [
   ),
 
   (
-    "notification_center_lost",menu_text_color(0xFF071423),
+    "notification_center_lost",menu_text_color(0xFF000d2c),
     "An Estate was Lost^^You have lost {s1} to {s2}.",
     "none",
     [
@@ -14195,7 +14195,7 @@ game_menus = [
 
 
   (
-    "notification_troop_left_players_faction",menu_text_color(0xFF071423),
+    "notification_troop_left_players_faction",menu_text_color(0xFF000d2c),
     "Betrayal!^^{s1} has left {s2} and joined {s3}.",
     "none",
     [
@@ -14216,7 +14216,7 @@ game_menus = [
   ),
 
   (
-    "notification_troop_joined_players_faction",menu_text_color(0xFF071423),
+    "notification_troop_joined_players_faction",menu_text_color(0xFF000d2c),
     "Good news!^^ {s1} has left {s2} and joined {s3}.",
     "none",
     [
@@ -14237,7 +14237,7 @@ game_menus = [
   ),
 
   (
-    "notification_war_declared",menu_text_color(0xFF071423),
+    "notification_war_declared",menu_text_color(0xFF000d2c),
     "Declaration of War^^{s1} has declared war against {s2}!",
     "none",
     [
@@ -14257,8 +14257,8 @@ game_menus = [
       (position_set_x, pos0, 65),
       (position_set_y, pos0, 30),
       (position_set_z, pos0, 170),
-      (store_sub, ":faction_1", "$g_notification_menu_var1", kingdoms_begin),
-      (store_sub, ":faction_2", "$g_notification_menu_var2", kingdoms_begin),
+      (store_sub, ":faction_1", "$g_notification_menu_var1", factions_begin),
+      (store_sub, ":faction_2", "$g_notification_menu_var2", factions_begin),
       (val_mul, ":faction_1", 128),
       (val_add, ":faction_1", ":faction_2"),
       (set_game_menu_tableau_mesh, "tableau_2_factions_mesh", ":faction_1", pos0),
@@ -14271,7 +14271,7 @@ game_menus = [
   ),
 
   (
-    "notification_peace_declared",menu_text_color(0xFF071423),
+    "notification_peace_declared",menu_text_color(0xFF000d2c),
     "Peace Agreement^^{s1} and {s2} have made peace!",
     "none",
     [
@@ -14281,8 +14281,8 @@ game_menus = [
       (position_set_x, pos0, 65),
       (position_set_y, pos0, 30),
       (position_set_z, pos0, 170),
-      (store_sub, ":faction_1", "$g_notification_menu_var1", kingdoms_begin),
-      (store_sub, ":faction_2", "$g_notification_menu_var2", kingdoms_begin),
+      (store_sub, ":faction_1", "$g_notification_menu_var1", factions_begin),
+      (store_sub, ":faction_2", "$g_notification_menu_var2", factions_begin),
       (val_mul, ":faction_1", 128),
       (val_add, ":faction_1", ":faction_2"),
       (set_game_menu_tableau_mesh, "tableau_2_factions_mesh", ":faction_1", pos0),
@@ -14295,7 +14295,7 @@ game_menus = [
   ),
   
   (
-    "notification_faction_defeated",menu_text_color(0xFF071423),
+    "notification_faction_defeated",menu_text_color(0xFF000d2c),
     "Faction Eliminated^^{s1} is no more!",
     "none",
     [
@@ -14305,7 +14305,7 @@ game_menus = [
       (position_set_y, pos0, 30),
       (position_set_z, pos0, 170),
       (try_begin),
-        (is_between, "$g_notification_menu_var1", "fac_kingdom_1", kingdoms_end), #Excluding player kingdom
+        (is_between, "$g_notification_menu_var1", "fac_kingdom_1", factions_end), #Excluding player kingdom
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_for_menu", "$g_notification_menu_var1", pos0),
       (else_try),
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "$g_notification_menu_var1", pos0),
@@ -14340,7 +14340,7 @@ game_menus = [
            (troop_set_slot, "$supported_pretender", slot_troop_occupation, slto_kingdom_hero),
            (party_remove_members, "p_main_party", "$supported_pretender", 1),
            (call_script, "script_set_player_relation_with_faction", "$g_notification_menu_var1", 0),
-           (try_for_range, ":cur_kingdom", kingdoms_begin, kingdoms_end),
+           (try_for_range, ":cur_kingdom", factions_begin, factions_end),
              (faction_slot_eq, ":cur_kingdom", slot_faction_state, sfs_active),
              (neq, ":cur_kingdom", "$g_notification_menu_var1"),
              (store_relation, ":reln", ":cur_kingdom", "fac_player_supporters_faction"),
@@ -14358,7 +14358,7 @@ game_menus = [
 
   
   (
-    "notification_rebels_switched_to_faction",menu_text_color(0xFF071423),
+    "notification_rebels_switched_to_faction",menu_text_color(0xFF000d2c),
     "Rebellion Success^^ Your rebellion is victorious! Your faction now has the sole claim to the title of {s11}, with {s12} as the single ruler.",
     "none",
     [
@@ -14369,7 +14369,7 @@ game_menus = [
       (position_set_y, pos0, 30),
       (position_set_z, pos0, 170),
       (try_begin),
-        (is_between, "$g_notification_menu_var1", "fac_kingdom_1", kingdoms_end), #Excluding player kingdom
+        (is_between, "$g_notification_menu_var1", "fac_kingdom_1", factions_end), #Excluding player kingdom
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_for_menu", "$g_notification_menu_var1", pos0),
       (else_try),
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "$g_notification_menu_var1", pos0),
@@ -14387,7 +14387,7 @@ game_menus = [
 
 
     (
-    "kill_local_merchant_begin",menu_text_color(0xFF071423),
+    "kill_local_merchant_begin",menu_text_color(0xFF000d2c),
     "You spot your victim and follow him, observing as he turns a corner into a dark alley.\
  This will surely be your best opportunity to attack him.",
     "none",
@@ -14409,7 +14409,7 @@ game_menus = [
   ),
 
   (
-    "auto_return_to_map",menu_text_color(0xFF071423),
+    "auto_return_to_map",menu_text_color(0xFF000d2c),
     "stub",
     "none",
     [(change_screen_map)],
@@ -14424,7 +14424,7 @@ game_menus = [
 
 # Menu 1: Location Choice
   (
-    "custom_battle_config_1",menu_text_color(0xFF071423),
+    "custom_battle_config_1",menu_text_color(0xFF000d2c),
 	"Please choose the location for this battle.^{s1}",
 	"none",
 	[(try_begin),
@@ -14506,7 +14506,7 @@ game_menus = [
   
 # Menu 2: Teams Choice
   (
-    "custom_battle_config_2",menu_text_color(0xFF071423),
+    "custom_battle_config_2",menu_text_color(0xFF000d2c),
 	"Please choose the type of battle.^You have chosen: {s1}",
 	"none",
 	[
@@ -14611,7 +14611,7 @@ game_menus = [
 	]
   ),
   (
-    "custom_battle_config_3",menu_text_color(0xFF071423),
+    "custom_battle_config_3",menu_text_color(0xFF000d2c),
 	"Please choose the faction for army {reg1}.^Your choice: {s1}",
 	"none",
 	[(assign,reg1,"$g_custom_battle_faction_to_edit"),],
@@ -14656,7 +14656,7 @@ game_menus = [
   ),
   
   (
-    "custom_battle_config_main_class",menu_text_color(0xFF071423),
+    "custom_battle_config_main_class",menu_text_color(0xFF000d2c),
 	"Please choose the main class of your character. (This determines your choice of subclasses)",
 	"none",
 	[],
@@ -14684,7 +14684,7 @@ game_menus = [
   ),
   
 # (
-	# "custom_battle_custom_class_1",menu_text_color(0xFF071423),
+	# "custom_battle_custom_class_1",menu_text_color(0xFF000d2c),
 	# "Choose your body armour",
 	# "none",
 	# [],
@@ -14718,7 +14718,7 @@ game_menus = [
 	# ),
 
 # (
-	# "custom_battle_custom_class_2",menu_text_color(0xFF071423),
+	# "custom_battle_custom_class_2",menu_text_color(0xFF000d2c),
 	# "Choose your boots",
 	# "none",
 	# [],
@@ -14746,7 +14746,7 @@ game_menus = [
 	# ]
 	# ),
 # (
-	# "custom_battle_custom_class_3",menu_text_color(0xFF071423),
+	# "custom_battle_custom_class_3",menu_text_color(0xFF000d2c),
 	# "Choose your gauntlets",
 	# "none",
 	# [],
@@ -14774,7 +14774,7 @@ game_menus = [
 	# ]
 	# ),
 # (
-	# "custom_battle_custom_class_4",menu_text_color(0xFF071423),
+	# "custom_battle_custom_class_4",menu_text_color(0xFF000d2c),
 	# "Choose weapon one",
 	# "none",
 	# [],
@@ -14802,7 +14802,7 @@ game_menus = [
 	# ]
 	# ),
   (
-    "custom_battle_config_class",menu_text_color(0xFF071423),
+    "custom_battle_config_class",menu_text_color(0xFF000d2c),
 	"Please choose the sub class of your character. (This determines your skills and equipment)",
 	"none",
 	[],
@@ -14921,7 +14921,7 @@ game_menus = [
   ),
 # Set troops for each party
   (
-   "custom_battle_config_4",menu_text_color(0xFF071423),
+   "custom_battle_config_4",menu_text_color(0xFF000d2c),
 	"Select the troops for army {reg11} (Left CTRL + Left Click removes troops, Left Shift + Left Click adds five troops and Left Shift + Left Control + Left Click removes five troops.)",
 	"none",
 	[
@@ -15905,7 +15905,7 @@ game_menus = [
 	  ("clone_commander",
 	  [(troop_get_slot,reg(12),"trp_custom_battle_fac_store",reg(11)),
 	  (eq,reg(12),5)],
-	  "Clone Trooper Commander ({reg6})",
+	  "Clone Trooper Commander ({reg5})",
 	  [(assign,":troop_slot",5),
 	  (troop_get_slot,"$g_custom_battle_current_troop_number","$troop_store",":troop_slot"),
 	  (try_begin),
@@ -15929,7 +15929,7 @@ game_menus = [
 	  ("b1",
 	  [(troop_get_slot,reg(12),"trp_custom_battle_fac_store",reg(11)),
 	  (eq,reg(12),5)],
-	  "B1-Series Battle Droid ({reg5})",
+	  "B1-Series Battle Droid ({reg6})",
 	  [(assign,":troop_slot",6),
 	  (troop_get_slot,"$g_custom_battle_current_troop_number","$troop_store",":troop_slot"),
 	  (try_begin),
@@ -15953,7 +15953,7 @@ game_menus = [
 	  ("b2",
 	  [(troop_get_slot,reg(12),"trp_custom_battle_fac_store",reg(11)),
 	  (eq,reg(12),5)],
-	  "B2-Series Battle Droid ({reg5})",
+	  "B2-Series Battle Droid ({reg7})",
 	  [(assign,":troop_slot",7),
 	  (troop_get_slot,"$g_custom_battle_current_troop_number","$troop_store",":troop_slot"),
 	  (try_begin),
@@ -15977,7 +15977,7 @@ game_menus = [
 	  ("b3",
 	  [(troop_get_slot,reg(12),"trp_custom_battle_fac_store",reg(11)),
 	  (eq,reg(12),5)],
-	  "B3-Series Cortosis Battle Droid ({reg5})",
+	  "B3-Series Cortosis Battle Droid ({reg8})",
 	  [(assign,":troop_slot",8),
 	  (troop_get_slot,"$g_custom_battle_current_troop_number","$troop_store",":troop_slot"),
 	  (try_begin),
@@ -16012,7 +16012,7 @@ game_menus = [
   
 
   (
-    "custom_battle_config_finish",menu_text_color(0xFF071423),
+    "custom_battle_config_finish",menu_text_color(0xFF000d2c),
     "The battle is ready.",
     "none",
     [
@@ -16891,7 +16891,7 @@ game_menus = [
   
 # Testing Menu
 (
-	"custom_battle_test",menu_text_color(0xFF071423),
+	"custom_battle_test",menu_text_color(0xFF000d2c),
 	"The factions for this battle are:{s1},{s2},{s3},{s4},{s5}.",
 	"none",
 	[
@@ -17029,7 +17029,7 @@ game_menus = [
 	),
 	
 (
-	"custom_battle_test_troops",menu_text_color(0xFF071423),
+	"custom_battle_test_troops",menu_text_color(0xFF000d2c),
 	"The number of troops for this team are:{reg1},{reg2},{reg3},{reg4},{reg5},{reg6},{reg7},{reg8},{reg9},{reg10}",
 	"none",
 	[
@@ -17052,7 +17052,7 @@ game_menus = [
 	]
 	),
   (
-    "custom_battle_optional",menu_text_color(0xFF071423),
+    "custom_battle_optional",menu_text_color(0xFF000d2c),
 	"From here the time of day and the weather can be changed.",
 	"none",
 	[
@@ -17140,7 +17140,7 @@ game_menus = [
 	]
   ),
   (
-    "custom_battle_end",menu_text_color(0xFF071423),
+    "custom_battle_end",menu_text_color(0xFF000d2c),
     "Battle is over. {s1} Your party killed {reg5} troops, enemy party killed {reg6} troops. You have killed {reg7} troops.",
     "none",
     [(assign, reg5, "$g_custom_battle_team2_death_count"),
@@ -17605,7 +17605,7 @@ game_menus = [
 ]),
 
   (
-    "bank",menu_text_color(0xFF071423),
+    "bank",menu_text_color(0xFF000d2c),
     #"You visit the bank of the {s1}.\
 	"You visit the bank.\
  ^^You can deposit money and earn interest, or take a loan.\
@@ -17753,7 +17753,7 @@ game_menus = [
 
 #SW - added swc_readme game menu
   (
-    "swc_readme",menu_text_color(0xFF071423),
+    "swc_readme",menu_text_color(0xFF000d2c),
     "Star Wars: Conquest - FAQ & Notes^^This mod is still in development. We hope to eventually add more models, factions, quests, complete scene editing for all scenes, and add other functionality. Please post any bugs or suggestions on our forum.^^Content for this mod and future changes will primarily be focused on the original movies, Episode 4-6 range.  Clone Wars era troops and equipment have been included but are not planned to be further improved or a major feature of this mod.^^Scene editing is still in progress and we have made changes to many of the major planets like Tatooine, Yavin IV, Naboo, Geonosis, Ryloth, Kashyyyk, and Endor.  We are also working on creating several generic scenes to use for battlestations, outposts, and smaller planets. This is still a work in progress so not all scenes have been modified yet.^^The Trade Federation Base has several merchants like a Force-Sensitive Trainer, Clone Wars Era Merchant, Droid Parts Merchant, Plastic Surgeon, and others. Their inventory refreshes every hour and they can also randomly appear in the cantina's.^^Clone Troopers, B1-Series Battledroids, Baby Rancors, and Force-Sensitive troops can be recruited by building village upgrades.^^Space Battles can be found at the Training Academy.  Improving the controls or this functionality is a lower priority but may be reviewed in the future.^^Heavy Weapons (rocket launcher, flame rifle, etc) and some force powers (force kill, force knockdown, etc) are include for fun but are overpowered and will unbalance the game if you choose to use them.^^Currently some spaceships can be purchased and upgraded at the Trade Federation base and we plan to add more later.^^It is possible to get droids from Jawa prisoners but currently these droids do not do anything in battle.^^We could use help with this mod with models, textures, scene editing, and coding. Please post on our forum if you are interested in helping.^^Thanks very much to everybody who has directly or indirectly contributed to this mod, we all appreciate it.",
     "none",[],
     [("done",[],"Done.",[(change_screen_return),]),]

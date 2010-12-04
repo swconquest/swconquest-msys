@@ -141,7 +141,7 @@ dialogs = [
 
                      (try_begin),
 #                       (this_or_next|eq, "$talk_context", tc_party_encounter),
-#                       (this_or_next|eq, "$talk_context", tc_castle_commander),
+#                       (this_or_next|eq, "$talk_context", tc_spacestation_commander),
                        (call_script, "script_party_calculate_strength", "p_collective_enemy",0),
                        (assign, "$g_enemy_strength", reg0),
                        (call_script, "script_party_calculate_strength", "p_main_party",0),
@@ -382,10 +382,10 @@ dialogs = [
   [party_tpl|pt_jawas|plyr,"jawas_2", [[store_character_level,reg(1),"trp_player"],[ge,reg(1),4]], "You'll have nothing of mine but a blaster bolt between the eyes, scum.", "close_window",
    [[encounter_attack]]],
 
-  [party_tpl|pt_village_farmers,"start", [(eq,"$talk_context",tc_party_encounter),
+  [party_tpl|pt_minorplanet_farmers,"start", [(eq,"$talk_context",tc_party_encounter),
                                           (agent_play_sound, "$g_talk_agent", "snd_encounter_farmers"),
   ],
-   " Good {sir/lady}, we're only poor farmers from the planet of {s11}. {reg1?We are taking our products to the market at {s12}.:We are returning from the market at {s12} back to our planet.}", "village_farmer_talk",
+   " Good {sir/lady}, we're only poor farmers from the planet of {s11}. {reg1?We are taking our products to the market at {s12}.:We are returning from the market at {s12} back to our planet.}", "minorplanet_farmer_talk",
    [(party_get_slot, ":target_center", "$g_encountered_party", slot_party_ai_object),
     (party_get_slot, ":home_center", "$g_encountered_party", slot_party_home_center),
     (party_get_slot, ":market_town", ":home_center", slot_minorplanet_market_town),
@@ -393,18 +393,18 @@ dialogs = [
     (str_store_party_name, s12, ":market_town"),
     (assign, reg1, 1),
     (try_begin),
-      (party_slot_eq, ":target_center", slot_party_type, spt_village),
+      (party_slot_eq, ":target_center", slot_party_type, spt_minorplanet),
       (assign, reg1, 0),
     (try_end),
     ]],
 
-  [anyone|plyr,"village_farmer_talk", [], "We'll see how poor you are after I take what you've got!", "close_window",
+  [anyone|plyr,"minorplanet_farmer_talk", [], "We'll see how poor you are after I take what you've got!", "close_window",
    [(party_get_slot, ":home_center", "$g_encountered_party", slot_party_home_center),
     (party_get_slot, ":market_town", ":home_center", slot_minorplanet_market_town),
-    (party_get_slot, ":village_owner", ":home_center", slot_mainplanet_lord),
+    (party_get_slot, ":minorplanet_owner", ":home_center", slot_mainplanet_lord),
     (call_script, "script_change_player_relation_with_center", ":home_center", -4),
     (call_script, "script_change_player_relation_with_center", ":market_town", -2),
-    (call_script, "script_change_player_relation_with_troop", ":village_owner", -2),
+    (call_script, "script_change_player_relation_with_troop", ":minorplanet_owner", -2),
     (store_relation,":rel", "$g_encountered_party_faction","fac_player_supporters_faction"),
     (try_begin),
       (gt, ":rel", 0),
@@ -413,7 +413,7 @@ dialogs = [
     (val_sub, ":rel", 3),
     (call_script, "script_set_player_relation_with_faction", "$g_encountered_party_faction", ":rel"),
     ]],
-  [anyone|plyr,"village_farmer_talk", [], "Carry on, then. Good-bye.", "close_window",[(assign, "$g_leave_encounter",1)]],
+  [anyone|plyr,"minorplanet_farmer_talk", [], "Carry on, then. Good-bye.", "close_window",[(assign, "$g_leave_encounter",1)]],
 
  #SW MF added dialog for patrol units and trader convoys
 #patrols - can attack if relation with faction is 0 or below
@@ -607,16 +607,16 @@ dialogs = [
                     (party_slot_eq, "$g_encountered_party", slot_party_type, spt_castle),
                     (party_get_num_companion_stacks, ":num_stacks", "$g_encountered_party"),
                     (ge, ":num_stacks", 1),
-                    (party_stack_get_troop_id, ":castle_leader", "$g_encountered_party", 0),
-                    (eq, ":castle_leader", "$g_talk_troop"),
+                    (party_stack_get_troop_id, ":spacestation_leader", "$g_encountered_party", 0),
+                    (eq, ":spacestation_leader", "$g_talk_troop"),
                     (eq, "$talk_context", 0)],
    "Yes, {playername}? What can I do for you?", "member_castellan_talk",[]],
   
   [anyone,"member_castellan_pretalk", [], "Anything else?", "member_castellan_talk",[]],
   
   [anyone|plyr,"member_castellan_talk", [],
-   "I want to review the garrison.", "member_review_castle_garrison",[]],
-  [anyone,"member_review_castle_garrison", [], "Of course. Here are our lists, let me know of any changes you require...", "member_castellan_pretalk",[(change_screen_exchange_members,0)]],
+   "I want to review the garrison.", "member_review_spacestation_garrison",[]],
+  [anyone,"member_review_spacestation_garrison", [], "Of course. Here are our lists, let me know of any changes you require...", "member_castellan_pretalk",[(change_screen_exchange_members,0)]],
   [anyone|plyr,"member_castellan_talk", [],
    "Let me see your equipment.", "member_review_castellan_equipment",[]],
   [anyone,"member_review_castellan_equipment", [], "Very well, it's all here...", "member_castellan_pretalk",[(change_screen_equip_other)]],
@@ -692,25 +692,25 @@ dialogs = [
          (try_begin),
            (eq, ":center_faction", "fac_player_supporters_faction"),
            (try_begin),
-             (party_slot_eq, ":center_no", slot_party_type, spt_town),
+             (party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
              (val_add, reg13, 1),
            (else_try),
              (party_slot_eq, ":center_no", slot_party_type, spt_castle),
              (val_add, reg14, 1),
            (else_try),
-             (party_slot_eq, ":center_no", slot_party_type, spt_village),
+             (party_slot_eq, ":center_no", slot_party_type, spt_minorplanet),
              (val_add, reg15, 1),
            (try_end),
          (else_try),
            (eq, ":center_faction", "$supported_pretender_old_faction"),
            (try_begin),
-             (party_slot_eq, ":center_no", slot_party_type, spt_town),
+             (party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
              (val_add, reg23, 1),
            (else_try),
              (party_slot_eq, ":center_no", slot_party_type, spt_castle),
              (val_add, reg24, 1),
            (else_try),
-             (party_slot_eq, ":center_no", slot_party_type, spt_village),
+             (party_slot_eq, ":center_no", slot_party_type, spt_minorplanet),
              (val_add, reg25, 1),
            (try_end),
          (try_end),
@@ -2144,11 +2144,11 @@ dialogs = [
 
 
 # Kingdom Lords:
-  [anyone,"start", [(eq, "$talk_context", tc_castle_commander)],
-   "What do you want?", "player_siege_castle_commander_1", []],
-  [anyone|plyr,"player_siege_castle_commander_1", [],
+  [anyone,"start", [(eq, "$talk_context", tc_spacestation_commander)],
+   "What do you want?", "player_siege_spacestation_commander_1", []],
+  [anyone|plyr,"player_siege_spacestation_commander_1", [],
    "Your situation is hopeless! Surrender now or die", "player_siege_ask_surrender", []],
-  [anyone|plyr,"player_siege_castle_commander_1", [], "Nothing. I'll leave you for now.", "close_window", []],
+  [anyone|plyr,"player_siege_spacestation_commander_1", [], "Nothing. I'll leave you for now.", "close_window", []],
 
   
   [anyone,"player_siege_ask_surrender", [(lt, "$g_enemy_strength", 100), (store_mul,":required_str","$g_enemy_strength",5),(ge, "$g_ally_strength", ":required_str")],
@@ -2171,7 +2171,7 @@ dialogs = [
   [anyone|plyr,"player_siege_ask_leave_unmolested", [],
    "You have my word. We will hold fire if you leave the system.", "player_siege_ask_leave_unmolested_accept", []],
   [anyone,"player_siege_ask_leave_unmolested_accept", [],
-   "Very well. Then we leave this planet to you. You have won this day. But we'll meet again.", "close_window", [(assign,"$g_castle_left_to_player",1)]],
+   "Very well. Then we leave this planet to you. You have won this day. But we'll meet again.", "close_window", [(assign,"$g_spacestation_left_to_player",1)]],
   [anyone|plyr,"player_siege_ask_leave_unmolested", [],
    "Unacceptable. I want prisoners and blood.", "player_siege_ask_leave_unmolested_reject", []],
   [anyone,"player_siege_ask_leave_unmolested_reject", [],
@@ -2512,7 +2512,7 @@ dialogs = [
                      (assign, "$town_to_rebel",    0),
                      (assign, "$town_to_approach", 0),
                      (troop_get_slot, ":rebellion_target_faction", "$g_talk_troop", slot_troop_original_faction),
-                     (try_for_range, ":town", towns_begin, towns_end),
+                     (try_for_range, ":town", mainplanets_begin, mainplanets_end),
                         (store_faction_of_party, ":town_faction", ":town"),
                         (eq, ":town_faction", ":rebellion_target_faction"),
                         (party_get_slot, ":siege_state", ":town", slot_minorplanet_state),
@@ -2624,7 +2624,7 @@ dialogs = [
             (faction_set_color, "fac_player_supporters_faction", 0xFF0000),
 
 ## Let us handle relation with other kingdoms later.
-##            (try_for_range, ":existing_kingdom", kingdoms_begin, kingdoms_end),
+##            (try_for_range, ":existing_kingdom", factions_begin, factions_end),
 ##                (store_relation, ":relation", ":existing_kingdom", ":rebellion_target"),
 ##                (store_sub, ":relation_w_rebels", 0, ":relation"),
 ##                (store_relation, ":player_relation", ":existing_kingdom", "fac_player_supporters_faction"),
@@ -2721,7 +2721,7 @@ dialogs = [
                        (gt, "$g_invite_offered_center", 0),
                        (store_faction_of_party, ":offered_center_faction", "$g_invite_offered_center"),
                        (neq, ":offered_center_faction", "$g_talk_troop_faction"),
-                       (call_script, "script_get_poorest_village_of_faction", "$g_talk_troop_faction"),
+                       (call_script, "script_get_poorest_minorplanet_of_faction", "$g_talk_troop_faction"),
                        (assign, "$g_invite_offered_center", reg0),
                      (try_end),
                      ],
@@ -3939,12 +3939,12 @@ dialogs = [
    [(call_script, "script_change_player_relation_with_troop", "$g_talk_troop", -20),
     (assign, "$g_leave_encounter", 1),
     (try_begin),
-      (is_between, "$g_encountered_party", towns_begin, towns_end),
+      (is_between, "$g_encountered_party", mainplanets_begin, mainplanets_end),
       (party_get_slot, ":arena_scene", "$g_encountered_party", slot_mainplanet_arena),
     (else_try),
       (assign, ":closest_dist", 100000),
       (assign, ":closest_town", -1),
-      (try_for_range, ":cur_town", towns_begin, towns_end),
+      (try_for_range, ":cur_town", mainplanets_begin, mainplanets_end),
         (store_distance_to_party_from_party, ":dist", ":cur_town", "p_main_party"),
         (lt, ":dist", ":closest_dist"),
         (assign, ":closest_dist", ":dist"),
@@ -4099,20 +4099,20 @@ dialogs = [
 ##                             (party_get_num_companions, reg7, "p_main_party"),
 ##                             (val_sub, reg7, 1),
 ##                             ],
-##   "{reg7?Me and my troops:I} need shelter and fuel. Can we land here for a while?", "lord_castle_let_in",[]],
+##   "{reg7?Me and my troops:I} need shelter and fuel. Can we land here for a while?", "lord_spacestation_let_in",[]],
 ##
-##  [anyone, "lord_castle_let_in", [(lt,"$g_talk_troop_relation",-10)],
+##  [anyone, "lord_spacestation_let_in", [(lt,"$g_talk_troop_relation",-10)],
 ##   "What? Do I look like I am running an inn here? I have no place here for {reg7?you and your lot:you}. Now get off my land...", "close_window",[(assign, "$g_permitted_to_center",1)]],
-##  [anyone, "lord_castle_let_in", [(lt,"$g_talk_troop_relation",2), (lt, "$g_talk_troop_faction_relation", 10),(assign, reg6, 100)],
-##   "I'll give you shelter if you pay a toll of {reg6} credits.", "lord_castle_let_in_toll",[]],
-##  [anyone|plyr,"lord_castle_let_in_toll", [(store_troop_gold, ":gold", "trp_player"),(gt,":gold",reg6)], "Of course sir. I'll pay the toll.", "lord_castle_let_in_toll_pay",
+##  [anyone, "lord_spacestation_let_in", [(lt,"$g_talk_troop_relation",2), (lt, "$g_talk_troop_faction_relation", 10),(assign, reg6, 100)],
+##   "I'll give you shelter if you pay a toll of {reg6} credits.", "lord_spacestation_let_in_toll",[]],
+##  [anyone|plyr,"lord_spacestation_let_in_toll", [(store_troop_gold, ":gold", "trp_player"),(gt,":gold",reg6)], "Of course sir. I'll pay the toll.", "lord_spacestation_let_in_toll_pay",
 ##   [(troop_remove_gold, "trp_player",reg6)]],
-##  [anyone, "lord_castle_let_in_toll_pay", [(str_store_party_name, s1, "$g_encountered_party")],
+##  [anyone, "lord_spacestation_let_in_toll_pay", [(str_store_party_name, s1, "$g_encountered_party")],
 ##   "Then you are welcome to {s1}.", "close_window",[(assign, "$g_permitted_to_center",1),(jump_to_menu, "mnu_town")]],
-##  [anyone|plyr,"lord_castle_let_in_toll", [], "I can't pay that sum sir.", "lord_castle_let_in_toll_nopay",[]],
-##  [anyone,"lord_castle_let_in_toll_nopay", [], "Then you are out of luck, I guess.", "lord_pretalk",[]],
+##  [anyone|plyr,"lord_spacestation_let_in_toll", [], "I can't pay that sum sir.", "lord_spacestation_let_in_toll_nopay",[]],
+##  [anyone,"lord_spacestation_let_in_toll_nopay", [], "Then you are out of luck, I guess.", "lord_pretalk",[]],
 ##  
-##  [anyone, "lord_castle_let_in", [(str_store_party_name, s1, "$g_encountered_party")],
+##  [anyone, "lord_spacestation_let_in", [(str_store_party_name, s1, "$g_encountered_party")],
 ##   "Of course {playername}. You are welcome here. You may rest at {s1} as long as you wish.", "close_window",[(assign, "$g_permitted_to_center",1)]],
 
   [anyone|plyr,"lord_talk", [#(troop_slot_eq, "$g_talk_troop", slot_troop_is_prisoner, 0),
@@ -4470,14 +4470,14 @@ dialogs = [
        (eq, "$temp", spai_holding_center),
        (try_begin),
          (this_or_next|party_slot_eq, ":party_no", slot_party_type, spt_castle),
-         (party_slot_eq, ":party_no", slot_party_type, spt_town),
+         (party_slot_eq, ":party_no", slot_party_type, spt_mainplanet),
          (eq, ":party_faction", "$players_kingdom"),
          (assign, ":continue", 1),
        (try_end),
      (else_try),
        (eq, "$temp", spai_raiding_around_center),
        (try_begin),
-         (party_slot_eq, ":party_no", slot_party_type, spt_village),
+         (party_slot_eq, ":party_no", slot_party_type, spt_minorplanet),
          (lt, ":relation", 0),
          (assign, ":continue", 1),
        (try_end),
@@ -4702,7 +4702,7 @@ dialogs = [
   [anyone,"lord_talk_ask_about_war", [],
    "{s12}", "lord_talk_ask_about_war_2",[
                                                                       (assign, ":num_enemies", 0),
-                                                                      (try_for_range_backwards, ":cur_faction", kingdoms_begin, kingdoms_end),
+                                                                      (try_for_range_backwards, ":cur_faction", factions_begin, factions_end),
                                                                         (faction_slot_eq, ":cur_faction", slot_faction_state, sfs_active),
                                                                         (store_relation, ":cur_relation", ":cur_faction", "$g_talk_troop_faction"),
                                                                         (lt, ":cur_relation", 0),
@@ -4728,7 +4728,7 @@ dialogs = [
                                                                       ]],
 
   [anyone|plyr|repeat_for_factions, "lord_talk_ask_about_war_2", [(store_repeat_object, ":faction_no"),
-                                                                  (is_between, ":faction_no", kingdoms_begin, kingdoms_end),
+                                                                  (is_between, ":faction_no", factions_begin, factions_end),
                                                                   (faction_slot_eq, ":faction_no", slot_faction_state, sfs_active),
                                                                      (store_relation, ":cur_relation", ":faction_no", "$g_talk_troop_faction"),
                                                                      (lt, ":cur_relation", 0),
@@ -5629,7 +5629,7 @@ dialogs = [
      (ge, ":vassal_potential", 150),
      (try_begin),
        (eq, ":num_centers_owned", 0),
-       (call_script, "script_get_poorest_village_of_faction", "$g_talk_troop_faction"),
+       (call_script, "script_get_poorest_minorplanet_of_faction", "$g_talk_troop_faction"),
        (gt, reg0, 0),
        (assign, "$g_invite_offered_center", reg0),
      (try_end),
@@ -5790,7 +5790,7 @@ dialogs = [
     (try_end),
       
     (try_begin),
-      (is_between, "$players_oath_renounced_against_kingdom", kingdoms_begin, kingdoms_end),
+      (is_between, "$players_oath_renounced_against_kingdom", factions_begin, factions_end),
       (neq, "$players_oath_renounced_against_kingdom", "$g_talk_troop_faction"),
       (store_relation, ":relation", "fac_player_supporters_faction", "$players_oath_renounced_against_kingdom"),
       (val_min, ":relation", -40),
@@ -5799,7 +5799,7 @@ dialogs = [
       (assign, "$g_recalculate_ais", 1),
     (try_end),
     (try_begin),
-      (is_between, "$players_kingdom", kingdoms_begin, kingdoms_end),
+      (is_between, "$players_kingdom", factions_begin, factions_end),
       (neq, "$players_kingdom", "fac_player_supporters_faction"),
       (faction_get_slot, ":old_leader", "$players_kingdom", slot_faction_leader),
       (call_script, "script_add_log_entry", logent_renounced_allegiance,   "trp_player",  -1, ":old_leader", "$players_kingdom"),
@@ -6390,7 +6390,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
   [anyone|plyr|repeat_for_parties,"lord_suggest_go_to_friendly_town2", [
                                                                        (store_repeat_object, ":center_no"),
                                                                        (this_or_next|party_slot_eq,":center_no",slot_party_type, spt_castle),
-                                                                       (party_slot_eq,":center_no",slot_party_type, spt_town),
+                                                                       (party_slot_eq,":center_no",slot_party_type, spt_mainplanet),
                                                                        (neq, ":center_no", "$g_encountered_party"),
                                                                        (store_faction_of_party, ":town_faction", ":center_no"),
                                                                        (eq, ":town_faction", "$g_talk_troop_faction"),
@@ -6441,7 +6441,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
   [anyone|plyr|repeat_for_parties,"lord_suggets_attack_enemy_castle2", [
                                                                        (store_repeat_object, ":center_no"),
                                                                        (this_or_next|party_slot_eq,":center_no",slot_party_type, spt_castle),
-                                                                       (party_slot_eq,":center_no",slot_party_type, spt_town),
+                                                                       (party_slot_eq,":center_no",slot_party_type, spt_mainplanet),
                                                                        (store_faction_of_party, ":town_faction", ":center_no"),
                                                                        (store_relation, ":town_relation", ":town_faction", "$g_talk_troop_faction"),
                                                                        (le, ":town_relation", -10),
@@ -6460,20 +6460,20 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
        ]],
 
   [anyone,"lord_suggest_raid_village", [],
-   "Hmm. Which planet do you suggest we attack?", "lord_suggest_raid_village_2",[]],
-  [anyone|plyr|repeat_for_parties,"lord_suggest_raid_village_2", [
+   "Hmm. Which planet do you suggest we attack?", "lord_suggest_raid_minorplanet_2",[]],
+  [anyone|plyr|repeat_for_parties,"lord_suggest_raid_minorplanet_2", [
                                                                        (store_repeat_object, ":center_no"),
-                                                                       (party_slot_eq,":center_no",slot_party_type, spt_village),
+                                                                       (party_slot_eq,":center_no",slot_party_type, spt_minorplanet),
                                                                        (store_faction_of_party, ":town_faction", ":center_no"),
                                                                        (store_relation, ":town_relation", ":town_faction", "$g_talk_troop_faction"),
                                                                        (le, ":town_relation", -10),
                                                                        (str_store_faction_name, s2, ":town_faction"),
                                                                        (str_store_party_name, s1, ":center_no")],
-   "{s1} of {s2}", "lord_suggest_raid_village_3",[(store_repeat_object, "$suggested_to_attack_center")]],
-  [anyone|plyr,"lord_suggest_raid_village_2", [],
+   "{s1} of {s2}", "lord_suggest_raid_minorplanet_3",[(store_repeat_object, "$suggested_to_attack_center")]],
+  [anyone|plyr,"lord_suggest_raid_minorplanet_2", [],
    "Never mind.", "lord_pretalk",[]],
 
-  [anyone,"lord_suggest_raid_village_3", [(str_store_party_name, s1, "$suggested_to_attack_center")],
+  [anyone,"lord_suggest_raid_minorplanet_3", [(str_store_party_name, s1, "$suggested_to_attack_center")],
    "That should be possible. Very well, we'll attack {s1}.", "lord_pretalk",
    [
        (call_script, "script_party_set_ai_state", "$g_talk_troop_party", spai_raiding_around_center, "$suggested_to_attack_center"),
@@ -6521,7 +6521,7 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
     (faction_get_slot, ":last_offer_time", "$g_talk_troop_faction", slot_faction_last_mercenary_offer_time),
 
     (assign, ":num_enemies", 0),
-    (try_for_range, ":faction_no", kingdoms_begin, kingdoms_end),
+    (try_for_range, ":faction_no", factions_begin, factions_end),
       (faction_slot_eq, "$g_talk_troop_faction", slot_faction_state, sfs_active),
       (store_relation, ":reln", "$g_talk_troop_faction", ":faction_no"),
       (lt, ":reln", 0),
@@ -6980,7 +6980,7 @@ I'd like nothing better than to go out there and teach them a lesson,\
                                 (assign, reg9, 0),
                                 (try_begin),
                                   (quest_get_slot, ":quest_target_center", "$random_quest_no", slot_quest_target_center),
-                                  (party_slot_eq, ":quest_target_center", slot_party_type, spt_town),
+                                  (party_slot_eq, ":quest_target_center", slot_party_type, spt_mainplanet),
                                   (assign, reg9, 1),
                                 (try_end),
                                 ], "You probably know that I am the ruler of the {reg9?planet:planet} of {s3}.\
@@ -7010,7 +7010,7 @@ I'd like nothing better than to go out there and teach them a lesson,\
     (assign, reg9, 0),
     (quest_get_slot, ":quest_target_center", "$random_quest_no", slot_quest_target_center),
     (try_begin),
-      (party_slot_eq, ":quest_target_center", slot_party_type, spt_town),
+      (party_slot_eq, ":quest_target_center", slot_party_type, spt_mainplanet),
       (assign, reg9, 1),
     (try_end),
    ]],
@@ -8759,57 +8759,57 @@ They are going around making terrible accusations against me, impugning my honou
 
 
 # Castle Guards
-  [anyone,"start", [(eq, "$talk_context", 0),(faction_slot_eq, "$g_encountered_party_faction", slot_faction_castle_guard_troop, "$g_talk_troop"),
+  [anyone,"start", [(eq, "$talk_context", 0),(faction_slot_eq, "$g_encountered_party_faction", slot_faction_spacestation_guard_troop, "$g_talk_troop"),
                     (this_or_next|eq, "$g_encountered_party_faction", "fac_player_supporters_faction"),
                     (             party_slot_eq, "$g_encountered_party", slot_mainplanet_lord, "trp_player")
                     ],
-   "Your orders, {commander/commander}?", "castle_guard_players",[]],
-  [anyone|plyr,"castle_guard_players", [],
+   "Your orders, {commander/commander}?", "spacestation_guard_players",[]],
+  [anyone|plyr,"spacestation_guard_players", [],
    "Open the door. I'll go in.", "close_window",[(call_script, "script_enter_court", "$current_town")]],
-  [anyone|plyr,"castle_guard_players", [],
+  [anyone|plyr,"spacestation_guard_players", [],
    "Never mind.", "close_window",[]],
 
 
-  [anyone,"start", [(eq, "$talk_context", 0),(faction_slot_eq, "$g_encountered_party_faction", slot_faction_castle_guard_troop, "$g_talk_troop"),(eq, "$sneaked_into_town",1),
+  [anyone,"start", [(eq, "$talk_context", 0),(faction_slot_eq, "$g_encountered_party_faction", slot_faction_spacestation_guard_troop, "$g_talk_troop"),(eq, "$sneaked_into_town",1),
                     (gt,"$g_time_since_last_talk",0)],
-   "Get out of my sight, beggar! You stink!", "castle_guard_sneaked_intro_1",[]],
-  [anyone,"start", [(eq, "$talk_context", 0),(faction_slot_eq, "$g_encountered_party_faction", slot_faction_castle_guard_troop, "$g_talk_troop"),(eq, "$sneaked_into_town",1)],
+   "Get out of my sight, beggar! You stink!", "spacestation_guard_sneaked_intro_1",[]],
+  [anyone,"start", [(eq, "$talk_context", 0),(faction_slot_eq, "$g_encountered_party_faction", slot_faction_spacestation_guard_troop, "$g_talk_troop"),(eq, "$sneaked_into_town",1)],
    "Get lost before I lose my temper you vile beggar!", "close_window",[]],
-  [anyone|plyr,"castle_guard_sneaked_intro_1", [], "I want to enter the hall and speak to the ruler.", "castle_guard_sneaked_intro_2",[]],
-  [anyone|plyr,"castle_guard_sneaked_intro_1", [], "[Leave]", "close_window",[]],
-  [anyone,"castle_guard_sneaked_intro_2", [], "Are you out of your mind, {man/woman}?\
+  [anyone|plyr,"spacestation_guard_sneaked_intro_1", [], "I want to enter the hall and speak to the ruler.", "spacestation_guard_sneaked_intro_2",[]],
+  [anyone|plyr,"spacestation_guard_sneaked_intro_1", [], "[Leave]", "close_window",[]],
+  [anyone,"spacestation_guard_sneaked_intro_2", [], "Are you out of your mind, {man/woman}?\
  Beggars are not allowed into the hall. Now get lost or I'll beat you bloody.", "close_window",[]],
   
   
-  [anyone,"start", [(eq, "$talk_context", 0),(faction_slot_eq, "$g_encountered_party_faction", slot_faction_castle_guard_troop, "$g_talk_troop")],
-   "What do you want?", "castle_guard_intro_1",[]],
-  [anyone|plyr,"castle_guard_intro_1", [],
-   "I want to enter the hall and speak to the ruler.", "castle_guard_intro_2",[]],
-  [anyone|plyr,"castle_guard_intro_1", [],
+  [anyone,"start", [(eq, "$talk_context", 0),(faction_slot_eq, "$g_encountered_party_faction", slot_faction_spacestation_guard_troop, "$g_talk_troop")],
+   "What do you want?", "spacestation_guard_intro_1",[]],
+  [anyone|plyr,"spacestation_guard_intro_1", [],
+   "I want to enter the hall and speak to the ruler.", "spacestation_guard_intro_2",[]],
+  [anyone|plyr,"spacestation_guard_intro_1", [],
    "Never mind.", "close_window",[]],
-  [anyone,"castle_guard_intro_2", [], "You can go in after leaving your weapons with me. No one is allowed to carry arms into the main hall.", "castle_guard_intro_2",
+  [anyone,"spacestation_guard_intro_2", [], "You can go in after leaving your weapons with me. No one is allowed to carry arms into the main hall.", "spacestation_guard_intro_2",
    []],
-  [anyone|plyr,"castle_guard_intro_2", [], "Here, take my arms. I'll go in.", "close_window", [(call_script, "script_enter_court", "$current_town")]],
-  [anyone|plyr,"castle_guard_intro_2", [], "No, I give my arms to no one.", "castle_guard_intro_2b", []],
-  [anyone,"castle_guard_intro_2b", [], "Then you can't go in.", "close_window", []],
+  [anyone|plyr,"spacestation_guard_intro_2", [], "Here, take my arms. I'll go in.", "close_window", [(call_script, "script_enter_court", "$current_town")]],
+  [anyone|plyr,"spacestation_guard_intro_2", [], "No, I give my arms to no one.", "spacestation_guard_intro_2b", []],
+  [anyone,"spacestation_guard_intro_2b", [], "Then you can't go in.", "close_window", []],
   
-##  [anyone|plyr,"castle_guard_intro_1", [],
+##  [anyone|plyr,"spacestation_guard_intro_1", [],
 ##   "Never mind.", "close_window",[]],
-##  [anyone,"castle_guard_intro_2", [],
-##   "Does the ruler expect you?", "castle_guard_intro_3",[]],
-##  [anyone|plyr,"castle_guard_intro_3", [], "Yes.", "castle_guard_intro_check",[]],
-##  [anyone|plyr,"castle_guard_intro_3", [], "No.", "castle_guard_intro_no",[]],
-##  [anyone,"castle_guard_intro_check", [], "Hmm. All right {sir/madam}.\
+##  [anyone,"spacestation_guard_intro_2", [],
+##   "Does the ruler expect you?", "spacestation_guard_intro_3",[]],
+##  [anyone|plyr,"spacestation_guard_intro_3", [], "Yes.", "spacestation_guard_intro_check",[]],
+##  [anyone|plyr,"spacestation_guard_intro_3", [], "No.", "spacestation_guard_intro_no",[]],
+##  [anyone,"spacestation_guard_intro_check", [], "Hmm. All right {sir/madam}.\
 ## You can go in. But you must leave your weapons with me. Noone's allowed into the court with weapons.", "close_window",[]],
-##  [anyone,"castle_guard_intro_check", [], "You liar!\
+##  [anyone,"spacestation_guard_intro_check", [], "You liar!\
 ## Our ruler would have no business with a filthy vagabond like you. Get lost now before I beat you like a womp rat.", "close_window",[]],
-##  [anyone,"castle_guard_intro_no", [], "Well... What business do you have here then?", "castle_guard_intro_4",[]],
-##  [anyone|plyr,"castle_guard_intro_4", [], "I wish to present the ruler some gifts.", "castle_guard_intro_gifts",[]],
-##  [anyone|plyr,"castle_guard_intro_4", [], "I have an important matter to discuss with the ruler. Make way now.", "castle_guard_intro_check",[]],
-##  [anyone,"castle_guard_intro_gifts", [], "Really? What gifts?", "castle_guard_intro_5",[]],
-##  [anyone|plyr,"castle_guard_intro_4", [], "Many gifts. For example, I have a gift of 20 credits here for his loyal servants.", "castle_guard_intro_gifts",[]],
-##  [anyone|plyr,"castle_guard_intro_4", [], "My gifts are of no concern to you. They are for your lords and ladies..", "castle_guard_intro_check",[]],
-##  [anyone,"castle_guard_intro_gifts", [], "Oh! you can give those 20 credits to me. I can distribute them for you.\
+##  [anyone,"spacestation_guard_intro_no", [], "Well... What business do you have here then?", "spacestation_guard_intro_4",[]],
+##  [anyone|plyr,"spacestation_guard_intro_4", [], "I wish to present the ruler some gifts.", "spacestation_guard_intro_gifts",[]],
+##  [anyone|plyr,"spacestation_guard_intro_4", [], "I have an important matter to discuss with the ruler. Make way now.", "spacestation_guard_intro_check",[]],
+##  [anyone,"spacestation_guard_intro_gifts", [], "Really? What gifts?", "spacestation_guard_intro_5",[]],
+##  [anyone|plyr,"spacestation_guard_intro_4", [], "Many gifts. For example, I have a gift of 20 credits here for his loyal servants.", "spacestation_guard_intro_gifts",[]],
+##  [anyone|plyr,"spacestation_guard_intro_4", [], "My gifts are of no concern to you. They are for your lords and ladies..", "spacestation_guard_intro_check",[]],
+##  [anyone,"spacestation_guard_intro_gifts", [], "Oh! you can give those 20 credits to me. I can distribute them for you.\
 ## You can enter the court and present your gifts to the ruler. I'm sure he'll be pleased.\
 ## But you must leave your weapons with me. Noone's allowed into the court with weapons.", "close_window",[]],
 
@@ -8876,27 +8876,27 @@ They are going around making terrible accusations against me, impugning my honou
 
 
 
-  [anyone,"start", [(eq, "$talk_context", tc_castle_gate)],
-   "What do you want?", "castle_gate_guard_talk",[]],
+  [anyone,"start", [(eq, "$talk_context", tc_spacestation_gate)],
+   "What do you want?", "spacestation_gate_guard_talk",[]],
 
-  [anyone,"castle_gate_guard_pretalk", [],
-   "Yes?", "castle_gate_guard_talk",[]],
+  [anyone,"spacestation_gate_guard_pretalk", [],
+   "Yes?", "spacestation_gate_guard_talk",[]],
 
-  [anyone|plyr,"castle_gate_guard_talk", [(ge, "$g_encountered_party_relation", 0)], 
-  "We need shelter for the night. Will you let us in?", "castle_gate_open",[]],
-  [anyone|plyr,"castle_gate_guard_talk", [(party_slot_ge, "$g_encountered_party", slot_mainplanet_lord, 1)], "I want to speak with the ruler of this planet.", "request_meeting_castle_lord",[]],
-  [anyone|plyr,"castle_gate_guard_talk", [], "I want to speak with someone in the main hall.", "request_meeting_other",[]],
+  [anyone|plyr,"spacestation_gate_guard_talk", [(ge, "$g_encountered_party_relation", 0)], 
+  "We need shelter for the night. Will you let us in?", "spacestation_gate_open",[]],
+  [anyone|plyr,"spacestation_gate_guard_talk", [(party_slot_ge, "$g_encountered_party", slot_mainplanet_lord, 1)], "I want to speak with the ruler of this planet.", "request_meeting_spacestation_lord",[]],
+  [anyone|plyr,"spacestation_gate_guard_talk", [], "I want to speak with someone in the main hall.", "request_meeting_other",[]],
 
-  [anyone|plyr,"castle_gate_guard_talk", [], "[Leave]", "close_window",[]],
+  [anyone|plyr,"spacestation_gate_guard_talk", [], "[Leave]", "close_window",[]],
 
-  [anyone,"request_meeting_castle_lord", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
-                                         (call_script, "script_get_troop_attached_party", ":castle_lord"),
+  [anyone,"request_meeting_spacestation_lord", [(party_get_slot, ":spacestation_lord", "$g_encountered_party", slot_mainplanet_lord),
+                                         (call_script, "script_get_troop_attached_party", ":spacestation_lord"),
                                          (eq, "$g_encountered_party", reg0),
-                                         (str_store_troop_name, s2, ":castle_lord"),
-                                         (assign, "$lord_requested_to_talk_to", ":castle_lord"),
+                                         (str_store_troop_name, s2, ":spacestation_lord"),
+                                         (assign, "$lord_requested_to_talk_to", ":spacestation_lord"),
                                           ],  "Wait here. {s2} will see you.", "close_window",[]],
   
-  [anyone,"request_meeting_castle_lord", [],  "My commander is not here now.", "castle_gate_guard_pretalk",[]],
+  [anyone,"request_meeting_spacestation_lord", [],  "My commander is not here now.", "spacestation_gate_guard_pretalk",[]],
 
   [anyone,"request_meeting_other", [],  "Who is that?", "request_meeting_3",[]],
 
@@ -8924,50 +8924,50 @@ They are going around making terrible accusations against me, impugning my honou
 
   [anyone,"request_meeting_6", [(str_store_troop_name, s2, "$lord_requested_to_talk_to")], "{s2} says he will not see you. Begone now.", "close_window",[]],
 
-  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
-                                         (call_script, "script_get_troop_attached_party", ":castle_lord"),
+  [anyone,"spacestation_gate_open", [(party_get_slot, ":spacestation_lord", "$g_encountered_party", slot_mainplanet_lord),
+                                         (call_script, "script_get_troop_attached_party", ":spacestation_lord"),
                                          (eq, "$g_encountered_party", reg0),
                                          (ge, "$g_encountered_party_relation", 0),
-                                         (call_script, "script_troop_get_player_relation", ":castle_lord"),
-                                         (assign, ":castle_lord_relation", reg0),
-                                         #(troop_get_slot, ":castle_lord_relation", ":castle_lord", slot_troop_player_relation),
-                                         (ge, ":castle_lord_relation", 5),
-                                         (str_store_troop_name, s2, ":castle_lord")
+                                         (call_script, "script_troop_get_player_relation", ":spacestation_lord"),
+                                         (assign, ":spacestation_lord_relation", reg0),
+                                         #(troop_get_slot, ":spacestation_lord_relation", ":spacestation_lord", slot_troop_player_relation),
+                                         (ge, ":spacestation_lord_relation", 5),
+                                         (str_store_troop_name, s2, ":spacestation_lord")
                                          ],  "My ruler, {s2} will be happy to see you {sir/madam}.\
  Come on in. I am lowering the shields for you.", "close_window",[(assign,"$g_permitted_to_center",1)]],
 
 
-  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
-                                         (call_script, "script_get_troop_attached_party", ":castle_lord"),
+  [anyone,"spacestation_gate_open", [(party_get_slot, ":spacestation_lord", "$g_encountered_party", slot_mainplanet_lord),
+                                         (call_script, "script_get_troop_attached_party", ":spacestation_lord"),
                                          (neq, "$g_encountered_party", reg0),
                                          (ge, "$g_encountered_party_relation", 0),
-                                         (call_script, "script_troop_get_player_relation", ":castle_lord"),
-                                         (assign, ":castle_lord_relation", reg0),
-                                         #(troop_get_slot, ":castle_lord_relation", ":castle_lord", slot_troop_player_relation),
-                                         (ge, ":castle_lord_relation", 5),
-                                         (str_store_troop_name, s2, ":castle_lord")
+                                         (call_script, "script_troop_get_player_relation", ":spacestation_lord"),
+                                         (assign, ":spacestation_lord_relation", reg0),
+                                         #(troop_get_slot, ":spacestation_lord_relation", ":spacestation_lord", slot_troop_player_relation),
+                                         (ge, ":spacestation_lord_relation", 5),
+                                         (str_store_troop_name, s2, ":spacestation_lord")
                                          ],  "My ruler, {s2} is not in the main hall now.\
  But I think he would approve of you refuelling here.\
  Come on in. I am lowering the shields for you. Begin your descent.", "close_window",[(assign,"$g_permitted_to_center",1)]],
  
-  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
-                               (call_script, "script_troop_get_player_relation", ":castle_lord"),
-                               (assign, ":castle_lord_relation", reg0),
-                               #(troop_get_slot, ":castle_lord_relation", ":castle_lord", slot_troop_player_relation),
-                               (ge, ":castle_lord_relation", -2),
+  [anyone,"spacestation_gate_open", [(party_get_slot, ":spacestation_lord", "$g_encountered_party", slot_mainplanet_lord),
+                               (call_script, "script_troop_get_player_relation", ":spacestation_lord"),
+                               (assign, ":spacestation_lord_relation", reg0),
+                               #(troop_get_slot, ":spacestation_lord_relation", ":spacestation_lord", slot_troop_player_relation),
+                               (ge, ":spacestation_lord_relation", -2),
                                          ],  "Come on in. I am lowering the shields for you.", "close_window",[(assign,"$g_permitted_to_center",1)]],
                                          
-  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
-                               (call_script, "script_troop_get_player_relation", ":castle_lord"),
-                               (assign, ":castle_lord_relation", reg0),
-                               #(troop_get_slot, ":castle_lord_relation", ":castle_lord", slot_troop_player_relation),
-                               (ge, ":castle_lord_relation", -19),
-                               (str_store_troop_name, s2, ":castle_lord")
+  [anyone,"spacestation_gate_open", [(party_get_slot, ":spacestation_lord", "$g_encountered_party", slot_mainplanet_lord),
+                               (call_script, "script_troop_get_player_relation", ":spacestation_lord"),
+                               (assign, ":spacestation_lord_relation", reg0),
+                               #(troop_get_slot, ":spacestation_lord_relation", ":spacestation_lord", slot_troop_player_relation),
+                               (ge, ":spacestation_lord_relation", -19),
+                               (str_store_troop_name, s2, ":spacestation_lord")
                                          ],  "Come on in. But make sure your troops behave sensibly within the walls.\
  My ruler, {s2} does not want trouble here.", "close_window",[(assign,"$g_permitted_to_center",1)]],
  
-  [anyone,"castle_gate_open", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
-                               (str_store_troop_name, s2, ":castle_lord"),
+  [anyone,"spacestation_gate_open", [(party_get_slot, ":spacestation_lord", "$g_encountered_party", slot_mainplanet_lord),
+                               (str_store_troop_name, s2, ":spacestation_lord"),
   ],  "My ruler, {s2} does not want you here. Leave now or we will open fire.", "close_window",[]],
 
 
@@ -8982,7 +8982,7 @@ They are going around making terrible accusations against me, impugning my honou
   
 #  [anyone|plyr,"request_meeting_1", [(ge, "$g_encountered_party_faction", 0)], "Open the gates and let me in!", "request_meeting_open_gates",[]],
   
-#  [anyone|plyr,"request_meeting_1", [(party_slot_ge, "$g_encountered_party", slot_mainplanet_lord, 1)], "I want to speak with the ruler of this planet.", "request_meeting_castle_lord",[]],
+#  [anyone|plyr,"request_meeting_1", [(party_slot_ge, "$g_encountered_party", slot_mainplanet_lord, 1)], "I want to speak with the ruler of this planet.", "request_meeting_spacestation_lord",[]],
 #  [anyone|plyr,"request_meeting_1", [], "I want to speak with someone in the main hall.", "request_meeting_other",[]],
 
 ##### TODO: QUESTS COMMENT OUT BEGIN
@@ -9066,24 +9066,24 @@ They are going around making terrible accusations against me, impugning my honou
 
 
   
-##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
-##                                         (call_script, "script_get_troop_attached_party", ":castle_lord"),
+##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":spacestation_lord", "$g_encountered_party", slot_mainplanet_lord),
+##                                         (call_script, "script_get_troop_attached_party", ":spacestation_lord"),
 ##                                         (eq, "$g_encountered_party", reg0),
-##                                         (str_store_troop_name, 1, ":castle_lord")
+##                                         (str_store_troop_name, 1, ":spacestation_lord")
 ##                                         ],  "My ruler {s1} is in the main hall now. You must ask his permission to enter.", "request_meeting_pretalk",[]],
 ##
-##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),
-##                                         (call_script, "script_get_troop_attached_party", ":castle_lord"),
+##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":spacestation_lord", "$g_encountered_party", slot_mainplanet_lord),
+##                                         (call_script, "script_get_troop_attached_party", ":spacestation_lord"),
 ##                                         (neq, "$g_encountered_party", reg0),
 ##                                         (ge, "$g_encountered_party_relation", 0),
-##                                         (troop_get_slot, ":castle_lord_relation", ":castle_lord", slot_troop_player_relation),
-##                                         (ge, ":castle_lord_relation", 20),
-##                                         (str_store_troop_name, 1, ":castle_lord")
+##                                         (troop_get_slot, ":spacestation_lord_relation", ":spacestation_lord", slot_troop_player_relation),
+##                                         (ge, ":spacestation_lord_relation", 20),
+##                                         (str_store_troop_name, 1, ":spacestation_lord")
 ##                                         ],  "My ruler {s1} is not in the main hall now.\
 ## But I think he would approve of you refuelling here, {sir/madam}.\
 ## Come on in. I am lowering the shields for your descent.", "close_window",[]],
 ##  
-##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":castle_lord", "$g_encountered_party", slot_mainplanet_lord),(str_store_troop_name, 1, ":castle_lord")],
+##  [anyone,"request_meeting_open_gates", [(party_get_slot, ":spacestation_lord", "$g_encountered_party", slot_mainplanet_lord),(str_store_troop_name, 1, ":spacestation_lord")],
 ##   "My ruler {s1} is not in the main hall now. I can't allow you in without his orders.", "request_meeting_pretalk",[]],
   
 
@@ -10416,7 +10416,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
      (gt, "$last_lost_companion", 0),
      (assign, ":companion_found_town", -1),
      (troop_get_slot, ":companion_found_town", "$last_lost_companion", slot_troop_cur_center),
-     (is_between, ":companion_found_town", towns_begin, towns_end),
+     (is_between, ":companion_found_town", mainplanets_begin, mainplanets_end),
      (str_store_troop_name, s10, "$last_lost_companion"),
      (str_store_party_name, s11, ":companion_found_town"),
      ],
@@ -10439,32 +10439,32 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
  The war has been long and our Galaxy is divided! The Empire fights for control and the Rebels are fighting to liberate the Galaxy.\
  This war-torn Galaxy is a great place for you, however, an aspiring adventurer.\
  With some luck and skill, you can make a name for yourself here, amass a fortune perhaps, or gain great power.\
- Opportunities are endless and so are the rewards, if you are willing to risk your life for them.", "tavern_traveler_tell_kingdoms_2", []],
+ Opportunities are endless and so are the rewards, if you are willing to risk your life for them.", "tavern_traveler_tell_factions_2", []],
   
-  [anyone|plyr, "tavern_traveler_tell_kingdoms_2", [], "Tell me more about these opportunities.", "tavern_traveler_tell_kingdoms_3", []],
-  [anyone|plyr, "tavern_traveler_tell_kingdoms_2", [], "Thank you. That was all I needed to know", "close_window", []],
+  [anyone|plyr, "tavern_traveler_tell_factions_2", [], "Tell me more about these opportunities.", "tavern_traveler_tell_factions_3", []],
+  [anyone|plyr, "tavern_traveler_tell_factions_2", [], "Thank you. That was all I needed to know", "close_window", []],
 
-  [anyone, "tavern_traveler_tell_kingdoms_3", [(gt, "$player_has_homage", 0)], "Well, you probably know everything I could tell you already. You seem to be doing pretty well.",
-   "tavern_traveler_tell_kingdoms_4", []],
-  [anyone, "tavern_traveler_tell_kingdoms_3", [], "The Empire and Rebels, both will pay good money for mercenaries if they are engaged in a war.\
+  [anyone, "tavern_traveler_tell_factions_3", [(gt, "$player_has_homage", 0)], "Well, you probably know everything I could tell you already. You seem to be doing pretty well.",
+   "tavern_traveler_tell_factions_4", []],
+  [anyone, "tavern_traveler_tell_factions_3", [], "The Empire and Rebels, both will pay good money for mercenaries if they are engaged in a war.\
  If you have done a bit of fighting, speaking with one of their commanders will probably result in being offered a mercenary contract.\
  However the real rewards come if you can manage to become a vassal to a ruler.\
  A vassal can own planets and get rich with the taxes and revenues of these locations.\
  Normally, only rulers of the faction own star systems in this way,\
  but in time of war, a commander will not hesitate to accept someone who distinugishes {himself/herself} on the battlefield as a vassal, and grant {him/her} the right to own planets.",
-   "tavern_traveler_tell_kingdoms_4", []],
+   "tavern_traveler_tell_factions_4", []],
 
-  [anyone, "tavern_traveler_tell_kingdoms_4", [], "The only path closed to a an adventurer such as you would be becoming the leader of a faction.\
+  [anyone, "tavern_traveler_tell_factions_4", [], "The only path closed to a an adventurer such as you would be becoming the leader of a faction.\
  The people and rulers of the Galaxy would never accept an upstart adventurer as their ruler.\
  But don't think that leaders can sit on their thrones too comfortably, either. They have their own rivals,\
  those who are born to the right family, who could go around and stir up trouble saying they have a better claim to the faction than the current leader.\
  If those claim holders could find supporters, they could easily start their civil wars and perhaps even replace the leader one day.",
-   "tavern_traveler_tell_kingdoms_5", []],
+   "tavern_traveler_tell_factions_5", []],
 
-  [anyone|plyr, "tavern_traveler_tell_kingdoms_5", [], "Interesting. Where can I find these claim holders?", "tavern_traveler_tell_kingdoms_6", []],
-  [anyone|plyr, "tavern_traveler_tell_kingdoms_5", [], "I guess I heard enough already. Thank you.", "close_window", []],
+  [anyone|plyr, "tavern_traveler_tell_factions_5", [], "Interesting. Where can I find these claim holders?", "tavern_traveler_tell_factions_6", []],
+  [anyone|plyr, "tavern_traveler_tell_factions_5", [], "I guess I heard enough already. Thank you.", "close_window", []],
 
-  [anyone, "tavern_traveler_tell_kingdoms_6", [], "A claim holder's life would be in danger in his own territory of course.\
+  [anyone, "tavern_traveler_tell_factions_6", [], "A claim holder's life would be in danger in his own territory of course.\
  Therefore, they usually stay at rival courts, raising support and hoping to find someone willing to champion their cause.\
  I usually hear news about some of them, and may be able to tell you their location with some precision.\
  But of course, I would ask for a little something for such a service.",
@@ -10612,46 +10612,46 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                      (eq, "$g_talk_troop", "trp_farmer_from_bandit_village"),
                      (neg|check_quest_active, "qst_eliminate_bandits_infesting_village"),
                      (neg|check_quest_active, "qst_deal_with_bandits_at_lords_village"),
-                     (assign, ":end_cond", villages_end),
-                     (try_for_range, ":cur_village", villages_begin, ":end_cond"),
+                     (assign, ":end_cond", minorplanet_end),
+                     (try_for_range, ":cur_village", minorplanet_begin, ":end_cond"),
                        (party_slot_eq, ":cur_village", slot_minorplanet_bound_center, "$g_encountered_party"),
                        (party_slot_ge, ":cur_village", slot_minorplanet_infested_by_bandits, 1),
                        (str_store_party_name, s1, ":cur_village"),
                        (quest_set_slot, "qst_eliminate_bandits_infesting_village", slot_quest_target_center, ":cur_village"),
                        (quest_set_slot, "qst_eliminate_bandits_infesting_village", slot_quest_current_state, 0),
-                       (party_get_slot, ":village_elder", ":cur_village", slot_mainplanet_elder),
-                       (quest_set_slot, "qst_eliminate_bandits_infesting_village", slot_quest_giver_troop, ":village_elder"),
+                       (party_get_slot, ":minorplanet_elder", ":cur_village", slot_mainplanet_elder),
+                       (quest_set_slot, "qst_eliminate_bandits_infesting_village", slot_quest_giver_troop, ":minorplanet_elder"),
                        (quest_set_slot, "qst_eliminate_bandits_infesting_village", slot_quest_giver_center, ":cur_village"),
                        (assign, ":end_cond", 0),
                      (try_end),
                      ],
    "You look like a {man/lady} of honour and someone who could help us.\
- Will you hear my plea?", "farmer_from_bandit_village_1", []],
+ Will you hear my plea?", "farmer_from_bandit_minorplanet_1", []],
 
-  [anyone|plyr, "farmer_from_bandit_village_1", [],
-   "What is the matter, my good man?", "farmer_from_bandit_village_2", []],
-  [anyone|plyr, "farmer_from_bandit_village_1", [],
-   "What are you blurbing about farmer? Speak out.", "farmer_from_bandit_village_2", []],
+  [anyone|plyr, "farmer_from_bandit_minorplanet_1", [],
+   "What is the matter, my good man?", "farmer_from_bandit_minorplanet_2", []],
+  [anyone|plyr, "farmer_from_bandit_minorplanet_1", [],
+   "What are you blurbing about farmer? Speak out.", "farmer_from_bandit_minorplanet_2", []],
 
-  [anyone, "farmer_from_bandit_village_2", [],
+  [anyone, "farmer_from_bandit_minorplanet_2", [],
    "A band of pirates have taken refuge on our planet. They take everything we have and force us to serve them.\
  If one of us so much as breathes a word of protest, they kill the poor soul without hesistation.\
- Our lives have become unbearable. I risked my skin and fled to find someone who can help us.", "farmer_from_bandit_village_3", []],
-  [anyone|plyr, "farmer_from_bandit_village_3", [],
-   "Why don't you go to the ruler of your system? He should take care of the vermin.", "farmer_from_bandit_village_4", []],
-  [anyone, "farmer_from_bandit_village_4", [],
+ Our lives have become unbearable. I risked my skin and fled to find someone who can help us.", "farmer_from_bandit_minorplanet_3", []],
+  [anyone|plyr, "farmer_from_bandit_minorplanet_3", [],
+   "Why don't you go to the ruler of your system? He should take care of the vermin.", "farmer_from_bandit_minorplanet_4", []],
+  [anyone, "farmer_from_bandit_minorplanet_4", [],
    "I did, {sir/madam}, but our ruler's troops did not let me see him and said they were occupied with more important matters and that we should deal with the problem ourselves.\
  Please {sir/madam}, you look like a {man/lady} of valor and a fearsome warrior, and you have no doubt many friends and soldiers at your service.\
- If there is anyone who can help us, it's you.", "farmer_from_bandit_village_5", [(assign, "$temp", 0)]],
-  [anyone|plyr, "farmer_from_bandit_village_5", [],
-   "Very well, I'll help you. Where is your planet?", "farmer_from_bandit_village_accepted", []],
-  [anyone|plyr, "farmer_from_bandit_village_5", [],
-   "Find yourself some other mercenaries, I'm not interested.", "farmer_from_bandit_village_denied", []],
-  [anyone|plyr, "farmer_from_bandit_village_5", [(eq, "$temp", 0)],
-   "Why would I fight these pirates? What's in it for me?", "farmer_from_bandit_village_barter", []],
+ If there is anyone who can help us, it's you.", "farmer_from_bandit_minorplanet_5", [(assign, "$temp", 0)]],
+  [anyone|plyr, "farmer_from_bandit_minorplanet_5", [],
+   "Very well, I'll help you. Where is your planet?", "farmer_from_bandit_minorplanet_accepted", []],
+  [anyone|plyr, "farmer_from_bandit_minorplanet_5", [],
+   "Find yourself some other mercenaries, I'm not interested.", "farmer_from_bandit_minorplanet_denied", []],
+  [anyone|plyr, "farmer_from_bandit_minorplanet_5", [(eq, "$temp", 0)],
+   "Why would I fight these pirates? What's in it for me?", "farmer_from_bandit_minorplanet_barter", []],
 
   
-  [anyone, "farmer_from_bandit_village_accepted", [],
+  [anyone, "farmer_from_bandit_minorplanet_accepted", [],
    "Thank you for your help, {sir/madam}. Our planet is {s7}. It is not too far from here.", "close_window",
    [(quest_get_slot, ":target_center", "qst_eliminate_bandits_infesting_village", slot_quest_target_center),
     (str_store_party_name_link,s7,":target_center"),
@@ -10660,12 +10660,12 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
     (call_script, "script_start_quest", "qst_eliminate_bandits_infesting_village", "$g_talk_troop"),
     ]],
 
-  [anyone, "farmer_from_bandit_village_denied", [],"As you say {sir/madam}. Forgive me for bothering you.", "close_window", []],
+  [anyone, "farmer_from_bandit_minorplanet_denied", [],"As you say {sir/madam}. Forgive me for bothering you.", "close_window", []],
 
-  [anyone, "farmer_from_bandit_village_barter", [],
+  [anyone, "farmer_from_bandit_minorplanet_barter", [],
    "We are but poor moisture farmers {sir/madam}, and the pirates have already taken most of what we had on our world.\
  But we'll be glad to share with you whatever we have left.\
- We will forever express our gratitude if you help us.", "farmer_from_bandit_village_5", [(assign, "$temp", 1)]],
+ We will forever express our gratitude if you help us.", "farmer_from_bandit_minorplanet_5", [(assign, "$temp", 1)]],
   
   [anyone, "start", [(eq, "$talk_context", tc_tavern_talk),
                      (eq, "$g_talk_troop", "trp_farmer_from_bandit_village"),
@@ -11075,7 +11075,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##  [anyone, "crook_search_person", [],
 ##   "TODO: Who are you searching for?", "crook_search_person_2",[]],
 ##  [anyone|plyr|repeat_for_factions,"crook_search_person_2", [(store_repeat_object, ":faction_no"),
-##                                                             (is_between, ":faction_no", kingdoms_begin, kingdoms_end),
+##                                                             (is_between, ":faction_no", factions_begin, factions_end),
 ##                                                             (str_store_faction_name, s1, ":faction_no")],
 ##   "TODO: I'm looking for a {s1}.", "crook_search_person_3", [(store_repeat_object, "$selected_faction")]],
 ##
@@ -11517,10 +11517,10 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    [
      (eq,"$random_merchant_quest_no","qst_deal_with_jawas"),
      (try_begin),
-       (party_slot_eq,"$g_encountered_party",slot_party_type,spt_town),
+       (party_slot_eq,"$g_encountered_party",slot_party_type,spt_mainplanet),
        (str_store_string,s5,"@town"),
      (else_try),
-       (party_slot_eq,"$g_encountered_party",slot_party_type,spt_village),
+       (party_slot_eq,"$g_encountered_party",slot_party_type,spt_minorplanet),
        (str_store_string,s5,"@village"),
      (try_end),
      ],
@@ -11535,10 +11535,10 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone,"merchant_quest_jawas_brief", [
    (try_begin),
-   (party_slot_eq,"$g_encountered_party",slot_party_type,spt_town),
+   (party_slot_eq,"$g_encountered_party",slot_party_type,spt_mainplanet),
    (str_store_string,s5,"@town"),
    (else_try),
-   (party_slot_eq,"$g_encountered_party",slot_party_type,spt_village),
+   (party_slot_eq,"$g_encountered_party",slot_party_type,spt_minorplanet),
    (str_store_string,s5,"@village"),
    (try_end),
 
@@ -12158,7 +12158,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                     (eq,":elder_quest","qst_deliver_cattle"),
                     (check_quest_succeeded, ":elder_quest"),
                     (quest_get_slot, reg5, "qst_deliver_cattle", slot_quest_target_amount)],
-   "My good {sir/madam}. Our planet is grateful for your help. Thanks to the herd of {reg5} nerfs you have brought, we can now raise our own herd.", "village_elder_deliver_cattle_thank",
+   "My good {sir/madam}. Our planet is grateful for your help. Thanks to the herd of {reg5} nerfs you have brought, we can now raise our own herd.", "minorplanet_elder_deliver_cattle_thank",
    [(add_xp_as_reward, 400),
     (quest_get_slot, ":num_cattle", "qst_deliver_cattle", slot_quest_target_amount),
     (party_set_slot, "$current_town", slot_minorplanet_number_of_cattle, ":num_cattle"),
@@ -12171,8 +12171,8 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
     ]],
 
-  [anyone,"village_elder_deliver_cattle_thank", [],
-   "My good {man/lady}, please, is there anything I can do for you?", "village_elder_talk",[]],
+  [anyone,"minorplanet_elder_deliver_cattle_thank", [],
+   "My good {man/lady}, please, is there anything I can do for you?", "minorplanet_elder_talk",[]],
   
 
 ##  [anyone,"start",
@@ -12182,7 +12182,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##     (eq, ":elder_quest", "qst_train_peasants_against_bandits"),
 ##     (check_quest_succeeded, ":elder_quest"),
 ##     (quest_get_slot, reg5, "qst_train_peasants_against_bandits", slot_quest_target_amount)],
-##   "Oh, thank you so much for training our troops. Now we may stand a chance against those accursed bandits if they come again.", "village_elder_train_peasants_against_bandits_thank",
+##   "Oh, thank you so much for training our troops. Now we may stand a chance against those accursed bandits if they come again.", "minorplanet_elder_train_peasants_against_bandits_thank",
 ##   [
 ##     (add_xp_as_reward, 400),
 ##     (call_script, "script_change_player_relation_with_center", "$current_town", 5),
@@ -12190,115 +12190,115 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##     (call_script, "script_add_log_entry", logent_helped_peasants, "trp_player",  "$current_town", -1, -1),
 ##    ]],
 
-#  [anyone,"village_elder_train_peasants_against_bandits_thank", [],
-#   "Now, good {sire/lady}, is there anything I can do for you?", "village_elder_talk",[]],
+#  [anyone,"minorplanet_elder_train_peasants_against_bandits_thank", [],
+#   "Now, good {sire/lady}, is there anything I can do for you?", "minorplanet_elder_talk",[]],
 
 
 
   [anyone,"start", [(is_between,"$g_talk_troop", planet_admins_begin, planet_admins_end),(eq,"$g_talk_troop_met",0),
                     (str_store_party_name, s9, "$current_town")],
-   "Good day, {sir/madam}, and welcome to {s9}. I am the administrator of this planet.", "village_elder_talk",[]],
+   "Good day, {sir/madam}, and welcome to {s9}. I am the administrator of this planet.", "minorplanet_elder_talk",[]],
 
   [anyone,"start", [(is_between,"$g_talk_troop", planet_admins_begin, planet_admins_end),(eq,"$g_talk_troop_met",0),
                     (str_store_party_name, s9, "$current_town"),
                     (party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player")],
    "Welcome to {s9}, {playername}. We were rejoiced by the news that you are the new {chancellor/chancellor} of our minor planet.\
- I am the planet administrator and I would be honoured to serve you in any way I can.", "village_elder_talk",[]],
+ I am the planet administrator and I would be honoured to serve you in any way I can.", "minorplanet_elder_talk",[]],
   
   [anyone ,"start", [(is_between,"$g_talk_troop",planet_admins_begin,planet_admins_end),
                      (party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player")],
-   "{My chancellor/My chancellor}, you honour our minor planet with your presence.", "village_elder_talk",[]],
+   "{My chancellor/My chancellor}, you honour our minor planet with your presence.", "minorplanet_elder_talk",[]],
 
   [anyone ,"start", [(is_between,"$g_talk_troop",planet_admins_begin,planet_admins_end)],
-   "Good day, {sir/madam}.", "village_elder_talk",[]],
+   "Good day, {sir/madam}.", "minorplanet_elder_talk",[]],
 
-  [anyone ,"village_elder_pretalk", [],
-   "Is there anything else I can do for you?", "village_elder_talk",[]],
+  [anyone ,"minorplanet_elder_pretalk", [],
+   "Is there anything else I can do for you?", "minorplanet_elder_talk",[]],
 
-  [anyone|plyr,"village_elder_talk", [(check_quest_active, "qst_hunt_down_fugitive"),
+  [anyone|plyr,"minorplanet_elder_talk", [(check_quest_active, "qst_hunt_down_fugitive"),
                                       (neg|check_quest_concluded, "qst_hunt_down_fugitive"),
                                       (quest_slot_eq, "qst_hunt_down_fugitive", slot_quest_target_center, "$current_town"),
                                       (quest_get_slot, ":quest_target_dna", "qst_hunt_down_fugitive", slot_quest_target_dna),
                                       (call_script, "script_get_name_from_dna_to_s50", ":quest_target_dna"),
                                       (str_store_string, s4, s50),
                                       ],
-   "I am looking for a man by the name of {s4}. I was told he may be hiding here.", "village_elder_ask_fugitive",[]],
+   "I am looking for a man by the name of {s4}. I was told he may be hiding here.", "minorplanet_elder_ask_fugitive",[]],
 
 #SW - Bounty Hunting Begin - http://forums.taleworlds.com/index.php/topic,59300.0.html
-  [anyone|plyr,"village_elder_talk", [(check_quest_active, "qst_bounty_1"),
+  [anyone|plyr,"minorplanet_elder_talk", [(check_quest_active, "qst_bounty_1"),
                                       (neg|check_quest_concluded, "qst_bounty_1"),
                                       (quest_slot_eq, "qst_bounty_1", slot_quest_target_center, "$current_town"),
                                       (quest_get_slot, ":quest_target_dna", "qst_bounty_1", slot_quest_target_dna),
                                       (call_script, "script_get_name_from_dna_to_s50", ":quest_target_dna"),
                                       (str_store_string, s4, s50),
                                       ],
-   "I am looking for a CIS officer named {s4}. I was told they may be here.", "village_elder_ask_fugitive",[]],
-  [anyone|plyr,"village_elder_talk", [(check_quest_active, "qst_bounty_2"),
+   "I am looking for a CIS officer named {s4}. I was told they may be here.", "minorplanet_elder_ask_fugitive",[]],
+  [anyone|plyr,"minorplanet_elder_talk", [(check_quest_active, "qst_bounty_2"),
                                       (neg|check_quest_concluded, "qst_bounty_2"),
                                       (quest_slot_eq, "qst_bounty_2", slot_quest_target_center, "$current_town"),
                                       (quest_get_slot, ":quest_target_dna", "qst_bounty_2", slot_quest_target_dna),
                                       (call_script, "script_get_name_from_dna_to_s50", ":quest_target_dna"),
                                       (str_store_string, s4, s50),
                                       ],
-   "I am looking for a farmer named {s4}. I was told they may be here.", "village_elder_ask_fugitive",[]],
-  [anyone|plyr,"village_elder_talk", [(check_quest_active, "qst_bounty_3"),
+   "I am looking for a farmer named {s4}. I was told they may be here.", "minorplanet_elder_ask_fugitive",[]],
+  [anyone|plyr,"minorplanet_elder_talk", [(check_quest_active, "qst_bounty_3"),
                                       (neg|check_quest_concluded, "qst_bounty_3"),
                                       (quest_slot_eq, "qst_bounty_3", slot_quest_target_center, "$current_town"),
                                       (quest_get_slot, ":quest_target_dna", "qst_bounty_3", slot_quest_target_dna),
                                       (call_script, "script_get_name_from_dna_to_s50", ":quest_target_dna"),
                                       (str_store_string, s4, s50),
                                       ],
-   "I am looking for someone named {s4}. I was told they may be here.", "village_elder_ask_fugitive",[]],
-  [anyone|plyr,"village_elder_talk", [(check_quest_active, "qst_bounty_4"),
+   "I am looking for someone named {s4}. I was told they may be here.", "minorplanet_elder_ask_fugitive",[]],
+  [anyone|plyr,"minorplanet_elder_talk", [(check_quest_active, "qst_bounty_4"),
                                       (neg|check_quest_concluded, "qst_bounty_4"),
                                       (quest_slot_eq, "qst_bounty_4", slot_quest_target_center, "$current_town"),
                                       (quest_get_slot, ":quest_target_dna", "qst_bounty_4", slot_quest_target_dna),
                                       (call_script, "script_get_name_from_dna_to_s50", ":quest_target_dna"),
                                       (str_store_string, s4, s50),
                                       ],
-   "I am looking for a pirate named {s4}. I was told they may be here.", "village_elder_ask_fugitive",[]],
-  [anyone|plyr,"village_elder_talk", [(check_quest_active, "qst_bounty_5"),
+   "I am looking for a pirate named {s4}. I was told they may be here.", "minorplanet_elder_ask_fugitive",[]],
+  [anyone|plyr,"minorplanet_elder_talk", [(check_quest_active, "qst_bounty_5"),
                                       (neg|check_quest_concluded, "qst_bounty_5"),
                                       (quest_slot_eq, "qst_bounty_5", slot_quest_target_center, "$current_town"),
                                       (quest_get_slot, ":quest_target_dna", "qst_bounty_5", slot_quest_target_dna),
                                       (call_script, "script_get_name_from_dna_to_s50", ":quest_target_dna"),
                                       (str_store_string, s4, s50),
                                       ],
-   "I am looking for a bountyhunter named {s4}. I was told they may be here.", "village_elder_ask_fugitive",[]],
-  [anyone|plyr,"village_elder_talk", [(check_quest_active, "qst_bounty_6"),
+   "I am looking for a bountyhunter named {s4}. I was told they may be here.", "minorplanet_elder_ask_fugitive",[]],
+  [anyone|plyr,"minorplanet_elder_talk", [(check_quest_active, "qst_bounty_6"),
                                       (neg|check_quest_concluded, "qst_bounty_6"),
                                       (quest_slot_eq, "qst_bounty_6", slot_quest_target_center, "$current_town"),
                                       (quest_get_slot, ":quest_target_dna", "qst_bounty_6", slot_quest_target_dna),
                                       (call_script, "script_get_name_from_dna_to_s50", ":quest_target_dna"),
                                       (str_store_string, s4, s50),
                                       ],
-   "I am looking for a smuggler named {s4}. I was told they may be here.", "village_elder_ask_fugitive",[]],
+   "I am looking for a smuggler named {s4}. I was told they may be here.", "minorplanet_elder_ask_fugitive",[]],
 #SW - Bounty Hunting End  
    
-  [anyone ,"village_elder_ask_fugitive", [(is_currently_night)],
-   "Strangers come and go to our little planet, {sir/madam}. But I doubt you'll run into him at this hour of the night. You would have better luck during the day.", "village_elder_pretalk",[]],
-  [anyone ,"village_elder_ask_fugitive", [],
+  [anyone ,"minorplanet_elder_ask_fugitive", [(is_currently_night)],
+   "Strangers come and go to our little planet, {sir/madam}. But I doubt you'll run into him at this hour of the night. You would have better luck during the day.", "minorplanet_elder_pretalk",[]],
+  [anyone ,"minorplanet_elder_ask_fugitive", [],
    "Strangers come and go to our great planet, {sir/madam}. If he is hiding here, you will surely find him if you look around.", "close_window",[]],
 
-  [anyone|plyr,"village_elder_talk", [(store_partner_quest,":elder_quest"),(ge,":elder_quest",0)],
-   "About the task you asked of me...", "village_elder_active_mission_1",[]],
+  [anyone|plyr,"minorplanet_elder_talk", [(store_partner_quest,":elder_quest"),(ge,":elder_quest",0)],
+   "About the task you asked of me...", "minorplanet_elder_active_mission_1",[]],
 
-  [anyone|plyr,"village_elder_talk", [(ge, "$g_talk_troop_faction_relation", 0),(store_partner_quest,":elder_quest"),(lt,":elder_quest",0)],
-   "Do you have any tasks I can help you with?", "village_elder_request_mission_ask",[]],
+  [anyone|plyr,"minorplanet_elder_talk", [(ge, "$g_talk_troop_faction_relation", 0),(store_partner_quest,":elder_quest"),(lt,":elder_quest",0)],
+   "Do you have any tasks I can help you with?", "minorplanet_elder_request_mission_ask",[]],
 
-  [anyone|plyr,"village_elder_talk", [(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
+  [anyone|plyr,"minorplanet_elder_talk", [(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
                                       (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),],
-   "I want to buy some supplies. I will pay with gold.", "village_elder_trade_begin",[]],
+   "I want to buy some supplies. I will pay with gold.", "minorplanet_elder_trade_begin",[]],
 
 
-  [anyone ,"village_elder_trade_begin", [], "Of course, {sir/madam}. Do you want to buy goods or nerfs?", "village_elder_trade_talk",[]],
+  [anyone ,"minorplanet_elder_trade_begin", [], "Of course, {sir/madam}. Do you want to buy goods or nerfs?", "minorplanet_elder_trade_talk",[]],
 
-  [anyone|plyr,"village_elder_trade_talk", [], "I want to buy food and supplies.", "village_elder_trade",[]],
+  [anyone|plyr,"minorplanet_elder_trade_talk", [], "I want to buy food and supplies.", "minorplanet_elder_trade",[]],
 
-  [anyone ,"village_elder_trade", [],
-   "We have some food and other supplies in our storehouse. Come have a look.", "village_elder_pretalk",[(change_screen_trade, "$g_talk_troop"),]],
+  [anyone ,"minorplanet_elder_trade", [],
+   "We have some food and other supplies in our storehouse. Come have a look.", "minorplanet_elder_pretalk",[(change_screen_trade, "$g_talk_troop"),]],
 
-  [anyone|plyr,"village_elder_trade_talk", [(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
+  [anyone|plyr,"minorplanet_elder_trade_talk", [(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
                                       (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
                                       (assign, ":quest_village", 0),
                                       (try_begin),
@@ -12308,16 +12308,16 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                       (try_end),
                                       (eq, ":quest_village", 0),
                                       ],
-   "I want to buy some nerfs.", "village_elder_buy_cattle",[]],
+   "I want to buy some nerfs.", "minorplanet_elder_buy_cattle",[]],
   
-  [anyone|plyr,"village_elder_trade_talk", [], "I changed my mind. I don't need to buy anything.", "village_elder_pretalk",[]],
+  [anyone|plyr,"minorplanet_elder_trade_talk", [], "I changed my mind. I don't need to buy anything.", "minorplanet_elder_pretalk",[]],
 
-  [anyone|plyr,"village_elder_talk",
+  [anyone|plyr,"minorplanet_elder_talk",
    [
      ],
-   "Have you seen any enemies around here recently?", "village_elder_ask_enemies",[]],
+   "Have you seen any enemies around here recently?", "minorplanet_elder_ask_enemies",[]],
 
-  [anyone,"village_elder_ask_enemies",
+  [anyone,"minorplanet_elder_ask_enemies",
    [
      (assign, ":give_report", 0),
      (party_get_slot, ":original_faction", "$g_encountered_party", slot_center_original_faction),
@@ -12332,17 +12332,17 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
      (try_end),
      (eq, ":give_report", 0),
      ],
-   "I am sorry, {sir/madam}. We have neither seen nor heard of any war parties in this area.", "village_elder_pretalk",
+   "I am sorry, {sir/madam}. We have neither seen nor heard of any war parties in this area.", "minorplanet_elder_pretalk",
    []],
 
-  [anyone,"village_elder_ask_enemies",
+  [anyone,"minorplanet_elder_ask_enemies",
    [],
-   "Hmm. Let me think about it...", "village_elder_tell_enemies",
+   "Hmm. Let me think about it...", "minorplanet_elder_tell_enemies",
    [
      (assign, "$temp", 0),
      ]],
 
-  [anyone,"village_elder_tell_enemies",
+  [anyone,"minorplanet_elder_tell_enemies",
    [
      (assign, ":target_hero_index", "$temp"),
      (assign, ":end_cond", kingdom_heroes_end),
@@ -12379,31 +12379,31 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
      (try_end),
      (eq, ":end_cond", 0),
      ],
-   "{s1} {s2}", "village_elder_tell_enemies",
+   "{s1} {s2}", "minorplanet_elder_tell_enemies",
    [
      (val_add, "$temp", 1),
      ]],
 
-  [anyone,"village_elder_tell_enemies",
+  [anyone,"minorplanet_elder_tell_enemies",
    [(eq, "$temp", 0)],
-   "No, {sir/madam}. We haven't seen any war parties in this area for some time.", "village_elder_pretalk",
+   "No, {sir/madam}. We haven't seen any war parties in this area for some time.", "minorplanet_elder_pretalk",
    []],
 
-  [anyone,"village_elder_tell_enemies",
+  [anyone,"minorplanet_elder_tell_enemies",
    [],
-   "Well, I guess that was all.", "village_elder_pretalk",
+   "Well, I guess that was all.", "minorplanet_elder_pretalk",
    []],
 
 
-  [anyone|plyr,"village_elder_talk", [(call_script, "script_cf_village_recruit_volunteers_cond"),],
-   "Are there any lads from this planet who might want to seek their fortune in the wars?", "village_elder_recruit_start",[]],
+  [anyone|plyr,"minorplanet_elder_talk", [(call_script, "script_cf_minorplanet_recruit_volunteers_cond"),],
+   "Are there any lads from this planet who might want to seek their fortune in the wars?", "minorplanet_elder_recruit_start",[]],
 
-  [anyone|plyr,"village_elder_talk", [],
+  [anyone|plyr,"minorplanet_elder_talk", [],
    "[Leave]", "close_window",[]],
 
 
 
-  [anyone ,"village_elder_buy_cattle", [(party_get_slot, reg5, "$g_encountered_party", slot_minorplanet_number_of_cattle),
+  [anyone ,"minorplanet_elder_buy_cattle", [(party_get_slot, reg5, "$g_encountered_party", slot_minorplanet_number_of_cattle),
                                         (gt, reg5, 0),
                                         (store_item_value, ":cattle_cost", "itm_cattle_meat"),
                                         (call_script, "script_game_get_item_buy_price_factor", "itm_cattle_meat"),
@@ -12413,66 +12413,66 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                         (assign, "$temp", ":cattle_cost"),
                                         (assign, reg6, ":cattle_cost"),
                                         ],
-   "We have {reg5} nerfs, each for {reg6} credits. How many do you want to buy?", "village_elder_buy_cattle_2",[]],
+   "We have {reg5} nerfs, each for {reg6} credits. How many do you want to buy?", "minorplanet_elder_buy_cattle_2",[]],
 
-  [anyone ,"village_elder_buy_cattle", [],
-   "I am afraid we have no nerfs within this sector.", "village_elder_buy_cattle_2",[]],
+  [anyone ,"minorplanet_elder_buy_cattle", [],
+   "I am afraid we have no nerfs within this sector.", "minorplanet_elder_buy_cattle_2",[]],
 
 
-  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
+  [anyone|plyr,"minorplanet_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
                                               (ge, ":num_cattle", 1),
                                               (store_troop_gold, ":gold", "trp_player"),
                                               (ge, ":gold", "$temp"),],
-   "One.", "village_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 1, "$temp"),
+   "One.", "minorplanet_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 1, "$temp"),
                                                        ]],
   
-  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
+  [anyone|plyr,"minorplanet_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
                                               (ge, ":num_cattle", 2),
                                               (store_troop_gold, ":gold", "trp_player"),
                                               (store_mul, ":cost", "$temp", 2),
                                               (ge, ":gold", ":cost"),],
-   "Two.", "village_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 2, "$temp"),
+   "Two.", "minorplanet_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 2, "$temp"),
                                                        ]],
   
-  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
+  [anyone|plyr,"minorplanet_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
                                               (ge, ":num_cattle", 3),
                                               (store_troop_gold, ":gold", "trp_player"),
                                               (store_mul, ":cost", "$temp", 3),
                                               (ge, ":gold", ":cost"),],
-   "Three.", "village_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 3, "$temp"),
+   "Three.", "minorplanet_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 3, "$temp"),
                                                        ]],
   
-  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
+  [anyone|plyr,"minorplanet_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
                                               (ge, ":num_cattle", 4),
                                               (store_troop_gold, ":gold", "trp_player"),
                                               (store_mul, ":cost", "$temp", 4),
                                               (ge, ":gold", ":cost"),],
-   "Four.", "village_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 4, "$temp"),
+   "Four.", "minorplanet_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 4, "$temp"),
                                                        ]],
   
-  [anyone|plyr,"village_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
+  [anyone|plyr,"minorplanet_elder_buy_cattle_2", [(party_get_slot, ":num_cattle", "$g_encountered_party", slot_minorplanet_number_of_cattle),
                                               (ge, ":num_cattle", 5),
                                               (store_troop_gold, ":gold", "trp_player"),
                                               (store_mul, ":cost", "$temp", 5),
                                               (ge, ":gold", ":cost"),],
-   "Five.", "village_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 5, "$temp"),
+   "Five.", "minorplanet_elder_buy_cattle_complete",[(call_script, "script_buy_cattle_from_village", "$g_encountered_party", 5, "$temp"),
                                                        ]],
   
-  [anyone|plyr,"village_elder_buy_cattle_2", [],
-   "Forget it.", "village_elder_pretalk",[]],
+  [anyone|plyr,"minorplanet_elder_buy_cattle_2", [],
+   "Forget it.", "minorplanet_elder_pretalk",[]],
 
-  [anyone ,"village_elder_buy_cattle_complete", [],
-   "I will tell the herders to round up the animals and bring them to you. I am sure you will be satisfied with your purchase.", "village_elder_pretalk",[]],
+  [anyone ,"minorplanet_elder_buy_cattle_complete", [],
+   "I will tell the herders to round up the animals and bring them to you. I am sure you will be satisfied with your purchase.", "minorplanet_elder_pretalk",[]],
 
 
-  [anyone ,"village_elder_recruit_start", [(party_slot_eq, "$current_town", slot_center_volunteer_troop_amount, 0)],
-   "I don't think anyone would be interested. We are a peaceful planet. Is there anything else I can do for you?", "village_elder_talk",[]],
+  [anyone ,"minorplanet_elder_recruit_start", [(party_slot_eq, "$current_town", slot_center_volunteer_troop_amount, 0)],
+   "I don't think anyone would be interested. We are a peaceful planet. Is there anything else I can do for you?", "minorplanet_elder_talk",[]],
 
   #SW - possible bug fix?
-  [anyone ,"village_elder_recruit_start", [(party_slot_eq, "$current_town", slot_center_volunteer_troop_amount, -1)],
-   "I don't think anyone would be interested. We are a peaceful planet. Is there anything else I can do for you?", "village_elder_talk",[]],   
+  [anyone ,"minorplanet_elder_recruit_start", [(party_slot_eq, "$current_town", slot_center_volunteer_troop_amount, -1)],
+   "I don't think anyone would be interested. We are a peaceful planet. Is there anything else I can do for you?", "minorplanet_elder_talk",[]],   
   
-  [anyone ,"village_elder_recruit_start", [(party_get_slot, ":num_volunteers", "$current_town", slot_center_volunteer_troop_amount),
+  [anyone ,"minorplanet_elder_recruit_start", [(party_get_slot, ":num_volunteers", "$current_town", slot_center_volunteer_troop_amount),
                                            (party_get_free_companions_capacity, ":free_capacity", "p_main_party"),
                                            (val_min, ":num_volunteers", ":free_capacity"),
                                            (assign, "$temp",  ":num_volunteers"),
@@ -12480,22 +12480,22 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                            (store_add, reg7, ":num_volunteers", -1),
                                            ],
    "I can think of {reg5} whom I suspect would jump at the chance to see the stars. If you could pay 10 credits {reg7?each for their equipment:for his equipment}.\
- Does that suit you?", "village_elder_recruit_decision",[]],
+ Does that suit you?", "minorplanet_elder_recruit_decision",[]],
 
-  [anyone|plyr,"village_elder_recruit_decision", [(party_slot_eq, "$current_town", slot_center_volunteer_troop_amount, 0)],
-   "So be it.", "village_elder_pretalk",[(party_set_slot, "$current_town", slot_center_volunteer_troop_amount, -1),]],
+  [anyone|plyr,"minorplanet_elder_recruit_decision", [(party_slot_eq, "$current_town", slot_center_volunteer_troop_amount, 0)],
+   "So be it.", "minorplanet_elder_pretalk",[(party_set_slot, "$current_town", slot_center_volunteer_troop_amount, -1),]],
 
-  [anyone|plyr,"village_elder_recruit_decision", [(assign, ":num_volunteers", "$temp"),
+  [anyone|plyr,"minorplanet_elder_recruit_decision", [(assign, ":num_volunteers", "$temp"),
                                                   (ge, ":num_volunteers", 1),
                                                   (store_add, reg7, ":num_volunteers", -1)],
-   "Tell {reg7?them:him} to make ready.", "village_elder_pretalk",[(call_script, "script_village_recruit_volunteers_recruit"),]],
+   "Tell {reg7?them:him} to make ready.", "minorplanet_elder_pretalk",[(call_script, "script_minorplanet_recruit_volunteers_recruit"),]],
 
-  [anyone|plyr,"village_elder_recruit_decision", [(party_slot_ge, "$current_town", slot_center_volunteer_troop_amount, 1)],
-   "No, not now.", "village_elder_pretalk",[]],
+  [anyone|plyr,"minorplanet_elder_recruit_decision", [(party_slot_ge, "$current_town", slot_center_volunteer_troop_amount, 1)],
+   "No, not now.", "minorplanet_elder_pretalk",[]],
 
-  [anyone,"village_elder_active_mission_1", [], "Yes {playername}, have you made any progress on it?", "village_elder_active_mission_2",[]],
+  [anyone,"minorplanet_elder_active_mission_1", [], "Yes {playername}, have you made any progress on it?", "minorplanet_elder_active_mission_2",[]],
 
-  [anyone|plyr,"village_elder_active_mission_2",[(store_partner_quest,":elder_quest"),
+  [anyone|plyr,"minorplanet_elder_active_mission_2",[(store_partner_quest,":elder_quest"),
                                                  (eq, ":elder_quest", "qst_deliver_grain"),
                                                  (quest_get_slot, ":quest_target_amount", "qst_deliver_grain", slot_quest_target_amount),
                                                  (call_script, "script_get_troop_item_amount", "trp_player", "itm_grain"),
@@ -12503,13 +12503,13 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                                  (ge, ":cur_amount", ":quest_target_amount"),
                                                  (assign, reg5, ":quest_target_amount"),
                                                  ],
-   "Indeed. I brought you {reg5} packs of wheat.", "village_elder_deliver_grain_thank",
+   "Indeed. I brought you {reg5} packs of wheat.", "minorplanet_elder_deliver_grain_thank",
    []],
 
 #SW - modified village to planet in dialogs
-  [anyone,"village_elder_deliver_grain_thank", [(str_store_party_name, s13, "$current_town")],
+  [anyone,"minorplanet_elder_deliver_grain_thank", [(str_store_party_name, s13, "$current_town")],
    "My good {sir/lady}. You have saved us from hunger and desperation. We cannot thank you enough, but you'll always be in our prayers.\
- The planet of {s13} will not forget what you have done for us.", "village_elder_deliver_grain_thank_2",
+ The planet of {s13} will not forget what you have done for us.", "minorplanet_elder_deliver_grain_thank_2",
    [(quest_get_slot, ":quest_target_amount", "qst_deliver_grain", slot_quest_target_amount),
     (troop_remove_items, "trp_player", "itm_grain", ":quest_target_amount"),
     (add_xp_as_reward, 400),
@@ -12521,51 +12521,51 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 #Troop commentaries end
    ]],
 
-  [anyone,"village_elder_deliver_grain_thank_2", [],
-   "My good {sir/lady}, please, is there anything I can do for you?", "village_elder_talk",[]],
+  [anyone,"minorplanet_elder_deliver_grain_thank_2", [],
+   "My good {sir/lady}, please, is there anything I can do for you?", "minorplanet_elder_talk",[]],
 
 
-  [anyone|plyr,"village_elder_active_mission_2", [], "I am still working on it.", "village_elder_active_mission_3",[]],
-  [anyone|plyr,"village_elder_active_mission_2", [], "I am afraid I won't be able to finish it.", "village_elder_mission_failed",[]],
+  [anyone|plyr,"minorplanet_elder_active_mission_2", [], "I am still working on it.", "minorplanet_elder_active_mission_3",[]],
+  [anyone|plyr,"minorplanet_elder_active_mission_2", [], "I am afraid I won't be able to finish it.", "minorplanet_elder_mission_failed",[]],
                                                                                                                                                    
-  [anyone,"village_elder_active_mission_3", [], "Thank you, {sir/madam}. We are praying for your success everyday.", "village_elder_pretalk",[]],
+  [anyone,"minorplanet_elder_active_mission_3", [], "Thank you, {sir/madam}. We are praying for your success everyday.", "minorplanet_elder_pretalk",[]],
 
-  [anyone,"village_elder_mission_failed", [], "Ah, I am sorry to hear that {sir/madam}. I'll try to think of something else.", "village_elder_pretalk",
+  [anyone,"minorplanet_elder_mission_failed", [], "Ah, I am sorry to hear that {sir/madam}. I'll try to think of something else.", "minorplanet_elder_pretalk",
    [(store_partner_quest,":elder_quest"),
     (call_script, "script_abort_quest", ":elder_quest", 1)]],
 ##
-##  [anyone,"village_elder_generic_mission_thank", [],
-##   "You have been so helpful {sir/madam}. I do not know how to thank you.", "village_elder_generic_mission_completed",[]],
+##  [anyone,"minorplanet_elder_generic_mission_thank", [],
+##   "You have been so helpful {sir/madam}. I do not know how to thank you.", "minorplanet_elder_generic_mission_completed",[]],
 ##
-##  [anyone|plyr,"village_elder_generic_mission_completed", [],
-##   "Speak not of it. I only did what needed to be done.", "village_elder_pretalk",[]],
+##  [anyone|plyr,"minorplanet_elder_generic_mission_completed", [],
+##   "Speak not of it. I only did what needed to be done.", "minorplanet_elder_pretalk",[]],
 
 # Currently not needed.
-##  [anyone|plyr,"village_elder_generic_mission_failed", [],
-##   "TODO: I'm sorry I failed you sir. It won't happen again.", "village_elder_pretalk",
+##  [anyone|plyr,"minorplanet_elder_generic_mission_failed", [],
+##   "TODO: I'm sorry I failed you sir. It won't happen again.", "minorplanet_elder_pretalk",
 ##   [(store_partner_quest,":elder_quest"),
 ##    (call_script, "script_finish_quest", ":elder_quest", 0),
 ##    ]],
 
 
-  [anyone,"village_elder_request_mission_ask", [(store_partner_quest,":elder_quest"),(ge,":elder_quest",0)],
-   "Well {sir/madam}, you are already engaged with a task helping us. We cannot ask more from you.", "village_elder_pretalk",[]],
+  [anyone,"minorplanet_elder_request_mission_ask", [(store_partner_quest,":elder_quest"),(ge,":elder_quest",0)],
+   "Well {sir/madam}, you are already engaged with a task helping us. We cannot ask more from you.", "minorplanet_elder_pretalk",[]],
 
-  [anyone,"village_elder_request_mission_ask", [(troop_slot_eq, "$g_talk_troop", slot_troop_does_not_give_quest, 1)],
-   "No {sir/madam}. We don't have any other tasks for you.", "village_elder_pretalk",[]],
+  [anyone,"minorplanet_elder_request_mission_ask", [(troop_slot_eq, "$g_talk_troop", slot_troop_does_not_give_quest, 1)],
+   "No {sir/madam}. We don't have any other tasks for you.", "minorplanet_elder_pretalk",[]],
   
-  [anyone|auto_proceed,"village_elder_request_mission_ask", [], "A task?", "village_elder_tell_mission",
+  [anyone|auto_proceed,"minorplanet_elder_request_mission_ask", [], "A task?", "minorplanet_elder_tell_mission",
    [
        (call_script, "script_get_random_quest", "$g_talk_troop"),
        (assign, "$random_quest_no", reg0),
    ]],
 
 
-  [anyone,"village_elder_tell_mission", [(eq,"$random_quest_no","qst_deliver_grain")],
+  [anyone,"minorplanet_elder_tell_mission", [(eq,"$random_quest_no","qst_deliver_grain")],
    "{My good sir/My good lady}, our planet has been going through such hardships lately.\
  The harvest has been bad, and recently some merciless pirates took away our seed grain that we had reserved for the planting season.\
  If we cannot find some grain soon, we will not be able to plant our fields and then we will have nothing to eat for the coming year.\
- If you can help us, we would be indebted to you forever.", "village_elder_tell_deliver_grain_mission",
+ If you can help us, we would be indebted to you forever.", "minorplanet_elder_tell_deliver_grain_mission",
    [
      (quest_get_slot, ":quest_target_center", "$random_quest_no", slot_quest_target_center),
      (str_store_party_name_link,s3,":quest_target_center"),
@@ -12575,37 +12575,37 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
      (str_store_string, s2, "@The administrator of the planet of {s3} asked you to bring them {reg5} packs of wheat."),
    ]],
 
-  [anyone|plyr,"village_elder_tell_deliver_grain_mission", [],
-   "Hmmm. How much grain do you need?", "village_elder_tell_deliver_grain_mission_2",[]],
-  [anyone|plyr,"village_elder_tell_deliver_grain_mission", [],
-   "I can't be bothered with this. Ask help from someone else.", "village_elder_deliver_grain_mission_reject",[]],
+  [anyone|plyr,"minorplanet_elder_tell_deliver_grain_mission", [],
+   "Hmmm. How much grain do you need?", "minorplanet_elder_tell_deliver_grain_mission_2",[]],
+  [anyone|plyr,"minorplanet_elder_tell_deliver_grain_mission", [],
+   "I can't be bothered with this. Ask help from someone else.", "minorplanet_elder_deliver_grain_mission_reject",[]],
   
-  [anyone,"village_elder_tell_deliver_grain_mission_2", [(quest_get_slot, reg5, "$random_quest_no", slot_quest_target_amount)],
-   "I think {reg5} packs of wheat will let us start the planting. Hopefully, we can find charitable people to help us with the rest.", "village_elder_tell_deliver_grain_mission_3",[]],
+  [anyone,"minorplanet_elder_tell_deliver_grain_mission_2", [(quest_get_slot, reg5, "$random_quest_no", slot_quest_target_amount)],
+   "I think {reg5} packs of wheat will let us start the planting. Hopefully, we can find charitable people to help us with the rest.", "minorplanet_elder_tell_deliver_grain_mission_3",[]],
   
-  [anyone|plyr,"village_elder_tell_deliver_grain_mission_3", [],
-   "Then I will go and find you the wheat you need.", "village_elder_deliver_grain_mission_accept",[]],
-  [anyone|plyr,"village_elder_tell_deliver_grain_mission_3", [],
-   "I am afraid I don't have time for this. You'll need to find help elsewhere.", "village_elder_deliver_grain_mission_reject",[]],
+  [anyone|plyr,"minorplanet_elder_tell_deliver_grain_mission_3", [],
+   "Then I will go and find you the wheat you need.", "minorplanet_elder_deliver_grain_mission_accept",[]],
+  [anyone|plyr,"minorplanet_elder_tell_deliver_grain_mission_3", [],
+   "I am afraid I don't have time for this. You'll need to find help elsewhere.", "minorplanet_elder_deliver_grain_mission_reject",[]],
 
-  [anyone,"village_elder_deliver_grain_mission_accept", [], "Thank you, {sir/madam}. We'll be praying for you night and day.", "close_window",
+  [anyone,"minorplanet_elder_deliver_grain_mission_accept", [], "Thank you, {sir/madam}. We'll be praying for you night and day.", "close_window",
    [(assign, "$g_leave_encounter",1),
     (call_script, "script_change_player_relation_with_center", "$current_town", 5),
     (call_script, "script_start_quest", "$random_quest_no", "$g_talk_troop"),
     ]],
   
-  [anyone,"village_elder_deliver_grain_mission_reject", [], "Yes {sir/madam}, of course. I am sorry if I have bothered you with our troubles.", "close_window",
+  [anyone,"minorplanet_elder_deliver_grain_mission_reject", [], "Yes {sir/madam}, of course. I am sorry if I have bothered you with our troubles.", "close_window",
    [(troop_set_slot, "$g_talk_troop", slot_troop_does_not_give_quest, 1),
     ]],
 
 
 
-  [anyone,"village_elder_tell_mission", [(eq,"$random_quest_no", "qst_train_peasants_against_bandits")],
+  [anyone,"minorplanet_elder_tell_mission", [(eq,"$random_quest_no", "qst_train_peasants_against_bandits")],
    "We are suffering greatly at the hands of a group of bandits. They take our food and livestock,\
  and kill anyone who doesn't obey them. In the days of the Republic we would be sent aid but our ruler refuses to help.\
  With some help the people here could be taught discipline and combat skills.\
  We just need an experienced warrior to teach us how.",
-   "village_elder_tell_train_peasants_against_bandits_mission",
+   "minorplanet_elder_tell_train_peasants_against_bandits_mission",
    [
      (quest_get_slot, ":quest_target_center", "$random_quest_no", slot_quest_target_center),
      (str_store_party_name_link, s13, ":quest_target_center"),
@@ -12615,12 +12615,12 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
      (str_store_string, s2, "@The administrator of the planet of {s13} asked you to train {reg5} peasants to fight against local bandits."),
    ]],
 
-  [anyone|plyr, "village_elder_tell_train_peasants_against_bandits_mission", [],
-   "I can teach you how to defend yourself. I've learnt much in my travels.", "village_elder_train_peasants_against_bandits_mission_accept",[]],
-  [anyone|plyr, "village_elder_tell_train_peasants_against_bandits_mission", [],
-   "You peasants have no business taking up arms. Just pay the bandits and be off with it.", "village_elder_train_peasants_against_bandits_mission_reject",[]],
+  [anyone|plyr, "minorplanet_elder_tell_train_peasants_against_bandits_mission", [],
+   "I can teach you how to defend yourself. I've learnt much in my travels.", "minorplanet_elder_train_peasants_against_bandits_mission_accept",[]],
+  [anyone|plyr, "minorplanet_elder_tell_train_peasants_against_bandits_mission", [],
+   "You peasants have no business taking up arms. Just pay the bandits and be off with it.", "minorplanet_elder_train_peasants_against_bandits_mission_reject",[]],
   
-  [anyone,"village_elder_train_peasants_against_bandits_mission_accept", [], "You will? Oh, splendid!\
+  [anyone,"minorplanet_elder_train_peasants_against_bandits_mission_accept", [], "You will? Oh, splendid!\
  We would be deeply indebted to you, {sir/madam}.\
  I'll instruct the citizens to assemble here and gather what weapons we have.\
  If you can teach us how to defend ourselves, I promise you'll receive everything we can give you in return for your efforts.", "close_window",
@@ -12631,16 +12631,16 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
      (call_script, "script_start_quest", "$random_quest_no", "$g_talk_troop"),
      ]],
   
-  [anyone,"village_elder_train_peasants_against_bandits_mission_reject", [], "Yes, of course {sir/madam}.\
+  [anyone,"minorplanet_elder_train_peasants_against_bandits_mission_reject", [], "Yes, of course {sir/madam}.\
  Thank you for your counsel.", "close_window",
    [
      (troop_set_slot, "$g_talk_troop", slot_troop_does_not_give_quest, 1),
      ]],
 
 
-  [anyone,"village_elder_tell_mission", [(eq,"$random_quest_no","qst_deliver_cattle")],
+  [anyone,"minorplanet_elder_tell_mission", [(eq,"$random_quest_no","qst_deliver_cattle")],
    "Bandits have driven away our nerfs. Our pastures are empty. If we had a few nerfs we could start to raise a herd again.",
-   "village_elder_tell_deliver_cattle_mission",
+   "minorplanet_elder_tell_deliver_cattle_mission",
    [
      (quest_get_slot, ":quest_target_center", "$random_quest_no", slot_quest_target_center),
      (str_store_party_name_link,s3,":quest_target_center"),
@@ -12650,35 +12650,35 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
      (str_store_string, s2, "@The administrator of the planet of {s3} asked you to bring them {reg5} nerfs."),
    ]],
 
-  [anyone|plyr,"village_elder_tell_deliver_cattle_mission", [],
-   "How many animals do you need?", "village_elder_tell_deliver_cattle_mission_2",[]],
-  [anyone|plyr,"village_elder_tell_deliver_cattle_mission", [],
-   "Do I look like a nerf herder to you? Find someone else.", "village_elder_deliver_cattle_mission_reject",[]],
+  [anyone|plyr,"minorplanet_elder_tell_deliver_cattle_mission", [],
+   "How many animals do you need?", "minorplanet_elder_tell_deliver_cattle_mission_2",[]],
+  [anyone|plyr,"minorplanet_elder_tell_deliver_cattle_mission", [],
+   "Do I look like a nerf herder to you? Find someone else.", "minorplanet_elder_deliver_cattle_mission_reject",[]],
   
-  [anyone,"village_elder_tell_deliver_cattle_mission_2", [(quest_get_slot, reg5, "$random_quest_no", slot_quest_target_amount)],
-   "I think {reg5} heads will suffice for a small herd.", "village_elder_tell_deliver_cattle_mission_3",[]],
+  [anyone,"minorplanet_elder_tell_deliver_cattle_mission_2", [(quest_get_slot, reg5, "$random_quest_no", slot_quest_target_amount)],
+   "I think {reg5} heads will suffice for a small herd.", "minorplanet_elder_tell_deliver_cattle_mission_3",[]],
   
-  [anyone|plyr,"village_elder_tell_deliver_cattle_mission_3", [],
-   "I'll deliver the nerfs you need shortly.", "village_elder_deliver_cattle_mission_accept",[]],
-  [anyone|plyr,"village_elder_tell_deliver_cattle_mission_3", [],
-   "I am afraid I don't have time for this. You'll need to find help elsewhere.", "village_elder_deliver_cattle_mission_reject",[]],
+  [anyone|plyr,"minorplanet_elder_tell_deliver_cattle_mission_3", [],
+   "I'll deliver the nerfs you need shortly.", "minorplanet_elder_deliver_cattle_mission_accept",[]],
+  [anyone|plyr,"minorplanet_elder_tell_deliver_cattle_mission_3", [],
+   "I am afraid I don't have time for this. You'll need to find help elsewhere.", "minorplanet_elder_deliver_cattle_mission_reject",[]],
 
-  [anyone,"village_elder_deliver_cattle_mission_accept", [], "Thank you, {sir/madam}. We'll be praying for you night and day.", "close_window",
+  [anyone,"minorplanet_elder_deliver_cattle_mission_accept", [], "Thank you, {sir/madam}. We'll be praying for you night and day.", "close_window",
    [(assign, "$g_leave_encounter",1),
     (call_script, "script_change_player_relation_with_center", "$current_town", 3),
     (call_script, "script_start_quest", "$random_quest_no", "$g_talk_troop"),
     ]],
   
-  [anyone,"village_elder_deliver_cattle_mission_reject", [], "Yes {sir/madam}, of course. I am sorry if I have bothered you with our troubles.", "close_window",
+  [anyone,"minorplanet_elder_deliver_cattle_mission_reject", [], "Yes {sir/madam}, of course. I am sorry if I have bothered you with our troubles.", "close_window",
    [(troop_set_slot, "$g_talk_troop", slot_troop_does_not_give_quest, 1),
     ]],
 
-  [anyone,"village_elder_tell_mission", [], "Thank you, {sir/madam}, but we do not really need anything right now.", "village_elder_pretalk",[]],
+  [anyone,"minorplanet_elder_tell_mission", [], "Thank you, {sir/madam}, but we do not really need anything right now.", "minorplanet_elder_pretalk",[]],
 
-##  [anyone|plyr,"village_elder_mission_told", [], "TODO: As you wish sir. You can count on me.", "village_elder_mission_accepted",[]],
-##  [anyone|plyr,"village_elder_mission_told", [], "TODO: I'm afraid I can't carry out this mission right now, sir.", "village_elder_mission_rejected",[]],
+##  [anyone|plyr,"minorplanet_elder_mission_told", [], "TODO: As you wish sir. You can count on me.", "minorplanet_elder_mission_accepted",[]],
+##  [anyone|plyr,"minorplanet_elder_mission_told", [], "TODO: I'm afraid I can't carry out this mission right now, sir.", "minorplanet_elder_mission_rejected",[]],
 ##
-##  [anyone,"village_elder_mission_accepted", [], "TODO: Excellent. Do this {playername}. I really have high hopes for you.", "close_window",
+##  [anyone,"minorplanet_elder_mission_accepted", [], "TODO: Excellent. Do this {playername}. I really have high hopes for you.", "close_window",
 ##   [(assign, "$g_leave_encounter",1),
 ##    (try_begin),
 ##    #TODO: Add quest initializations here
@@ -12686,7 +12686,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##    (call_script, "script_start_quest", "$random_quest_no", "$g_talk_troop"),
 ##    ]],
   
-##  [anyone,"village_elder_mission_rejected", [], "TODO: Is that so? Perhaps you are not up for the task anyway...", "close_window",
+##  [anyone,"minorplanet_elder_mission_rejected", [], "TODO: Is that so? Perhaps you are not up for the task anyway...", "close_window",
 ##   [(assign, "$g_leave_encounter",1),
 ##    (call_script, "script_change_player_relation_with_troop", "$g_talk_troop", -1),
 ##    (troop_set_slot, "$g_talk_troop", slot_troop_does_not_give_quest, 1),
@@ -13191,7 +13191,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone,"arena_master_ask_tournaments", [], "{reg2?There won't be any tournaments any time soon.:{reg1?Tournaments are:A tournament is} going to be held at {s15}.}", "arena_master_talk",
    [
        (assign, ":num_tournaments", 0),
-       (try_for_range_backwards, ":town_no", towns_begin, towns_end),
+       (try_for_range_backwards, ":town_no", mainplanets_begin, mainplanets_end),
          (party_slot_ge, ":town_no", slot_mainplanet_has_tournament, 1),
          (val_add, ":num_tournaments", 1),
          (try_begin),
@@ -13887,15 +13887,15 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
      ]],
 # Ryan END  
 
-  [anyone|plyr,"town_dweller_talk", [(party_slot_eq, "$current_town", slot_party_type, spt_village),
+  [anyone|plyr,"town_dweller_talk", [(party_slot_eq, "$current_town", slot_party_type, spt_minorplanet),
                                      (eq, "$info_inquired", 0)], "What can you tell me about this minor planet?", "town_dweller_ask_info",[(assign, "$info_inquired", 1)]],
-  [anyone|plyr,"town_dweller_talk", [(party_slot_eq, "$current_town", slot_party_type, spt_town),
+  [anyone|plyr,"town_dweller_talk", [(party_slot_eq, "$current_town", slot_party_type, spt_mainplanet),
                                      (eq, "$info_inquired", 0)], "What can you tell me about this capital planet?", "town_dweller_ask_info",[(assign, "$info_inquired", 1)]],
 
   [anyone,"town_dweller_ask_info", [(str_store_party_name, s5, "$current_town"),
                                     (assign, reg4, 0),
                                     (try_begin),
-                                      (party_slot_eq, "$current_town", slot_party_type, spt_town),
+                                      (party_slot_eq, "$current_town", slot_party_type, spt_mainplanet),
                                       (assign, reg4, 1),
                                     (try_end),
                                     (str_store_string, s6, "@This is the {reg4?town:village} of {s5}, {sir/madam}."),
@@ -13935,16 +13935,16 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                     ],
    "{s10} {s11}", "close_window",[]],
 
-  [anyone|plyr,"town_dweller_talk", [(party_slot_eq, "$current_town", slot_party_type, spt_village),
+  [anyone|plyr,"town_dweller_talk", [(party_slot_eq, "$current_town", slot_party_type, spt_minorplanet),
                                      (eq, "$welfare_inquired", 0)], "How is life here?", "town_dweller_ask_situation",[(assign, "$welfare_inquired", 1)]],
-  [anyone|plyr,"town_dweller_talk", [(party_slot_eq, "$current_town", slot_party_type, spt_town),
+  [anyone|plyr,"town_dweller_talk", [(party_slot_eq, "$current_town", slot_party_type, spt_mainplanet),
                                      (eq, "$welfare_inquired", 0)], "How is life here?", "town_dweller_ask_situation",[(assign, "$welfare_inquired", 1)]],
 
 
   [anyone,"town_dweller_ask_situation", [(call_script, "script_agent_get_town_walker_details", "$g_talk_agent"),
                                          (assign, ":walker_type", reg0),
                                          (eq, ":walker_type", walkert_needs_money),
-                                         (party_slot_eq, "$current_town", slot_party_type, spt_village)],
+                                         (party_slot_eq, "$current_town", slot_party_type, spt_minorplanet)],
    "Disaster has struck my family, {sir/madam}. A pestilence has ruined the crops on our fields, and my poor children lie at home hungry and sick.\
  My neighbours are too poor themselves to help me.", "town_dweller_poor",[]],
 
@@ -14003,15 +14003,15 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone,"start", [(eq, "$talk_context", 0),
                     (is_between,"$g_talk_troop",regular_troops_begin, regular_troops_end),
                     (party_slot_eq,"$current_town",slot_mainplanet_lord, "trp_player"),
-                     ], "Yes {sir/madam}?", "player_castle_guard_talk",[]],
-  [anyone|plyr,"player_castle_guard_talk", [], "How goes the watch, soldier?", "player_castle_guard_talk_2",[]],
-  [anyone,"player_castle_guard_talk_2", [], "All is quiet {sir/madam}. Nothing to report.", "player_castle_guard_talk_3",[]],
-  [anyone|plyr,"player_castle_guard_talk_3", [], "Good. Keep your eyes open.", "close_window",[]],
+                     ], "Yes {sir/madam}?", "player_spacestation_guard_talk",[]],
+  [anyone|plyr,"player_spacestation_guard_talk", [], "How goes the watch, soldier?", "player_spacestation_guard_talk_2",[]],
+  [anyone,"player_spacestation_guard_talk_2", [], "All is quiet {sir/madam}. Nothing to report.", "player_spacestation_guard_talk_3",[]],
+  [anyone|plyr,"player_spacestation_guard_talk_3", [], "Good. Keep your eyes open.", "close_window",[]],
 
 
   [anyone,"start", [(eq, "$talk_context", 0),
                     (is_between,"$g_talk_troop",regular_troops_begin, regular_troops_end),
-                    (is_between,"$g_encountered_party_faction",kingdoms_begin, kingdoms_end),
+                    (is_between,"$g_encountered_party_faction",factions_begin, factions_end),
                     (eq, "$players_kingdom", "$g_encountered_party_faction"),
                     (troop_slot_ge, "trp_player", slot_troop_renown, 100),
                     (str_store_party_name, s10, "$current_town"),
@@ -14019,18 +14019,18 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone,"start", [(eq, "$talk_context", 0),
                     (is_between,"$g_talk_troop",regular_troops_begin, regular_troops_end),
-                    (is_between,"$g_encountered_party_faction",kingdoms_begin, kingdoms_end),
+                    (is_between,"$g_encountered_party_faction",factions_begin, factions_end),
                      ], "Mind your manners within the walls and we'll have no trouble.", "close_window",[]],
 
   [anyone,"start", [(eq, "$talk_context", tc_court_talk),
                     (is_between,"$g_talk_troop",regular_troops_begin, regular_troops_end),
-                    (is_between,"$g_encountered_party_faction",kingdoms_begin, kingdoms_end),
+                    (is_between,"$g_encountered_party_faction",factions_begin, factions_end),
                     (party_slot_eq,"$current_town",slot_mainplanet_lord, "trp_player"),
                      ], "Your orders, {sir/madam}?", "hall_guard_talk",[]],
 
   [anyone,"start", [(eq, "$talk_context", tc_court_talk),
                     (is_between,"$g_talk_troop",regular_troops_begin, regular_troops_end),
-                    (is_between,"$g_encountered_party_faction",kingdoms_begin, kingdoms_end),
+                    (is_between,"$g_encountered_party_faction",factions_begin, factions_end),
                      ], "Our master commands that we are silent when on duty, {sir/madam}.", "close_window",[]],
                      
   [anyone|plyr,"hall_guard_talk", [], "Stay on duty and let me know if anyone comes to see me.", "hall_guard_duty",[]],

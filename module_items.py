@@ -1434,17 +1434,17 @@ items = [
 
 #b2series
  ["b2series_body", "B2-Series Battle Droid Body", [("B2-Battledroid",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
-  40760, weight(50)|abundance(0)|head_armor(20)|body_armor(60)|leg_armor(20)|difficulty(0) ,imodbits_none ],
+  4160, weight(50)|abundance(0)|head_armor(20)|body_armor(60)|leg_armor(20)|difficulty(0) ,imodbits_none ],
 #b2 series reskin
-  ["b2series_body_enhanced", "C-B3 Battle Droid Body", [("B2-Battledroid_enhanced",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
-  60420, weight(55)|abundance(0)|head_armor(30)|body_armor(70)|leg_armor(30)|difficulty(0) ,imodbits_none ],
+ ["b2series_body_enhanced", "C-B3 Battle Droid Body", [("B2-Battledroid_enhanced",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
+ 7420, weight(55)|abundance(0)|head_armor(30)|body_armor(70)|leg_armor(30)|difficulty(0) ,imodbits_none ],
   
  ["b2series_attack","B2-Series Battle Droid Attack", [("transparent",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary, itc_dagger, 
   500, weight(1)|abundance(0)|difficulty(0)|spd_rtng(75) | weapon_length(20)|swing_damage(10, blunt) | thrust_damage(8, blunt),imodbits_none ], 
  ["b2series_blaster", "B2-Series Battle Droid Blaster", [("transparent",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_pistol|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_reload_pistol, 
 	 500 , weight(2)|abundance(0)|difficulty(0)|spd_rtng(90) | shoot_speed(145) | thrust_damage(35,pierce)|max_ammo(24)|accuracy(88),imodbits_none,
 	 [(ti_on_weapon_attack, [(play_sound,"snd_bigblaster19"),(position_move_x, pos1,12),(position_move_y, pos1,15)])]],	
-	 
+
 ["transparent_droid_head", "Transparent Head (for Droids)", [("transparent",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_head_armor|itp_covers_head|itp_civilian,0, 1, weight(0.25)|abundance(0)|head_armor(1)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
 ["transparent_droid_hands", "Transparent Hands (for Droids)", [("transparent",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_hand_armor|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(1)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
 ["transparent_droid_feet", "Transparent Feet (for Droids)", [("transparent",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_foot_armor|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(0)|leg_armor(1)|difficulty(0) ,imodbits_none ], 
@@ -2154,16 +2154,16 @@ items = [
 	1250 , weight(5.6)|abundance(70)|difficulty(0)|spd_rtng(120) | shoot_speed(180) | thrust_damage(45 ,pierce)|max_ammo(30)|accuracy(93),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_laser_fire"),(position_move_x, pos1,14),(position_move_y, pos1,18)])]], 
 ["dlt19", "DLT-19", [("DLT19",0),("DLT19_inventory",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_musket|itcf_carry_spear|itcf_reload_musket, 
-	600 , weight(3.5)|abundance(100)|difficulty(0)|spd_rtng(80) | shoot_speed(170) | thrust_damage(60 ,pierce)|max_ammo(6)|accuracy(97),imodbits_gun,
+	600 , weight(3.5)|abundance(100)|difficulty(0)|spd_rtng(80) | shoot_speed(170) | thrust_damage(90 ,pierce)|max_ammo(6)|accuracy(97),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,4),(position_move_y, pos1,5)])]],
 ["dlt19_scope", "DLT-19 with Scope", [("DLT19_scope",0),("DLT19_scope_inventory",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_musket|itcf_carry_spear|itcf_reload_musket, 
-	690 , weight(3.5)|abundance(70)|difficulty(0)|spd_rtng(90) | shoot_speed(190) | thrust_damage(60 ,pierce)|max_ammo(12)|accuracy(96),imodbits_gun,
+	690 , weight(3.5)|abundance(70)|difficulty(0)|spd_rtng(90) | shoot_speed(190) | thrust_damage(90 ,pierce)|max_ammo(12)|accuracy(96),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,4),(position_move_y, pos1,5)])]], 
 ["dlt20a", "DLT-20A", [("DLT20A",0),("DLT20A_inventory",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_spear|itcf_reload_musket, 
 	1300 , weight(6.7)|abundance(100)|difficulty(0)|spd_rtng(100) | shoot_speed(190) | thrust_damage(55 ,pierce)|max_ammo(30)|accuracy(97),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,4),(position_move_y, pos1,5)])]], 
 ["e17d", "E-17d", [("uio0000_E-17d",0),("uio0000_E-17d_inv",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_musket|itcf_carry_spear|itcf_reload_musket, 
-	735 , weight(3.72)|abundance(90)|difficulty(0)|spd_rtng(70) | shoot_speed(170) | thrust_damage(60 ,pierce)|max_ammo(5)|accuracy(110),imodbits_gun,
+	735 , weight(3.72)|abundance(90)|difficulty(0)|spd_rtng(70) | shoot_speed(170) | thrust_damage(88 ,pierce)|max_ammo(5)|accuracy(110),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,4),(position_move_y, pos1,5)])]],
 #TEST - DC15a particle effects
 # ["dc15a", "DC-15A", [("DC15A",0)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_sword_back|itcf_reload_musket, 
@@ -2201,7 +2201,7 @@ items = [
 	875 , weight(6.57)|abundance(80)|difficulty(0)|spd_rtng(100) | shoot_speed(170) | thrust_damage(36 ,blunt)|max_ammo(30)|accuracy(96),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_stunblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)])]],  
 ["mg15", "RT-97C", [("MG15",0),("MG15_inventory",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_musket|itcf_carry_spear|itcf_reload_musket, 
-	2000 , weight(6.43)|abundance(100)|difficulty(0)|spd_rtng(80) | shoot_speed(180) | thrust_damage(40 ,pierce)|max_ammo(500)|accuracy(93),imodbits_gun,
+	2000 , weight(6.43)|abundance(100)|difficulty(0)|spd_rtng(90) | shoot_speed(180) | thrust_damage(47 ,pierce)|max_ammo(500)|accuracy(97),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_laser_fire"),(position_move_x, pos1,14),(position_move_y, pos1,18)])]],  
 #used itcf_throw_javelin for e5 so it is fired from the hip
 ["e5", "E-5", [("e5_new_javelin",0),("e5_new_inventory",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_throw_javelin|itcf_carry_quiver_back|itcf_reload_pistol, 
@@ -2236,7 +2236,7 @@ items = [
 	910 , weight(5.35)|abundance(70)|difficulty(0)|spd_rtng(80) | shoot_speed(170) | thrust_damage(35 ,pierce)|max_ammo(15)|accuracy(93),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_laser_fire"),(position_move_x, pos1,14),(position_move_y, pos1,18)])]],   
 ["geonosian_sonic_rifle", "Geonosian Sonic Rifle", [("geonosian_sonic_rifle_javelin",0),("geonosian_sonic_rifle_inventory",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_throw_javelin|itcf_carry_quiver_back|itcf_reload_musket, 
-	931 , weight(3.0)|abundance(70)|difficulty(0)|spd_rtng(120) | shoot_speed(150) | thrust_damage(40 ,blunt)|max_ammo(50)|accuracy(95),imodbits_gun,
+	931 , weight(3.0)|abundance(70)|difficulty(0)|spd_rtng(90) | shoot_speed(145) | thrust_damage(55 ,blunt)|max_ammo(50)|accuracy(95),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_sonicblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)])]], 
 ["t21", "T-21", [("T21",0),("T21_inventory",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_musket|itcf_carry_spear|itcf_reload_musket, 
 	2000 , weight(4.5)|abundance(60)|difficulty(0)|spd_rtng(80) | shoot_speed(170) | thrust_damage(65 ,pierce)|max_ammo(30)|accuracy(96),imodbits_gun,
@@ -2247,7 +2247,7 @@ items = [
 	500 , weight(3.4)|abundance(70)|difficulty(0)|spd_rtng(100) | shoot_speed(170) | thrust_damage(40 ,pierce)|max_ammo(14)|accuracy(96),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,6),(position_move_y, pos1,8)])]],  
 ["kisteer_1284", "KiSteer 1284", [("kisteer_1284",0),("kisteer_1284_inventory",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_musket|itcf_carry_spear|itcf_reload_musket, 
-	130 , weight(2.5)|abundance(70)|difficulty(0)|spd_rtng(70) | shoot_speed(120) | thrust_damage(32 ,blunt)|max_ammo(10)|accuracy(88),imodbits_gun,
+	130 , weight(2.5)|abundance(70)|difficulty(0)|spd_rtng(80) | shoot_speed(120) | thrust_damage(32 ,blunt)|max_ammo(10)|accuracy(97),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,6),(position_move_y, pos1,8)])]],  
 ["ion_blaster", "Ion Blaster", [("ion_blaster",0),("ion_blaster_inventory",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_spear|itcf_reload_pistol, 
 	130 , weight(2.5)|abundance(70)|difficulty(0)|spd_rtng(70) | shoot_speed(120) | thrust_damage(32 ,blunt)|max_ammo(10)|accuracy(88),imodbits_gun,
@@ -2292,7 +2292,7 @@ items = [
 	347 , weight(1.17)|abundance(100)|difficulty(0)|spd_rtng(130) | shoot_speed(140) | thrust_damage(24 ,pierce)|max_ammo(100)|accuracy(90),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_littleblaster"),(position_move_x, pos1,12),(position_move_y, pos1,15)])]],  
 ["geonosian_sonic_pistol", "Geonosian Sonic Pistol", [("geonosian_sonic_pistol",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	772 , weight(1.5)|abundance(70)|difficulty(0)|spd_rtng(130) | shoot_speed(150) | thrust_damage(26 ,blunt)|max_ammo(10)|accuracy(89),imodbits_gun,
+	772 , weight(1.5)|abundance(70)|difficulty(0)|spd_rtng(90) | shoot_speed(150) | thrust_damage(36 ,blunt)|max_ammo(10)|accuracy(89),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_sonicblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)])]],   
 ["dl18", "DL-18", [("dl18",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
 	500 , weight(1.13)|abundance(100)|difficulty(0)|spd_rtng(120) | shoot_speed(130) | thrust_damage(22 ,pierce)|max_ammo(100)|accuracy(89),imodbits_gun,
@@ -2317,7 +2317,11 @@ items = [
 ["heavy_repeater", "Imperial Heavy Repeater", [("HeavyRepeater",0),("HeavyRepeater_inv",ixmesh_inventory),("HeavyRepeater_carried",ixmesh_carry)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_throw_javelin|itcf_carry_quiver_back|itcf_reload_pistol,
 	1500 , weight(4.68)|abundance(100)|difficulty(0)|spd_rtng(120) | shoot_speed(169) | thrust_damage(36 ,pierce)|max_ammo(400)|accuracy(94),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_heavyrepeater"),(position_move_x, pos1,30),(position_move_y, pos1,30)])]],
-	
+
+["storm_rifle", "StormTrooper Rifle", [("uio0000_stormtrooperrifle",0),("uio0000_stormtrooperrifle_inv",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_spear|itcf_reload_musket, 
+	871 , weight(3.4)|abundance(70)|difficulty(0)|spd_rtng(85) | shoot_speed(170) | thrust_damage(47 ,pierce)|max_ammo(30)|accuracy(94),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_stormrifle"),(position_move_x, pos1,6),(position_move_y, pos1,8)])]],  
+
 ["ranged_weapons_end", "FLAG FOR RANGED WEAPONS BEGIN", [("A280",0)], itp_type_crossbow|itp_two_handed |itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_spear|itcf_reload_musket, 1 , weight(1)|abundance(0)|difficulty(0)|spd_rtng(1) | shoot_speed(1) | thrust_damage(1 ,pierce)|max_ammo(1)|accuracy(1),imodbits_none, [(ti_on_weapon_attack, [(play_sound,"snd_laser_fire"),(position_move_x, pos1,14),(position_move_y, pos1,18)])]],
  
 # practice/training
@@ -2708,6 +2712,8 @@ items = [
 #["motor_bike","Motor Bike", [("motor_bike",0)], itp_merchandise|itp_type_horse, 0, 3000,abundance(60)|hit_points(30)|body_armor(0)|difficulty(0)|horse_speed(120)|horse_maneuver(75)|horse_charge(10),imodbits_speeder],
 
 
+["bf2_stormie", "bf2_stormie", [("bf2_stormtrooper_rigged",0)], itp_covers_head|itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0,
+  3000, weight(55)|abundance(0)|head_armor(30)|body_armor(70)|leg_armor(30)|difficulty(0) ,imodbits_none ],
 ["tfu_stormie", "tfu_stormie", [("tfu_stormtrooper",0)], itp_covers_head|itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0,
   3000, weight(55)|abundance(0)|head_armor(30)|body_armor(70)|leg_armor(30)|difficulty(0) ,imodbits_none ],
 	#################

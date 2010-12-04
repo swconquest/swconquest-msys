@@ -37,7 +37,7 @@ party_templates = [
 # Party templates before this point are hard-wired into the game and should not be changed. 
 ####################################################################################################################
 ##  ("old_garrison","Old Garrison",icon_vaegir_knight,0,fac_neutral,merchant_personality,[]),
-  ("village_defenders","Colonial Defenders",icon_shuttle,0,fac_commoners,merchant_personality,[(trp_farmer,5,10),(trp_civilian,5,10),(trp_peasant_woman,0,4)]),
+  ("minorplanet_defenders","Colonial Defenders",icon_shuttle,0,fac_commoners,merchant_personality,[(trp_farmer,5,10),(trp_civilian,5,10),(trp_peasant_woman,0,4)]),
   ("cattle_herd","Nerf Herd",icon_shuttle|carries_goods(10),0,fac_neutral,merchant_personality,[(trp_cattle,80,120)]),
 
 ##  ("vaegir_nobleman","Vaegir Nobleman",icon_vaegir_knight|carries_goods(10)|pf_quest_party,0,fac_commoners,merchant_personality,[(trp_nobleman,1,1),(trp_vaegir_knight,2,6),(trp_vaegir_horseman,4,12)]),
@@ -55,7 +55,7 @@ party_templates = [
   ("steppe_bandits","Night Fangs Pirates",icon_mercenary_shuttle|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_steppe_bandit,5,25),(trp_steppe_bandit_female,4,8),(trp_trandoshan,1,5),(trp_twilek,1,5),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
   ("blazing_claw_pirates","Blazing Claw Pirates",icon_mercenary_fighter|carries_goods(2),0,fac_blazing_claw_pirates,bandit_personality,[(trp_blazing_claw_pirate,5,25),(trp_blazing_claw_pirate_female,4,8),(trp_rodian,1,5),(trp_sullustan_1,1,5),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
   ("sea_raiders","Tusken Raiders",icon_mercenary_raider_brown|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_tusken_1,10,25),(trp_tusken_2,5,10)]),  
-  ("black_sun_pirates","Black Sun Pirates",icon_mercenary_raider|carries_goods(2),0,fac_black_sun_pirates,bandit_personality,[(trp_black_sun_pirate_1,10,20),(trp_black_sun_pirate_2,5,10),(trp_black_sun_pirate_3,5,10),(trp_black_sun_pirate_4,1,10),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
+  ("black_sun_pirates","Black Sun Pirates",icon_starchaser|carries_goods(2),0,fac_black_sun_pirates,bandit_personality,[(trp_black_sun_pirate_1,10,20),(trp_black_sun_pirate_2,5,10),(trp_black_sun_pirate_3,5,10),(trp_black_sun_pirate_4,1,10),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
   
 #SW - new outlaw party templates with Imperial Troops (nevermind, back to regular bandits)
 #  ("steppe_bandits","Imperial Scouts",icon_axeman|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_imperial_stormtrooper_mounted,8,15),(trp_imperial_scout_trooper,10,20)]),
@@ -78,7 +78,7 @@ party_templates = [
   ("kidnapped_girl","Kidnapped Girl",icon_shuttle|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_kidnapped_girl,1,1)]),
 
 ##  ("farmers","Farmers",icon_peasant,0,fac_innocents,merchant_personality,[(trp_farmer,11,22),(trp_peasant_woman,16,44)]),
-  ("village_farmers","Colonial Farmers",icon_civilian_transport,0,fac_innocents,merchant_personality,[(trp_farmer,6,12),(trp_peasant_woman,4,8)]),
+  ("minorplanet_farmers","Colonial Farmers",icon_civilian_transport,0,fac_innocents,merchant_personality,[(trp_farmer,6,12),(trp_peasant_woman,4,8)]),
 ##  ("refugees","Refugees",icon_woman_b,0,fac_innocents,merchant_personality,[(trp_refugee,19,48)]),
 ##  ("dark_hunters","Dark Hunters",icon_gray_knight,0,fac_dark_knights,soldier_personality,[(trp_dark_knight,4,42),(trp_dark_hunter,13,25)]),
 

@@ -41,7 +41,7 @@ triggers = [
 										#SW - added swc_readme menu
 										#(dialog_box,"str_tutorial_map1")
 										#(dialog_box, "@- This mod is still in development, please post any bugs or suggestions on our forum^- The following scenes have been changed: Tatooine, Yavin IV, Naboo, Geonosis, Ryloth, Tatooine Moon, and Fondor.^Force Powers can be purchased from a Force-Sensitive Training who appears in the Cantina.^Clone Troopers, B1-Series Battledroids, and Force-Sensitive troops can be recruited by building village upgrades/^- Space Battles can be found at the Training Academy.", "@Star Wars: Conquest - Notes"),
-										(jump_to_menu,"mnu_swc_readme"),
+									#(jump_to_menu,"mnu_swc_readme"),
 									]),
   
   (0.2, 0, ti_once, [(map_free,0)], [
@@ -94,7 +94,7 @@ triggers = [
 #                      (store_sub, ":item_to_production_slot", slot_mainplanet_trade_good_productions_begin, trade_goods_begin),
                       (store_sub, ":item_to_price_slot", slot_mainplanet_trade_good_prices_begin, trade_goods_begin),
 
-                      (try_for_range,":cur_center",towns_begin,towns_end),
+                      (try_for_range,":cur_center",mainplanets_begin,mainplanets_end),
                         (party_get_slot,":cur_merchant",":cur_center",slot_mainplanet_merchant),
                         (reset_item_probabilities,100),
                         (try_for_range, ":cur_goods", trade_goods_begin, trade_goods_end),
@@ -381,7 +381,7 @@ triggers = [
 
 #Kingdom Parties
   (1.0, 0, 0.0, [],
-   [(try_for_range, ":cur_kingdom", kingdoms_begin, kingdoms_end),
+   [(try_for_range, ":cur_kingdom", factions_begin, factions_end),
       (faction_slot_eq, ":cur_kingdom", slot_faction_state, sfs_active),
       (neq, ":cur_kingdom", "fac_player_supporters_faction"),
 ##      (try_begin),
@@ -597,7 +597,7 @@ triggers = [
          (quest_set_slot, "qst_incriminate_loyal_commander", slot_quest_current_state, 3),
          (quest_get_slot, ":quest_object_troop", "qst_incriminate_loyal_commander", slot_quest_object_troop),
          (assign, ":num_available_factions", 0),
-         (try_for_range, ":faction_no", kingdoms_begin, kingdoms_end),
+         (try_for_range, ":faction_no", factions_begin, factions_end),
            (faction_slot_eq, ":faction_no", slot_faction_state, sfs_active),
            (neq, ":faction_no", "fac_player_supporters_faction"),
            (neg|quest_slot_eq, "qst_incriminate_loyal_commander", slot_quest_target_faction, ":faction_no"),
@@ -607,7 +607,7 @@ triggers = [
            (gt, ":num_available_factions", 0),
            (store_random_in_range, ":random_faction", 0, ":num_available_factions"),
            (assign, ":target_faction", -1),
-           (try_for_range, ":faction_no", kingdoms_begin, kingdoms_end),
+           (try_for_range, ":faction_no", factions_begin, factions_end),
              (eq, ":target_faction", -1),
              (faction_slot_eq, ":faction_no", slot_faction_state, sfs_active),
              (neq, ":faction_no", "fac_player_supporters_faction"),
@@ -1373,7 +1373,7 @@ triggers = [
 
           (try_for_range, ":unused", 0, 30),
             (troop_slot_eq, ":pretender", slot_troop_cur_center, 0),
-            (store_random_in_range, ":town", towns_begin, towns_end),
+            (store_random_in_range, ":town", mainplanets_begin, mainplanets_end),
             (store_faction_of_party, ":town_faction", ":town"),
             (store_relation, ":relation", ":town_faction", ":target_faction"),
             (le, ":relation", 0), #fail if nothing qualifies
@@ -1393,7 +1393,7 @@ triggers = [
 #            (faction_get_slot, ":pretender", ":rebel_faction", slot_faction_leader),
 #            (faction_get_slot, ":target_faction", ":rebel_faction", slot_faction_rebellion_target),#
 
-#            (store_random_in_range, ":town", towns_begin, towns_end),
+#            (store_random_in_range, ":town", mainplanets_begin, mainplanets_end),
 #            (store_faction_of_party, ":town_faction", ":town"),
 #            (store_relation, ":relation", ":town_faction", ":target_faction"),
 #            (le, ":relation", 0), #fail if nothing qualifies

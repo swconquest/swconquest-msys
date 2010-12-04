@@ -75,11 +75,11 @@ scripts = [
       #SWY 0.9.0.4 Give new planets directly to the factions
       (call_script, "script_give_center_to_faction_aux", "p_raxusprime", "fac_kingdom_3"),
       (call_script, "script_give_center_to_faction_aux", "p_sarapin", "fac_kingdom_2"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_41", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_41", "fac_kingdom_1"),
       #more...
       (call_script, "script_give_center_to_faction_aux", "p_hypori", "fac_kingdom_3"),
       (call_script, "script_give_center_to_faction_aux", "p_felucia", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_42", "fac_kingdom_3"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_42", "fac_kingdom_3"),
       (call_script, "script_give_center_to_faction_aux", "p_bespin", "fac_kingdom_2"),
       
       (faction_set_slot, "fac_player_supporters_faction", slot_faction_state, sfs_inactive),
@@ -241,7 +241,7 @@ scripts = [
       
       #SW - update starting location to be towns instead of training grounds (location is changed again if they choose to join a faction)
       #(store_random_in_range, ":starting_training_ground", training_grounds_begin, training_grounds_end),
-      (store_random_in_range, ":starting_training_ground", 	  towns_begin, towns_end),
+      (store_random_in_range, ":starting_training_ground", 	  mainplanets_begin, mainplanets_end),
       
       (party_relocate_near_party, "p_main_party", ":starting_training_ground", 3),
       (str_store_troop_name, s5, "trp_player"),
@@ -348,7 +348,7 @@ scripts = [
       (item_set_slot, "itm_book_surgery_reference", slot_item_intelligence_requirement, 8),
       
       # Setting the random town sequence:
-      (store_sub, ":num_towns", towns_end, towns_begin),
+      (store_sub, ":num_towns", mainplanets_end, mainplanets_begin),
       (assign, ":num_iterations", ":num_towns"),
       (try_for_range, ":cur_town_no", 0, ":num_towns"),
         (troop_set_slot, "trp_random_town_sequence", ":cur_town_no", -1),
@@ -437,7 +437,7 @@ scripts = [
       #        (call_script, "script_randomly_start_war_peace", 0),
       #      (try_end),
       
-      (try_for_range, ":faction_no", kingdoms_begin, kingdoms_end),
+      (try_for_range, ":faction_no", factions_begin, factions_end),
         (faction_set_slot, ":faction_no", slot_faction_marshall, -1),
         (faction_get_slot, ":culture", ":faction_no", slot_faction_culture),
         
@@ -460,7 +460,7 @@ scripts = [
           (faction_set_slot, ":faction_no",  slot_faction_guard_troop, "trp_imperial_stormtrooper"),
           (faction_set_slot, ":faction_no",  slot_faction_messenger_troop, "trp_imperial_messenger"),
           (faction_set_slot, ":faction_no",  slot_faction_prison_guard_troop, "trp_imperial_stormtrooper_officer"),
-          (faction_set_slot, ":faction_no",  slot_faction_castle_guard_troop, "trp_imperial_royal_guard"),
+          (faction_set_slot, ":faction_no",  slot_faction_spacestation_guard_troop, "trp_imperial_royal_guard"),
           (faction_set_slot, ":faction_no",  slot_faction_reinforcements_a, "pt_kingdom_1_reinforcements_a"),
           (faction_set_slot, ":faction_no",  slot_faction_reinforcements_b, "pt_kingdom_1_reinforcements_b"),
           (faction_set_slot, ":faction_no",  slot_faction_reinforcements_c, "pt_kingdom_1_reinforcements_c"),
@@ -471,7 +471,7 @@ scripts = [
           (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_rebel_trooper"),
           (faction_set_slot, ":faction_no", slot_faction_messenger_troop, "trp_rebel_messenger"),
           (faction_set_slot, ":faction_no", slot_faction_prison_guard_troop, "trp_wookiee_warrior"),
-          (faction_set_slot, ":faction_no", slot_faction_castle_guard_troop, "trp_rebel_honor_guard"),
+          (faction_set_slot, ":faction_no", slot_faction_spacestation_guard_troop, "trp_rebel_honor_guard"),
           (faction_set_slot, ":faction_no",  slot_faction_reinforcements_a, "pt_kingdom_2_reinforcements_a"),
           (faction_set_slot, ":faction_no",  slot_faction_reinforcements_b, "pt_kingdom_2_reinforcements_b"),
           (faction_set_slot, ":faction_no",  slot_faction_reinforcements_c, "pt_kingdom_2_reinforcements_c"),
@@ -482,7 +482,7 @@ scripts = [
           (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_hutt_guard"),
           (faction_set_slot, ":faction_no", slot_faction_messenger_troop, "trp_hutt_messenger"),
           (faction_set_slot, ":faction_no", slot_faction_prison_guard_troop, "trp_gamorrean_guard"),
-          (faction_set_slot, ":faction_no", slot_faction_castle_guard_troop, "trp_gamorrean_guard"),
+          (faction_set_slot, ":faction_no", slot_faction_spacestation_guard_troop, "trp_gamorrean_guard"),
           (faction_set_slot, ":faction_no",  slot_faction_reinforcements_a, "pt_kingdom_3_reinforcements_a"),
           (faction_set_slot, ":faction_no",  slot_faction_reinforcements_b, "pt_kingdom_3_reinforcements_b"),
           (faction_set_slot, ":faction_no",  slot_faction_reinforcements_c, "pt_kingdom_3_reinforcements_c"),
@@ -494,7 +494,7 @@ scripts = [
           # (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_nord_warrior"),
           # (faction_set_slot, ":faction_no", slot_faction_messenger_troop, "trp_nord_messenger"),
           # (faction_set_slot, ":faction_no", slot_faction_prison_guard_troop, "trp_nord_prison_guard"),
-          # (faction_set_slot, ":faction_no", slot_faction_castle_guard_troop, "trp_nord_castle_guard"),
+          # (faction_set_slot, ":faction_no", slot_faction_spacestation_guard_troop, "trp_nord_spacestation_guard"),
           # (faction_set_slot, ":faction_no",  slot_faction_reinforcements_a, "pt_kingdom_4_reinforcements_a"),
           # (faction_set_slot, ":faction_no",  slot_faction_reinforcements_b, "pt_kingdom_4_reinforcements_b"),
           # (faction_set_slot, ":faction_no",  slot_faction_reinforcements_c, "pt_kingdom_4_reinforcements_c"),
@@ -505,7 +505,7 @@ scripts = [
           # (faction_set_slot, ":faction_no", slot_faction_guard_troop, "trp_rhodok_veteran_spearman"),
           # (faction_set_slot, ":faction_no", slot_faction_messenger_troop, "trp_rhodok_messenger"),
           # (faction_set_slot, ":faction_no", slot_faction_prison_guard_troop, "trp_rhodok_prison_guard"),
-          # (faction_set_slot, ":faction_no", slot_faction_castle_guard_troop, "trp_rhodok_castle_guard"),
+          # (faction_set_slot, ":faction_no", slot_faction_spacestation_guard_troop, "trp_rhodok_spacestation_guard"),
           # (faction_set_slot, ":faction_no",  slot_faction_reinforcements_a, "pt_kingdom_5_reinforcements_a"),
           # (faction_set_slot, ":faction_no",  slot_faction_reinforcements_b, "pt_kingdom_5_reinforcements_b"),
           # (faction_set_slot, ":faction_no",  slot_faction_reinforcements_c, "pt_kingdom_5_reinforcements_c"),
@@ -634,14 +634,14 @@ scripts = [
       (call_script, "script_set_trade_route_between_centers", "p_hypori", "p_geonosis"),
       (call_script, "script_set_trade_route_between_centers", "p_felucia", "p_byss"),
       
-      (try_for_range, ":town_no", towns_begin, towns_end),
+      (try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
         (party_set_slot, ":town_no", slot_mainplanet_tournament_max_teams, 4),
         (party_set_slot, ":town_no", slot_mainplanet_tournament_max_team_size, 8),
       (try_end),
       (party_set_slot, "p_kessel", slot_mainplanet_tournament_max_team_size, 2),
       
       #start some tournaments
-      (try_for_range, ":town_no", towns_begin, towns_end),
+      (try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
         (store_random_in_range, ":rand", 0, 100),
         (lt, ":rand", 20),
         (store_random_in_range, ":random_days", 12, 15),
@@ -867,7 +867,7 @@ scripts = [
       (call_script, "script_normalize_trade_good_productions"),
       
       
-      (try_for_range, ":town_no", towns_begin, towns_end),
+      (try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
         (call_script, "script_center_change_trade_good_production", ":town_no", "itm_smoked_fish", -12, 3),
         (call_script, "script_center_change_trade_good_production", ":town_no", "itm_dried_meat", -12, 3),
         (call_script, "script_center_change_trade_good_production", ":town_no", "itm_cattle_meat", -15, 3),
@@ -894,9 +894,9 @@ scripts = [
       
       
       # Towns (loop)
-      (try_for_range, ":town_no", towns_begin, towns_end),
-        (store_sub, ":offset", ":town_no", towns_begin),
-        (party_set_slot,":town_no", slot_party_type, spt_town),
+      (try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
+        (store_sub, ":offset", ":town_no", mainplanets_begin),
+        (party_set_slot,":town_no", slot_party_type, spt_mainplanet),
         #        (store_add, ":cur_object_no", "trp_town_1_seneschal", ":offset"),
         #        (party_set_slot,":town_no", slot_mainplanet_seneschal, ":cur_object_no"),
         
@@ -944,22 +944,22 @@ scripts = [
       #(party_set_slot,"p_mandalore", slot_mainplanet_arena_template, "mt_arena_melee_fight"),
       
       # Castles
-      (try_for_range, ":castle_no", castles_begin, castles_end),
-        (store_sub, ":offset", ":castle_no", castles_begin),
+      (try_for_range, ":spacestation_no", castles_begin, castles_end),
+        (store_sub, ":offset", ":spacestation_no", castles_begin),
         (val_mul, ":offset", 3),
         
-        #        (store_add, ":senechal_troop_no", "trp_castle_1_seneschal", ":offset"),
-        #        (party_set_slot,":castle_no", slot_mainplanet_seneschal, ":senechal_troop_no"),
+        #        (store_add, ":senechal_troop_no", "trp_spacestation_1_seneschal", ":offset"),
+        #        (party_set_slot,":spacestation_no", slot_mainplanet_seneschal, ":senechal_troop_no"),
         (store_add, ":exterior_scene_no", "scn_spacestation_2_exterior", ":offset"),
-        (party_set_slot,":castle_no", slot_spacestation_exterior, ":exterior_scene_no"),
+        (party_set_slot,":spacestation_no", slot_spacestation_exterior, ":exterior_scene_no"),
         (store_add, ":interior_scene_no", "scn_spacestation_2_interior", ":offset"),
-        (party_set_slot,":castle_no", slot_mainplanet_castle, ":interior_scene_no"),
+        (party_set_slot,":spacestation_no", slot_mainplanet_castle, ":interior_scene_no"),
         (store_add, ":interior_scene_no", "scn_spacestation_2_prison", ":offset"),
-        (party_set_slot,":castle_no", slot_mainplanet_prison, ":interior_scene_no"),
+        (party_set_slot,":spacestation_no", slot_mainplanet_prison, ":interior_scene_no"),
         
-        (party_set_slot,":castle_no", slot_mainplanet_reinforcement_party_template, "pt_center_reinforcements"),
-        (party_set_slot,":castle_no", slot_party_type, spt_castle),
-        (party_set_slot,":castle_no", slot_center_is_besieged_by, -1),
+        (party_set_slot,":spacestation_no", slot_mainplanet_reinforcement_party_template, "pt_center_reinforcements"),
+        (party_set_slot,":spacestation_no", slot_party_type, spt_castle),
+        (party_set_slot,":spacestation_no", slot_center_is_besieged_by, -1),
       (try_end),
       
       # Set which castles need to be attacked with siege towers.
@@ -968,114 +968,114 @@ scripts = [
       # (party_set_slot,"p_yavin_iv", slot_center_siege_with_belfry,   1),
       # (party_set_slot,"p_coruscant", slot_center_siege_with_belfry,   1),
       
-      # (party_set_slot,"p_castle_1", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_castle_2", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_castle_3", slot_center_siege_with_belfry,   0),
-      # (party_set_slot,"p_castle_4", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_castle_5", slot_center_siege_with_belfry,   0),
-      # (party_set_slot,"p_castle_6", slot_center_siege_with_belfry,   0),
-      # (party_set_slot,"p_castle_7", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_castle_8", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_castle_9", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_castle_10", slot_center_siege_with_belfry,   0),
-      # (party_set_slot,"p_castle_11", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_castle_13", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_castle_21", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_castle_25", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_castle_38", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_castle_34", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_castle_35", slot_center_siege_with_belfry,   1),
-      # (party_set_slot,"p_castle_40", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_1", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_2", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_3", slot_center_siege_with_belfry,   0),
+      # (party_set_slot,"p_spacestation_4", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_5", slot_center_siege_with_belfry,   0),
+      # (party_set_slot,"p_spacestation_6", slot_center_siege_with_belfry,   0),
+      # (party_set_slot,"p_spacestation_7", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_8", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_9", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_10", slot_center_siege_with_belfry,   0),
+      # (party_set_slot,"p_spacestation_11", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_13", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_21", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_25", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_38", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_34", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_35", slot_center_siege_with_belfry,   1),
+      # (party_set_slot,"p_spacestation_40", slot_center_siege_with_belfry,   1),
       
       # Towns
       
       # Villages
-      (call_script, "script_center_change_trade_good_production", "p_village_56", "itm_smoked_fish", 60, 0),
-      (call_script, "script_center_change_trade_good_production", "p_village_35", "itm_smoked_fish", 60, 0),
-      (call_script, "script_center_change_trade_good_production", "p_village_36", "itm_smoked_fish", 60, 0),
-      (call_script, "script_center_change_trade_good_production", "p_village_66", "itm_smoked_fish", 50, 0),
-      (call_script, "script_center_change_trade_good_production", "p_village_67", "itm_smoked_fish", 50, 0),
+      (call_script, "script_center_change_trade_good_production", "p_minorplanet_56", "itm_smoked_fish", 60, 0),
+      (call_script, "script_center_change_trade_good_production", "p_minorplanet_35", "itm_smoked_fish", 60, 0),
+      (call_script, "script_center_change_trade_good_production", "p_minorplanet_36", "itm_smoked_fish", 60, 0),
+      (call_script, "script_center_change_trade_good_production", "p_minorplanet_66", "itm_smoked_fish", 50, 0),
+      (call_script, "script_center_change_trade_good_production", "p_minorplanet_67", "itm_smoked_fish", 50, 0),
       
-      (try_for_range, ":village_no", villages_begin, villages_end),
+      (try_for_range, ":minorplanet_no", minorplanet_begin, minorplanet_end),
         #Not setting production for the cattle meat here.
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_dried_meat", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_pork", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_bread", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_apples", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_cheese", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_chicken", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_honey", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_cabbages", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_butter", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_wine", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_flour", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_ale", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_apples", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_grain", ":rand", 0),
-        (store_random_in_range, ":rand", village_prod_min, village_prod_max),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_oil", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_dried_meat", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_pork", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_bread", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_apples", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_cheese", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_chicken", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_honey", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_cabbages", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_butter", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_wine", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_flour", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_ale", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_apples", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_grain", ":rand", 0),
+        (store_random_in_range, ":rand", minorplanet_prod_min, minorplanet_prod_max),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_oil", ":rand", 0),
       (try_end),
       
       
       
-      (try_for_range, ":village_no", villages_begin, villages_end),
+      (try_for_range, ":minorplanet_no", minorplanet_begin, minorplanet_end),
         (store_random_in_range, ":random_land_quality", 0, 5),
-        (party_set_slot, ":village_no", slot_minorplanet_land_quality, ":random_land_quality"),
+        (party_set_slot, ":minorplanet_no", slot_minorplanet_land_quality, ":random_land_quality"),
         
         (store_random_in_range, ":random_cattle", 25, 75),
-        (party_set_slot, ":village_no", slot_minorplanet_number_of_cattle, ":random_cattle"),
+        (party_set_slot, ":minorplanet_no", slot_minorplanet_number_of_cattle, ":random_cattle"),
         #Reassigning the cattle production in the village
         (store_sub, ":production", ":random_cattle", 10),
         (val_div, ":production", 2),
-        (call_script, "script_center_change_trade_good_production", ":village_no", "itm_cattle_meat", ":production", 0),
+        (call_script, "script_center_change_trade_good_production", ":minorplanet_no", "itm_cattle_meat", ":production", 0),
         
         
-        (store_sub, ":offset", ":village_no", villages_begin),
+        (store_sub, ":offset", ":minorplanet_no", minorplanet_begin),
         
         (store_add, ":exterior_scene_no", "scn_minorplanet_1", ":offset"),
-        (party_set_slot,":village_no", slot_spacestation_exterior, ":exterior_scene_no"),		#SW set village scene
+        (party_set_slot,":minorplanet_no", slot_spacestation_exterior, ":exterior_scene_no"),		#SW set village scene
         
         #SW debug
-        # (assign, reg3, ":village_no"), #SW debug
+        # (assign, reg3, ":minorplanet_no"), #SW debug
         # (assign, reg4, ":offset"), #SW debug
         # (assign, reg5, ":exterior_scene_no"), #SW debug
-        # (display_log_message, "@village_no = {reg3}, offset = {reg4}, exterior_scene_no = {reg5}"),	#SW debug
+        # (display_log_message, "@minorplanet_no = {reg3}, offset = {reg4}, exterior_scene_no = {reg5}"),	#SW debug
         
         (store_add, ":store_troop_no", "trp_minorplanet_admin_1", ":offset"),
-        (party_set_slot,":village_no", slot_mainplanet_elder, ":store_troop_no"),
+        (party_set_slot,":minorplanet_no", slot_mainplanet_elder, ":store_troop_no"),
         
-        (party_set_slot,":village_no", slot_party_type, spt_village),
-        (party_set_slot,":village_no", slot_minorplanet_raided_by, -1),
+        (party_set_slot,":minorplanet_no", slot_party_type, spt_minorplanet),
+        (party_set_slot,":minorplanet_no", slot_minorplanet_raided_by, -1),
         
-        (call_script, "script_refresh_village_merchant_inventory", ":village_no"),
-        (call_script, "script_refresh_village_merchant_inventory", ":village_no"),
+        (call_script, "script_refresh_minorplanet_merchant_inventory", ":minorplanet_no"),
+        (call_script, "script_refresh_minorplanet_merchant_inventory", ":minorplanet_no"),
         
-        (call_script, "script_refresh_village_defenders", ":village_no"),
-        (call_script, "script_refresh_village_defenders", ":village_no"),
-        (call_script, "script_refresh_village_defenders", ":village_no"),
-        (call_script, "script_refresh_village_defenders", ":village_no"),
+        (call_script, "script_refresh_minorplanet_defenders", ":minorplanet_no"),
+        (call_script, "script_refresh_minorplanet_defenders", ":minorplanet_no"),
+        (call_script, "script_refresh_minorplanet_defenders", ":minorplanet_no"),
+        (call_script, "script_refresh_minorplanet_defenders", ":minorplanet_no"),
       (try_end),
       
       
       #      (store_sub, ":item_to_slot", slot_mainplanet_trade_good_productions_begin, trade_goods_begin),
       #      (try_for_range, ":center_no", centers_begin, centers_end),
       #        (str_clear, s3),
-      #        (this_or_next|is_between, ":center_no", towns_begin, towns_end),
-      #        (is_between, ":center_no", villages_begin, villages_end),
+      #        (this_or_next|is_between, ":center_no", mainplanets_begin, mainplanets_end),
+      #        (is_between, ":center_no", minorplanet_begin, minorplanet_end),
       #        (try_for_range, ":cur_good", trade_goods_begin, trade_goods_end),
       #          (store_add, ":cur_good_slot", ":cur_good", ":item_to_slot"),
       #          (str_store_party_name, s1, ":center_no"),
@@ -1097,7 +1097,7 @@ scripts = [
         (assign, ":prosperity", reg0),
         (val_add, ":prosperity", ":random_prosperity_adder"),
         (try_begin),
-          (party_slot_eq, ":center_no", slot_party_type, spt_town),
+          (party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
           (val_add, ":prosperity", 20),
         (try_end),
         (val_clamp, ":prosperity", 0, 100),
@@ -1107,8 +1107,8 @@ scripts = [
       #SW - moved after script_give_center_to_lord to have faction specific soldiers
       # #Initialize walkers
       # (try_for_range, ":center_no", centers_begin, centers_end),
-      # (this_or_next|party_slot_eq, ":center_no", slot_party_type, spt_town),
-      # (party_slot_eq, ":center_no", slot_party_type, spt_village),
+      # (this_or_next|party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
+      # (party_slot_eq, ":center_no", slot_party_type, spt_minorplanet),
       # (try_for_range, ":walker_no", 0, num_town_walkers),
       # (call_script, "script_center_set_walker_to_type", ":center_no", ":walker_no", walkert_default),
       # (try_end),
@@ -1246,65 +1246,65 @@ scripts = [
       (call_script, "script_give_center_to_lord", "p_taris", "trp_knight_taris", 0),
       
       #SW - modified script_give_center_to_faction_aux so outposts (ie. castles) go to different factions (1=empire, 2=rebel, 3=hutt)
-      #(call_script, "script_give_center_to_faction_aux", "p_castle_1", "fac_kingdom_2"),
+      #(call_script, "script_give_center_to_faction_aux", "p_spacestation_1", "fac_kingdom_2"),
       
       #Corellia Outpost - Give to the Rebels (Currently Empire)
-      (call_script, "script_give_center_to_faction_aux", "p_castle_2", "fac_kingdom_2"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_3", "fac_kingdom_2"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_4", "fac_kingdom_2"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_5", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_6", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_7", "fac_kingdom_2"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_8", "fac_kingdom_3"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_9", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_10", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_2", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_3", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_4", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_5", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_6", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_7", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_8", "fac_kingdom_3"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_9", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_10", "fac_kingdom_1"),
       
       #Avatar Platform - Give to the Empire (currently Rebels)
-      (call_script, "script_give_center_to_faction_aux", "p_castle_11", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_12", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_13", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_14", "fac_kingdom_3"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_15", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_11", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_12", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_13", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_14", "fac_kingdom_3"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_15", "fac_kingdom_2"),
       
       #Kashyyyk Outpost - Give to the Empire (currently Rebels)
-      (call_script, "script_give_center_to_faction_aux", "p_castle_16", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_17", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_18", "fac_kingdom_2"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_19", "fac_kingdom_2"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_20", "fac_kingdom_3"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_16", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_17", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_18", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_19", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_20", "fac_kingdom_3"),
       
-      (call_script, "script_give_center_to_faction_aux", "p_castle_21", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_22", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_21", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_22", "fac_kingdom_1"),
       
       #Corellia Battlestation - Give to Rebels (Currently Empire)
-      (call_script, "script_give_center_to_faction_aux", "p_castle_23", "fac_kingdom_2"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_24", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_25", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_26", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_27", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_28", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_29", "fac_kingdom_2"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_30", "fac_kingdom_3"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_23", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_24", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_25", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_26", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_27", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_28", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_29", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_30", "fac_kingdom_3"),
       
-      (call_script, "script_give_center_to_faction_aux", "p_castle_31", "fac_kingdom_3"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_32", "fac_kingdom_3"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_33", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_34", "fac_kingdom_2"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_35", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_36", "fac_kingdom_1"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_37", "fac_kingdom_2"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_38", "fac_kingdom_3"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_39", "fac_kingdom_2"),
-      (call_script, "script_give_center_to_faction_aux", "p_castle_40", "fac_kingdom_3"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_31", "fac_kingdom_3"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_32", "fac_kingdom_3"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_33", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_34", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_35", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_36", "fac_kingdom_1"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_37", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_38", "fac_kingdom_3"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_39", "fac_kingdom_2"),
+      (call_script, "script_give_center_to_faction_aux", "p_spacestation_40", "fac_kingdom_3"),
       
       
       
-      # fill_village_bound_centers
+      # fill_minorplanet_bound_centers
       #pass 1: Give one village to each castle
       (try_for_range, ":cur_center", castles_begin, castles_end),
         (assign, ":min_dist", 999999),
         (assign, ":min_dist_village", -1),
-        (try_for_range, ":cur_village", villages_begin, villages_end),
+        (try_for_range, ":cur_village", minorplanet_begin, minorplanet_end),
           (neg|party_slot_ge, ":cur_village", slot_minorplanet_bound_center, 1), #skip villages which are already bound.
           (store_distance_to_party_from_party, ":cur_dist", ":cur_village", ":cur_center"),
           (lt, ":cur_dist", ":min_dist"),
@@ -1318,31 +1318,31 @@ scripts = [
       
       # Give family castles to certain nobles.
       #SW - removed give family castles to certain nobles
-      #(call_script, "script_give_center_to_lord", "p_castle_29", "trp_knight_2_10", 0), #Nelag_Castle
-      #(call_script, "script_give_center_to_lord", "p_castle_30", "trp_knight_3_4", 0), #Asugan_Castle
-      #(call_script, "script_give_center_to_lord", "p_castle_35", "trp_knight_1_15", 0), #Haringoth_Castle
+      #(call_script, "script_give_center_to_lord", "p_spacestation_29", "trp_knight_2_10", 0), #Nelag_Castle
+      #(call_script, "script_give_center_to_lord", "p_spacestation_30", "trp_knight_3_4", 0), #Asugan_Castle
+      #(call_script, "script_give_center_to_lord", "p_spacestation_35", "trp_knight_1_15", 0), #Haringoth_Castle
       
       #SWTESTING
-      # (call_script, "script_give_center_to_lord", "p_castle_1", "trp_player", 0),
-      # (call_script, "script_give_center_to_lord", "p_castle_2", "trp_player", 0),
-      # (call_script, "script_give_center_to_lord", "p_castle_3", "trp_player", 0),
-      # (call_script, "script_give_center_to_lord", "p_castle_4", "trp_player", 0),
-      # (call_script, "script_give_center_to_lord", "p_castle_5", "trp_player", 0),
-      # (call_script, "script_give_center_to_lord", "p_castle_6", "trp_player", 0),
-      # (call_script, "script_give_center_to_lord", "p_castle_7", "trp_player", 0),
-      # (call_script, "script_give_center_to_lord", "p_castle_8", "trp_player", 0),
-      # (call_script, "script_give_center_to_lord", "p_castle_9", "trp_player", 0),
-      # (call_script, "script_give_center_to_lord", "p_castle_10", "trp_player", 0),
+      # (call_script, "script_give_center_to_lord", "p_spacestation_1", "trp_player", 0),
+      # (call_script, "script_give_center_to_lord", "p_spacestation_2", "trp_player", 0),
+      # (call_script, "script_give_center_to_lord", "p_spacestation_3", "trp_player", 0),
+      # (call_script, "script_give_center_to_lord", "p_spacestation_4", "trp_player", 0),
+      # (call_script, "script_give_center_to_lord", "p_spacestation_5", "trp_player", 0),
+      # (call_script, "script_give_center_to_lord", "p_spacestation_6", "trp_player", 0),
+      # (call_script, "script_give_center_to_lord", "p_spacestation_7", "trp_player", 0),
+      # (call_script, "script_give_center_to_lord", "p_spacestation_8", "trp_player", 0),
+      # (call_script, "script_give_center_to_lord", "p_spacestation_9", "trp_player", 0),
+      # (call_script, "script_give_center_to_lord", "p_spacestation_10", "trp_player", 0),
       
       #SW - give dagobah to Yoda
-      (call_script, "script_give_center_to_lord", "p_castle_4", "trp_knight_2_8", 0), #Dagobah to Yoda
+      (call_script, "script_give_center_to_lord", "p_spacestation_4", "trp_knight_2_8", 0), #Dagobah to Yoda
       
       #pass 2: Give other villages to closest town.
-      (try_for_range, ":cur_village", villages_begin, villages_end),
+      (try_for_range, ":cur_village", minorplanet_begin, minorplanet_end),
         (neg|party_slot_ge, ":cur_village", slot_minorplanet_bound_center, 1), #skip villages which are already bound.
         (assign, ":min_dist", 999999),
         (assign, ":min_dist_town", -1),
-        (try_for_range, ":cur_town", towns_begin, towns_end),
+        (try_for_range, ":cur_town", mainplanets_begin, mainplanets_end),
           (store_distance_to_party_from_party, ":cur_dist", ":cur_village", ":cur_town"),
           (lt, ":cur_dist", ":min_dist"),
           (assign, ":min_dist", ":cur_dist"),
@@ -1364,14 +1364,14 @@ scripts = [
       #SW - moved after script_give_center_to_lord to have faction specific soldiers
       #Initialize walkers
       (try_for_range, ":center_no", centers_begin, centers_end),
-        (this_or_next|party_slot_eq, ":center_no", slot_party_type, spt_town),
-        (party_slot_eq, ":center_no", slot_party_type, spt_village),
+        (this_or_next|party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
+        (party_slot_eq, ":center_no", slot_party_type, spt_minorplanet),
         (try_for_range, ":walker_no", 0, num_town_walkers),
           (call_script, "script_center_set_walker_to_type", ":center_no", ":walker_no", walkert_default),
         (try_end),
       (try_end),
       
-      (call_script, "script_update_village_market_towns"),
+      (call_script, "script_update_minorplanet_market_towns"),
       
       #Assign only family structures of lords who doesn't have a father. Other troops will get the family tree automatically
       #SW - commented out kingdom knight wife, daughters
@@ -1421,7 +1421,7 @@ scripts = [
       (try_for_range, ":troop_id", kingdom_heroes_begin, kingdom_heroes_end),
         (try_begin),
           (store_troop_faction, ":faction_id", ":troop_id"),
-          (is_between, ":faction_id", kingdoms_begin, kingdoms_end),
+          (is_between, ":faction_id", factions_begin, factions_end),
           (troop_set_slot, ":troop_id", slot_troop_original_faction, ":faction_id"),
           (try_begin),
             (is_between, ":troop_id", pretenders_begin, pretenders_end),
@@ -1443,14 +1443,14 @@ scripts = [
         #Add initial center wealth
         (assign, ":initial_wealth", 2000),
         (try_begin),
-          (is_between, ":center_no", towns_begin, towns_end),
+          (is_between, ":center_no", mainplanets_begin, mainplanets_end),
           (val_mul, ":initial_wealth", 2),
         (try_end),
         (party_set_slot, ":center_no", slot_mainplanet_wealth, ":initial_wealth"),
         
         (assign, ":garrison_strength", 13),
         (try_begin),
-          (party_slot_eq, ":center_no", slot_party_type, spt_town),
+          (party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
           (assign, ":garrison_strength", 40),
         (try_end),
         (try_for_range, ":unused", 0, ":garrison_strength"),
@@ -1648,10 +1648,10 @@ scripts = [
       (call_script, "script_update_ps_merchants"),
       (call_script, "script_update_fs_merchants"),
       
-      (try_for_range, ":village_no", villages_begin, villages_end),
-        (call_script, "script_update_volunteer_troops_in_village", ":village_no"),
+      (try_for_range, ":minorplanet_no", minorplanet_begin, minorplanet_end),
+        (call_script, "script_update_volunteer_troops_in_village", ":minorplanet_no"),
       (try_end),
-      (try_for_range, ":cur_kingdom", kingdoms_begin, kingdoms_end),
+      (try_for_range, ":cur_kingdom", factions_begin, factions_end),
         (call_script, "script_update_faction_notes", ":cur_kingdom"),
         (store_random_in_range, ":random_no", -60, 0),
         (faction_set_slot, ":faction_no", slot_faction_ai_last_offensive_time, ":random_no"),
@@ -1664,15 +1664,15 @@ scripts = [
       (try_end),
       (call_script, "script_update_troop_notes", "trp_player"),
       
-      (try_for_range, ":faction_no", kingdoms_begin, kingdoms_end),
+      (try_for_range, ":faction_no", factions_begin, factions_end),
         (call_script, "script_faction_recalculate_strength", ":faction_no"),
       (try_end),
       
       ##      (assign, "$players_kingdom", "fac_kingdom_1"),
       ##      (call_script, "script_give_center_to_lord", "p_dantooine", "trp_player", 0),
       ##      (call_script, "script_give_center_to_lord", "p_coruscant", "trp_player", 0),
-      ####      (call_script, "script_give_center_to_lord", "p_castle_10", "trp_player", 0),
-      ##      (assign, "$g_castle_requested_by_player", "p_castle_10"),
+      ####      (call_script, "script_give_center_to_lord", "p_spacestation_10", "trp_player", 0),
+      ##      (assign, "$g_spacestation_requested_by_player", "p_spacestation_10"),
       (call_script, "script_get_player_party_morale_values"),
       (party_set_morale, "p_main_party", reg0),
   ]),
@@ -1735,16 +1735,16 @@ scripts = [
       (try_begin),
         (lt, "$g_encountered_party_2",0), #Normal encounter. Not battle or siege.
         (try_begin),
-          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
-          (jump_to_menu, "mnu_castle_outside"),
+          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
+          (jump_to_menu, "mnu_spacestation_outside"),
         (else_try),
           (party_slot_eq, "$g_encountered_party", slot_party_type, spt_castle),
-          (jump_to_menu, "mnu_castle_outside"),
+          (jump_to_menu, "mnu_spacestation_outside"),
         (else_try),
           (party_slot_eq, "$g_encountered_party", slot_party_type, spt_ship),
           (jump_to_menu, "mnu_ship_reembark"),
         (else_try),
-          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
+          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_minorplanet),
           (jump_to_menu, "mnu_village"),
         (else_try),
           (party_slot_eq, "$g_encountered_party", slot_party_type, spt_cattle_herd),
@@ -1788,7 +1788,7 @@ scripts = [
         (try_end),
       (else_try), #Battle or siege
         (try_begin),
-          (this_or_next|party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
+          (this_or_next|party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
           (party_slot_eq, "$g_encountered_party", slot_party_type, spt_castle),
           (try_begin),
             (eq, "$auto_enter_town", "$g_encountered_party"),
@@ -1898,7 +1898,7 @@ scripts = [
           (try_begin),
             #For sieges increase attacker casualties and reduce defender casualties.
             (this_or_next|party_slot_eq, ":root_defender_party", slot_party_type, spt_castle),
-            (party_slot_eq, ":root_defender_party", slot_party_type, spt_town),
+            (party_slot_eq, ":root_defender_party", slot_party_type, spt_mainplanet),
             (val_mul, ":defender_strength", 3),
             (val_div, ":defender_strength", 2),
             (val_div, ":attacker_strength", 2),
@@ -2030,7 +2030,7 @@ scripts = [
             (try_begin),
               (ge, ":collective_casualties", 0),
               (party_get_slot, ":cur_party_type", ":root_defeated_party", slot_party_type),
-              (this_or_next|eq, ":cur_party_type", spt_town),
+              (this_or_next|eq, ":cur_party_type", spt_mainplanet),
               (eq, ":cur_party_type", spt_castle),
               
               (assign, "$g_recalculate_ais", 1),
@@ -3863,12 +3863,12 @@ scripts = [
     [
       (store_sub, ":item_to_slot", slot_mainplanet_trade_good_productions_begin, trade_goods_begin),
       #      (store_sub, ":item_to_price_slot", slot_mainplanet_trade_good_prices_begin, trade_goods_begin),
-      (try_for_range, ":center_no", towns_begin, towns_end),
-        (this_or_next|is_between, ":center_no", towns_begin, towns_end),
-        (is_between, ":center_no", villages_begin, villages_end),
+      (try_for_range, ":center_no", mainplanets_begin, mainplanets_end),
+        (this_or_next|is_between, ":center_no", mainplanets_begin, mainplanets_end),
+        (is_between, ":center_no", minorplanet_begin, minorplanet_end),
         (try_for_range, ":other_center", centers_begin, centers_end),
-          (this_or_next|is_between, ":center_no", towns_begin, towns_end),
-          (is_between, ":center_no", villages_begin, villages_end),
+          (this_or_next|is_between, ":center_no", mainplanets_begin, mainplanets_end),
+          (is_between, ":center_no", minorplanet_begin, minorplanet_end),
           (neq, ":other_center", ":center_no"),
           (store_distance_to_party_from_party, ":cur_distance", ":center_no", ":other_center"),
           (lt, ":cur_distance", 110),
@@ -3881,8 +3881,8 @@ scripts = [
             (gt, ":prod_dif", 0),
             (store_mul, ":prod_dif_change", ":prod_dif", 1),
             ##            (try_begin),
-            ##              (is_between, ":center_no", towns_begin, towns_end),
-            ##              (is_between, ":other_center", towns_begin, towns_end),
+            ##              (is_between, ":center_no", mainplanets_begin, mainplanets_end),
+            ##              (is_between, ":other_center", mainplanets_begin, mainplanets_end),
             ##              (val_mul, ":cur_distance", 2),
             ##            (try_end),
             (val_mul ,":prod_dif_change", ":dist_factor"),
@@ -3906,7 +3906,7 @@ scripts = [
         (try_for_range, ":center_no", centers_begin, centers_end),
           (val_add, ":num_centers", 1),
           (try_begin),
-            (is_between, ":center_no", towns_begin, towns_end), #each town is weighted as 5 villages...
+            (is_between, ":center_no", mainplanets_begin, mainplanets_end), #each town is weighted as 5 villages...
             (val_add, ":num_centers", 4),
           (try_end),
           (party_get_slot, ":center_production", ":center_no", ":cur_good_slot"),
@@ -3915,8 +3915,8 @@ scripts = [
         (store_div, ":new_production_difference", ":total_production", ":num_centers"),
         (neq, ":new_production_difference", 0),
         (try_for_range, ":center_no", centers_begin, centers_end),
-          (this_or_next|is_between, ":center_no", towns_begin, towns_end),
-          (is_between, ":center_no", villages_begin, villages_end),
+          (this_or_next|is_between, ":center_no", mainplanets_begin, mainplanets_end),
+          (is_between, ":center_no", minorplanet_begin, minorplanet_end),
           (party_get_slot, ":center_production", ":center_no", ":cur_good_slot"),
           (val_sub, ":center_production", ":new_production_difference"),
           (party_set_slot, ":center_no", ":cur_good_slot", ":center_production"),
@@ -3929,8 +3929,8 @@ scripts = [
   ("update_trade_good_prices",
     [
       (try_for_range, ":center_no", centers_begin, centers_end),
-        (this_or_next|is_between, ":center_no", towns_begin, towns_end),
-        (is_between, ":center_no", villages_begin, villages_end),
+        (this_or_next|is_between, ":center_no", mainplanets_begin, mainplanets_end),
+        (is_between, ":center_no", minorplanet_begin, minorplanet_end),
         (call_script, "script_update_trade_good_price_for_party", ":center_no"),
       (try_end),
       #      (call_script, "script_update_trade_good_price_for_party", "p_zendar"),
@@ -4003,7 +4003,7 @@ scripts = [
       (party_set_slot, ":center_no", slot_center_accumulated_tariffs, ":accumulated_tariffs"),
       
       #      (try_begin),
-      #        (is_between, ":center_no", towns_begin, towns_end),
+      #        (is_between, ":center_no", mainplanets_begin, mainplanets_end),
       #        (party_get_slot, ":merchant",":center_no",slot_mainplanet_merchant),
       #        (gt, ":merchant", 0),
       #        (store_mul, ":merchant_profit", ":total_change", 1),
@@ -4175,7 +4175,7 @@ scripts = [
       (assign, ":num_looted_items",0),
       (try_begin),
         (this_or_next|party_slot_eq, "$g_enemy_party", slot_party_type, spt_kingdom_caravan),
-        (party_slot_eq, "$g_enemy_party", slot_party_type, spt_village_farmer),
+        (party_slot_eq, "$g_enemy_party", slot_party_type, spt_minorplanet_farmer),
         (store_mul, ":plunder_amount", player_loot_share, 30),
         (val_mul, ":plunder_amount", "$g_strength_contribution_of_player"),
         (val_div, ":plunder_amount", 100),
@@ -4921,7 +4921,7 @@ scripts = [
       (try_for_range_backwards, ":cur_center", centers_begin, centers_end),
         (party_slot_eq, ":cur_center", slot_mainplanet_lord, ":troop_no"),
         (try_begin),
-          (party_slot_eq, ":cur_center", slot_party_type, spt_town),
+          (party_slot_eq, ":cur_center", slot_party_type, spt_mainplanet),
           (val_add, ":owned_towns", 1),
         (else_try),
           (party_slot_eq, ":cur_center", slot_party_type, spt_castle),
@@ -5552,7 +5552,7 @@ scripts = [
             (party_slot_eq, ":center_no", slot_party_type, spt_castle),
             (val_add, ":num_castles", 1),
           (else_try),
-            (party_slot_eq, ":center_no", slot_party_type, spt_town),
+            (party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
             (val_add, ":num_towns", 1),
           (try_end),
         (try_end),
@@ -5564,7 +5564,7 @@ scripts = [
     ]),
     
     #script_select_random_town:
-    # This script selects a random town in range [towns_begin, towns_end)
+    # This script selects a random town in range [mainplanets_begin, mainplanets_end)
     # INPUTS:
     # none
     
@@ -5572,10 +5572,10 @@ scripts = [
     # reg0: id of the selected random town
     ##  ("select_random_town",
     ##    [
-    ##      (assign, ":num_towns", towns_end),
-    ##      (val_sub,":num_towns", towns_begin),
+    ##      (assign, ":num_towns", mainplanets_end),
+    ##      (val_sub,":num_towns", mainplanets_begin),
     ##      (store_random, ":random_town", ":num_towns"),
-    ##      (val_add,":random_town", towns_begin),
+    ##      (val_add,":random_town", mainplanets_begin),
     ##      (assign, reg0, ":random_town"),
     ##  ]),
     
@@ -5589,7 +5589,7 @@ scripts = [
     # ]),
     
     #script_cf_select_random_town_with_faction:
-    # This script selects a random town in range [towns_begin, towns_end)
+    # This script selects a random town in range [mainplanets_begin, mainplanets_end)
     # such that faction of the town is equal to given_faction
     # INPUT:
     # arg1 = faction_no
@@ -5603,7 +5603,7 @@ scripts = [
         (assign, ":result", -1),
         # First count num matching spawn points
         (assign, ":no_towns", 0),
-        (try_for_range,":cur_town", towns_begin, towns_end),
+        (try_for_range,":cur_town", mainplanets_begin, mainplanets_end),
           (store_faction_of_party, ":cur_faction", ":cur_town"),
           (eq, ":cur_faction", ":faction_no"),
           (val_add, ":no_towns", 1),
@@ -5611,7 +5611,7 @@ scripts = [
         (gt, ":no_towns", 0), #Fail if there are no towns
         (store_random_in_range, ":random_town", 0, ":no_towns"),
         (assign, ":no_towns", 0),
-        (try_for_range,":cur_town", towns_begin, towns_end),
+        (try_for_range,":cur_town", mainplanets_begin, mainplanets_end),
           (eq, ":result", -1),
           (store_faction_of_party, ":cur_faction", ":cur_town"),
           (eq, ":cur_faction", ":faction_no"),
@@ -5622,22 +5622,22 @@ scripts = [
         (assign, reg0, ":result"),
     ]),
     
-    #script_cf_select_random_village_with_faction:
-    # This script selects a random village in range [villages_begin, villages_end)
+    #script_cf_select_random_minorplanet_with_faction:
+    # This script selects a random village in range [minorplanet_begin, minorplanet_end)
     # such that faction of the village is equal to given_faction
     # INPUT:
     # arg1 = faction_no
     
     #OUTPUT:
     # This script may return false if there is no matching village.
-    # reg0 = village_no
-    ("cf_select_random_village_with_faction",
+    # reg0 = minorplanet_no
+    ("cf_select_random_minorplanet_with_faction",
       [
         (store_script_param_1, ":faction_no"),
         (assign, ":result", -1),
         # First count num matching spawn points
         (assign, ":no_villages", 0),
-        (try_for_range,":cur_village", villages_begin, villages_end),
+        (try_for_range,":cur_village", minorplanet_begin, minorplanet_end),
           (store_faction_of_party, ":cur_faction", ":cur_village"),
           (eq, ":cur_faction", ":faction_no"),
           (val_add, ":no_villages", 1),
@@ -5645,7 +5645,7 @@ scripts = [
         (gt, ":no_villages", 0), #Fail if there are no villages
         (store_random_in_range, ":random_village", 0, ":no_villages"),
         (assign, ":no_villages", 0),
-        (try_for_range,":cur_village", villages_begin, villages_end),
+        (try_for_range,":cur_village", minorplanet_begin, minorplanet_end),
           (eq, ":result", -1),
           (store_faction_of_party, ":cur_faction", ":cur_village"),
           (eq, ":cur_faction", ":faction_no"),
@@ -5800,7 +5800,7 @@ scripts = [
     
     
     #script_cf_select_random_town_at_peace_with_faction:
-    # This script selects a random town in range [towns_begin, towns_end)
+    # This script selects a random town in range [mainplanets_begin, mainplanets_end)
     # such that faction of the town is friendly to given_faction
     # INPUT:
     # arg1 = faction_no
@@ -5814,7 +5814,7 @@ scripts = [
         (assign, ":result", -1),
         # First count num matching towns
         (assign, ":no_towns", 0),
-        (try_for_range,":cur_town", towns_begin, towns_end),
+        (try_for_range,":cur_town", mainplanets_begin, mainplanets_end),
           (store_faction_of_party, ":cur_faction", ":cur_town"),
           (store_relation,":reln", ":cur_faction", ":faction_no"),
           (ge, ":reln", 0),
@@ -5823,7 +5823,7 @@ scripts = [
         (gt, ":no_towns", 0), #Fail if there are no towns
         (store_random_in_range, ":random_town", 0, ":no_towns"),
         (assign, ":no_towns", 0),
-        (try_for_range,":cur_town", towns_begin, towns_end),
+        (try_for_range,":cur_town", mainplanets_begin, mainplanets_end),
           (eq, ":result", -1),
           (store_faction_of_party, ":cur_faction", ":cur_town"),
           (store_relation,":reln", ":cur_faction", ":faction_no"),
@@ -5900,7 +5900,7 @@ scripts = [
     
     
     #script_spawn_party_at_random_town:
-    # This script selects a random town in range [towns_begin, towns_end)
+    # This script selects a random town in range [mainplanets_begin, mainplanets_end)
     # such that faction of the town is equal to given_faction
     # and spawns a new party there.
     # INPUT:
@@ -5919,7 +5919,7 @@ scripts = [
     ##  ]),
     
     #script_cf_spawn_party_at_faction_town:
-    # This script selects a random town in range [towns_begin, towns_end)
+    # This script selects a random town in range [mainplanets_begin, mainplanets_end)
     # such that faction of the town is equal to given_faction
     # and spawns a new party there.
     # INPUT:
@@ -5940,7 +5940,7 @@ scripts = [
     #script_spawn_party_at_random_town_if_below_limit:
     # This script checks if number of parties
     # of specified template is less than limit,
-    # If so, it selects a random town in range [towns_begin, towns_end)
+    # If so, it selects a random town in range [mainplanets_begin, mainplanets_end)
     # and spawns a new party there.
     # INPUT:
     # $pin_party_template: given_party_template
@@ -5966,7 +5966,7 @@ scripts = [
     ##  #script_spawn_party_at_faction_town_if_below_limit:
     ##  # This script checks if number of parties
     ##  # of specified template is less than limit,
-    ##  # If so, it selects a random town in range [towns_begin, towns_end)
+    ##  # If so, it selects a random town in range [mainplanets_begin, mainplanets_end)
     ##  # such that faction of the town is equal to given_faction
     ##  # and spawns a new party there.
     ##  # INPUT:
@@ -6044,8 +6044,8 @@ scripts = [
           (try_end),
         (else_try),
           (is_between, ":giver_troop", planet_admins_begin, planet_admins_end),
-          (assign, ":quests_begin", village_elder_quests_begin),
-          (assign, ":quests_end", village_elder_quests_end),
+          (assign, ":quests_begin", minorplanet_elder_quests_begin),
+          (assign, ":quests_end", minorplanet_elder_quests_end),
         (else_try),
           (is_between, ":giver_troop", mayors_begin, mayors_end),
           (assign, ":quests_begin", mayor_quests_begin),
@@ -6085,7 +6085,7 @@ scripts = [
             # Village Elder quests
             (eq, ":quest_no", "qst_deliver_grain"),
             (try_begin),
-              (is_between, ":giver_center_no", villages_begin, villages_end),
+              (is_between, ":giver_center_no", minorplanet_begin, minorplanet_end),
               #The quest giver is the village elder
               (call_script, "script_get_troop_item_amount", ":giver_troop", "itm_grain"),
               (eq, reg0, 0),
@@ -6100,7 +6100,7 @@ scripts = [
           (else_try),
             (eq, ":quest_no", "qst_deliver_cattle"),
             (try_begin),
-              (is_between, ":giver_center_no", villages_begin, villages_end),
+              (is_between, ":giver_center_no", minorplanet_begin, minorplanet_end),
               #The quest giver is the village elder
               (party_get_slot, ":num_cattle", ":giver_center_no", slot_minorplanet_number_of_cattle),
               (lt, ":num_cattle", 50),
@@ -6114,7 +6114,7 @@ scripts = [
           (else_try),
             (eq, ":quest_no", "qst_train_peasants_against_bandits"),
             (try_begin),
-              (is_between, ":giver_center_no", villages_begin, villages_end),
+              (is_between, ":giver_center_no", minorplanet_begin, minorplanet_end),
               #The quest giver is the village elder
               (store_skill_level, ":player_trainer", "skl_trainer", "trp_player"),
               (gt, ":player_trainer", 0),
@@ -6129,7 +6129,7 @@ scripts = [
             # Mayor quests
             (eq, ":quest_no", "qst_escort_merchant_caravan"),
             (is_between, ":giver_center_no", centers_begin, centers_end),
-            (store_random_party_in_range, ":quest_target_center", towns_begin, towns_end),
+            (store_random_party_in_range, ":quest_target_center", mainplanets_begin, mainplanets_end),
             (store_distance_to_party_from_party, ":dist", ":giver_center_no",":quest_target_center"),
             (assign, ":quest_gold_reward", ":dist"),
             (val_add, ":quest_gold_reward", 25),
@@ -6141,7 +6141,7 @@ scripts = [
           (else_try),
             (eq, ":quest_no", "qst_deliver_wine"),
             (is_between, ":giver_center_no", centers_begin, centers_end),
-            (store_random_party_in_range, ":quest_target_center", towns_begin, towns_end),
+            (store_random_party_in_range, ":quest_target_center", mainplanets_begin, mainplanets_end),
             (store_random_in_range, ":random_no", 0, 2),
             (try_begin),
               (eq, ":random_no", 0),
@@ -6181,7 +6181,7 @@ scripts = [
           (else_try),
             (eq, ":quest_no", "qst_kidnapped_girl"),
             (is_between, ":giver_center_no", centers_begin, centers_end),
-            (store_random_in_range, ":quest_target_center", villages_begin, villages_end),
+            (store_random_in_range, ":quest_target_center", minorplanet_begin, minorplanet_end),
             (store_character_level, ":quest_target_amount"),
             (val_add, ":quest_target_amount", 15),
             (store_distance_to_party_from_party, ":dist", ":giver_center_no", ":quest_target_center"),
@@ -6269,7 +6269,7 @@ scripts = [
               (troop_slot_ge, ":cur_target_troop", slot_troop_prisoner_of_party, 0),
               (call_script, "script_search_troop_prisoner_of_party", ":cur_target_troop"),
               (assign, ":cur_target_center", reg0),
-              (is_between, ":cur_target_center", towns_begin, towns_end),#Skip if he is not in a town
+              (is_between, ":cur_target_center", mainplanets_begin, mainplanets_end),#Skip if he is not in a town
               (assign, ":quest_target_center", ":cur_target_center"),
               (assign, ":quest_target_troop", ":cur_target_troop"),
               (assign, ":quest_expiration_days", 30),
@@ -6290,7 +6290,7 @@ scripts = [
               (troop_slot_ge, ":cur_target_troop", slot_troop_prisoner_of_party, 0),
               (call_script, "script_search_troop_prisoner_of_party", ":cur_target_troop"),
               (assign, ":cur_target_center", reg0),
-              (is_between, ":cur_target_center", towns_begin, towns_end),#Skip if he is not in a town
+              (is_between, ":cur_target_center", mainplanets_begin, mainplanets_end),#Skip if he is not in a town
               (assign, ":quest_target_center", ":cur_target_center"),
               (assign, ":quest_target_troop", ":cur_target_troop"),
               (assign, ":quest_expiration_days", 30),
@@ -6457,7 +6457,7 @@ scripts = [
             ##            (assign, ":cur_target_center", reg0),
             ##            (ge, ":cur_target_center", 0),
             ##            (store_faction_of_party, ":cur_target_faction", ":cur_target_center"),
-            ##            (is_between,  ":cur_target_faction", kingdoms_begin, kingdoms_end),
+            ##            (is_between,  ":cur_target_faction", factions_begin, factions_end),
             ##
             ##            (assign, ":quest_object_center", ":cur_object_center"),
             ##            (assign, ":quest_target_center", ":cur_target_center"),
@@ -6608,9 +6608,9 @@ scripts = [
               (neq, ":giver_reputation", lrep_debauched),
               (neq, ":giver_reputation", lrep_quarrelsome),
               (ge, "$g_talk_troop_faction_relation", 0),
-              (assign, ":end_cond", villages_end),
+              (assign, ":end_cond", minorplanet_end),
               (assign, ":cur_target_center", -1),
-              (try_for_range, ":cur_village", villages_begin, ":end_cond"),
+              (try_for_range, ":cur_village", minorplanet_begin, ":end_cond"),
                 (party_slot_eq, ":cur_village", slot_mainplanet_lord, ":giver_troop"),
                 (party_slot_eq, ":cur_village", slot_minorplanet_infested_by_bandits, 1),
                 (assign, ":cur_target_center", ":cur_village"),
@@ -6673,7 +6673,7 @@ scripts = [
               (neq, ":giver_reputation", lrep_goodnatured),
               (neq, ":giver_reputation", lrep_upstanding),
               (ge, "$g_talk_troop_faction_relation", 0),
-              (call_script, "script_cf_troop_get_random_leaded_town_or_village_except_center", ":giver_troop", ":giver_center_no"),
+              (call_script, "script_cf_troop_get_random_leaded_town_or_minorplanet_except_center", ":giver_troop", ":giver_center_no"),
               (assign, ":quest_target_center", reg0),
               (assign, ":quest_importance", 1),
               (assign, ":quest_gold_reward", 0),
@@ -6686,7 +6686,7 @@ scripts = [
             (eq, ":quest_no", "qst_hunt_down_fugitive"),
             (try_begin),
               (ge, "$g_talk_troop_faction_relation", 0),
-              (call_script, "script_cf_select_random_village_with_faction", ":giver_faction_no"),
+              (call_script, "script_cf_select_random_minorplanet_with_faction", ":giver_faction_no"),
               (assign, ":quest_target_center", reg0),
               (store_random_in_range, ":quest_target_dna", 0, 1000000),
               (assign, ":result", ":quest_no"),
@@ -6719,7 +6719,7 @@ scripts = [
               (neg|faction_slot_eq, ":giver_faction_no", slot_faction_leader, ":giver_troop"),#Can not take the quest from the king
               (ge, "$g_talk_troop_faction_relation", 0),
               (gt, ":player_level", 5),
-              (is_between, ":giver_center_no", towns_begin, towns_end),
+              (is_between, ":giver_center_no", mainplanets_begin, mainplanets_end),
               (assign, ":quest_importance", 1),
               (assign, ":quest_xp_reward", 300),
               (assign, ":quest_gold_reward", 1000),
@@ -6738,7 +6738,7 @@ scripts = [
               (eq, "$g_defending_against_siege", 0),#Skip if the center is under siege (because of resting)
               
               (assign, ":cur_object_center", -1),
-              (try_for_range, ":cur_village", villages_begin, villages_end),
+              (try_for_range, ":cur_village", minorplanet_begin, minorplanet_end),
                 (party_slot_eq, ":cur_village", slot_mainplanet_lord, ":giver_troop"),
                 (store_distance_to_party_from_party, ":dist", ":cur_village", ":giver_center_no"),
                 (lt, ":dist", 25),
@@ -6773,7 +6773,7 @@ scripts = [
               (eq, "$g_defending_against_siege", 0), #Skip if the center is under siege (because of resting)
               (gt, ":giver_party_no", 0), #Skip if the quest giver doesn't have a party
               (gt, ":giver_center_no", 0), #skip if the quest giver is not in a center
-              (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town), #skip if we are not in a town.
+              (party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet), #skip if we are not in a town.
               (party_get_position, pos2, "p_main_party"),
               (assign, ":min_distance", 99999),
               (try_for_range, ":unused_2", 0, 10),
@@ -6894,7 +6894,7 @@ scripts = [
             ##          (try_begin),
             ##            (eq, 1,0), #TODO: disable this for now
             ##            (ge, ":player_level", 10),
-            ##            (is_between, ":giver_center_no", towns_begin, towns_end),#Skip if quest giver's center is not a town
+            ##            (is_between, ":giver_center_no", mainplanets_begin, mainplanets_end),#Skip if quest giver's center is not a town
             ##            (party_slot_eq, ":giver_center_no", slot_mainplanet_lord, ":giver_troop"),#Skip if the current center is not ruled by the quest giver
             ##            (call_script, "script_cf_get_random_kingdom_hero", ":giver_faction_no"),#Can fail
             ##
@@ -6925,7 +6925,7 @@ scripts = [
             ##          (try_begin),
             ##            (eq, 1,0), #TODO: disable this for now
             ##            (ge, ":player_level", 10),
-            ##            (is_between, ":giver_center_no", towns_begin, towns_end),#Skip if quest giver's center is not a town
+            ##            (is_between, ":giver_center_no", mainplanets_begin, mainplanets_end),#Skip if quest giver's center is not a town
             ##            (party_slot_eq, ":giver_center_no", slot_mainplanet_lord, ":giver_troop"),#Skip if the current center is not ruled by the quest giver
             ##
             ##            (assign, ":quest_target_center", ":giver_center_no"),
@@ -7003,7 +7003,7 @@ scripts = [
                 
                 (assign, ":cur_target_center", -1),
                 (call_script, "script_get_troop_attached_party", ":cur_target_troop"),
-                (is_between, reg0, towns_begin, towns_end),
+                (is_between, reg0, mainplanets_begin, mainplanets_end),
                 (party_slot_eq, reg0, slot_mainplanet_lord, ":cur_target_troop"),
                 (assign, ":cur_target_center", reg0),
                 
@@ -7143,7 +7143,7 @@ scripts = [
         
         (assign, ":result", -1),
         (assign, ":count_factions", 0),
-        (try_for_range, ":cur_faction", kingdoms_begin, kingdoms_end),
+        (try_for_range, ":cur_faction", factions_begin, factions_end),
           (faction_slot_eq, ":cur_faction", slot_faction_state, sfs_active),
           (store_relation, ":cur_relation", ":faction_no", ":cur_faction"),
           (le, ":cur_relation", -1),
@@ -7151,7 +7151,7 @@ scripts = [
         (try_end),
         (store_random_in_range,":random_faction",0,":count_factions"),
         (assign, ":count_factions", 0),
-        (try_for_range, ":cur_faction", kingdoms_begin, kingdoms_end),
+        (try_for_range, ":cur_faction", factions_begin, factions_end),
           (eq, ":result", -1),
           (faction_slot_eq, ":cur_faction", slot_faction_state, sfs_active),
           (store_relation, ":cur_relation", ":faction_no", ":cur_faction"),
@@ -7174,7 +7174,7 @@ scripts = [
         
         (assign, ":result", -1),
         (assign, ":count_factions", 0),
-        (try_for_range, ":cur_faction", kingdoms_begin, kingdoms_end),
+        (try_for_range, ":cur_faction", factions_begin, factions_end),
           (faction_slot_eq, ":cur_faction", slot_faction_state, sfs_active),
           (neq, ":cur_faction", ":faction_no"),
           (store_relation, ":cur_relation", ":faction_no", ":cur_faction"),
@@ -7183,7 +7183,7 @@ scripts = [
         (try_end),
         (store_random_in_range,":random_faction",0,":count_factions"),
         (assign, ":count_factions", 0),
-        (try_for_range, ":cur_faction", kingdoms_begin, kingdoms_end),
+        (try_for_range, ":cur_faction", factions_begin, factions_end),
           (eq, ":result", -1),
           (faction_slot_eq, ":cur_faction", slot_faction_state, sfs_active),
           (neq, ":cur_faction", ":faction_no"),
@@ -7276,7 +7276,7 @@ scripts = [
     ##
     ##      (assign, ":result", -1),
     ##      (assign, ":count_factions", 0),
-    ##      (try_for_range, ":cur_faction", kingdoms_begin, kingdoms_end),
+    ##      (try_for_range, ":cur_faction", factions_begin, factions_end),
     ##        (store_relation, ":cur_relation", ":faction_no", ":cur_faction"),
     ##        (le, ":cur_relation", -10),
     ##        (faction_get_slot, ":cur_value", ":cur_faction", ":slot_no"),
@@ -7285,7 +7285,7 @@ scripts = [
     ##      (try_end),
     ##      (store_random_in_range,":random_faction",0,":count_factions"),
     ##      (assign, ":count_factions", 0),
-    ##      (try_for_range, ":cur_faction", kingdoms_begin, kingdoms_end),
+    ##      (try_for_range, ":cur_faction", factions_begin, factions_end),
     ##        (eq, ":result", -1),
     ##        (store_relation, ":cur_relation", ":faction_no", ":cur_faction"),
     ##        (le, ":cur_relation", -10),
@@ -7692,7 +7692,7 @@ scripts = [
     ##      (try_for_range, ":center_no", walled_centers_begin, walled_centers_end),
     ##        (store_faction_of_party, ":faction_no", ":center_no"),
     ##        (eq, ":faction_no", ":kingdom_no"),
-    ##        (party_slot_eq, ":center_no", slot_party_type, spt_town),
+    ##        (party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
     ##        (store_distance_to_party_from_party, ":party_distance", ":party_no", ":center_no"),
     ##        (lt, ":party_distance", ":min_distance"),
     ##        (assign, ":min_distance", ":party_distance"),
@@ -8003,9 +8003,9 @@ scripts = [
         (try_end),
         (store_faction_of_party, ":old_faction", ":center_no"),
         (call_script, "script_give_center_to_faction_aux", ":center_no", ":faction_no"),
-        (call_script, "script_update_village_market_towns"),
+        (call_script, "script_update_minorplanet_market_towns"),
         
-        (try_for_range, ":cur_faction", kingdoms_begin, kingdoms_end),
+        (try_for_range, ":cur_faction", factions_begin, factions_end),
           (call_script, "script_faction_recalculate_strength", ":cur_faction"),
         (try_end),
         (assign, "$g_recalculate_ais", 1),
@@ -8015,9 +8015,9 @@ scripts = [
           (eq, ":faction_no", "fac_player_supporters_faction"),
           (faction_slot_eq, "fac_player_supporters_faction", slot_faction_leader, "trp_player"),
           (call_script, "script_give_center_to_lord", ":center_no", "trp_player", 0),
-          (try_for_range, ":cur_village", villages_begin, villages_end),
-            (store_faction_of_party, ":cur_village_faction", ":cur_village"),
-            (eq, ":cur_village_faction", "fac_player_supporters_faction"),
+          (try_for_range, ":cur_village", minorplanet_begin, minorplanet_end),
+            (store_faction_of_party, ":cur_minorplanet_faction", ":cur_village"),
+            (eq, ":cur_minorplanet_faction", "fac_player_supporters_faction"),
             (neg|party_slot_eq, ":cur_village", slot_mainplanet_lord, "trp_player"),
             (call_script, "script_give_center_to_lord", ":cur_village", "trp_player", 0),
           (try_end),
@@ -8036,7 +8036,7 @@ scripts = [
         (party_set_faction, ":center_no", ":faction_no"),
         
         (try_begin),
-          (party_slot_eq, ":center_no", slot_party_type, spt_village),
+          (party_slot_eq, ":center_no", slot_party_type, spt_minorplanet),
           (party_get_slot, ":farmer_party", ":center_no", slot_minorplanet_farmer_party),
           (gt, ":farmer_party", 0),
           (party_is_active, ":farmer_party"),
@@ -8069,7 +8069,7 @@ scripts = [
         (store_script_param_2, ":faction_no"),
         (try_begin),
           #Reactivating inactive or defeated faction
-          (is_between, ":faction_no", kingdoms_begin, kingdoms_end),
+          (is_between, ":faction_no", factions_begin, factions_end),
           (neg|faction_slot_eq, ":faction_no", slot_faction_state, sfs_active),
           (faction_set_slot, ":faction_no", slot_faction_state, sfs_active),
           (call_script, "script_store_average_center_value_per_faction"),
@@ -8079,28 +8079,28 @@ scripts = [
         (try_for_range, ":center_no", walled_centers_begin, walled_centers_end),
           (party_slot_eq, ":center_no", slot_mainplanet_lord, ":troop_no"),
           (party_set_faction, ":center_no", ":faction_no"),
-          (try_for_range, ":village_no", villages_begin, villages_end),
-            (party_slot_eq, ":village_no", slot_minorplanet_bound_center, ":center_no"),
-            (party_set_faction, ":village_no", ":faction_no"),
-            (party_get_slot, ":farmer_party_no", ":village_no", slot_minorplanet_farmer_party),
+          (try_for_range, ":minorplanet_no", minorplanet_begin, minorplanet_end),
+            (party_slot_eq, ":minorplanet_no", slot_minorplanet_bound_center, ":center_no"),
+            (party_set_faction, ":minorplanet_no", ":faction_no"),
+            (party_get_slot, ":farmer_party_no", ":minorplanet_no", slot_minorplanet_farmer_party),
             (try_begin),
               (gt, ":farmer_party_no", 0),
               (party_is_active, ":farmer_party_no"),
               (party_set_faction, ":farmer_party_no", ":faction_no"),
             (try_end),
             (try_begin),
-              (party_get_slot, ":old_town_lord", ":village_no", slot_mainplanet_lord),
+              (party_get_slot, ":old_town_lord", ":minorplanet_no", slot_mainplanet_lord),
               (neq, ":old_town_lord", ":troop_no"),
-              (party_set_slot, ":village_no", slot_mainplanet_lord, stl_unassigned),
+              (party_set_slot, ":minorplanet_no", slot_mainplanet_lord, stl_unassigned),
             (try_end),
           (try_end),
         (try_end),
-        (try_for_range, ":village_no", villages_begin, villages_end),
-          (party_slot_eq, ":village_no", slot_mainplanet_lord, ":troop_no"),
-          (store_faction_of_party, ":village_faction", ":village_no"),
+        (try_for_range, ":minorplanet_no", minorplanet_begin, minorplanet_end),
+          (party_slot_eq, ":minorplanet_no", slot_mainplanet_lord, ":troop_no"),
+          (store_faction_of_party, ":minorplanet_faction", ":minorplanet_no"),
           (try_begin),
-            (neq, ":village_faction", ":faction_no"),
-            (party_set_slot, ":village_no", slot_mainplanet_lord, stl_unassigned),
+            (neq, ":minorplanet_faction", ":faction_no"),
+            (party_set_slot, ":minorplanet_no", slot_mainplanet_lord, stl_unassigned),
           (try_end),
         (try_end),
         (try_begin),
@@ -8119,7 +8119,7 @@ scripts = [
         (try_end),
         (call_script, "script_update_all_notes"),
         
-        (call_script, "script_update_village_market_towns"),
+        (call_script, "script_update_minorplanet_market_towns"),
         (assign, "$g_recalculate_ais", 1),
     ]),
     
@@ -8149,7 +8149,7 @@ scripts = [
         (party_set_slot, ":center_no", slot_mainplanet_lord, ":lord_troop_id"),
         
         (try_begin),
-          (party_slot_eq, ":center_no", slot_party_type, spt_village),
+          (party_slot_eq, ":center_no", slot_party_type, spt_minorplanet),
           (party_get_slot, ":farmer_party_no", ":center_no", slot_minorplanet_farmer_party),
           (gt, ":farmer_party_no", 0),
           (party_is_active, ":farmer_party_no"),
@@ -8158,7 +8158,7 @@ scripts = [
         (try_end),
         
         (try_begin),
-          (this_or_next|party_slot_eq, ":center_no", slot_party_type, spt_town),
+          (this_or_next|party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
           (party_slot_eq, ":center_no", slot_party_type, spt_castle),
           #normal_banner_begin
           (troop_get_slot, ":cur_banner", ":lord_troop_id", slot_troop_banner_scene_prop),
@@ -8196,11 +8196,11 @@ scripts = [
         
         (try_begin),
           (eq, ":add_garrison", 1),
-          (this_or_next|party_slot_eq, ":center_no", slot_party_type, spt_town),
+          (this_or_next|party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
           (party_slot_eq, ":center_no", slot_party_type, spt_castle),
           (assign, ":garrison_strength", 3),
           (try_begin),
-            (party_slot_eq, ":center_no", slot_party_type, spt_town),
+            (party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
             (assign, ":garrison_strength", 9),
           (try_end),
           (try_for_range, ":unused", 0, ":garrison_strength"),
@@ -8215,7 +8215,7 @@ scripts = [
         
         (try_begin),
           (party_slot_eq, ":center_no", slot_party_type, spt_castle),
-          (try_for_range, ":cur_village", villages_begin, villages_end),
+          (try_for_range, ":cur_village", minorplanet_begin, minorplanet_end),
             (party_slot_eq, ":cur_village", slot_minorplanet_bound_center, ":center_no"),
             (call_script, "script_give_center_to_lord", ":cur_village", ":lord_troop_id", 0),
           (try_end),
@@ -8223,7 +8223,7 @@ scripts = [
         
         #SW - attempting to fix the town walkers after a town changes factions
         (try_begin),
-          (this_or_next|party_slot_eq, ":center_no", slot_party_type, spt_town),
+          (this_or_next|party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
           (party_slot_eq, ":center_no", slot_party_type, spt_castle),
           (call_script, "script_fix_town_walkers", ":center_no"),
         (try_end),
@@ -8394,7 +8394,7 @@ scripts = [
     ##      (assign, ":total_enemy_centers", 0),
     ##      (store_faction_of_party, ":party_faction", ":party_no"),
     ##
-    ##      (try_for_range, ":center_no", towns_begin, towns_end),
+    ##      (try_for_range, ":center_no", mainplanets_begin, mainplanets_end),
     ##        (store_faction_of_party, ":center_faction", ":center_no"),
     ##        (neq, ":center_faction", ":party_faction"),
     ##        (val_add, ":total_enemy_centers", 1),
@@ -8405,7 +8405,7 @@ scripts = [
     ##      (else_try),
     ##        (store_random_in_range, ":random_center", 0, ":total_enemy_centers"),
     ##        (assign, ":total_enemy_centers", 0),
-    ##        (try_for_range, ":center_no", towns_begin, towns_end),
+    ##        (try_for_range, ":center_no", mainplanets_begin, mainplanets_end),
     ##          (eq, ":result", -1),
     ##          (store_faction_of_party, ":center_faction", ":center_no"),
     ##          (neq, ":center_faction", ":party_faction"),
@@ -8517,7 +8517,7 @@ scripts = [
         (try_for_parties, ":party_no"),
           (assign, ":garrison_troop", 0),
           (try_begin),
-            (this_or_next|party_slot_eq, ":party_no", slot_party_type, spt_town),
+            (this_or_next|party_slot_eq, ":party_no", slot_party_type, spt_mainplanet),
             (party_slot_eq, ":party_no", slot_party_type, spt_castle),
             (party_slot_eq, ":party_no", slot_mainplanet_lord, "trp_player"),
             (assign, ":garrison_troop", 1),
@@ -8623,7 +8623,7 @@ scripts = [
         (assign, ":party_template", 0),
         (store_random_in_range, ":rand", 0, 100),
         (try_begin),
-          (this_or_next|eq, ":party_type", spt_town),
+          (this_or_next|eq, ":party_type", spt_mainplanet),
           (eq, ":party_type", spt_castle),  #CASTLE OR TOWN
           (try_begin),
             #SW - modified random percentage for party_template_a so lower tier troops were more common (old value was 65)
@@ -8818,11 +8818,11 @@ scripts = [
     ]),
     
     #script_buy_cattle_from_village
-    # Input: arg1 = village_no, arg2 = amount, arg3 = single_cost
+    # Input: arg1 = minorplanet_no, arg2 = amount, arg3 = single_cost
     # Output: reg0 = party_no
     ("buy_cattle_from_village",
       [
-        (store_script_param, ":village_no", 1),
+        (store_script_param, ":minorplanet_no", 1),
         (store_script_param, ":amount", 2),
         (store_script_param, ":single_cost", 3),
         
@@ -8832,9 +8832,9 @@ scripts = [
           (call_script, "script_game_event_buy_item", "itm_cattle_meat", 0),
         (try_end),
         
-        (party_get_slot, ":num_cattle", ":village_no", slot_minorplanet_number_of_cattle),
+        (party_get_slot, ":num_cattle", ":minorplanet_no", slot_minorplanet_number_of_cattle),
         (val_sub, ":num_cattle", ":amount"),
-        (party_set_slot, ":village_no", slot_minorplanet_number_of_cattle, ":num_cattle"),
+        (party_set_slot, ":minorplanet_no", slot_minorplanet_number_of_cattle, ":num_cattle"),
         (store_mul, ":cost", ":single_cost", ":amount"),
         (troop_remove_gold, "trp_player", ":cost"),
         
@@ -8842,7 +8842,7 @@ scripts = [
         (try_for_parties, ":cur_party"),
           (eq, ":continue", 1),
           (party_slot_eq, ":cur_party", slot_party_type, spt_cattle_herd),
-          (store_distance_to_party_from_party, ":dist", ":village_no", ":cur_party"),
+          (store_distance_to_party_from_party, ":dist", ":minorplanet_no", ":cur_party"),
           (lt, ":dist", 6),
           (assign, ":subcontinue", 1),
           (try_begin),
@@ -8857,7 +8857,7 @@ scripts = [
         (try_end),
         (try_begin),
           (eq, ":continue", 1),
-          (call_script, "script_create_cattle_herd", ":village_no", ":amount"),
+          (call_script, "script_create_cattle_herd", ":minorplanet_no", ":amount"),
         (try_end),
     ]),
     
@@ -9242,7 +9242,7 @@ scripts = [
         (store_script_param_1, ":center_no"),
         (assign, ":food_consumption", 0),
         (try_begin),
-          (party_slot_eq, ":center_no", slot_party_type, spt_town),
+          (party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
           (assign, ":food_consumption", 500),
         (else_try),
           (party_slot_eq, ":center_no", slot_party_type, spt_castle),
@@ -9259,7 +9259,7 @@ scripts = [
         (store_script_param_1, ":center_no"),
         (assign, ":food_store_limit", 0),
         (try_begin),
-          (party_slot_eq, ":center_no", slot_party_type, spt_town),
+          (party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
           (assign, ":food_store_limit", 50000),
         (else_try),
           (party_slot_eq, ":center_no", slot_party_type, spt_castle),
@@ -9268,18 +9268,18 @@ scripts = [
         (assign, reg0, ":food_store_limit"),
     ]),
     
-    # script_refresh_village_merchant_inventory
-    # Input: arg1 = village_no
+    # script_refresh_minorplanet_merchant_inventory
+    # Input: arg1 = minorplanet_no
     # Output: none
-    ("refresh_village_merchant_inventory",
+    ("refresh_minorplanet_merchant_inventory",
       [
-        (store_script_param_1, ":village_no"),
-        (party_get_slot, ":merchant_troop", ":village_no", slot_mainplanet_elder),
+        (store_script_param_1, ":minorplanet_no"),
+        (party_get_slot, ":merchant_troop", ":minorplanet_no", slot_mainplanet_elder),
         (reset_item_probabilities,0),
         (store_sub, ":item_to_price_slot", slot_mainplanet_trade_good_prices_begin, trade_goods_begin),
         (try_for_range, ":cur_goods", trade_goods_begin, trade_goods_end),
           (store_add, ":cur_price_slot", ":cur_goods", ":item_to_price_slot"),
-          (party_get_slot, ":cur_price", ":village_no", ":cur_price_slot"),
+          (party_get_slot, ":cur_price", ":minorplanet_no", ":cur_price_slot"),
           (assign, ":cur_probability", 100),
           (val_mul, ":cur_probability", average_price_factor),
           (val_div, ":cur_probability", ":cur_price"),
@@ -9303,158 +9303,158 @@ scripts = [
           (store_div, ":prosperity_added", ":gold", 3000),
           (store_mul, ":gold_removed", ":prosperity_added", 3000),
           (troop_remove_gold, ":merchant_troop", ":gold_removed"),
-          (call_script, "script_change_center_prosperity", ":village_no", ":prosperity_added"),
+          (call_script, "script_change_center_prosperity", ":minorplanet_no", ":prosperity_added"),
         (try_end),
     ]),
     
-    # script_refresh_village_defenders
-    # Input: arg1 = village_no
+    # script_refresh_minorplanet_defenders
+    # Input: arg1 = minorplanet_no
     # Output: none
-    ("refresh_village_defenders",
+    ("refresh_minorplanet_defenders",
       [
-        (store_script_param_1, ":village_no"),
+        (store_script_param_1, ":minorplanet_no"),
         
         (assign, ":ideal_size", 50),
         (try_begin),
-          (party_get_num_companions, ":party_size", ":village_no"),
+          (party_get_num_companions, ":party_size", ":minorplanet_no"),
           (lt, ":party_size", ":ideal_size"),
-          (party_add_template, ":village_no", "pt_village_defenders"),
+          (party_add_template, ":minorplanet_no", "pt_minorplanet_defenders"),
         (try_end),
     ]),
     
-    # script_village_set_state
+    # script_minorplanet_set_state
     # Input: arg1 = center_no arg2:new_state
     # Output: reg0: food consumption (1 food item counts as 100 units)
-    ("village_set_state",
+    ("minorplanet_set_state",
       [
-        (store_script_param_1, ":village_no"),
+        (store_script_param_1, ":minorplanet_no"),
         (store_script_param_2, ":new_state"),
-        #      (party_get_slot, ":old_state", ":village_no", slot_minorplanet_state),
+        #      (party_get_slot, ":old_state", ":minorplanet_no", slot_minorplanet_state),
         (try_begin),
           (eq, ":new_state", 0),
-          (party_set_extra_text, ":village_no", "str_empty_string"),
-          (party_set_slot, ":village_no", slot_minorplanet_raided_by, -1),
+          (party_set_extra_text, ":minorplanet_no", "str_empty_string"),
+          (party_set_slot, ":minorplanet_no", slot_minorplanet_raided_by, -1),
         (else_try),
           (eq, ":new_state", svs_being_raided),
-          (party_set_extra_text, ":village_no", "@(Being Raided)"),
+          (party_set_extra_text, ":minorplanet_no", "@(Being Raided)"),
         (else_try),
           (eq, ":new_state", svs_looted),
-          (party_set_extra_text, ":village_no", "@(Looted)"),
-          (party_set_slot, ":village_no", slot_minorplanet_raided_by, -1),
-          (call_script, "script_change_center_prosperity", ":village_no", -30),
+          (party_set_extra_text, ":minorplanet_no", "@(Looted)"),
+          (party_set_slot, ":minorplanet_no", slot_minorplanet_raided_by, -1),
+          (call_script, "script_change_center_prosperity", ":minorplanet_no", -30),
         (else_try),
           (eq, ":new_state", svs_under_siege),
-          (party_set_extra_text, ":village_no", "@(Under Siege)"),
+          (party_set_extra_text, ":minorplanet_no", "@(Under Siege)"),
         (try_end),
-        (party_set_slot, ":village_no", slot_minorplanet_state, ":new_state"),
+        (party_set_slot, ":minorplanet_no", slot_minorplanet_state, ":new_state"),
     ]),
     
     
-    # script_process_village_raids
+    # script_process_minorplanet_raids
     # Input: none
     # Output: none
     # called from triggers every two hours
-    ("process_village_raids",
+    ("process_minorplanet_raids",
       [
-        (try_for_range, ":village_no", villages_begin, villages_end),
-          (party_get_slot, ":village_raid_progress", ":village_no", slot_minorplanet_raid_progress),
+        (try_for_range, ":minorplanet_no", minorplanet_begin, minorplanet_end),
+          (party_get_slot, ":minorplanet_raid_progress", ":minorplanet_no", slot_minorplanet_raid_progress),
           (try_begin),
-            (party_slot_eq, ":village_no", slot_minorplanet_state, 0), #village is normal
-            (val_sub, ":village_raid_progress", 5),
-            (val_max, ":village_raid_progress", 0),
-            (party_set_slot, ":village_no", slot_minorplanet_raid_progress, ":village_raid_progress"),
+            (party_slot_eq, ":minorplanet_no", slot_minorplanet_state, 0), #village is normal
+            (val_sub, ":minorplanet_raid_progress", 5),
+            (val_max, ":minorplanet_raid_progress", 0),
+            (party_set_slot, ":minorplanet_no", slot_minorplanet_raid_progress, ":minorplanet_raid_progress"),
           (else_try),
-            (party_slot_eq, ":village_no", slot_minorplanet_state, svs_being_raided), #village is being raided
+            (party_slot_eq, ":minorplanet_no", slot_minorplanet_state, svs_being_raided), #village is being raided
             # End raid unless there is an enemy party nearby
             (assign, ":raid_ended", 1),
-            (party_get_slot, ":raider_party", ":village_no", slot_minorplanet_raided_by),
+            (party_get_slot, ":raider_party", ":minorplanet_no", slot_minorplanet_raided_by),
             (try_begin),
               (ge, ":raider_party", 0),
               (party_is_active, ":raider_party"),
               (this_or_next|neq, ":raider_party", "p_main_party"),
               (eq, "$g_player_is_captive", 0),
-              (store_distance_to_party_from_party, ":distance", ":village_no", ":raider_party"),
+              (store_distance_to_party_from_party, ":distance", ":minorplanet_no", ":raider_party"),
               (lt, ":distance", raid_distance),
               (assign, ":raid_ended", 0),
             (try_end),
             (try_begin),
               (eq, ":raid_ended", 1),
-              (call_script, "script_village_set_state",  ":village_no", 0), #clear raid flag
-              (party_set_slot, ":village_no", slot_minorplanet_smoke_added, 0),
-              (party_clear_particle_systems, ":village_no"),
+              (call_script, "script_minorplanet_set_state",  ":minorplanet_no", 0), #clear raid flag
+              (party_set_slot, ":minorplanet_no", slot_minorplanet_smoke_added, 0),
+              (party_clear_particle_systems, ":minorplanet_no"),
             (else_try),
               (assign, ":raid_progress_increase", 11),
-              (party_get_slot, ":jawa_party", ":village_no", slot_minorplanet_raided_by),
+              (party_get_slot, ":jawa_party", ":minorplanet_no", slot_minorplanet_raided_by),
               (try_begin),
                 (party_get_skill_level, ":looting_skill", ":jawa_party", "skl_looting"),
                 (val_add, ":raid_progress_increase", ":looting_skill"),
               (try_end),
               (try_begin),
-                (party_slot_eq, ":village_no", slot_center_has_watch_tower, 1),
+                (party_slot_eq, ":minorplanet_no", slot_center_has_watch_tower, 1),
                 (val_mul, ":raid_progress_increase", 75),
                 (val_div, ":raid_progress_increase", 100),
               (try_end),
-              (val_add, ":village_raid_progress", ":raid_progress_increase"),
-              (party_set_slot, ":village_no", slot_minorplanet_raid_progress, ":village_raid_progress"),
+              (val_add, ":minorplanet_raid_progress", ":raid_progress_increase"),
+              (party_set_slot, ":minorplanet_no", slot_minorplanet_raid_progress, ":minorplanet_raid_progress"),
               (try_begin),
-                (ge, ":village_raid_progress", 50),
-                (party_slot_eq, ":village_no", slot_minorplanet_smoke_added, 0),
-                #(party_add_particle_system, ":village_no", "psys_map_village_fire"),
-                #(party_add_particle_system, ":village_no", "psys_map_village_fire_smoke"),
-                #(party_set_icon, ":village_no", "icon_village_burnt_a"),
-				(party_add_particle_system, ":village_no", "psys_planet_icon_raided_effect"),
+                (ge, ":minorplanet_raid_progress", 50),
+                (party_slot_eq, ":minorplanet_no", slot_minorplanet_smoke_added, 0),
+                #(party_add_particle_system, ":minorplanet_no", "psys_map_minorplanet_fire"),
+                #(party_add_particle_system, ":minorplanet_no", "psys_map_minorplanet_fire_smoke"),
+                #(party_set_icon, ":minorplanet_no", "icon_minorplanet_burnt_a"),
+				(party_add_particle_system, ":minorplanet_no", "psys_planet_icon_raided_effect"),
 				
-                (party_set_slot, ":village_no", slot_minorplanet_smoke_added, 1),
+                (party_set_slot, ":minorplanet_no", slot_minorplanet_smoke_added, 1),
               (try_end),
               (try_begin),
-                (gt, ":village_raid_progress", 100),
-                (str_store_party_name_link, s1, ":village_no"),
+                (gt, ":minorplanet_raid_progress", 100),
+                (str_store_party_name_link, s1, ":minorplanet_no"),
                 (party_stack_get_troop_id, ":raid_leader", ":jawa_party"),
                 (ge, ":raid_leader", 0),
                 (str_store_party_name, s2, ":jawa_party"),
                 # HC - Select the message color based on the circumstances. reg20 holds the color.
-                (call_script, "script_get_message_color", news_village_looted, ":village_no"),
+                (call_script, "script_get_message_color", news_minorplanet_looted, ":minorplanet_no"),
                 (display_log_message, "@The planet of {s1} has been looted by {s2}.", reg20),
-                (call_script, "script_village_set_state",  ":village_no", svs_looted),
-                (party_set_slot, ":village_no", slot_minorplanet_raid_progress, 0),
-                (party_set_slot, ":village_no", slot_minorplanet_recover_progress, 0),
+                (call_script, "script_minorplanet_set_state",  ":minorplanet_no", svs_looted),
+                (party_set_slot, ":minorplanet_no", slot_minorplanet_raid_progress, 0),
+                (party_set_slot, ":minorplanet_no", slot_minorplanet_recover_progress, 0),
                 (try_begin),
-                  (store_faction_of_party, ":village_faction", ":village_no"),
-                  (this_or_next|party_slot_eq, ":village_no", slot_mainplanet_lord, "trp_player"),
-                  (eq, ":village_faction", "fac_player_supporters_faction"),
-                  (call_script, "script_add_notification_menu", "mnu_notification_village_raided", ":village_no", ":raid_leader"),
+                  (store_faction_of_party, ":minorplanet_faction", ":minorplanet_no"),
+                  (this_or_next|party_slot_eq, ":minorplanet_no", slot_mainplanet_lord, "trp_player"),
+                  (eq, ":minorplanet_faction", "fac_player_supporters_faction"),
+                  (call_script, "script_add_notification_menu", "mnu_notification_minorplanet_raided", ":minorplanet_no", ":raid_leader"),
                 (try_end),
-                (call_script, "script_add_log_entry", logent_village_raided, ":raid_leader",  ":village_no", -1, -1),
+                (call_script, "script_add_log_entry", logent_minorplanet_raided, ":raid_leader",  ":minorplanet_no", -1, -1),
               (try_end),
             (try_end),
           (else_try),
-            (party_slot_eq, ":village_no", slot_minorplanet_state, svs_looted), #village is looted
-            (party_get_slot, ":recover_progress", ":village_no", slot_minorplanet_recover_progress),
+            (party_slot_eq, ":minorplanet_no", slot_minorplanet_state, svs_looted), #village is looted
+            (party_get_slot, ":recover_progress", ":minorplanet_no", slot_minorplanet_recover_progress),
             (val_add, ":recover_progress", 1),
-            (party_set_slot, ":village_no", slot_minorplanet_recover_progress, ":recover_progress"), #village looted
+            (party_set_slot, ":minorplanet_no", slot_minorplanet_recover_progress, ":recover_progress"), #village looted
             (try_begin),
               (ge, ":recover_progress", 10),
-              (party_slot_eq, ":village_no", slot_minorplanet_smoke_added, 1),
-              (party_clear_particle_systems, ":village_no"),
-              #(party_add_particle_system, ":village_no", "psys_map_village_looted_smoke"),
-			  (party_add_particle_system, ":village_no", "psys_planet_icon_raided_effect"),
-              (party_set_slot, ":village_no", slot_minorplanet_smoke_added, 2),
+              (party_slot_eq, ":minorplanet_no", slot_minorplanet_smoke_added, 1),
+              (party_clear_particle_systems, ":minorplanet_no"),
+              #(party_add_particle_system, ":minorplanet_no", "psys_map_minorplanet_looted_smoke"),
+			  (party_add_particle_system, ":minorplanet_no", "psys_planet_icon_raided_effect"),
+              (party_set_slot, ":minorplanet_no", slot_minorplanet_smoke_added, 2),
             (try_end),
             (try_begin),
               (gt, ":recover_progress", 50),
-              (party_slot_eq, ":village_no", slot_minorplanet_smoke_added, 2),
-              (party_clear_particle_systems, ":village_no"),
-              (party_set_slot, ":village_no", slot_minorplanet_smoke_added, 3),
-              #(party_set_icon, ":village_no", "icon_village_deserted_a"),
+              (party_slot_eq, ":minorplanet_no", slot_minorplanet_smoke_added, 2),
+              (party_clear_particle_systems, ":minorplanet_no"),
+              (party_set_slot, ":minorplanet_no", slot_minorplanet_smoke_added, 3),
+              #(party_set_icon, ":minorplanet_no", "icon_minorplanet_deserted_a"),
             (try_end),
             (try_begin),
               (gt, ":recover_progress", 100),
-              (call_script, "script_village_set_state",  ":village_no", 0),#village back to normal
-              (party_set_slot, ":village_no", slot_minorplanet_recover_progress, 0),
-              (party_clear_particle_systems, ":village_no"),
-			  (party_add_particle_system, ":village_no", "psys_planet_icon_atmospheric_effect"),
-              (party_set_slot, ":village_no", slot_minorplanet_smoke_added, 0),
-              (party_set_icon, ":village_no", "icon_village_a"),
+              (call_script, "script_minorplanet_set_state",  ":minorplanet_no", 0),#village back to normal
+              (party_set_slot, ":minorplanet_no", slot_minorplanet_recover_progress, 0),
+              (party_clear_particle_systems, ":minorplanet_no"),
+			  (party_add_particle_system, ":minorplanet_no", "psys_planet_icon_atmospheric_effect"),
+              (party_set_slot, ":minorplanet_no", slot_minorplanet_smoke_added, 0),
+              (party_set_icon, ":minorplanet_no", "icon_minorplanet_a"),
             (try_end),
           (try_end),
         (try_end),
@@ -9550,7 +9550,7 @@ scripts = [
         (store_script_param, ":center_no", 1),
         (store_script_param, ":display_message", 2),
         (party_set_slot, ":center_no", slot_center_is_besieged_by, -1), #clear siege
-        (call_script, "script_village_set_state",  ":center_no", 0), #clear siege flag
+        (call_script, "script_minorplanet_set_state",  ":center_no", 0), #clear siege flag
         (try_begin),
           (eq, ":center_no", "$g_player_besiege_town"),
           (assign, "$g_siege_method", 0), #remove siege progress
@@ -9776,7 +9776,7 @@ scripts = [
     #called from triggers
     ("decide_kingdom_party_ais",
       [
-        (try_for_range, ":faction_no", kingdoms_begin, kingdoms_end),
+        (try_for_range, ":faction_no", factions_begin, factions_end),
           (faction_slot_eq, ":faction_no", slot_faction_state, sfs_active),
           (neq, ":faction_no", "fac_player_supporters_faction"),
           (faction_get_slot, ":faction_ai_state", ":faction_no", slot_faction_ai_state),
@@ -10356,78 +10356,78 @@ scripts = [
             (troop_get_slot, ":original_faction", ":troop_no", slot_troop_original_faction),
             (faction_get_slot, ":original_faction_culture", ":original_faction", slot_faction_culture),
             (assign, ":num_villages", 0),
-            (try_for_range, ":village_no", villages_begin, villages_end),
-              (store_faction_of_party, ":village_faction_no", ":village_no"),
-              (store_relation, ":reln", ":village_faction_no", ":faction_no"),
+            (try_for_range, ":minorplanet_no", minorplanet_begin, minorplanet_end),
+              (store_faction_of_party, ":minorplanet_faction_no", ":minorplanet_no"),
+              (store_relation, ":reln", ":minorplanet_faction_no", ":faction_no"),
               (this_or_next|ge, ":reln", 0),
-              (party_slot_eq, ":village_no", slot_center_culture, ":original_faction_culture"),
+              (party_slot_eq, ":minorplanet_no", slot_center_culture, ":original_faction_culture"),
               (assign, ":faction_factor", 1),
               (try_begin),
-                (eq, ":village_faction_no", ":faction_no"),
+                (eq, ":minorplanet_faction_no", ":faction_no"),
                 (assign, ":faction_factor", 20),
               (try_end),
               (assign, ":amount_factor", 1),
-              (party_get_slot, ":volunteer_amount", ":village_no", slot_center_npc_volunteer_troop_amount),
+              (party_get_slot, ":volunteer_amount", ":minorplanet_no", slot_center_npc_volunteer_troop_amount),
               (try_begin),
                 (gt, ":volunteer_amount", 0),
                 (val_add, ":volunteer_amount", 5),
                 (val_add, ":amount_factor", ":volunteer_amount"),
               (try_end),
-              (store_distance_to_party_from_party, ":dist", ":village_no", ":party_no"),
+              (store_distance_to_party_from_party, ":dist", ":minorplanet_no", ":party_no"),
               (store_sub, ":dist_factor", 100, ":dist"),
               (val_max, ":dist_factor", 10),
               (assign, ":raid_factor", 100),
               (try_begin),
-                (party_slot_eq, ":village_no", slot_minorplanet_state, svs_being_raided),
+                (party_slot_eq, ":minorplanet_no", slot_minorplanet_state, svs_being_raided),
                 (assign, ":raid_factor", 1),
               (try_end),
-              (store_mul, ":village_point", ":faction_factor", ":dist_factor"),
-              (val_mul, ":village_point", ":raid_factor"),
-              (val_mul, ":village_point", ":amount_factor"),
+              (store_mul, ":minorplanet_point", ":faction_factor", ":dist_factor"),
+              (val_mul, ":minorplanet_point", ":raid_factor"),
+              (val_mul, ":minorplanet_point", ":amount_factor"),
               (try_begin),
-                (eq, ":village_no", ":old_target_recruit_troops"),
-                (val_mul, ":village_point", 100),
+                (eq, ":minorplanet_no", ":old_target_recruit_troops"),
+                (val_mul, ":minorplanet_point", 100),
               (try_end),
-              (val_add, ":num_villages", ":village_point"),
+              (val_add, ":num_villages", ":minorplanet_point"),
             (try_end),
             (gt, ":num_villages", 0),
-            (store_random_in_range, ":random_village_no", 0, ":num_villages"),
-            (try_for_range, ":village_no", villages_begin, villages_end),
+            (store_random_in_range, ":random_minorplanet_no", 0, ":num_villages"),
+            (try_for_range, ":minorplanet_no", minorplanet_begin, minorplanet_end),
               (eq, ":target_recruit_troops", -1),
-              (store_faction_of_party, ":village_faction_no", ":village_no"),
-              (store_relation, ":reln", ":village_faction_no", ":faction_no"),
+              (store_faction_of_party, ":minorplanet_faction_no", ":minorplanet_no"),
+              (store_relation, ":reln", ":minorplanet_faction_no", ":faction_no"),
               (this_or_next|ge, ":reln", 0),
-              (party_slot_eq, ":village_no", slot_center_culture, ":original_faction_culture"),
+              (party_slot_eq, ":minorplanet_no", slot_center_culture, ":original_faction_culture"),
               (assign, ":faction_factor", 1),
               (try_begin),
-                (eq, ":village_faction_no", ":faction_no"),
+                (eq, ":minorplanet_faction_no", ":faction_no"),
                 (assign, ":faction_factor", 20),
               (try_end),
               (assign, ":amount_factor", 1),
-              (party_get_slot, ":volunteer_amount", ":village_no", slot_center_npc_volunteer_troop_amount),
+              (party_get_slot, ":volunteer_amount", ":minorplanet_no", slot_center_npc_volunteer_troop_amount),
               (try_begin),
                 (gt, ":volunteer_amount", 0),
                 (val_add, ":volunteer_amount", 5),
                 (val_add, ":amount_factor", ":volunteer_amount"),
               (try_end),
-              (store_distance_to_party_from_party, ":dist", ":village_no", ":party_no"),
+              (store_distance_to_party_from_party, ":dist", ":minorplanet_no", ":party_no"),
               (store_sub, ":dist_factor", 100, ":dist"),
               (val_max, ":dist_factor", 10),
               (assign, ":raid_factor", 100),
               (try_begin),
-                (party_slot_eq, ":village_no", slot_minorplanet_state, svs_being_raided),
+                (party_slot_eq, ":minorplanet_no", slot_minorplanet_state, svs_being_raided),
                 (assign, ":raid_factor", 1),
               (try_end),
-              (store_mul, ":village_point", ":faction_factor", ":dist_factor"),
-              (val_mul, ":village_point", ":raid_factor"),
-              (val_mul, ":village_point", ":amount_factor"),
+              (store_mul, ":minorplanet_point", ":faction_factor", ":dist_factor"),
+              (val_mul, ":minorplanet_point", ":raid_factor"),
+              (val_mul, ":minorplanet_point", ":amount_factor"),
               (try_begin),
-                (eq, ":village_no", ":old_target_recruit_troops"),
-                (val_mul, ":village_point", 100),
+                (eq, ":minorplanet_no", ":old_target_recruit_troops"),
+                (val_mul, ":minorplanet_point", 100),
               (try_end),
-              (val_sub, ":random_village_no", ":village_point"),
-              (lt, ":random_village_no", 0),
-              (assign, ":target_recruit_troops", ":village_no"),
+              (val_sub, ":random_minorplanet_no", ":minorplanet_point"),
+              (lt, ":random_minorplanet_no", 0),
+              (assign, ":target_recruit_troops", ":minorplanet_no"),
               (assign, ":chance_recruit_troops", 3),
               (try_begin),
                 (eq, ":old_target_recruit_troops", ":target_recruit_troops"),
@@ -10446,48 +10446,48 @@ scripts = [
               (assign, ":old_target_raid_around_center", ":old_ai_object"),
             (try_end),
             (assign, ":num_villages", 0),
-            (try_for_range, ":enemy_village_no", villages_begin, villages_end),
-              (call_script, "script_get_center_faction_relation_including_player", ":enemy_village_no", ":faction_no"),
+            (try_for_range, ":enemy_minorplanet_no", minorplanet_begin, minorplanet_end),
+              (call_script, "script_get_center_faction_relation_including_player", ":enemy_minorplanet_no", ":faction_no"),
               (lt, reg0, 0),
               (assign, ":raided_by_self", 0),
               (try_begin),
-                (party_slot_eq, ":enemy_village_no", slot_minorplanet_state, svs_being_raided),
-                (party_slot_eq, ":enemy_village_no", slot_minorplanet_raided_by, ":party_no"),
+                (party_slot_eq, ":enemy_minorplanet_no", slot_minorplanet_state, svs_being_raided),
+                (party_slot_eq, ":enemy_minorplanet_no", slot_minorplanet_raided_by, ":party_no"),
                 (assign, ":raided_by_self", 1),
               (try_end),
-              (this_or_next|party_slot_eq, ":enemy_village_no", slot_minorplanet_state, 0), #village is not already raided
+              (this_or_next|party_slot_eq, ":enemy_minorplanet_no", slot_minorplanet_state, 0), #village is not already raided
               (eq, ":raided_by_self", 1),
-              (store_distance_to_party_from_party, ":dist", ":enemy_village_no", ":party_no"),
+              (store_distance_to_party_from_party, ":dist", ":enemy_minorplanet_no", ":party_no"),
               (store_sub, ":dist_factor", 75, ":dist"),
               (val_max, ":dist_factor", 3),
               (val_add, ":num_villages", ":dist_factor"),
-              (eq, ":enemy_village_no", ":old_target_raid_around_center"),
+              (eq, ":enemy_minorplanet_no", ":old_target_raid_around_center"),
               (val_add, ":num_villages", 10000),
             (try_end),
             (gt, ":num_villages", 0),
-            (store_random_in_range, ":random_village_no", 0, ":num_villages"),
-            (try_for_range, ":enemy_village_no", villages_begin, villages_end),
+            (store_random_in_range, ":random_minorplanet_no", 0, ":num_villages"),
+            (try_for_range, ":enemy_minorplanet_no", minorplanet_begin, minorplanet_end),
               (eq, ":target_raid_around_center", -1),
-              (call_script, "script_get_center_faction_relation_including_player", ":enemy_village_no", ":faction_no"),
+              (call_script, "script_get_center_faction_relation_including_player", ":enemy_minorplanet_no", ":faction_no"),
               (lt, reg0, 0),
               (assign, ":raided_by_self", 0),
               (try_begin),
-                (party_slot_eq, ":enemy_village_no", slot_minorplanet_state, svs_being_raided),
-                (party_slot_eq, ":enemy_village_no", slot_minorplanet_raided_by, ":party_no"),
+                (party_slot_eq, ":enemy_minorplanet_no", slot_minorplanet_state, svs_being_raided),
+                (party_slot_eq, ":enemy_minorplanet_no", slot_minorplanet_raided_by, ":party_no"),
                 (assign, ":raided_by_self", 1),
               (try_end),
-              (this_or_next|party_slot_eq, ":enemy_village_no", slot_minorplanet_state, 0), #village is not already raided
+              (this_or_next|party_slot_eq, ":enemy_minorplanet_no", slot_minorplanet_state, 0), #village is not already raided
               (eq, ":raided_by_self", 1),
-              (store_distance_to_party_from_party, ":dist", ":enemy_village_no", ":party_no"),
+              (store_distance_to_party_from_party, ":dist", ":enemy_minorplanet_no", ":party_no"),
               (store_sub, ":dist_factor", 75, ":dist"),
               (val_max, ":dist_factor", 3),
-              (val_sub, ":random_village_no", ":dist_factor"),
+              (val_sub, ":random_minorplanet_no", ":dist_factor"),
               (try_begin),
-                (eq, ":enemy_village_no", ":old_target_raid_around_center"),
-                (val_sub, ":random_village_no", 10000),
+                (eq, ":enemy_minorplanet_no", ":old_target_raid_around_center"),
+                (val_sub, ":random_minorplanet_no", 10000),
               (try_end),
-              (lt, ":random_village_no", 0),
-              (assign, ":target_raid_around_center", ":enemy_village_no"),
+              (lt, ":random_minorplanet_no", 0),
+              (assign, ":target_raid_around_center", ":enemy_minorplanet_no"),
               (assign, ":chance_raid_around_center", 30),
               (try_begin),
                 (eq, ":old_target_raid_around_center", ":target_raid_around_center"),
@@ -10788,7 +10788,7 @@ scripts = [
               (eq, ":ai_object_faction", "fac_player_supporters_faction"),
               (call_script, "script_add_notification_menu", "mnu_notification_center_under_siege", ":ai_object", ":troop_no"),
             (try_end),
-            (call_script, "script_village_set_state", ":ai_object", svs_under_siege),
+            (call_script, "script_minorplanet_set_state", ":ai_object", svs_under_siege),
             (assign, "$g_recalculate_ais", 1),
           (try_end),
         (else_try),
@@ -10816,25 +10816,25 @@ scripts = [
           (eq, ":ai_state", spai_raiding_around_center),
           (party_slot_eq, ":party_no", slot_party_ai_substate, 0),
           (assign, ":selected_village", 0),
-          (try_for_range, ":enemy_village_no", villages_begin, villages_end),
+          (try_for_range, ":enemy_minorplanet_no", minorplanet_begin, minorplanet_end),
             (eq, ":selected_village", 0),
-            (store_faction_of_party, ":enemy_village_faction", ":enemy_village_no"),
+            (store_faction_of_party, ":enemy_minorplanet_faction", ":enemy_minorplanet_no"),
             (try_begin),
-              (party_slot_eq, ":enemy_village_no", slot_mainplanet_lord, "trp_player"),
+              (party_slot_eq, ":enemy_minorplanet_no", slot_mainplanet_lord, "trp_player"),
               (store_relation, ":reln", "fac_player_supporters_faction", ":faction_no"),
             (else_try),
-              (store_relation, ":reln", ":enemy_village_faction", ":faction_no"),
+              (store_relation, ":reln", ":enemy_minorplanet_faction", ":faction_no"),
             (try_end),
             (lt, ":reln", 0),
-            (store_distance_to_party_from_party, ":dist", ":enemy_village_no", ":party_no"),
+            (store_distance_to_party_from_party, ":dist", ":enemy_minorplanet_no", ":party_no"),
             (lt, ":dist", 15),
-            (party_slot_eq, ":enemy_village_no", slot_minorplanet_state, 0), #village is not already raided
+            (party_slot_eq, ":enemy_minorplanet_no", slot_minorplanet_state, 0), #village is not already raided
             #CHANGE STATE TO RAID THIS VILLAGE
-            (assign, ":selected_village", ":enemy_village_no"),
+            (assign, ":selected_village", ":enemy_minorplanet_no"),
           (try_end),
           (try_begin),
             (eq, ":selected_village", 0),
-            (is_between, ":ai_object", villages_begin, villages_end),
+            (is_between, ":ai_object", minorplanet_begin, minorplanet_end),
             (assign, ":selected_village", ":ai_object"),
           (try_end),
           (try_begin),
@@ -10859,16 +10859,16 @@ scripts = [
             (lt, ":distance", 2),
             (try_begin),
               (party_slot_eq, ":ai_object", slot_minorplanet_state, 0),
-              (call_script, "script_village_set_state", ":ai_object", svs_being_raided),
+              (call_script, "script_minorplanet_set_state", ":ai_object", svs_being_raided),
               (party_set_slot, ":ai_object", slot_minorplanet_raided_by, ":party_no"),
               (try_begin),
-                (store_faction_of_party, ":village_faction", ":ai_object"),
+                (store_faction_of_party, ":minorplanet_faction", ":ai_object"),
                 (this_or_next|party_slot_eq, ":ai_object", slot_mainplanet_lord, "trp_player"),
-                (eq, ":village_faction", "fac_player_supporters_faction"),
+                (eq, ":minorplanet_faction", "fac_player_supporters_faction"),
                 (store_distance_to_party_from_party, ":dist", "p_main_party", ":ai_object"),
                 (this_or_next|lt, ":dist", 30),
                 (party_slot_eq, ":ai_object", slot_center_has_messenger_post, 1),
-                (call_script, "script_add_notification_menu", "mnu_notification_village_raid_started", ":ai_object", ":troop_no"),
+                (call_script, "script_add_notification_menu", "mnu_notification_minorplanet_raid_started", ":ai_object", ":troop_no"),
               (try_end),
             (else_try),
               (party_slot_eq, ":ai_object", slot_minorplanet_state, svs_being_raided),
@@ -11129,7 +11129,7 @@ scripts = [
         (store_sub, ":offensive_hours", ":cur_hours", ":old_faction_ai_last_offensive_time"),
         
         (assign, ":num_enemies", 0),
-        (try_for_range, ":cur_kingdom", kingdoms_begin, kingdoms_end),
+        (try_for_range, ":cur_kingdom", factions_begin, factions_end),
           (faction_slot_eq, ":cur_kingdom", slot_faction_state, sfs_active),
           (store_relation, ":reln", ":cur_kingdom", ":faction_no"),
           (lt, ":reln", 0),
@@ -11296,37 +11296,37 @@ scripts = [
             (assign, ":old_target_raiding_village", ":old_faction_ai_object"),
           (try_end),
           
-          (assign, ":num_village_points", 0),
-          (try_for_range, ":enemy_village_no", villages_begin, villages_end),
-            (call_script, "script_get_center_faction_relation_including_player", ":enemy_village_no", ":faction_no"),
+          (assign, ":num_minorplanet_points", 0),
+          (try_for_range, ":enemy_minorplanet_no", minorplanet_begin, minorplanet_end),
+            (call_script, "script_get_center_faction_relation_including_player", ":enemy_minorplanet_no", ":faction_no"),
             (lt, reg0, 0),
-            (store_distance_to_party_from_party, ":dist", ":enemy_village_no", ":faction_marshall_party"),
+            (store_distance_to_party_from_party, ":dist", ":enemy_minorplanet_no", ":faction_marshall_party"),
             (lt, ":dist", 120),
-            (this_or_next|party_slot_eq, ":enemy_village_no", slot_minorplanet_state, 0), #village is not already raided
-            (party_slot_eq, ":enemy_village_no", slot_minorplanet_state, svs_being_raided),
+            (this_or_next|party_slot_eq, ":enemy_minorplanet_no", slot_minorplanet_state, 0), #village is not already raided
+            (party_slot_eq, ":enemy_minorplanet_no", slot_minorplanet_state, svs_being_raided),
             (store_sub, ":dist_point", 150, ":dist"),
-            (val_add, ":num_village_points", ":dist_point"),
-            (eq, ":enemy_village_no", ":old_target_raiding_village"),
-            (val_add, ":num_village_points", 10000),
+            (val_add, ":num_minorplanet_points", ":dist_point"),
+            (eq, ":enemy_minorplanet_no", ":old_target_raiding_village"),
+            (val_add, ":num_minorplanet_points", 10000),
           (try_end),
-          (gt, ":num_village_points", 0),
-          (store_random_in_range, ":random_village_no", 0, ":num_village_points"),
-          (try_for_range, ":enemy_village_no", villages_begin, villages_end),
+          (gt, ":num_minorplanet_points", 0),
+          (store_random_in_range, ":random_minorplanet_no", 0, ":num_minorplanet_points"),
+          (try_for_range, ":enemy_minorplanet_no", minorplanet_begin, minorplanet_end),
             (eq, ":target_raiding_village", -1),
-            (call_script, "script_get_center_faction_relation_including_player", ":enemy_village_no", ":faction_no"),
+            (call_script, "script_get_center_faction_relation_including_player", ":enemy_minorplanet_no", ":faction_no"),
             (lt, reg0, 0),
-            (store_distance_to_party_from_party, ":dist", ":enemy_village_no", ":faction_marshall_party"),
+            (store_distance_to_party_from_party, ":dist", ":enemy_minorplanet_no", ":faction_marshall_party"),
             (lt, ":dist", 120),
-            (this_or_next|party_slot_eq, ":enemy_village_no", slot_minorplanet_state, 0), #village is not already raided
-            (party_slot_eq, ":enemy_village_no", slot_minorplanet_state, svs_being_raided),
+            (this_or_next|party_slot_eq, ":enemy_minorplanet_no", slot_minorplanet_state, 0), #village is not already raided
+            (party_slot_eq, ":enemy_minorplanet_no", slot_minorplanet_state, svs_being_raided),
             (store_sub, ":dist_point", 150, ":dist"),
-            (val_sub, ":random_village_no", ":dist_point"),
+            (val_sub, ":random_minorplanet_no", ":dist_point"),
             (try_begin),
-              (eq, ":enemy_village_no", ":old_target_raiding_village"),
-              (val_sub, ":random_village_no", 10000),
+              (eq, ":enemy_minorplanet_no", ":old_target_raiding_village"),
+              (val_sub, ":random_minorplanet_no", 10000),
             (try_end),
-            (lt, ":random_village_no", 0),
-            (assign, ":target_raiding_village", ":enemy_village_no"),
+            (lt, ":random_minorplanet_no", 0),
+            (assign, ":target_raiding_village", ":enemy_minorplanet_no"),
             (assign, ":chance_raiding_village", 20),
             (try_begin),
               (eq, ":old_target_raiding_village", ":target_raiding_village"),
@@ -11348,7 +11348,7 @@ scripts = [
           
           (assign, ":best_attack_army", -1),
           (assign, ":best_attack_army_score", 0),
-          (try_for_range, ":cur_kingdom", kingdoms_begin, kingdoms_end),
+          (try_for_range, ":cur_kingdom", factions_begin, factions_end),
             (faction_slot_eq, ":cur_kingdom", slot_faction_state, sfs_active),
             (faction_get_slot, ":cur_kingdom_marshall", ":cur_kingdom", slot_faction_marshall),
             (ge, ":cur_kingdom_marshall", 0),
@@ -11427,7 +11427,7 @@ scripts = [
             (gt, ":attack_army_score", 0),
             (val_mul, ":attack_army_score", 4),
             (try_begin),
-              (party_slot_eq, ":center_no", slot_party_type, spt_village),
+              (party_slot_eq, ":center_no", slot_party_type, spt_minorplanet),
               (try_begin),
                 (party_slot_eq, ":center_no", slot_minorplanet_state, svs_being_raided),
                 (val_mul, ":attack_army_score", 3),
@@ -11464,8 +11464,8 @@ scripts = [
           
           (try_begin),
             (gt, ":chance_attacking_enemies_around_center", ":chance_attacking_enemy_army"),
-            (assign, ":end_cond", kingdoms_end),
-            (try_for_range, ":cur_kingdom", kingdoms_begin, ":end_cond"),
+            (assign, ":end_cond", factions_end),
+            (try_for_range, ":cur_kingdom", factions_begin, ":end_cond"),
               (faction_slot_eq, ":cur_kingdom", slot_faction_state, sfs_active),
               (faction_get_slot, ":cur_kingdom_marshall", ":cur_kingdom", slot_faction_marshall),
               (ge, ":cur_kingdom_marshall", 0),
@@ -11762,7 +11762,7 @@ scripts = [
           (display_message, "@Your relation with {s1} has deteriorated.", color_bad_news),
         (try_end),
         (try_begin),
-          (party_slot_eq, ":center_no", slot_party_type, spt_village),
+          (party_slot_eq, ":center_no", slot_party_type, spt_minorplanet),
           (call_script, "script_update_volunteer_troops_in_village", ":center_no"),
         (try_end),
         
@@ -11841,7 +11841,7 @@ scripts = [
           (display_message, "str_faction_relation_detoriated", color_bad_news),
         (try_end),
         
-        (try_for_range, ":other_faction", kingdoms_begin, kingdoms_end),
+        (try_for_range, ":other_faction", factions_begin, factions_end),
           (faction_slot_eq, ":other_faction", slot_faction_state, sfs_active),
           (neq, ":faction_no", ":other_faction"),
           (store_relation, ":other_faction_relation", ":faction_no", ":other_faction"),
@@ -11854,7 +11854,7 @@ scripts = [
         (try_end),
         (try_begin),
           (faction_slot_eq, "fac_player_supporters_faction", slot_faction_state, sfs_active),
-          (try_for_range, ":kingdom_no", kingdoms_begin, kingdoms_end),
+          (try_for_range, ":kingdom_no", factions_begin, factions_end),
             (faction_slot_eq, ":kingdom_no", slot_faction_state, sfs_active),
             (call_script, "script_update_faction_notes", ":kingdom_no"),
           (try_end),
@@ -11868,7 +11868,7 @@ scripts = [
       [
         (store_script_param_1, ":except_faction_no"),
         (assign, ":num_factions", 0),
-        (try_for_range, ":faction_no", kingdoms_begin, kingdoms_end),
+        (try_for_range, ":faction_no", factions_begin, factions_end),
           (neq, ":faction_no", "fac_player_supporters_faction"),
           (neq, ":faction_no", ":except_faction_no"),
           (faction_slot_eq, ":faction_no", slot_faction_state, sfs_active),
@@ -11877,7 +11877,7 @@ scripts = [
         (gt, ":num_factions", 0),
         (assign, ":selected_faction", -1),
         (store_random_in_range, ":random_faction", 0, ":num_factions"),
-        (try_for_range, ":faction_no", kingdoms_begin, kingdoms_end),
+        (try_for_range, ":faction_no", factions_begin, factions_end),
           (ge, ":random_faction", 0),
           (neq, ":faction_no", "fac_player_supporters_faction"),
           (neq, ":faction_no", ":except_faction_no"),
@@ -12227,7 +12227,7 @@ scripts = [
       [
         (call_script, "script_init_ai_calculation"),
         
-        (try_for_range, ":faction_no", kingdoms_begin, kingdoms_end),
+        (try_for_range, ":faction_no", factions_begin, factions_end),
           (faction_slot_eq, ":faction_no", slot_faction_state, sfs_active),
           (neg|faction_slot_eq, ":faction_no",  slot_faction_marshall, "trp_player"),
           (call_script, "script_decide_faction_ai", ":faction_no"),
@@ -12482,7 +12482,7 @@ scripts = [
     #(store_script_param_1, ":initializing_war_peace_cond"),
     # (assign, ":total_resources", 0),
     # (assign, ":total_active_kingdoms", 0),
-    # (try_for_range, ":cur_kingdom", kingdoms_begin, kingdoms_end),
+    # (try_for_range, ":cur_kingdom", factions_begin, factions_end),
     # (faction_slot_eq, ":cur_kingdom", slot_faction_state, sfs_active),
     # (val_add, ":total_active_kingdoms", 1),
     # (faction_get_slot, ":num_towns", ":cur_kingdom", slot_faction_num_towns),
@@ -12500,11 +12500,11 @@ scripts = [
     # (val_max, ":total_active_kingdoms", 1),
     # (store_div, ":average_resources", ":total_resources", ":total_active_kingdoms"),
     
-    # (try_for_range, ":cur_kingdom", kingdoms_begin, kingdoms_end),
+    # (try_for_range, ":cur_kingdom", factions_begin, factions_end),
     # ##       (neq, ":cur_kingdom", "fac_player_supporters_faction"),
     # (faction_slot_eq, ":cur_kingdom", slot_faction_state, sfs_active),
     # (assign, ":num_ongoing_wars", 0),
-    # (try_for_range, ":other_kingdom", kingdoms_begin, kingdoms_end),
+    # (try_for_range, ":other_kingdom", factions_begin, factions_end),
     # (faction_slot_eq, ":other_kingdom", slot_faction_state, sfs_active),
     # (store_relation, ":other_relation", ":cur_kingdom", ":other_kingdom"),
     # (lt, ":other_relation", 0),
@@ -12523,12 +12523,12 @@ scripts = [
     # (val_div, ":kingdom_1_resources_value", ":num_armies"),
     
     # (store_add, ":start_cond", ":cur_kingdom", 1),
-    # (try_for_range, ":cur_kingdom_2", ":start_cond", kingdoms_end),
+    # (try_for_range, ":cur_kingdom_2", ":start_cond", factions_end),
     # ##         (neq, ":cur_kingdom", "fac_player_supporters_faction"),
     # (faction_slot_eq, ":cur_kingdom_2", slot_faction_state, sfs_active),
     
     # (assign, ":num_ongoing_wars_2", 0),
-    # (try_for_range, ":other_kingdom", kingdoms_begin, kingdoms_end),
+    # (try_for_range, ":other_kingdom", factions_begin, factions_end),
     # (faction_slot_eq, ":other_kingdom", slot_faction_state, sfs_active),
     # (store_relation, ":other_relation", ":cur_kingdom_2", ":other_kingdom"),
     # (lt, ":other_relation", 0),
@@ -12599,7 +12599,7 @@ scripts = [
     # (eq, ":cur_kingdom_2", "$supported_pretender_old_faction"),
     # (assign, ":continue", 1),
     # (else_try),
-    # (is_between, "$players_oath_renounced_against_kingdom", kingdoms_begin, kingdoms_end),
+    # (is_between, "$players_oath_renounced_against_kingdom", factions_begin, factions_end),
     # (this_or_next|eq, ":cur_kingdom", "$players_oath_renounced_against_kingdom"),
     # (eq, ":cur_kingdom_2", "$players_oath_renounced_against_kingdom"),
     # (assign, ":continue", 1),
@@ -12877,7 +12877,7 @@ scripts = [
         #SW - modified so random terrain is based on the closest town
         (assign, ":closest_dist",100000),
         (assign, ":closest_town", -1),
-        (try_for_range, ":cur_town", towns_begin, towns_end),
+        (try_for_range, ":cur_town", mainplanets_begin, mainplanets_end),
           (store_distance_to_party_from_party, ":dist", ":cur_town","p_main_party"),
           (lt, ":dist", ":closest_dist"),
           (assign, ":closest_dist", ":dist"),
@@ -12888,8 +12888,8 @@ scripts = [
         
         (assign, ":scene_to_use", "scn_random_scene_plain"),
         
-        (try_for_range, ":town_no", towns_begin, towns_end),
-          (store_sub, ":offset", ":town_no", towns_begin),
+        (try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
+          (store_sub, ":offset", ":town_no", mainplanets_begin),
           
           (store_add, ":cur_object_no", "scn_mainplanet_1_land_battle", ":offset"),
           (eq, ":closest_town", ":town_no"),
@@ -13093,8 +13093,8 @@ scripts = [
         (assign, "$talk_context", tc_court_talk),
         
         (set_jump_mission,"mt_visit_town_castle"),
-        (party_get_slot, ":castle_scene", ":center_no", slot_mainplanet_castle),
-        (modify_visitors_at_site,":castle_scene"),
+        (party_get_slot, ":spacestation_scene", ":center_no", slot_mainplanet_castle),
+        (modify_visitors_at_site,":spacestation_scene"),
         (reset_visitors),
         #Adding guards
         (store_faction_of_party, ":center_faction", ":center_no"),
@@ -13185,8 +13185,8 @@ scripts = [
         (try_end),
         #End of slave dancer code
         
-        (jump_to_scene,":castle_scene"),
-        (scene_set_slot, ":castle_scene", slot_scene_visited, 1),
+        (jump_to_scene,":spacestation_scene"),
+        (scene_set_slot, ":spacestation_scene", slot_scene_visited, 1),
         (change_screen_mission),
     ]),
     
@@ -14524,10 +14524,10 @@ scripts = [
         (assign, reg0, ":result"),
     ]),
     
-    # script_cf_troop_get_random_leaded_town_or_village_except_center
+    # script_cf_troop_get_random_leaded_town_or_minorplanet_except_center
     # Input: arg1 = troop_no, arg2 = except_center_no
     # Output: reg0 = center_no (Can fail)
-    ("cf_troop_get_random_leaded_town_or_village_except_center",
+    ("cf_troop_get_random_leaded_town_or_minorplanet_except_center",
       [
         (store_script_param_1, ":troop_no"),
         (store_script_param_2, ":except_center_no"),
@@ -15291,7 +15291,7 @@ scripts = [
         (replace_scene_props, "spr_trebuchet_old", "spr_empty"),
         (replace_scene_props, "spr_trebuchet_new", "spr_empty"),
         (replace_scene_props, "spr_stone_ball", "spr_empty"),
-        (replace_scene_props, "spr_Village_fire_big", "spr_empty"),
+        (replace_scene_props, "spr_village_fire_big", "spr_empty"),
     ]),
     
     # script_describe_relation_to_s63
@@ -15333,7 +15333,7 @@ scripts = [
         (assign, ":sound_4", -1),
         (assign, ":sound_5", -1),
         (try_begin),
-          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_village),
+          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_minorplanet),
           (try_begin),
             (neg|is_currently_night),
             (assign, ":sound_3", "snd_distant_dog_bark"),
@@ -15343,7 +15343,7 @@ scripts = [
             (assign, ":sound_2", "snd_distant_owl"),
           (try_end),
         (else_try),
-          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_town),
+          (party_slot_eq, "$g_encountered_party", slot_party_type, spt_mainplanet),
           (try_begin),
             (neg|is_currently_night),
             (assign, ":sound_1", "snd_distant_carpenter"),
@@ -15393,8 +15393,8 @@ scripts = [
         #modified town_walkers so certain planets only have certain walkers - example code originally posted by Keedo420
         # NOTE - any changes to this script must be updated in both the center_set_walker_to_type and fix_town_walker scripts
         (try_begin),	#village
-          (party_slot_eq, ":center_no", slot_party_type, spt_village),
-          (store_random_in_range, ":walker_troop_id", village_walkers_begin, village_walkers_end),
+          (party_slot_eq, ":center_no", slot_party_type, spt_minorplanet),
+          (store_random_in_range, ":walker_troop_id", minorplanet_walkers_begin, minorplanet_walkers_end),
         (else_try),	#town/castle
           
           (try_begin),
@@ -15422,19 +15422,19 @@ scripts = [
             (assign, ":town_walkers_modified_begin",town17_walkers_begin),
             (assign, ":town_walkers_modified_end",town17_walkers_end),
           (else_try),
-            (eq, ":center_no", "p_village_35"), #Iridonia - Zabrak walkers
+            (eq, ":center_no", "p_minorplanet_35"), #Iridonia - Zabrak walkers
             (assign, ":town_walkers_modified_begin",iridonia_walkers_begin),
             (assign, ":town_walkers_modified_end",iridonia_walkers_end),
           (else_try),
-            (eq, ":center_no", "p_village_53"), #Pzob - Gamorreans
+            (eq, ":center_no", "p_minorplanet_53"), #Pzob - Gamorreans
             (assign, ":town_walkers_modified_begin",pzob_walkers_begin),
             (assign, ":town_walkers_modified_end",pzob_walkers_end),
           (else_try),
-            (eq, ":center_no", "p_village_58"), #Rodia - Added Rodians
+            (eq, ":center_no", "p_minorplanet_58"), #Rodia - Added Rodians
             (assign, ":town_walkers_modified_begin",rodia_walkers_begin),
             (assign, ":town_walkers_modified_end",rodia_walkers_end),
           (else_try),
-            (eq, ":center_no", "p_village_42"), #Bothawui Moon - Added Bothans
+            (eq, ":center_no", "p_minorplanet_42"), #Bothawui Moon - Added Bothans
             (assign, ":town_walkers_modified_begin",bothaw_moon_walkers_begin),
             (assign, ":town_walkers_modified_end",bothaw_moon_walkers_end),
           (else_try),
@@ -15635,7 +15635,7 @@ scripts = [
           (eq, "$g_defending_against_siege", 0),#Skip if the center is under siege (because of resting)
           (eq, "$sneaked_into_town", 0),#Skip if sneaked
           (try_begin),
-            (party_slot_eq, "$current_town", slot_party_type, spt_village),
+            (party_slot_eq, "$current_town", slot_party_type, spt_minorplanet),
             (party_get_slot, ":cur_scene", "$current_town", slot_spacestation_exterior),
           (else_try),
             (party_get_slot, ":cur_scene", "$current_town", slot_mainplanet_center),
@@ -15647,7 +15647,7 @@ scripts = [
           
           (set_jump_mission, "mt_bandits_at_night"),
           (try_begin),
-            (party_slot_eq, "$current_town", slot_party_type, spt_village),
+            (party_slot_eq, "$current_town", slot_party_type, spt_minorplanet),
             (assign, ":spawn_amount", 2),
             (store_div, ":level_fac",  ":level", 10),
             (val_add, ":spawn_amount", ":level_fac"),
@@ -17078,7 +17078,7 @@ scripts = [
             (this_or_next|party_slot_eq, ":cur_center", slot_mainplanet_lord, ":troop_no"),
             (eq, ":center_owned", 1),
             (try_begin),
-              (party_slot_eq, ":cur_center", slot_party_type, spt_town),
+              (party_slot_eq, ":cur_center", slot_party_type, spt_mainplanet),
               (val_add, ":num_center_points", 4),
             (else_try),
               (party_slot_eq, ":cur_center", slot_party_type, spt_castle),
@@ -17120,7 +17120,7 @@ scripts = [
             (eq, ":center_lord", stl_rejected_by_player),
             
             (store_faction_of_party, ":center_faction", ":cur_center"),
-            (is_between, ":center_faction", kingdoms_begin, kingdoms_end),
+            (is_between, ":center_faction", factions_begin, factions_end),
             (neg|faction_slot_eq, ":center_faction", slot_faction_leader, "trp_player"),
             
             (assign, ":best_lord", -1),
@@ -17156,7 +17156,7 @@ scripts = [
               (party_set_slot, ":cur_center", slot_mainplanet_lord, stl_reserved_for_player),
               (try_begin),
                 (party_slot_eq, ":cur_center", slot_party_type, spt_castle),
-                (try_for_range, ":cur_village", villages_begin, villages_end),
+                (try_for_range, ":cur_village", minorplanet_begin, minorplanet_end),
                   (party_slot_eq, ":cur_village", slot_minorplanet_bound_center, ":cur_center"),
                   (party_set_slot, ":cur_village", slot_mainplanet_lord, stl_reserved_for_player),
                 (try_end),
@@ -17166,21 +17166,21 @@ scripts = [
       ]),
       
       
-      # script_create_village_farmer_party
-      # Input: arg1 = village_no
+      # script_create_minorplanet_farmer_party
+      # Input: arg1 = minorplanet_no
       # Output: reg0 = party_no
-      ("create_village_farmer_party",
-        [(store_script_param, ":village_no", 1),
-          (party_get_slot, ":town_no", ":village_no", slot_minorplanet_market_town),
+      ("create_minorplanet_farmer_party",
+        [(store_script_param, ":minorplanet_no", 1),
+          (party_get_slot, ":town_no", ":minorplanet_no", slot_minorplanet_market_town),
           
           (store_faction_of_party, ":party_faction", ":town_no"),
           (set_spawn_radius, 0),
-          (spawn_around_party, ":village_no", "pt_village_farmers"),
+          (spawn_around_party, ":minorplanet_no", "pt_minorplanet_farmers"),
           (assign, ":new_party", reg0),
           
           (party_set_faction, ":new_party", ":party_faction"),
-          (party_set_slot, ":new_party", slot_party_home_center, ":village_no"),
-          (party_set_slot, ":new_party", slot_party_type, spt_village_farmer),
+          (party_set_slot, ":new_party", slot_party_home_center, ":minorplanet_no"),
+          (party_set_slot, ":new_party", slot_party_type, spt_minorplanet_farmer),
           (party_set_slot, ":new_party", slot_party_ai_state, spai_trading_with_town),
           (party_set_slot, ":new_party", slot_party_ai_object, ":town_no"),
           (party_set_ai_behavior, ":new_party", ai_bhvr_travel_to_party),
@@ -17189,8 +17189,8 @@ scripts = [
           (store_sub, ":item_to_price_slot", slot_mainplanet_trade_good_prices_begin, trade_goods_begin),
           (try_for_range, ":cur_goods", trade_goods_begin, trade_goods_end),
             (store_add, ":cur_good_price_slot", ":cur_goods", ":item_to_price_slot"),
-            (party_get_slot, ":cur_village_price", ":village_no", ":cur_good_price_slot"),
-            (party_set_slot, ":new_party", ":cur_good_price_slot", ":cur_village_price"),
+            (party_get_slot, ":cur_minorplanet_price", ":minorplanet_no", ":cur_good_price_slot"),
+            (party_set_slot, ":new_party", ":cur_good_price_slot", ":cur_minorplanet_price"),
           (try_end),
           (assign, reg0, ":new_party"),
       ]),
@@ -17242,7 +17242,7 @@ scripts = [
           (assign, "$players_oath_renounced_against_kingdom", 0),
           (assign, "$players_oath_renounced_given_center", 0),
           (assign, "$players_oath_renounced_begin_time", 0),
-          (try_for_range,":other_kingdom",kingdoms_begin,kingdoms_end),
+          (try_for_range,":other_kingdom",factions_begin,factions_end),
             (faction_slot_eq, ":other_kingdom", slot_faction_state, sfs_active),
             (neq, ":other_kingdom", "fac_player_supporters_faction"),
             (try_begin),
@@ -17299,7 +17299,7 @@ scripts = [
               (party_slot_eq, ":cur_center", slot_mainplanet_lord, "trp_player"),
               (call_script, "script_give_center_to_faction", ":cur_center", "fac_player_supporters_faction"),
             (try_end),
-            (try_for_range, ":cur_center", villages_begin, villages_end),
+            (try_for_range, ":cur_center", minorplanet_begin, minorplanet_end),
               (party_get_slot, ":cur_bound_center", ":cur_center", slot_minorplanet_bound_center),
               (party_slot_eq, ":cur_center", slot_mainplanet_lord, "trp_player"),
               (neg|party_slot_eq, ":cur_bound_center", slot_mainplanet_lord, "trp_player"),
@@ -17453,7 +17453,7 @@ scripts = [
             (store_faction_of_party, ":party_faction", ":party_no"),
             (try_begin),
               (eq, ":party_faction", "$players_kingdom"),
-              (is_between, "$players_kingdom", kingdoms_begin, kingdoms_end),
+              (is_between, "$players_kingdom", factions_begin, factions_end),
               (faction_slot_eq, "$players_kingdom", slot_faction_marshall, "trp_player"),
               (assign, ":continue", 0),
             (else_try),
@@ -17620,17 +17620,17 @@ scripts = [
       ##     ]),
       ##
       
-      #script_update_village_market_towns
+      #script_update_minorplanet_market_towns
       # INPUT: none
       # OUTPUT: none
-      ("update_village_market_towns",
-        [(try_for_range, ":cur_village", villages_begin, villages_end),
-            (store_faction_of_party, ":village_faction", ":cur_village"),
+      ("update_minorplanet_market_towns",
+        [(try_for_range, ":cur_village", minorplanet_begin, minorplanet_end),
+            (store_faction_of_party, ":minorplanet_faction", ":cur_village"),
             (assign, ":min_dist", 999999),
             (assign, ":min_dist_town", -1),
-            (try_for_range, ":cur_town", towns_begin, towns_end),
+            (try_for_range, ":cur_town", mainplanets_begin, mainplanets_end),
               (store_faction_of_party, ":town_faction", ":cur_town"),
-              (eq, ":town_faction", ":village_faction"),
+              (eq, ":town_faction", ":minorplanet_faction"),
               (store_distance_to_party_from_party, ":cur_dist", ":cur_village", ":cur_town"),
               (lt, ":cur_dist", ":min_dist"),
               (assign, ":min_dist", ":cur_dist"),
@@ -17647,7 +17647,7 @@ scripts = [
       # INPUT: none
       # OUTPUT: none
       ("update_mercenary_units_of_towns",
-        [(try_for_range, ":town_no", towns_begin, towns_end),
+        [(try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
             (store_random_in_range, ":troop_no", mercenary_troops_begin, mercenary_troops_end),
             (party_set_slot, ":town_no", slot_center_mercenary_troop_type, ":troop_no"),
             #SW - mercenaries should now appear 3x more frequently in towns (nevermind, this is the size of the mercenary party)
@@ -17746,7 +17746,7 @@ scripts = [
         [  (try_for_range, ":troop_no", companions_begin, companions_end),
             (troop_set_slot, ":troop_no", slot_troop_cur_center, -1),
             (troop_slot_eq, ":troop_no", slot_troop_occupation, 0),
-            (store_random_in_range, ":town_no", towns_begin, towns_end),
+            (store_random_in_range, ":town_no", mainplanets_begin, mainplanets_end),
             (try_begin),
               (neg|troop_slot_eq, ":troop_no", slot_troop_home, ":town_no"),
               (neg|troop_slot_eq, ":troop_no", slot_troop_first_encountered, ":town_no"),
@@ -17765,12 +17765,12 @@ scripts = [
       # INPUT: none
       # OUTPUT: none
       ("update_ransom_brokers",
-        [(try_for_range, ":town_no", towns_begin, towns_end),
+        [(try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
             (party_set_slot, ":town_no", slot_center_ransom_broker, 0),
           (try_end),
           
           (try_for_range, ":troop_no", ransom_brokers_begin, ransom_brokers_end),
-            (store_random_in_range, ":town_no", towns_begin, towns_end),
+            (store_random_in_range, ":town_no", mainplanets_begin, mainplanets_end),
             (party_set_slot, ":town_no", slot_center_ransom_broker, ":troop_no"),
           (try_end),
           
@@ -17782,16 +17782,16 @@ scripts = [
       # INPUT: none
       # OUTPUT: none
       ("update_tavern_travelers",
-        [(try_for_range, ":town_no", towns_begin, towns_end),
+        [(try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
             (party_set_slot, ":town_no", slot_center_tavern_traveler, 0),
           (try_end),
           
           (try_for_range, ":troop_no", tavern_travelers_begin, tavern_travelers_end),
-            (store_random_in_range, ":town_no", towns_begin, towns_end),
+            (store_random_in_range, ":town_no", mainplanets_begin, mainplanets_end),
             (party_set_slot, ":town_no", slot_center_tavern_traveler, ":troop_no"),
             (assign, ":end_cond", 15),
             (try_for_range, ":unused", 0, ":end_cond"),
-              (store_random_in_range, ":info_faction", kingdoms_begin, kingdoms_end),
+              (store_random_in_range, ":info_faction", factions_begin, factions_end),
               (faction_slot_eq, ":info_faction", slot_faction_state, sfs_active),
               (neq, ":info_faction", "$players_kingdom"),
               (neq, ":info_faction", "fac_player_supporters_faction"),
@@ -17805,33 +17805,33 @@ scripts = [
       # INPUT: none
       # OUTPUT: none
       ("update_villages_infested_by_bandits",
-        [(try_for_range, ":village_no", villages_begin, villages_end),
+        [(try_for_range, ":minorplanet_no", minorplanet_begin, minorplanet_end),
             (try_begin),
               (check_quest_active, "qst_eliminate_bandits_infesting_village"),
-              (quest_slot_eq, "qst_eliminate_bandits_infesting_village", slot_quest_target_center, ":village_no"),
+              (quest_slot_eq, "qst_eliminate_bandits_infesting_village", slot_quest_target_center, ":minorplanet_no"),
               (quest_get_slot, ":cur_state", "qst_eliminate_bandits_infesting_village", slot_quest_current_state),
               (val_add, ":cur_state", 1),
               (try_begin),
                 (lt, ":cur_state", 3),
                 (quest_set_slot, "qst_eliminate_bandits_infesting_village", slot_quest_current_state, ":cur_state"),
               (else_try),
-                (party_set_slot, ":village_no", slot_minorplanet_infested_by_bandits, 0),
+                (party_set_slot, ":minorplanet_no", slot_minorplanet_infested_by_bandits, 0),
                 (call_script, "script_abort_quest", "qst_eliminate_bandits_infesting_village", 2),
               (try_end),
             (else_try),
               (check_quest_active, "qst_deal_with_bandits_at_lords_village"),
-              (quest_slot_eq, "qst_deal_with_bandits_at_lords_village", slot_quest_target_center, ":village_no"),
+              (quest_slot_eq, "qst_deal_with_bandits_at_lords_village", slot_quest_target_center, ":minorplanet_no"),
               (quest_get_slot, ":cur_state", "qst_deal_with_bandits_at_lords_village", slot_quest_current_state),
               (val_add, ":cur_state", 1),
               (try_begin),
                 (lt, ":cur_state", 3),
                 (quest_set_slot, "qst_deal_with_bandits_at_lords_village", slot_quest_current_state, ":cur_state"),
               (else_try),
-                (party_set_slot, ":village_no", slot_minorplanet_infested_by_bandits, 0),
+                (party_set_slot, ":minorplanet_no", slot_minorplanet_infested_by_bandits, 0),
                 (call_script, "script_abort_quest", "qst_deal_with_bandits_at_lords_village", 2),
               (try_end),
             (else_try),
-              (party_set_slot, ":village_no", slot_minorplanet_infested_by_bandits, 0),
+              (party_set_slot, ":minorplanet_no", slot_minorplanet_infested_by_bandits, 0),
               (store_random_in_range, ":random_no", 0, 100),
               (lt, ":random_no", 3),
               (store_random_in_range, ":random_no", 0, 3),
@@ -17844,12 +17844,12 @@ scripts = [
               (else_try),
                 (assign, ":bandit_troop", "trp_blazing_claw_pirate"),
               (try_end),
-              (party_set_slot, ":village_no", slot_minorplanet_infested_by_bandits, ":bandit_troop"),
+              (party_set_slot, ":minorplanet_no", slot_minorplanet_infested_by_bandits, ":bandit_troop"),
               #Reduce prosperity of the village by 3
-              (call_script, "script_change_center_prosperity", ":village_no", -3),
+              (call_script, "script_change_center_prosperity", ":minorplanet_no", -3),
               (try_begin),
                 (eq, "$cheat_mode", 1),
-                (str_store_party_name, s1, ":village_no"),
+                (str_store_party_name, s1, ":minorplanet_no"),
                 (display_message, "@{s1} is infested by bandits."),
               (try_end),
             (try_end),
@@ -17862,19 +17862,19 @@ scripts = [
       ("update_booksellers",
         [
           
-          (try_for_range, ":town_no", towns_begin, towns_end),
+          (try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
             (party_set_slot, ":town_no", slot_center_tavern_bookseller, 0),
           (try_end),
           
           #SW - commented out old code where each tavern_bookseller was randomly assigned to a town
           #(try_for_range, ":troop_no", tavern_booksellers_begin, tavern_booksellers_end),
-          #	(store_random_in_range, ":town_no", towns_begin, towns_end),
+          #	(store_random_in_range, ":town_no", mainplanets_begin, mainplanets_end),
           #	(party_set_slot, ":town_no", slot_center_tavern_bookseller, ":troop_no"),
           #(try_end),
           
           #TEST
           #SW - added new code where 75% of towns get a tavern_bookseller
-          (try_for_range, ":town_no", towns_begin, towns_end),
+          (try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
             (store_random_in_range, ":random_num", 0, 100),
             (le, ":random_num", 75),
             (store_random_in_range, ":troop_no", tavern_booksellers_begin, tavern_booksellers_end),
@@ -17887,12 +17887,12 @@ scripts = [
       # INPUT: none
       # OUTPUT: none
       ("update_tavern_minstels",
-        [(try_for_range, ":town_no", towns_begin, towns_end),
+        [(try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
             (party_set_slot, ":town_no", slot_center_tavern_minstrel, 0),
           (try_end),
           
           (try_for_range, ":troop_no", tavern_minstrels_begin, tavern_minstrels_end),
-            (store_random_in_range, ":town_no", towns_begin, towns_end),
+            (store_random_in_range, ":town_no", mainplanets_begin, mainplanets_end),
             (party_set_slot, ":town_no", slot_center_tavern_minstrel, ":troop_no"),
           (try_end),
       ]),
@@ -17903,7 +17903,7 @@ scripts = [
       ("update_faction_notes",
         [(store_script_param, ":faction_no", 1),
           (try_begin),
-            (is_between, ":faction_no", kingdoms_begin, kingdoms_end),
+            (is_between, ":faction_no", factions_begin, factions_end),
             (faction_slot_eq, ":faction_no", slot_faction_state, sfs_active),
             (faction_get_slot, ":faction_leader", ":faction_no", slot_faction_leader),
             (str_store_faction_name, s5, ":faction_no"),
@@ -17955,7 +17955,7 @@ scripts = [
             (try_end),
             (str_store_string, s12, "@noone"),
             (assign, ":num_enemies", 0),
-            (try_for_range_backwards, ":cur_faction", kingdoms_begin, kingdoms_end),
+            (try_for_range_backwards, ":cur_faction", factions_begin, factions_end),
               (faction_slot_eq, ":cur_faction", slot_faction_state, sfs_active),
               (store_relation, ":cur_relation", ":cur_faction", ":faction_no"),
               (lt, ":cur_relation", 0),
@@ -17974,7 +17974,7 @@ scripts = [
             (try_end),
             (add_faction_note_from_sreg, ":faction_no", 0, "@{s5} is ruled by {s6}.^It occupies {s8}.^Its vassals are {s10}.^{s5} is at war with {s12}.", 0),
           (else_try),
-            (is_between, ":faction_no", kingdoms_begin, kingdoms_end),
+            (is_between, ":faction_no", factions_begin, factions_end),
             (faction_slot_eq, ":faction_no", slot_faction_state, sfs_defeated),
             (str_store_faction_name, s5, ":faction_no"),
             (add_faction_note_from_sreg, ":faction_no", 0, "@{s5} has been defeated!", 0),
@@ -17986,7 +17986,7 @@ scripts = [
             (add_faction_note_from_sreg, ":faction_no", 1, s1, 0),
           (try_end),
           (try_begin),
-            (is_between, ":faction_no", "fac_kingdom_1", kingdoms_end), #Excluding player kingdom
+            (is_between, ":faction_no", "fac_kingdom_1", factions_end), #Excluding player kingdom
             (add_faction_note_tableau_mesh, ":faction_no", "tableau_faction_note_mesh"),
           (else_try),
             (add_faction_note_tableau_mesh, ":faction_no", "tableau_faction_note_mesh_banner"),
@@ -18027,7 +18027,7 @@ scripts = [
           (try_end),
           (try_begin),
             (neq, ":troop_no", "trp_player"),
-            (neg|is_between, ":troop_faction", kingdoms_begin, kingdoms_end),
+            (neg|is_between, ":troop_faction", factions_begin, factions_end),
             (str_clear, s54),
             (add_troop_note_from_sreg, ":troop_no", 0, s54, 0),
             (add_troop_note_from_sreg, ":troop_no", 1, s54, 0),
@@ -18149,10 +18149,10 @@ scripts = [
             (try_end),
             (str_store_party_name, s50, ":center_no"),
             (try_begin),
-              (party_slot_eq, ":center_no", slot_party_type, spt_town),
+              (party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
               (str_store_string, s51, "@The planet of {s50}"),
             (else_try),
-              (party_slot_eq, ":center_no", slot_party_type, spt_village),
+              (party_slot_eq, ":center_no", slot_party_type, spt_minorplanet),
               (party_get_slot, ":bound_center", ":center_no", slot_minorplanet_bound_center),
               (str_store_party_name_link, s52, ":bound_center"),
               (str_store_string, s51, "@The planet of {s50} near {s52}"),
@@ -18164,20 +18164,20 @@ scripts = [
             (str_clear, s2),
           (try_end),
           (try_begin),
-            (is_between, ":center_no", villages_begin, villages_end),
+            (is_between, ":center_no", minorplanet_begin, minorplanet_end),
           (else_try),
             (assign, ":num_villages", 0),
-            (try_for_range_backwards, ":village_no", villages_begin, villages_end),
-              (party_slot_eq, ":village_no", slot_minorplanet_bound_center, ":center_no"),
+            (try_for_range_backwards, ":minorplanet_no", minorplanet_begin, minorplanet_end),
+              (party_slot_eq, ":minorplanet_no", slot_minorplanet_bound_center, ":center_no"),
               (try_begin),
                 (eq, ":num_villages", 0),
-                (str_store_party_name_link, s8, ":village_no"),
+                (str_store_party_name_link, s8, ":minorplanet_no"),
               (else_try),
                 (eq, ":num_villages", 1),
-                (str_store_party_name_link, s7, ":village_no"),
+                (str_store_party_name_link, s7, ":minorplanet_no"),
                 (str_store_string, s8, "@{s7} and {s8}"),
               (else_try),
-                (str_store_party_name_link, s7, ":village_no"),
+                (str_store_party_name_link, s7, ":minorplanet_no"),
                 (str_store_string, s8, "@{s7}, {s8}"),
               (try_end),
               (val_add, ":num_villages", 1),
@@ -18202,7 +18202,7 @@ scripts = [
       ("update_center_recon_notes",
         [(store_script_param, ":center_no", 1),
           (try_begin),
-            (this_or_next|is_between, ":center_no", towns_begin, towns_end),
+            (this_or_next|is_between, ":center_no", mainplanets_begin, mainplanets_end),
             (is_between, ":center_no", castles_begin, castles_end),
             (party_get_slot, ":center_food_store", ":center_no", slot_party_food_store),
             (call_script, "script_center_get_food_consumption", ":center_no"),
@@ -18226,7 +18226,7 @@ scripts = [
           (try_for_range, ":center_no", centers_begin, centers_end),
             (call_script, "script_update_center_notes", ":center_no"),
           (try_end),
-          (try_for_range, ":faction_no", kingdoms_begin, kingdoms_end),
+          (try_for_range, ":faction_no", factions_begin, factions_end),
             (call_script, "script_update_faction_notes", ":faction_no"),
           (try_end),
       ]),
@@ -18686,7 +18686,7 @@ scripts = [
               (store_random,":spawn_point",num_black_sun_pirate_spawn_points),
               (val_add,":spawn_point","p_black_sun_pirate_spawn_point"),
             (else_try),			#25% chance for bandit to spawn around a random village
-              (store_random_in_range,":spawn_point",villages_begin,villages_end),
+              (store_random_in_range,":spawn_point",minorplanet_begin,minorplanet_end),
             (try_end),
             (spawn_around_party,":spawn_point","pt_black_sun_pirates"),
           (try_end),
@@ -18701,7 +18701,7 @@ scripts = [
               (store_random,":spawn_point",num_blazing_claw_pirate_spawn_points),
               (val_add,":spawn_point","p_blazing_claw_pirate_spawn_point"),
             (else_try),			#25% chance for bandit to spawn around a random village
-              (store_random_in_range,":spawn_point",villages_begin,villages_end),
+              (store_random_in_range,":spawn_point",minorplanet_begin,minorplanet_end),
             (try_end),
             (spawn_around_party,":spawn_point","pt_blazing_claw_pirates"),
           (try_end),
@@ -18716,7 +18716,7 @@ scripts = [
               (store_random,":spawn_point",num_sea_raider_spawn_points),
               (val_add,":spawn_point","p_sea_raider_spawn_point_1"),
             (else_try),			#25% chance for bandit to spawn around a random village
-              (store_random_in_range,":spawn_point",villages_begin,villages_end),
+              (store_random_in_range,":spawn_point",minorplanet_begin,minorplanet_end),
             (try_end),
             (spawn_around_party,":spawn_point","pt_sea_raiders"),
           (try_end),
@@ -18731,7 +18731,7 @@ scripts = [
               (store_random,":spawn_point",num_steppe_bandit_spawn_points),
               (val_add,":spawn_point","p_steppe_bandit_spawn_point"),
             (else_try),			#25% chance for bandit to spawn around a random village
-              (store_random_in_range,":spawn_point",villages_begin,villages_end),
+              (store_random_in_range,":spawn_point",minorplanet_begin,minorplanet_end),
             (try_end),
             (spawn_around_party,":spawn_point","pt_steppe_bandits"),
           (try_end),
@@ -18739,7 +18739,7 @@ scripts = [
             (store_num_parties_of_template, ":num_parties", "pt_jawas"),
             #SW - lowered num_parties for jawas from 23 to 20
             (lt,":num_parties",20),
-            (store_random_in_range,":spawn_point",villages_begin,villages_end), #spawn jawas twice to have lots of them at the beginning
+            (store_random_in_range,":spawn_point",minorplanet_begin,minorplanet_end), #spawn jawas twice to have lots of them at the beginning
             (spawn_around_party,":spawn_point","pt_jawas"),
             (assign, ":spawned_party_id", reg0),
             (try_begin),
@@ -18966,20 +18966,20 @@ scripts = [
       ]),
       
       # inserted by obi 2009-04-28 --> recruit clones, droid and force sensitves
-      ("cf_village_recruit_clones_cond",
+      ("cf_minorplanet_recruit_clones_cond",
         [(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
           (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
           (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
           (party_slot_eq, "$current_town", slot_center_has_clone_chambers, 1),
           #SW - modified to take restrictions out of displaying recruit game menu
-          # (store_faction_of_party, ":village_faction", "$current_town"),
+          # (store_faction_of_party, ":minorplanet_faction", "$current_town"),
           # (party_get_slot, ":center_relation", "$current_town", slot_center_player_relation),
-          # (store_relation, ":village_faction_relation", ":village_faction", "fac_player_faction"),
+          # (store_relation, ":minorplanet_faction_relation", ":minorplanet_faction", "fac_player_faction"),
           # (ge, ":center_relation", 0),
           # (this_or_next|ge, ":center_relation", 5),
-          # (this_or_next|eq, ":village_faction", "$players_kingdom"),
-          # (this_or_next|ge, ":village_faction_relation", 0),
-          # (this_or_next|eq, ":village_faction", "$supported_pretender_old_faction"),
+          # (this_or_next|eq, ":minorplanet_faction", "$players_kingdom"),
+          # (this_or_next|ge, ":minorplanet_faction_relation", 0),
+          # (this_or_next|eq, ":minorplanet_faction", "$supported_pretender_old_faction"),
           # (             eq, "$players_kingdom", 0),
           # (party_slot_ge, "$current_town", slot_center_volunteer_troop_amount, 0),
           # (party_slot_ge, "$current_town", slot_center_volunteer_troop_type, 1),
@@ -18987,20 +18987,20 @@ scripts = [
           # (ge, ":free_capacity", 1),
       ]),
       
-      ("cf_village_recruit_force_sensitives_cond",
+      ("cf_minorplanet_recruit_force_sensitives_cond",
         [(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
           (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
           (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
           (party_slot_eq, "$current_town", slot_center_has_temple, 1),
           #SW - modified to take restrictions out of displaying recruit game menu
-          # (store_faction_of_party, ":village_faction", "$current_town"),
+          # (store_faction_of_party, ":minorplanet_faction", "$current_town"),
           # (party_get_slot, ":center_relation", "$current_town", slot_center_player_relation),
-          # (store_relation, ":village_faction_relation", ":village_faction", "fac_player_faction"),
+          # (store_relation, ":minorplanet_faction_relation", ":minorplanet_faction", "fac_player_faction"),
           # (ge, ":center_relation", 0),
           # (this_or_next|ge, ":center_relation", 5),
-          # (this_or_next|eq, ":village_faction", "$players_kingdom"),
-          # (this_or_next|ge, ":village_faction_relation", 0),
-          # (this_or_next|eq, ":village_faction", "$supported_pretender_old_faction"),
+          # (this_or_next|eq, ":minorplanet_faction", "$players_kingdom"),
+          # (this_or_next|ge, ":minorplanet_faction_relation", 0),
+          # (this_or_next|eq, ":minorplanet_faction", "$supported_pretender_old_faction"),
           # (             eq, "$players_kingdom", 0),
           # (party_slot_ge, "$current_town", slot_center_volunteer_troop_amount, 0),
           # (party_slot_ge, "$current_town", slot_center_volunteer_troop_type, 1),
@@ -19008,40 +19008,40 @@ scripts = [
           # (ge, ":free_capacity", 1),
       ]),
       
-      ("cf_village_recruit_droids_cond",
+      ("cf_minorplanet_recruit_droids_cond",
         [(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
           (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
           (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
           (party_slot_eq, "$current_town", slot_center_has_droid_foundry, 1),
           #SW - modified to take restrictions out of displaying recruit game menu
-          # (store_faction_of_party, ":village_faction", "$current_town"),
+          # (store_faction_of_party, ":minorplanet_faction", "$current_town"),
           # (party_get_slot, ":center_relation", "$current_town", slot_center_player_relation),
-          # (store_relation, ":village_faction_relation", ":village_faction", "fac_player_faction"),
+          # (store_relation, ":minorplanet_faction_relation", ":minorplanet_faction", "fac_player_faction"),
           # (ge, ":center_relation", 0),
           # (this_or_next|ge, ":center_relation", 5),
-          # (this_or_next|eq, ":village_faction", "$players_kingdom"),
-          # (this_or_next|ge, ":village_faction_relation", 0),
-          # (this_or_next|eq, ":village_faction", "$supported_pretender_old_faction"),
+          # (this_or_next|eq, ":minorplanet_faction", "$players_kingdom"),
+          # (this_or_next|ge, ":minorplanet_faction_relation", 0),
+          # (this_or_next|eq, ":minorplanet_faction", "$supported_pretender_old_faction"),
           # (             eq, "$players_kingdom", 0),
           # (party_slot_ge, "$current_town", slot_center_volunteer_troop_amount, 0),
           # (party_slot_ge, "$current_town", slot_center_volunteer_troop_type, 1),
           # (party_get_free_companions_capacity, ":free_capacity", "p_main_party"),
           # (ge, ":free_capacity", 1),
       ]),
-      ("cf_village_recruit_rancors_cond",
+      ("cf_minorplanet_recruit_rancors_cond",
         [(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
           (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
           (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
           (party_slot_eq, "$current_town", slot_center_has_rancor_pit, 1),
           #SW - modified to take restrictions out of displaying recruit game menu
-          # (store_faction_of_party, ":village_faction", "$current_town"),
+          # (store_faction_of_party, ":minorplanet_faction", "$current_town"),
           # (party_get_slot, ":center_relation", "$current_town", slot_center_player_relation),
-          # (store_relation, ":village_faction_relation", ":village_faction", "fac_player_faction"),
+          # (store_relation, ":minorplanet_faction_relation", ":minorplanet_faction", "fac_player_faction"),
           # (ge, ":center_relation", 0),
           # (this_or_next|ge, ":center_relation", 5),
-          # (this_or_next|eq, ":village_faction", "$players_kingdom"),
-          # (this_or_next|ge, ":village_faction_relation", 0),
-          # (this_or_next|eq, ":village_faction", "$supported_pretender_old_faction"),
+          # (this_or_next|eq, ":minorplanet_faction", "$players_kingdom"),
+          # (this_or_next|ge, ":minorplanet_faction_relation", 0),
+          # (this_or_next|eq, ":minorplanet_faction", "$supported_pretender_old_faction"),
           # (             eq, "$players_kingdom", 0),
           # (party_slot_ge, "$current_town", slot_center_volunteer_troop_amount, 0),
           # (party_slot_ge, "$current_town", slot_center_volunteer_troop_type, 1),
@@ -19050,24 +19050,24 @@ scripts = [
       ]),
       # end of insert
       
-      #script_cf_village_recruit_volunteers_cond
+      #script_cf_minorplanet_recruit_volunteers_cond
       # INPUT: none
       # OUTPUT: none
-      ("cf_village_recruit_volunteers_cond",
+      ("cf_minorplanet_recruit_volunteers_cond",
         [(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
           (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
           (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
           #SW - modified to take most restrictions out of displaying recruit game menu
-          #(store_faction_of_party, ":village_faction", "$current_town"),
+          #(store_faction_of_party, ":minorplanet_faction", "$current_town"),
           # (party_get_slot, ":center_relation", "$current_town", slot_center_player_relation),
-          # (store_relation, ":village_faction_relation", ":village_faction", "fac_player_faction"),
+          # (store_relation, ":minorplanet_faction_relation", ":minorplanet_faction", "fac_player_faction"),
           # (ge, ":center_relation", 0),
           # (this_or_next|ge, ":center_relation", 5),
           #SW - so you can only get recruits from your faction villages (moved it to recruit_volunteers in module_game_menus.py)
-          #(this_or_next|eq, ":village_faction", "$players_kingdom"),
-          #(eq, ":village_faction", "$players_kingdom"),
-          # (this_or_next|ge, ":village_faction_relation", 0),
-          # (this_or_next|eq, ":village_faction", "$supported_pretender_old_faction"),
+          #(this_or_next|eq, ":minorplanet_faction", "$players_kingdom"),
+          #(eq, ":minorplanet_faction", "$players_kingdom"),
+          # (this_or_next|ge, ":minorplanet_faction_relation", 0),
+          # (this_or_next|eq, ":minorplanet_faction", "$supported_pretender_old_faction"),
           #(             eq, "$players_kingdom", 0),
           # (party_slot_ge, "$current_town", slot_center_volunteer_troop_amount, 0),
           # (party_slot_ge, "$current_town", slot_center_volunteer_troop_type, 1),
@@ -19076,7 +19076,7 @@ scripts = [
       ]),
       
       #  inserted by obi 2009-04-28 --> recruit clones, droids and force sensitves
-      ("village_recruit_volunteers_clones",
+      ("minorplanet_recruit_volunteers_clones",
         [(party_get_slot, ":volunteer_amount", "$current_town", slot_center_volunteer_troop_amount),
           (party_get_free_companions_capacity, ":free_capacity", "p_main_party"),
           (val_min, ":volunteer_amount", ":free_capacity"),
@@ -19089,7 +19089,7 @@ scripts = [
           (troop_remove_gold, "trp_player", ":cost"),
       ]),
       
-      ("village_recruit_volunteers_force_sensitives",
+      ("minorplanet_recruit_volunteers_force_sensitives",
         [(party_get_slot, ":volunteer_amount", "$current_town", slot_center_volunteer_troop_amount),
           (party_get_free_companions_capacity, ":free_capacity", "p_main_party"),
           (val_min, ":volunteer_amount", ":free_capacity"),
@@ -19115,7 +19115,7 @@ scripts = [
           
       ]),
       
-      ("village_recruit_volunteers_droids",
+      ("minorplanet_recruit_volunteers_droids",
         [(party_get_slot, ":volunteer_amount", "$current_town", slot_center_volunteer_troop_amount),
           (party_get_free_companions_capacity, ":free_capacity", "p_main_party"),
           (val_min, ":volunteer_amount", ":free_capacity"),
@@ -19128,7 +19128,7 @@ scripts = [
           (troop_remove_gold, "trp_player", ":cost"),
       ]),
       
-      ("village_recruit_volunteers_rancors",
+      ("minorplanet_recruit_volunteers_rancors",
         [(party_get_slot, ":volunteer_amount", "$current_town", slot_center_volunteer_troop_amount),
           (party_get_free_companions_capacity, ":free_capacity", "p_main_party"),
           (val_min, ":volunteer_amount", ":free_capacity"),
@@ -19142,12 +19142,12 @@ scripts = [
       ]),
       # end of insert
       
-      #script_village_recruit_volunteers_recruit
+      #script_minorplanet_recruit_volunteers_recruit
       # INPUT: none
       # OUTPUT: none
-      ("village_recruit_volunteers_recruit",
+      ("minorplanet_recruit_volunteers_recruit",
         [
-          #SW - modified village_recruit_volunteers_recruit script (increased prices, default to farmers, etc)
+          #SW - modified minorplanet_recruit_volunteers_recruit script (increased prices, default to farmers, etc)
           #(party_get_slot, ":volunteer_troop", "$current_town", slot_center_volunteer_troop_type),
           (store_faction_of_party, ":town_faction", "$current_town"),
           (faction_get_slot, ":volunteer_troop", ":town_faction", slot_faction_tier_1_troop),
@@ -19238,7 +19238,7 @@ scripts = [
         [(store_script_param, ":center_no", 1),
           (assign, ":ideal", 40),
           (try_begin),
-            (is_between, ":center_no", villages_begin, villages_end),
+            (is_between, ":center_no", minorplanet_begin, minorplanet_end),
             (try_begin),
               (party_slot_eq, ":center_no", slot_center_has_fish_pond, 1),
               (val_add, ":ideal", 5),
@@ -19250,9 +19250,9 @@ scripts = [
             (val_div, ":num_cattle", 20),
             (val_add, ":ideal", ":num_cattle"),
           (else_try),
-            (try_for_range, ":village_no", villages_begin, villages_end),
-              (party_slot_eq, ":village_no", slot_minorplanet_bound_center, ":center_no"),
-              (party_get_slot, ":prosperity", ":village_no", slot_mainplanet_prosperity),
+            (try_for_range, ":minorplanet_no", minorplanet_begin, minorplanet_end),
+              (party_slot_eq, ":minorplanet_no", slot_minorplanet_bound_center, ":center_no"),
+              (party_get_slot, ":prosperity", ":minorplanet_no", slot_mainplanet_prosperity),
               (val_div, ":prosperity", 20),
               (val_add, ":ideal", ":prosperity"),
             (try_end),
@@ -19260,20 +19260,20 @@ scripts = [
           (assign, reg0, ":ideal"),
       ]),
       
-      #script_get_poorest_village_of_faction
+      #script_get_poorest_minorplanet_of_faction
       # INPUT: arg1 = center_no
       # OUTPUT: reg0 = ideal_prosperity
-      ("get_poorest_village_of_faction",
+      ("get_poorest_minorplanet_of_faction",
         [(store_script_param, ":faction_no", 1),
           (assign, ":min_prosperity_village", -1),
           (assign, ":min_prosperity", 101),
-          (try_for_range, ":village_no", villages_begin, villages_end),
-            (store_faction_of_party, ":village_faction", ":village_no"),
-            (eq, ":village_faction", ":faction_no"),
-            (party_get_slot, ":prosperity", ":village_no", slot_mainplanet_prosperity),
+          (try_for_range, ":minorplanet_no", minorplanet_begin, minorplanet_end),
+            (store_faction_of_party, ":minorplanet_faction", ":minorplanet_no"),
+            (eq, ":minorplanet_faction", ":faction_no"),
+            (party_get_slot, ":prosperity", ":minorplanet_no", slot_mainplanet_prosperity),
             (lt, ":prosperity", ":min_prosperity"),
             (assign, ":min_prosperity", ":prosperity"),
-            (assign, ":min_prosperity_village", ":village_no"),
+            (assign, ":min_prosperity_village", ":minorplanet_no"),
           (try_end),
           (assign, reg0, ":min_prosperity_village"),
       ]),
@@ -19304,7 +19304,7 @@ scripts = [
           (troop_set_slot, "trp_npc1", slot_troop_personalityclash_object, "trp_npc7"),  #borcha - deshavi
           (troop_set_slot, "trp_npc1", slot_troop_personalityclash2_object, "trp_npc16"),  #borcha - klethi
           (troop_set_slot, "trp_npc1", slot_troop_personalitymatch_object, "trp_npc2"),  #borcha - marnid
-          (troop_set_slot, "trp_npc1", slot_troop_home, "p_village_71"), #Tshibtin
+          (troop_set_slot, "trp_npc1", slot_troop_home, "p_minorplanet_71"), #Tshibtin
           (troop_set_slot, "trp_npc1", slot_troop_payment_request, 300),
           
           (troop_set_slot, "trp_npc2", slot_troop_morality_type, tmt_humanitarian), #marnid
@@ -19335,7 +19335,7 @@ scripts = [
           (troop_set_slot, "trp_npc4", slot_troop_personalityclash_object, "trp_npc10"), #Rolf - bunduk
           (troop_set_slot, "trp_npc4", slot_troop_personalityclash2_object, "trp_npc7"), #Rolf - deshavi
           (troop_set_slot, "trp_npc4", slot_troop_personalitymatch_object, "trp_npc5"), #Rolf - beheshtur
-          (troop_set_slot, "trp_npc4", slot_troop_home, "p_village_34"), #Ehlerdah
+          (troop_set_slot, "trp_npc4", slot_troop_home, "p_minorplanet_34"), #Ehlerdah
           (troop_set_slot, "trp_npc4", slot_troop_payment_request, 300),
           
           (troop_set_slot, "trp_npc5", slot_troop_morality_type, tmt_egalitarian),  #beheshtur
@@ -19365,7 +19365,7 @@ scripts = [
           (troop_set_slot, "trp_npc7", slot_troop_personalityclash_object, "trp_npc1"),  #deshavi
           (troop_set_slot, "trp_npc7", slot_troop_personalityclash2_object, "trp_npc4"),  #deshavi - rolf
           (troop_set_slot, "trp_npc7", slot_troop_personalitymatch_object, "trp_npc16"),  #deshavi - klethi
-          (troop_set_slot, "trp_npc7", slot_troop_home, "p_village_5"), #Kulum
+          (troop_set_slot, "trp_npc7", slot_troop_home, "p_minorplanet_5"), #Kulum
           #        (troop_set_slot, "trp_npc7", slot_troop_payment_request, 300),
           
           (troop_set_slot, "trp_npc8", slot_troop_morality_type, tmt_aristocratic), #matheld
@@ -19395,7 +19395,7 @@ scripts = [
           (troop_set_slot, "trp_npc10", slot_troop_personalityclash_object, "trp_npc4"), #bunduk
           (troop_set_slot, "trp_npc10", slot_troop_personalityclash2_object, "trp_npc14"), #bunduk - lazalet
           (troop_set_slot, "trp_npc10", slot_troop_personalitymatch_object, "trp_npc11"),  #bunduk - katrin
-          (troop_set_slot, "trp_npc10", slot_troop_home, "p_castle_28"), #Grunwalder Castle
+          (troop_set_slot, "trp_npc10", slot_troop_home, "p_spacestation_28"), #Grunwalder Castle
           (troop_set_slot, "trp_npc10", slot_troop_payment_request, 200),
           
           (troop_set_slot, "trp_npc11", slot_troop_morality_type, tmt_egalitarian),  #katrin
@@ -19415,7 +19415,7 @@ scripts = [
           (troop_set_slot, "trp_npc12", slot_troop_personalityclash_object, "trp_npc8"), #jerem
           (troop_set_slot, "trp_npc12", slot_troop_personalityclash2_object, "trp_npc15"), #jeremus - artimenner
           (troop_set_slot, "trp_npc12", slot_troop_personalitymatch_object, "trp_npc6"),  #jeremus - firenz
-          (troop_set_slot, "trp_npc12", slot_troop_home, "p_castle_16"), #undetermined #University
+          (troop_set_slot, "trp_npc12", slot_troop_home, "p_spacestation_16"), #undetermined #University
           (troop_set_slot, "trp_npc12", slot_troop_payment_request, 0),
           
           (troop_set_slot, "trp_npc13", slot_troop_morality_type, tmt_aristocratic), #nizar
@@ -19425,7 +19425,7 @@ scripts = [
           (troop_set_slot, "trp_npc13", slot_troop_personalityclash_object, "trp_npc9"), #nizar
           (troop_set_slot, "trp_npc13", slot_troop_personalityclash2_object, "trp_npc6"), #nizar - firenz
           (troop_set_slot, "trp_npc13", slot_troop_personalitymatch_object, "trp_npc8"), #nizar - matheld
-          (troop_set_slot, "trp_npc13", slot_troop_home, "p_castle_15"), #Ergellon Castle
+          (troop_set_slot, "trp_npc13", slot_troop_home, "p_spacestation_15"), #Ergellon Castle
           (troop_set_slot, "trp_npc13", slot_troop_payment_request, 300),
           
           (troop_set_slot, "trp_npc14", slot_troop_morality_type, tmt_aristocratic), #lazalit
@@ -19435,7 +19435,7 @@ scripts = [
           (troop_set_slot, "trp_npc14", slot_troop_personalityclash_object, "trp_npc3"), #lazalit
           (troop_set_slot, "trp_npc14", slot_troop_personalityclash2_object, "trp_npc10"), #lazalit - bunduk
           (troop_set_slot, "trp_npc14", slot_troop_personalitymatch_object, "trp_npc15"), #lazalit - artimenner
-          (troop_set_slot, "trp_npc14", slot_troop_home, "p_castle_18"), #Ismirala Castle
+          (troop_set_slot, "trp_npc14", slot_troop_home, "p_spacestation_18"), #Ismirala Castle
           (troop_set_slot, "trp_npc14", slot_troop_payment_request, 400),
           
           (troop_set_slot, "trp_npc15", slot_troop_morality_type, tmt_egalitarian),  #artimenner
@@ -19445,7 +19445,7 @@ scripts = [
           (troop_set_slot, "trp_npc15", slot_troop_personalityclash_object, "trp_npc16"), #artimenner - klethi
           (troop_set_slot, "trp_npc15", slot_troop_personalityclash2_object, "trp_npc12"), #artimenner - jeremus
           (troop_set_slot, "trp_npc15", slot_troop_personalitymatch_object, "trp_npc14"), #lazalit - artimenner
-          (troop_set_slot, "trp_npc15", slot_troop_home, "p_castle_2"), #Culmarr Castle
+          (troop_set_slot, "trp_npc15", slot_troop_home, "p_spacestation_2"), #Culmarr Castle
           (troop_set_slot, "trp_npc15", slot_troop_payment_request, 300),
           
           (troop_set_slot, "trp_npc16", slot_troop_morality_type, tmt_aristocratic), #klethi
@@ -19455,7 +19455,7 @@ scripts = [
           (troop_set_slot, "trp_npc16", slot_troop_personalityclash_object, "trp_npc15"), #klethi
           (troop_set_slot, "trp_npc16", slot_troop_personalityclash2_object, "trp_npc1"), #klethi - borcha
           (troop_set_slot, "trp_npc16", slot_troop_personalitymatch_object, "trp_npc7"),  #deshavi - klethi
-          (troop_set_slot, "trp_npc16", slot_troop_home, "p_village_20"), #Uslum
+          (troop_set_slot, "trp_npc16", slot_troop_home, "p_minorplanet_20"), #Uslum
           (troop_set_slot, "trp_npc16", slot_troop_payment_request, 200),
           
           #SW - new Droid NPC's
@@ -19887,7 +19887,7 @@ scripts = [
           (try_for_range, ":cur_center", centers_begin, centers_end),
             (party_slot_eq, ":cur_center", slot_mainplanet_lord, ":troop_no"),
             (try_begin),
-              (party_slot_eq, ":cur_center", slot_party_type, spt_town),
+              (party_slot_eq, ":cur_center", slot_party_type, spt_mainplanet),
               (val_add, ":num_center_points", 4),
             (else_try),
               (party_slot_eq, ":cur_center", slot_party_type, spt_castle),
@@ -20524,11 +20524,11 @@ scripts = [
       ]),
       
       # script_calculate_amount_of_cattle_can_be_stolen
-      # Input: arg1 = village_no
+      # Input: arg1 = minorplanet_no
       # Output: reg0 = max_amount
       ("calculate_amount_of_cattle_can_be_stolen",
         [
-          (store_script_param, ":village_no", 1),
+          (store_script_param, ":minorplanet_no", 1),
           (call_script, "script_get_max_skill_of_player_party", "skl_looting"),
           (assign, ":max_skill", reg0),
           (store_mul, ":can_steal", ":max_skill", 2),
@@ -20536,7 +20536,7 @@ scripts = [
           (store_add, ":num_men_effect", reg0, 10),
           (val_div, ":num_men_effect", 10),
           (val_add, ":can_steal", ":num_men_effect"),
-          (party_get_slot, ":num_cattle", ":village_no", slot_minorplanet_number_of_cattle),
+          (party_get_slot, ":num_cattle", ":minorplanet_no", slot_minorplanet_number_of_cattle),
           (val_min, ":can_steal", ":num_cattle"),
           (assign, reg0, ":can_steal"),
       ]),
@@ -21109,12 +21109,12 @@ scripts = [
       ("get_next_active_kingdom",
         [
           (store_script_param, ":faction_no", 1),
-          (assign, ":end_cond", kingdoms_end),
-          (try_for_range, ":unused", kingdoms_begin, ":end_cond"),
+          (assign, ":end_cond", factions_end),
+          (try_for_range, ":unused", factions_begin, ":end_cond"),
             (val_add, ":faction_no", 1),
             (try_begin),
-              (ge, ":faction_no", kingdoms_end),
-              (assign, ":faction_no", kingdoms_begin),
+              (ge, ":faction_no", factions_end),
+              (assign, ":faction_no", factions_begin),
             (try_end),
             (faction_slot_eq, ":faction_no", slot_faction_state, sfs_active),
             (neq, ":faction_no", "fac_player_supporters_faction"),
@@ -21128,10 +21128,10 @@ scripts = [
       # Output: none (sets $g_average_center_value_per_faction)
       ("store_average_center_value_per_faction",
         [
-          (store_sub, ":num_towns", towns_end, towns_begin),
+          (store_sub, ":num_towns", mainplanets_end, mainplanets_begin),
           (store_sub, ":num_castles", castles_end, castles_begin),
           (assign, ":num_factions", 0),
-          (try_for_range, ":faction_no", kingdoms_begin, kingdoms_end),
+          (try_for_range, ":faction_no", factions_begin, factions_end),
             (faction_slot_eq, ":faction_no", slot_faction_state, sfs_active),
             (val_add, ":num_factions", 1),
           (try_end),
@@ -21174,10 +21174,10 @@ scripts = [
             (try_end),
             (val_sub, ":cur_req", ":num_added"),
             (try_begin),
-              (party_slot_eq, ":party_no", slot_party_type, spt_village),
-              (party_get_slot, ":village_cattle_amount", ":party_no", slot_minorplanet_number_of_cattle),
-              (val_add, ":village_cattle_amount", ":num_added"),
-              (party_set_slot, ":party_no", slot_minorplanet_number_of_cattle, ":village_cattle_amount"),
+              (party_slot_eq, ":party_no", slot_party_type, spt_minorplanet),
+              (party_get_slot, ":minorplanet_cattle_amount", ":party_no", slot_minorplanet_number_of_cattle),
+              (val_add, ":minorplanet_cattle_amount", ":num_added"),
+              (party_set_slot, ":party_no", slot_minorplanet_number_of_cattle, ":minorplanet_cattle_amount"),
             (try_end),
             (assign, reg3, ":num_added"),
             (str_store_party_name_link, s1, ":party_no"),
@@ -21207,9 +21207,9 @@ scripts = [
             (try_begin),
               (eq,  ":rumor_type", 0),
               (try_begin),
-                (store_sub, ":range", towns_end, towns_begin),
+                (store_sub, ":range", mainplanets_end, mainplanets_begin),
                 (store_mod, ":random_center", ":rumor_id", ":range"),
-                (val_add, ":random_center", towns_begin),
+                (val_add, ":random_center", mainplanets_begin),
                 (party_slot_ge, ":random_center", slot_mainplanet_has_tournament, 1),
                 (neq, ":random_center", "$current_town"),
                 (str_store_party_name, s62, ":random_center"),
@@ -21241,10 +21241,10 @@ scripts = [
                 (val_div, ":min_price", 4),
                 (assign, ":min_price_center", -1),
                 (try_for_range, ":sub_try_no", 0, 10),
-                  (store_sub, ":range", towns_end, towns_begin),
+                  (store_sub, ":range", mainplanets_end, mainplanets_begin),
                   (store_add, ":center_rumor_id", ":rumor_id", ":sub_try_no"),
                   (store_mod, ":random_center", ":center_rumor_id", ":range"),
-                  (val_add, ":random_center", towns_begin),
+                  (val_add, ":random_center", mainplanets_begin),
                   (neq, ":random_center", "$g_encountered_party"),
                   (party_get_slot, ":cur_price", ":random_center", ":random_trade_good_slot"),
                   (lt, ":cur_price", ":min_price"),
@@ -21269,10 +21269,10 @@ scripts = [
                 (val_div, ":max_price", 4),
                 (assign, ":max_price_center", -1),
                 (try_for_range, ":sub_try_no", 0, 10),
-                  (store_sub, ":range", towns_end, towns_begin),
+                  (store_sub, ":range", mainplanets_end, mainplanets_begin),
                   (store_add, ":center_rumor_id", ":rumor_id", ":sub_try_no"),
                   (store_mod, ":random_center", ":center_rumor_id", ":range"),
-                  (val_add, ":random_center", towns_begin),
+                  (val_add, ":random_center", mainplanets_begin),
                   (neq, ":random_center", "$g_encountered_party"),
                   (party_get_slot, ":cur_price", ":random_center", ":random_trade_good_slot"),
                   (gt, ":cur_price", ":max_price"),
@@ -21485,66 +21485,66 @@ scripts = [
                       #Post 0907 changes end
                       
                     (else_try),
-                      (eq, ":entry_type", logent_village_raided),
+                      (eq, ":entry_type", logent_minorplanet_raided),
                       (eq, ":actor", "trp_player"),
                       (try_begin),
                         (eq, ":center_object_lord", "$g_talk_troop"),
                         (assign, ":relevance", 200),
                         (assign, ":suggested_relation_change", -1),
-                        (assign, ":comment", "str_comment_you_raided_my_village_default"),
+                        (assign, ":comment", "str_comment_you_raided_my_minorplanet_default"),
                         (try_begin),
                           (lt, "$g_talk_troop_faction_relation", -5),
                           (this_or_next|eq, ":reputation", lrep_goodnatured),
                           (eq, ":reputation", lrep_upstanding),
-                          (assign, ":comment", "str_comment_you_raided_my_village_enemy_benevolent"),
+                          (assign, ":comment", "str_comment_you_raided_my_minorplanet_enemy_benevolent"),
                         (else_try),
                           (lt, "$g_talk_troop_faction_relation", -5),
                           (this_or_next|eq, ":reputation", lrep_cunning),
                           (eq, ":reputation", lrep_selfrighteous),
-                          (assign, ":comment", "str_comment_you_raided_my_village_enemy_coldblooded"),
+                          (assign, ":comment", "str_comment_you_raided_my_minorplanet_enemy_coldblooded"),
                         (else_try),
                           (lt, "$g_talk_troop_faction_relation", -5),
                           (this_or_next|eq, ":reputation", lrep_quarrelsome),
                           (eq, ":reputation", lrep_debauched),
-                          (assign, ":comment", "str_comment_you_raided_my_village_enemy_spiteful"),
+                          (assign, ":comment", "str_comment_you_raided_my_minorplanet_enemy_spiteful"),
                         (else_try),
                           (lt, "$g_talk_troop_faction_relation", -5),
-                          (assign, ":comment", "str_comment_you_raided_my_village_enemy"),
+                          (assign, ":comment", "str_comment_you_raided_my_minorplanet_enemy"),
                         (else_try),
                           (lt, "$g_talk_troop_relation", -5),
                           (this_or_next|eq, ":reputation", lrep_quarrelsome),
                           (eq, ":reputation", lrep_debauched),
-                          (assign, ":comment", "str_comment_you_raided_my_village_unfriendly_spiteful"),
+                          (assign, ":comment", "str_comment_you_raided_my_minorplanet_unfriendly_spiteful"),
                         (else_try),
                           (gt, "$g_talk_troop_relation", 5),
-                          (assign, ":comment", "str_comment_you_raided_my_village_friendly"),
+                          (assign, ":comment", "str_comment_you_raided_my_minorplanet_friendly"),
                         (try_end),
                       (try_end),
                       
                     (else_try),
-                      (eq, ":entry_type", logent_village_extorted),
+                      (eq, ":entry_type", logent_minorplanet_extorted),
                       (eq, ":actor", "trp_player"),
                       (try_begin),
                         (eq, ":center_object_lord", "$g_talk_troop"),
                         (assign, ":relevance", 30),
                         (assign, ":suggested_relation_change", -1),
-                        (assign, ":comment", "str_comment_you_robbed_my_village_default"),
+                        (assign, ":comment", "str_comment_you_robbed_my_minorplanet_default"),
                         (try_begin),
                           (lt, "$g_talk_troop_faction_relation", -5),
                           (this_or_next|eq, ":reputation", lrep_cunning),
                           (eq, ":reputation", lrep_selfrighteous),
-                          (assign, ":comment", "str_comment_you_robbed_my_village_enemy_coldblooded"),
+                          (assign, ":comment", "str_comment_you_robbed_my_minorplanet_enemy_coldblooded"),
                         (else_try),
                           (lt, "$g_talk_troop_faction_relation", -5),
-                          (assign, ":comment", "str_comment_you_robbed_my_village_enemy"),
+                          (assign, ":comment", "str_comment_you_robbed_my_minorplanet_enemy"),
                         (else_try),
                           (gt, "$g_talk_troop_relation", 5),
                           (this_or_next|eq, ":reputation", lrep_quarrelsome),
                           (eq, ":reputation", lrep_debauched),
-                          (assign, ":comment", "str_comment_you_robbed_my_village_friendly_spiteful"),
+                          (assign, ":comment", "str_comment_you_robbed_my_minorplanet_friendly_spiteful"),
                         (else_try),
                           (gt, "$g_talk_troop_relation", 5),
-                          (assign, ":comment", "str_comment_you_robbed_my_village_friendly"),
+                          (assign, ":comment", "str_comment_you_robbed_my_minorplanet_friendly"),
                         (try_end),
                       (try_end),
                       
@@ -21600,35 +21600,35 @@ scripts = [
                       
                       ###Combat events
                     (else_try),
-                      (eq, ":entry_type", logent_castle_captured_by_player),
+                      (eq, ":entry_type", logent_spacestation_captured_by_player),
                       (try_begin),
                         (eq, ":center_object_lord", "$g_talk_troop"),
                         (this_or_next|eq, ":reputation", lrep_quarrelsome),
                         (eq, ":reputation", lrep_debauched),
-                        (assign, ":comment", "str_comment_you_captured_my_castle_enemy_spiteful"),
+                        (assign, ":comment", "str_comment_you_captured_my_spacestation_enemy_spiteful"),
                         (assign, ":relevance", 200),
                       (else_try),
                         (eq, ":center_object_lord", "$g_talk_troop"),
                         (this_or_next|eq, ":reputation", lrep_martial),
                         (eq, ":reputation", lrep_goodnatured),
-                        (assign, ":comment", "str_comment_you_captured_my_castle_enemy_chivalrous"),
+                        (assign, ":comment", "str_comment_you_captured_my_spacestation_enemy_chivalrous"),
                         (assign, ":relevance", 200),
                       (else_try),
                         (eq, ":center_object_lord", "$g_talk_troop"),
-                        (assign, ":comment", "str_comment_you_captured_my_castle_enemy"),
+                        (assign, ":comment", "str_comment_you_captured_my_spacestation_enemy"),
                         (assign, ":relevance", 200),
                       (else_try),
                         (eq, "$players_kingdom", "$g_talk_troop_faction"),
                         (lt, ":players_kingdom_relation", 0),
                         (this_or_next|eq, ":reputation", lrep_quarrelsome),
                         (eq, ":reputation", lrep_debauched),
-                        (assign, ":comment", "str_comment_you_captured_a_castle_allied_spiteful"),
+                        (assign, ":comment", "str_comment_you_captured_a_spacestation_allied_spiteful"),
                         (assign, ":relevance", 75),
                       (else_try),
                         (eq, "$players_kingdom", "$g_talk_troop_faction"),
                         (lt, ":players_kingdom_relation", 0),
                         (gt, "$g_talk_troop_relation", 5),
-                        (assign, ":comment", "str_comment_you_captured_a_castle_allied_friendly"),
+                        (assign, ":comment", "str_comment_you_captured_a_spacestation_allied_friendly"),
                         (assign, ":relevance", 75),
                       (else_try),
                         (eq, "$players_kingdom", "$g_talk_troop_faction"),
@@ -21636,18 +21636,18 @@ scripts = [
                         (lt, "$g_talk_troop_relation", -5),
                         (this_or_next|eq, ":reputation", lrep_quarrelsome),
                         (eq, ":reputation", lrep_debauched),
-                        (assign, ":comment", "str_comment_you_captured_a_castle_allied_unfriendly_spiteful"),
+                        (assign, ":comment", "str_comment_you_captured_a_spacestation_allied_unfriendly_spiteful"),
                         (assign, ":relevance", 75),
                       (else_try),
                         (eq, "$players_kingdom", "$g_talk_troop_faction"),
                         (lt, ":players_kingdom_relation", 0),
                         (lt, "$g_talk_troop_relation", -5),
-                        (assign, ":comment", "str_comment_you_captured_a_castle_allied_unfriendly"),
+                        (assign, ":comment", "str_comment_you_captured_a_spacestation_allied_unfriendly"),
                         (assign, ":relevance", 75),
                       (else_try),
                         (eq, "$players_kingdom", "$g_talk_troop_faction"),
                         (lt, ":players_kingdom_relation", 0),
-                        (assign, ":comment", "str_comment_you_captured_a_castle_allied"),
+                        (assign, ":comment", "str_comment_you_captured_a_spacestation_allied"),
                         (assign, ":relevance", 75),
                       (try_end),
                       
@@ -21686,7 +21686,7 @@ scripts = [
                       
                       
                     (else_try),
-                      (this_or_next|eq, ":entry_type", logent_castle_captured_by_player),
+                      (this_or_next|eq, ":entry_type", logent_spacestation_captured_by_player),
                       (eq, ":entry_type", logent_player_participated_in_siege),
                       (troop_slot_eq, "$g_talk_troop", slot_troop_present_at_event, ":log_entry_no"),
                       (try_begin),
@@ -22697,7 +22697,7 @@ scripts = [
                       (try_begin),
                         (is_between, ":party_no", centers_begin, centers_end),
                         (this_or_next|eq, ":faction_no", "fac_player_supporters_faction"),
-                        (neg|is_between, ":faction_no", kingdoms_begin, kingdoms_end),
+                        (neg|is_between, ":faction_no", factions_begin, factions_end),
                         (party_get_slot, ":faction_no", ":party_no", slot_center_original_faction),
                       (try_end),
                       (try_begin),
@@ -24826,9 +24826,9 @@ scripts = [
                         (eq, ":news_type", news_lord_escaped),
                         
                       (else_try),
-                        # news_village_looted = 5
+                        # news_minorplanet_looted = 5
                         # ":entity" is the village number
-                        (eq, ":news_type", news_village_looted),
+                        (eq, ":news_type", news_minorplanet_looted),
                         (store_faction_of_party,":center_faction",":entity"),
                         (try_begin),
                           (eq, ":center_faction", ":player_faction"),
@@ -25359,7 +25359,7 @@ scripts = [
                           (eq, ":quest_no", "qst_bounty_1"),
                           (try_begin),
                             (ge, "$g_talk_troop_faction_relation", 0),
-                            (call_script, "script_cf_select_random_village_with_faction", ":giver_faction_no"),
+                            (call_script, "script_cf_select_random_minorplanet_with_faction", ":giver_faction_no"),
                             (assign, ":quest_target_center", reg0),
                             (store_random_in_range, ":quest_target_dna", 0, 1000000),
                             (assign, ":result", ":quest_no"),
@@ -25370,7 +25370,7 @@ scripts = [
                           (eq, ":quest_no", "qst_bounty_2"),
                           (try_begin),
                             (ge, "$g_talk_troop_faction_relation", 0),
-                            (call_script, "script_cf_select_random_village_with_faction", ":giver_faction_no"),
+                            (call_script, "script_cf_select_random_minorplanet_with_faction", ":giver_faction_no"),
                             (assign, ":quest_target_center", reg0),
                             (store_random_in_range, ":quest_target_dna", 0, 1000000),
                             (assign, ":result", ":quest_no"),
@@ -25381,7 +25381,7 @@ scripts = [
                           (eq, ":quest_no", "qst_bounty_3"),
                           (try_begin),
                             (ge, "$g_talk_troop_faction_relation", 0),
-                            (call_script, "script_cf_select_random_village_with_faction", ":giver_faction_no"),
+                            (call_script, "script_cf_select_random_minorplanet_with_faction", ":giver_faction_no"),
                             (assign, ":quest_target_center", reg0),
                             (store_random_in_range, ":quest_target_dna", 0, 1000000),
                             (assign, ":result", ":quest_no"),
@@ -25392,7 +25392,7 @@ scripts = [
                           (eq, ":quest_no", "qst_bounty_4"),
                           (try_begin),
                             (ge, "$g_talk_troop_faction_relation", 0),
-                            (call_script, "script_cf_select_random_village_with_faction", ":giver_faction_no"),
+                            (call_script, "script_cf_select_random_minorplanet_with_faction", ":giver_faction_no"),
                             (assign, ":quest_target_center", reg0),
                             (store_random_in_range, ":quest_target_dna", 0, 1000000),
                             (assign, ":result", ":quest_no"),
@@ -25403,7 +25403,7 @@ scripts = [
                           (eq, ":quest_no", "qst_bounty_5"),
                           (try_begin),
                             (ge, "$g_talk_troop_faction_relation", 0),
-                            (call_script, "script_cf_select_random_village_with_faction", ":giver_faction_no"),
+                            (call_script, "script_cf_select_random_minorplanet_with_faction", ":giver_faction_no"),
                             (assign, ":quest_target_center", reg0),
                             (store_random_in_range, ":quest_target_dna", 0, 1000000),
                             (assign, ":result", ":quest_no"),
@@ -25414,7 +25414,7 @@ scripts = [
                           (eq, ":quest_no", "qst_bounty_6"),
                           (try_begin),
                             (ge, "$g_talk_troop_faction_relation", 0),
-                            (call_script, "script_cf_select_random_village_with_faction", ":giver_faction_no"),
+                            (call_script, "script_cf_select_random_minorplanet_with_faction", ":giver_faction_no"),
                             (assign, ":quest_target_center", reg0),
                             (store_random_in_range, ":quest_target_dna", 0, 1000000),
                             (assign, ":result", ":quest_no"),
@@ -25552,7 +25552,7 @@ scripts = [
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_imperial_stormtrooper"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_imperial_messenger"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_imperial_stormtrooper_officer"),
-                      (faction_set_slot, "fac_player_supporters_faction",  slot_faction_castle_guard_troop, "trp_imperial_royal_guard"),
+                      (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_imperial_royal_guard"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_kingdom_1_reinforcements_a"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_kingdom_1_reinforcements_b"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_kingdom_1_reinforcements_c"),
@@ -25609,7 +25609,7 @@ scripts = [
                       (faction_set_slot, "fac_player_supporters_faction", slot_faction_messenger_troop, "trp_rebel_messenger"),
                       (faction_set_slot, "fac_player_supporters_faction", slot_faction_guard_troop, "trp_rebel_trooper"),
                       (faction_set_slot, "fac_player_supporters_faction", slot_faction_prison_guard_troop, "trp_wookiee_warrior"),
-                      (faction_set_slot, "fac_player_supporters_faction", slot_faction_castle_guard_troop, "trp_rebel_honor_guard"),
+                      (faction_set_slot, "fac_player_supporters_faction", slot_faction_spacestation_guard_troop, "trp_rebel_honor_guard"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_kingdom_2_reinforcements_a"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_kingdom_2_reinforcements_b"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_kingdom_2_reinforcements_c"),
@@ -25696,7 +25696,7 @@ scripts = [
                       (faction_set_slot, "fac_player_supporters_faction", slot_faction_messenger_troop, "trp_hutt_messenger"),
                       (faction_set_slot, "fac_player_supporters_faction", slot_faction_guard_troop, "trp_hutt_guard"),
                       (faction_set_slot, "fac_player_supporters_faction", slot_faction_prison_guard_troop, "trp_gamorrean_guard"),
-                      (faction_set_slot, "fac_player_supporters_faction", slot_faction_castle_guard_troop, "trp_gamorrean_guard"),
+                      (faction_set_slot, "fac_player_supporters_faction", slot_faction_spacestation_guard_troop, "trp_gamorrean_guard"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_kingdom_3_reinforcements_a"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_kingdom_3_reinforcements_b"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_kingdom_3_reinforcements_c"),
@@ -25787,7 +25787,7 @@ scripts = [
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_human_messenger"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_security_guard"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_security_guard"),
-                      (faction_set_slot, "fac_player_supporters_faction",  slot_faction_castle_guard_troop, "trp_bodyguard"),
+                      (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_bodyguard"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_kingdom_human_reinforcements_a"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_kingdom_human_reinforcements_b"),
                       (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_kingdom_human_reinforcements_c"),
@@ -25805,7 +25805,7 @@ scripts = [
                       (faction_set_slot, "fac_neutral",  slot_faction_messenger_troop, "trp_human_messenger"),
                       (faction_set_slot, "fac_neutral",  slot_faction_guard_troop, "trp_security_guard"),
                       (faction_set_slot, "fac_neutral",  slot_faction_prison_guard_troop, "trp_security_guard"),
-                      (faction_set_slot, "fac_neutral",  slot_faction_castle_guard_troop, "trp_bodyguard"),
+                      (faction_set_slot, "fac_neutral",  slot_faction_spacestation_guard_troop, "trp_bodyguard"),
                       (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_kingdom_human_reinforcements_a"),
                       (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_kingdom_human_reinforcements_b"),
                       (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_kingdom_human_reinforcements_c"),
@@ -26210,7 +26210,7 @@ scripts = [
                       (store_script_param_1, ":c_town"),
                       #SW - display a new menu background depending on the location
                       (try_begin), # same mnu_town is used for towns and castles
-                        (party_slot_eq,":c_town",slot_party_type, spt_town),
+                        (party_slot_eq,":c_town",slot_party_type, spt_mainplanet),
                         (try_begin),
                           (eq, ":c_town", "p_endor"),				#Endor
                           (set_background_mesh, "mesh_pic_fullscreen_mainplanet_endor"),
@@ -26260,7 +26260,7 @@ scripts = [
                         (party_slot_eq,":c_town",slot_party_type, spt_castle),
                         (set_background_mesh, "mesh_pic_fullscreen_spacestation"),
                       (else_try),
-                        (party_slot_eq,":c_town",slot_party_type, spt_village),
+                        (party_slot_eq,":c_town",slot_party_type, spt_minorplanet),
                         (store_random_in_range, ":rand", 0, 100),
                         (try_begin),
                           (lt, ":rand", 50),
@@ -26278,39 +26278,38 @@ scripts = [
                   # Output: none (executes set_rain command, must go in ti_before_mission_start)
                   ("change_rain",
                     [
-                      (store_script_param_1, ":c_town"),
+                      #(store_script_param_1, ":c_town"),
                       #SW - change the weather depending on the location
-                      (try_begin), # same mnu_town is used for towns and castles
-                        (party_slot_eq,":c_town",slot_party_type, spt_town),
+                      #(try_begin), # same mnu_town is used for towns and castles
+                        #(party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
                         (try_begin),
-                          (eq, ":c_town", "p_mon_cal"),				#Mon Cal
+                          (eq, "$current_town", "p_mon_cal"),				#Mon Cal
                           (store_random_in_range, ":random", 50, 100),
                           (set_rain,1,":random"),
                         (else_try),
-                          (eq, ":c_town", "p_hoth"),				#Hoth
+                          (eq, "$current_town", "p_hoth"),				#Hoth
                           (store_random_in_range, ":random", 60, 100),
                           (set_rain,2,":random"),
                         (else_try),
-                          (eq, ":c_town", "p_kamino"),				#Kamino
+                          (eq, "$current_town", "p_kamino"),				#Kamino
+                          (set_rain,1,100),
+                          #(set_fog_distance, 20, 0xFFFFFFFF),
+                        (else_try),
+                          (eq, "$current_town", "p_minorplanet_62"),				#vjun
                           (store_random_in_range, ":random", 79, 100),
                           (set_rain,1,100),
-                          (set_fog_distance, 20, 0xFFFFFFFF),
+                          #(set_fog_distance, 40, 0xFFFFFFFF),
                         (else_try),
-                          (eq, ":c_town", "p_village_62"),				#vjun
-                          (store_random_in_range, ":random", 79, 100),
-                          (set_rain,1,100),
-                          (set_fog_distance, 40, 0xFFFFFFFF),
-                        (else_try),
-                          (this_or_next|eq, ":c_town", "p_geonosis"),			#Geonosis / without atmosferic effects
-                          (this_or_next|eq, ":c_town", "p_kessel"),				#Kessel   / without atmosferic effects
-                          (this_or_next|eq, ":c_town", "p_tatooine"),			#Tatooine / without atmosferic effects
-                          (this_or_next|eq, ":c_town", "p_ryloth"),				#Ryloth   / without atmosferic effects
-                          (this_or_next|eq, ":c_town", "p_mustafar"),			#Mustafar / without atmosferic effects
-                          (this_or_next|eq, ":c_town", "p_sarapin"),			#Sarapin  / without atmosferic effects
-                          (eq, ":c_town", "p_hypori"),			            	#Hypori   / without atmosferic effects
+                          # (this_or_next|eq, ":c_town", "p_geonosis"),			#Geonosis / without atmosferic effects
+                          # (this_or_next|eq, ":c_town", "p_kessel"),				#Kessel   / without atmosferic effects
+                          # (this_or_next|eq, ":c_town", "p_tatooine"),			#Tatooine / without atmosferic effects
+                          # (this_or_next|eq, ":c_town", "p_ryloth"),				#Ryloth   / without atmosferic effects
+                          # (this_or_next|eq, ":c_town", "p_mustafar"),			#Mustafar / without atmosferic effects
+                          # (this_or_next|eq, ":c_town", "p_sarapin"),			#Sarapin  / without atmosferic effects
+                          # (eq, ":c_town", "p_hypori"),			            	#Hypori   / without atmosferic effects
                           (set_rain,0,0),
                         (try_end),
-                      (try_end),
+                      #(try_end),
                     ]
                   ),
                   
@@ -26328,11 +26327,11 @@ scripts = [
                         (party_set_slot, ":center_no", ":type_slot", walkert_default),
                         
                         # (try_begin),	#village
-                        # (party_slot_eq, ":center_no", slot_party_type, spt_village),
-                        # (store_random_in_range, ":walker_troop_id", village_walkers_begin, village_walkers_end),
+                        # (party_slot_eq, ":center_no", slot_party_type, spt_minorplanet),
+                        # (store_random_in_range, ":walker_troop_id", minorplanet_walkers_begin, minorplanet_walkers_end),
                         # (else_try),	#town/castle
                         (try_begin),
-                          (this_or_next|party_slot_eq, ":center_no", slot_party_type, spt_town),
+                          (this_or_next|party_slot_eq, ":center_no", slot_party_type, spt_mainplanet),
                           (party_slot_eq, ":center_no", slot_party_type, spt_castle),
                           
                           #modified town_walkers so certain planets only have certain walkers - example code originally posted by Keedo420
@@ -26362,19 +26361,19 @@ scripts = [
                             (assign, ":town_walkers_modified_begin",town17_walkers_begin),
                             (assign, ":town_walkers_modified_end",town17_walkers_end),
                           (else_try),
-                            (eq, ":center_no", "p_village_35"), #Iridonia - Zabrak walkers
+                            (eq, ":center_no", "p_minorplanet_35"), #Iridonia - Zabrak walkers
                             (assign, ":town_walkers_modified_begin",iridonia_walkers_begin),
                             (assign, ":town_walkers_modified_end",iridonia_walkers_end),
                           (else_try),
-                            (eq, ":center_no", "p_village_53"), #Pzob - Gamorreans
+                            (eq, ":center_no", "p_minorplanet_53"), #Pzob - Gamorreans
                             (assign, ":town_walkers_modified_begin",pzob_walkers_begin),
                             (assign, ":town_walkers_modified_end",pzob_walkers_end),
                           (else_try),
-                            (eq, ":center_no", "p_village_58"), #Rodia - Added Rodians
+                            (eq, ":center_no", "p_minorplanet_58"), #Rodia - Added Rodians
                             (assign, ":town_walkers_modified_begin",rodia_walkers_begin),
                             (assign, ":town_walkers_modified_end",rodia_walkers_end),
                           (else_try),
-                            (eq, ":center_no", "p_village_42"), #Bothawui Moon - Added Bothans
+                            (eq, ":center_no", "p_minorplanet_42"), #Bothawui Moon - Added Bothans
                             (assign, ":town_walkers_modified_begin",bothaw_moon_walkers_begin),
                             (assign, ":town_walkers_modified_end",bothaw_moon_walkers_end),
                           (else_try),
@@ -29342,6 +29341,31 @@ scripts = [
                         (party_set_slot, "p_spaceship_nebulon", slot_spaceship_trade_computer_max, 0),
                         (party_set_slot, "p_spaceship_nebulon", slot_spaceship_cargo_capacity_min, 1),
                         (party_set_slot, "p_spaceship_nebulon", slot_spaceship_cargo_capacity_max, 2),
+						
+						
+						#spaceship_starchaser
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_name, "str_spaceship_starchaser_name"),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_price, 17000),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_desc, "str_spaceship_starchaser_desc"),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_icon, "icon_starchaser"),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_base_speed, 85),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_drive_min, 3),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_drive_max, 4),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_scanner_min, 1),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_scanner_max, 2),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_combat_computer_min, 1),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_combat_computer_max, 3),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_troop_capacity_min, 2),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_troop_capacity_max, 3),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_medical_bay_min, 0),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_medical_bay_max, 0),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_prisoner_capacity_min, 0),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_prisoner_capacity_max, 2),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_trade_computer_min, 0),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_trade_computer_max, 0),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_cargo_capacity_min, 0),
+                        (party_set_slot, "p_spaceship_starchaser", slot_spaceship_cargo_capacity_max, 0),
+							
                         # end of assign slots
                         
                     ]),
@@ -30154,7 +30178,7 @@ scripts = [
 							(eq, "trp_b2series_enhanced", ":cur_agent_troop"),
                             (agent_set_stand_animation, ":agent_no", "anim_b2_stand"),
                             (agent_set_walk_forward_animation, ":agent_no", "anim_b2_walk"),
-							(agent_set_speed_limit,":agent_no",5),
+							(agent_set_speed_limit,":agent_no",6),
                           (else_try),
                             #Hutt Dancer
                             (eq,":location_flag",1),

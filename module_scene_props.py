@@ -543,7 +543,6 @@ scene_props = [
   ("swy_Planet_forest",0,"swy_Planet_forest","bo_planet", []),
   ("swy_Planet_frozen",0,"swy_Planet_frozen","bo_planet", []),
   ("swy_Planet_geonosis",0,"swy_Planet_geonosis","bo_planet", []),
-  ("swy_Planet_lava",0,"swy_Planet_lava","bo_planet", []),
   ("swy_rePlanet_craters",0,"swy_rePlanet_craters","bo_planet", []),
   ("swy_rePlanet_earth",0,"swy_rePlanet_earth","bo_planet", []),
   ("swy_Planet_lava",0,"swy_Planet_lava","bo_planet", []),
@@ -1976,16 +1975,16 @@ scene_props = [
 #  ("colonial_one",0,"colonial_one","0", []),
 #  ("olympic_carrier",0,"olympic_carrier","0", []),
 
-  ("target1",sokf_invisible,"target_arrow","0", []),
-  ("target2",sokf_invisible,"target_arrow","0", []),
-  ("target3",sokf_invisible,"target_arrow","0", []),
-  ("target4",sokf_invisible,"target_arrow","0", []),
-  ("target5",sokf_invisible,"target_arrow","0", []),
-  ("target6",sokf_invisible,"target_arrow","0", []),
-  ("target7",sokf_invisible,"target_arrow","0", []),
-  ("target8",sokf_invisible,"target_arrow","0", []),
-  ("target9",sokf_invisible,"target_arrow","0", []),
-  ("target_end",sokf_invisible,"target_arrow","0", []),
+  ("target1",sokf_invisible,"0","0", []),
+  ("target2",sokf_invisible,"0","0", []),
+  ("target3",sokf_invisible,"0","0", []),
+  ("target4",sokf_invisible,"0","0", []),
+  ("target5",sokf_invisible,"0","0", []),
+  ("target6",sokf_invisible,"0","0", []),
+  ("target7",sokf_invisible,"0","0", []),
+  ("target8",sokf_invisible,"0","0", []),
+  ("target9",sokf_invisible,"0","0", []),
+  ("target_end",sokf_invisible,"0","0", []),
 
   ("missile",0,"laser_bolt_blue","0", []),
   ("rocket",0,"0","0", []),
@@ -2012,6 +2011,21 @@ scene_props = [
    ("swy_city_wall_hypori",0,"swy_city_wall_hypori","bo_swy_city_wall", []),
    ("swy_city_wall_hypori2",0,"swy_city_wall_hypori2","bo_swy_city_wall", []),
    ("swy_city_wall_sarapin",0,"swy_city_wall_sarapin","bo_swy_city_wall", []),
+   
+	("swy_ground_floor_imperial",0,"swy_ground_floor_imperial","bo_swy_city_ground", []),
+    ("swy_city_wall_floor_imperial",0,"swy_city_wall_floor_imperial","bo_swy_city_wall", []),
+	("swy_ground_floor_imperial_hangar",0,"swy_ground_floor_imperial_hangar","bo_swy_city_ground", []),
+    ("swy_city_wall_floor_imperial_hangar",0,"swy_city_wall_floor_imperial_hangar","bo_swy_city_wall", []),
+	("swy_ground_floor_rebel",0,"swy_ground_floor_rebel","bo_swy_city_ground", []),
+    ("swy_city_wall_floor_rebel",0,"swy_city_wall_floor_rebel","bo_swy_city_wall", []),
+	("swy_ground_moncal_light",0,"swy_ground_moncal_light","bo_swy_city_ground", []),
+    ("swy_city_wall_moncal_light",0,"swy_city_wall_moncal_light","bo_swy_city_wall", []),
+    ("swy_city_wall_deathstar",0,"swy_city_wall_deathstar","bo_swy_city_wall", []),
+	("swy_ground_deathstar2",0,"swy_ground_deathstar2","bo_swy_city_ground", []),
+    ("swy_city_wall_deathstar2",0,"swy_city_wall_deathstar2","bo_swy_city_wall", []),
+	("swy_ground_deathstar3",0,"swy_ground_deathstar3","bo_swy_city_ground", []),
+    ("swy_city_wall_deathstar3",0,"swy_city_wall_deathstar3","bo_swy_city_wall", []),
+   
    ("swy_palm",0,"swy_palm","bo_swy_palm", []),   
    ("swy_saleucami_rock",0,"swy_saleucami_rock","bo_swy_saleucami_rock", []),   
    ("swy_saleucami_rock2",0,"swy_saleucami_rock2","bo_swy_saleucami_rock2", []),   
@@ -2041,7 +2055,7 @@ scene_props = [
     (ti_on_scene_prop_hit,
     [
         (play_sound, "snd_deflector_shield_hit"),
-        (particle_system_burst, "psys_dummy_smoke", pos1, 100),		#percentage_burst_strength is 100
+        (particle_system_burst, "psys_deflector_shield_hit", pos1, 100),		#percentage_burst_strength is 100
     ]),	
     (ti_on_scene_prop_init,
     [
@@ -2061,7 +2075,7 @@ scene_props = [
     (ti_on_scene_prop_hit,
     [
         (play_sound, "snd_deflector_shield_hit"),
-        (particle_system_burst, "psys_dummy_smoke", pos1, 100),		#percentage_burst_strength is 100
+        (particle_system_burst, "psys_deflector_shield_hit_red", pos1, 100),		#percentage_burst_strength is 100
     ]),	
     (ti_on_scene_prop_init,
     [

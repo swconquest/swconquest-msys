@@ -75,7 +75,7 @@ factions = [
 ##  ("kingdom_4_rebels",  "Nord rebels",    0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05)], [], 0xCC2211),
 ##  ("kingdom_5_rebels",  "Rhodok rebels",  0, 0.9, [("outlaws",-0.05),("peasant_rebels", -0.1),("deserters", -0.02),("black_sun_pirates", -0.05),("blazing_claw_pirates", -0.05)], [], 0xCC2211),
 
-  ("kingdoms_end","kingdoms_end", 0, 0,[], []),
+  ("factions_end","factions_end", 0, 0,[], []),
 
   ("robber_knights",  "robber_knights", 0, 0.1, [], []),
 

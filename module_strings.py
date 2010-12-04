@@ -276,7 +276,7 @@ strings = [
 
   ("town_nighttime"," It is late at night and honest folk have abandoned the streets."),
   ("door_locked","The door is locked."),
-  ("castle_is_abondened","The planet seems to be unoccupied."),
+  ("spacestation_is_abondened","The planet seems to be unoccupied."),
   ("town_is_abondened","The planet has no garrison defending it."),
   ("place_is_occupied_by_player","The place is held by your own troops."),
   ("place_is_occupied_by_enemy", "The place is held by hostile troops."),
@@ -428,17 +428,17 @@ strings = [
   ("town_prosperity_90",   "The planet of {s60} is opulent and crowded with well-to-do people."),
   ("town_prosperity_100",  "The glittering planet of {s60} openly flaunts its great wealth."),
 
-  ("village_prosperity_0",   "The poverty of the planet of {s60} is unbearable."),
-  ("village_prosperity_10",  "The planet of {s60} looks wretchedly poor and miserable."),
-  ("village_prosperity_20",  "The planet of {s60} looks very poor and desolate."),
-  ("village_prosperity_30",  "The planet of {s60} looks poor and neglected."),
-  ("village_prosperity_40",  "The planet of {s60} appears to be somewhat poor and struggling."),
-  ("village_prosperity_50",  "The planet of {s60} seems unremarkable."),
-  ("village_prosperity_60",  "The planet of {s60} seems to be flourishing."),
-  ("village_prosperity_70",  "The planet of {s60} appears to be thriving."),
-  ("village_prosperity_80",  "The planet of {s60} looks rich and well-maintained."),
-  ("village_prosperity_90",  "The planet of {s60} looks very rich and prosperous."),
-  ("village_prosperity_100", "The planet of {s60}, looks immensely rich."),
+  ("minorplanet_prosperity_0",   "The poverty of the planet of {s60} is unbearable."),
+  ("minorplanet_prosperity_10",  "The planet of {s60} looks wretchedly poor and miserable."),
+  ("minorplanet_prosperity_20",  "The planet of {s60} looks very poor and desolate."),
+  ("minorplanet_prosperity_30",  "The planet of {s60} looks poor and neglected."),
+  ("minorplanet_prosperity_40",  "The planet of {s60} appears to be somewhat poor and struggling."),
+  ("minorplanet_prosperity_50",  "The planet of {s60} seems unremarkable."),
+  ("minorplanet_prosperity_60",  "The planet of {s60} seems to be flourishing."),
+  ("minorplanet_prosperity_70",  "The planet of {s60} appears to be thriving."),
+  ("minorplanet_prosperity_80",  "The planet of {s60} looks rich and well-maintained."),
+  ("minorplanet_prosperity_90",  "The planet of {s60} looks very rich and prosperous."),
+  ("minorplanet_prosperity_100", "The planet of {s60}, looks immensely rich."),
 
   ("war_report_minus_4",   "we are about to lose the war"),
   ("war_report_minus_3",   "the situation looks bleak"),
@@ -1348,19 +1348,19 @@ strings = [
 
 
 #Actions vis-a-vis civilians
-  ("comment_you_raided_my_village_enemy_benevolent",    "You have attacked innocent farmers under my protection on the planet of {s51}.  I will punish you for your misdeeds!"), 
-  ("comment_you_raided_my_village_enemy_spiteful",      "You have raided the planet of {s51}, destroying my property and killing some citizens. I will take my compensation in blood!"), 
-  ("comment_you_raided_my_village_enemy_coldblooded",   "You have raided the planet of {s51}, destroying my property and killing some citizens. I will make you think twice before you disrupt my revenues like that again."), 
-  ("comment_you_raided_my_village_enemy",               "You have raided the planet of {s51}, destroying my property and killing citizens under my protection. You will pay the price for your crime!"), 
-  ("comment_you_raided_my_village_unfriendly_spiteful", "You have raided the planet of {s51}. Do it again and I'll gut you like a fish."),
-  ("comment_you_raided_my_village_friendly",            "You have raided the planet of {s51}. This will place a grave strain on our friendship."),
-  ("comment_you_raided_my_village_default",             "You have raided the planet of {s51}. If you continue to behave this way, we may soon come to blows."),
+  ("comment_you_raided_my_minorplanet_enemy_benevolent",    "You have attacked innocent farmers under my protection on the planet of {s51}.  I will punish you for your misdeeds!"), 
+  ("comment_you_raided_my_minorplanet_enemy_spiteful",      "You have raided the planet of {s51}, destroying my property and killing some citizens. I will take my compensation in blood!"), 
+  ("comment_you_raided_my_minorplanet_enemy_coldblooded",   "You have raided the planet of {s51}, destroying my property and killing some citizens. I will make you think twice before you disrupt my revenues like that again."), 
+  ("comment_you_raided_my_minorplanet_enemy",               "You have raided the planet of {s51}, destroying my property and killing citizens under my protection. You will pay the price for your crime!"), 
+  ("comment_you_raided_my_minorplanet_unfriendly_spiteful", "You have raided the planet of {s51}. Do it again and I'll gut you like a fish."),
+  ("comment_you_raided_my_minorplanet_friendly",            "You have raided the planet of {s51}. This will place a grave strain on our friendship."),
+  ("comment_you_raided_my_minorplanet_default",             "You have raided the planet of {s51}. If you continue to behave this way, we may soon come to blows."),
 
-  ("comment_you_robbed_my_village_enemy_coldblooded", "You have robbed the citizens on the planet of {s51}. I take that as a personal insult."), 
-  ("comment_you_robbed_my_village_enemy",             "You have robbed innocent farmers under my protection on the planet of {s51}.  I will punish you for your misdeeds!"), 
-  ("comment_you_robbed_my_village_friendly_spiteful", "I have heard that you pinched some food from the citizens on {s51}. Well, I'll not begrudge you a scrap or two, but keep in mind that I'm the one who must listen to their whining afterward."),
-  ("comment_you_robbed_my_village_friendly",          "I have heard that you requisitioned supplies from the citizens on {s51}. I am sure that you would not have done so were you not desperately in need."),
-  ("comment_you_robbed_my_village_default",           "You have robbed the citizens on the planet of {s51}. If you continue to behave this way, we may soon come to blows."),
+  ("comment_you_robbed_my_minorplanet_enemy_coldblooded", "You have robbed the citizens on the planet of {s51}. I take that as a personal insult."), 
+  ("comment_you_robbed_my_minorplanet_enemy",             "You have robbed innocent farmers under my protection on the planet of {s51}.  I will punish you for your misdeeds!"), 
+  ("comment_you_robbed_my_minorplanet_friendly_spiteful", "I have heard that you pinched some food from the citizens on {s51}. Well, I'll not begrudge you a scrap or two, but keep in mind that I'm the one who must listen to their whining afterward."),
+  ("comment_you_robbed_my_minorplanet_friendly",          "I have heard that you requisitioned supplies from the citizens on {s51}. I am sure that you would not have done so were you not desperately in need."),
+  ("comment_you_robbed_my_minorplanet_default",           "You have robbed the citizens on the planet of {s51}. If you continue to behave this way, we may soon come to blows."),
 
   ("comment_you_accosted_my_caravan_enemy",          "You have been accosting caravans under my protection. But your trail of brigandage will soon come to an end."),
   ("comment_you_accosted_my_caravan_default",        "You have been accosting caravans under my protection. This sort of behavior must stop."),
@@ -1376,15 +1376,15 @@ strings = [
 #Combat-related events
 
 
-  ("comment_you_captured_a_castle_allied_friendly",            "I heard that you have besieged and taken {s51}. That was a great dead, and I am proud to call you my friend!"), 
-  ("comment_you_captured_a_castle_allied_spiteful",            "I heard that you have besieged and taken {s51}. Good work! Soon, we will have all their fortresses to despoil, their treasuries to ransack, their grieving widows to serve us our wine."), 
-  ("comment_you_captured_a_castle_allied_unfriendly_spiteful", "I heard that you have besieged and taken {s51}. Well, every dog has his day, or so they say. Enjoy it while you can, until your betters kick you back out in the cold where you belong."), 
-  ("comment_you_captured_a_castle_allied_unfriendly",          "I heard that you have besieged and taken {s51}. Whatever our differences in the past, I must offer you my congratulations."), 
-  ("comment_you_captured_a_castle_allied",                     "I heard that you have besieged and taken {s51}. We have them on the run!"), 
+  ("comment_you_captured_a_spacestation_allied_friendly",            "I heard that you have besieged and taken {s51}. That was a great dead, and I am proud to call you my friend!"), 
+  ("comment_you_captured_a_spacestation_allied_spiteful",            "I heard that you have besieged and taken {s51}. Good work! Soon, we will have all their fortresses to despoil, their treasuries to ransack, their grieving widows to serve us our wine."), 
+  ("comment_you_captured_a_spacestation_allied_unfriendly_spiteful", "I heard that you have besieged and taken {s51}. Well, every dog has his day, or so they say. Enjoy it while you can, until your betters kick you back out in the cold where you belong."), 
+  ("comment_you_captured_a_spacestation_allied_unfriendly",          "I heard that you have besieged and taken {s51}. Whatever our differences in the past, I must offer you my congratulations."), 
+  ("comment_you_captured_a_spacestation_allied",                     "I heard that you have besieged and taken {s51}. We have them on the run!"), 
 
-  ("comment_you_captured_my_castle_enemy_spiteful",            "I hear that you have broken into my home at {s51}. I hope the dungeon is to your liking, as you will be spending much time there in the years to come."),
-  ("comment_you_captured_my_castle_enemy_chivalrous",          "You hold {s51}, my rightful fief. I hope you will give me the chance to win it back!"),
-  ("comment_you_captured_my_castle_enemy",                     "You have something that belongs to me -- {s51}. I will make you relinquish it."),
+  ("comment_you_captured_my_spacestation_enemy_spiteful",            "I hear that you have broken into my home at {s51}. I hope the dungeon is to your liking, as you will be spending much time there in the years to come."),
+  ("comment_you_captured_my_spacestation_enemy_chivalrous",          "You hold {s51}, my rightful fief. I hope you will give me the chance to win it back!"),
+  ("comment_you_captured_my_spacestation_enemy",                     "You have something that belongs to me -- {s51}. I will make you relinquish it."),
 
 ###Add some variation to these
   ("comment_we_defeated_a_lord_unfriendly_spiteful",           "I suppose you will want to drink to the memory of our victory over {s54}. Well, save your wine -- it will take more than that to wipe out the stain of your earlier disgraces."), 
@@ -2272,6 +2272,10 @@ We apologize sincerely if you contributed your suggestions and feedback but were
   ("spaceship_cis_star_cruiser_desc", "Though initially designed as a heavy transport, the Lucrehulk-class ship ^is multipurpose and perfectly defends itself."),
   ("spaceship_nebulon_name", "EF76 Nebulon-B Frigate"),
   ("spaceship_nebulon_desc", "Designed as an anti-starfighter battleship, the Nebulon Frigate^is great for escorting, but can be also converted into medical ship."), 
+  ("spaceship_starchaser_name", "R-41 Starchaser Fighter"),
+  ("spaceship_starchaser_desc", "Though outdated already for the Galactic Civil War this fighter has powerful drives and good weaponry."),   
+  
+  
 #SW - spaceship string ends
   ("swy_space_battles_won", "-Victory-"),
   ("swy_space_battles_won_desc", "Congratulations, commander^You have won the battle..."),

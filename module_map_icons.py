@@ -23,9 +23,9 @@ from ID_sounds import *
 
 banner_scale = 0.35
 #avatar_scale = 0.15
-planet_town_scale = 0.80
+planet_main_scale = 0.80
 planet_training_scale = 0.55
-planet_village_scale = 0.5
+planet_minor_scale = 0.5
 death_star_scale = 0.7
 spacestation_scale = 0.5
 cis_star_cruiser_scale = 0.60
@@ -64,6 +64,7 @@ map_icons = [
   ("hutt_patrol",mcn_no_shadow,"Hutt_Patrol", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),
   #purchasable ships - other
   ("nebulon",mcn_no_shadow,"swy_nebulon", cis_star_cruiser_scale,0),
+  ("starchaser",mcn_no_shadow,"vec_starchaser", ship_small_scale,0),
   ("z95",mcn_no_shadow,"z96", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("scyk_fighter",mcn_no_shadow,"hutt_scyk_fighter", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
   ("mercenary_raider",mcn_no_shadow,"mercenary_raider", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),    
@@ -108,80 +109,80 @@ map_icons = [
   ("outpost_b",mcn_no_shadow,"spacestation4", spacestation_scale,0),
   
   #SW - have to use native icons when using the map editor
-  # ("sw_planet_green",mcn_no_shadow,"map_castle_a", 0.35,0),
-  # ("sw_outpost",mcn_no_shadow,"map_castle_a", 0.35,0),
-  # ("sw_outpost_grey",mcn_no_shadow,"map_castle_a", 0.35,0),
-  # ("sw_base1",mcn_no_shadow,"map_castle_a", 0.35,0),
-  # ("sw_base2",mcn_no_shadow,"map_castle_a", 0.35,0),
-  # ("sw_base3",mcn_no_shadow,"map_castle_a", 0.35,0),    
-  # ("asteroid_base",mcn_no_shadow,"map_castle_a", spacestation_scale,0),
-  # ("trade_federation_base",mcn_no_shadow,"map_castle_a", spacestation_scale,0),
+  # ("sw_planet_green",mcn_no_shadow,"map_spacestation_a", 0.35,0),
+  # ("sw_outpost",mcn_no_shadow,"map_spacestation_a", 0.35,0),
+  # ("sw_outpost_grey",mcn_no_shadow,"map_spacestation_a", 0.35,0),
+  # ("sw_base1",mcn_no_shadow,"map_spacestation_a", 0.35,0),
+  # ("sw_base2",mcn_no_shadow,"map_spacestation_a", 0.35,0),
+  # ("sw_base3",mcn_no_shadow,"map_spacestation_a", 0.35,0),    
+  # ("asteroid_base",mcn_no_shadow,"map_spacestation_a", spacestation_scale,0),
+  # ("trade_federation_base",mcn_no_shadow,"map_spacestation_a", spacestation_scale,0),
   
 #towns
   #SW - new town icon
-  ("sw_town_green",mcn_no_shadow,"planet_green",planet_town_scale,0),
-  ("sw_town_green_water",mcn_no_shadow,"planet_green_water",planet_town_scale,0),  
-  ("sw_town_snow",mcn_no_shadow,"planet_snow",planet_town_scale,0),  
-  ("sw_town_snow_water",mcn_no_shadow,"planet_snow",planet_town_scale,0),    
-  #("sw_town_gas",mcn_no_shadow,"planet_gas",planet_town_scale,0),      
-  ("sw_town_plain",mcn_no_shadow,"planet_plain",planet_town_scale,0),        
-  ("sw_town_craters",mcn_no_shadow,"planet_craters",planet_town_scale,0),   
-  ("sw_town_green_b",mcn_no_shadow,"planet_green_b",planet_town_scale,0),   
-  ("sw_town_green_rock",mcn_no_shadow,"planet_green_rock",planet_town_scale,0),   
-  ("sw_town_ice_rock",mcn_no_shadow,"planet_ice_rock",planet_town_scale,0),   
-  ("sw_town_red_rock",mcn_no_shadow,"planet_red_rock",planet_town_scale,0),   
-  ("sw_town_volcanic",mcn_no_shadow,"planet_volcanic",planet_town_scale,0),   
-  ("sw_town_water",mcn_no_shadow,"planet_water",planet_town_scale,0),   
-  ("sw_town_industrial",mcn_no_shadow,"planet_industrial", planet_town_scale,0),
+  ("sw_town_green",mcn_no_shadow,"planet_green",planet_main_scale,0),
+  ("sw_town_green_water",mcn_no_shadow,"planet_green_water",planet_main_scale,0),  
+  ("sw_town_snow",mcn_no_shadow,"planet_snow",planet_main_scale,0),  
+  ("sw_town_snow_water",mcn_no_shadow,"planet_snow",planet_main_scale,0),    
+  #("sw_town_gas",mcn_no_shadow,"planet_gas",planet_main_scale,0),      
+  ("sw_town_plain",mcn_no_shadow,"planet_plain",planet_main_scale,0),        
+  ("sw_town_craters",mcn_no_shadow,"planet_craters",planet_main_scale,0),   
+  ("sw_town_green_b",mcn_no_shadow,"planet_green_b",planet_main_scale,0),   
+  ("sw_town_green_rock",mcn_no_shadow,"planet_green_rock",planet_main_scale,0),   
+  ("sw_town_ice_rock",mcn_no_shadow,"planet_ice_rock",planet_main_scale,0),   
+  ("sw_town_red_rock",mcn_no_shadow,"planet_red_rock",planet_main_scale,0),   
+  ("sw_town_volcanic",mcn_no_shadow,"planet_volcanic",planet_main_scale,0),   
+  ("sw_town_water",mcn_no_shadow,"planet_water",planet_main_scale,0),   
+  ("sw_town_industrial",mcn_no_shadow,"planet_industrial", planet_main_scale,0),
   
  #SW - have to use these icons when using the map editor?
-  # ("sw_town_green",mcn_no_shadow,"map_town_a",planet_town_scale,0),
-  # ("sw_town_green_water",mcn_no_shadow,"map_town_a",planet_town_scale,0),  
-  # ("sw_town_snow",mcn_no_shadow,"map_town_a",planet_town_scale,0),  
-  # ("sw_town_snow_water",mcn_no_shadow,"map_town_a",planet_town_scale,0),    
-  # #("sw_town_gas",mcn_no_shadow,"planet_gas",planet_town_scale,0),      
-  # ("sw_town_plain",mcn_no_shadow,"map_town_a",planet_town_scale,0),        
-  # ("sw_town_craters",mcn_no_shadow,"map_town_a",planet_town_scale,0),            
+  # ("sw_town_green",mcn_no_shadow,"map_town_a",planet_main_scale,0),
+  # ("sw_town_green_water",mcn_no_shadow,"map_town_a",planet_main_scale,0),  
+  # ("sw_town_snow",mcn_no_shadow,"map_town_a",planet_main_scale,0),  
+  # ("sw_town_snow_water",mcn_no_shadow,"map_town_a",planet_main_scale,0),    
+  # #("sw_town_gas",mcn_no_shadow,"planet_gas",planet_main_scale,0),      
+  # ("sw_town_plain",mcn_no_shadow,"map_town_a",planet_main_scale,0),        
+  # ("sw_town_craters",mcn_no_shadow,"map_town_a",planet_main_scale,0),            
   
   #death star
   
 #villages  
-  ("village_a",mcn_no_shadow,"planet_craters",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("village_burnt_a",mcn_no_shadow,"planet_craters", planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("village_deserted_a",mcn_no_shadow,"planet_craters",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("village_snow_a",mcn_no_shadow,"planet_gas",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("village_snow_burnt_a",mcn_no_shadow,"planet_gas",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("village_snow_deserted_a",mcn_no_shadow,"planet_gas",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),  
+  ("minorplanet_a",mcn_no_shadow,"planet_craters",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("minorplanet_burnt_a",mcn_no_shadow,"planet_craters", planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("minorplanet_deserted_a",mcn_no_shadow,"planet_craters",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("minorplanet_snow_a",mcn_no_shadow,"planet_gas",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("minorplanet_snow_burnt_a",mcn_no_shadow,"planet_gas",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("minorplanet_snow_deserted_a",mcn_no_shadow,"planet_gas",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),  
   #new icons for villages
-  ("sw_village_01",mcn_no_shadow,"Planet_Var_01",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_02",mcn_no_shadow,"Planet_Var_02",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_03",mcn_no_shadow,"Planet_Var_03",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_04",mcn_no_shadow,"Planet_Var_04",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_05",mcn_no_shadow,"Planet_Var_05",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_06",mcn_no_shadow,"Planet_Var_06",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_07",mcn_no_shadow,"Planet_Var_07",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_08",mcn_no_shadow,"Planet_Var_08",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_09",mcn_no_shadow,"Planet_Var_09",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_10",mcn_no_shadow,"Planet_Var_10",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_11",mcn_no_shadow,"Planet_Var_11",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_12",mcn_no_shadow,"Planet_Var_12",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_13",mcn_no_shadow,"Planet_Var_13",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_14",mcn_no_shadow,"Planet_Var_14",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_15",mcn_no_shadow,"Planet_Var_15",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_16",mcn_no_shadow,"Planet_Var_16",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_17",mcn_no_shadow,"Planet_Var_17",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_18",mcn_no_shadow,"Planet_Var_18",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_19",mcn_no_shadow,"Planet_Var_19",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_20",mcn_no_shadow,"Planet_Var_20",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_village_21",mcn_no_shadow,"Planet_Var_21",planet_village_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_01",mcn_no_shadow,"Planet_Var_01",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_02",mcn_no_shadow,"Planet_Var_02",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_03",mcn_no_shadow,"Planet_Var_03",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_04",mcn_no_shadow,"Planet_Var_04",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_05",mcn_no_shadow,"Planet_Var_05",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_06",mcn_no_shadow,"Planet_Var_06",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_07",mcn_no_shadow,"Planet_Var_07",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_08",mcn_no_shadow,"Planet_Var_08",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_09",mcn_no_shadow,"Planet_Var_09",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_10",mcn_no_shadow,"Planet_Var_10",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_11",mcn_no_shadow,"Planet_Var_11",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_12",mcn_no_shadow,"Planet_Var_12",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_13",mcn_no_shadow,"Planet_Var_13",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_14",mcn_no_shadow,"Planet_Var_14",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_15",mcn_no_shadow,"Planet_Var_15",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_16",mcn_no_shadow,"Planet_Var_16",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_17",mcn_no_shadow,"Planet_Var_17",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_18",mcn_no_shadow,"Planet_Var_18",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_19",mcn_no_shadow,"Planet_Var_19",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_20",mcn_no_shadow,"Planet_Var_20",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_21",mcn_no_shadow,"Planet_Var_21",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
 
   #SW - have to use these icons when using the map editor
-  # ("village_a",mcn_no_shadow,"map_village_a",planet_village_scale, 0),
-  # ("village_burnt_a",mcn_no_shadow,"map_village_a", planet_village_scale, 0),
-  # ("village_deserted_a",mcn_no_shadow,"map_village_a",planet_village_scale, 0),
-  # ("village_snow_a",mcn_no_shadow,"map_village_a",planet_village_scale, 0),
-  # ("village_snow_burnt_a",mcn_no_shadow,"map_village_a",planet_village_scale, 0),
-  # ("village_snow_deserted_a",mcn_no_shadow,"map_village_a",planet_village_scale, 0),  
+  # ("minorplanet_a",mcn_no_shadow,"map_minorplanet_a",planet_minor_scale, 0),
+  # ("minorplanet_burnt_a",mcn_no_shadow,"map_minorplanet_a", planet_minor_scale, 0),
+  # ("minorplanet_deserted_a",mcn_no_shadow,"map_minorplanet_a",planet_minor_scale, 0),
+  # ("minorplanet_snow_a",mcn_no_shadow,"map_minorplanet_a",planet_minor_scale, 0),
+  # ("minorplanet_snow_burnt_a",mcn_no_shadow,"map_minorplanet_a",planet_minor_scale, 0),
+  # ("minorplanet_snow_deserted_a",mcn_no_shadow,"map_minorplanet_a",planet_minor_scale, 0),  
   
 #training ground
   ("training_ground",mcn_no_shadow,"planet_industrial", planet_training_scale,0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect_polution"),  ]),]),
@@ -191,11 +192,11 @@ map_icons = [
   ("bridge_snow_a",mcn_no_shadow,"planet_red", 0.4,0),
 #SW - have to use native icons when using the map editor
 # #training ground
-  # ("training_ground",mcn_no_shadow,"map_castle_a", planet_training_scale,0),
+  # ("training_ground",mcn_no_shadow,"map_spacestation_a", planet_training_scale,0),
 # #bridges  
-  # ("bridge_a",mcn_no_shadow,"map_castle_a", 0.4,0),
-  # ("bridge_b",mcn_no_shadow,"map_castle_a", 0.4,0),
-  # ("bridge_snow_a",mcn_no_shadow,"map_castle_a", 0.4,0),  
+  # ("bridge_a",mcn_no_shadow,"map_spacestation_a", 0.4,0),
+  # ("bridge_b",mcn_no_shadow,"map_spacestation_a", 0.4,0),
+  # ("bridge_snow_a",mcn_no_shadow,"map_spacestation_a", 0.4,0),  
   
   ("custom_banner_01",0,"custom_map_banner_01", banner_scale, 0,
    [
@@ -374,14 +375,14 @@ map_icons = [
 	
     ("sw_swy_Death_Star",mcn_no_shadow,"swy_Death_Star",spacestation_scale,0),
 	 
-	("sw_swy_Planet_Coruscant",mcn_no_shadow,"swy_Planet_Coruscant",planet_town_scale,0,[(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+	("sw_swy_Planet_Coruscant",mcn_no_shadow,"swy_Planet_Coruscant",planet_main_scale,0,[(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       #]),
 	#]),
 
 	 
-	("sw_swy_Planet_Endor",mcn_no_shadow,"swy_Planet_Endor",planet_town_scale,0,
+	("sw_swy_Planet_Endor",mcn_no_shadow,"swy_Planet_Endor",planet_main_scale,0,
 		   [
      (ti_on_init_map_icon,
       [
@@ -392,7 +393,7 @@ map_icons = [
       ]),
 	]),
 	
-	("sw_swy_Planet_forest",mcn_no_shadow,"swy_Planet_forest",planet_town_scale,0,
+	("sw_swy_Planet_forest",mcn_no_shadow,"swy_Planet_forest",planet_main_scale,0,
 	   [
      (ti_on_init_map_icon,
       [
@@ -403,7 +404,7 @@ map_icons = [
       ]),
 	]),
 	
-	("sw_swy_Planet_Taris",mcn_no_shadow,"swy_Planet_Taris",planet_town_scale,0,
+	("sw_swy_Planet_Taris",mcn_no_shadow,"swy_Planet_Taris",planet_main_scale,0,
 	   [
      (ti_on_init_map_icon,
       [
@@ -414,7 +415,7 @@ map_icons = [
       ]),
 	]),
 	
-	("sw_swy_Planet_Tatooine",mcn_no_shadow,"swy_Planet_Tatooine",planet_town_scale,0,
+	("sw_swy_Planet_Tatooine",mcn_no_shadow,"swy_Planet_Tatooine",planet_main_scale,0,
 	   [
      (ti_on_init_map_icon,
       [
@@ -426,7 +427,7 @@ map_icons = [
 	]),
 	
 	
-		("sw_swy_Planet_geonosis",mcn_no_shadow,"swy_Planet_geonosis",planet_town_scale,0,
+		("sw_swy_Planet_geonosis",mcn_no_shadow,"swy_Planet_geonosis",planet_main_scale,0,
 	   [
      (ti_on_init_map_icon,
       [
@@ -438,7 +439,7 @@ map_icons = [
 	]),
 	
 	
-	("sw_swy_Planet_Kessel",mcn_no_shadow,"swy_Planet_Kessel",planet_town_scale,0,
+	("sw_swy_Planet_Kessel",mcn_no_shadow,"swy_Planet_Kessel",planet_main_scale,0,
 	   [
      (ti_on_init_map_icon,
       [
@@ -449,7 +450,7 @@ map_icons = [
       ]),
 	]),
 	
-	("sw_swy_Planet_frozen",mcn_no_shadow,"swy_Planet_frozen",planet_town_scale,0,
+	("sw_swy_Planet_frozen",mcn_no_shadow,"swy_Planet_frozen",planet_main_scale,0,
 	   [
      (ti_on_init_map_icon,
       [
@@ -461,7 +462,7 @@ map_icons = [
 	]),
 	
 	
-	("sw_swy_Planet_lava",mcn_no_shadow,"swy_Planet_lava",planet_town_scale,0,
+	("sw_swy_Planet_lava",mcn_no_shadow,"swy_Planet_lava",planet_main_scale,0,
 		   [
      (ti_on_init_map_icon,
       [
@@ -472,7 +473,7 @@ map_icons = [
       ]),
 	]),
 	
-	("sw_swy_rePlanet_gas",mcn_no_shadow,"swy_rePlanet_gas",planet_town_scale,0,
+	("sw_swy_rePlanet_gas",mcn_no_shadow,"swy_rePlanet_gas",planet_main_scale,0,
 		   [
      (ti_on_init_map_icon,
       [
@@ -483,7 +484,7 @@ map_icons = [
       ]),
 	]),
 	
-	("sw_swy_rePlanet_earth",mcn_no_shadow,"swy_rePlanet_earth",planet_town_scale,0,
+	("sw_swy_rePlanet_earth",mcn_no_shadow,"swy_rePlanet_earth",planet_main_scale,0,
 		   [
      (ti_on_init_map_icon,
       [
@@ -494,7 +495,7 @@ map_icons = [
       ]),
 	]),
 	
-	("sw_swy_rePlanet_snow",mcn_no_shadow,"swy_rePlanet_snow",planet_town_scale,0,
+	("sw_swy_rePlanet_snow",mcn_no_shadow,"swy_rePlanet_snow",planet_main_scale,0,
 		   [
      (ti_on_init_map_icon,
       [
@@ -505,7 +506,7 @@ map_icons = [
       ]),
 	]),
 	
-	("sw_swy_rePlanet_ice",mcn_no_shadow,"swy_rePlanet_ice",planet_town_scale,0,
+	("sw_swy_rePlanet_ice",mcn_no_shadow,"swy_rePlanet_ice",planet_main_scale,0,
 		   [
      (ti_on_init_map_icon,
       [
@@ -516,7 +517,7 @@ map_icons = [
       ]),
 	]),
 	
-	("sw_swy_rePlanet_craters",mcn_no_shadow,"swy_rePlanet_craters",planet_village_scale,0,
+	("sw_swy_rePlanet_craters",mcn_no_shadow,"swy_rePlanet_craters",planet_minor_scale,0,
 		   [
      (ti_on_init_map_icon,
       [
@@ -527,7 +528,7 @@ map_icons = [
       ]),
 	]),
 	
-	("sw_swy_rePlanet_water",mcn_no_shadow,"swy_rePlanet_water",planet_town_scale,0,
+	("sw_swy_rePlanet_water",mcn_no_shadow,"swy_rePlanet_water",planet_main_scale,0,
 		   [
      (ti_on_init_map_icon,
       [
@@ -538,7 +539,7 @@ map_icons = [
       ]),
 	]),
 	
-	("sw_swy_rePlanet_kashyyyk",mcn_no_shadow,"swy_rePlanet_kashyyyk",planet_town_scale,0,
+	("sw_swy_rePlanet_kashyyyk",mcn_no_shadow,"swy_rePlanet_kashyyyk",planet_main_scale,0,
 		   [
      (ti_on_init_map_icon,
       [
@@ -549,7 +550,7 @@ map_icons = [
       ]),
 	]),
 	
-	("sw_swy_rePlanet_wilderness",mcn_no_shadow,"swy_rePlanet_wilderness",planet_town_scale,0,
+	("sw_swy_rePlanet_wilderness",mcn_no_shadow,"swy_rePlanet_wilderness",planet_main_scale,0,
 		   [
      (ti_on_init_map_icon,
       [
@@ -560,7 +561,7 @@ map_icons = [
       ]),
 	]),
 	
-	("sw_swy_rePlanet_rock",mcn_no_shadow,"swy_rePlanet_rock",planet_town_scale,0,	
+	("sw_swy_rePlanet_rock",mcn_no_shadow,"swy_rePlanet_rock",planet_main_scale,0,	
 		   [
      (ti_on_init_map_icon,
       [
@@ -572,7 +573,7 @@ map_icons = [
 	]),
 	
 	
-		("sw_galaxy",mcn_no_shadow,"swy_rePlanet_rock",planet_town_scale,0,
+		("sw_galaxy",mcn_no_shadow,"swy_rePlanet_rock",planet_main_scale,0,
 	   [
      (ti_on_init_map_icon,
       [
@@ -583,7 +584,7 @@ map_icons = [
       ]),
 	]),
 	
-		("sw_swy_Planet_Sarapin",mcn_no_shadow,"swy_Planet_Sarapin",planet_town_scale,0,	
+		("sw_swy_Planet_Sarapin",mcn_no_shadow,"swy_Planet_Sarapin",planet_main_scale,0,	
 		   [
      (ti_on_init_map_icon,
       [
@@ -594,7 +595,7 @@ map_icons = [
       ]),
 	]),
 	
-		("sw_swy_Planet_RaxusPrime",mcn_no_shadow,"swy_Planet_RaxusPrime",planet_town_scale,0,	
+		("sw_swy_Planet_RaxusPrime",mcn_no_shadow,"swy_Planet_RaxusPrime",planet_main_scale,0,	
 		   [
      (ti_on_init_map_icon,
       [
@@ -608,7 +609,7 @@ map_icons = [
 	
 	
 	##>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  MOON PLANET ICONS
-		("sw_swy_NarShadda",mcn_no_shadow,"swy_Planet_Coruscant",planet_village_scale,0,
+		("sw_swy_NarShadda",mcn_no_shadow,"swy_Planet_Coruscant",planet_minor_scale,0,
 		  [
      (ti_on_init_map_icon,
       [(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),

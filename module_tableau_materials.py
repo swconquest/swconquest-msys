@@ -574,7 +574,7 @@ tableaus = [
      (cur_tableau_set_background_color, 0xFFFFFFFF),
      (set_fixed_point_multiplier, 100),
      (try_begin),
-       (is_between, ":faction_no", "fac_kingdom_1", kingdoms_end), #Excluding player kingdom
+       (is_between, ":faction_no", "fac_kingdom_1", factions_end), #Excluding player kingdom
        (store_add, ":banner_mesh", "mesh_pic_arms_swadian", ":faction_no"),
        (val_sub, ":banner_mesh", "fac_kingdom_1"),
        (init_position, pos1),
@@ -591,7 +591,7 @@ tableaus = [
      (cur_tableau_set_background_color, 0xFFFFFFFF),
      (set_fixed_point_multiplier, 100),
      (try_begin),
-       (is_between, ":faction_no", "fac_kingdom_1", kingdoms_end), #Excluding player kingdom
+       (is_between, ":faction_no", "fac_kingdom_1", factions_end), #Excluding player kingdom
        (store_add, ":banner_mesh", "mesh_pic_arms_swadian", ":faction_no"),
        (val_sub, ":banner_mesh", "fac_kingdom_1"),
        (init_position, pos1),
@@ -625,8 +625,8 @@ tableaus = [
      (store_script_param, ":faction_no", 1),
      (store_mod, ":faction_no_2", ":faction_no", 128),
      (val_div, ":faction_no", 128),
-     (val_add, ":faction_no", kingdoms_begin),
-     (val_add, ":faction_no_2", kingdoms_begin),
+     (val_add, ":faction_no", factions_begin),
+     (val_add, ":faction_no_2", factions_begin),
      (set_fixed_point_multiplier, 100),
      (try_begin),
        (faction_get_slot, ":leader_troop", ":faction_no", slot_faction_leader),

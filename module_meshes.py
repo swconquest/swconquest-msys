@@ -44,9 +44,9 @@ meshes = [
   ("pic_blazing_claw_pirates", 0, "pic_blazing_claw_pirates", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("pic_cattle", 0, "pic_cattle", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("pic_looted_village", 0, "pic_looted_village", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  ("pic_village_p", 0, "pic_village_p", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  ("pic_village_s", 0, "pic_village_s", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  ("pic_village_w", 0, "pic_village_w", 0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("pic_minorplanet_p", 0, "pic_village_p", 0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("pic_minorplanet_s", 0, "pic_village_s", 0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("pic_minorplanet_w", 0, "pic_village_w", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("pic_recruits", 0, "pic_recruits", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("pic_arms_swadian", 0, "pic_arms_empire", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("pic_arms_vaegir", 0, "pic_arms_rebel", 0, 0, 0, 0, 0, 0, 1, 1, 1),
@@ -558,5 +558,5 @@ meshes = [
    #### JEDEDIAH Q mesh for Companions Overview ##############################
   ("cpov", 0, "cpov", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   #### JEDEDIAH Q mesh for Companions Overview END ##############################  
-  
+  ("swc_logo", 0, "warrider_logo", 0, 0, 0, 0, 0, 0, 1, 1, 1),
 ]

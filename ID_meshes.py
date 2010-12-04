@@ -21,9 +21,9 @@ mesh_pic_deserters = 19
 mesh_pic_blazing_claw_pirates = 20
 mesh_pic_cattle = 21
 mesh_pic_looted_village = 22
-mesh_pic_village_p = 23
-mesh_pic_village_s = 24
-mesh_pic_village_w = 25
+mesh_pic_minorplanet_p = 23
+mesh_pic_minorplanet_s = 24
+mesh_pic_minorplanet_w = 25
 mesh_pic_recruits = 26
 mesh_pic_arms_swadian = 27
 mesh_pic_arms_vaegir = 28
@@ -504,5 +504,6 @@ mesh_poker_black_joker = 502
 mesh_poker_back = 503
 mesh_wood_table = 504
 mesh_cpov = 505
+mesh_swc_logo = 506
 
 

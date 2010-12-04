@@ -246,7 +246,6 @@ skins = [
 	 ("womanface_young",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),
      ("womanface_a",0xffe8dfe5,["hair_blonde"],[0xff502a19, 0xff19100c, 0xff0c0d19]),
      ("womanface_b",0xffdfdfdf,["hair_blonde"],[0xffa5481f, 0xff502a19, 0xff19100c, 0xff0c0d19]),
-	 ("womanface_new_young",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),
      ("womanface_new_a",0xffe8dfe5,["hair_blonde"],[0xff502a19, 0xff19100c, 0xff0c0d19]),
      ("womanface_new_b",0xffdfdfdf,["hair_blonde"],[0xffa5481f, 0xff502a19, 0xff19100c, 0xff0c0d19]),	 
      ("Jed_Q_w_1",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),	#from Jed_Q
@@ -255,6 +254,7 @@ skins = [
      ("womanface_african",0xff808080,["hair_blonde"],[0xff120808, 0xff007080c]),	 
 	 ("sith_darth_maul_female",0x0097392c,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),	# from I-V-I-O-R-T
 	 ("chiss_female_face_a",0x00355bff,["hair_blonde"],[0xff120808, 0xff007080c]),
+	 ("womanface_new_young",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),
 	 ("woman_face_nightsister",0x00c2b59a,["hair_blonde"],[0xff120808, 0xff34312a]),
 	 ("woman_face_silri",0x00c2b59a,["hair_blonde"],[0xff120808, 0xff34312a]),
 #     ("womanface_midage",0xffe5eaf0,["hair_black","hair_brunette","hair_red","hair_white"],[0xffffcded, 0xffbbcded, 0xff99eebb]),

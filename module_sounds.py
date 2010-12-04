@@ -444,6 +444,7 @@ sounds = [
  ("stunblaster",sf_priority_8|sf_vol_8, ["stunblaster_other03.mp3"]),  
  ("littleblaster",sf_priority_8|sf_vol_8, ["littleblaster01.mp3"]),   
  ("heavyrepeater",sf_priority_8|sf_vol_8, ["rvnshn_heavy_repeater.mp3"]),   
+ ("stormrifle",sf_priority_8|sf_vol_8, ["rvnshn_stormrifle.mp3"]),   
  
  ("flame_fire",sf_priority_8|sf_vol_6, ["flame_fire.mp3"]),
  ("concussion_fire",sf_priority_8|sf_vol_6, ["concussion_fire.mp3"]), 
@@ -579,7 +580,7 @@ sounds = [
 #("lightsaber_swing",sf_priority_10|sf_vol_6,["saber_swing1.mp3","saber_swing2.mp3","saber_swing3.mp3","saber_swing4.mp3","saber_swing5.mp3","saber_swing6.mp3","saber_swing7.mp3","saber_swing8.mp3",]),
 #removed saber_swing7.mp3 & saber_swing8.mp3 since they were 1.4 seconds until the usually 0.5 - 0.9 seconds
 ("lightsaber_swing",sf_priority_10|sf_vol_6,["saber_swing1.mp3","saber_swing2.mp3","saber_swing3.mp3","saber_swing4.mp3","saber_swing5.mp3","saber_swing6.mp3"]),
-("deflector_shield",sf_priority_2|sf_vol_4|sf_looping, ["deflector_shield.mp3"]),
+("deflector_shield",sf_priority_5|sf_vol_3|sf_looping, ["deflector_shield.mp3"]),
 ("deflector_shield_hit",sf_priority_1|sf_vol_10, ["deflector_shield_hit.mp3"]),
 #Added by Swyter, Revan Shan suggestion
 ("e5",sf_priority_5|sf_vol_6,["E5-blaster.mp3"]),

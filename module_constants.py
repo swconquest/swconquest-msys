@@ -79,7 +79,7 @@ slot_faction_deserter_troop       = 48
 slot_faction_guard_troop          = 49
 slot_faction_messenger_troop      = 50
 slot_faction_prison_guard_troop   = 51
-slot_faction_castle_guard_troop   = 52
+slot_faction_spacestation_guard_troop   = 52
 
 slot_faction_has_rebellion_chance = 60
 
@@ -117,7 +117,7 @@ slot_faction_debt_expires			= 90
 ########################################################
 ##  PARTY SLOTS            #############################
 ########################################################
-slot_party_type                = 0  #spt_caravan, spt_town, spt_castle
+slot_party_type                = 0  #spt_caravan, spt_mainplanet, spt_castle
 
 slot_party_retreat_flag        = 2
 slot_party_ignore_player_until = 3
@@ -279,8 +279,8 @@ slot_center_has_prisoner_tower   = 139 #town, castle
 
 
 
-village_improvements_begin = slot_center_has_manor
-village_improvements_end          = slot_center_has_prisoner_tower
+minorplanet_improvements_begin = slot_center_has_manor
+minorplanet_improvements_end          = slot_center_has_prisoner_tower
 
 walled_center_improvements_begin = slot_center_has_messenger_post
 #walled_center_improvements_end               = 136
@@ -392,8 +392,8 @@ slot_spaceship_cargo_capacity_max	=271
 #slot_party_type values
 ##spt_caravan            = 1
 spt_castle             = 2
-spt_town               = 3
-spt_village            = 4
+spt_mainplanet               = 3
+spt_minorplanet            = 4
 ##spt_forager            = 5
 ##spt_war_party          = 6
 # #SW - un-commented Faction Patrols
@@ -406,7 +406,7 @@ spt_kingdom_caravan    = 11
 ##spt_prisoner_train     = 12
 spt_kingdom_hero_party = 13
 ##spt_merchant_caravan   = 14
-spt_village_farmer     = 15
+spt_minorplanet_farmer     = 15
 spt_ship               = 16
 spt_cattle_herd        = 17
 #spt_deserter           = 20
@@ -765,8 +765,8 @@ cb4_greed  = 6
 
 #NPC system changes end
 #Encounter types
-enctype_fighting_against_village_raid = 1
-enctype_catched_during_village_raid   = 2
+enctype_fighting_against_minorplanet_raid = 1
+enctype_catched_during_minorplanet_raid   = 2
 
 
 ### Troop occupations slot_troop_occupation
@@ -834,11 +834,11 @@ rel_ally    = 2
 tc_town_talk                  = 0
 tc_court_talk   	      = 1
 tc_party_encounter            = 2
-tc_castle_gate                = 3
+tc_spacestation_gate                = 3
 tc_siege_commander            = 4
 tc_join_battle_ally           = 5
 tc_join_battle_enemy          = 6
-tc_castle_commander           = 7
+tc_spacestation_commander           = 7
 tc_hero_freed                 = 8
 tc_hero_defeated              = 9
 tc_entering_center_quest_talk = 10
@@ -851,12 +851,12 @@ tc_rebel_thanks               = 15
 #Troop Commentaries begin
 #Log entry types
 #civilian
-logent_village_raided            = 1
-logent_village_extorted          = 2
+logent_minorplanet_raided            = 1
+logent_minorplanet_extorted          = 2
 logent_caravan_accosted          = 3
 logent_helped_peasants           = 4 
 
-logent_castle_captured_by_player              = 10
+logent_spacestation_captured_by_player              = 10
 logent_lord_defeated_by_player                = 11
 logent_lord_captured_by_player                = 12
 logent_lord_defeated_but_let_go_by_player     = 13
@@ -919,8 +919,8 @@ countersigns_end = names_begin
 secret_signs_begin = "str_secret_sign_1"
 secret_signs_end = countersigns_begin
 
-kingdoms_begin = "fac_player_supporters_faction"
-kingdoms_end = "fac_kingdoms_end"
+factions_begin = "fac_player_supporters_faction"
+factions_end = "fac_factions_end"
 
 #SW - modified kingdom_ladies_begin to start with kingdom_ladies_end
 #kingdom_ladies_begin = "trp_knight_1_1_wife"
@@ -948,7 +948,7 @@ soldiers_end = "trp_mainplanet_walker_1"
 #Rebellion changes
 
 ##rebel_factions_begin = "fac_kingdom_1_rebels"
-##rebel_factions_end =   "fac_kingdoms_end"
+##rebel_factions_end =   "fac_factions_end"
 
 #SW - modified  pretenders_begin to start at pretenders_end
 #pretenders_begin = "trp_kingdom_1_pretender"
@@ -997,11 +997,11 @@ lord_quests_end   = "qst_follow_army"
 enemy_lord_quests_begin = "qst_lend_surgeon"
 enemy_lord_quests_end   = lord_quests_end
 
-village_elder_quests_begin = "qst_deliver_grain"
-village_elder_quests_end = "qst_eliminate_bandits_infesting_village"
+minorplanet_elder_quests_begin = "qst_deliver_grain"
+minorplanet_elder_quests_end = "qst_eliminate_bandits_infesting_village"
 
 mayor_quests_begin  = "qst_move_cattle_herd"
-mayor_quests_end    = village_elder_quests_begin
+mayor_quests_end    = minorplanet_elder_quests_begin
 
 lady_quests_begin = "qst_rescue_lord_by_replace"
 lady_quests_end   = mayor_quests_begin
@@ -1013,19 +1013,19 @@ army_quests_end   = lady_quests_begin
 all_quests_begin = 0
 all_quests_end = "qst_quests_end"
 
-towns_begin = "p_mandalore"
-castles_begin = "p_castle_2" # "p_castle_1"
-villages_begin = "p_village_1"
+mainplanets_begin = "p_mandalore"
+castles_begin = "p_spacestation_2" # "p_spacestation_1"
+minorplanet_begin = "p_minorplanet_1"
 
-towns_end = castles_begin
-castles_end = villages_begin
-villages_end   = "p_salt_mine"
+mainplanets_end = castles_begin
+castles_end = minorplanet_begin
+minorplanet_end   = "p_salt_mine"
 
-walled_centers_begin = towns_begin
+walled_centers_begin = mainplanets_begin
 walled_centers_end   = castles_end
 
-centers_begin = towns_begin
-centers_end   = villages_end
+centers_begin = mainplanets_begin
+centers_end   = minorplanet_end
 
 training_grounds_begin   = "p_training_ground_1"
 training_grounds_end     = "p_Bridge_1"
@@ -1105,8 +1105,8 @@ town_walkers_rebel_end = "trp_mainplanet_walker_hutt_1"
 town_walkers_hutt_begin = "trp_mainplanet_walker_hutt_1"
 town_walkers_hutt_end = "trp_cantina_walker_1"
 
-village_walkers_begin = "trp_minorplanet_walker_1"
-village_walkers_end   = "trp_spy_walker_1"
+minorplanet_walkers_begin = "trp_minorplanet_walker_1"
+minorplanet_walkers_end   = "trp_spy_walker_1"
 
 assassins_begin = "trp_assassin_male"
 assassins_end = "trp_tournament_master"
@@ -1150,8 +1150,8 @@ average_price_factor = 1000
 minimum_price_factor = 100
 maximum_price_factor = 10000
 
-village_prod_min = -5
-village_prod_max = 18
+minorplanet_prod_min = -5
+minorplanet_prod_max = 18
 
 trade_goods_begin = "itm_smoked_fish"
 trade_goods_end = "itm_siege_supply"
@@ -1330,7 +1330,7 @@ arena_grand_prize = 500
 
 #Tavern recruitment and ale
 merc_parties_begin = "p_town_merc_1"
-merc_parties_end = "p_castle_2" #"p_castle_1"
+merc_parties_end = "p_spacestation_2" #"p_spacestation_1"
 
 ########################################################
 ##  COLOR CODES             ############################
@@ -1352,7 +1352,7 @@ news_lord_defeated = 1
 news_lord_captured = 2
 news_lord_freed = 3
 news_lord_escaped = 4
-news_village_looted = 5
+news_minorplanet_looted = 5
 news_center_captured = 6
 news_center_under_siege = 7
 news_center_siege_lifted = 8

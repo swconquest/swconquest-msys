@@ -1555,12 +1555,12 @@ animations = [
  ],
 
    ["b2_stand", 0,
-   [4, "swy_b2_stand", 0, 70, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25], #by Swyter
+   [6, "swy_b2_stand", 0, 49, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0], #by Swyter
  ], 
  
- ["b2_walk", acf_enforce_lowerbody,		#from walk_forward
+	["b2_walk", acf_enforce_lowerbody,		#from walk_forward
    #[1.0, "man_walk", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
-   [1.0, "swy_b2_walk", 0, 0, arf_use_walk_progress|arf_cyclic|blend_in_walk,pack2f(0.0,0.0), (0, 0, 0), 0.0],
+   [1.0, "swy_b2_walk", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk,pack2f(0.0,0.0), (0, 0, 0), 0.0],
  ],
  
 #-------------------------------------------------------------------------------------------------------------------- 

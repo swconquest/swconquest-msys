@@ -1066,7 +1066,7 @@ scenes = [
     [],[],),		
   ("minorplanet_24",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000004500005000002308c00005bbc0000768d000020a8",
     [],[],"outer_terrain_steppe"),		
-  #village_25 - Tatooine Moon Custom Scene
+  #minorplanet_25 - Tatooine Moon Custom Scene
   ("minorplanet_25",sf_generate,"none", "none", (0,0),(100,100),-100,"0x000000065000140040059d6700000fc900001fc6000011a4",
     [],[],),
   ("minorplanet_26",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000004500005000002308c00005bbc0000768d000020a8",
@@ -1149,7 +1149,7 @@ scenes = [
     [],[],),		
   ("minorplanet_65",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000220031f6300076dda000056f100004f6d000070b3",
     [],[],"outer_terrain_steppe"),	
-  #village_66 - Alaris Prime custom scene using Kashyyyk tree's
+  #minorplanet_66 - Alaris Prime custom scene using Kashyyyk tree's
   ("minorplanet_66",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000000200016da000364d9000060f500007591000064e7",
     [],[],"outer_terrain_steppe"),
   ("minorplanet_67",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000220031f6300076dda000056f100004f6d000070b3",
@@ -1158,7 +1158,7 @@ scenes = [
     [],[],"outer_terrain_steppe"),		
   ("minorplanet_69",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000220031f6300076dda000056f100004f6d000070b3",
     [],[],"outer_terrain_steppe"),		
-  #village_70 - Gamorr Moon (used Tatooine Moon custom scene)
+  #minorplanet_70 - Gamorr Moon (used Tatooine Moon custom scene)
   ("minorplanet_70",sf_generate,"none", "none", (0,0),(100,100),-100,"0x000000065000140040059d6700000fc900001fc6000011a4",
     [],[],),
   ("minorplanet_71",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000220031f6300076dda000056f100004f6d000070b3",
@@ -1178,7 +1178,7 @@ scenes = [
   ("minorplanet_78",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000220031f6300076dda000056f100004f6d000070b3",
     [],[],"outer_terrain_steppe"),			
   ("minorplanet_79",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000220031f6300076dda000056f100004f6d000070b3",
-    [],[],"outer_terrain_steppe"),			
+    [],[],),			
   ("minorplanet_80",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000220031f6300076dda000056f100004f6d000070b3",
     [],[],"outer_terrain_steppe"),				
   ("minorplanet_81",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000220031f6300076dda000056f100004f6d000070b3",
@@ -1197,7 +1197,7 @@ scenes = [
     [],[],"outer_terrain_steppe"),				
   ("minorplanet_88",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000220031f6300076dda000056f100004f6d000070b3",
     [],[],"outer_terrain_steppe"),				
-  #village_89 - Ryloth Moon (used Tatooine Moon custom scene)
+  #minorplanet_89 - Ryloth Moon (used Tatooine Moon custom scene)
   ("minorplanet_89",sf_generate,"none", "none", (0,0),(100,100),-100,"0x000000065000140040059d6700000fc900001fc6000011a4",
     [],[],),
   ("minorplanet_90",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000220031f6300076dda000056f100004f6d000070b3",

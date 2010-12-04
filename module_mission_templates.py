@@ -83,9 +83,9 @@ AI_triggers = [
 
 #SW - modified pilgrim disguise
 pilgrim_disguise = [itm_transparent_helmet,itm_vest_closed_a,itm_black_boots,itm_vibro_blade1,itm_laser_bolts_yellow_pistol,itm_westar,itm_energy_shield_yellow_small]
-#SW - modified af_castle_lord
-#af_castle_lord = af_override_horse | af_override_weapons| af_require_civilian
-af_castle_lord = af_override_horse | af_override_weapons
+#SW - modified af_spacestation_lord
+#af_spacestation_lord = af_override_horse | af_override_weapons| af_require_civilian
+af_spacestation_lord = af_override_horse | af_override_weapons
 
 #SW MF stuff for stay in battle after knockdown and death-cam- BIG Thanks to silverkatana & DMOD Valkyrie for base code - http://forums.taleworlds.com/index.php/topic,60329.msg1559908.html
 
@@ -1481,12 +1481,12 @@ common_check_town_fight = (
 									#@> SWY - Added some conditionals for changing nynamically the faction ralections
 									(try_begin),
 										(eq, "$g_started_battle_random_by_enemy_faction", 1),
-										(store_faction_of_party, ":village_faction", "$current_town"),
-										(call_script, "script_change_player_relation_with_faction", ":village_faction", 1),
+										(store_faction_of_party, ":minorplanet_faction", "$current_town"),
+										(call_script, "script_change_player_relation_with_faction", ":minorplanet_faction", 1),
 									(else_try),
 										#(eq,"$g_started_battle_random_by_enemy_faction",1),
-										(store_faction_of_party, ":village_faction", "$current_town"),
-										(call_script, "script_change_player_relation_with_faction", ":village_faction", -3),
+										(store_faction_of_party, ":minorplanet_faction", "$current_town"),
+										(call_script, "script_change_player_relation_with_faction", ":minorplanet_faction", -3),
 									(try_end),
 						(try_end),
 					(try_end),
@@ -2349,7 +2349,18 @@ common_change_fog = (
   0, 0, ti_once,
   [
 	#SW - set_fog_distance to a very high number to disable fog in scenes
-	(set_fog_distance, 100000000),
+	(try_begin),
+		(eq, "$current_town","p_kamino"),
+		(set_fog_distance, 170, 0xFF121118),
+	(else_try),
+		(eq, "$current_town","p_mustafar"),
+		(set_fog_distance, 170, 0xFF272222),
+	(else_try),
+		(eq, "$current_town","p_spacestation_4"), #Dagobah
+		(set_fog_distance, 220, 0xFF222722),
+	(else_try),
+		(set_fog_distance, 100000000),
+	(try_end),
     ], [])
 
 tournament_triggers = [
@@ -3012,7 +3023,7 @@ mission_templates = [
 			 #(music_set_situation, 0),
 			 (call_script, "script_music_set_situation_with_culture", mtf_sit_town),
 			 (music_set_culture, 0),
-           (try_end),
+           
 
 			#------------------------------------------------------------------------------------------------------------------------------------------------------
 			#set music depending on the location
@@ -3034,6 +3045,7 @@ mission_templates = [
 			(try_end),
 			#------------------------------------------------------------------------------------------------------------------------------------------------------
 
+			(try_end),
 		 ]),
 
         (ti_before_mission_start, 0, 0, [],
@@ -3189,7 +3201,7 @@ mission_templates = [
 
 		common_check_town_fight,
 
-        (0.1, 0, ti_once, [], [(party_slot_eq, "$current_town", slot_party_type, spt_town),
+        (0.1, 0, ti_once, [], [(party_slot_eq, "$current_town", slot_party_type, spt_mainplanet),
                              (call_script, "script_town_init_doors", 0),
                              (try_begin),
                                (eq, "$town_nighttime", 0),
@@ -3231,7 +3243,7 @@ mission_templates = [
     ),
 
   (
-    "village_center",0,-1,
+    "minorplanet_center",0,-1,
     "center",
     [(0,mtef_scene_source|mtef_team_0,0,0,1,[]),
      (1,mtef_scene_source|mtef_team_0,0,0,1,[]),
@@ -3305,7 +3317,7 @@ mission_templates = [
                        ],
        [(try_begin),
           (main_hero_fallen),
-          (jump_to_menu, "mnu_village_hunt_down_fugitive_defeated"),
+          (jump_to_menu, "mnu_minorplanet_hunt_down_fugitive_defeated"),
           (call_script, "script_fail_quest", "qst_hunt_down_fugitive"),
           (finish_mission, 4),
         (else_try),
@@ -3415,7 +3427,7 @@ mission_templates = [
                        ],
        [(try_begin),
           (main_hero_fallen),
-          (jump_to_menu, "mnu_village_hunt_down_fugitive_defeated"),
+          (jump_to_menu, "mnu_minorplanet_hunt_down_fugitive_defeated"),
           (call_script, "script_fail_quest", "qst_bounty_1"),
           (finish_mission, 4),
         (else_try),
@@ -3438,7 +3450,7 @@ mission_templates = [
                        ],
        [(try_begin),
           (main_hero_fallen),
-          (jump_to_menu, "mnu_village_hunt_down_fugitive_defeated"),
+          (jump_to_menu, "mnu_minorplanet_hunt_down_fugitive_defeated"),
           (call_script, "script_fail_quest", "qst_bounty_2"),
           (finish_mission, 4),
         (else_try),
@@ -3461,7 +3473,7 @@ mission_templates = [
                        ],
        [(try_begin),
           (main_hero_fallen),
-          (jump_to_menu, "mnu_village_hunt_down_fugitive_defeated"),
+          (jump_to_menu, "mnu_minorplanet_hunt_down_fugitive_defeated"),
           (call_script, "script_fail_quest", "qst_bounty_3"),
           (finish_mission, 4),
         (else_try),
@@ -3484,7 +3496,7 @@ mission_templates = [
                        ],
        [(try_begin),
           (main_hero_fallen),
-          (jump_to_menu, "mnu_village_hunt_down_fugitive_defeated"),
+          (jump_to_menu, "mnu_minorplanet_hunt_down_fugitive_defeated"),
           (call_script, "script_fail_quest", "qst_bounty_4"),
           (finish_mission, 4),
         (else_try),
@@ -3507,7 +3519,7 @@ mission_templates = [
                        ],
        [(try_begin),
           (main_hero_fallen),
-          (jump_to_menu, "mnu_village_hunt_down_fugitive_defeated"),
+          (jump_to_menu, "mnu_minorplanet_hunt_down_fugitive_defeated"),
           (call_script, "script_fail_quest", "qst_bounty_5"),
           (finish_mission, 4),
         (else_try),
@@ -3530,7 +3542,7 @@ mission_templates = [
                        ],
        [(try_begin),
           (main_hero_fallen),
-          (jump_to_menu, "mnu_village_hunt_down_fugitive_defeated"),
+          (jump_to_menu, "mnu_minorplanet_hunt_down_fugitive_defeated"),
           (call_script, "script_fail_quest", "qst_bounty_6"),
           (finish_mission, 4),
         (else_try),
@@ -3640,7 +3652,7 @@ mission_templates = [
        [
          (call_script, "script_music_set_situation_with_culture", mtf_sit_ambushed),
          (set_party_battle_mode),
-         (party_slot_eq, "$current_town", slot_party_type, spt_town),
+         (party_slot_eq, "$current_town", slot_party_type, spt_mainplanet),
          (call_script, "script_town_init_doors", 0),
         ]),
 
@@ -3706,8 +3718,8 @@ mission_templates = [
 
 
   (
-    "village_training", mtf_arena_fight, -1,
-    "village_training",
+    "minorplanet_training", mtf_arena_fight, -1,
+    "minorplanet_training",
     [
 	 #SW - modified af_override and weapons (switched practice_staff to durasteel_staff)
 	 #(2,mtef_visitor_source|mtef_team_0,af_override_everything,aif_start_alarmed,1,[itm_durasteel_staff, itm_practice_boots]),
@@ -3813,8 +3825,8 @@ mission_templates = [
      (5,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(6,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(7,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),
      (8,mtef_visitor_source,af_override_horse,0,1,[]),(9,mtef_visitor_source,af_override_horse,0,1,[]),(10,mtef_scene_source,af_override_horse,0,1,[]),(11,mtef_scene_source,af_override_horse,0,1,[]),
      (12,mtef_visitor_source,af_override_horse,0,1,[]),(13,mtef_visitor_source,0,0,1,[]),(14,mtef_visitor_source,0,0,1,[]),(15,mtef_visitor_source,0,0,1,[]),
-     (16,mtef_visitor_source,af_castle_lord,0,1,[]),(17,mtef_visitor_source,af_castle_lord,0,1,[]),(18,mtef_visitor_source,af_castle_lord,0,1,[]),(19,mtef_visitor_source,af_castle_lord,0,1,[]),(20,mtef_visitor_source,af_castle_lord,0,1,[]),(21,mtef_visitor_source,af_castle_lord,0,1,[]),(22,mtef_visitor_source,af_castle_lord,0,1,[]),(23,mtef_visitor_source,af_castle_lord,0,1,[]),(24,mtef_visitor_source,af_castle_lord,0,1,[]),
-     (25,mtef_visitor_source,af_castle_lord,0,1,[]),(26,mtef_visitor_source,af_castle_lord,0,1,[]),(27,mtef_visitor_source,af_castle_lord,0,1,[]),(28,mtef_visitor_source,af_castle_lord,0,1,[]),(29,mtef_visitor_source,af_castle_lord,0,1,[]),(30,mtef_visitor_source,af_castle_lord,0,1,[]),(31,mtef_visitor_source,af_castle_lord,0,1,[]),
+     (16,mtef_visitor_source,af_spacestation_lord,0,1,[]),(17,mtef_visitor_source,af_spacestation_lord,0,1,[]),(18,mtef_visitor_source,af_spacestation_lord,0,1,[]),(19,mtef_visitor_source,af_spacestation_lord,0,1,[]),(20,mtef_visitor_source,af_spacestation_lord,0,1,[]),(21,mtef_visitor_source,af_spacestation_lord,0,1,[]),(22,mtef_visitor_source,af_spacestation_lord,0,1,[]),(23,mtef_visitor_source,af_spacestation_lord,0,1,[]),(24,mtef_visitor_source,af_spacestation_lord,0,1,[]),
+     (25,mtef_visitor_source,af_spacestation_lord,0,1,[]),(26,mtef_visitor_source,af_spacestation_lord,0,1,[]),(27,mtef_visitor_source,af_spacestation_lord,0,1,[]),(28,mtef_visitor_source,af_spacestation_lord,0,1,[]),(29,mtef_visitor_source,af_spacestation_lord,0,1,[]),(30,mtef_visitor_source,af_spacestation_lord,0,1,[]),(31,mtef_visitor_source,af_spacestation_lord,0,1,[]),
 	 #new entry points (unused)
 	 (32,mtef_visitor_source,af_override_horse,0,1,[]),(33,mtef_visitor_source,af_override_horse,0,1,[]),(34,mtef_visitor_source,af_override_horse,0,1,[]),(35,mtef_visitor_source,af_override_horse,0,1,[]),(36,mtef_visitor_source,af_override_horse,0,1,[]),(37,mtef_visitor_source,af_override_horse,0,1,[]),
 	 #entry point #38 & 39 are for slave dancers
@@ -3864,51 +3876,51 @@ mission_templates = [
 			#------------------------------------------------------------------------------------------------------------------------------------------------------
 			#set music depending on the faction
 			#SW - attempting to add castle specific music (this concept doesn't seem to work at all?  I had to add that persist until finished flag...)
-			(store_faction_of_party, ":castle_faction", "$current_town"),
+			(store_faction_of_party, ":spacestation_faction", "$current_town"),
 			(try_begin),
-				(eq, ":castle_faction", "fac_kingdom_1"), 	#empire
+				(eq, ":spacestation_faction", "fac_kingdom_1"), 	#empire
 				(store_random_in_range, ":random", 1, 4),
 				(try_begin),
 					(eq, ":random", 1),
-					(assign, ":castle_track", "track_throne_empire_1"),
+					(assign, ":spacestation_track", "track_throne_empire_1"),
 				(else_try),
 					(eq, ":random", 2),
-					(assign, ":castle_track", "track_throne_empire_2"),
+					(assign, ":spacestation_track", "track_throne_empire_2"),
 				(else_try),
 					#(eq, ":random", 3),
-					(assign, ":castle_track", "track_throne_empire_3"),
+					(assign, ":spacestation_track", "track_throne_empire_3"),
 				(try_end),
 			(else_try),
-				(eq, ":castle_faction", "fac_kingdom_2"), 	#rebel
+				(eq, ":spacestation_faction", "fac_kingdom_2"), 	#rebel
 				(store_random_in_range, ":random", 1, 5),
 				(try_begin),
 					(eq, ":random", 1),
-					(assign, ":castle_track", "track_throne_rebel_1"),
+					(assign, ":spacestation_track", "track_throne_rebel_1"),
 				(else_try),
 					(eq, ":random", 2),
-					(assign, ":castle_track", "track_throne_rebel_2"),
+					(assign, ":spacestation_track", "track_throne_rebel_2"),
 				(else_try),
 					(eq, ":random", 3),
-					(assign, ":castle_track", "track_throne_rebel_3"),
+					(assign, ":spacestation_track", "track_throne_rebel_3"),
 				(else_try),
 					#(eq, ":random", 4),
-					(assign, ":castle_track", "track_throne_rebel_4"),
+					(assign, ":spacestation_track", "track_throne_rebel_4"),
 				(try_end),
 			(else_try),
 				#hutt/other
 				(store_random_in_range, ":random", 1, 4),
 				(try_begin),
 					(eq, ":random", 1),
-					(assign, ":castle_track", "track_throne_hutt_1"),
+					(assign, ":spacestation_track", "track_throne_hutt_1"),
 				(else_try),
 					(eq, ":random", 2),
-					(assign, ":castle_track", "track_throne_hutt_2"),
+					(assign, ":spacestation_track", "track_throne_hutt_2"),
 				(else_try),
 					#(eq, ":random", 3),
-					(assign, ":castle_track", "track_throne_hutt_3"),
+					(assign, ":spacestation_track", "track_throne_hutt_3"),
 				(try_end),
 			(try_end),
-			(play_track, ":castle_track", 2),	# 0 = default, 1 = fade out current track, 2 = stop current track
+			(play_track, ":spacestation_track", 2),	# 0 = default, 1 = fade out current track, 2 = stop current track
 			#------------------------------------------------------------------------------------------------------------------------------------------------------
 
 			]),
@@ -4576,7 +4588,7 @@ sw_deathcam_cycle_backwards,
 #########################################################################################################################
 
   (
-    "village_attack_bandits",mtf_battle_mode,charge,
+    "minorplanet_attack_bandits",mtf_battle_mode,charge,
     "You lead your men to battle.",
     [
      (3,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
@@ -4707,7 +4719,7 @@ sw_deathcam_cycle_backwards,
 
 
   (
-    "village_raid",mtf_battle_mode,charge,
+    "minorplanet_raid",mtf_battle_mode,charge,
     "You lead your men to battle.",
     [
      (3,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,12,[]),
@@ -4815,7 +4827,7 @@ sw_deathcam_cycle_backwards,
          (assign,"$battle_won",1),
          (assign, "$g_battle_result", 1),
          (try_begin),
-           (eq, "$g_village_raid_evil", 0),
+           (eq, "$g_minorplanet_raid_evil", 0),
            (call_script, "script_play_victorious_sound"),
          (else_try),
 			#SW - didn't want to have to include track_victorious_evil in module_music.py
@@ -5314,7 +5326,7 @@ common_gate_system
   ),
 
   (
-    "castle_attack_walls_defenders_sally",mtf_battle_mode,-1,
+    "spacestation_attack_walls_defenders_sally",mtf_battle_mode,-1,
     "You attack the walls of the castle...",
     [
      (0,mtef_attackers|mtef_team_1,af_override_horse,aif_start_alarmed,12,[]),
@@ -5466,7 +5478,7 @@ common_gate_system,
 
 
   (
-    "castle_attack_walls_belfry",mtf_battle_mode,-1,
+    "spacestation_attack_walls_belfry",mtf_battle_mode,-1,
     "You attack the walls of the castle...",
     [
      (0,mtef_attackers|mtef_team_1,af_override_horse,aif_start_alarmed,12,[]),
@@ -5559,7 +5571,7 @@ common_gate_system,
   ),
 
   (
-    "castle_attack_walls_ladder",mtf_battle_mode,-1,
+    "spacestation_attack_walls_ladder",mtf_battle_mode,-1,
     "You attack the walls of the castle...",
     [
 	#SW - increased attacker troops from 12 to 15
@@ -5691,7 +5703,7 @@ common_gate_system,
 
 
   (
-    "castle_visit",0,-1,
+    "spacestation_visit",0,-1,
     "Castle visit",
     [(0,mtef_scene_source|mtef_team_0,af_override_horse,0,1,[]),
      (1,mtef_scene_source|mtef_team_0,af_override_horse,0,1,[]),
@@ -6123,7 +6135,7 @@ common_gate_system,
       (ti_tab_pressed, 0, 0, [],
        [(question_box,"str_do_you_wish_to_surrender")]),
       (ti_question_answered, 0, 0, [],
-       [(store_trigger_param_1,":answer"),(eq,":answer",0),(jump_to_menu,"mnu_captivity_start_castle_defeat"),(finish_mission,0),]),
+       [(store_trigger_param_1,":answer"),(eq,":answer",0),(jump_to_menu,"mnu_captivity_start_spacestation_defeat"),(finish_mission,0),]),
 
       (1, 0, ti_once, [],
        [
@@ -6134,7 +6146,7 @@ common_gate_system,
        [
            (main_hero_fallen,0),
         ],
-       [(jump_to_menu,"mnu_captivity_start_castle_defeat"),(finish_mission,0)]),
+       [(jump_to_menu,"mnu_captivity_start_spacestation_defeat"),(finish_mission,0)]),
       (5, 1, ti_once, [(num_active_teams_le,1),(neg|main_hero_fallen)],
        [(assign,"$auto_menu",-1),(jump_to_menu,"mnu_sneak_into_town_caught_dispersed_guards"),(finish_mission,1)]),
       (ti_on_leave_area, 0, ti_once, [],
@@ -9021,8 +9033,8 @@ common_gate_system,
      #(5,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(6,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(7,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),
      #(8,mtef_visitor_source,af_override_horse,0,1,[]),(9,mtef_visitor_source,af_override_horse,0,1,[]),(10,mtef_scene_source,af_override_horse,0,1,[]),(11,mtef_scene_source,af_override_horse,0,1,[]),
      #(12,mtef_visitor_source,af_override_horse,0,1,[]),(13,mtef_visitor_source,0,0,1,[]),(14,mtef_visitor_source,0,0,1,[]),(15,mtef_visitor_source,0,0,1,[]),
-     #(16,mtef_visitor_source,,0,1,[]),(17,mtef_visitor_source,af_castle_lord,0,1,[]),(18,mtef_visitor_source,af_castle_lord,0,1,[]),(19,mtef_visitor_source,af_castle_lord,0,1,[]),(20,mtef_visitor_source,af_castle_lord,0,1,[]),(21,mtef_visitor_source,af_castle_lord,0,1,[]),(22,mtef_visitor_source,af_castle_lord,0,1,[]),(23,mtef_visitor_source,af_castle_lord,0,1,[]),(24,mtef_visitor_source,af_castle_lord,0,1,[]),
-     #(25,mtef_visitor_source,af_castle_lord,0,1,[]),(26,mtef_visitor_source,af_castle_lord,0,1,[]),(27,mtef_visitor_source,af_castle_lord,0,1,[]),(28,mtef_visitor_source,af_castle_lord,0,1,[]),(29,mtef_visitor_source,af_castle_lord,0,1,[]),(30,mtef_visitor_source,af_castle_lord,0,1,[]),(31,mtef_visitor_source,af_castle_lord,0,1,[])
+     #(16,mtef_visitor_source,,0,1,[]),(17,mtef_visitor_source,af_spacestation_lord,0,1,[]),(18,mtef_visitor_source,af_spacestation_lord,0,1,[]),(19,mtef_visitor_source,af_spacestation_lord,0,1,[]),(20,mtef_visitor_source,af_spacestation_lord,0,1,[]),(21,mtef_visitor_source,af_spacestation_lord,0,1,[]),(22,mtef_visitor_source,af_spacestation_lord,0,1,[]),(23,mtef_visitor_source,af_spacestation_lord,0,1,[]),(24,mtef_visitor_source,af_spacestation_lord,0,1,[]),
+     #(25,mtef_visitor_source,af_spacestation_lord,0,1,[]),(26,mtef_visitor_source,af_spacestation_lord,0,1,[]),(27,mtef_visitor_source,af_spacestation_lord,0,1,[]),(28,mtef_visitor_source,af_spacestation_lord,0,1,[]),(29,mtef_visitor_source,af_spacestation_lord,0,1,[]),(30,mtef_visitor_source,af_spacestation_lord,0,1,[]),(31,mtef_visitor_source,af_spacestation_lord,0,1,[])
      ],
     [
 	  common_change_fog,
