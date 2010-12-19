@@ -1028,7 +1028,7 @@ centers_begin = mainplanets_begin
 centers_end   = minorplanet_end
 
 training_grounds_begin   = "p_training_ground_1"
-training_grounds_end     = "p_Bridge_1"
+training_grounds_end     = "p_sun_1"
 
 scenes_begin = "scn_mainplanet_1_center"
 scenes_end = "scn_spacestation_1_exterior"

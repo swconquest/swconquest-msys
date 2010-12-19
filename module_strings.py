@@ -2233,6 +2233,8 @@ We apologize sincerely if you contributed your suggestions and feedback but were
   ("spaceship_corellian_gunship_desc", "The Corellian Gunship is fast and very well equiped for it's size."),  
   ("spaceship_corellian_corvette_name", "CR90 Corvette"),
   ("spaceship_corellian_corvette_desc", "The Corellian Corvette is a very fast ship, and great for battle light support."),  
+  ("spaceship_x_wing_name", "X-Wing"),
+  ("spaceship_x_wing_desc", "The emblem of the Rebels, the X-Wing it's a well known lightspeed dogfighter, expertise in fast combat across the galaxy."),  
   ("spaceship_y_wing_name", "Y-Wing"),
   ("spaceship_Y_wing_desc", "Though its design is a little outdated it's a decent match for fighters ^and a fearsome bomber."),  
   #hutt

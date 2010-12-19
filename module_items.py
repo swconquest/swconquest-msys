@@ -1947,7 +1947,8 @@ items = [
 #Highlander begin--------------------------------------
   (store_current_scene,":scene"),
   (try_begin),
-	(neg|is_between,":scene","scn_ship_hangar_closed_1a","scn_space_battle"), #land battle
+	(neg|is_between,":scene","scn_ship_hangar_imp","scn_space_battle"), #land battle  
+	#@->(neg|is_between,":scene","scn_ship_hangar_closed_1a","scn_space_battle"), #land battle
 	(call_script,"script_emit_projectile",pos1,30,0,0,1,300,700,600,"psys_projectile_fly_smoke",4,0,-1,1),
   (else_try),
 	#ship battle
@@ -1964,7 +1965,8 @@ items = [
 #Highlander begin--------------------------------------
   (store_current_scene,":scene"),
   (try_begin),
-	(neg|is_between,":scene","scn_ship_hangar_closed_1a","scn_space_battle"), #land battle
+	(neg|is_between,":scene","scn_ship_hangar_imp","scn_space_battle"), #land battle  
+	#@->(neg|is_between,":scene","scn_ship_hangar_closed_1a","scn_space_battle"), #land battle
 	(call_script,"script_emit_projectile",pos1,30,0,0,1,300,700,600,"psys_projectile_fly_smoke",4,0,-1,1),
   (else_try),
 	#ship battle
@@ -1981,7 +1983,8 @@ items = [
 #Highlander begin--------------------------------------
   (store_current_scene,":scene"),
   (try_begin),
-	(neg|is_between,":scene","scn_ship_hangar_closed_1a","scn_space_battle"), #land battle
+	(neg|is_between,":scene","scn_ship_hangar_imp","scn_space_battle"), #land battle  
+	#@->(neg|is_between,":scene","scn_ship_hangar_closed_1a","scn_space_battle"), #land battle
 	(call_script,"script_emit_projectile",pos1,30,0,0,1,300,700,600,"psys_projectile_fly_smoke",4,0,-1,1),
   (else_try),
 	#ship battle
@@ -2343,7 +2346,8 @@ items = [
 #Highlander begin--------------------------------------
   (store_current_scene,":scene"),
   (try_begin),
-	(neg|is_between,":scene","scn_ship_hangar_closed_1a","scn_space_battle"), #land battle
+		(neg|is_between,":scene","scn_ship_hangar_imp","scn_space_battle"), #land battle  
+	#@->(neg|is_between,":scene","scn_ship_hangar_closed_1a","scn_space_battle"), #land battle
 	
 	(call_script,"script_emit_projectile",
 	pos1,#the position from where the projectile is emitted. Usually pos1 in the item triggers

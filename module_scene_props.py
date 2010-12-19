@@ -139,6 +139,12 @@ scene_props = [
   ("sw_holocron_old_green",0,"holocron_green","bo_holocron_old", []),
   ("sw_holocron_old_red",0,"holocron_red","bo_holocron_old", []),
 
+  ("xwing_landed",0,"xwing_landed","bo_xwing_landed", []),
+  ("xwing_landed2",0,"xwing_landed2","bo_xwing_landed", []),
+  ("xwing_landed3",0,"xwing_landed3","bo_xwing_landed", []),
+  ("xwing_landed4",0,"xwing_landed4","bo_xwing_landed", []),
+  ("xwing_landed5",0,"xwing_landed5","bo_xwing_landed", []),
+ 
   #bonus chests
   ("sw_bonus_chest",sokf_type_container,"box_a_square","bo_box_a_square", []),
   #("sw_bonus_chest",sokf_type_container,"player_chest_sw","bo_player_chest_sw", []),
@@ -2188,6 +2194,14 @@ scene_props = [
 	("taris_building_2_bridge",0,"taris_building_2_bridge",0, []),
 	("taris_platform",0,"taris_platform",0, []),
 	
+	("moseisley_angle",0,"moseisley_angle","bo_moseisley_angle", []),
+	("moseisley_chair",0,"moseisley_chair","bo_moseisley_chair", []),
+	("moseisley_machine",0,"moseisley_machine","bo_moseisley_machine", []),
+	("moseisley_table",0,"moseisley_table","bo_moseisley_table", []),
+	("moseisley_bar",0,"moseisley_bar","bo_moseisley_bar", []),
+	("moseisley_bank",0,"moseisley_bank","bo_moseisley_bank", []),
+	("moseisleybottles",0,"moseisleybottles","bo_moseisleybottles", []),
+
 ## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ##@> Reskins   
   ("revnshn_rhenvar_addon",0,"rhenvar_addon","bo_yavinaddon", []),

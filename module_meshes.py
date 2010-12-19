@@ -75,7 +75,7 @@ meshes = [
 
   #SW - new presentation meshes
   ("binocular_display", 0, "binocular_display", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  ("scope_display", 0, "scope_display", 0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("weapon_display", 0, "weapon_display", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("helmet_view_stormtrooper", 0, "helmet_view_stormtrooper", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("helmet_view_shadow_stormtrooper", 0, "helmet_view_shadow_stormtrooper", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("helmet_view_mandalorian", 0, "helmet_view_mandalorian", 0, 0, 0, 0, 0, 0, 1, 1, 1),

@@ -48,18 +48,29 @@ scenes = [
   ("conversation_scene",0,"dungeon_a", "bo_dungeon_a", (-100,-100),(100,100),-100,"0",
     [],[]),
   #SW - new scene - random_scene_ship
-  ("random_scene_ship",sf_indoors,"ship_interior", "bo_ship_interior", (-100,-100),(100,100),-100,"0",
-    [],[]),
+ #@-> ("random_scene_ship",sf_indoors,"ship_interior", "bo_ship_interior", (-100,-100),(100,100),-100,"0",
+ #@->   [],[]),
 #  ("random_scene_ship",sf_indoors,"ship_interiorB", "bo_ship_interiorB", (-100,-100),(100,100),-100,"0",
 #    [],[]),		  	
-  ("ship_hangar_closed_1a",sf_indoors,"ship_hangar_closed", "bo_ship_hangar_closed", (-100,-100),(100,100),-100,"0",
+ #@-> ("ship_hangar_closed_1a",sf_indoors,"ship_hangar_closed", "bo_ship_hangar_closed", (-100,-100),(100,100),-100,"0",
+ #@->   [],[]),
+ #@-> ("ship_hangar_closed_1b",sf_indoors,"ship_hangar_closed", "bo_ship_hangar_closed", (-100,-100),(100,100),-100,"0",
+ #@->  [],[]),	
+ #@-> ("ship_hangar_open_3a",sf_indoors,"hangar", "bo_hangar", (-100,-100),(100,100),-100,"0",
+ #@->   [],[]),	
+ #@-> ("ship_hangar_open_3b",sf_indoors,"hangar", "bo_hangar", (-100,-100),(100,100),-100,"0",
+ #@->   [],[]),
+
+  ("ship_hangar_imp",sf_indoors,"hangar", "bo_hangar", (-100,-100),(100,100),-100,"0",
     [],[]),
-  ("ship_hangar_closed_1b",sf_indoors,"ship_hangar_closed", "bo_ship_hangar_closed", (-100,-100),(100,100),-100,"0",
+  ("ship_hangar_reb",sf_indoors,"hangar", "bo_hangar", (-100,-100),(100,100),-100,"0",
+    [],[]),
+  ("ship_hangar_hut",sf_indoors,"hangar", "bo_hangar", (-100,-100),(100,100),-100,"0",
+    [],[]),
+  ("ship_hangar",sf_indoors,"hangar", "bo_hangar", (-100,-100),(100,100),-100,"0",
     [],[]),	
-  ("ship_hangar_open_3a",sf_indoors,"hangar", "bo_hangar", (-100,-100),(100,100),-100,"0",
-    [],[]),	
-  ("ship_hangar_open_3b",sf_indoors,"hangar", "bo_hangar", (-100,-100),(100,100),-100,"0",
-    [],[]),		
+
+	
 #  ("ship_hangar_open_1",sf_indoors,"ship_hangar_open", "bo_ship_hangar_open", (-100,-100),(100,100),-100,"0",
 #    [],[]),
 #  ("ship_hangar_open_2",sf_indoors,"ship_hangar_open", "bo_ship_hangar_open", (-100,-100),(100,100),-100,"0",
@@ -67,8 +78,15 @@ scenes = [
 
 #SW - added a ship interior so you could walk around
   ("ship_interior",sf_generate,"none", "none", (0,0),(120,120),-100,"0x0000000050001d63c005114300006228000053bf00004eb9", 
-    [],[], "outer_terrain_steppe"),		
-
+    [],[]),		
+  ("ship_interior_imp",sf_generate,"none", "none", (0,0),(120,120),-100,"0x0000000050001d63c005114300006228000053bf00004eb9", 
+    [],[]),		
+  ("ship_interior_reb",sf_generate,"none", "none", (0,0),(120,120),-100,"0x0000000050001d63c005114300006228000053bf00004eb9", 
+    [],[]),
+  ("ship_interior_hut",sf_generate,"none", "none", (0,0),(120,120),-100,"0x0000000050001d63c005114300006228000053bf00004eb9", 
+    [],[]),
+	
+	
 #SW BSG integration
   ("space_battle",0,"space_cube", "bo_space_cube", (-100,-100),(100,100),-100000,"0",
     [],[]),
@@ -403,7 +421,7 @@ scenes = [
     [],[]),
   ("mainplanet_13_cantina",sf_indoors,"cantina_bar", "bo_cantina_bar", (-100,-100),(100,100),-100,"0",
     [],[]),
-  ("mainplanet_14_cantina",sf_indoors,"cantina_bar", "bo_cantina_bar", (-100,-100),(100,100),-100,"0",
+  ("mainplanet_14_cantina",sf_indoors,"moseisley_cantina", "bo_moseisley_cantina", (-100,-100),(100,100),-100,"0",
     [],[]),
   ("mainplanet_15_cantina",sf_indoors,"cantina_bar", "bo_cantina_bar", (-100,-100),(100,100),-100,"0",
     [],[]),

@@ -559,6 +559,7 @@ skins = [
 	 ], #face_textures
      [(voice_die,"snd_geonosian_die"),(voice_hit,"snd_geonosian_hit"),(voice_grunt,"snd_geonosian_grunt"),(voice_grunt_long,"snd_geonosian_grunt_long"),(voice_yell,"snd_geonosian_yell"),(voice_warcry,"snd_geonosian_victory"),(voice_victory,"snd_geonosian_victory")], #man voice sounds
      "skel_human", 0.5,
+	 psys_swy_damage_sparks,psys_swy_damage_smoke,
    ),   
 
 	#SW - new rancor skin

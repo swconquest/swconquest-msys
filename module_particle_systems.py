@@ -1217,7 +1217,19 @@ particle_systems = [
      0.3                        #rotation damping
     ),
 	
-	
+	("sun_icon_effect", psf_billboard_3d|psf_global_emit_dir|psf_always_emit|psf_randomize_size|psf_randomize_rotation, "prt_strategicmap_sun",
+     2, 1.0, 0, 0, 0.0, 0.0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
+     (0.1, 1), (1, 1),        #alpha keys
+     (0.2, 0.5),(1, 0.6),      #red keys
+     (0.2, 0.4),(1, 0.5),       #green keys
+     (0.2, 0.4),(1, 0.5),      #blue keys
+     (0, 10),   (1, 11),          #scale keys
+     (0, 0, 0),           #emit box size
+     (0, 0, 0.0),               #emit velocity
+     0.0,                       #emit dir randomness
+     150,                       #rotation speed
+     0.3                        #rotation damping
+    ),
 		# ("galaxy", psf_global_emit_dir|psf_always_emit|psf_randomize_size, "galaxy_plane",
      # 1, 1.0, 0, 0, 0.0, 0.0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
      # (0.2, 0.7), (1, 0),        #alpha keys

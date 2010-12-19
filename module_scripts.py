@@ -3175,7 +3175,7 @@ scripts = [
         (item_set_slot,"itm_dlt19",slot_item_ammo_clip,6),
         (item_set_slot,"itm_dlt19_scope",slot_item_ammo_clip,6),
         (item_set_slot,"itm_dlt20a",slot_item_ammo_clip,30),
-		(item_set_slot,"itm_e17d",slot_item_ammo_clip,5),
+        (item_set_slot,"itm_e17d",slot_item_ammo_clip,5),
         (item_set_slot,"itm_dc15a",slot_item_ammo_clip,500),
         (item_set_slot,"itm_dc15a_hip",slot_item_ammo_clip,500),
         (item_set_slot,"itm_dc15s",slot_item_ammo_clip,500),
@@ -8166,7 +8166,7 @@ scripts = [
           (val_sub, ":cur_banner", banner_scene_props_begin),
           (val_add, ":cur_banner", banner_map_icons_begin),
           #@> Removed banners for planets / swy   (party_set_banner_icon, ":center_no", ":cur_banner"),
-		  
+          
           # custom_banner_begin
           #        (troop_get_slot, ":flag_icon", ":lord_troop_id", slot_troop_custom_banner_map_flag_type),
           #        (ge, ":flag_icon", 0),
@@ -8960,16 +8960,16 @@ scripts = [
             (is_between, ":troop_no", "trp_knight_2_12", "trp_knight_2_22"),
             (party_set_icon, "$pout_party", "icon_rebel_transport"),
           (else_try),
-			(eq,":troop_no","trp_knight_2_18"), # Antilles
-			(party_set_icon, "$pout_party", "icon_corellian_corvette"),
-		  (else_try),
-			(store_random_in_range,":chosen_ship",0,1),
-			(try_begin),
-				(eq,":chosen_ship",1),
-				(party_set_icon, "$pout_party", "icon_corellian_gunship"),
-			(else_try),
-				(party_set_icon, "$pout_party", "icon_corellian_corvette"),
-			(try_end),
+            (eq,":troop_no","trp_knight_2_18"), # Antilles
+            (party_set_icon, "$pout_party", "icon_corellian_corvette"),
+          (else_try),
+            (store_random_in_range,":chosen_ship",0,1),
+            (try_begin),
+              (eq,":chosen_ship",1),
+              (party_set_icon, "$pout_party", "icon_corellian_gunship"),
+            (else_try),
+              (party_set_icon, "$pout_party", "icon_corellian_corvette"),
+            (try_end),
           (try_end),
         (else_try),
           (eq, ":troop_faction_no", "fac_kingdom_3"), #Khergit Khanate = Hutt
@@ -9402,8 +9402,8 @@ scripts = [
                 #(party_add_particle_system, ":minorplanet_no", "psys_map_minorplanet_fire"),
                 #(party_add_particle_system, ":minorplanet_no", "psys_map_minorplanet_fire_smoke"),
                 #(party_set_icon, ":minorplanet_no", "icon_minorplanet_burnt_a"),
-				(party_add_particle_system, ":minorplanet_no", "psys_planet_icon_raided_effect"),
-				
+                (party_add_particle_system, ":minorplanet_no", "psys_planet_icon_raided_effect"),
+                
                 (party_set_slot, ":minorplanet_no", slot_minorplanet_smoke_added, 1),
               (try_end),
               (try_begin),
@@ -9437,7 +9437,7 @@ scripts = [
               (party_slot_eq, ":minorplanet_no", slot_minorplanet_smoke_added, 1),
               (party_clear_particle_systems, ":minorplanet_no"),
               #(party_add_particle_system, ":minorplanet_no", "psys_map_minorplanet_looted_smoke"),
-			  (party_add_particle_system, ":minorplanet_no", "psys_planet_icon_raided_effect"),
+              (party_add_particle_system, ":minorplanet_no", "psys_planet_icon_raided_effect"),
               (party_set_slot, ":minorplanet_no", slot_minorplanet_smoke_added, 2),
             (try_end),
             (try_begin),
@@ -9452,7 +9452,7 @@ scripts = [
               (call_script, "script_minorplanet_set_state",  ":minorplanet_no", 0),#village back to normal
               (party_set_slot, ":minorplanet_no", slot_minorplanet_recover_progress, 0),
               (party_clear_particle_systems, ":minorplanet_no"),
-			  (party_add_particle_system, ":minorplanet_no", "psys_planet_icon_atmospheric_effect"),
+              (party_add_particle_system, ":minorplanet_no", "psys_planet_icon_atmospheric_effect"),
               (party_set_slot, ":minorplanet_no", slot_minorplanet_smoke_added, 0),
               (party_set_icon, ":minorplanet_no", "icon_minorplanet_a"),
             (try_end),
@@ -12133,7 +12133,7 @@ scripts = [
           (try_end),
           (str_store_faction_name_link, s1, ":kingdom_a"),
           (str_store_faction_name_link, s2, ":kingdom_b"),
-          (display_log_message, "@{s1} and {s2} are in war for the galactic supremacy.", color_quest_and_faction_news),
+          (display_log_message, "@{s1} and {s2} are engaged in war for the galactic supremacy.", color_quest_and_faction_news),
           
           #(call_script, "script_add_notification_menu", "mnu_notification_war_declared", ":kingdom_a", ":kingdom_b"),
           
@@ -23083,10 +23083,10 @@ scripts = [
                         (assign,reg(12),"trp_clone_trooper_2"),
                         (assign,reg(13),"trp_arc_trooper_3"),
                         (assign,reg(14),"trp_arc_trooper_4"),
-						(assign,reg(15),"trp_clone_trooper_5"),
+                        (assign,reg(15),"trp_clone_trooper_5"),
                         (assign,reg(16),"trp_b1series"),
-						(assign,reg(17),"trp_b2series"),
-						(assign,reg(18),"trp_b2series_enhanced"),
+                        (assign,reg(17),"trp_b2series"),
+                        (assign,reg(18),"trp_b2series_enhanced"),
                         
                       (end_try),
                       
@@ -25476,7 +25476,23 @@ scripts = [
                       (assign,"$g_walk_around_ship",1),
                       
                       #modify/reset visitors
-                      (modify_visitors_at_site,"scn_ship_interior"),
+					  (faction_get_slot,":hangar_faction","fac_player_supporters_faction", slot_faction_culture),
+					  
+					  (try_begin),
+						(eq,":hangar_faction","fac_culture_1"),
+						(assign,":scene_to_use","scn_ship_interior_imp"),
+					  (else_try),
+					    (eq,":hangar_faction","fac_culture_2"),
+						(assign,":scene_to_use","scn_ship_interior_reb"),
+					  (else_try),	
+					    (eq,":hangar_faction","fac_culture_3"),
+						(assign,":scene_to_use","scn_ship_interior_hut"),
+                      (else_try), 
+					    (assign,":scene_to_use","scn_ship_interior"),
+					  (try_end),
+					  
+                      (modify_visitors_at_site,":scene_to_use"),
+					  
                       #reset visitors
                       (reset_visitors),
                       
@@ -25531,8 +25547,8 @@ scripts = [
                       (set_jump_mission,"mt_ship_interior"),
                       
                       #jump to the scene
-                      (jump_to_scene,"scn_ship_interior"),
-                      
+					  (jump_to_scene,":scene_to_use"),
+					  
                       #start the scene
                       (change_screen_mission),
                       
@@ -25879,7 +25895,7 @@ scripts = [
                       (store_random_in_range, "$g_player_entry_point", 32, 40),
                       
                       #SW - added script_set_items_for_arena so we can toggle what weapons are used
-                      (call_script, "script_set_items_for_arena", "$g_player_entry_point"),
+                      (call_script, "script_set_items_for_arena", "$g_player_entry_point","trp_player"),
                       
                       (set_visitor, "$g_player_entry_point", "trp_player"),
                       
@@ -25898,7 +25914,8 @@ scripts = [
                     [
                       
                       (store_script_param, ":entry_point", 1),
-                      
+                      (store_script_param, ":added_troop", 2),
+					  
                       #have to clear all the override_items first
                       (mission_tpl_entry_clear_override_items, "mt_arena_melee_fight", ":entry_point"),
                       
@@ -26034,8 +26051,11 @@ scripts = [
                         (try_end),
                       (else_try),
                         (eq, "$arena_weapons", 2),	#players current equipment
-                        (try_for_range, ":slot", 0, 8),	# ek_item_0 to ek_gloves
+						(troop_get_type,":holod_race","$g_player_troop"),
+						(troop_set_type,":added_troop",":holod_race"),
+                        (try_for_range, ":slot", 0, 9),	# ek_item_0 to ek_gloves
                           (troop_get_inventory_slot,":item","$g_player_troop",":slot"),
+						  (gt,":item",0),
                           (mission_tpl_entry_add_override_item, "mt_arena_melee_fight", ":entry_point", ":item"),
                         (try_end),
                       (else_try),
@@ -26278,37 +26298,37 @@ scripts = [
                   # Output: none (executes set_rain command, must go in ti_before_mission_start)
                   ("change_rain",
                     [
-                      #(store_script_param_1, ":c_town"),
+                      (store_script_param_1, "$current_town"),
                       #SW - change the weather depending on the location
                       #(try_begin), # same mnu_town is used for towns and castles
-                        #(party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
-                        (try_begin),
-                          (eq, "$current_town", "p_mon_cal"),				#Mon Cal
-                          (store_random_in_range, ":random", 50, 100),
-                          (set_rain,1,":random"),
-                        (else_try),
-                          (eq, "$current_town", "p_hoth"),				#Hoth
-                          (store_random_in_range, ":random", 60, 100),
-                          (set_rain,2,":random"),
-                        (else_try),
-                          (eq, "$current_town", "p_kamino"),				#Kamino
-                          (set_rain,1,100),
-                          #(set_fog_distance, 20, 0xFFFFFFFF),
-                        (else_try),
-                          (eq, "$current_town", "p_minorplanet_62"),				#vjun
-                          (store_random_in_range, ":random", 79, 100),
-                          (set_rain,1,100),
-                          #(set_fog_distance, 40, 0xFFFFFFFF),
-                        (else_try),
-                          # (this_or_next|eq, ":c_town", "p_geonosis"),			#Geonosis / without atmosferic effects
-                          # (this_or_next|eq, ":c_town", "p_kessel"),				#Kessel   / without atmosferic effects
-                          # (this_or_next|eq, ":c_town", "p_tatooine"),			#Tatooine / without atmosferic effects
-                          # (this_or_next|eq, ":c_town", "p_ryloth"),				#Ryloth   / without atmosferic effects
-                          # (this_or_next|eq, ":c_town", "p_mustafar"),			#Mustafar / without atmosferic effects
-                          # (this_or_next|eq, ":c_town", "p_sarapin"),			#Sarapin  / without atmosferic effects
-                          # (eq, ":c_town", "p_hypori"),			            	#Hypori   / without atmosferic effects
-                          (set_rain,0,0),
-                        (try_end),
+                      #(party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
+                      (try_begin),
+                        (eq, "$current_town", "p_mon_cal"),				#Mon Cal
+                        (store_random_in_range, ":random", 50, 100),
+                        (set_rain,1,":random"),
+                      (else_try),
+                        (eq, "$current_town", "p_hoth"),					#Hoth
+                        (store_random_in_range, ":random", 60, 100),
+                        (set_rain,2,":random"),
+                      (else_try),
+                        (eq, "$current_town", "p_kamino"),				#Kamino
+                        (set_rain,1,100),
+                        #(set_fog_distance, 20, 0xFFFFFFFF),
+                      (else_try),
+                        (eq, "$current_town", "p_minorplanet_62"),		#vjun
+                        (store_random_in_range, ":random", 79, 100),
+                        (set_rain,1,100),
+                        #(set_fog_distance, 40, 0xFFFFFFFF),
+                      (else_try),
+                        # (this_or_next|eq, ":c_town", "p_geonosis"),			#Geonosis / without atmosferic effects
+                        # (this_or_next|eq, ":c_town", "p_kessel"),				#Kessel   / without atmosferic effects
+                        # (this_or_next|eq, ":c_town", "p_tatooine"),			#Tatooine / without atmosferic effects
+                        # (this_or_next|eq, ":c_town", "p_ryloth"),				#Ryloth   / without atmosferic effects
+                        # (this_or_next|eq, ":c_town", "p_mustafar"),			#Mustafar / without atmosferic effects
+                        # (this_or_next|eq, ":c_town", "p_sarapin"),			#Sarapin  / without atmosferic effects
+                        # (eq, ":c_town", "p_hypori"),			            	#Hypori   / without atmosferic effects
+                        (set_rain,0,0),
+                      (try_end),
                       #(try_end),
                     ]
                   ),
@@ -28876,6 +28896,28 @@ scripts = [
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_trade_computer_max, 0),
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_cargo_capacity_min, 0),
                         (party_set_slot, "p_spaceship_a_wing", slot_spaceship_cargo_capacity_max, 0),
+                        #x_wing
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_name, "str_spaceship_x_wing_name"),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_price, 19800),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_desc, "str_spaceship_x_wing_desc"),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_icon, "icon_x_wing"),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_base_speed, 88),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_drive_min, 2),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_drive_max, 5),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_scanner_min, 1),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_scanner_max, 2),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_combat_computer_min, 2),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_combat_computer_max, 3),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_troop_capacity_min, 0),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_troop_capacity_max, 0),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_medical_bay_min, 0),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_medical_bay_max, 0),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_prisoner_capacity_min, 0),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_prisoner_capacity_max, 0),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_trade_computer_min, 0),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_trade_computer_max, 0),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_cargo_capacity_min, 0),
+                        (party_set_slot, "p_spaceship_x_wing", slot_spaceship_cargo_capacity_max, 0),
                         #y_wing
                         (party_set_slot, "p_spaceship_y_wing", slot_spaceship_name, "str_spaceship_y_wing_name"),
                         (party_set_slot, "p_spaceship_y_wing", slot_spaceship_price, 27000),
@@ -29319,7 +29361,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_cargo_capacity_min, 2),
                         (party_set_slot, "p_spaceship_cis_star_cruiser", slot_spaceship_cargo_capacity_max, 5),
                         #swy // nebulon
-						#spaceship_nebulon
+                        #spaceship_nebulon
                         (party_set_slot, "p_spaceship_nebulon", slot_spaceship_name, "str_spaceship_nebulon_name"),
                         (party_set_slot, "p_spaceship_nebulon", slot_spaceship_price, 95000),
                         (party_set_slot, "p_spaceship_nebulon", slot_spaceship_desc, "str_spaceship_nebulon_desc"),
@@ -29341,9 +29383,9 @@ scripts = [
                         (party_set_slot, "p_spaceship_nebulon", slot_spaceship_trade_computer_max, 0),
                         (party_set_slot, "p_spaceship_nebulon", slot_spaceship_cargo_capacity_min, 1),
                         (party_set_slot, "p_spaceship_nebulon", slot_spaceship_cargo_capacity_max, 2),
-						
-						
-						#spaceship_starchaser
+                        
+                        
+                        #spaceship_starchaser
                         (party_set_slot, "p_spaceship_starchaser", slot_spaceship_name, "str_spaceship_starchaser_name"),
                         (party_set_slot, "p_spaceship_starchaser", slot_spaceship_price, 17000),
                         (party_set_slot, "p_spaceship_starchaser", slot_spaceship_desc, "str_spaceship_starchaser_desc"),
@@ -29365,7 +29407,7 @@ scripts = [
                         (party_set_slot, "p_spaceship_starchaser", slot_spaceship_trade_computer_max, 0),
                         (party_set_slot, "p_spaceship_starchaser", slot_spaceship_cargo_capacity_min, 0),
                         (party_set_slot, "p_spaceship_starchaser", slot_spaceship_cargo_capacity_max, 0),
-							
+                        
                         # end of assign slots
                         
                     ]),
@@ -30175,10 +30217,10 @@ scripts = [
                           (else_try),
                             #B2 Droids
                             (this_or_next|eq, "trp_b2series", ":cur_agent_troop"),
-							(eq, "trp_b2series_enhanced", ":cur_agent_troop"),
+                            (eq, "trp_b2series_enhanced", ":cur_agent_troop"),
                             (agent_set_stand_animation, ":agent_no", "anim_b2_stand"),
                             (agent_set_walk_forward_animation, ":agent_no", "anim_b2_walk"),
-							(agent_set_speed_limit,":agent_no",6),
+                            (agent_set_speed_limit,":agent_no",6),
                           (else_try),
                             #Hutt Dancer
                             (eq,":location_flag",1),

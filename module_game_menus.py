@@ -115,7 +115,7 @@ game_menus = [
         [
             (troop_set_type,"trp_player",0),
             (assign,"$character_gender",tf_male),
-			#(troop_raise_attribute, "trp_player",ca_intelligence,-30), #so you dont need to wait time picking extra skills   
+	 (troop_raise_attribute, "trp_player",ca_intelligence,-30), #so you dont need to wait time picking extra skills   
      (troop_clear_inventory, "trp_player"),
      (troop_raise_attribute, "trp_player", ca_strength, -100),
      (troop_raise_attribute, "trp_player", ca_agility, -100),
@@ -316,7 +316,11 @@ game_menus = [
 ##        ]
 ##       ),
 	  #SW - tutorial_cheat
-      ("tutorial_cheat",[(eq,1,0)],"CHEAT!",  #disabled menu
+      ("tutorial_cheat",[		
+	    #New Cheat protection system by Swyter
+		(mouse_get_position, pos2),
+		(position_get_y,":y",pos2),
+		(le,":y",1),],"CHEAT!",  #disabled menu
 	  #("tutorial_cheat",[(eq,1,1)],"CHEAT!", #enabled
        [
          (change_screen_return),
@@ -488,7 +492,7 @@ game_menus = [
 	  ),
 	 # Quick Scene Chooser integration - http://forums.taleworlds.net/index.php/topic,51851.0.html
 	("choose_scene",[
-			#New Cheat protection system by Swyter
+		#New Cheat protection system by Swyter
 		(mouse_get_position, pos2),
 		(position_get_y,":y",pos2),
 		(le,":y",1),],
@@ -6132,23 +6136,40 @@ game_menus = [
                                 (else_try),
 								  (set_jump_mission,"mt_lead_charge_no_horse"),
 								  #(assign, ":scene_to_use", "scn_random_scene_ship"),
-								   (store_random_in_range, ":rand", 0, 100),
-									(try_begin),
-						          	  (lt, ":rand", 35),
-									  (assign, ":scene_to_use", "scn_ship_hangar_open_3a"),
-									(else_try),
-									  (lt, ":rand", 70),
-									  (assign, ":scene_to_use", "scn_ship_hangar_open_3b"),
-									(else_try),
-									  (lt, ":rand", 85),
-									  #(assign, ":scene_to_use", "scn_ship_hangar_closed_2"),
-									  (assign, ":scene_to_use", "scn_ship_hangar_closed_1a"),
-									(else_try),
-									  #(assign, ":scene_to_use", "scn_ship_hangar_open_2"),
-									  (assign, ":scene_to_use", "scn_ship_hangar_closed_1b"),
-									(try_end),
+								  
+								  (faction_get_slot,":hangar_faction","fac_player_supporters_faction", slot_faction_culture),
+								  
+								  (try_begin),
+									(eq,":hangar_faction","fac_culture_1"),
+									(assign,":scene_to_use","scn_ship_hangar_imp"),
+								  (else_try),
+									(eq,":hangar_faction","fac_culture_2"),
+									(assign,":scene_to_use","scn_ship_hangar_reb"),
+								  (else_try),	
+									(eq,":hangar_faction","fac_culture_3"),
+									(assign,":scene_to_use","scn_ship_hangar_hut"),
+								  (else_try), 
+									(assign,":scene_to_use","scn_ship_hangar"),
+								  (try_end),
+								  
+								   # (store_random_in_range, ":rand", 0, 100),
+									# (try_begin),
+						          	  # (lt, ":rand", 35),
+									  # (assign, ":scene_to_use", "scn_ship_hangar_open_3a"),
+									# (else_try),
+									  # (lt, ":rand", 70),
+									  # (assign, ":scene_to_use", "scn_ship_hangar_open_3b"),
+									# (else_try),
+									  # (lt, ":rand", 85),
+									  ##(assign, ":scene_to_use", "scn_ship_hangar_closed_2"),
+									  # (assign, ":scene_to_use", "scn_ship_hangar_closed_1a"),
+									# (else_try),
+									  ##(assign, ":scene_to_use", "scn_ship_hangar_open_2"),
+									  # (assign, ":scene_to_use", "scn_ship_hangar_closed_1b"),
+									# (try_end),
                                   (jump_to_scene, ":scene_to_use"),
                                 (try_end),
+							
                                 (assign, "$g_next_menu", "mnu_simple_encounter"),
                                 (jump_to_menu, "mnu_battle_debrief"),
                                 (change_screen_mission),

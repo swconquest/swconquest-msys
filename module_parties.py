@@ -306,21 +306,21 @@ parties = [
 
 
 #  bridge_a
-  ("Bridge_1","1",icon_bridge_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(82.88,128.18),[],100),
-  ("Bridge_2","2",icon_bridge_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-31.74,-106.04),[],100),
-  ("Bridge_3","3",icon_bridge_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(71.50,44.48),[],100),
-  ("Bridge_4","4",icon_bridge_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-70.70,-40.95),[],100),
-  ("Bridge_5","5",icon_bridge_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(133.28,-19.28),[],100),
-  ("Bridge_6","6",icon_bridge_snow_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(38.03,-72.64),[],100),
-  ("Bridge_7","7",icon_bridge_snow_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(10.96,34.87),[],100),
-  ("Bridge_8","8",icon_bridge_snow_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-118.07,-29.46),[],100),
-  ("Bridge_9","9",icon_bridge_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(98.16,-96.57),[],100),
-  ("Bridge_10","10",icon_bridge_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(24.11,95.27),[],100),
-  ("Bridge_11","11",icon_bridge_a|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-136.37,-97.56),[],100),
-  ("Bridge_12","12",icon_bridge_b|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-73.49,-72.42),[],100),
-  ("Bridge_13","13",icon_bridge_b|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-69.26,141.42),[],100),
-  ("Bridge_14","14",icon_bridge_b|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-51.50,71.45),[],100),
-  ("Bridge_15","15",icon_bridge_b|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(103.87,-50.30),[],100),
+  ("sun_1","1",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(82.88,128.18),[],100),
+  ("sun_2","2",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-31.74,-106.04),[],100),
+  ("sun_3","3",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(71.50,44.48),[],100),
+  ("sun_4","4",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-70.70,-40.95),[],100),
+  ("sun_5","5",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(133.28,-19.28),[],100),
+  ("sun_6","6",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(38.03,-72.64),[],100),
+  ("sun_7","7",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(10.96,34.87),[],100),
+  ("sun_8","8",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-118.07,-29.46),[],100),
+  ("sun_9","9",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(98.16,-96.57),[],100),
+  ("sun_10","10",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(24.11,95.27),[],100),
+  ("sun_11","11",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-136.37,-97.56),[],100),
+  ("sun_12","12",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-73.49,-72.42),[],100),
+  ("sun_13","13",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-69.26,141.42),[],100),
+  ("sun_14","14",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-51.50,71.45),[],100),
+  ("sun_15","15",icon_strategicmap_sun|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(103.87,-50.30),[],100),
   
   
 #ship debris  
@@ -379,6 +379,7 @@ parties = [
   ("spaceship_imperial_star_destroyer_interdictor","Spaceship Array",icon_minorplanet_a|pf_disabled|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-139.00,-40.00),[]),
   #rebel - a_wing is spaceship_rebel_begin and spaceship_empire_end
   ("spaceship_a_wing","Spaceship Array",icon_minorplanet_a|pf_disabled|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-139.00,-40.00),[]),
+  ("spaceship_x_wing","Spaceship Array",icon_minorplanet_a|pf_disabled|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-139.00,-40.00),[]),
   ("spaceship_y_wing","Spaceship Array",icon_minorplanet_a|pf_disabled|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-139.00,-40.00),[]),
   ("spaceship_moncal_cruiser","Spaceship Array",icon_minorplanet_a|pf_disabled|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-139.00,-40.00),[]),
   ("spaceship_rebel_transport","Spaceship Array",icon_minorplanet_a|pf_disabled|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-139.00,-40.00),[]),

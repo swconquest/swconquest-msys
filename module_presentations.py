@@ -465,7 +465,8 @@ presentations = [
 				(eq, ":item_type_handone", itp_type_polearm),
 				(assign, ":view", 1),	#use binoculars
 			(else_try),
-				(eq, ":item_type_handone", itp_type_crossbow),
+				(this_or_next|eq, ":item_type_handone", itp_type_crossbow),
+				(eq, ":item_type_handone", itp_type_pistol),
 				(assign, ":view", 2),	#use scope
 			(else_try),
 				(assign, ":view", 0),	#pistol, other, don't do anything
@@ -477,25 +478,25 @@ presentations = [
 			 (create_mesh_overlay, reg1, "mesh_binocular_display"),
 			 (position_set_x, pos1, 0),
 			 (position_set_y, pos1, 0),
-			 (overlay_set_position, reg1, pos1),	
+			 (overlay_set_position, reg1, pos1),
 		(else_try),
 			(eq, ":view", 2),
-			(create_mesh_overlay, reg1, "mesh_scope_display"),
+			(create_mesh_overlay, reg1, "mesh_weapon_display"),
 			(position_set_x, pos1, 0),
 			(position_set_y, pos1, 0),
-			(overlay_set_position, reg1, pos1),			
+			(overlay_set_position, reg1, pos1),
 		(try_end),
 		
 		(presentation_set_duration, 999999),
 		
-		#--------------------------
-							#Little Pos Helper by Kuba begin---------
-							(create_text_overlay, "$g_little_pos_helper", "@X: 00,Y: 00"),
-							(overlay_set_color, "$g_little_pos_helper", 0xFFFFFFFF),
-							(position_set_x, pos1, 10),
-							(position_set_y, pos1, 700),
-							(overlay_set_position, "$g_little_pos_helper", pos1),
-							#----------------------------------------
+		# --------------------------
+							# Little Pos Helper by Kuba begin---------
+							# (create_text_overlay, "$g_little_pos_helper", "@X: 00,Y: 00"),
+							# (overlay_set_color, "$g_little_pos_helper", 0xFFFFFFFF),
+							# (position_set_x, pos1, 10),
+							# (position_set_y, pos1, 700),
+							# (overlay_set_position, "$g_little_pos_helper", pos1),
+							# ----------------------------------------
 							
 							# (create_mesh_overlay, reg1, "mesh_binocular_display"),
 							# (position_set_x, pos1, 0),
@@ -503,43 +504,43 @@ presentations = [
 							# (position_set_z, pos1, 0),
 							# (overlay_set_position, reg1, pos1),	
 							
-							#Dynamic numbers by Swyter - Rotation
-							(create_text_overlay, "$g_rotation", "@Binocular Rotation"),
-							(position_set_x, pos1, 465),
-							(position_set_y, pos1, 200),
-							(position_set_z, pos1, 0),
-							(overlay_set_position, "$g_rotation", pos1),
-							(overlay_set_color, "$g_rotation", 0xde9e62),		
+							##Dynamic numbers by Swyter - Rotation
+							# (create_text_overlay, "$g_rotation", "@Binocular Rotation"),
+							# (position_set_x, pos1, 465),
+							# (position_set_y, pos1, 200),
+							# (position_set_z, pos1, 0),
+							# (overlay_set_position, "$g_rotation", pos1),
+							# (overlay_set_color, "$g_rotation", 0xde9e62),		
 							
-							#Dynamic numbers by Swyter - Distance
-							(create_text_overlay, "$g_distance", "@Binocular Distance"),
-							(position_set_x, pos1, 238),
-							(position_set_y, pos1, 140),
-							(position_set_z, pos1, 0),
-							(overlay_set_position, "$g_distance", pos1),	
-							(overlay_set_color, "$g_distance", 0x3e1213),
+							##Dynamic numbers by Swyter - Distance
+							# (create_text_overlay, "$g_distance", "@Binocular Distance"),
+							# (position_set_x, pos1, 238),
+							# (position_set_y, pos1, 140),
+							# (position_set_z, pos1, 0),
+							# (overlay_set_position, "$g_distance", pos1),	
+							# (overlay_set_color, "$g_distance", 0x3e1213),
 		#-----------------------------------------------------------
 		]),
 	(ti_on_presentation_run,
        		[
 				#-----------------------------------------------------------
-				(mouse_get_position, pos1),
-				(position_get_x, reg1, pos1),
-				(position_get_y, reg2, pos1),
-				(overlay_set_text, "$g_little_pos_helper", "@X: {reg1},Y: {reg2}"),
+				# (mouse_get_position, pos1),
+				# (position_get_x, reg1, pos1),
+				# (position_get_y, reg2, pos1),
+				# (overlay_set_text, "$g_little_pos_helper", "@X: {reg1},Y: {reg2}"),
 			
 			
-				(get_player_agent_no,":bin_player"),
-				(agent_get_position, pos2,":bin_player"),
-				(position_get_rotation_around_z,":bin_rotation",pos2),
-				(str_store_string,reg60,":bin_rotation"),
+				# (get_player_agent_no,":bin_player"),
+				# (agent_get_position, pos2,":bin_player"),
+				# (position_get_rotation_around_z,":bin_rotation",pos2),
+				# (str_store_string,reg60,":bin_rotation"),
 				
-				(agent_get_look_position, pos3, ":bin_player"),
-				(get_distance_between_positions,":bin_distance",pos2,pos3),
-				(store_div,":bin_distance",":bin_distance",1000),
+				# (agent_get_look_position, pos3, ":bin_player"),
+				# (get_distance_between_positions,":bin_distance",pos2,pos3),
+				# (store_div,":bin_distance",":bin_distance",1000),
 				
-				(overlay_set_text, "$g_rotation", "@{reg60}"),
-				(overlay_set_text, "$g_distance", ":bin_distance"),
+				# (overlay_set_text, "$g_rotation", "@{reg60}"),
+				# (overlay_set_text, "$g_distance", ":bin_distance"),
 			#-----------------------------------------------------------
 
 		(try_begin),

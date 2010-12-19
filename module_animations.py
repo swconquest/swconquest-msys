@@ -158,7 +158,8 @@ animations = [
  ["run_forward_onehanded", acf_enforce_lowerbody,
 #   [0.8, "anim_human", 7000, 7040, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9)], 
 #   [0.8, "run_normal", 0, 12, arf_use_walk_progress|arf_cyclic|blend_in_walk,pack2f(0.4,0.9)], 
-   [0.8, "run_man_forward_onehanded", 0, 24, arf_use_walk_progress|arf_cyclic|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.4], 
+#@   [0.8, "run_man_forward_onehanded", 0, 24, arf_use_walk_progress|arf_cyclic|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.4], 
+   [0.7, "swy_human_doublesaber_walk", 0, 33, arf_use_walk_progress|arf_cyclic|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.5], 
  ],
  ["run_forward_staff", acf_enforce_lowerbody,
 

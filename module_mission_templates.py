@@ -2606,7 +2606,7 @@ tournament_triggers = [
        (try_end),
 
 		#SW - added script_set_items_for_arena so we can toggle what weapons are used
-		(call_script, "script_set_items_for_arena", ":random_entry_point"),
+		(call_script, "script_set_items_for_arena", ":random_entry_point",":added_troop"),
 
        (add_visitors_to_current_scene, ":random_entry_point", ":added_troop", 1),
        (store_add, ":new_spawned_count", "$g_arena_training_num_agents_spawned", 1),
