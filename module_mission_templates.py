@@ -1418,12 +1418,13 @@ common_check_town_fight = (
 							# (assign, "$g_init_fight", 2),
 						# (try_end),
 
-						#(get_player_agent_no, ":player_agent"),
+						(get_player_agent_no, ":player_agent"),
 						(assign, ":wounded", 0),
 						#(assign, ":killed", 0),
 						(try_for_agents, ":agent"),
-							(agent_get_team  ,":team", ":agent"),
-							(eq, ":team", 2),	#citizens
+							(agent_is_human,":agent"), # SWY @> It shouldn't be triggered by horse damage
+							(agent_get_team  ,":team", ":agent"),(eq, ":team", 2),	#citizens
+							(neq, ":agent", ":player_agent"), # SWY @> non-player agents only
 							(store_agent_hit_points,":agent_hp",":agent",1),	#set to 1 to retrive absolute hp
 							(agent_get_slot, ":old_agent_hp", ":agent", slot_agent_hit_points),
 							(try_begin),

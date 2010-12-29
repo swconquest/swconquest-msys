@@ -44,7 +44,7 @@ party_templates = [
 ##  ("swadian_nobleman","Swadian Nobleman",icon_gray_knight|carries_goods(10)|pf_quest_party,0,fac_commoners,merchant_personality,[(trp_nobleman,1,1),(trp_swadian_knight,2,6),(trp_swadian_man_at_arms,4,12)]),
 # Ryan BEGIN
   #("jawas","Jawas",icon_tusken|carries_goods(8),0,fac_outlaws,bandit_personality,[(trp_jawa,12,24)]),
-  ("jawas","Jawas",icon_mercenary_shuttle_brown|carries_goods(8),0,fac_outlaws,bandit_personality,[(trp_jawa,8,16),(trp_jawa_2,5,10),(trp_jawa_3,2,4),(trp_r2series,0,1,pmf_is_prisoner),(trp_3poseries,0,1,pmf_is_prisoner)]),  
+  ("jawas","Jawas",icon_jawa_ship|carries_goods(8),0,fac_outlaws,bandit_personality,[(trp_jawa,8,16),(trp_jawa_2,5,10),(trp_jawa_3,2,4),(trp_r2series,0,1,pmf_is_prisoner),(trp_3poseries,0,1,pmf_is_prisoner)]),  
   
 # Ryan END
 #SW - switched bountyhunters to Trandoshan Slavers

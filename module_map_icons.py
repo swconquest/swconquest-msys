@@ -82,6 +82,7 @@ map_icons = [
   #purchasable ships
   ("shuttle",mcn_no_shadow,"shuttle_civilian", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),  
   ("mercenary_raider_grey",mcn_no_shadow,"mercenary_raider_grey", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("jawa_ship",mcn_no_shadow,"jawaship", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("mercenary_raider_brown",mcn_no_shadow,"mercenary_raider_brown", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("mercenary_shuttle_grey",mcn_no_shadow,"shuttle_grey", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),  
   ("mercenary_shuttle_brown",mcn_no_shadow,"shuttle_brown", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),  

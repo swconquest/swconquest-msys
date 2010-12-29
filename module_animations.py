@@ -14,9 +14,9 @@ from header_animations import *
 #  3.2) Name of the animation resource.
 #  3.3) Beginning frame of the sequence within the animation resource.
 #  3.4) Ending frame of the sequence within the animation resource.
-#  3.5) Sequence flags: could be anything beginning with arf_ defined in header_animations.py
-# 
-####################################################################################################################
+ #  3.5) Sequence flags: could be anything beginning with arf_ defined in header_animations.py
+  # 
+   ####################################################################################################################
 
 #plan : 
 # basic movement : walk ride etc. 0 -20000
@@ -350,21 +350,23 @@ animations = [
 ##   [37.0, "stand_onhorse", 0, 1110, arf_cyclic],
 ##   [22.0, "stand_onhorse_sword", 0, 671, arf_cyclic],
    #[15.0, "stand_onhorse", 0, 456, arf_cyclic],		#original native animation
-   [12.0, "sw_pilot_stand", 0, 199, acf_align_with_ground|arf_cyclic|arf_blend_in_2],
+   [8.0, "sw_pilot_stand", 0, 49, acf_align_with_ground|arf_cyclic|arf_blend_in_8],
    #[5.0, "sw_pilot_stand", 0, 99, arf_cyclic],
    #[10.0, "sw_pilot_stand", 0, 199, arf_cyclic],
    #[5.0, "sw_speeder_stand", 0, 99, arf_cyclic|arf_use_stand_progress|arf_make_walk_sound, 0, (0, 0, 0), 0.0],	#SW - new horse_stand animation by Swyter   
    
   ],
   #SW - modified ride_1
- ["ride_1", acf_enforce_lowerbody | acf_synch_with_horse | acf_align_with_ground,
+ ["ride_1", acf_enforce_lowerbody| acf_align_with_ground,
    #[1.0, "anim_human_02", 0, 31, arf_cyclic],
-   [1.0, "anim_human_02", 0, 0, arf_cyclic],
+   ##[1.0, "anim_human_02", 0, 0, arf_cyclic],
+   [8.0, "sw_pilot_stand", 0, 49, arf_cyclic],
  ],
  #SW - modified lancer_ride_1
  ["lancer_ride_1", acf_enforce_lowerbody | acf_synch_with_horse,
    #[0.8, "anim_human", horse_move+210, horse_move+250, arf_cyclic |  arf_blend_in_16],
-   [0.8, "anim_human", horse_move+210, horse_move+210, arf_cyclic |  arf_blend_in_16],
+   ##[0.8, "anim_human", horse_move+210, horse_move+210, arf_cyclic |  arf_blend_in_16],
+   [8.0, "sw_pilot_stand", 0, 49, arf_cyclic |  arf_blend_in_16],
  ],
  #SW - modified lancer_charge_parried
  ["lancer_charge_parried",acf_enforce_lowerbody,
@@ -372,22 +374,25 @@ animations = [
    [1.0, "anim_human", horse_move+210, horse_move+210, arf_blend_in_32],
  ],
  #SW - modified ride_2
- ["ride_2", acf_enforce_lowerbody | acf_synch_with_horse,
+ ["ride_2", acf_enforce_lowerbody,
    #[0.8, "anim_human_02", 50, 69, arf_cyclic], 
-   [0.8, "anim_human_02", 50, 50, arf_cyclic], 
+   ##[0.8, "anim_human_02", 50, 50, arf_cyclic], 
+   [8.0, "sw_pilot_stand", 0, 49, arf_cyclic],
    #[1.0, "anim_human_02", 100, 100, arf_cyclic], 
  ],
  #SW - modified ride_3
- ["ride_3", acf_enforce_lowerbody | acf_synch_with_horse,
+ ["ride_3", acf_enforce_lowerbody,
    #[0.6, "anim_human_02", 100, 116, arf_cyclic], 
-   [0.6, "anim_human_02", 100, 100, arf_cyclic], 
+   ##[0.6, "anim_human_02", 100, 100, arf_cyclic], 
+   [8.0, "sw_pilot_stand", 0, 49, arf_cyclic],
    #[1.0, "anim_human_02", 100, 100, arf_cyclic], 
  ],
  #SW - modified ride_4
- ["ride_4", acf_enforce_lowerbody | acf_synch_with_horse,
+ ["ride_4", acf_enforce_lowerbody,
    #[0.5, "anim_human_02", 150, 165, arf_cyclic], 
    #[0.5, "anim_human_02", 150, 150, arf_cyclic], 
-   [0.5, "anim_human_02", 100, 100, arf_cyclic], 
+   ##[0.5, "anim_human_02", 100, 100, arf_cyclic], 
+   [8.0, "sw_pilot_stand", 0, 49, arf_cyclic],
    #[1.0, "anim_human_02", 100, 100, arf_cyclic], 
  ],
  #SW - modified lancer_ride_4
@@ -401,10 +406,12 @@ animations = [
 ##   [1.4, "anim_human", horse_move+820, horse_move+837,  arf_blend_in_16],
 ##   [2.4, "anim_human", horse_move+820, horse_move+837,  arf_blend_in_16],
    #[2.0, "anim_human_02", 260, 301,  arf_blend_in_8],
-   [1.0, "anim_human_02", 260, 260,  arf_blend_in_8],   
+  ## [1.0, "anim_human_02", 260, 260,  arf_blend_in_8],   
+   [8.0, "sw_pilot_stand", 0, 49, arf_blend_in_8],
  ],
  ["ride_spur", acf_enforce_lowerbody,
-   [0.3, "anim_human", horse_move+860, horse_move+865,  arf_blend_in_8],
+   ##[0.3, "anim_human", horse_move+860, horse_move+865,  arf_blend_in_8],
+   [8.0, "sw_pilot_stand", 0, 49, arf_blend_in_8],
  ],
  ["ride_jump", acf_enforce_lowerbody,
 ## [1.6, "anim_human_02", 400, 420,  arf_blend_in_16],
@@ -417,12 +424,14 @@ animations = [
  ],
   #SW - modified ride_turn_right (nevermind, this messed up the speeder animations)
  ["ride_turn_right", acf_enforce_lowerbody | acf_synch_with_horse,
-   [1.0, "anim_human_02", 500, 533, arf_cyclic],
+   ##[1.0, "anim_human_02", 500, 533, arf_cyclic],
+   [0.5, "sw_pilot_stand_turn", 2, 2, arf_blend_in_32],
    #[0.1, "anim_human_02", 500, 500, arf_cyclic],
  ],
  #SW - modified ride_turn_left (nevermind, this messed up the speeder animations)
  ["ride_turn_left", acf_enforce_lowerbody | acf_synch_with_horse,
-   [1.0, "anim_human_02", 450, 483, arf_cyclic], 
+   ##[1.0, "anim_human_02", 450, 483, arf_cyclic], 
+   [0.5, "sw_pilot_stand_turn", 0, 0, arf_blend_in_32], 
    #[0.1, "anim_human_02", 450, 450, arf_cyclic], 
  ],
  
@@ -1663,7 +1672,7 @@ animations = [
    #[5, "sw_speeder_stand", 0, 99, arf_blend_in_4],	#SW - new horse_stand animation by Swyter
    #[1.6, "anim_horse", 205, 222,  arf_blend_in_4], #|arf_end_pos_0_25],
    ##@>[5.0, "anim_horse", 600, 600, arf_cyclic|arf_use_stand_progress, 0, (0, 0, 0), 0.0],		#SW this was working decent
-   [6.0, "sw_speeder_stand", 0, 99, arf_cyclic|arf_use_stand_progress, 0, (0, 0, 0), 0.0],		#SW this was working decent
+   [6.0, "sw_speeder_stand", 0, 0, arf_cyclic|arf_use_stand_progress, 0, (0, 0, 0), 0.0],		#SW this was working decent
    #[5.0, "sw_speeder_stand", 0, 99, arf_cyclic|arf_use_stand_progress|arf_make_walk_sound, 0, (0, 0, 0), 0.0],	#SW - new horse_stand animation by Swyter   
  ],
  #SW - modified horse_pace_1
@@ -1674,7 +1683,8 @@ animations = [
    #[1.0, "anim_horse", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.25,0.42,0.75,0.92), (0, 0, 0), 0.0], 
    #[1.0, "anim_horse", 0, 0, arf_cyclic|arf_make_walk_sound,pack4f(0.25,0.42,0.75,0.92), (0, 0, 0), 0.0], 
    #[1.0, "anim_horse", 0, 31, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.25,0.42,0.75,0.92), (0, 0, 0), 0.25], 	#native
-   [1.0, "anim_horse", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.25,0.42,0.75,0.92), (0, 0, 0), 0.25], 	#native modified
+  ## [1.0, "anim_horse", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.25,0.42,0.75,0.92), (0, 0, 0), 0.25], 	#native modified
+   [1.0, "sw_speeder_stand", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.25,0.42,0.75,0.92), (0, 0, 0), 0.25], 	#native modified
    #[1.0, "anim_horse", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.4,0.31,0.79,0.94), (0, 0, 0), 0.0],
     ],
  #SW - modified horse_pace_2 
@@ -1687,7 +1697,8 @@ animations = [
    #[1.0, "anim_horse", 0, 0, arf_cyclic|arf_make_walk_sound,pack4f(0.15,0.16,0.65,0.66), (0, 0, 0), 0.0],
    #[1.0, "anim_horse", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.4,0.31,0.79,0.94), (0, 0, 0), 0.0],
    #[0.8, "anim_horse", 50, 69, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.15,0.16,0.65,0.66), (0, 0, 0), 0.9],	#native
-   [0.8, "anim_horse", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.15,0.16,0.65,0.66), (0, 0, 0), 0.9],	#native modified
+  ## [0.8, "anim_horse", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.15,0.16,0.65,0.66), (0, 0, 0), 0.9],	#native modified
+   [0.8, "sw_speeder_stand", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.15,0.16,0.65,0.66), (0, 0, 0), 0.9],	#native modified
  ],
  #SW - modified horse_pace_3 
  ["horse_pace_3", acf_enforce_lowerbody,
@@ -1699,7 +1710,8 @@ animations = [
    #[1.0, "anim_horse", 0, 0, arf_cyclic|arf_make_walk_sound,pack4f(0.93,0.95,0.35,0.42), (0, 0, 0), 0.0],
    #[1.0, "anim_horse", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.4,0.31,0.79,0.94), (0, 0, 0), 0.0],
    #[0.6, "anim_horse", 100, 116, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.93,0.95,0.35,0.42), (0, 0, 0), 0.6],	#native
-   [0.6, "anim_horse", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.93,0.95,0.35,0.42), (0, 0, 0), 0.6],	#native modified
+ ##  [0.6, "anim_horse", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.93,0.95,0.35,0.42), (0, 0, 0), 0.6],	#native modified
+      [0.8, "sw_speeder_stand", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.15,0.16,0.65,0.66), (0, 0, 0), 0.9],	#native modified
  ],
  #SW - modified horse_pace_4 
  ["horse_pace_4", acf_enforce_lowerbody,
@@ -1711,21 +1723,26 @@ animations = [
    #[1.0, "anim_horse", 0, 0, arf_cyclic|arf_make_walk_sound,pack4f(0.4,0.31,0.79,0.94), (0, 0, 0), 0.0],
    #[1.0, "anim_horse", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.4,0.31,0.79,0.94), (0, 0, 0), 0.0],
    #[0.5, "anim_horse", 150, 165, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.4,0.31,0.79,0.94), (0, 0, 0), 0.2],	#native
-   [0.5, "anim_horse", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.4,0.31,0.79,0.94), (0, 0, 0), 0.2],	#native modified
+ ##  [0.5, "anim_horse", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.4,0.31,0.79,0.94), (0, 0, 0), 0.2],	#native modified
+   
+      [0.8, "sw_speeder_stand", 0, 0, arf_cyclic|arf_use_walk_progress|arf_make_walk_sound,pack4f(0.15,0.16,0.65,0.66), (0, 0, 0), 0.9],	#native modified
  ],
  #SW - modified horse_walk_backward 
  ["horse_walk_backward", acf_enforce_lowerbody,
    #[1.9, "anim_horse", 31, 0, arf_cyclic|arf_use_inv_walk_progress|arf_make_walk_sound,pack4f(0.07,0.13,0.56,0.63), (0, 0, 0), 0.0],
    #[1.9, "anim_horse", 0, 0, arf_cyclic|arf_use_inv_walk_progress|arf_make_walk_sound,pack4f(0,0,0,0), (0, 0, 0), 0.0],   
    #[1.9, "anim_horse", 0, 0, arf_cyclic|arf_use_inv_walk_progress|arf_make_walk_sound,pack4f(0.07,0.13,0.56,0.63), (0, 0, 0), 0.0],
-   [1.0, "anim_horse", 0, 0, arf_cyclic|arf_use_inv_walk_progress|arf_make_walk_sound,pack4f(0.07,0.13,0.56,0.63), (0, 0, 0), 0.0],
+ ##  [1.0, "anim_horse", 0, 0, arf_cyclic|arf_use_inv_walk_progress|arf_make_walk_sound,pack4f(0.07,0.13,0.56,0.63), (0, 0, 0), 0.0],
+
+      [0.8, "sw_speeder_stand", 0, 0, arf_cyclic|arf_use_inv_walk_progress|arf_make_walk_sound,pack4f(0.07,0.13,0.56,0.63), (0, 0, 0), 0.0],
  ],
  #SW - modified horse_rear 
  ["horse_rear", acf_enforce_lowerbody | acf_ignore_slope,
 #   [1.4, "anim_horse_temp", 1, 10,  arf_blend_in_1],
 ##   [2.5, "anim_horse", 505, 580,  arf_blend_in_8],
    #[2.0, "anim_horse", 260, 301,  arf_blend_in_8],
-   [1.0, "anim_horse", 260, 260,  arf_blend_in_8],   
+ ##  [1.0, "anim_horse", 260, 260,  arf_blend_in_8],   
+     [1.0, "sw_speeder_stand", 0, 0,  arf_blend_in_8],   
  ],
  #SW modified horse_jump 
  ["horse_jump", acf_enforce_lowerbody,
@@ -1755,7 +1772,8 @@ animations = [
  ["horse_slow", 0,
    #[3.0, "anim_horse", 0, 31,arf_cyclic], 
    #[1.5, "anim_horse", 0, 31, arf_cyclic], 
-   [1.5, "anim_horse", 0, 0, arf_cyclic], 
+  ## [1.5, "anim_horse", 0, 0, arf_cyclic], 
+   [1.5, "sw_speeder_stand", 0, 0, arf_cyclic],    
  ],
  #SW - modified horse_fall_in_place
  ["horse_fall_in_place", acf_enforce_all|acf_align_with_ground,

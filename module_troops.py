@@ -180,6 +180,31 @@ reserved = 0
 no_scene = 0
 
 #SW - face codes
+
+#@> // Swyter's Face codes //
+
+#Male
+swc_brunette_m_hero = 0x000000003d0090562d5ab4a56d918acb0000000000f5c9550000000000000000
+swc_brunette_m_thug = 0x0000000dfd0080562d5ab4a56d918acb0000000000e9c9490000000000000000
+swc_brunette_m_thug_2 =0x0000000dfd00c0552d5ab4a56d918acb0000000000e9c9490000000000000000
+
+swc_blonde_m_neutral = 0x0000000ec300c1432d5a951b6d918acb0000000000e9c9490000000000000000
+swc_blonde_m_neutral_2 = 0x0000000da900a0012d5a951b6d918acb0000000000e9c9490000000000000000
+
+swc_blonde_m_good = 0x0000000f8800c0815861d13484c9c9e20000000000e9c29d0000000000000000
+swc_blonde_m_good_2 = 0x0000000f8800c0815861d13484c9c9e20000000000e9c29d0000000000000000
+
+#Female
+# swc_brunette_f_neutral =
+# swc_brunette_f_neutral_2 =
+# swc_blonde_f_neutral =
+# swc_blonde_f_neutral_2 =
+
+#Weequay
+swc_weequay = 0x0000000d8a0160002793b35442a9bd230000000000f9272d0000000000000000
+swc_weequay_2 = 0x0000000d8a01500027bbb35bc0a9bd230000000000fd2f280000000000000000
+
+
 sw_player_face = 0x000000003f00c00136db6db6db6db6db0000000000e936db0000000000000000
 #sw_player_face = 0x000000018000000136db6db6db6db6db00000000001db6db0000000000000000		#original code from native
 #sw_player_face = 	# NEW   
@@ -275,7 +300,7 @@ troops = [
    #[itm_darth_vader_helmet,itm_imperial_stormtrooper_helmet,itm_shadow_stormtrooper_helmet,itm_imperial_scout_trooper_helmet,itm_shadow_scout_trooper_helmet,itm_fang_helmet,itm_eyepiece_tactics,itm_eyepiece_leadership,itm_defiler_helmet,itm_imperial_gunner_helmet,itm_beak_helmet,itm_black_sun_helmet,itm_imperial_royal_guard_helmet,itm_clone_trooper_helmet_white,itm_mandalorian_crusader_helmet,itm_mandalorian_neocrusader_helmet,itm_trandoshan_mask,itm_imperial_trooper_helmet,itm_glasses_black,itm_glasses_yellow,itm_tusken_helmet,itm_wookiee_hunter_helmet],
    #[itm_droid_parts,itm_b1series_attack,itm_transparent_head,itm_transparent_hands,itm_transparent_feet,itm_b1series_body,itm_dc15s,itm_dc15s,itm_laser_bolts_red_rifle,itm_laser_bolts_red_rifle,itm_horus_winged_cruiser,itm_e5,itm_b2series_body,itm_b2series_blaster,itm_b2series_attack],
    #[itm_wrist_blaster],
-		str_6|agi_6|int_6|cha_6,wp_one_handed(30)|wp_two_handed(30)|wp_polearm(30)|wp_crossbow(35)|wp_throwing(30)|wp_firearm(45),0,sw_player_face],
+		str_6|agi_6|int_6|cha_6,wp_one_handed(30)|wp_two_handed(30)|wp_polearm(30)|wp_crossbow(35)|wp_throwing(30)|wp_firearm(45),0,swc_brunette_m_hero],
   ["temp_troop","Temp Troop","Temp Troop",tf_hero,no_scene,reserved,fac_commoners,[],def_attrib,0,knows_common|knows_inventory_management_10,0],
   ["game","Game","Game",tf_hero,no_scene,reserved,fac_commoners,[],def_attrib,0,knows_common,0],
   ["unarmed_troop","Unarmed Troop","Unarmed Troops",tf_hero,no_scene,reserved,fac_commoners,[itm_laser_bolts_red_pistol,itm_dh17],def_attrib|str_14,0,knows_common|knows_power_draw_2,0],
@@ -3204,18 +3229,18 @@ troops = [
 	tf_guarantee_all_armor|tf_guarantee_ranged,
 	no_scene,0,fac_neutral,
 	[
-		itm_bf2_stormie,
-		itm_tfu_stormie,
-		itm_bf2_stormie,
-		itm_tfu_stormie,
-		# itm_imperial_stormtrooper_armor,
-		# itm_imperial_stormtrooper_armor,
-		# itm_imperial_stormtrooper_helmet,
-		# itm_imperial_stormtrooper_helmet,
-		# itm_imperial_stormtrooper_boots,
-		# itm_imperial_stormtrooper_boots,
-		# itm_imperial_stormtrooper_gloves,
-		# itm_imperial_stormtrooper_gloves,
+		#itm_bf2_stormie,
+		#itm_tfu_stormie,
+		#itm_bf2_stormie,
+		#itm_tfu_stormie,
+		 itm_imperial_stormtrooper_armor,
+		 itm_imperial_stormtrooper_armor,
+		 itm_imperial_stormtrooper_helmet,
+		 itm_imperial_stormtrooper_helmet,
+		 itm_imperial_stormtrooper_boots,
+		 itm_imperial_stormtrooper_boots,
+		 itm_imperial_stormtrooper_gloves,
+		 itm_imperial_stormtrooper_gloves,
 		itm_baton,
 		itm_baton,
 		itm_laser_bolts_red_rifle,
