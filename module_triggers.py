@@ -45,9 +45,9 @@ triggers = [
 									]),
   
   (0.2, 0, ti_once, [(map_free,0)], [
-										#SW - added so kingdom1 will always start at war with kingdom2 (added a 1 at the end to fixed script error, since its the war/peace flag)
+										#SW - added so faction1 will always start at war with faction2 (added a 1 at the end to fixed script error, since its the war/peace flag)
 										#SWY - Created a new script, so now it not shows the nasty "X is in war versus Y"
-										(call_script, "script_swc_init_rebels_vs_empire", "fac_kingdom_1", "fac_kingdom_2",1)
+										(call_script, "script_swc_init_rebels_vs_empire", "fac_galacticempire", "fac_rebelalliance",1)
 									]),
   
 ############################################################################################################
@@ -296,7 +296,7 @@ triggers = [
 #                     [
 #                         (assign, "$pin_faction", "fac_swadians"),
 #                         (assign, "$pin_party_template", "pt_swadian_caravan"),
-#                         (assign, "$pin_limit", peak_kingdom_caravans),
+#                         (assign, "$pin_limit", peak_faction_caravans),
 #                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
 #                         (party_set_ai_behavior,"$pout_party",ai_bhvr_travel_to_party),
 #                         (party_set_ai_object,"$pout_party","$pout_town"),
@@ -306,13 +306,13 @@ triggers = [
 #                     [
 #                         (assign, "$pin_faction", "fac_vaegirs"),
 #                         (assign, "$pin_party_template", "pt_vaegir_caravan"),
-#                         (assign, "$pin_limit", peak_kingdom_caravans),
+#                         (assign, "$pin_limit", peak_faction_caravans),
 #                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
 #                         (party_set_ai_behavior,"$pout_party",ai_bhvr_travel_to_party),
 #                         (party_set_ai_object,"$pout_party","$pout_town"),
 #                    ]),
 
-##  (2.0, 0, 0, [(store_random_party_of_template, reg(2), "pt_kingdom_caravan_party"),
+##  (2.0, 0, 0, [(store_random_party_of_template, reg(2), "pt_faction_caravan_party"),
 ##               (party_is_in_any_town,reg(2)),
 ##               ],
 ##              [(store_faction_of_party, ":faction_no", reg(2)),
@@ -334,7 +334,7 @@ triggers = [
 #  (4.2, 0, 0.0, [],
 #   [(assign, "$pin_faction", "fac_swadians"),
 #    (assign, "$pin_party_template", "pt_swadian_messenger"),
-#    (assign, "$pin_limit", peak_kingdom_messengers),
+#    (assign, "$pin_limit", peak_faction_messengers),
 #    (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
 #    (party_set_ai_behavior,"$pout_party",ai_bhvr_travel_to_party),
 #    (party_set_ai_object,"$pout_party","$pout_town"),
@@ -343,7 +343,7 @@ triggers = [
 #  (4.2, 0, 0.0, [],
 #   [(assign, "$pin_faction", "fac_vaegirs"),
 #    (assign, "$pin_party_template", "pt_vaegir_messenger"),
-#    (assign, "$pin_limit", peak_kingdom_caravans),
+#    (assign, "$pin_limit", peak_faction_caravans),
 #    (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
 #    (party_set_ai_behavior,"$pout_party",ai_bhvr_travel_to_party),
 #    (party_set_ai_object,"$pout_party","$pout_town"),
@@ -379,20 +379,20 @@ triggers = [
 #                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
 #                    ]),
 
-#Kingdom Parties
+#Faction Parties
   (1.0, 0, 0.0, [],
-   [(try_for_range, ":cur_kingdom", factions_begin, factions_end),
-      (faction_slot_eq, ":cur_kingdom", slot_faction_state, sfs_active),
-      (neq, ":cur_kingdom", "fac_player_supporters_faction"),
+   [(try_for_range, ":cur_faction", factions_begin, factions_end),
+      (faction_slot_eq, ":cur_faction", slot_faction_state, sfs_active),
+      (neq, ":cur_faction", "fac_player_supporters_faction"),
 ##      (try_begin),
 ##        (store_random_in_range, ":random_no", 0, 100),
 ##        (lt, ":random_no", 10),
-##        (call_script, "script_create_kingdom_party_if_below_limit", ":cur_kingdom", spt_forager),
+##        (call_script, "script_create_faction_party_if_below_limit", ":cur_faction", spt_forager),
 ##      (try_end),
 ##      (try_begin),
 ##        (store_random_in_range, ":random_no", 0, 100),
 ##        (lt, ":random_no", 10),
-##        (call_script, "script_create_kingdom_party_if_below_limit", ":cur_kingdom", spt_scout),
+##        (call_script, "script_create_faction_party_if_below_limit", ":cur_faction", spt_scout),
 ##      (try_end),
 
 # #SW - un-commented Faction Patrols
@@ -401,24 +401,24 @@ triggers = [
         # (store_random_in_range, ":random_no", 0, 100),
         # #(lt, ":random_no", 10),
 		# (lt, ":random_no", 100),
-        # (call_script, "script_create_kingdom_party_if_below_limit", ":cur_kingdom", spt_patrol),
+        # (call_script, "script_create_faction_party_if_below_limit", ":cur_faction", spt_patrol),
       # (try_end),
 ##      (try_begin),
 ##        (store_random_in_range, ":random_no", 0, 100),
 ##        (lt, ":random_no", 10),
-##        (call_script, "script_create_kingdom_party_if_below_limit", ":cur_kingdom", spt_messenger),
+##        (call_script, "script_create_faction_party_if_below_limit", ":cur_faction", spt_messenger),
 ##      (try_end),
       (try_begin),
         (store_random_in_range, ":random_no", 0, 100),
-	#SW - increase kingdom_party chance to 15% (possibly caravan only?)
+	#SW - increase faction_party chance to 15% (possibly caravan only?)
         #(lt, ":random_no", 10),
 	(lt, ":random_no", 15),
-        (call_script, "script_create_kingdom_party_if_below_limit", ":cur_kingdom", spt_kingdom_caravan),
+        (call_script, "script_create_faction_party_if_below_limit", ":cur_faction", spt_faction_caravan),
       (try_end),
 ##      (try_begin),
 ##        (store_random_in_range, ":random_no", 0, 100),
 ##        (lt, ":random_no", 10),
-##        (call_script, "script_create_kingdom_party_if_below_limit", ":cur_kingdom", spt_prisoner_train),
+##        (call_script, "script_create_faction_party_if_below_limit", ":cur_faction", spt_prisoner_train),
 ##      (try_end),
     (try_end),
     ]),
@@ -504,8 +504,8 @@ triggers = [
 #Villains etc.
 #  (14.2, 0, 0.0, [],
 #                     [
-#                         (assign, "$pin_faction", "fac_sea_raiders"),
-#                         (assign, "$pin_party_template", "pt_sea_raiders"),
+#                         (assign, "$pin_faction", "fac_tusken_raiders"),
+#                         (assign, "$pin_party_template", "pt_tusken_raiders"),
 #                         (assign, "$pin_limit", 5),
 #                         (call_script,"script_cf_spawn_party_at_faction_town_if_below_limit"),
 #                    ]),
@@ -1369,7 +1369,7 @@ triggers = [
           (troop_get_slot, ":target_faction", ":pretender", slot_troop_original_faction),
           (faction_slot_eq, ":target_faction", slot_faction_state, sfs_active),
           (faction_slot_eq, ":target_faction", slot_faction_has_rebellion_chance, 1),
-          (neg|troop_slot_eq, ":pretender", slot_troop_occupation, slto_kingdom_hero),
+          (neg|troop_slot_eq, ":pretender", slot_troop_occupation, slto_faction_hero),
 
           (try_for_range, ":unused", 0, 30),
             (troop_slot_eq, ":pretender", slot_troop_cur_center, 0),

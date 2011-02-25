@@ -125,7 +125,7 @@ quests = [
 ##  ),
 
 ##################
-# Enemy Kingdom Lord quests
+# Enemy Faction Lord quests
 ##################
 # Note : This is defined as the first enemy lord quest in module_constants.py:
  ("lend_surgeon", "Lend Your Surgeon {s3} to {s1}", qf_random_quest,
@@ -133,7 +133,7 @@ quests = [
   ),
 
 ##################
-# Kingdom Army quests
+# Faction Army quests
 ##################
 # Note : This is defined as lord quests end in module_constants.py:
  ("follow_army", "Follow {s9}'s Army", qf_random_quest,
@@ -157,9 +157,9 @@ quests = [
 
 
 ##################
-# Kingdom Lady quests
+# Faction Lady quests
 ##################
-# Note : This is defined as the first kingdom lady quest in module_constants.py:
+# Note : This is defined as the first faction lady quest in module_constants.py:
  ("rescue_lord_by_replace", "Rescue {s13} from {s14}", qf_random_quest,
   "None"
   ),
@@ -246,13 +246,13 @@ quests = [
 ##  "Trainer ordered you to destroy 10 dummies in the training camp."
 ##     ),
 
- # Join Kingdom quest
+ # Join Faction quest
  ("join_faction", "Give Oath of Homage to {s1}", qf_random_quest,
   "Find {s1} and give him your oath of homage."
   ),
 
- # Rebel against Kingdom quest
- ("rebel_against_kingdom", "Help {s13} Claim the Throne of {s14}", qf_random_quest,
+ # Rebel against Faction quest
+ ("rebel_against_faction", "Help {s13} Claim the Throne of {s14}", qf_random_quest,
   "None"
   ),
 

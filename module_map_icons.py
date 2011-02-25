@@ -39,9 +39,10 @@ ship_verysmall_scale = 0.30
 #SW - switched all map icons to planets or ships
 
 map_icons = [
-  ("player",mcn_no_shadow,"civilian_transport", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),
+  #("player",mcn_no_shadow,"civilian_transport", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("player",mcn_no_shadow,"Action_IV", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),
   
-  #purchasable ships - empire
+  ##@> //purchasable ships - empire
   ("imperial_star_destroyer",mcn_no_shadow,"Imp_ISD", ship_verylarge_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("imperial_star_destroyer_interdictor",mcn_no_shadow,"Imp_ISD_Interdictor", ship_verylarge_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("imperial_victory_c2_frigate",mcn_no_shadow,"Imp_Victory_Class_II_Frigate", ship_verylarge_scale, snd_ship_noise, 0.15, 0.173, 0),  
@@ -49,43 +50,53 @@ map_icons = [
   ("imperial_trade_frigate",mcn_no_shadow,"Imp_trade_frigate", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("tie_fighter",mcn_no_shadow,"tie_fighter", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("imperial_shuttle",mcn_no_shadow,"imperial_shuttle", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
-  #purchasable ships - rebel
+  ##@> //purchasable ships - rebel
   ("a_wing",mcn_no_shadow,"a_wing", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),	
   ("rebel_transport",mcn_no_shadow,"rebel_transport", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("corellian_gunship",mcn_no_shadow,"Cor_Gunship", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("corellian_corvette",mcn_no_shadow,"swy_corellian_corvette", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("moncal_cruiser",mcn_no_shadow,"Moncal_Cruiser", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("x_wing",mcn_no_shadow,"xwing", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
+  ("x_wing2",mcn_no_shadow,"xwing2", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
+  ("x_wing3",mcn_no_shadow,"xwing3", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
+  ("x_wing4",mcn_no_shadow,"xwing4", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
+  ("x_wing5",mcn_no_shadow,"xwing5", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
   ("y_wing",mcn_no_shadow,"y_wing_gold", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
-  #purchasable ships - hutt
+  ##@> //purchasable ships - hutt
   ("hutt_cruiser",mcn_no_shadow,"Hutt_Cruiser", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("hutt_frigate_mk2",mcn_no_shadow,"Hutt_Frigate_MK2", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("hutt_frigate_mk1",mcn_no_shadow,"Hutt_Frigate_MK1", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("hutt_trade",mcn_no_shadow,"Hutt_Trade", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("hutt_patrol",mcn_no_shadow,"Hutt_Patrol", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),
-  #purchasable ships - other
+  ##@> //purchasable ships - other
   ("nebulon",mcn_no_shadow,"swy_nebulon", cis_star_cruiser_scale,0),
   ("starchaser",mcn_no_shadow,"vec_starchaser", ship_small_scale,0),
   ("z95",mcn_no_shadow,"z96", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("scyk_fighter",mcn_no_shadow,"hutt_scyk_fighter", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
-  ("mercenary_raider",mcn_no_shadow,"mercenary_raider", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),    
-  ("freighter",mcn_no_shadow,"freighter", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),  
+  #("mercenary_raider",mcn_no_shadow,"mercenary_raider", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("mercenary_raider",mcn_no_shadow,"Wild_Karrde", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+ # ("freighter",mcn_no_shadow,"freighter", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),  
+  ("freighter",mcn_no_shadow,"swy_nebulon", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0), 
   ("bulk_freighter",mcn_no_shadow,"bulk_frigate", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),  
-  ("mercenary_fighter",mcn_no_shadow,"z95", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),    
-  ("mercenary_shuttle",mcn_no_shadow,"shuttle", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),    
-  ("civilian_transport",mcn_no_shadow,"civilian_transport", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
-  ("civilian_cruiser",mcn_no_shadow,"civilian_transport_2", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
+  #("mercenary_fighter",mcn_no_shadow,"z95", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),    
+  ("mercenary_fighter",mcn_no_shadow,"vec_starchaser", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),    
+  #("mercenary_shuttle",mcn_no_shadow,"shuttle", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),    
+  ("mercenary_shuttle",mcn_no_shadow,"Interceptor_IV", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),   
+  #("civilian_transport",mcn_no_shadow,"civilian_transport", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  #("civilian_cruiser",mcn_no_shadow,"civilian_transport_2", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("civilian_transport",mcn_no_shadow,"Action_IV", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("civilian_cruiser",mcn_no_shadow,"swy_nebulon", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("cis_star_cruiser",mcn_no_shadow,"CIS_Station", cis_star_cruiser_scale,0),
-  #other, not currently purchasable or used
-  #purchasable ships - rebel
+  ##@> //other, not currently purchasable or used
+  ##@> //purchasable ships - rebel
   
-  #purchasable ships
+  ##@> //Purchasable ships
   ("shuttle",mcn_no_shadow,"shuttle_civilian", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),  
   ("mercenary_raider_grey",mcn_no_shadow,"mercenary_raider_grey", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("jawa_ship",mcn_no_shadow,"jawaship", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
-  ("mercenary_raider_brown",mcn_no_shadow,"mercenary_raider_brown", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("mercenary_raider_brown",mcn_no_shadow,"Action_IV_Tusken", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("mercenary_shuttle_grey",mcn_no_shadow,"shuttle_grey", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),  
-  ("mercenary_shuttle_brown",mcn_no_shadow,"shuttle_brown", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),  
+  ("mercenary_shuttle_brown",mcn_no_shadow,"Wild_Karrde", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),  
   ("mercenary_fighter_grey",mcn_no_shadow,"z95_grey", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),  
   ("mercenary_fighter_brown",mcn_no_shadow,"z95_brown", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),  
   #unique icons

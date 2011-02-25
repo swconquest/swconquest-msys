@@ -974,7 +974,7 @@ common_regeneration_store_info = (
           (is_between, "$agent_troop_type", kings_begin, kings_end),
           (agent_set_slot, "$talera_agent", slot_agent_regen_rate, 4),
        (else_try),
-          (is_between, "$agent_troop_type", kingdom_heroes_begin, kingdom_heroes_end),
+          (is_between, "$agent_troop_type", faction_heroes_begin, faction_heroes_end),
           (agent_set_slot, "$talera_agent", slot_agent_regen_rate, 3),
        (try_end),
    (try_end),
@@ -1170,13 +1170,13 @@ common_switch_sw_scene_props = (
 		#get the current towns faction
 		(store_faction_of_party, ":center_faction", "$current_town"),
 		(try_begin),
-			(eq, ":center_faction", "fac_kingdom_1"),	#empire
+			(eq, ":center_faction", "fac_galacticempire"),	#empire
 			(assign, ":faction_sign_begin", sw_empire_sign_begin),
 			(assign, ":faction_sign_end", sw_empire_sign_end),
 			(assign, ":faction_poster_begin", sw_empire_poster_begin),
 			(assign, ":faction_poster_end", sw_empire_poster_end),
 		(else_try),
-			(eq, ":center_faction", "fac_kingdom_2"),	#rebel
+			(eq, ":center_faction", "fac_rebelalliance"),	#rebel
 			(assign, ":faction_sign_begin", sw_rebel_sign_begin),
 			(assign, ":faction_sign_end", sw_rebel_sign_end),
 			(assign, ":faction_poster_begin", sw_rebel_poster_begin),
@@ -1199,13 +1199,13 @@ common_switch_sw_scene_props = (
 		(store_random_in_range, ":sign", sw_all_sign_begin, sw_all_sign_end),
 		(replace_scene_props, "spr_sw_sign_random_all_4", ":sign"),
 		(store_random_in_range, ":sign", ":faction_sign_begin", ":faction_sign_end"),
-		(replace_scene_props, "spr_sw_sign_random_townfaction_1", ":sign"),
+		(replace_scene_props, "spr_sw_sign_random_towngalacticempire", ":sign"),
 		(store_random_in_range, ":sign", ":faction_sign_begin", ":faction_sign_end"),
-		(replace_scene_props, "spr_sw_sign_random_townfaction_2", ":sign"),
+		(replace_scene_props, "spr_sw_sign_random_townrebelalliance", ":sign"),
 		(store_random_in_range, ":sign", ":faction_sign_begin", ":faction_sign_end"),
-		(replace_scene_props, "spr_sw_sign_random_townfaction_3", ":sign"),
+		(replace_scene_props, "spr_sw_sign_random_townhuttcartel", ":sign"),
 		(store_random_in_range, ":sign", ":faction_sign_begin", ":faction_sign_end"),
-		(replace_scene_props, "spr_sw_sign_random_townfaction_1", ":sign"),
+		(replace_scene_props, "spr_sw_sign_random_towngalacticempire", ":sign"),
 		(store_random_in_range, ":sign", sw_generic_sign_begin, sw_generic_sign_end),
 		(replace_scene_props, "spr_sw_sign_random_generic_1", ":sign"),
 		(store_random_in_range, ":sign", sw_generic_sign_begin, sw_generic_sign_end),
@@ -1224,11 +1224,11 @@ common_switch_sw_scene_props = (
 		(store_random_in_range, ":poster", sw_all_poster_begin, sw_all_poster_end),
 		(replace_scene_props, "spr_sw_poster_random_all_4", ":poster"),
 		(store_random_in_range, ":poster", ":faction_poster_begin", ":faction_poster_end"),
-		(replace_scene_props, "spr_sw_poster_random_townfaction_1", ":poster"),
+		(replace_scene_props, "spr_sw_poster_random_towngalacticempire", ":poster"),
 		(store_random_in_range, ":poster", ":faction_poster_begin", ":faction_poster_end"),
-		(replace_scene_props, "spr_sw_poster_random_townfaction_2", ":poster"),
+		(replace_scene_props, "spr_sw_poster_random_townrebelalliance", ":poster"),
 		(store_random_in_range, ":poster", ":faction_poster_begin", ":faction_poster_end"),
-		(replace_scene_props, "spr_sw_poster_random_townfaction_3", ":poster"),
+		(replace_scene_props, "spr_sw_poster_random_townhuttcartel", ":poster"),
 		(store_random_in_range, ":poster", ":faction_poster_begin", ":faction_poster_end"),
 		(replace_scene_props, "spr_sw_poster_random_townfaction_4", ":poster"),
 		(store_random_in_range, ":poster", sw_generic_poster_begin, sw_generic_poster_end),
@@ -3879,7 +3879,7 @@ mission_templates = [
 			#SW - attempting to add castle specific music (this concept doesn't seem to work at all?  I had to add that persist until finished flag...)
 			(store_faction_of_party, ":spacestation_faction", "$current_town"),
 			(try_begin),
-				(eq, ":spacestation_faction", "fac_kingdom_1"), 	#empire
+				(eq, ":spacestation_faction", "fac_galacticempire"), 	#empire
 				(store_random_in_range, ":random", 1, 4),
 				(try_begin),
 					(eq, ":random", 1),
@@ -3892,7 +3892,7 @@ mission_templates = [
 					(assign, ":spacestation_track", "track_throne_empire_3"),
 				(try_end),
 			(else_try),
-				(eq, ":spacestation_faction", "fac_kingdom_2"), 	#rebel
+				(eq, ":spacestation_faction", "fac_rebelalliance"), 	#rebel
 				(store_random_in_range, ":random", 1, 5),
 				(try_begin),
 					(eq, ":random", 1),
@@ -4119,12 +4119,7 @@ mission_templates = [
 
 sw_victory_defeat_conditions,
 
-  (4, 0, 0, [(eq,"$battle_won",1),],
-  [ (display_message,"str_msg_battle_won"), ]),
-
-#@> Swyter Battle Speech
-   (3.6543, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
-   (0, 5.4332, ti_once, [], [(call_script,"script_battle_speech",1)]),
+  (4, 0, 0, [(eq,"$battle_won",1),], [ (display_message,"str_msg_battle_won"), ]),
 
 #Motomataru's AI Start >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -4200,7 +4195,7 @@ common_physics,
       common_music_situation_update,
       common_battle_check_friendly_kills,
 
-      (1.223455, 0, 5.499003, [(lt,"$defender_reinforcement_stage",2),
+      (1.223455, 0, 5.429003, [(lt,"$defender_reinforcement_stage",2),
                  (store_mission_timer_a,":mission_time"),
                  (ge,":mission_time",10),
                  (store_normalized_team_count,":num_defenders", 0),
@@ -4304,6 +4299,9 @@ sw_deathcam_cycle_backwards,
 ##### Custom Commander(CC)
 ############################################################################################################
 
+	#@> Swyter Battle Speech
+	(3.6543, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
+	(0, 5.4332, ti_once, [], [(call_script,"script_battle_speech",1)]),
 
 	  #SWY - trigger to make unique agents behavior - custom scripting
 	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),

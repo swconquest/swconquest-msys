@@ -362,7 +362,7 @@ sounds = [
 
  ("encounter_bandits",sf_2d|sf_vol_5, ["encounter_bandit_2.ogg","encounter_bandit_9.ogg","encounter_bandit_12.ogg","encounter_bandit_13.ogg","encounter_bandit_15.ogg","encounter_bandit_16.ogg","encounter_bandit_10.ogg",]),
  ("encounter_farmers",sf_2d|sf_vol_5, ["encounter_farmer_2.ogg","encounter_farmer_5.ogg","encounter_farmer_7.ogg","encounter_farmer_9.ogg"]),
- ("encounter_sea_raiders",sf_2d|sf_vol_5, ["encounter_sea_raider_5.ogg","encounter_sea_raider_9.ogg","encounter_sea_raider_9b.ogg","encounter_sea_raider_10.ogg"]),
+ ("encounter_tusken_raiders",sf_2d|sf_vol_5, ["encounter_sea_raider_5.ogg","encounter_sea_raider_9.ogg","encounter_sea_raider_9b.ogg","encounter_sea_raider_10.ogg"]),
  ("encounter_steppe_bandits",sf_2d|sf_vol_5, ["encounter_steppe_bandit_3.ogg","encounter_steppe_bandit_3b.ogg","encounter_steppe_bandit_8.ogg","encounter_steppe_bandit_10.ogg","encounter_steppe_bandit_12.ogg"]),
  ("encounter_nobleman",sf_2d|sf_vol_5, ["encounter_nobleman_1.ogg"]),
  ("encounter_vaegirs_ally",sf_2d|sf_vol_5, ["encounter_vaegirs_ally.ogg","encounter_vaegirs_ally_2.ogg"]),

@@ -574,9 +574,9 @@ tableaus = [
      (cur_tableau_set_background_color, 0xFFFFFFFF),
      (set_fixed_point_multiplier, 100),
      (try_begin),
-       (is_between, ":faction_no", "fac_kingdom_1", factions_end), #Excluding player kingdom
+       (is_between, ":faction_no", "fac_galacticempire", factions_end), #Excluding player faction
        (store_add, ":banner_mesh", "mesh_pic_arms_swadian", ":faction_no"),
-       (val_sub, ":banner_mesh", "fac_kingdom_1"),
+       (val_sub, ":banner_mesh", "fac_galacticempire"),
        (init_position, pos1),
        (position_set_y, pos1, -5),
        (position_set_x, pos1, -45),
@@ -591,9 +591,9 @@ tableaus = [
      (cur_tableau_set_background_color, 0xFFFFFFFF),
      (set_fixed_point_multiplier, 100),
      (try_begin),
-       (is_between, ":faction_no", "fac_kingdom_1", factions_end), #Excluding player kingdom
+       (is_between, ":faction_no", "fac_galacticempire", factions_end), #Excluding player faction
        (store_add, ":banner_mesh", "mesh_pic_arms_swadian", ":faction_no"),
-       (val_sub, ":banner_mesh", "fac_kingdom_1"),
+       (val_sub, ":banner_mesh", "fac_galacticempire"),
        (init_position, pos1),
        (position_set_y, pos1, -5),
        (cur_tableau_add_mesh, ":banner_mesh", pos1, 0, 0),

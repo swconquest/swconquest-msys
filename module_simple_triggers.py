@@ -192,7 +192,7 @@ simple_triggers = [
 
 #---------------------------------------------------------------------------------------
 #SW - trying to switch each faction to have their own unique spaceship
-# this didn't work correctly and was a bad idea, do it in "script_create_kingdom_hero_party" instead....
+# this didn't work correctly and was a bad idea, do it in "script_create_faction_hero_party" instead....
     # (0.1,
      # [
 	# (assign,":faction_hero_no",0),
@@ -335,8 +335,8 @@ simple_triggers = [
   (24,
    [
       (le, "$auto_menu", 0),
-      (gt, "$players_kingdom", 0),
-      (neq, "$players_kingdom", "fac_player_supporters_faction"),
+      (gt, "$players_faction", 0),
+      (neq, "$players_faction", "fac_player_supporters_faction"),
       (eq, "$player_has_homage", 0),
       (store_current_day, ":cur_day"),
       (gt, ":cur_day", "$mercenary_service_next_renew_day"),
@@ -416,7 +416,7 @@ simple_triggers = [
   #Adding net incomes to centers (once a week)
   (24*7,
    [
-       (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
+       (try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
          (troop_get_slot, ":cur_debt", ":troop_no", slot_troop_player_debt),#Increasing debt
          (val_mul, ":cur_debt", 101),
          (val_div, ":cur_debt", 100),
@@ -448,13 +448,13 @@ simple_triggers = [
   #Hiring men with center wealths (once a day)
   (24,
    [
-       (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
+       (try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
          (troop_get_slot, ":party_no", ":troop_no", slot_troop_leaded_party),
          (ge, ":party_no", 1),
          (party_get_attached_to, ":cur_attached_party", ":party_no"),
          (is_between, ":cur_attached_party", centers_begin, centers_end),
          (party_slot_eq, ":cur_attached_party", slot_center_is_besieged_by, -1), #center not under siege
-         (call_script, "script_hire_men_to_kingdom_hero_party", ":troop_no"), #Hiring men with current wealth
+         (call_script, "script_hire_men_to_faction_hero_party", ":troop_no"), #Hiring men with current wealth
        (try_end),
        (try_for_range, ":center_no", walled_centers_begin, walled_centers_end),
          (neg|party_slot_eq, ":center_no", slot_mainplanet_lord, "trp_player"), #center does not belong to player.
@@ -514,7 +514,7 @@ simple_triggers = [
   # Give some xp to hero parties
    (48,
    [
-       (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
+       (try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
          (store_random_in_range, ":rand", 0, 100),
          (lt, ":rand", 30),
          (troop_get_slot, ":hero_party", ":troop_no", slot_troop_leaded_party),
@@ -552,16 +552,16 @@ simple_triggers = [
    (7,
     [
       (call_script, "script_init_ai_calculation"),
-      (call_script, "script_decide_kingdom_party_ais"),
+      (call_script, "script_decide_faction_party_ais"),
       ]),
 
-  # Hold regular marshall elections for players_kingdom
+  # Hold regular marshall elections for players_faction
    (24,
     [
       (val_add, "$g_election_date", 1),
       (ge, "$g_election_date", 90),
-      (is_between, "$players_kingdom", factions_begin, factions_end),
-      (neq, "$players_kingdom", "fac_player_supporters_faction"),
+      (is_between, "$players_faction", factions_begin, factions_end),
+      (neq, "$players_faction", "fac_player_supporters_faction"),
       (assign, "$g_presentation_input", -1),
       (assign, "$g_presentation_marshall_selection_1_vote", 0),
       (assign, "$g_presentation_marshall_selection_2_vote", 0),
@@ -573,11 +573,11 @@ simple_triggers = [
       (assign, "$g_presentation_marshall_selection_max_renown_2_troop", -10000),
       (assign, "$g_presentation_marshall_selection_max_renown_3_troop", -10000),
       (assign, ":num_men", 0),
-      (try_for_range, ":loop_var", "trp_kingdom_heroes_including_player_begin", kingdom_heroes_end),
+      (try_for_range, ":loop_var", "trp_faction_heroes_including_player_begin", faction_heroes_end),
         (assign, ":cur_troop", ":loop_var"),
         (assign, ":continue", 0),
         (try_begin),
-          (eq, ":loop_var", "trp_kingdom_heroes_including_player_begin"),
+          (eq, ":loop_var", "trp_faction_heroes_including_player_begin"),
           (assign, ":cur_troop", "trp_player"),
           (try_begin),
             (eq, "$g_player_is_captive", 0),
@@ -585,11 +585,11 @@ simple_triggers = [
           (try_end),
         (else_try),
           (store_troop_faction, ":cur_troop_faction", ":cur_troop"),
-          (eq, "$players_kingdom", ":cur_troop_faction"),
+          (eq, "$players_faction", ":cur_troop_faction"),
           #(troop_slot_eq, ":cur_troop", slot_troop_is_prisoner, 0),
           (neg|troop_slot_ge, ":cur_troop", slot_troop_prisoner_of_party, 0),
           (troop_slot_ge, ":cur_troop", slot_troop_leaded_party, 1),
-          (troop_slot_eq, ":cur_troop", slot_troop_occupation, slto_kingdom_hero),
+          (troop_slot_eq, ":cur_troop", slot_troop_occupation, slto_faction_hero),
           (neg|faction_slot_eq, ":cur_troop_faction", slot_faction_leader, ":cur_troop"),
           (troop_get_slot, ":cur_party", ":cur_troop", slot_troop_leaded_party),
           (gt, ":cur_party", 0),
@@ -644,7 +644,7 @@ simple_triggers = [
   # Changing readiness to join army
    (10,
     [
-      (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
+      (try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
         (assign, ":modifier", 1),
         (troop_get_slot, ":party_no", ":troop_no", slot_troop_leaded_party),
         (try_begin),
@@ -696,7 +696,7 @@ simple_triggers = [
   # Process vassal ai
    (2,
    [
-       (call_script, "script_process_kingdom_parties_ai"),
+       (call_script, "script_process_faction_parties_ai"),
     ]),
 
   # Process alarms
@@ -721,8 +721,8 @@ simple_triggers = [
         (assign, ":call_attack_back", 0),
         (assign, ":attacker_strength", 0),
         (assign, ":marshall_attacking", 0),
-        (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
-          (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
+        (try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
+          (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_faction_hero),
           #(troop_slot_eq, ":troop_no", slot_troop_is_prisoner, 0),
           (neg|troop_slot_ge, ":troop_no", slot_troop_prisoner_of_party, 0),
           (troop_get_slot, ":party_no", ":troop_no", slot_troop_leaded_party),
@@ -772,7 +772,7 @@ simple_triggers = [
           (val_max, ":defender_strength", 1),
           (try_begin),
             (eq, ":marshall_attacking", 1),
-            (eq, ":besieger_faction", "$players_kingdom"),
+            (eq, ":besieger_faction", "$players_faction"),
             (check_quest_active, "qst_follow_army"),
             (val_mul, ":attacker_strength", 2), #double the power of attackers if the player is in the campaign
           (try_end),
@@ -803,8 +803,8 @@ simple_triggers = [
         (try_end),
         (try_begin),
           (eq, ":launch_attack", 1),
-          (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
-            (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
+          (try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
+            (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_faction_hero),
             #(troop_slot_eq, ":troop_no", slot_troop_is_prisoner, 0),
             (neg|troop_slot_ge, ":troop_no", slot_troop_prisoner_of_party, 0),
             (troop_get_slot, ":party_no", ":troop_no", slot_troop_leaded_party),
@@ -834,8 +834,8 @@ simple_triggers = [
           (try_end),
         (else_try),
           (eq, ":call_attack_back", 1),
-          (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
-            (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
+          (try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
+            (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_faction_hero),
             #(troop_slot_eq, ":troop_no", slot_troop_is_prisoner, 0),
             (neg|troop_slot_ge, ":troop_no", slot_troop_prisoner_of_party, 0),
             (troop_get_slot, ":party_no", ":troop_no", slot_troop_leaded_party),
@@ -979,7 +979,7 @@ simple_triggers = [
       (try_for_range, ":center_no", centers_begin, centers_end),
         (party_get_slot, ":town_lord", ":center_no", slot_mainplanet_lord),
         (neq, ":town_lord", "trp_player"),
-        (is_between, ":town_lord", kingdom_heroes_begin, kingdom_heroes_end),
+        (is_between, ":town_lord", faction_heroes_begin, faction_heroes_end),
         (party_get_slot, ":accumulated_rents", ":center_no", slot_center_accumulated_rents),
         (party_get_slot, ":accumulated_tariffs", ":center_no", slot_center_accumulated_tariffs),
         (troop_get_slot, ":troop_wealth", ":town_lord", slot_troop_wealth),
@@ -1005,15 +1005,15 @@ simple_triggers = [
 ##       (gt, ":unclaimed_centers", 0),
 # You are holding an estate without a lord.        
 #       (try_for_range, ":troop_no", heroes_begin, heroes_end),
-#         (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
+#         (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_faction_hero),
 #         (troop_get_slot, ":relation", ":troop_no", slot_troop_player_relation),
 #         (val_sub, ":relation", 1),
 #         (val_max, ":relation", -100),
 #         (troop_set_slot, ":troop_no", slot_troop_player_relation, ":relation"),
 #       (try_end),
-# You relation with all kingdoms other than your own has decreased by 1.     
+# You relation with all factions other than your own has decreased by 1.     
 #       (try_for_range, ":faction_no", factions_begin, factions_end),
-#         (neq, ":faction_no", "$players_kingdom"),
+#         (neq, ":faction_no", "$players_faction"),
 #         (store_relation,":faction_relation",":faction_no","fac_player_supporters_faction"),
 #         (val_sub, ":faction_relation", 1),
 #         (val_max, ":faction_relation", -100),
@@ -1026,52 +1026,52 @@ simple_triggers = [
   # Offer player to join faction
    (32,
    [
-     (eq, "$players_kingdom", 0),
+     (eq, "$players_faction", 0),
      (le, "$g_invite_faction", 0),
      (eq, "$g_player_is_captive", 0),
-     (store_random_in_range, ":kingdom_no", factions_begin, factions_end),
+     (store_random_in_range, ":faction_no", factions_begin, factions_end),
      (assign, ":min_distance", 999999),
      (try_for_range, ":center_no", walled_centers_begin, walled_centers_end),
        (store_faction_of_party, ":center_faction", ":center_no"),
-       (eq, ":center_faction", ":kingdom_no"),
+       (eq, ":center_faction", ":faction_no"),
        (store_distance_to_party_from_party, ":cur_distance", "p_main_party", ":center_no"),
        (val_min, ":min_distance", ":cur_distance"),
      (try_end),
      (lt, ":min_distance", 30),
-     (store_relation, ":kingdom_relation", ":kingdom_no", "fac_player_supporters_faction"),
-     (faction_get_slot, ":kingdom_lord", ":kingdom_no", slot_faction_leader),
-     (call_script, "script_troop_get_player_relation", ":kingdom_lord"),
+     (store_relation, ":faction_relation", ":faction_no", "fac_player_supporters_faction"),
+     (faction_get_slot, ":faction_lord", ":faction_no", slot_faction_leader),
+     (call_script, "script_troop_get_player_relation", ":faction_lord"),
      (assign, ":lord_relation", reg0),
-     #(troop_get_slot, ":lord_relation", ":kingdom_lord", slot_troop_player_relation),
+     #(troop_get_slot, ":lord_relation", ":faction_lord", slot_troop_player_relation),
      (call_script, "script_get_number_of_hero_centers", "trp_player"),
      (assign, ":num_centers_owned", reg0),
      (try_begin),
        (eq, ":num_centers_owned", 0),
        (troop_get_slot, ":player_renown", "trp_player", slot_troop_renown),
        (ge, ":player_renown", 160),
-       (ge, ":kingdom_relation", 0),
+       (ge, ":faction_relation", 0),
        (ge, ":lord_relation", 0),
        (store_random_in_range, ":rand", 0, 100),
        (lt, ":rand", 50),
-       (call_script, "script_get_poorest_minorplanet_of_faction", ":kingdom_no"),
+       (call_script, "script_get_poorest_minorplanet_of_faction", ":faction_no"),
        (assign, "$g_invite_offered_center", reg0),
        (ge, "$g_invite_offered_center", 0),
-       (assign, "$g_invite_faction", ":kingdom_no"),
+       (assign, "$g_invite_faction", ":faction_no"),
        (jump_to_menu, "mnu_invite_player_to_faction"),
      (else_try),
        (gt, ":num_centers_owned", 0),
-       (neq, "$players_oath_renounced_against_kingdom", ":kingdom_no"),
-       (ge, ":kingdom_relation", -80),
+       (neq, "$players_oath_renounced_against_faction", ":faction_no"),
+       (ge, ":faction_relation", -80),
        (ge, ":lord_relation", -30),
        (store_random_in_range, ":rand", 0, 100),
        (lt, ":rand", 20),
-       (assign, "$g_invite_faction", ":kingdom_no"),
+       (assign, "$g_invite_faction", ":faction_no"),
        (assign, "$g_invite_offered_center", -1),
        (jump_to_menu, "mnu_invite_player_to_faction_without_center"),
      (try_end),
     ]),
 
-  # Change kingdom relations
+  # Change faction relations
    (24 * 7,
    [(call_script, "script_randomly_start_war_peace", 1),
     ]),
@@ -1080,7 +1080,7 @@ simple_triggers = [
    (5,
    [
      (gt, "$supported_pretender", 0),
-     (try_for_range, ":cur_troop", kingdom_heroes_begin, kingdom_heroes_end),
+     (try_for_range, ":cur_troop", faction_heroes_begin, faction_heroes_end),
        (store_troop_faction, ":cur_faction", ":cur_troop"),
        (eq, ":cur_faction", "fac_player_supporters_faction"),
        (neg|troop_slot_ge, ":cur_troop", slot_troop_change_to_faction, 1),
@@ -1099,11 +1099,11 @@ simple_triggers = [
     ]),
 
 
-  # Reset kingdom lady current centers
+  # Reset faction lady current centers
 ##   (28,
 ##   [
 ##       (try_for_range, ":troop_no", heroes_begin, heroes_end),
-##         (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_lady),
+##         (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_faction_lady),
 ##
 ##         # Find the active quest ladies
 ##         (assign, ":not_ok", 0),
@@ -1156,7 +1156,7 @@ simple_triggers = [
   (0.1,
    [
        (try_for_range, ":troop_no", heroes_begin, heroes_end),
-         (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
+         (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_faction_hero),
          (troop_get_slot, ":troop_party_no", ":troop_no", slot_troop_leaded_party),
          (ge, ":troop_party_no", 1),
          (party_get_attached_to, ":cur_attached_town", ":troop_party_no"),
@@ -1220,11 +1220,11 @@ simple_triggers = [
     ]),
 
 
-  # Respawn hero party after kingdom hero is released from captivity.
+  # Respawn hero party after faction hero is released from captivity.
   (48,
    [
-       (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
-         (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
+       (try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
+         (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_faction_hero),
          #(troop_slot_eq, ":troop_no", slot_troop_is_prisoner, 0),
          (neg|troop_slot_ge, ":troop_no", slot_troop_prisoner_of_party, 0),
          (neg|troop_slot_ge, ":troop_no", slot_troop_leaded_party, 1),
@@ -1233,7 +1233,7 @@ simple_triggers = [
          (try_begin),
            (call_script, "script_cf_select_random_walled_center_with_faction_and_owner_priority_no_siege", ":cur_faction", ":troop_no"),#Can fail
            (assign, ":center_no", reg0),
-           (call_script, "script_create_kingdom_hero_party", ":troop_no", ":center_no"),
+           (call_script, "script_create_faction_hero_party", ":troop_no", ":center_no"),
            (party_attach_to_party, "$pout_party", ":center_no"),
          (else_try),
            (neg|faction_slot_eq, ":cur_faction", slot_faction_state, sfs_active),
@@ -1307,7 +1307,7 @@ simple_triggers = [
   (8,
    [
        (try_for_parties, ":party_no"),
-         (party_slot_eq, ":party_no", slot_party_type, spt_kingdom_caravan),
+         (party_slot_eq, ":party_no", slot_party_type, spt_faction_caravan),
          (party_is_in_any_town, ":party_no"),
 
          (store_faction_of_party, ":merchant_faction", ":party_no"),
@@ -1481,7 +1481,7 @@ simple_triggers = [
 ##  (2,
 ##   [
 ##       (try_for_range, ":cur_troop", heroes_begin, heroes_end),
-##         (troop_slot_eq, ":cur_troop", slot_troop_occupation, slto_kingdom_hero),
+##         (troop_slot_eq, ":cur_troop", slot_troop_occupation, slto_faction_hero),
 ##         (troop_get_slot, ":cur_party", ":cur_troop", slot_troop_leaded_party),
 ##         (ge, ":cur_party", 0),
 ##         (call_script, "script_party_calculate_strength", ":cur_party", 0), #will update slot_party_cached_strength
@@ -1503,7 +1503,7 @@ simple_triggers = [
 ##         (store_faction_of_party, ":center_faction", ":cur_center"),
 ##         (assign, ":friend_strength", 0),
 ##         (try_for_range, ":cur_troop", heroes_begin, heroes_end),
-##           (troop_slot_eq, ":cur_troop", slot_troop_occupation, slto_kingdom_hero),
+##           (troop_slot_eq, ":cur_troop", slot_troop_occupation, slto_faction_hero),
 ##           (troop_get_slot, ":cur_troop_party", ":cur_troop", slot_troop_leaded_party),
 ##           (gt, ":cur_troop_party", 0),
 ##           (store_distance_to_party_from_party, ":distance", ":cur_troop_party", ":cur_center"),
@@ -1524,7 +1524,7 @@ simple_triggers = [
   (0.5,
    [
        (try_for_range, ":cur_troop", heroes_begin, heroes_end),
-         (troop_slot_eq, ":cur_troop", slot_troop_occupation, slto_kingdom_hero),
+         (troop_slot_eq, ":cur_troop", slot_troop_occupation, slto_faction_hero),
          (troop_get_slot, ":cur_party", ":cur_troop", slot_troop_leaded_party),
          (gt, ":cur_party", 0),
          (try_begin),
@@ -1793,7 +1793,7 @@ simple_triggers = [
       (try_for_range_backwards, ":i_stack", 0, ":num_stacks"),
         (party_prisoner_stack_get_troop_id, ":stack_troop", ":center_no", ":i_stack"),
         (troop_is_hero, ":stack_troop"),
-        (troop_slot_eq, ":stack_troop", slot_troop_occupation, slto_kingdom_hero),
+        (troop_slot_eq, ":stack_troop", slot_troop_occupation, slto_faction_hero),
         (store_random_in_range, ":random_no", 0, 100),
         (try_begin),
           (le, ":random_no", 10),
@@ -1905,7 +1905,7 @@ simple_triggers = [
         (call_script, "script_sort_tournament_participant_troops"),
         (troop_get_slot, ":winner_troop", "trp_tournament_participants", 0),
         (try_begin),
-          (is_between, ":winner_troop", kingdom_heroes_begin, kingdom_heroes_end),
+          (is_between, ":winner_troop", faction_heroes_begin, faction_heroes_end),
           (str_store_troop_name_link, s1, ":winner_troop"),
           (str_store_party_name_link, s2, ":center_no"),
           (display_message, "@{s1} has won the tournament at {s2}.", color_hero_news),
@@ -2008,10 +2008,10 @@ simple_triggers = [
       (assign, ":done", 1),
     (else_try),
       (eq, ":center_no", "$g_spacestation_requested_by_player"),
-      (party_slot_ge, ":center_no", slot_mainplanet_lord, kingdom_heroes_begin),
+      (party_slot_ge, ":center_no", slot_mainplanet_lord, faction_heroes_begin),
       (assign, "$g_spacestation_requested_by_player", 0),
       (store_faction_of_party, ":faction", ":center_no"),
-      (eq, ":faction", "$players_kingdom"),
+      (eq, ":faction", "$players_faction"),
       (assign, "$g_center_to_give_to_player", ":center_no"),
       (jump_to_menu, "mnu_requested_spacestation_granted_to_another"),
       (assign, ":done", 1),
@@ -2067,81 +2067,81 @@ simple_triggers = [
   (24,
    [
     (assign, ":num_active_factions", 0),
-    (try_for_range, ":cur_kingdom", factions_begin, factions_end),
-      (faction_set_slot, ":cur_kingdom", slot_faction_number_of_parties, 0),
+    (try_for_range, ":cur_faction", factions_begin, factions_end),
+      (faction_set_slot, ":cur_faction", slot_faction_number_of_parties, 0),
     (try_end),
     (try_for_parties, ":cur_party"),
       (store_faction_of_party, ":party_faction", ":cur_party"),
       (is_between, ":party_faction", factions_begin, factions_end),
       (this_or_next|is_between, ":cur_party", centers_begin, centers_end),
-      (party_slot_eq, ":cur_party", slot_party_type, spt_kingdom_hero_party),
-      (faction_get_slot, ":kingdom_num_parties", ":party_faction", slot_faction_number_of_parties),
-      (val_add, ":kingdom_num_parties", 1),
-      (faction_set_slot, ":party_faction", slot_faction_number_of_parties, ":kingdom_num_parties"),
+      (party_slot_eq, ":cur_party", slot_party_type, spt_faction_hero_party),
+      (faction_get_slot, ":faction_num_parties", ":party_faction", slot_faction_number_of_parties),
+      (val_add, ":faction_num_parties", 1),
+      (faction_set_slot, ":party_faction", slot_faction_number_of_parties, ":faction_num_parties"),
     (try_end),
-    (try_for_range, ":cur_kingdom", factions_begin, factions_end),
+    (try_for_range, ":cur_faction", factions_begin, factions_end),
 ##      (try_begin),
 ##        (eq, "$cheat_mode", 1),
-##        (str_store_faction_name, s1, ":cur_kingdom"),
-##        (faction_get_slot, reg1, ":cur_kingdom", slot_faction_number_of_parties),
+##        (str_store_faction_name, s1, ":cur_faction"),
+##        (faction_get_slot, reg1, ":cur_faction", slot_faction_number_of_parties),
 ##        (display_message, "@Number of parties belonging to {s1}: {reg1}"),
 ##      (try_end),
-      (faction_slot_eq, ":cur_kingdom", slot_faction_state, sfs_active),
+      (faction_slot_eq, ":cur_faction", slot_faction_state, sfs_active),
       (val_add, ":num_active_factions", 1),
-      (faction_slot_eq, ":cur_kingdom", slot_faction_number_of_parties, 0),
+      (faction_slot_eq, ":cur_faction", slot_faction_number_of_parties, 0),
       (assign, ":faction_removed", 0),
       (try_begin),
-        (eq, ":cur_kingdom", "fac_player_supporters_faction"),
+        (eq, ":cur_faction", "fac_player_supporters_faction"),
         (try_begin),
           (le, "$supported_pretender", 0),
-          (faction_set_slot, ":cur_kingdom", slot_faction_state, sfs_inactive),
+          (faction_set_slot, ":cur_faction", slot_faction_state, sfs_inactive),
           (assign, ":faction_removed", 1),
         (try_end),
       (else_try),
-        (neq, "$players_kingdom", ":cur_kingdom"),
-        (faction_set_slot, ":cur_kingdom", slot_faction_state, sfs_defeated),
+        (neq, "$players_faction", ":cur_faction"),
+        (faction_set_slot, ":cur_faction", slot_faction_state, sfs_defeated),
         (try_for_parties, ":cur_party"),
           (store_faction_of_party, ":party_faction", ":cur_party"),
-          (eq, ":party_faction", ":cur_kingdom"),
+          (eq, ":party_faction", ":cur_faction"),
           (party_get_slot, ":home_center", ":cur_party", slot_party_home_center),
           (store_faction_of_party, ":home_center_faction", ":home_center"),
           (party_set_faction, ":cur_party", ":home_center_faction"),
         (try_end),
-        (assign, ":kingdom_pretender", -1),
+        (assign, ":faction_pretender", -1),
         (try_for_range, ":cur_pretender", pretenders_begin, pretenders_end),
-          (troop_slot_eq, ":cur_pretender", slot_troop_original_faction, ":cur_kingdom"),
-          (assign, ":kingdom_pretender", ":cur_pretender"),
+          (troop_slot_eq, ":cur_pretender", slot_troop_original_faction, ":cur_faction"),
+          (assign, ":faction_pretender", ":cur_pretender"),
         (try_end),
         (try_begin),
-          (is_between, ":kingdom_pretender", pretenders_begin, pretenders_end),
-          (neq, ":kingdom_pretender", "$supported_pretender"),
-          (troop_set_slot, ":kingdom_pretender", slot_troop_cur_center, 0), #remove pretender from the world
+          (is_between, ":faction_pretender", pretenders_begin, pretenders_end),
+          (neq, ":faction_pretender", "$supported_pretender"),
+          (troop_set_slot, ":faction_pretender", slot_troop_cur_center, 0), #remove pretender from the world
         (try_end),
         (assign, ":faction_removed", 1),
         (try_begin),
-          (eq, "$players_oath_renounced_against_kingdom", ":cur_kingdom"),
-          (assign, "$players_oath_renounced_against_kingdom", 0),
+          (eq, "$players_oath_renounced_against_faction", ":cur_faction"),
+          (assign, "$players_oath_renounced_against_faction", 0),
           (assign, "$players_oath_renounced_given_center", 0),
           (assign, "$players_oath_renounced_begin_time", 0),
-          (call_script, "script_add_notification_menu", "mnu_notification_oath_renounced_faction_defeated", ":cur_kingdom", 0),
+          (call_script, "script_add_notification_menu", "mnu_notification_oath_renounced_faction_defeated", ":cur_faction", 0),
         (try_end),
-        #This menu must be at the end because faction banner will change after this menu if the player's supported pretender's original faction is cur_kingdom
-        (call_script, "script_add_notification_menu", "mnu_notification_faction_defeated", ":cur_kingdom", 0),
+        #This menu must be at the end because faction banner will change after this menu if the player's supported pretender's original faction is cur_faction
+        (call_script, "script_add_notification_menu", "mnu_notification_faction_defeated", ":cur_faction", 0),
       (try_end),
       (try_begin),
         (eq, ":faction_removed", 1),
         (val_sub, ":num_active_factions", 1),
         (call_script, "script_store_average_center_value_per_faction"),
       (try_end),
-      (try_for_range, ":cur_kingdom_2", factions_begin, factions_end),
-        (call_script, "script_update_faction_notes", ":cur_kingdom_2"),
+      (try_for_range, ":cur_rebelalliance", factions_begin, factions_end),
+        (call_script, "script_update_faction_notes", ":cur_rebelalliance"),
       (try_end),
     (try_end),
     (try_begin),
       (eq, ":num_active_factions", 1),
-      (try_for_range, ":cur_kingdom", factions_begin, factions_end),
-        (faction_slot_eq, ":cur_kingdom", slot_faction_state, sfs_active),
-        (call_script, "script_add_notification_menu", "mnu_notification_one_faction_left", ":cur_kingdom", 0),
+      (try_for_range, ":cur_faction", factions_begin, factions_end),
+        (faction_slot_eq, ":cur_faction", slot_faction_state, sfs_active),
+        (call_script, "script_add_notification_menu", "mnu_notification_one_faction_left", ":cur_faction", 0),
       (try_end),
     (try_end),
     ]),
@@ -2279,13 +2279,13 @@ simple_triggers = [
 # Report to army quest
   (6,
    [
-     (is_between, "$players_kingdom", factions_begin, factions_end),
+     (is_between, "$players_faction", factions_begin, factions_end),
      (eq, "$g_player_is_captive", 0),
-     (neg|faction_slot_eq, "$players_kingdom", slot_faction_ai_state, sfai_default),
+     (neg|faction_slot_eq, "$players_faction", slot_faction_ai_state, sfai_default),
      (neg|check_quest_active, "qst_report_to_army"),
      (neg|check_quest_active, "qst_follow_army"),
      (neg|quest_slot_ge, "qst_report_to_army", slot_quest_dont_give_again_remaining_days, 1),
-     (faction_get_slot, ":faction_marshall", "$players_kingdom", slot_faction_marshall),
+     (faction_get_slot, ":faction_marshall", "$players_faction", slot_faction_marshall),
      (gt, ":faction_marshall", 0),
      (troop_get_slot, ":faction_marshall_party", ":faction_marshall", slot_troop_leaded_party),
      (gt, ":faction_marshall_party", 0),
@@ -2323,7 +2323,7 @@ simple_triggers = [
      (quest_set_slot, "qst_report_to_army", slot_quest_target_amount, ":cur_target_amount"),
      (quest_set_slot, "qst_report_to_army", slot_quest_expiration_days, 4),
      (quest_set_slot, "qst_report_to_army", slot_quest_dont_give_again_period, 28),
-     (jump_to_menu, "mnu_kingdom_army_quest_report_to_army"),
+     (jump_to_menu, "mnu_faction_army_quest_report_to_army"),
      ]),
 
 
@@ -2332,12 +2332,12 @@ simple_triggers = [
    [
      (assign, "$g_random_army_quest", -1),
      (check_quest_active, "qst_follow_army", 1),
-     (is_between, "$players_kingdom", factions_begin, factions_end),
+     (is_between, "$players_faction", factions_begin, factions_end),
 #Rebellion changes begin
-#     (neg|is_between, "$players_kingdom", rebel_factions_begin, rebel_factions_end),
+#     (neg|is_between, "$players_faction", rebel_factions_begin, rebel_factions_end),
 #Rebellion changes end
-     (neg|faction_slot_eq, "$players_kingdom", slot_faction_ai_state, sfai_default),
-     (faction_get_slot, ":faction_marshall", "$players_kingdom", slot_faction_marshall),
+     (neg|faction_slot_eq, "$players_faction", slot_faction_ai_state, sfai_default),
+     (faction_get_slot, ":faction_marshall", "$players_faction", slot_faction_marshall),
      (neq, ":faction_marshall", "trp_player"),
      (gt, ":faction_marshall", 0),
      (troop_get_slot, ":faction_marshall_party", ":faction_marshall", slot_troop_leaded_party),
@@ -2347,7 +2347,7 @@ simple_triggers = [
        (lt, ":dist", 15),
        (assign, "$g_player_follow_army_warnings", 0),
        (store_current_hours, ":cur_hours"),
-       (faction_get_slot, ":last_offensive_time", "$players_kingdom", slot_faction_ai_last_offensive_time),
+       (faction_get_slot, ":last_offensive_time", "$players_faction", slot_faction_ai_last_offensive_time),
        (store_sub, ":passed_time", ":cur_hours", ":last_offensive_time"),
 
        (assign, ":result", -1),
@@ -2362,7 +2362,7 @@ simple_triggers = [
            (try_begin),
              (eq, ":quest_no", "qst_deliver_cattle_to_army"),
              (try_begin),
-               (faction_slot_eq, "$players_kingdom", slot_faction_ai_state, sfai_attacking_center),
+               (faction_slot_eq, "$players_faction", slot_faction_ai_state, sfai_attacking_center),
                (gt, ":passed_time", 120),#5 days
                (store_random_in_range, ":quest_target_amount", 5, 10),
                (assign, ":result", ":quest_no"),
@@ -2373,8 +2373,8 @@ simple_triggers = [
            (else_try),
              (eq, ":quest_no", "qst_join_siege_with_army"),
              (try_begin),
-               (faction_slot_eq, "$players_kingdom", slot_faction_ai_state, sfai_attacking_center),
-               (faction_get_slot, ":ai_object", "$players_kingdom", slot_faction_ai_object),
+               (faction_slot_eq, "$players_faction", slot_faction_ai_state, sfai_attacking_center),
+               (faction_get_slot, ":ai_object", "$players_faction", slot_faction_ai_object),
                (is_between, ":ai_object", walled_centers_begin, walled_centers_end),
                (party_get_battle_opponent, ":besieged_center", ":faction_marshall_party"),
                (eq, ":besieged_center", ":ai_object"),
@@ -2436,11 +2436,11 @@ simple_triggers = [
            (quest_set_slot, ":result", slot_quest_giver_troop, ":faction_marshall"),
            (try_begin),
              (eq, ":result", "qst_join_siege_with_army"),
-             (jump_to_menu, "mnu_kingdom_army_quest_join_siege_order"),
+             (jump_to_menu, "mnu_faction_army_quest_join_siege_order"),
            (else_try),
              (assign, "$g_random_army_quest", ":result"),
              (quest_set_slot, "$g_random_army_quest", slot_quest_giver_troop, ":faction_marshall"),
-             (jump_to_menu, "mnu_kingdom_army_quest_messenger"),
+             (jump_to_menu, "mnu_faction_army_quest_messenger"),
            (try_end),
          (try_end),
        (try_end),
@@ -2460,7 +2460,7 @@ simple_triggers = [
            (try_end),
          (try_end),
        (else_try),
-         (jump_to_menu, "mnu_kingdom_army_follow_failed"),
+         (jump_to_menu, "mnu_faction_army_follow_failed"),
        (try_end),
      (try_end),
     ]),
@@ -2477,7 +2477,7 @@ simple_triggers = [
     ]),
 
   (2, [
-       (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
+       (try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
          (troop_get_slot, ":party_no", ":troop_no", slot_troop_leaded_party),
          (ge, ":party_no", 1),
          (party_slot_eq, ":party_no", slot_party_following_player, 1),
@@ -2661,15 +2661,15 @@ simple_triggers = [
 
 #persuade_lords_to_make_peace begin
 
-  (72, [(gt, "$g_force_peace_faction_1", 0),
-        (gt, "$g_force_peace_faction_2", 0),
+  (72, [(gt, "$g_force_peace_galacticempire", 0),
+        (gt, "$g_force_peace_rebelalliance", 0),
         (try_begin),
-          (store_relation, ":relation", "$g_force_peace_faction_1", "$g_force_peace_faction_2"),
+          (store_relation, ":relation", "$g_force_peace_galacticempire", "$g_force_peace_rebelalliance"),
           (lt, ":relation", 0),
-          (call_script, "script_diplomacy_start_peace_between_kingdoms", "$g_force_peace_faction_1", "$g_force_peace_faction_2", 1),
+          (call_script, "script_diplomacy_start_peace_between_factions", "$g_force_peace_galacticempire", "$g_force_peace_rebelalliance", 1),
         (try_end),
-        (assign, "$g_force_peace_faction_1", 0),
-        (assign, "$g_force_peace_faction_2", 0),
+        (assign, "$g_force_peace_galacticempire", 0),
+        (assign, "$g_force_peace_rebelalliance", 0),
        ]),  
 
 
@@ -2738,7 +2738,7 @@ simple_triggers = [
 #NPC changes end
 
 ##(1, 
-##   [(store_random_in_range, ":random_troop", kingdom_heroes_begin, kingdom_heroes_end),
+##   [(store_random_in_range, ":random_troop", faction_heroes_begin, faction_heroes_end),
 ##    (store_random_in_range, ":random_faction", factions_begin, factions_end),
 ##    (store_troop_faction, ":troop_faction", ":random_troop"),
 ##    (neq, ":troop_faction", ":random_faction"),
@@ -2751,7 +2751,7 @@ simple_triggers = [
 ##    ]),
 
 (4, 
-   [(try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
+   [(try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
       (troop_slot_ge, ":troop_no", slot_troop_change_to_faction, 1),
       (store_troop_faction, ":faction_no", ":troop_no"),
       (troop_get_slot, ":new_faction_no", ":troop_no", slot_troop_change_to_faction),
@@ -2775,8 +2775,8 @@ simple_triggers = [
         (party_slot_eq, ":cur_center_no", slot_mainplanet_lord, ":troop_no"),
     
         #checking if the party is away from his original faction parties
-        (assign, ":end_cond", kingdom_heroes_end),
-        (try_for_range, ":enemy_troop_no", kingdom_heroes_begin, ":end_cond"),
+        (assign, ":end_cond", faction_heroes_end),
+        (try_for_range, ":enemy_troop_no", faction_heroes_begin, ":end_cond"),
           (troop_get_slot, ":enemy_party_no", ":enemy_troop_no", slot_troop_leaded_party),
           (gt, ":enemy_party_no", 0),
           (store_faction_of_party, ":enemy_faction_no", ":enemy_party_no"),
@@ -2798,10 +2798,10 @@ simple_triggers = [
         (str_store_faction_name_link, s3, ":new_faction_no"),
         (display_message, "@{s1} has switched from {s2} to {s3}.", color_hero_news),
         (try_begin),
-          (eq, ":faction_no", "$players_kingdom"),
+          (eq, ":faction_no", "$players_faction"),
           (call_script, "script_add_notification_menu", "mnu_notification_troop_left_players_faction", ":troop_no", ":new_faction_no"),
         (else_try),
-          (eq, ":new_faction_no", "$players_kingdom"),
+          (eq, ":new_faction_no", "$players_faction"),
           (call_script, "script_add_notification_menu", "mnu_notification_troop_joined_players_faction", ":troop_no", ":faction_no"),
         (try_end),
       (try_end),
@@ -2813,7 +2813,7 @@ simple_triggers = [
 #  #SW - make sure faction1 (empire) and faction2 (rebel) are always at war (popup appears every time unfortunately, even if they are at war)
 #  (24,
 #   [
-#     (call_script, "script_diplomacy_start_war_between_kingdoms", "fac_kingdom_1", "fac_kingdom_2",1),
+#     (call_script, "script_diplomacy_start_war_between_factions", "fac_galacticempire", "fac_rebelalliance",1),
 #    ])
 
 #Run spawn script for parties who have a patrol base.
@@ -2840,7 +2840,7 @@ simple_triggers = [
 
 	# (try_for_parties,":cur_party"), #go through all parties to find patrols
 		# (party_get_template_id,":cur_party_template",":cur_party"),
-		# (this_or_next|eq, ":cur_party_template", "pt_kingdom_1_escort"),	#patrol
+		# (this_or_next|eq, ":cur_party_template", "pt_galacticempire_escort"),	#patrol
 		# (eq, ":cur_party_template", "pt_independent_traders"),
 		# (party_get_num_companions,":num_troops",":cur_party"),
 		# (try_begin),
@@ -2866,7 +2866,7 @@ simple_triggers = [
 				(party_get_slot, ":besieger_party", ":cur_base", slot_center_is_besieged_by),
 				(try_for_parties,":cur_patrol"), #go through all parties to find patrols
 					(party_get_template_id,":cur_party_template",":cur_patrol"),
-					(eq, ":cur_party_template", "pt_kingdom_1_escort"),
+					(eq, ":cur_party_template", "pt_galacticempire_escort"),
 					(party_slot_eq, ":cur_patrol", slot_party_home_center, ":cur_base"),
 					(store_faction_of_party, ":cur_patrol_faction", ":cur_patrol"),
 					#(assign, reg1, ":cur_base"),		#test
@@ -2891,13 +2891,13 @@ simple_triggers = [
 						(party_set_faction, ":cur_patrol", ":cur_base_faction"),
 						#set icon
 						(try_begin),
-							(eq, ":cur_base_faction", "fac_kingdom_1"),	#empire
+							(eq, ":cur_base_faction", "fac_galacticempire"),	#empire
 							(party_set_icon, ":cur_patrol", "icon_tie_fighter"),
 						(else_try),
-							(eq, ":cur_base_faction", "fac_kingdom_1"),	#rebel
+							(eq, ":cur_base_faction", "fac_galacticempire"),	#rebel
 							(party_set_icon, ":cur_patrol", "icon_a_wing"),
 						(else_try),
-							(eq, ":cur_base_faction", "fac_kingdom_1"),	#hutt
+							(eq, ":cur_base_faction", "fac_galacticempire"),	#hutt
 							(party_set_icon, ":cur_patrol", "icon_hutt_patrol"),
 						(else_try),
 							#other
@@ -2994,7 +2994,7 @@ simple_triggers = [
 (0.5,	[
 	(try_for_parties, ":cur_patrol"),
 		(party_get_template_id,":cur_party_template",":cur_patrol"),
-		(eq, ":cur_party_template", "pt_kingdom_1_escort"),
+		(eq, ":cur_party_template", "pt_galacticempire_escort"),
 		(call_script, "script_process_patrol_ai", ":cur_patrol"),
 	(try_end),
 	]),
@@ -3002,7 +3002,7 @@ simple_triggers = [
 (2,	[
 	(try_for_parties, ":cur_patrol"),
 		(party_get_template_id,":cur_party_template",":cur_patrol"),
-		(eq, ":cur_party_template", "pt_kingdom_1_escort"),
+		(eq, ":cur_party_template", "pt_galacticempire_escort"),
 		(call_script, "script_process_patrol_maintenance", ":cur_patrol"),
 	(try_end),
 		]),

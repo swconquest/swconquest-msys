@@ -31,7 +31,7 @@ pmf_is_prisoner = 0x0001
 party_templates = [
   ("none","none",icon_shuttle,0,fac_commoners,merchant_personality,[]),
   ("rescued_prisoners","Rescued Prisoners",icon_civilian_cruiser,0,fac_commoners,merchant_personality,[]),
-  ("enemy","Enemy",icon_mercenary_fighter,0,fac_undeads,merchant_personality,[]),
+  ("enemy","Enemy",icon_mercenary_fighter,0,fac_enemy,merchant_personality,[]),
   ("hero_party","Hero Party",icon_civilian_transport,0,fac_commoners,merchant_personality,[]),
 ####################################################################################################################
 # Party templates before this point are hard-wired into the game and should not be changed. 
@@ -52,20 +52,20 @@ party_templates = [
 #  ("black_khergit_raiders","Black Khergit Raiders",icon_khergit_horseman_b|carries_goods(2),0,fac_black_khergits,bandit_personality,[(trp_black_khergit_guard,1,10),(trp_black_khergit_horseman,5,5)]),
 
   ("bountyhunters","Trandoshan Slavers",icon_z95,0,fac_bountyhunters,soldier_personality,[(trp_bountyhunter,25,50),(trp_wookiee,0,1,pmf_is_prisoner)]),
-  ("steppe_bandits","Night Fangs Pirates",icon_mercenary_shuttle|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_steppe_bandit,5,25),(trp_steppe_bandit_female,4,8),(trp_trandoshan,1,5),(trp_twilek,1,5),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
+  ("night_fang_pirates","Night Fangs Pirates",icon_mercenary_shuttle|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_steppe_bandit,5,25),(trp_steppe_bandit_female,4,8),(trp_trandoshan,1,5),(trp_twilek,1,5),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
   ("blazing_claw_pirates","Blazing Claw Pirates",icon_mercenary_fighter|carries_goods(2),0,fac_blazing_claw_pirates,bandit_personality,[(trp_blazing_claw_pirate,5,25),(trp_blazing_claw_pirate_female,4,8),(trp_rodian,1,5),(trp_sullustan_1,1,5),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
-  ("sea_raiders","Tusken Raiders",icon_mercenary_raider_brown|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_tusken_1,10,25),(trp_tusken_2,5,10)]),  
+  ("tusken_raiders","Tusken Raiders",icon_mercenary_raider_brown|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_tusken_1,10,25),(trp_tusken_2,5,10)]),  
   ("black_sun_pirates","Black Sun Pirates",icon_starchaser|carries_goods(2),0,fac_black_sun_pirates,bandit_personality,[(trp_black_sun_pirate_1,10,20),(trp_black_sun_pirate_2,5,10),(trp_black_sun_pirate_3,5,10),(trp_black_sun_pirate_4,1,10),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
   
 #SW - new outlaw party templates with Imperial Troops (nevermind, back to regular bandits)
 #  ("steppe_bandits","Imperial Scouts",icon_axeman|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_imperial_stormtrooper_mounted,8,15),(trp_imperial_scout_trooper,10,20)]),
 #  ("blazing_claw_pirates","Imperial War Party",icon_axeman|carries_goods(2),0,fac_blazing_claw_pirates,bandit_personality,[(trp_imperial_stormtrooper,20,30),(trp_imperial_scout_trooper,10,15),(trp_sith_apprentice,5,10),(trp_sith_master,5,10)]),
 #  ("black_sun_pirates","Imperial Raiders",icon_axeman|carries_goods(2),0,fac_black_sun_pirates,bandit_personality,[(trp_imperial_trooper,5,20),(trp_imperial_recruit,5,30)]),
-#  ("sea_raiders","Imperial Patrol",icon_axeman|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_imperial_stormtrooper,5,20),(trp_imperial_trooper,5,10),(trp_imperial_scout_trooper,5,10),(trp_sith_apprentice,2,4),(trp_sith_master,2,4)]),
+#  ("tusken_raiders","Imperial Patrol",icon_axeman|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_imperial_stormtrooper,5,20),(trp_imperial_trooper,5,10),(trp_imperial_scout_trooper,5,10),(trp_sith_apprentice,2,4),(trp_sith_master,2,4)]),
 
   ("deserters","Deserters",icon_z95|carries_goods(3),0,fac_deserters,bandit_personality,[]),
  #SW - #MF added some new templates
-  ("kingdom_1_escort", "Patrol Fleet", icon_z95|carries_goods(2)|pf_show_faction|pf_default_behavior,0,fac_commoners,aggressiveness_10|courage_12, [(trp_farmer,1,1)]),
+  ("galacticempire_escort", "Patrol Fleet", icon_z95|carries_goods(2)|pf_show_faction|pf_default_behavior,0,fac_commoners,aggressiveness_10|courage_12, [(trp_farmer,1,1)]),
   #("independent_traders", "Trade Federation Convoy",icon_bulk_frigate|carries_goods(20)|pf_quest_party,0,fac_commoners,escorted_merchant_personality,[(trp_caravan_master,1,1),(trp_b1series,15,30),(trp_b2series,5,10)]),
   ("independent_traders", "Merchant Convoy",icon_bulk_freighter|carries_goods(20)|pf_quest_party,0,fac_commoners,escorted_merchant_personality,[(trp_caravan_master,1,1),(trp_b1series,1,10),(trp_oom_series_command,1,1),(trp_security_guard,10,20)]),
   #SW - removed pf_auto_remove_in_town
@@ -98,7 +98,7 @@ party_templates = [
   ("messenger_party","Messenger",icon_z95|pf_show_faction,0,fac_commoners,merchant_personality,[]),
   ("raider_party","Raiders",icon_z95|carries_goods(16)|pf_quest_party,0,fac_commoners,bandit_personality,[]),
   ("raider_captives","Raider Captives",0,0,fac_commoners,0,[(trp_peasant_woman,6,30,pmf_is_prisoner)]),
-  ("kingdom_caravan_party","Freighters",icon_freighter|carries_goods(25)|pf_show_faction,0,fac_commoners,merchant_personality,[(trp_caravan_master,1,1),(trp_security_guard,12,40)]),
+  ("faction_caravan_party","Freighters",icon_freighter|carries_goods(25)|pf_show_faction,0,fac_commoners,merchant_personality,[(trp_caravan_master,1,1),(trp_security_guard,12,40)]),
   ("prisoner_train_party","Prisoner Train",icon_bulk_freighter|carries_goods(5)|pf_show_faction,0,fac_commoners,merchant_personality,[]),
   ("default_prisoners","Default Prisoners",0,0,fac_commoners,0,[(trp_bandit,5,10,pmf_is_prisoner)]),
 ##  ("merchant_party","Merchant",icon_mule|carries_goods(25)|pf_show_faction,0,fac_merchants,merchant_personality,[(trp_caravan_guard,12,40)]),
@@ -109,7 +109,7 @@ party_templates = [
 #SW - modified center_reinforcements
   ("center_reinforcements","Reinforcements",icon_z95|carries_goods(16),0,fac_commoners,soldier_personality,[(trp_townsman,5,15),(trp_civilian,5,15),(trp_farmer,5,15)]),
   
-  ("kingdom_hero_party","War Party",icon_player|pf_show_faction|pf_default_behavior,0,fac_commoners,soldier_personality,[]),
+  ("faction_hero_party","War Party",icon_player|pf_show_faction|pf_default_behavior,0,fac_commoners,soldier_personality,[]),
   
 
 
@@ -118,63 +118,63 @@ party_templates = [
 #  ("default_reinforcements_b","default_reinforcements_b",0,0,fac_commoners,0,[(trp_mercenary,1,7),(trp_caravan_guard,3,10),(trp_watchman,3,15)]),
 #  ("default_reinforcements_c","default_reinforcements_c",0,0,fac_commoners,0,[(trp_hired_blade,1,7),(trp_mercenary,3,10),(trp_caravan_guard,3,15)]),
 
-#SW - modified kingdom 1 reinforcements (empire = 6-13 troops)
-  ("kingdom_1_reinforcements_a", "kingdom_1_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_imperial_recruit,2,3),(trp_imperial_army_trooper,4,10)]),
-  ("kingdom_1_reinforcements_b", "kingdom_1_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_imperial_stormtrooper,6,13)]),
-  ("kingdom_1_reinforcements_c", "kingdom_1_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_sith_hopeful,1,2),(trp_chiss_1,1,2),(trp_imperial_stormtrooper,1,2)]),
+#SW - modified faction 1 reinforcements (empire = 6-13 troops)
+  ("galacticempire_reinforcements_a", "galacticempire_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_imperial_recruit,2,3),(trp_imperial_army_trooper,4,10)]),
+  ("galacticempire_reinforcements_b", "galacticempire_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_imperial_stormtrooper,6,13)]),
+  ("galacticempire_reinforcements_c", "galacticempire_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_sith_hopeful,1,2),(trp_chiss_1,1,2),(trp_imperial_stormtrooper,1,2)]),
 
-#SW - modified kingdom 2 reinforcements (rebel = 5-12 troops)
-  ("kingdom_2_reinforcements_a", "kingdom_2_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_rebel_recruit,2,3),(trp_rebel_cadet,3,9)]),		#rebels have 1 less for min & max
-  ("kingdom_2_reinforcements_b", "kingdom_2_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_rebel_trooper,3,8),(trp_wookiee,1,2),(trp_moncal_1,1,2)]),	#rebels have 1 less for min & max
-  ("kingdom_2_reinforcements_c", "kingdom_2_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_jedi_hopeful,1,2),(trp_sullustan_1,1,2),(trp_bothan,1,2)]),	#rebels are equal for this reinforcement
-#SW - modified kingdom 3 reinforcements (hutt = 5-12 troops)
-   ("kingdom_3_reinforcements_a", "kingdom_3_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_hutt_militia,2,3),(trp_hutt_mercenary,2,6),(trp_gamorrean,1,3),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
-   ("kingdom_3_reinforcements_b", "kingdom_3_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_hutt_guard,2,5),(trp_trandoshan,1,2),(trp_rodian,1,2),(trp_twilek,1,3),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
-   ("kingdom_3_reinforcements_c", "kingdom_3_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_mandalorian,1,1),(trp_gamorrean,1,2),(trp_hutt_skiff_guard,1,1),(trp_ig88,0,1),(trp_rancor,0,1)]),
+#SW - modified faction 2 reinforcements (rebel = 5-12 troops)
+  ("rebelalliance_reinforcements_a", "rebelalliance_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_rebel_recruit,2,3),(trp_rebel_cadet,3,9)]),		#rebels have 1 less for min & max
+  ("rebelalliance_reinforcements_b", "rebelalliance_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_rebel_trooper,3,8),(trp_wookiee,1,2),(trp_moncal_1,1,2)]),	#rebels have 1 less for min & max
+  ("rebelalliance_reinforcements_c", "rebelalliance_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_jedi_hopeful,1,2),(trp_sullustan_1,1,2),(trp_bothan,1,2)]),	#rebels are equal for this reinforcement
+#SW - modified faction 3 reinforcements (hutt = 5-12 troops)
+   ("huttcartel_reinforcements_a", "huttcartel_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_hutt_militia,2,3),(trp_hutt_mercenary,2,6),(trp_gamorrean,1,3),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
+   ("huttcartel_reinforcements_b", "huttcartel_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_hutt_guard,2,5),(trp_trandoshan,1,2),(trp_rodian,1,2),(trp_twilek,1,3),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
+   ("huttcartel_reinforcements_c", "huttcartel_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_mandalorian,1,1),(trp_gamorrean,1,2),(trp_hutt_skiff_guard,1,1),(trp_ig88,0,1),(trp_rancor,0,1)]),
 
-  #SW - commented out kingdom 4 & 5 reinforcements  
-  # ("kingdom_4_reinforcements_a", "kingdom_4_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_nord_footman,2,6),(trp_nord_recruit,4,7)]),
-  # ("kingdom_4_reinforcements_b", "kingdom_4_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_mercenary_crossbowman,2,4),(trp_nord_footman,4,7)]),
-  # ("kingdom_4_reinforcements_c", "kingdom_4_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_nord_warrior,3,6)]),
+  #SW - commented out faction 4 & 5 reinforcements  
+  # ("faction_4_reinforcements_a", "faction_4_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_nord_footman,2,6),(trp_nord_recruit,4,7)]),
+  # ("faction_4_reinforcements_b", "faction_4_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_mercenary_crossbowman,2,4),(trp_nord_footman,4,7)]),
+  # ("faction_4_reinforcements_c", "faction_4_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_nord_warrior,3,6)]),
 
-  # ("kingdom_5_reinforcements_a", "kingdom_5_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_rhodok_spearman,2,6),(trp_rhodok_tribesman,4,7)]),
-  # ("kingdom_5_reinforcements_b", "kingdom_5_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_rhodok_trained_crossbowman,2,6),(trp_rhodok_crossbowman,4,7)]),
-  # ("kingdom_5_reinforcements_c", "kingdom_5_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_rhodok_sergeant,3,6)]),
+  # ("faction_5_reinforcements_a", "faction_5_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_rhodok_spearman,2,6),(trp_rhodok_tribesman,4,7)]),
+  # ("faction_5_reinforcements_b", "faction_5_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_rhodok_trained_crossbowman,2,6),(trp_rhodok_crossbowman,4,7)]),
+  # ("faction_5_reinforcements_c", "faction_5_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_rhodok_sergeant,3,6)]),
 
 #SW - Culture specific reinforcements
-  ("kingdom_human_reinforcements_a", "kingdom_human_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_civilian,6,12)]),
-  ("kingdom_human_reinforcements_b", "kingdom_human_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_civilian,3,6),(trp_militia,2,4),(trp_thug,1,2)]),
-  ("kingdom_human_reinforcements_c", "kingdom_human_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_militia,2,4),(trp_thug,2,4)]),  
-  ("kingdom_wookiee_reinforcements_a", "kingdom_wookiee_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_wookiee,6,12)]),
-  ("kingdom_wookiee_reinforcements_b", "kingdom_wookiee_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_wookiee,3,6),(trp_wookiee_warrior,3,6)]),
-  ("kingdom_wookiee_reinforcements_c", "kingdom_wookiee_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_wookiee_marksman,2,4),(trp_wookiee_berserker,2,4)]),
-  ("kingdom_mandalorian_reinforcements_a", "kingdom_mandalorian_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_mandalorian,6,12)]),
-  ("kingdom_mandalorian_reinforcements_b", "kingdom_mandalorian_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_mandalorian,3,6),(trp_mandalorian_soldier,3,6)]),
-  ("kingdom_mandalorian_reinforcements_c", "kingdom_mandalorian_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_mandalorian_commando,2,4),(trp_mandalorian_sniper,2,4)]),  
-  ("kingdom_clone_reinforcements_a", "kingdom_clone_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_clone_trooper_1,6,12)]),
-  ("kingdom_clone_reinforcements_b", "kingdom_clone_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_clone_trooper_2,5,9),(trp_arc_trooper_2,1,3)]),
-  ("kingdom_clone_reinforcements_c", "kingdom_clone_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_clone_trooper_3,3,6),(trp_arc_trooper_3,1,2)]),    
-  ("kingdom_trandoshan_reinforcements_a", "kingdom_trandoshan_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_trandoshan,6,12)]),
-  ("kingdom_trandoshan_reinforcements_b", "kingdom_trandoshan_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_trandoshan,3,6),(trp_trandoshan_warrior,3,6)]),
-  ("kingdom_trandoshan_reinforcements_c", "kingdom_trandoshan_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_trandoshan_hunter,2,4),(trp_trandoshan_bounty_hunter,2,4)]),
+  ("faction_human_reinforcements_a", "faction_human_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_civilian,6,12)]),
+  ("faction_human_reinforcements_b", "faction_human_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_civilian,3,6),(trp_militia,2,4),(trp_thug,1,2)]),
+  ("faction_human_reinforcements_c", "faction_human_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_militia,2,4),(trp_thug,2,4)]),  
+  ("faction_wookiee_reinforcements_a", "faction_wookiee_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_wookiee,6,12)]),
+  ("faction_wookiee_reinforcements_b", "faction_wookiee_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_wookiee,3,6),(trp_wookiee_warrior,3,6)]),
+  ("faction_wookiee_reinforcements_c", "faction_wookiee_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_wookiee_marksman,2,4),(trp_wookiee_berserker,2,4)]),
+  ("faction_mandalorian_reinforcements_a", "faction_mandalorian_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_mandalorian,6,12)]),
+  ("faction_mandalorian_reinforcements_b", "faction_mandalorian_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_mandalorian,3,6),(trp_mandalorian_soldier,3,6)]),
+  ("faction_mandalorian_reinforcements_c", "faction_mandalorian_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_mandalorian_commando,2,4),(trp_mandalorian_sniper,2,4)]),  
+  ("faction_clone_reinforcements_a", "faction_clone_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_clone_trooper_1,6,12)]),
+  ("faction_clone_reinforcements_b", "faction_clone_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_clone_trooper_2,5,9),(trp_arc_trooper_2,1,3)]),
+  ("faction_clone_reinforcements_c", "faction_clone_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_clone_trooper_3,3,6),(trp_arc_trooper_3,1,2)]),    
+  ("faction_trandoshan_reinforcements_a", "faction_trandoshan_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_trandoshan,6,12)]),
+  ("faction_trandoshan_reinforcements_b", "faction_trandoshan_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_trandoshan,3,6),(trp_trandoshan_warrior,3,6)]),
+  ("faction_trandoshan_reinforcements_c", "faction_trandoshan_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_trandoshan_hunter,2,4),(trp_trandoshan_bounty_hunter,2,4)]),
   
-##  ("kingdom_1_reinforcements_a", "kingdom_1_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_swadian_footman,3,7),(trp_swadian_skirmisher,5,10),(trp_swadian_militia,11,26)]),
-##  ("kingdom_1_reinforcements_b", "kingdom_1_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_swadian_man_at_arms,5,10),(trp_swadian_infantry,5,10),(trp_swadian_crossbowman,3,8)]),
-##  ("kingdom_1_reinforcements_c", "kingdom_1_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_swadian_knight,2,6),(trp_swadian_sergeant,2,5),(trp_swadian_sharpshooter,2,5)]),
+##  ("galacticempire_reinforcements_a", "galacticempire_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_swadian_footman,3,7),(trp_swadian_skirmisher,5,10),(trp_swadian_militia,11,26)]),
+##  ("galacticempire_reinforcements_b", "galacticempire_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_swadian_man_at_arms,5,10),(trp_swadian_infantry,5,10),(trp_swadian_crossbowman,3,8)]),
+##  ("galacticempire_reinforcements_c", "galacticempire_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_swadian_knight,2,6),(trp_swadian_sergeant,2,5),(trp_swadian_sharpshooter,2,5)]),
 ##
-##  ("kingdom_2_reinforcements_a", "kingdom_2_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_vaegir_veteran,3,7),(trp_vaegir_skirmisher,5,10),(trp_vaegir_footman,11,26)]),
-##  ("kingdom_2_reinforcements_b", "kingdom_2_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_vaegir_horseman,4,9),(trp_vaegir_infantry,5,10),(trp_vaegir_archer,3,8)]),
-##  ("kingdom_2_reinforcements_c", "kingdom_2_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_vaegir_knight,3,7),(trp_vaegir_guard,2,5),(trp_vaegir_marksman,2,5)]),
+##  ("rebelalliance_reinforcements_a", "rebelalliance_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_vaegir_veteran,3,7),(trp_vaegir_skirmisher,5,10),(trp_vaegir_footman,11,26)]),
+##  ("rebelalliance_reinforcements_b", "rebelalliance_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_vaegir_horseman,4,9),(trp_vaegir_infantry,5,10),(trp_vaegir_archer,3,8)]),
+##  ("rebelalliance_reinforcements_c", "rebelalliance_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_vaegir_knight,3,7),(trp_vaegir_guard,2,5),(trp_vaegir_marksman,2,5)]),
 ##
-##  ("kingdom_3_reinforcements_a", "kingdom_3_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_khergit_horseman,3,7),(trp_khergit_skirmisher,5,10),(trp_khergit_tribesman,11,26)]),
-##  ("kingdom_3_reinforcements_b", "kingdom_3_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_khergit_veteran_horse_archer,4,9),(trp_khergit_horse_archer,5,10),(trp_khergit_horseman,3,8)]),
-##  ("kingdom_3_reinforcements_c", "kingdom_3_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_khergit_lancer,3,7),(trp_khergit_veteran_horse_archer,2,5),(trp_khergit_horse_archer,2,5)]),
+##  ("huttcartel_reinforcements_a", "huttcartel_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_khergit_horseman,3,7),(trp_khergit_skirmisher,5,10),(trp_khergit_tribesman,11,26)]),
+##  ("huttcartel_reinforcements_b", "huttcartel_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_khergit_veteran_horse_archer,4,9),(trp_khergit_horse_archer,5,10),(trp_khergit_horseman,3,8)]),
+##  ("huttcartel_reinforcements_c", "huttcartel_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_khergit_lancer,3,7),(trp_khergit_veteran_horse_archer,2,5),(trp_khergit_horse_archer,2,5)]),
 ##
-##  ("kingdom_4_reinforcements_a", "kingdom_4_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_nord_trained_footman,3,7),(trp_nord_footman,5,10),(trp_nord_recruit,11,26)]),
-##  ("kingdom_4_reinforcements_b", "kingdom_4_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_nord_veteran,4,9),(trp_nord_warrior,5,10),(trp_nord_footman,3,8)]),
-##  ("kingdom_4_reinforcements_c", "kingdom_4_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_nord_champion,1,3),(trp_nord_veteran,2,5),(trp_nord_warrior,2,5)]),
+##  ("faction_4_reinforcements_a", "faction_4_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_nord_trained_footman,3,7),(trp_nord_footman,5,10),(trp_nord_recruit,11,26)]),
+##  ("faction_4_reinforcements_b", "faction_4_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_nord_veteran,4,9),(trp_nord_warrior,5,10),(trp_nord_footman,3,8)]),
+##  ("faction_4_reinforcements_c", "faction_4_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_nord_champion,1,3),(trp_nord_veteran,2,5),(trp_nord_warrior,2,5)]),
 ##
-##  ("kingdom_5_reinforcements_a", "kingdom_5_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_rhodok_spearman,3,7),(trp_rhodok_crossbowman,5,10),(trp_rhodok_tribesman,11,26)]),
-##  ("kingdom_5_reinforcements_b", "kingdom_5_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_rhodok_trained_spearman,4,9),(trp_rhodok_spearman,5,10),(trp_rhodok_crossbowman,3,8)]),
-##  ("kingdom_5_reinforcements_c", "kingdom_5_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_rhodok_sergeant,3,7),(trp_rhodok_veteran_spearman,2,5),(trp_rhodok_veteran_crossbowman,2,5)]),
+##  ("faction_5_reinforcements_a", "faction_5_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_rhodok_spearman,3,7),(trp_rhodok_crossbowman,5,10),(trp_rhodok_tribesman,11,26)]),
+##  ("faction_5_reinforcements_b", "faction_5_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_rhodok_trained_spearman,4,9),(trp_rhodok_spearman,5,10),(trp_rhodok_crossbowman,3,8)]),
+##  ("faction_5_reinforcements_c", "faction_5_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_rhodok_sergeant,3,7),(trp_rhodok_veteran_spearman,2,5),(trp_rhodok_veteran_crossbowman,2,5)]),
 ] 

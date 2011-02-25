@@ -124,7 +124,7 @@ slot_party_ignore_player_until = 3
 slot_party_ai_state            = 4
 slot_party_ai_object           = 5
 
-slot_mainplanet_belongs_to_kingdom   = 6
+slot_mainplanet_belongs_to_faction   = 6
 slot_mainplanet_lord                 = 7
 slot_party_ai_substate         = 8
 slot_mainplanet_claimed_by_player    = 9
@@ -402,17 +402,17 @@ spt_minorplanet            = 4
 ##spt_messenger          = 8
 ##spt_raider             = 9
 ##spt_scout              = 10
-spt_kingdom_caravan    = 11
+spt_faction_caravan    = 11
 ##spt_prisoner_train     = 12
-spt_kingdom_hero_party = 13
+spt_faction_hero_party = 13
 ##spt_merchant_caravan   = 14
 spt_minorplanet_farmer     = 15
 spt_ship               = 16
 spt_cattle_herd        = 17
 #spt_deserter           = 20
 
-kingdom_party_types_begin = spt_kingdom_caravan
-kingdom_party_types_end = spt_kingdom_hero_party + 1
+faction_party_types_begin = spt_faction_caravan
+faction_party_types_end = spt_faction_hero_party + 1
 
 #slot_faction_state values
 sfs_active                     = 0
@@ -445,7 +445,7 @@ spai_engaging_army              = 10
 spai_accompanying_army          = 11
 spai_trading_with_town          = 13
 spai_retreating_to_center       = 14
-##spai_trading_within_kingdom     = 15
+##spai_trading_within_faction     = 15
 spai_recruiting_troops          = 16
 
 #slot_minorplanet_state values
@@ -472,15 +472,15 @@ slot_scene_belfry_props_begin   = 10
  ########################################################
 ##  TROOP SLOTS            #############################
  ########################################################
-#slot_troop_role         = 0  # 10=Kingdom Lord
+#slot_troop_role         = 0  # 10=Faction Lord
 
 slot_troop_occupation          = 2  # 0 = free, 1 = merchant
-#slot_troop_duty               = 3  # Kingdom duty, 0 = free
+#slot_troop_duty               = 3  # Faction duty, 0 = free
 slot_troop_state               = 3  
 slot_troop_last_talk_time      = 4
 slot_troop_met                 = 5
 slot_troop_party_template      = 6
-#slot_troop_kingdom_rank        = 7
+#slot_troop_faction_rank        = 7
 
 slot_troop_renown              = 7
 
@@ -488,11 +488,11 @@ slot_troop_renown              = 7
 slot_troop_prisoner_of_party   = 8  # important for heroes only
 #slot_troop_is_player_companion = 9  # important for heroes only:::USE  slot_troop_occupation = slto_player_companion
 
-slot_troop_leaded_party        = 10 # important for kingdom heroes only
-slot_troop_wealth              = 11 # important for kingdom heroes only
-slot_troop_cur_center          = 12 # important for royal family members only (non-kingdom heroes)
+slot_troop_leaded_party        = 10 # important for faction heroes only
+slot_troop_wealth              = 11 # important for faction heroes only
+slot_troop_cur_center          = 12 # important for royal family members only (non-faction heroes)
 
-slot_troop_banner_scene_prop   = 13 # important for kingdom heroes and player only
+slot_troop_banner_scene_prop   = 13 # important for faction heroes and player only
 
 slot_troop_original_faction    = 14 # for pretenders
 slot_troop_loyalty              = 15
@@ -771,10 +771,10 @@ enctype_catched_during_minorplanet_raid   = 2
 
 ### Troop occupations slot_troop_occupation
 ##slto_merchant           = 1
-slto_kingdom_hero       = 2
+slto_faction_hero       = 2
 slto_player_companion   = 3
-slto_kingdom_lady       = 4
-slto_kingdom_seneschal  = 5
+slto_faction_lady       = 4
+slto_faction_seneschal  = 5
 slto_robber_knight      = 6
 
 stl_unassigned          = -1
@@ -920,40 +920,42 @@ secret_signs_begin = "str_secret_sign_1"
 secret_signs_end = countersigns_begin
 
 factions_begin = "fac_player_supporters_faction"
-factions_end = "fac_factions_end"
+factions_end = fac_huttcartel + 1
+#factions_end = "fac_factions_end"
 
-#SW - modified kingdom_ladies_begin to start with kingdom_ladies_end
-#kingdom_ladies_begin = "trp_knight_1_1_wife"
-kingdom_ladies_begin = "trp_heroes_end"
-kingdom_ladies_end = "trp_heroes_end"
 
-kings_begin = "trp_kingdom_1_lord"
+#SW - modified faction_ladies_begin to start with faction_ladies_end
+#faction_ladies_begin = "trp_knight_1_1_wife"
+faction_ladies_begin = "trp_heroes_end"
+faction_ladies_end = "trp_heroes_end"
+
+kings_begin = "trp_galacticempire_lord"
 kings_end = "trp_knight_1_1"
 
-kingdom_heroes_begin = "trp_kingdom_1_lord"
-kingdom_heroes_end = kingdom_ladies_begin
+faction_heroes_begin = "trp_galacticempire_lord"
+faction_heroes_end = faction_ladies_begin
 
 reserved_knight_begin = "trp_reserved_knight_1"
 reserved_knight_end = "trp_heroes_end"
 
-heroes_begin = kingdom_heroes_begin
-heroes_end = kingdom_ladies_end
+heroes_begin = faction_heroes_begin
+heroes_end = faction_ladies_end
 
 companions_begin = "trp_npc1"
-companions_end = "trp_kingdom_heroes_including_player_begin"
+companions_end = "trp_faction_heroes_including_player_begin"
 
 soldiers_begin = "trp_wookiee"
 soldiers_end = "trp_mainplanet_walker_1"
 
 #Rebellion changes
 
-##rebel_factions_begin = "fac_kingdom_1_rebels"
+##rebel_factions_begin = "fac_galacticempire_rebels"
 ##rebel_factions_end =   "fac_factions_end"
 
 #SW - modified  pretenders_begin to start at pretenders_end
-#pretenders_begin = "trp_kingdom_1_pretender"
-pretenders_begin = kingdom_heroes_end
-pretenders_end = kingdom_heroes_end
+#pretenders_begin = "trp_galacticempire_pretender"
+pretenders_begin = faction_heroes_end
+pretenders_end = faction_heroes_end
 #Rebellion changes
 
 tavern_minstrels_begin = "trp_tavern_minstrel_1"
@@ -1211,10 +1213,11 @@ spaceship_all_end = spaceship_other_end
 banner_meshes_begin = "mesh_banner_a01"
 #SW - modified banner_meshes_end_minus_one so only a few banners are displayed for the banner selection
 #banner_meshes_end_minus_one = "mesh_banner_f21"
-banner_meshes_end_minus_one = "mesh_banner_c01"
+banner_meshes_end_minus_one = "mesh_banner_c21"
 
 arms_meshes_begin = "mesh_arms_a01"
-arms_meshes_end_minus_one = "mesh_arms_f21"
+arms_meshes_end_minus_one = "mesh_arms_cu"
+#@>SWY arms_meshes_end_minus_one = "mesh_arms_f21"
 
 faction_meshes_begin = "mesh_pic_arms_swadian"
 faction_meshes_end_minus_one = "mesh_pic_arms_nord"
@@ -1241,7 +1244,8 @@ banner_map_icons_begin = "icon_banner_01"
 banner_map_icons_end_minus_one = "icon_banner_126"
 
 banner_scene_props_begin = "spr_banner_a"
-banner_scene_props_end_minus_one = "spr_banner_f21"
+banner_scene_props_end_minus_one = "spr_banner_cu"
+#banner_scene_props_end_minus_one = "spr_banner_f21"
 
 khergit_banners_begin_offset = 63
 khergit_banners_end_offset = 84
@@ -1271,18 +1275,18 @@ num_max_undead_messengers  = 20
 
 num_blazing_claw_pirate_spawn_points = 3
 num_black_sun_pirate_spawn_points = 3
-num_steppe_bandit_spawn_points = 3
-num_black_khergit_spawn_points = 1
-num_sea_raider_spawn_points = 3
+num_night_fang_pirate_spawn_points = 3
+#num_black_khergit_spawn_points = 1
+num_tusken_raider_spawn_points = 3
 
 #SW - modified peak constants
 #peak_prisoner_trains = 4
-#peak_kingdom_caravans = 12
-#peak_kingdom_messengers = 3
+#peak_faction_caravans = 12
+#peak_faction_messengers = 3
 peak_prisoner_trains = 10
-#SW - peak_kingdom_caravans does not appear to be used, I also modified this value in create_kingdom_party_if_below_limit in module_scripts.py
-peak_kingdom_caravans = 24
-peak_kingdom_messengers = 10
+#SW - peak_faction_caravans does not appear to be used, I also modified this value in create_faction_party_if_below_limit in module_scripts.py
+peak_faction_caravans = 24
+peak_faction_messengers = 10
 
 
 # Note positions

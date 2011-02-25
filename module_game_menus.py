@@ -288,7 +288,7 @@ game_menus = [
     "start_phase_2",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
 #    "During your travels, you come accross a group of wandering men looking for a leader. You...",
 #
-    # "You arrive at Calradia, a land torn between rival kingdoms battling each other for supremacy,\
+    # "You arrive at Calradia, a land torn between rival factions battling each other for supremacy,\
  # a haven for knights and mercenaries, cutthroats and adventurers, all willing to risk their lives in pursuit of fortune, power, or glory...\
  # In this land which holds great dangers and even greater opportunities, you will leave your past behind and start a new life.\
  # Now, on a rise above a distant training field, you feel that you hold the key of your destiny in your hands, free to choose as you will,\
@@ -2381,10 +2381,10 @@ game_menus = [
 		#SW - added faction specific changes
 		(try_begin),
 			(eq, "$faction_choice", cb0_empire),
-			(call_script, "script_change_player_relation_with_faction", "fac_kingdom_1", 50),
+			(call_script, "script_change_player_relation_with_faction", "fac_galacticempire", 50),
 			(troop_set_slot, "trp_player", slot_troop_renown, 250),		# may be necessary so you aren't hired as a merc when you join the faction
-			#(troop_set_faction, "trp_player", "fac_kingdom_1"),
-			#(call_script, "script_player_join_faction", "fac_kingdom_1"),
+			#(troop_set_faction, "trp_player", "fac_galacticempire"),
+			#(call_script, "script_player_join_faction", "fac_galacticempire"),
 			(party_set_icon, "p_main_party", "icon_tie_fighter"),
 			(party_add_members, "p_main_party", "trp_imperial_recruit", 5),
 			(call_script, "script_troop_add_gold","trp_player", 500),	
@@ -2410,10 +2410,10 @@ game_menus = [
 			(call_script, "script_change_culture_empire"),
 		(else_try),
 			(eq, "$faction_choice", cb0_rebel),
-			(call_script, "script_change_player_relation_with_faction", "fac_kingdom_2", 50),
+			(call_script, "script_change_player_relation_with_faction", "fac_rebelalliance", 50),
 			(troop_set_slot, "trp_player", slot_troop_renown, 250),		# may be necessary so you aren't hired as a merc when you join the faction			
-			#(troop_set_faction, "trp_player", "fac_kingdom_2"),
-			#(call_script, "script_player_join_faction", "fac_kingdom_2"),
+			#(troop_set_faction, "trp_player", "fac_rebelalliance"),
+			#(call_script, "script_player_join_faction", "fac_rebelalliance"),
 			(party_set_icon, "p_main_party", "icon_a_wing"),
 			(party_add_members, "p_main_party", "trp_rebel_recruit", 5),
 			(call_script, "script_troop_add_gold","trp_player", 250),
@@ -2439,10 +2439,10 @@ game_menus = [
 			(call_script, "script_change_culture_rebel"),			
 		(else_try),
 			(eq, "$faction_choice", cb0_hutt),
-			(call_script, "script_change_player_relation_with_faction", "fac_kingdom_3", 50),
+			(call_script, "script_change_player_relation_with_faction", "fac_huttcartel", 50),
 			(troop_set_slot, "trp_player", slot_troop_renown, 250),		# may be necessary so you aren't hired as a merc when you join the faction			
-			#(troop_set_faction, "trp_player", "fac_kingdom_3"),
-			#(call_script, "script_player_join_faction", "fac_kingdom_3"),
+			#(troop_set_faction, "trp_player", "fac_huttcartel"),
+			#(call_script, "script_player_join_faction", "fac_huttcartel"),
 			(party_set_icon, "p_main_party", "icon_hutt_patrol"),
 			(party_add_members, "p_main_party", "trp_hutt_militia", 5), 
 			(call_script, "script_troop_add_gold","trp_player", 250),
@@ -2648,7 +2648,7 @@ game_menus = [
      (try_end),
      (try_begin),
        (neg|is_between, "$g_cheat_selected_faction", factions_begin, factions_end),
-       (call_script, "script_get_next_active_kingdom", factions_end),
+       (call_script, "script_get_next_active_faction", factions_end),
        (assign, "$g_cheat_selected_faction", reg0),
      (try_end),
      (str_store_faction_name, s10, "$g_cheat_selected_faction"),
@@ -2657,7 +2657,7 @@ game_menus = [
     [
       ("faction_orders_next_faction", [],"Select next faction.",
        [
-         (call_script, "script_get_next_active_kingdom", "$g_cheat_selected_faction"),
+         (call_script, "script_get_next_active_faction", "$g_cheat_selected_faction"),
          (assign, "$g_cheat_selected_faction", reg0),
          (jump_to_menu, "mnu_faction_orders"),
         ]
@@ -2726,7 +2726,7 @@ game_menus = [
     (assign, ":num_enemies", 0),
     (str_store_string, s6, "@none"),
     (str_store_string, s8, "@none"),
-    (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
+    (try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
       (call_script, "script_troop_get_player_relation", ":troop_no"),
       (assign, ":player_relation", reg0),
       #(troop_get_slot, ":player_relation", ":troop_no", slot_troop_player_relation),
@@ -2786,8 +2786,8 @@ game_menus = [
       (str_store_string, s9, "@Your estates are: {s8}.^{s9}"),
     (try_end),
     (try_begin),
-      (gt, "$players_kingdom", 0),
-      (str_store_faction_name, s8, "$players_kingdom"),
+      (gt, "$players_faction", 0),
+      (str_store_faction_name, s8, "$players_faction"),
       (str_store_string, s9, "@You are a lord of {s8}.^{s9}"),
     (try_end),
     ],
@@ -2847,10 +2847,10 @@ game_menus = [
    "{s1}",
    "none",
    [(str_clear, s2),
-    (try_for_range, ":cur_kingdom", factions_begin, factions_end),
-      (faction_slot_eq, ":cur_kingdom", slot_faction_state, sfs_active),
-      (neq, ":cur_kingdom", "fac_player_supporters_faction"),
-      (store_relation, ":cur_relation", "fac_player_supporters_faction", ":cur_kingdom"),
+    (try_for_range, ":cur_faction", factions_begin, factions_end),
+      (faction_slot_eq, ":cur_faction", slot_faction_state, sfs_active),
+      (neq, ":cur_faction", "fac_player_supporters_faction"),
+      (store_relation, ":cur_relation", "fac_player_supporters_faction", ":cur_faction"),
       (try_begin),
         (ge, ":cur_relation", 90),
         (str_store_string, s3, "@Loyal"),
@@ -2905,7 +2905,7 @@ game_menus = [
       (else_try),
         (str_store_string, s3, "@Vengeful"),
       (try_end),
-      (str_store_faction_name, s4, ":cur_kingdom"),
+      (str_store_faction_name, s4, ":cur_faction"),
       (assign, reg1, ":cur_relation"),
       (str_store_string, s2, "@{s2}^{s4}: {reg1} ({s3})"),
     (try_end),
@@ -2986,15 +2986,15 @@ game_menus = [
        [(jump_to_menu, "mnu_camp_action"),
         ]
        ),
-#Own kingdom start------------------------------
-      ("camp_own_kingdom",
+#Own faction start------------------------------
+      ("camp_own_faction",
        [
       (faction_slot_eq,"fac_player_supporters_faction",slot_faction_leader,"trp_player"),
-       ], "Kingdom Management options.",		#SW - modified
-       [(jump_to_menu, "mnu_own_kingdom"),
+       ], "Faction Management options.",		#SW - modified
+       [(jump_to_menu, "mnu_own_faction"),
         ],
        ),
-#Own kingdom end------------------------------		   	   
+#Own faction end------------------------------		   	   
 ###################################################################################
 # Autoloot: Allow item management from camp
 ###################################################################################
@@ -3114,8 +3114,8 @@ game_menus = [
 	]
   ),
   
-#Own kingdom start------------------------------
-  ("own_kingdom",menu_text_color(0xFF000d2c),
+#Own faction start------------------------------
+  ("own_faction",menu_text_color(0xFF000d2c),
    "Choose an action:",
    "none",
    [
@@ -3125,11 +3125,11 @@ game_menus = [
       [
        (assign,":num_lords",0),
        (try_for_range,":lord",reserved_knight_begin,reserved_knight_end),	#SW modified
-         (troop_slot_eq, ":lord", slot_troop_occupation, slto_kingdom_hero),
+         (troop_slot_eq, ":lord", slot_troop_occupation, slto_faction_hero),
          (val_add,":num_lords",1),
        (try_end),
        (assign,reg1,":num_lords"),
-      ],"Recruit a new commander. Your kingdom currently has {reg1} leaders.",	#SW modified
+      ],"Recruit a new commander. Your faction currently has {reg1} leaders.",	#SW modified
        [
 		#(try_begin),
 		#	(eq, "$culture_selected",1),	#culture has already been selected
@@ -3142,7 +3142,7 @@ game_menus = [
 		       (try_end),
 		       (assign,":num_lords",0),
 		       (try_for_range,":lord",reserved_knight_begin,reserved_knight_end),	#SW modified
-		         (troop_slot_eq, ":lord", slot_troop_occupation, slto_kingdom_hero),
+		         (troop_slot_eq, ":lord", slot_troop_occupation, slto_faction_hero),
 		         (val_add,":num_lords",1),
 		       (try_end),
 		       (try_begin),
@@ -3150,18 +3150,18 @@ game_menus = [
 		       (assign,":stop",0),
 		       (try_for_range,":lord",reserved_knight_begin,reserved_knight_end),	#SW modified
 			 (neq,":stop",1),
-		         (neg|troop_slot_eq, ":lord", slot_troop_occupation, slto_kingdom_hero),
+		         (neg|troop_slot_eq, ":lord", slot_troop_occupation, slto_faction_hero),
 			 (assign,":cur_lord",":lord"),
 			 (assign,":stop",1),
 		       (try_end),
 		       (neq,":stop",0),
 		       (troop_set_slot,":cur_lord",slot_troop_change_to_faction,"fac_player_supporters_faction"),
-		       (troop_set_slot,":cur_lord",slot_troop_occupation, slto_kingdom_hero),
+		       (troop_set_slot,":cur_lord",slot_troop_occupation, slto_faction_hero),
 		       (troop_set_slot, ":cur_lord", slot_troop_wealth, 6000),
 			   #SW - I set this for all reserved_knights when you choose a culture
 		       #(faction_get_slot, ":player_culture", "fac_player_supporters_faction", slot_faction_culture),
 		       #(troop_set_slot, ":cur_lord", slot_troop_original_faction,":player_culture"),
-		       (jump_to_menu,"mnu_own_kingdom"),
+		       (jump_to_menu,"mnu_own_faction"),
 		       (else_try),
 		         #(display_message,"@Too little territory for new commanders!"),
 				 (display_message,"@You don't have enough territory for a new commander!"),
@@ -3179,13 +3179,13 @@ game_menus = [
        (jump_to_menu,"mnu_manage_fiefs"),
        ]),
       ("change_culture",
-      [],"Change your kingdom's culture.",
+      [],"Change your faction's culture.",
        [
        (assign,"$fief_no",0),
        (jump_to_menu,"mnu_change_culture"),
        ]),
 
-      ("change_kingdom_name",[],"Change your kingdom's name.",
+      ("change_faction_name",[],"Change your faction's name.",
        [
 		#(try_begin),
 		#	(eq, "$culture_selected",1),	#culture has already been selected
@@ -3204,7 +3204,7 @@ game_menus = [
   ),
   
   ("change_culture",menu_text_color(0xFF000d2c),
-   "Choose a culture:^^^The culture of your Kingdom determine the guards in your territories, the type of recruits from your planets, and the soldiers in your commanders armies.",	#SW - modified
+   "Choose a culture:^^^The culture of your Faction determine the guards in your territories, the type of recruits from your planets, and the soldiers in your commanders armies.",	#SW - modified
    "none",
    [],
     [
@@ -3216,8 +3216,8 @@ game_menus = [
 		#change the culture to empire
 		(call_script, "script_change_culture_empire"),
 	  
-		(display_message, "@Player Kingdom culture is now Galactic Empire."),
-        (jump_to_menu, "mnu_own_kingdom"),
+		(display_message, "@Player Faction culture is now Galactic Empire."),
+        (jump_to_menu, "mnu_own_faction"),
     ]
 	),
 
@@ -3228,8 +3228,8 @@ game_menus = [
 		#change the culture to rebel
 		(call_script, "script_change_culture_rebel"),
 		
-		(display_message, "@Player Kingdom culture is now Rebel Alliance."),
-        (jump_to_menu, "mnu_own_kingdom"),
+		(display_message, "@Player Faction culture is now Rebel Alliance."),
+        (jump_to_menu, "mnu_own_faction"),
     ]
 	),		
 	
@@ -3240,8 +3240,8 @@ game_menus = [
 		#change the culture to hutt
 		(call_script, "script_change_culture_hutt"),
 	  
-		(display_message, "@Player Kingdom culture is now Hutt Cartel."),
-        (jump_to_menu, "mnu_own_kingdom"),
+		(display_message, "@Player Faction culture is now Hutt Cartel."),
+        (jump_to_menu, "mnu_own_faction"),
     ]
 	),	
 	
@@ -3255,8 +3255,8 @@ game_menus = [
 		#change the culture to human
 		(call_script, "script_change_culture_human"),
 	
-		(display_message, "@Player Kingdom culture is now Human."),
-        (jump_to_menu, "mnu_own_kingdom"),
+		(display_message, "@Player Faction culture is now Human."),
+        (jump_to_menu, "mnu_own_faction"),
     ]
 	),	
 	#############################################################################################################
@@ -3264,20 +3264,20 @@ game_menus = [
     [],"Wookiee culture",	#SW modified
     [
 		#(assign,"$culture_selected",1),
-		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_kingdom_3"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
-		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_4"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
-		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Kingdom"),		#nevermind, I gave the player the ability to change the faction name
+		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_huttcartel"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
+		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_4"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
+		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Faction"),		#nevermind, I gave the player the ability to change the faction name
 		
-		#(assign,"$players_kingdom","fac_player_supporters_faction"),		would this be necessary to add?
+		#(assign,"$players_faction","fac_player_supporters_faction"),		would this be necessary to add?
 		  
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_deserter_troop, "trp_wookiee_deserter"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_wookiee_messenger"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_wookiee_warrior"),		
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_wookiee_berserker"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_bacca_warrior"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_kingdom_wookiee_reinforcements_a"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_kingdom_wookiee_reinforcements_b"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_kingdom_wookiee_reinforcements_c"),		  
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_faction_wookiee_reinforcements_a"),
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_faction_wookiee_reinforcements_b"),
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_faction_wookiee_reinforcements_c"),		  
 		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_1_troop, "trp_wookiee"),
 		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_2_troop, "trp_wookiee_warrior"),
 		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_3_troop, "trp_wookiee_marksman"),
@@ -3293,9 +3293,9 @@ game_menus = [
         (faction_set_slot, "fac_neutral",  slot_faction_guard_troop, "trp_wookiee_warrior"),		
         (faction_set_slot, "fac_neutral",  slot_faction_prison_guard_troop, "trp_wookiee_berserker"),
         (faction_set_slot, "fac_neutral",  slot_faction_spacestation_guard_troop, "trp_bacca_warrior"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_kingdom_wookiee_reinforcements_a"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_kingdom_wookiee_reinforcements_b"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_kingdom_wookiee_reinforcements_c"),		  
+        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_faction_wookiee_reinforcements_a"),
+        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_faction_wookiee_reinforcements_b"),
+        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_faction_wookiee_reinforcements_c"),		  
 		(faction_set_slot, "fac_neutral",  slot_faction_tier_1_troop, "trp_wookiee"),
 		(faction_set_slot, "fac_neutral",  slot_faction_tier_2_troop, "trp_wookiee_warrior"),
 		(faction_set_slot, "fac_neutral",  slot_faction_tier_3_troop, "trp_wookiee_marksman"),
@@ -3306,7 +3306,7 @@ game_menus = [
 		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_3, "trp_wookiee_marksman"),
 		
         (try_for_range,":knight",reserved_knight_begin,reserved_knight_end),	#SW modified
-			#(troop_slot_eq, ":knight", slot_troop_occupation, slto_kingdom_hero),	#comment this out since some may not be a kingdom hero yet but we still want to change their race/equipment/etc
+			#(troop_slot_eq, ":knight", slot_troop_occupation, slto_faction_hero),	#comment this out since some may not be a faction hero yet but we still want to change their race/equipment/etc
 			#(troop_set_slot, ":knight", slot_troop_original_faction,"fac_player_supporters_faction"),	# don't do this, it stops lords from building armies!!!
 			(troop_set_slot, ":knight", slot_troop_original_faction,"fac_neutral"),
 			
@@ -3340,8 +3340,8 @@ game_menus = [
 			(troop_equip_items, ":knight"),
 		(try_end),
   
-		(display_message, "@Player Kingdom culture is now Wookiee."),
-        (jump_to_menu, "mnu_own_kingdom"),	  
+		(display_message, "@Player Faction culture is now Wookiee."),
+        (jump_to_menu, "mnu_own_faction"),	  
     ]
 	),
 	#############################################################################################################	
@@ -3350,20 +3350,20 @@ game_menus = [
     [],"Mandalorian culture",
     [
 		#(assign,"$culture_selected",1),
-		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_kingdom_3"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
-		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_5"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
-		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Kingdom"),		#nevermind, I gave the player the ability to change the faction name
+		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_huttcartel"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
+		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_5"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
+		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Faction"),		#nevermind, I gave the player the ability to change the faction name
 		
-		#(assign,"$players_kingdom","fac_player_supporters_faction"),		would this be necessary to add?
+		#(assign,"$players_faction","fac_player_supporters_faction"),		would this be necessary to add?
 		  
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_deserter_troop, "trp_mandalorian_deserter"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_mandalorian_messenger"),		
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_mandalorian_soldier"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_mandalorian_commando"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_mandalorian_crusader"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_kingdom_mandalorian_reinforcements_a"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_kingdom_mandalorian_reinforcements_b"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_kingdom_mandalorian_reinforcements_c"),		  
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_faction_mandalorian_reinforcements_a"),
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_faction_mandalorian_reinforcements_b"),
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_faction_mandalorian_reinforcements_c"),		  
 		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_1_troop, "trp_mandalorian"),
 		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_2_troop, "trp_mandalorian_soldier"),
 		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_3_troop, "trp_mandalorian_sniper"),
@@ -3379,9 +3379,9 @@ game_menus = [
         (faction_set_slot, "fac_neutral",  slot_faction_guard_troop, "trp_mandalorian_soldier"),		
         (faction_set_slot, "fac_neutral",  slot_faction_prison_guard_troop, "trp_mandalorian_commando"),
         (faction_set_slot, "fac_neutral",  slot_faction_spacestation_guard_troop, "trp_mandalorian_crusader"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_kingdom_mandalorian_reinforcements_a"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_kingdom_mandalorian_reinforcements_b"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_kingdom_mandalorian_reinforcements_c"),		  
+        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_faction_mandalorian_reinforcements_a"),
+        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_faction_mandalorian_reinforcements_b"),
+        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_faction_mandalorian_reinforcements_c"),		  
 		(faction_set_slot, "fac_neutral",  slot_faction_tier_1_troop, "trp_mandalorian"),
 		(faction_set_slot, "fac_neutral",  slot_faction_tier_2_troop, "trp_mandalorian_soldier"),
 		(faction_set_slot, "fac_neutral",  slot_faction_tier_3_troop, "trp_mandalorian_sniper"),
@@ -3392,7 +3392,7 @@ game_menus = [
 		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_3, "trp_mandalorian_sniper"),
 		
         (try_for_range,":knight",reserved_knight_begin,reserved_knight_end),	#SW modified
-			#(troop_slot_eq, ":knight", slot_troop_occupation, slto_kingdom_hero),	#comment this out since some may not be a kingdom hero yet but we still want to change their race/equipment/etc
+			#(troop_slot_eq, ":knight", slot_troop_occupation, slto_faction_hero),	#comment this out since some may not be a faction hero yet but we still want to change their race/equipment/etc
 			#(troop_set_slot, ":knight", slot_troop_original_faction,"fac_player_supporters_faction"),	# don't do this, it stops lords from building armies!!!
 			(troop_set_slot, ":knight", slot_troop_original_faction,"fac_neutral"),
 			
@@ -3439,8 +3439,8 @@ game_menus = [
 			(troop_equip_items, ":knight"),
 		(try_end),
 	  
-		(display_message, "@Player Kingdom culture is now Mandalorian."),
-        (jump_to_menu, "mnu_own_kingdom"),
+		(display_message, "@Player Faction culture is now Mandalorian."),
+        (jump_to_menu, "mnu_own_faction"),
     ]
 	),
 
@@ -3450,20 +3450,20 @@ game_menus = [
     [],"Clone culture",
     [
 		#(assign,"$culture_selected",1),
-		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_kingdom_3"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
-		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_6"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
-		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Kingdom"),		#nevermind, I gave the player the ability to change the faction name
+		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_huttcartel"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
+		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_6"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
+		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Faction"),		#nevermind, I gave the player the ability to change the faction name
 		
-		#(assign,"$players_kingdom","fac_player_supporters_faction"),		would this be necessary to add?
+		#(assign,"$players_faction","fac_player_supporters_faction"),		would this be necessary to add?
 		  
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_deserter_troop, "trp_clone_deserter"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_clone_messenger"),		
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_clone_trooper_1"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_arc_trooper_3"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_arc_trooper_4"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_kingdom_clone_reinforcements_a"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_kingdom_clone_reinforcements_b"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_kingdom_clone_reinforcements_c"),		  
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_faction_clone_reinforcements_a"),
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_faction_clone_reinforcements_b"),
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_faction_clone_reinforcements_c"),		  
 		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_1_troop, "trp_clone_trooper_1"),
 		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_2_troop, "trp_clone_trooper_2"),
 		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_3_troop, "trp_clone_trooper_3"),
@@ -3479,9 +3479,9 @@ game_menus = [
         (faction_set_slot, "fac_neutral",  slot_faction_guard_troop, "trp_clone_trooper_1"),
         (faction_set_slot, "fac_neutral",  slot_faction_prison_guard_troop, "trp_arc_trooper_3"),
         (faction_set_slot, "fac_neutral",  slot_faction_spacestation_guard_troop, "trp_arc_trooper_4"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_kingdom_clone_reinforcements_a"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_kingdom_clone_reinforcements_b"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_kingdom_clone_reinforcements_c"),		  
+        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_faction_clone_reinforcements_a"),
+        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_faction_clone_reinforcements_b"),
+        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_faction_clone_reinforcements_c"),		  
 		(faction_set_slot, "fac_neutral",  slot_faction_tier_1_troop, "trp_clone_trooper_1"),
 		(faction_set_slot, "fac_neutral",  slot_faction_tier_2_troop, "trp_clone_trooper_2"),
 		(faction_set_slot, "fac_neutral",  slot_faction_tier_3_troop, "trp_clone_trooper_3"),
@@ -3492,7 +3492,7 @@ game_menus = [
 		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_3, "trp_clone_trooper_3"),
 		
         (try_for_range,":knight",reserved_knight_begin,reserved_knight_end),	#SW modified
-			#(troop_slot_eq, ":knight", slot_troop_occupation, slto_kingdom_hero),	#comment this out since some may not be a kingdom hero yet but we still want to change their race/equipment/etc
+			#(troop_slot_eq, ":knight", slot_troop_occupation, slto_faction_hero),	#comment this out since some may not be a faction hero yet but we still want to change their race/equipment/etc
 			#(troop_set_slot, ":knight", slot_troop_original_faction,"fac_player_supporters_faction"),	# don't do this, it stops lords from building armies!!!
 			(troop_set_slot, ":knight", slot_troop_original_faction,"fac_neutral"),
 			
@@ -3542,8 +3542,8 @@ game_menus = [
 			(troop_equip_items, ":knight"),
 		(try_end),
 	  
-		(display_message, "@Player Kingdom culture is now Clone."),
-        (jump_to_menu, "mnu_own_kingdom"),
+		(display_message, "@Player Faction culture is now Clone."),
+        (jump_to_menu, "mnu_own_faction"),
     ]
 	),	
 	
@@ -3553,20 +3553,20 @@ game_menus = [
     [],"Trandoshan culture",
     [
 		#(assign,"$culture_selected",1),
-		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_kingdom_3"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
-		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_7"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_kingdom_3 ?
-		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Kingdom"),		#nevermind, I gave the player the ability to change the faction name
+		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_huttcartel"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
+		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_7"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
+		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Faction"),		#nevermind, I gave the player the ability to change the faction name
 		
-		#(assign,"$players_kingdom","fac_player_supporters_faction"),		would this be necessary to add?
+		#(assign,"$players_faction","fac_player_supporters_faction"),		would this be necessary to add?
 		  
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_deserter_troop, "trp_trandoshan_deserter"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_trandoshan_messenger"),		
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_trandoshan_warrior"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_trandoshan_hunter"),
         (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_trandoshan_bounty_hunter"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_kingdom_trandoshan_reinforcements_a"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_kingdom_trandoshan_reinforcements_b"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_kingdom_trandoshan_reinforcements_c"),		  
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_faction_trandoshan_reinforcements_a"),
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_faction_trandoshan_reinforcements_b"),
+        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_faction_trandoshan_reinforcements_c"),		  
 		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_1_troop, "trp_trandoshan"),
 		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_2_troop, "trp_trandoshan_warrior"),
 		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_3_troop, "trp_trandoshan_hunter"),
@@ -3582,9 +3582,9 @@ game_menus = [
         (faction_set_slot, "fac_neutral",  slot_faction_guard_troop, "trp_trandoshan_warrior"),
         (faction_set_slot, "fac_neutral",  slot_faction_prison_guard_troop, "trp_trandoshan_hunter"),
         (faction_set_slot, "fac_neutral",  slot_faction_spacestation_guard_troop, "trp_trandoshan_bounty_hunter"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_kingdom_trandoshan_reinforcements_a"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_kingdom_trandoshan_reinforcements_b"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_kingdom_trandoshan_reinforcements_c"),		  
+        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_faction_trandoshan_reinforcements_a"),
+        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_faction_trandoshan_reinforcements_b"),
+        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_faction_trandoshan_reinforcements_c"),		  
 		(faction_set_slot, "fac_neutral",  slot_faction_tier_1_troop, "trp_trandoshan"),
 		(faction_set_slot, "fac_neutral",  slot_faction_tier_2_troop, "trp_trandoshan_warrior"),
 		(faction_set_slot, "fac_neutral",  slot_faction_tier_3_troop, "trp_trandoshan_hunter"),
@@ -3595,7 +3595,7 @@ game_menus = [
 		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_3, "trp_trandoshan_hunter"),
 		
         (try_for_range,":knight",reserved_knight_begin,reserved_knight_end),	#SW modified
-			#(troop_slot_eq, ":knight", slot_troop_occupation, slto_kingdom_hero),	#comment this out since some may not be a kingdom hero yet but we still want to change their race/equipment/etc
+			#(troop_slot_eq, ":knight", slot_troop_occupation, slto_faction_hero),	#comment this out since some may not be a faction hero yet but we still want to change their race/equipment/etc
 			#(troop_set_slot, ":knight", slot_troop_original_faction,"fac_player_supporters_faction"),	# don't do this, it stops lords from building armies!!!
 			(troop_set_slot, ":knight", slot_troop_original_faction,"fac_neutral"),
 			
@@ -3627,16 +3627,16 @@ game_menus = [
 			(troop_equip_items, ":knight"),
 		(try_end),
 	  
-		(display_message, "@Player Kingdom culture is now Trandoshan."),
-        (jump_to_menu, "mnu_own_kingdom"),
+		(display_message, "@Player Faction culture is now Trandoshan."),
+        (jump_to_menu, "mnu_own_faction"),
     ]
 	),	
 	
 	#########################################################################################
 	
-    ("camp_action_4",[],"Back to kingdom management menu.",
+    ("camp_action_4",[],"Back to faction management menu.",
       [
-		(jump_to_menu, "mnu_own_kingdom"),
+		(jump_to_menu, "mnu_own_faction"),
       ]
     ),
 	
@@ -3816,7 +3816,7 @@ game_menus = [
        (assign,":num_lords",0),
        (assign,":cur_lord_number",-1),
        (try_for_range,":lord",reserved_knight_begin,reserved_knight_end),	#SW modified
-         (troop_slot_eq, ":lord", slot_troop_occupation, slto_kingdom_hero),
+         (troop_slot_eq, ":lord", slot_troop_occupation, slto_faction_hero),
 	 (val_sub,":num_lords","$cur_lord_no"),
 	 (val_sub,":num_lords",0),
 	 (try_begin),
@@ -3834,7 +3834,7 @@ game_menus = [
        (assign,":num_lords",0),
        (assign,":cur_lord_number",-1),
        (try_for_range,":lord",reserved_knight_begin,reserved_knight_end),	#SW modified
-         (troop_slot_eq, ":lord", slot_troop_occupation, slto_kingdom_hero),
+         (troop_slot_eq, ":lord", slot_troop_occupation, slto_faction_hero),
 	 (val_sub,":num_lords","$cur_lord_no"),
 	 (val_sub,":num_lords",0),
 	 (try_begin),
@@ -3853,7 +3853,7 @@ game_menus = [
        (assign,":num_lords",0),
        (assign,":cur_lord_number",-1),
        (try_for_range,":lord",reserved_knight_begin,reserved_knight_end),	#SW modified
-         (troop_slot_eq, ":lord", slot_troop_occupation, slto_kingdom_hero),
+         (troop_slot_eq, ":lord", slot_troop_occupation, slto_faction_hero),
 	 (val_sub,":num_lords","$cur_lord_no"),
 	 (val_sub,":num_lords",1),
 	 (try_begin),
@@ -3871,7 +3871,7 @@ game_menus = [
        (assign,":num_lords",0),
        (assign,":cur_lord_number",-1),
        (try_for_range,":lord",reserved_knight_begin,reserved_knight_end),	#SW modified
-         (troop_slot_eq, ":lord", slot_troop_occupation, slto_kingdom_hero),
+         (troop_slot_eq, ":lord", slot_troop_occupation, slto_faction_hero),
 	 (val_sub,":num_lords","$cur_lord_no"),
 	 (val_sub,":num_lords",1),
 	 (try_begin),
@@ -3890,7 +3890,7 @@ game_menus = [
        (assign,":num_lords",0),
        (assign,":cur_lord_number",-1),
        (try_for_range,":lord",reserved_knight_begin,reserved_knight_end),	#SW modified
-         (troop_slot_eq, ":lord", slot_troop_occupation, slto_kingdom_hero),
+         (troop_slot_eq, ":lord", slot_troop_occupation, slto_faction_hero),
 	 (val_sub,":num_lords","$cur_lord_no"),
 	 (val_sub,":num_lords",2),
 	 (try_begin),
@@ -3908,7 +3908,7 @@ game_menus = [
        (assign,":num_lords",0),
        (assign,":cur_lord_number",-1),
        (try_for_range,":lord",reserved_knight_begin,reserved_knight_end),	#SW modified
-         (troop_slot_eq, ":lord", slot_troop_occupation, slto_kingdom_hero),
+         (troop_slot_eq, ":lord", slot_troop_occupation, slto_faction_hero),
 	 (val_sub,":num_lords","$cur_lord_no"),
 	 (val_sub,":num_lords",2),
 	 (try_begin),
@@ -3940,7 +3940,7 @@ game_menus = [
         ]
        ),
     ]),
-#Own kingdom end------------------------------    
+#Own faction end------------------------------    
 
 ##############################################################################
 #SWC configuration menu
@@ -4062,32 +4062,32 @@ game_menus = [
 		(try_begin),
 			(le, "$faction_colors", 0),
 			(assign, "$faction_colors", 1),
-			(faction_set_color, "fac_kingdom_1", 0xCC2211),	#RED
-			(faction_set_color, "fac_kingdom_2", 0x33DD33),	#GREEN					
+			(faction_set_color, "fac_galacticempire", 0xCC2211),	#RED
+			(faction_set_color, "fac_rebelalliance", 0x33DD33),	#GREEN					
 			(display_message, "@Empire is now Red & Rebel is Green."),
 		(else_try),
 			(eq, "$faction_colors", 1),
 			(assign, "$faction_colors", 2),
-			(faction_set_color, "fac_kingdom_1", 0x33DDDD),	#BLUE
-			(faction_set_color, "fac_kingdom_2", 0x33DD33),	#GREEN	
+			(faction_set_color, "fac_galacticempire", 0x33DDDD),	#BLUE
+			(faction_set_color, "fac_rebelalliance", 0x33DD33),	#GREEN	
 			(display_message, "@Empire is now Blue & Rebel is Green."),
 		(else_try),
 			(eq, "$faction_colors", 2),
 			(assign, "$faction_colors", 3),
-			(faction_set_color, "fac_kingdom_1", 0xDCDCDC),	#WHITE
-			(faction_set_color, "fac_kingdom_2", 0xCE0B0B),	#RED			
+			(faction_set_color, "fac_galacticempire", 0xDCDCDC),	#WHITE
+			(faction_set_color, "fac_rebelalliance", 0xCE0B0B),	#RED			
 			(display_message, "@Empire is now White & Rebel is Red."),
 		(else_try),
 			(eq, "$faction_colors", 3),
 			(assign, "$faction_colors", 4),
-			(faction_set_color, "fac_kingdom_1", 0xDCDCDC),	#WHITE
-			(faction_set_color, "fac_kingdom_2", 0x33DD33),	#GREEN	
+			(faction_set_color, "fac_galacticempire", 0xDCDCDC),	#WHITE
+			(faction_set_color, "fac_rebelalliance", 0x33DD33),	#GREEN	
 			(display_message, "@Empire is now White & Rebel is Green."),
 		(else_try),			#default
 			#(eq, "$faction_colors", 4),
 			(assign, "$faction_colors", 0),
-			(faction_set_color, "fac_kingdom_1", 0x33DDDD),	#BLUE
-			(faction_set_color, "fac_kingdom_2", 0xCE0B0B),	#RED			
+			(faction_set_color, "fac_galacticempire", 0x33DDDD),	#BLUE
+			(faction_set_color, "fac_rebelalliance", 0xCE0B0B),	#RED			
 			(display_message, "@Empire is now Blue & Rebel is Red."),			
 		(try_end),
 		(str_clear, s1),
@@ -4368,9 +4368,9 @@ game_menus = [
 	  ],
 	  "Increase relations with all Factions.",
        [
-		(call_script, "script_set_player_relation_with_faction", "fac_kingdom_1", 40),
-		(call_script, "script_set_player_relation_with_faction", "fac_kingdom_2", 40),
-		(call_script, "script_set_player_relation_with_faction", "fac_kingdom_3", 40),
+		(call_script, "script_set_player_relation_with_faction", "fac_galacticempire", 40),
+		(call_script, "script_set_player_relation_with_faction", "fac_rebelalliance", 40),
+		(call_script, "script_set_player_relation_with_faction", "fac_huttcartel", 40),
 		(display_message, "@Increased relations with all factions."),
         ]
        ),
@@ -4381,9 +4381,9 @@ game_menus = [
 	  ],
 	  "Decrease relations with all Factions.",
        [
-		(call_script, "script_set_player_relation_with_faction", "fac_kingdom_1", -40),
-		(call_script, "script_set_player_relation_with_faction", "fac_kingdom_2", -40),
-		(call_script, "script_set_player_relation_with_faction", "fac_kingdom_3", -40),
+		(call_script, "script_set_player_relation_with_faction", "fac_galacticempire", -40),
+		(call_script, "script_set_player_relation_with_faction", "fac_rebelalliance", -40),
+		(call_script, "script_set_player_relation_with_faction", "fac_huttcartel", -40),
 		(display_message, "@Decreased relations with all factions."),
         ]
        ),	   
@@ -6021,11 +6021,11 @@ game_menus = [
           (eq, "$g_encountered_party_template", "pt_black_sun_pirates"),
           (set_background_mesh, "mesh_pic_black_sun_pirates"),
         (else_try),
-          (eq, "$g_encountered_party_template", "pt_steppe_bandits"),
-          (set_background_mesh, "mesh_pic_steppe_bandits"),
+          (eq, "$g_encountered_party_template", "pt_night_fang_pirates"),
+          (set_background_mesh, "mesh_pic_night_fang_pirates"),
         (else_try),
-          (eq, "$g_encountered_party_template", "pt_sea_raiders"),
-          (set_background_mesh, "mesh_pic_sea_raiders"),
+          (eq, "$g_encountered_party_template", "pt_tusken_raiders"),
+          (set_background_mesh, "mesh_pic_tusken_raiders"),
         (else_try),
           (eq, "$g_encountered_party_template", "pt_blazing_claw_pirates"),
           (set_background_mesh, "mesh_pic_blazing_claw_pirates"),
@@ -6200,7 +6200,7 @@ game_menus = [
                   (party_get_num_companion_stacks, ":num_stacks", "p_encountered_party_backup"),
                   (try_for_range, ":stack_no", 0, ":num_stacks"),
                     (party_stack_get_troop_id,   ":stack_troop","p_encountered_party_backup",":stack_no"),
-                    (is_between, ":stack_troop", kingdom_heroes_begin, kingdom_heroes_end),
+                    (is_between, ":stack_troop", faction_heroes_begin, faction_heroes_end),
                     (store_troop_faction, ":victorious_faction", ":stack_troop"),
                     (call_script, "script_add_log_entry", logent_player_retreated_from_lord, "trp_player",  -1, ":stack_troop", ":victorious_faction"),
                   (try_end),
@@ -6386,7 +6386,7 @@ game_menus = [
           (party_get_num_companion_stacks, ":num_stacks", "p_encountered_party_backup"),
           (try_for_range, ":stack_no", 0, ":num_stacks"),
               (party_stack_get_troop_id,   ":stack_troop","p_encountered_party_backup",":stack_no"),
-              (is_between, ":stack_troop", kingdom_heroes_begin, kingdom_heroes_end),
+              (is_between, ":stack_troop", faction_heroes_begin, faction_heroes_end),
               (store_troop_faction, ":victorious_faction", ":stack_troop"),
               (call_script, "script_add_log_entry", logent_player_retreated_from_lord_cowardly, "trp_player",  -1, ":stack_troop", ":victorious_faction"),
           (try_end),
@@ -6785,7 +6785,7 @@ game_menus = [
 #Post 0907 changes begin
         (party_stack_get_troop_id,   ":enemy_leader","p_encountered_party_backup",0),
         (try_begin),
-            (is_between, ":enemy_leader", kingdom_heroes_begin, kingdom_heroes_end),
+            (is_between, ":enemy_leader", faction_heroes_begin, faction_heroes_end),
             (neg|is_between, "$g_encountered_party", centers_begin, centers_end),
             (store_troop_faction, ":enemy_leader_faction", ":enemy_leader"),
 
@@ -6891,7 +6891,7 @@ game_menus = [
           (party_get_num_companion_stacks, ":num_stacks", "p_encountered_party_backup"),
           (try_for_range, ":stack_no", 0, ":num_stacks"),
             (party_stack_get_troop_id,   ":stack_troop","p_encountered_party_backup",":stack_no"),
-            (is_between, ":stack_troop", kingdom_heroes_begin, kingdom_heroes_end),
+            (is_between, ":stack_troop", faction_heroes_begin, faction_heroes_end),
             (store_troop_faction, ":victorious_faction", ":stack_troop"),
             (call_script, "script_add_log_entry", logent_player_defeated_by_lord, "trp_player",  -1, ":stack_troop", ":victorious_faction"),
           (try_end),
@@ -7385,7 +7385,7 @@ game_menus = [
     [
       ("continue",[],"Continue...",[(try_begin),
                                    (this_or_next|eq, "$g_encountered_party_faction", "fac_player_supporters_faction"),
-                                   (eq, "$g_encountered_party_faction", "$players_kingdom"),
+                                   (eq, "$g_encountered_party_faction", "$players_faction"),
                                    (jump_to_menu, "mnu_town"),
                                  (else_try),
                                    (jump_to_menu, "mnu_spacestation_outside"),
@@ -7484,7 +7484,7 @@ game_menus = [
              (add_xp_as_reward, 250),
              (call_script, "script_end_quest", "qst_join_siege_with_army"),
              #Reactivating follow army quest
-             (faction_get_slot, ":faction_marshall", "$players_kingdom", slot_faction_marshall),
+             (faction_get_slot, ":faction_marshall", "$players_faction", slot_faction_marshall),
              (str_store_troop_name_link, s9, ":faction_marshall"),
              (setup_quest_text, "qst_follow_army"),
              (str_store_string, s2, "@{s9} wants you to follow his army until further notice."),
@@ -7528,7 +7528,7 @@ game_menus = [
            (add_xp_as_reward, 100),
            (call_script, "script_end_quest", "qst_join_siege_with_army"),
            #Reactivating follow army quest
-           (faction_get_slot, ":faction_marshall", "$players_kingdom", slot_faction_marshall),
+           (faction_get_slot, ":faction_marshall", "$players_faction", slot_faction_marshall),
            (str_store_troop_name_link, s9, ":faction_marshall"),
            (setup_quest_text, "qst_follow_army"),
            (str_store_string, s2, "@{s9} wants you to follow his army until further notice."),
@@ -7926,8 +7926,8 @@ game_menus = [
 		(call_script, "script_display_fullscreen_background", "$current_town"),	
 	
         (assign, "$num_spacestation_meeting_troops", 0),
-        (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
-          (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
+        (try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
+          (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_faction_hero),
           (call_script, "script_get_troop_attached_party", ":troop_no"),
           (eq, "$g_encountered_party", reg0),
           (troop_set_slot, "trp_temp_array_a", "$num_spacestation_meeting_troops", ":troop_no"),
@@ -8067,7 +8067,7 @@ game_menus = [
             (party_get_attached_party_with_rank, ":attached_party", "$g_encountered_party", ":iap"),
             (party_detach, ":attached_party"),
             (party_get_slot, ":attached_party_type", ":attached_party", slot_party_type),
-            (eq, ":attached_party_type", spt_kingdom_hero_party),
+            (eq, ":attached_party_type", spt_faction_hero_party),
             (store_faction_of_party, ":attached_party_faction", ":attached_party"),
             (call_script, "script_get_closest_walled_center_of_faction", ":attached_party", ":attached_party_faction"),
             (try_begin),
@@ -8643,7 +8643,7 @@ game_menus = [
   (
     "spacestation_taken",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "{s3} has fallen to your troops, and you now have full control of the {reg2?town:castle}.\
-{reg1? It would seem that there is nothing stopping you from taking it for yourself...:}",# Only visible when castle is taken without being a vassal of a kingdom.
+{reg1? It would seem that there is nothing stopping you from taking it for yourself...:}",# Only visible when castle is taken without being a vassal of a faction.
     "none",
     [
         (party_clear, "$g_encountered_party"),
@@ -8656,10 +8656,10 @@ game_menus = [
         (call_script, "script_change_troop_renown", "trp_player", 5),
         (call_script, "script_add_log_entry", logent_spacestation_captured_by_player, "trp_player", "$g_encountered_party", -1, "$g_encountered_party_faction"),
         (try_begin),
-          (is_between, "$players_kingdom", factions_begin, factions_end),
-          (neq, "$players_kingdom", "fac_player_supporters_faction"),
-          (call_script, "script_give_center_to_faction", "$g_encountered_party", "$players_kingdom"),
-          (call_script, "script_order_best_besieger_party_to_guard_center", "$g_encountered_party", "$players_kingdom"),
+          (is_between, "$players_faction", factions_begin, factions_end),
+          (neq, "$players_faction", "fac_player_supporters_faction"),
+          (call_script, "script_give_center_to_faction", "$g_encountered_party", "$players_faction"),
+          (call_script, "script_order_best_besieger_party_to_guard_center", "$g_encountered_party", "$players_faction"),
           (jump_to_menu, "mnu_spacestation_taken_2"),
         (else_try),
           (call_script, "script_give_center_to_faction", "$g_encountered_party", "fac_player_supporters_faction"),
@@ -8693,7 +8693,7 @@ game_menus = [
     [
         (str_store_party_name, s3, "$g_encountered_party"),
         (str_clear, s5),
-        (faction_get_slot, ":faction_leader", "$players_kingdom", slot_faction_leader),
+        (faction_get_slot, ":faction_leader", "$players_faction", slot_faction_leader),
         (str_store_troop_name, s9, ":faction_leader"),
         (try_begin),
           (eq, "$player_has_homage", 0),
@@ -8730,7 +8730,7 @@ game_menus = [
  to hold in {reg4?her:his} name for as long as you maintain your oath of homage.",
     "none",
     [(set_background_mesh, "mesh_pic_messenger"),
-     (faction_get_slot, ":faction_leader", "$players_kingdom", slot_faction_leader),
+     (faction_get_slot, ":faction_leader", "$players_faction", slot_faction_leader),
      (str_store_troop_name, s3, ":faction_leader"),
      (str_store_party_name, s2, "$g_center_to_give_to_player"),
      (try_begin),
@@ -8763,7 +8763,7 @@ game_menus = [
  ",
     "none",
     [(set_background_mesh, "mesh_pic_messenger"),
-     (faction_get_slot, ":faction_leader", "$players_kingdom", slot_faction_leader),
+     (faction_get_slot, ":faction_leader", "$players_faction", slot_faction_leader),
      (str_store_troop_name, s3, ":faction_leader"),
      (str_store_party_name, s2, "$g_center_to_give_to_player"),
      (party_get_slot, ":new_owner", "$g_center_to_give_to_player", slot_mainplanet_lord),
@@ -8804,11 +8804,11 @@ game_menus = [
           (str_store_party_name, s2, "$g_center_to_give_to_player"),
           ], "Renounce your oath and hold on to your lands, including {s2}.",
        [
-        (faction_get_slot, ":old_leader", "$players_kingdom", slot_faction_leader),
-        (call_script, "script_add_log_entry", logent_renounced_allegiance,   "trp_player",  -1, ":old_leader", "$players_kingdom"),
+        (faction_get_slot, ":old_leader", "$players_faction", slot_faction_leader),
+        (call_script, "script_add_log_entry", logent_renounced_allegiance,   "trp_player",  -1, ":old_leader", "$players_faction"),
 
         #Initializing renounce war variables
-        (assign, "$players_oath_renounced_against_kingdom", "$players_kingdom"),
+        (assign, "$players_oath_renounced_against_faction", "$players_faction"),
         (assign, "$players_oath_renounced_given_center", 0),
         (store_current_hours, "$players_oath_renounced_begin_time"),
         
@@ -8818,7 +8818,7 @@ game_menus = [
           (store_faction_of_party, ":cur_center_faction", ":cur_center"),
           (party_set_slot, ":cur_center", slot_center_faction_when_oath_renounced, ":cur_center_faction"),
         (try_end),
-        (party_set_slot, "$g_center_to_give_to_player", slot_center_faction_when_oath_renounced, "$players_oath_renounced_against_kingdom"),
+        (party_set_slot, "$g_center_to_give_to_player", slot_center_faction_when_oath_renounced, "$players_oath_renounced_against_faction"),
         (change_screen_return),
         ]),
       ("leave_faction_cancel", [], "Remain loyal and accept the decision.",
@@ -8888,11 +8888,11 @@ game_menus = [
  Your contract has now expired. What will you do?",
     "none",
     [
-      (faction_get_slot, ":faction_leader", "$players_kingdom", slot_faction_leader),
+      (faction_get_slot, ":faction_leader", "$players_faction", slot_faction_leader),
       (str_store_troop_name, s1, ":faction_leader"),
      ],
     [
-      ("renew_oath",[(faction_get_slot, ":faction_leader", "$players_kingdom", slot_faction_leader),
+      ("renew_oath",[(faction_get_slot, ":faction_leader", "$players_faction", slot_faction_leader),
                      (str_store_troop_name, s1, ":faction_leader")], "Renew your contract with {s1} for another month.",
        [
          (store_current_day, ":cur_day"),
@@ -9041,8 +9041,8 @@ game_menus = [
 ##            (lt, ":min_enemy_str", "$g_friend_fit_for_battle"),
 ##            (party_set_slot, "$g_enemy_party", slot_party_retreat_flag, 1),
 ##
-##            (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
-##              (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
+##            (try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
+##              (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_faction_hero),
 ##              (troop_slot_eq, ":troop_no", slot_troop_is_prisoner, 0),
 ##              (troop_get_slot, ":party_no", ":troop_no", slot_troop_leaded_party),
 ##              (gt, ":party_no", 0),
@@ -9141,8 +9141,8 @@ game_menus = [
               (party_set_slot, "$g_encountered_party", slot_center_siege_hardness, ":siege_hardness"),
               (party_set_slot, "$g_enemy_party", slot_party_retreat_flag, 1),
 
-              (try_for_range, ":troop_no", kingdom_heroes_begin, kingdom_heroes_end),
-                (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_kingdom_hero),
+              (try_for_range, ":troop_no", faction_heroes_begin, faction_heroes_end),
+                (troop_slot_eq, ":troop_no", slot_troop_occupation, slto_faction_hero),
                 #(troop_slot_eq, ":troop_no", slot_troop_is_prisoner, 0),
                 (neg|troop_slot_ge, ":troop_no", slot_troop_prisoner_of_party, 0),
                 (troop_get_slot, ":party_no", ":troop_no", slot_troop_leaded_party),
@@ -9408,13 +9408,13 @@ game_menus = [
             (set_background_mesh, "mesh_pic_blazing_claw_pirates"),
           (else_try),
             (eq, ":bandit_troop", "trp_steppe_bandit"),
-            (set_background_mesh, "mesh_pic_steppe_bandits"),
+            (set_background_mesh, "mesh_pic_night_fang_pirates"),
           (else_try),
             (eq, ":bandit_troop", "trp_black_sun_pirate_3"),
             (set_background_mesh, "mesh_pic_black_sun_pirates"),
           (else_try),
             (eq, ":bandit_troop", "trp_tusken_1"),
-            (set_background_mesh, "mesh_pic_sea_raiders"),
+            (set_background_mesh, "mesh_pic_tusken_raiders"),
           (else_try),
             (set_background_mesh, "mesh_pic_bandits"),
           (try_end),
@@ -9905,10 +9905,10 @@ game_menus = [
 		#SW - added names for faction specific recruits
 		(store_faction_of_party, ":cur_center_faction", "$current_town"),
 		(try_begin),
-		(eq, ":cur_center_faction", "fac_kingdom_1"),	#Galactic Empire
+		(eq, ":cur_center_faction", "fac_galacticempire"),	#Galactic Empire
 			(str_store_troop_name_by_count, s3, "trp_sith_hopeful", ":volunteer_amount"),
 		(else_try),
-		(eq, ":cur_center_faction", "fac_kingdom_2"),	#Rebel Alliance
+		(eq, ":cur_center_faction", "fac_rebelalliance"),	#Rebel Alliance
 			(str_store_troop_name_by_count, s3, "trp_jedi_hopeful", ":volunteer_amount"),			
 		(else_try),	#Hutt Cartel, player faction, etc.
 			(str_store_troop_name_by_count, s3, "trp_force_sensitive_recruit", ":volunteer_amount"),		
@@ -10133,7 +10133,7 @@ game_menus = [
 		
 		#SW - only allow recruits from the player's faction
 		# (try_begin),
-			# (eq, ":town_faction", "$players_kingdom"),
+			# (eq, ":town_faction", "$players_faction"),
 			 (try_begin),
 				(le, reg5, 0),
 				(str_store_string, s18, "@There are currently {reg7} {s3} available.^^You have {reg8} available spots free in your party.^^You have enough credits to hire {reg9} of them.^^^^^Currently you cannot hire any troops."),
@@ -11435,7 +11435,7 @@ game_menus = [
              (display_message,"str_door_locked",0xFFFFAAAA),
            (else_try),
              (this_or_next|party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player"),
-             (eq, "$g_encountered_party_faction", "$players_kingdom"),
+             (eq, "$g_encountered_party_faction", "$players_faction"),
              (assign, "$town_entered", 1),
              (call_script, "script_enter_dungeon", "$current_town", "mt_visit_town_castle"),
            (else_try),
@@ -11904,7 +11904,7 @@ game_menus = [
              (try_end),
            (try_end),
            (try_begin),
-             (eq, ":town_original_faction", "fac_kingdom_1"),
+             (eq, ":town_original_faction", "fac_galacticempire"),
              #Swadia
              (store_mod, ":mod", ":town_index_within_faction", 4),
              (try_begin),
@@ -11926,7 +11926,7 @@ game_menus = [
                (call_script, "script_set_items_for_tournament", 0, 80, 50, 20, 40, 0, 0, 0, "itm_arena_tunic_red", 0),
              (try_end),
            (else_try),
-             (eq, ":town_original_faction", "fac_kingdom_2"),
+             (eq, ":town_original_faction", "fac_rebelalliance"),
              #Vaegirs
              (store_mod, ":mod", ":town_index_within_faction", 4),
              (try_begin),
@@ -11947,7 +11947,7 @@ game_menus = [
                (call_script, "script_set_items_for_tournament", 0, 80, 50, 20, 30, 0, 60, 0, "itm_arena_tunic_red", 0),
              (try_end),
            (else_try),
-             (eq, ":town_original_faction", "fac_kingdom_3"),
+             (eq, ":town_original_faction", "fac_huttcartel"),
              #Khergit
              (store_mod, ":mod", ":town_index_within_faction", 2),
              (try_begin),
@@ -11961,7 +11961,7 @@ game_menus = [
              (try_end),
 		   #SW - commented out faction 4 & 5
            # (else_try),
-             # (eq, ":town_original_faction", "fac_kingdom_4"),
+             # (eq, ":town_original_faction", "fac_faction_4"),
              # #Nords
              # (store_mod, ":mod", ":town_index_within_faction", 3),
              # (try_begin),
@@ -13432,9 +13432,9 @@ game_menus = [
        (eq, "$g_presentation_marshall_selection_ended", 1),
        (change_screen_return),
      (try_end),
-     (faction_get_slot, ":king", "$players_kingdom", slot_faction_leader),
+     (faction_get_slot, ":king", "$players_faction", slot_faction_leader),
      (str_store_troop_name, s15, ":king"),
-     (str_store_faction_name, s23, "$players_kingdom"),
+     (str_store_faction_name, s23, "$players_faction"),
      ],
     [
       ("marshall_candidate_accept", [], "Let {s15} learn that you are willing to serve as marshall.",
@@ -13469,7 +13469,7 @@ game_menus = [
 ##          (store_add, "$g_oath_end_day", ":cur_day", 30),
 ##          (change_screen_return)]),
 ##      ("dont_renew_oath",[],"Become free of your bond.",[
-##          (assign, "$players_kingdom",0),
+##          (assign, "$players_faction",0),
 ##          (assign, "$g_player_permitted_castles", 0),
 ##          (change_screen_return)]),
 ##    ]
@@ -13818,7 +13818,7 @@ game_menus = [
   ),
 
   (
-    "kingdom_army_quest_report_to_army",menu_text_color(0xFF000d2c)|mnf_scale_picture,
+    "faction_army_quest_report_to_army",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "{s8} sends word that he wishes you to join his new military campaign.\
  You need to bring at least {reg13} troops to the army,\
  and are instructed to raise more men with all due haste if you do not have enough.",
@@ -13853,13 +13853,13 @@ game_menus = [
   ),
 
   (
-    "kingdom_army_quest_messenger",menu_text_color(0xFF000d2c)|mnf_scale_picture,
+    "faction_army_quest_messenger",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "{s8} sends word that he wishes to speak with you about a task he needs performed.\
  He requests you to come and see him as soon as possible.",
     "none",
     [
         (set_background_mesh, "mesh_pic_messenger"),
-        (faction_get_slot, ":faction_marshall", "$players_kingdom", slot_faction_marshall),
+        (faction_get_slot, ":faction_marshall", "$players_faction", slot_faction_marshall),
         (str_store_troop_name, s8, ":faction_marshall"),
       ],
     [
@@ -13870,13 +13870,13 @@ game_menus = [
   ),
 
   (
-    "kingdom_army_quest_join_siege_order",menu_text_color(0xFF000d2c)|mnf_scale_picture,
+    "faction_army_quest_join_siege_order",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "{s8} sends word that you are to join the siege of {s9} in preparation for a full assault.\
  Your troops are to take {s9} at all costs.",
     "none",
     [
         (set_background_mesh, "mesh_pic_messenger"),
-        (faction_get_slot, ":faction_marshall", "$players_kingdom", slot_faction_marshall),
+        (faction_get_slot, ":faction_marshall", "$players_faction", slot_faction_marshall),
         (quest_get_slot, ":quest_target_center", "qst_join_siege_with_army", slot_quest_target_center),
         (str_store_troop_name, s8, ":faction_marshall"),
         (str_store_party_name, s9, ":quest_target_center"),
@@ -13886,7 +13886,7 @@ game_menus = [
        [
            (call_script, "script_end_quest", "qst_follow_army"),
            (quest_get_slot, ":quest_target_center", "qst_join_siege_with_army", slot_quest_target_center),
-           (faction_get_slot, ":faction_marshall", "$players_kingdom", slot_faction_marshall),
+           (faction_get_slot, ":faction_marshall", "$players_faction", slot_faction_marshall),
            (str_store_troop_name_link, s13, ":faction_marshall"),
            (str_store_party_name_link, s14, ":quest_target_center"),
            (setup_quest_text, "qst_join_siege_with_army"),
@@ -13898,13 +13898,13 @@ game_menus = [
   ),
 
   (
-    "kingdom_army_follow_failed",menu_text_color(0xFF000d2c)|mnf_scale_picture,
+    "faction_army_follow_failed",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "You have disobeyed orders and failed to follow {s8}. In anger he has disbanded you from the army,\
  and sends a stern warning that your actions will not be forgotten.",
     "none",
     [
         (set_background_mesh, "mesh_pic_messenger"),
-        (faction_get_slot, ":faction_marshall", "$players_kingdom", slot_faction_marshall),
+        (faction_get_slot, ":faction_marshall", "$players_faction", slot_faction_marshall),
         (str_store_troop_name, s8, ":faction_marshall"),
         (call_script, "script_abort_quest", "qst_follow_army", 1),
         (call_script, "script_change_player_relation_with_troop", ":faction_marshall", -3),
@@ -14030,7 +14030,7 @@ game_menus = [
     [
       ("peace_offer_accept",[],"Accept",
        [
-         (call_script, "script_diplomacy_start_peace_between_kingdoms", "fac_player_supporters_faction", "$g_notification_menu_var1", 1),
+         (call_script, "script_diplomacy_start_peace_between_factions", "fac_player_supporters_faction", "$g_notification_menu_var1", 1),
          (change_screen_return),
         ]),
       ("peace_offer_reject",[],"Reject",
@@ -14043,9 +14043,9 @@ game_menus = [
 
   (
     "notification_player_faction_active",menu_text_color(0xFF000d2c),
-    "You now posess land in your name without being tied to any kingdom, as a masterless warlord who knows no higher authority.\
+    "You now posess land in your name without being tied to any faction, as a masterless warlord who knows no higher authority.\
  Enjoy this freedom, but know that the kings of the land will not look to you kindly and will make every attempt to dispose of you.\
- You may find life very difficult without the protection of a kingdom.",
+ You may find life very difficult without the protection of a faction.",
     "none",
     [
       (set_fixed_point_multiplier, 100),
@@ -14148,7 +14148,7 @@ game_menus = [
 
   (
     "notification_one_faction_left",menu_text_color(0xFF000d2c),
-    "Calradia Conquered by One Kingdom^^{s1} has defeated all rivals and stands as the sole kingdom.",
+    "Calradia Conquered by One Faction^^{s1} has defeated all rivals and stands as the sole faction.",
     "none",
     [
       (str_store_faction_name, s1, "$g_notification_menu_var1"),
@@ -14157,7 +14157,7 @@ game_menus = [
       (position_set_y, pos0, 30),
       (position_set_z, pos0, 170),
       (try_begin),
-        (is_between, "$g_notification_menu_var1", "fac_kingdom_1", factions_end), #Excluding player kingdom
+        (is_between, "$g_notification_menu_var1", "fac_galacticempire", factions_end), #Excluding player faction
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_for_menu", "$g_notification_menu_var1", pos0),
       (else_try),
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "$g_notification_menu_var1", pos0),
@@ -14181,7 +14181,7 @@ game_menus = [
       (position_set_y, pos0, 30),
       (position_set_z, pos0, 170),
       (try_begin),
-        (is_between, "$g_notification_menu_var1", "fac_kingdom_1", factions_end), #Excluding player kingdom
+        (is_between, "$g_notification_menu_var1", "fac_galacticempire", factions_end), #Excluding player faction
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_for_menu", "$g_notification_menu_var1", pos0),
       (else_try),
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "$g_notification_menu_var1", pos0),
@@ -14221,7 +14221,7 @@ game_menus = [
     "none",
     [
       (str_store_troop_name, s1, "$g_notification_menu_var1"),
-      (str_store_faction_name, s2, "$players_kingdom"),
+      (str_store_faction_name, s2, "$players_faction"),
       (str_store_faction_name, s3, "$g_notification_menu_var2"),
       (set_fixed_point_multiplier, 100),
       (position_set_x, pos0, 55),
@@ -14243,7 +14243,7 @@ game_menus = [
     [
       (str_store_troop_name, s1, "$g_notification_menu_var1"),
       (str_store_faction_name, s2, "$g_notification_menu_var2"),
-      (str_store_faction_name, s3, "$players_kingdom"),
+      (str_store_faction_name, s3, "$players_faction"),
       (set_fixed_point_multiplier, 100),
       (position_set_x, pos0, 55),
       (position_set_y, pos0, 20),
@@ -14278,11 +14278,11 @@ game_menus = [
       (position_set_x, pos0, 65),
       (position_set_y, pos0, 30),
       (position_set_z, pos0, 170),
-      (store_sub, ":faction_1", "$g_notification_menu_var1", factions_begin),
-      (store_sub, ":faction_2", "$g_notification_menu_var2", factions_begin),
-      (val_mul, ":faction_1", 128),
-      (val_add, ":faction_1", ":faction_2"),
-      (set_game_menu_tableau_mesh, "tableau_2_factions_mesh", ":faction_1", pos0),
+      (store_sub, ":galacticempire", "$g_notification_menu_var1", factions_begin),
+      (store_sub, ":rebelalliance", "$g_notification_menu_var2", factions_begin),
+      (val_mul, ":galacticempire", 128),
+      (val_add, ":galacticempire", ":rebelalliance"),
+      (set_game_menu_tableau_mesh, "tableau_2_factions_mesh", ":galacticempire", pos0),
       ],
     [
       ("continue",[],"Continue...",
@@ -14302,11 +14302,11 @@ game_menus = [
       (position_set_x, pos0, 65),
       (position_set_y, pos0, 30),
       (position_set_z, pos0, 170),
-      (store_sub, ":faction_1", "$g_notification_menu_var1", factions_begin),
-      (store_sub, ":faction_2", "$g_notification_menu_var2", factions_begin),
-      (val_mul, ":faction_1", 128),
-      (val_add, ":faction_1", ":faction_2"),
-      (set_game_menu_tableau_mesh, "tableau_2_factions_mesh", ":faction_1", pos0),
+      (store_sub, ":galacticempire", "$g_notification_menu_var1", factions_begin),
+      (store_sub, ":rebelalliance", "$g_notification_menu_var2", factions_begin),
+      (val_mul, ":galacticempire", 128),
+      (val_add, ":galacticempire", ":rebelalliance"),
+      (set_game_menu_tableau_mesh, "tableau_2_factions_mesh", ":galacticempire", pos0),
       ],
     [
       ("continue",[],"Continue...",
@@ -14326,7 +14326,7 @@ game_menus = [
       (position_set_y, pos0, 30),
       (position_set_z, pos0, 170),
       (try_begin),
-        (is_between, "$g_notification_menu_var1", "fac_kingdom_1", factions_end), #Excluding player kingdom
+        (is_between, "$g_notification_menu_var1", "fac_galacticempire", factions_end), #Excluding player faction
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_for_menu", "$g_notification_menu_var1", pos0),
       (else_try),
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "$g_notification_menu_var1", pos0),
@@ -14338,7 +14338,7 @@ game_menus = [
          (try_begin),
            (is_between, "$supported_pretender", pretenders_begin, pretenders_end),
            (troop_slot_eq, "$supported_pretender", slot_troop_original_faction, "$g_notification_menu_var1"),
-           (try_for_range, ":cur_troop", kingdom_heroes_begin, kingdom_heroes_end),
+           (try_for_range, ":cur_troop", faction_heroes_begin, faction_heroes_end),
              (store_troop_faction, ":cur_faction", ":cur_troop"),
              (eq, ":cur_faction", "fac_player_supporters_faction"),
              (troop_set_faction, ":cur_troop", "$g_notification_menu_var1"),
@@ -14348,7 +14348,7 @@ game_menus = [
              (eq, ":cur_faction", "fac_player_supporters_faction"),
              (party_set_faction, ":cur_party", "$g_notification_menu_var1"),
            (try_end),
-           (assign, "$players_kingdom", "$g_notification_menu_var1"),
+           (assign, "$players_faction", "$g_notification_menu_var1"),
            (call_script, "script_add_notification_menu", "mnu_notification_rebels_switched_to_faction", "$g_notification_menu_var1", "$supported_pretender"),
            (faction_set_slot, "$g_notification_menu_var1", slot_faction_state, sfs_active),
            (faction_set_slot, "fac_player_supporters_faction", slot_faction_state, sfs_inactive),
@@ -14358,14 +14358,14 @@ game_menus = [
            (faction_set_slot, "$g_notification_menu_var1", slot_faction_marshall, "trp_player"),
            (faction_set_slot, "$g_notification_menu_var1", slot_faction_ai_state, sfai_default),
            (faction_set_slot, "$g_notification_menu_var1", slot_faction_ai_object, -1),
-           (troop_set_slot, "$supported_pretender", slot_troop_occupation, slto_kingdom_hero),
+           (troop_set_slot, "$supported_pretender", slot_troop_occupation, slto_faction_hero),
            (party_remove_members, "p_main_party", "$supported_pretender", 1),
            (call_script, "script_set_player_relation_with_faction", "$g_notification_menu_var1", 0),
-           (try_for_range, ":cur_kingdom", factions_begin, factions_end),
-             (faction_slot_eq, ":cur_kingdom", slot_faction_state, sfs_active),
-             (neq, ":cur_kingdom", "$g_notification_menu_var1"),
-             (store_relation, ":reln", ":cur_kingdom", "fac_player_supporters_faction"),
-             (set_relation, ":cur_kingdom", "$g_notification_menu_var1", ":reln"),
+           (try_for_range, ":cur_faction", factions_begin, factions_end),
+             (faction_slot_eq, ":cur_faction", slot_faction_state, sfs_active),
+             (neq, ":cur_faction", "$g_notification_menu_var1"),
+             (store_relation, ":reln", ":cur_faction", "fac_player_supporters_faction"),
+             (set_relation, ":cur_faction", "$g_notification_menu_var1", ":reln"),
            (try_end),
            (assign, "$supported_pretender", 0),
            (assign, "$supported_pretender_old_faction", 0),
@@ -14390,7 +14390,7 @@ game_menus = [
       (position_set_y, pos0, 30),
       (position_set_z, pos0, 170),
       (try_begin),
-        (is_between, "$g_notification_menu_var1", "fac_kingdom_1", factions_end), #Excluding player kingdom
+        (is_between, "$g_notification_menu_var1", "fac_galacticempire", factions_end), #Excluding player faction
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_for_menu", "$g_notification_menu_var1", pos0),
       (else_try),
         (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "$g_notification_menu_var1", pos0),
@@ -14637,25 +14637,25 @@ game_menus = [
 	"none",
 	[(assign,reg1,"$g_custom_battle_faction_to_edit"),],
 	[
-#	  ("vaegir",[],"Kingdom of Vaegirs",
+#	  ("vaegir",[],"Faction of Vaegirs",
 	  ("empire",[],"Galactic Empire",
 	  [(troop_set_slot,"trp_custom_battle_fac_store",reg(1),1),
-	  (str_store_string,s1,"str_faction_1"),
+	  (str_store_string,s1,"str_galacticempire"),
 	   ]
 	   ),
-#	  ("swadia",[],"Kingdom of Swadia",
+#	  ("swadia",[],"Faction of Swadia",
 	  ("rebel",[],"Rebel Alliance",
 	  [(troop_set_slot,"trp_custom_battle_fac_store",reg(1),2),
-	  (str_store_string,s1,"str_faction_2"),
+	  (str_store_string,s1,"str_rebelalliance"),
 	   ]
 	   ),
-#	  ("nords",[],"Kingdom of Nords",
+#	  ("nords",[],"Faction of Nords",
 	  ("hutt",[],"Hutt Cartel",
 	  [(troop_set_slot,"trp_custom_battle_fac_store",reg(1),3),
-	  (str_store_string,s1,"str_faction_3"),
+	  (str_store_string,s1,"str_huttcartel"),
 	   ]
 	   ),
-#	   ("rhodok",[],"Kingdom of Rhodok",
+#	   ("rhodok",[],"Faction of Rhodok",
 	  ("mercenary",[],"Mercenaries",	  
 	  [(troop_set_slot,"trp_custom_battle_fac_store",reg(1),4),
 	  (str_store_string,s1,"str_faction_4"),
@@ -15609,7 +15609,7 @@ game_menus = [
 	  (troop_set_slot,"$troop_store",":troop_slot","$g_custom_battle_current_troop_number"),
 	  (assign,"$g_custom_battle_current_troop_number",0),]
 	  ),
- # Kingdom of Rhodok
+ # Faction of Rhodok
 	  ("rhodok_tribesman",
 	  [(troop_get_slot,reg(12),"trp_custom_battle_fac_store",reg(11)),
 	  (eq,reg(12),4)],
@@ -16921,13 +16921,13 @@ game_menus = [
 	(troop_get_slot,reg(1),"trp_custom_battle_fac_store",1),
 	(try_begin),
 	(eq,reg(1),1),
-	(str_store_string,s1,"str_faction_1"),
+	(str_store_string,s1,"str_galacticempire"),
 	(else_try),
 	(eq,reg(1),2),
-	(str_store_string,s1,"str_faction_2"),
+	(str_store_string,s1,"str_rebelalliance"),
 	(else_try),
 	(eq,reg(1),3),
-	(str_store_string,s1,"str_faction_3"),
+	(str_store_string,s1,"str_huttcartel"),
 	(else_try),
 	(eq,reg(1),4),
 	(str_store_string,s1,"str_faction_4"),
@@ -16941,13 +16941,13 @@ game_menus = [
 	(troop_get_slot,reg(2),"trp_custom_battle_fac_store",2),
 	(try_begin),
 	(eq,reg(2),1),
-	(str_store_string,s2,"str_faction_1"),
+	(str_store_string,s2,"str_galacticempire"),
 	(else_try),
 	(eq,reg(2),2),
-	(str_store_string,s2,"str_faction_2"),
+	(str_store_string,s2,"str_rebelalliance"),
 	(else_try),
 	(eq,reg(2),3),
-	(str_store_string,s2,"str_faction_3"),
+	(str_store_string,s2,"str_huttcartel"),
 	(else_try),
 	(eq,reg(2),4),
 	(str_store_string,s2,"str_faction_4"),
@@ -16961,13 +16961,13 @@ game_menus = [
 	(troop_get_slot,reg(3),"trp_custom_battle_fac_store",3),
 	(try_begin),
 	(eq,reg(3),1),
-	(str_store_string,s3,"str_faction_1"),
+	(str_store_string,s3,"str_galacticempire"),
 	(else_try),
 	(eq,reg(3),2),
-	(str_store_string,s3,"str_faction_2"),
+	(str_store_string,s3,"str_rebelalliance"),
 	(else_try),
 	(eq,reg(3),3),
-	(str_store_string,s3,"str_faction_3"),
+	(str_store_string,s3,"str_huttcartel"),
 	(else_try),
 	(eq,reg(3),4),
 	(str_store_string,s3,"str_faction_4"),
@@ -16981,13 +16981,13 @@ game_menus = [
 	(troop_get_slot,reg(4),"trp_custom_battle_fac_store",4),
 	(try_begin),
 	(eq,reg(4),1),
-	(str_store_string,s4,"str_faction_1"),
+	(str_store_string,s4,"str_galacticempire"),
 	(else_try),
 	(eq,reg(4),2),
-	(str_store_string,s4,"str_faction_2"),
+	(str_store_string,s4,"str_rebelalliance"),
 	(else_try),
 	(eq,reg(4),3),
-	(str_store_string,s4,"str_faction_3"),
+	(str_store_string,s4,"str_huttcartel"),
 	(else_try),
 	(eq,reg(4),4),
 	(str_store_string,s4,"str_faction_4"),
@@ -17001,13 +17001,13 @@ game_menus = [
 	(troop_get_slot,reg(5),"trp_custom_battle_fac_store",5),
 	(try_begin),
 	(eq,reg(5),1),
-	(str_store_string,s5,"str_faction_1"),
+	(str_store_string,s5,"str_galacticempire"),
 	(else_try),
 	(eq,reg(5),2),
-	(str_store_string,s5,"str_faction_2"),
+	(str_store_string,s5,"str_rebelalliance"),
 	(else_try),
 	(eq,reg(5),3),
-	(str_store_string,s5,"str_faction_3"),
+	(str_store_string,s5,"str_huttcartel"),
 	(else_try),
 	(eq,reg(5),4),
 	(str_store_string,s5,"str_faction_4"),

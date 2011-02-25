@@ -109,7 +109,7 @@ parties = [
   
   
 
-  # Note - if you rename towns make sure to update the center_#_kingdom in module_strings.py
+  # Note - if you rename towns make sure to update the center_#_faction in module_strings.py
   ("mandalore","Mandalore",  icon_sw_swy_rePlanet_earth|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(13.68,64.51),[],170),
   ("byss","Byss",     icon_sw_swy_Planet_Endor|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-78.27,-25.15),[], 120),  
   ("endor","Endor",   icon_sw_swy_Planet_Endor|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-98.05,-60.50),[],80),
@@ -143,7 +143,7 @@ parties = [
   
 #   Aztaq_Outpost       
 #  Malabadi_Outpost
-  # Note - if you rename castles make sure to update the center_#_kingdom in module_strings.py
+  # Note - if you rename castles make sure to update the center_#_faction in module_strings.py
 #  ("spacestation_1","Bespin",icon_sw_swy_rePlanet_gas|pf_castle|pf_disabled|pf_no_label|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-87.44,-93.66),[],50),
   ("spacestation_2","Corellia_Outpost",icon_outpost_a|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-9.38,-50.53),[],75),
   ("spacestation_3","Yavin_IV_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(69.39,97.03),[],100),
@@ -351,20 +351,20 @@ parties = [
 #  ("Bridge_14","14",icon_bridge_b|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(21.88, 78.80),[], 75),
 #  ("Bridge_15","15",icon_bridge_b|pf_is_static|pf_always_visible|pf_no_label, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-68.01, -29.60),[], 15),
 
-  ("jawa_spawn_point"   ,"jawa_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(43.21,-130.13),[(trp_jawa,15,0)]),
-  ("steppe_bandit_spawn_point"  ,"steppe_bandit_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-66.83,88.49),[(trp_jawa,15,0)]),
-  ("steppe_bandit_spawn_point_2"  ,"steppe_bandit_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-42.37,47.18),[(trp_jawa,15,0)]),
-  ("steppe_bandit_spawn_point_3"  ,"steppe_bandit_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-35.12,79.88),[(trp_jawa,15,0)]),
+  ("jawa_spawn_point"   ,"<jawa_sp>",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(43.21,-130.13),[(trp_jawa,15,0)]),
+  ("night_fang_pirate_spawn_point"  ,"<steppe_bandit_sp>",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-66.83,88.49),[(trp_jawa,15,0)]),
+  ("night_fang_pirate_spawn_point_2"  ,"<steppe_bandit_sp>",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-42.37,47.18),[(trp_jawa,15,0)]),
+  ("night_fang_pirate_spawn_point_3"  ,"<steppe_bandit_sp>",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-35.12,79.88),[(trp_jawa,15,0)]),
 ##  ("black_khergit_spawn_point"  ,"black_khergit_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(47.1, -73.3),[(trp_jawa,15,0)]),
-  ("blazing_claw_pirate_spawn_point"  ,"blazing_claw_pirate_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(43.76,104.07),[(trp_jawa,15,0)]),
-  ("blazing_claw_pirate_spawn_point_2"  ,"blazing_claw_pirate_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(25.70,86.21),[(trp_jawa,15,0)]),
-  ("blazing_claw_pirate_spawn_point_3"  ,"blazing_claw_pirate_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(63.68,60),[(trp_jawa,15,0)]),
-  ("black_sun_pirate_spawn_point","black_sun_pirate_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-20.56,-81.35),[(trp_jawa,15,0)]),
-  ("black_sun_pirate_spawn_point_2","black_sun_pirate_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-66.40,-60.25),[(trp_jawa,15,0)]),
-  ("black_sun_pirate_spawn_point_3","black_sun_pirate_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-62.39,-86.97),[(trp_jawa,15,0)]),
-  ("sea_raider_spawn_point_1"   ,"sea_raider_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(133.24,-58.60),[(trp_jawa,15,0)]),
-  ("sea_raider_spawn_point_2"   ,"sea_raider_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(48.72,-95.88),[(trp_jawa,15,0)]),
-  ("sea_raider_spawn_point_3"   ,"sea_raider_sp",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(79.10,-75.61),[(trp_jawa,15,0)]),
+  ("blazing_claw_pirate_spawn_point"  ,"<blazing_claw_pirate_sp>",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(43.76,104.07),[(trp_jawa,15,0)]),
+  ("blazing_claw_pirate_spawn_point_2"  ,"<blazing_claw_pirate_sp>",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(25.70,86.21),[(trp_jawa,15,0)]),
+  ("blazing_claw_pirate_spawn_point_3"  ,"<blazing_claw_pirate_sp>",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(63.68,60),[(trp_jawa,15,0)]),
+  ("black_sun_pirate_spawn_point","<black_sun_pirate_sp>",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-20.56,-81.35),[(trp_jawa,15,0)]),
+  ("black_sun_pirate_spawn_point_2","<black_sun_pirates_sp>",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-66.40,-60.25),[(trp_jawa,15,0)]),
+  ("black_sun_pirate_spawn_point_3","<black_sun_pirates_sp>",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(-62.39,-86.97),[(trp_jawa,15,0)]),
+  ("tusken_raider_spawn_point_1"   ,"<tusken_raiders_sp>",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(133.24,-58.60),[(trp_jawa,15,0)]),
+  ("tusken_raider_spawn_point_2"   ,"<tusken_raiders_sp>",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(48.72,-95.88),[(trp_jawa,15,0)]),
+  ("tusken_raider_spawn_point_3"   ,"<tusken_raider_sp>",pf_disabled|pf_is_static, no_menu, pt_none, fac_outlaws,0,ai_bhvr_hold,0,(79.10,-75.61),[(trp_jawa,15,0)]),
  # add extra towns before this point 
   ("spawn_points_end"                  ,"last_spawn_point",    pf_disabled|pf_is_static, no_menu, pt_none, fac_commoners,0,ai_bhvr_hold,0,(23,-112.26),[(trp_jawa,15,0)]),
   

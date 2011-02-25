@@ -43,7 +43,7 @@ qst_deliver_cattle = 41
 qst_train_peasants_against_bandits = 42
 qst_eliminate_bandits_infesting_village = 43
 qst_join_faction = 44
-qst_rebel_against_kingdom = 45
+qst_rebel_against_faction = 45
 qst_quests_end = 46
 qsttag_deliver_message = 504403158265495552
 qsttag_deliver_message_to_enemy_lord = 504403158265495553
@@ -90,7 +90,7 @@ qsttag_deliver_cattle = 504403158265495593
 qsttag_train_peasants_against_bandits = 504403158265495594
 qsttag_eliminate_bandits_infesting_village = 504403158265495595
 qsttag_join_faction = 504403158265495596
-qsttag_rebel_against_kingdom = 504403158265495597
+qsttag_rebel_against_faction = 504403158265495597
 qsttag_quests_end = 504403158265495598
 
 
