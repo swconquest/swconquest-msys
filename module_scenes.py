@@ -437,7 +437,7 @@ scenes = [
     [],[]),
   ("mainplanet_21_cantina",sf_indoors,"cantina_bar", "bo_cantina_bar", (-100,-100),(100,100),-100,"0",
     [],[]),	
-  ("mainplanet_22_cantina",sf_indoors,"cantina_bar", "bo_cantina_bar", (-100,-100),(100,100),-100,"0",
+  ("mainplanet_22_cantina",sf_indoors,"taris_cantina", "bo_taris_cantina", (-100,-100),(100,100),-100,"0",
     [],[]),	
   ("mainplanet_23_cantina",sf_indoors,"cantina_bar", "bo_cantina_bar", (-100,-100),(100,100),-100,"0",
     [],[]),	

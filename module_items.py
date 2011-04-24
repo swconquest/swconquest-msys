@@ -1332,13 +1332,21 @@ items = [
  1 , weight(1)|abundance(0)|difficulty(0)|spd_rtng(40) | weapon_length(25)|swing_damage(0, blunt) | thrust_damage(0, blunt),imodbits_none ],
 
 #r2series
-["r2series_blue", "R2-Series Blue", [("r2series_blue",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
+# ["r2series_blue", "R2-Series Blue", [("r2series_blue",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
+ # 500 , weight(50)|abundance(0)|head_armor(15)|body_armor(30)|leg_armor(15)|difficulty(0) ,imodbits_none ], 
+# ["r2series_green", "R2-Series Green", [("r2series_green",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
+ # 500 , weight(50)|abundance(0)|head_armor(15)|body_armor(30)|leg_armor(15)|difficulty(0) ,imodbits_none ], 
+# ["r2series_orange", "R2-Series Orange", [("r2series_orange",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
+ # 500 , weight(50)|abundance(0)|head_armor(15)|body_armor(30)|leg_armor(15)|difficulty(0) ,imodbits_none ], 
+# ["r2series_purple", "R2-Series Purple", [("r2series_purple",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
+ # 500 , weight(50)|abundance(0)|head_armor(15)|body_armor(30)|leg_armor(15)|difficulty(0) ,imodbits_none ],  
+ ["r2series_blue", "R2-Series Blue", [("swy_R2D2",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
  500 , weight(50)|abundance(0)|head_armor(15)|body_armor(30)|leg_armor(15)|difficulty(0) ,imodbits_none ], 
-["r2series_green", "R2-Series Green", [("r2series_green",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
+["r2series_green", "R2-Series Green", [("swy_R2D2_alt_green",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
  500 , weight(50)|abundance(0)|head_armor(15)|body_armor(30)|leg_armor(15)|difficulty(0) ,imodbits_none ], 
-["r2series_orange", "R2-Series Orange", [("r2series_orange",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
+["r2series_orange", "R2-Series Orange", [("swy_R2D2_alt_orange",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
  500 , weight(50)|abundance(0)|head_armor(15)|body_armor(30)|leg_armor(15)|difficulty(0) ,imodbits_none ], 
-["r2series_purple", "R2-Series Purple", [("r2series_purple",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
+["r2series_purple", "R2-Series Purple", [("swy_R2D2_alt_purple",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
  500 , weight(50)|abundance(0)|head_armor(15)|body_armor(30)|leg_armor(15)|difficulty(0) ,imodbits_none ],  
 
 #mse6 droid

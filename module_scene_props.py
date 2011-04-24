@@ -2167,7 +2167,7 @@ scene_props = [
 ## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 ##@>  Yiyang Chen Props
 
-#Kasshyyyk
+#Kashyyyk
    ("kashyyyk_house",0,"kashyyyk_house",0, []),
    ("kashyyyk_house_platform_bridge",0,"kashyyyk_house_platform_bridge",0, []),
    ("kashyyyk_house_platform_down",0,"kashyyyk_house_platform_down",0, []),
@@ -2187,6 +2187,8 @@ scene_props = [
    ("kashyyyk_stairs",0,"kashyyyk_stairs",0, []),
    ("kashyyyk_tree1",0,"kashyyyk_tree1",0, []),
    ("kashyyyk_tree2",0,"kashyyyk_tree2",0, []),
+  ("kashyyyyk_cliff_1",0,"kashyyyyk_cliff_1",0, []),
+  ("kashyyyyk_cliff_2",0,"kashyyyyk_cliff_2",0, []),
 
 #Coruscant   
    ("coruscant1",0,"coruscant1",0, []),
@@ -2198,6 +2200,11 @@ scene_props = [
    ("coruscant7",0,"coruscant7",0, []),
    ("coruscant8",0,"coruscant8",0, []),
    ("coruscant9",0,"coruscant9",0, []),
+   ("coruscant10",0,"coruscant10",0, []),
+   ("coruscant11",0,"coruscant11",0, []),
+   ("coruscant12",0,"coruscant12",0, []),
+   ("christophsis_buiding_1",0,"christophsis_buiding_1",0, []),
+   ("christophsis_buiding_2",0,"christophsis_buiding_2",0, []),
 
  #Taris
     ("taris_building_a_1_hw",0,"taris_building_a_1_hw",0, []),
@@ -2220,6 +2227,10 @@ scene_props = [
 	("taris_building_b_3_nw",0,"taris_building_b_3_nw",0, []),
 	("taris_building_2_bridge",0,"taris_building_2_bridge",0, []),
 	("taris_platform",0,"taris_platform",0, []),
+
+  ("taris_cantina_door",0,"taris_cantina_door",0, []),
+  ("taris_cantina_lift",0,"taris_cantina_lift",0, []),
+  ("taris_cantina_table",0,"taris_cantina_table",0, []),
 	
 #Mos Eisley
 	("moseisley_angle",0,"moseisley_angle","bo_moseisley_angle", []),
@@ -2229,6 +2240,25 @@ scene_props = [
 	("moseisley_bar",0,"moseisley_bar","bo_moseisley_bar", []),
 	("moseisley_bank",0,"moseisley_bank","bo_moseisley_bank", []),
 	("moseisleybottles",0,"moseisleybottles","bo_moseisleybottles", []),
+
+  ("moseisley_building_1",0,"moseisley_building_1",0, []),
+  ("moseisley_building_2",0,"moseisley_building_2",0, []),
+
+#Jabba Palace	
+  ("jabba_palace_building_1",0,"jabba_palace_building_1",0, []),
+  ("jabba_palace_building_2",0,"jabba_palace_building_2",0, []),
+  ("jabba_palace_building_3",0,"jabba_palace_building_3",0, []),
+  ("jabba_palace_building_4",0,"jabba_palace_building_4",0, []),
+  ("jabba_palace_building_5",0,"jabba_palace_building_5",0, []),
+  ("jabba_palace_building_6",0,"jabba_palace_building_6",0, []),
+
+#Jabba Palace Rough reskins by RevanShan / had to retouch the normals
+  ("trandoshan_building_1",0,"trandoshan_building_1",0, []),
+  ("trandoshan_building_2",0,"trandoshan_building_2",0, []),
+  ("trandoshan_building_3",0,"trandoshan_building_3",0, []),
+  ("trandoshan_building_4",0,"trandoshan_building_4",0, []),
+  ("trandoshan_building_5",0,"trandoshan_building_5",0, []),
+  ("trandoshan_building_6",0,"trandoshan_building_6",0, []),
 
 #Bespin
 	("bespin_bridge",0,"bespin_bridge","bo_bespin_bridge", []),
@@ -2247,13 +2277,58 @@ scene_props = [
 	("bespin_platform_3",0,"bespin_platform_3","bo_bespin_platform_3", []),
 	("bespin_platform_pillar_1",0,"bespin_platform_pillar_1","bo_bespin_platform_pillar_1", []),
 	("bespin_platform_pillar_2",0,"bespin_platform_pillar_2","bo_bespin_platform_pillar_2", []),
+
 #Naboo
-	("Naboo_house_1",0,"Naboo_house_1","bo_Naboo_house_1", []),
-	("Naboo_house_3",0,"Naboo_house_3","bo_Naboo_house_3", []),
-	("Naboo_theedpalace",0,"Naboo_theedpalace_temp",0, []),
+  ("Naboo_house_1",0,"Naboo_house_1","bo_Naboo_house_1", []),
+  ("Naboo_house_3",0,"Naboo_house_3","bo_Naboo_house_3", []),
+  ("Naboo_house_4",0,"Naboo_house_4",0, []),
+  ("naboo_house_5",0,"naboo_house_5",0, []),
+
+  ("Naboo_theedpalace_1",0,"Naboo_theedpalace_1",0, []),
+  ("Naboo_theedpalace_2",0,"Naboo_theedpalace_2",0, []),
+  ("Naboo_theedpalace_3",0,"Naboo_theedpalace_3",0, []),
+  ("Naboo_theedpalace_4",0,"Naboo_theedpalace_4",0, []),
+  ("Naboo_theedpalace_5",0,"Naboo_theedpalace_5",0, []),
+  ("Naboo_theedpalace_6",0,"Naboo_theedpalace_6",0, []),
+  ("Naboo_theedpalace_7",0,"Naboo_theedpalace_7",0, []),
+  ("Naboo_theedpalace_8",0,"Naboo_theedpalace_8",0, []),
+  ("Naboo_theedpalace_9",0,"Naboo_theedpalace_9",0, []),
+
+  ("Naboo_theedpalace_10",0,"Naboo_theedpalace_10",0, []),
+  ("Naboo_theedpalace_11",0,"Naboo_theedpalace_11",0, []),
+  ("Naboo_theedpalace_12",0,"Naboo_theedpalace_12",0, []),
+  ("Naboo_theedpalace_13",0,"Naboo_theedpalace_13",0, []),
+  ("Naboo_theedpalace_14",0,"Naboo_theedpalace_14",0, []),
+  ("Naboo_theedpalace_15",0,"Naboo_theedpalace_15",0, []),
+  ("Naboo_theedpalace_16",0,"Naboo_theedpalace_16",0, []),
+  ("Naboo_theedpalace_17",0,"Naboo_theedpalace_17",0, []),
+  ("Naboo_theedpalace_18",0,"Naboo_theedpalace_18",0, []),
+  ("Naboo_theedpalace_19",0,"Naboo_theedpalace_19",0, []),
+  ("Naboo_theedpalace_20",0,"Naboo_theedpalace_20",0, []),
+  ("Naboo_theedpalace_21",0,"Naboo_theedpalace_21",0, []),
+
+  ("Naboo_theedpalace_bridge",0,"Naboo_theedpalace_bridge",0, []),
+  ("Naboo_column",0,"Naboo_column",0, []),
+  ("naboo_arch_1",0,"naboo_arch_1",0, []),
+  ("naboo_arch_2",0,"naboo_arch_2",0, []),
+
+  ("Naboo_cantina",0,"Naboo_cantina",0, []),
+
 #Saleucami
 	("saleucami_plant_1",0,"saleucami_plant_1","bo_saleucami_plant_1", []),
 	("saleucami_plant_2",0,"saleucami_plant_2","bo_saleucami_plant_2", []),
+    ("saleucami_plant_3",0,"saleucami_plant_3",0, []),
+    ("saleucami_plant_4",0,"saleucami_plant_4",0, []),
+
+#Spaceviews
+  ("spaceview_coruscant",0,"spaceview_coruscant",0, []),
+  ("spaceview_dagobah",0,"spaceview_dagobah",0, []),
+  ("spaceview_endor",0,"spaceview_endor",0, []),
+  ("spaceview_geonosis",0,"spaceview_geonosis",0, []),
+  ("spaceview_naboo",0,"spaceview_naboo",0, []),
+  ("spaceview_taris",0,"spaceview_taris",0, []),
+  ("spaceview_tatoonie",0,"spaceview_tatoonie",0, []),
+  ("spaceview_yavin_iv",0,"spaceview_yavin_iv",0, []),
 
 ## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
 ##@> Reskins   
