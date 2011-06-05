@@ -2182,10 +2182,10 @@ items = [
 	# [(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,4),(position_move_y, pos1,5),(particle_system_burst, "psys_blaster_smoke", pos1, 15)])]], 
 #["dc15a", "DC-15A", [("DC15A",0)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_musket|itcf_carry_spear|itcf_reload_musket, 
 #removed merch flag since there are two dc15a's
-["dc15a", "DC-15A", [("DC15A",0),("DC15A_inventory",ixmesh_inventory)], itp_type_crossbow|itp_two_handed|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_spear|itcf_reload_musket, 
+["dc15a", "DC-15A", [("DC15A",0),("DC15A_inv",ixmesh_inventory)], itp_type_crossbow|itp_two_handed|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_spear|itcf_reload_musket, 
 	1385 , weight(6.8)|abundance(100)|difficulty(0)|spd_rtng(90) | shoot_speed(190) | thrust_damage(60 ,pierce)|max_ammo(500)|accuracy(96),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,4),(position_move_y, pos1,5)])]], 	
-["dc15a_hip", "DC-15A", [("DC15A_javelin",0),("DC15A_inventory",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_throw_javelin|itcf_carry_quiver_back|itcf_reload_musket, 
+["dc15a_hip", "DC-15A", [("DC15A_javelin",0),("DC15A_inv",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_throw_javelin|itcf_carry_quiver_back|itcf_reload_musket, 
 	1385 , weight(6.8)|abundance(100)|difficulty(0)|spd_rtng(90) | shoot_speed(190) | thrust_damage(60 ,pierce)|max_ammo(500)|accuracy(96),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,4),(position_move_y, pos1,5)])]], 	
 #["dc15s", "DC-15S", [("DC15S",0)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_quiver_front_right|itcf_reload_musket, 

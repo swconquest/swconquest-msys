@@ -162,13 +162,13 @@ scenes = [
     [],[], "outer_terrain_plain"),	
 # START OF CUSTOM BATTLE MOD
   ("custom_battle_1",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000000300005000006d9b9000052560000620000004c92", 
-    [],[], "outer_terrain_plain_1"),	
+    [],[], "outer_terrain_plain"), #"outer_terrain_plain_1"),	
 #SW - used a different scene for battle_2
 #  ("custom_battle_2",sf_generate,"none", "none", (0,0),(120,120),0,"0x00000000ba406063000795dc00002bf100006836000028c9", 
   ("custom_battle_2",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000000300005000006d9b9000052560000620000004c92", 
-    [],[], "outer_terrain_plain_1"),
+    [],[], "outer_terrain_plain"), #"outer_terrain_plain_1"),	
   ("custom_battle_3",sf_generate,"none", "none", (0,0),(120,120),0,"0x00000000516432e10005114400005f8a00002494000046ad", 
-    [],[], "outer_terrain_plain_1"),
+    [],[], "outer_terrain_plain"), #"outer_terrain_plain_1"),	
 # END OF CUSTOM BATTLE MOD
   ("salt_mine",sf_generate,"none", "none", (-200,-200),(200,200),-100,"0x2a07b23200025896000023ee00007f9c000022a8",  
     [],[], "outer_terrain_steppe"),
@@ -197,7 +197,7 @@ scenes = [
   ("reserved12",sf_indoors,"thirsty_lion", "bo_thirsty_lion", (-100,-100),(100,100),-100,"0",
     [],[]),
   ("training_ground",sf_generate,"none", "none", (0,0),(120,120),-100,"0x30000500400360d80000189f00002a8380006d91",
-    [],["tutorial_chest_1", "tutorial_chest_2"], "outer_terrain_plain_1"),
+    [],["tutorial_chest_1", "tutorial_chest_2"], "outer_terrain_plain"), #"outer_terrain_plain_1"),	
   ("tutorial_1",sf_indoors,"tutorial_1_scene", "bo_tutorial_1_scene", (-100,-100),(100,100),-100,"0",
     [],[]),
   ("tutorial_2",sf_indoors,"tutorial_2_scene", "bo_tutorial_2_scene", (-100,-100),(100,100),-100,"0",
@@ -239,7 +239,7 @@ scenes = [
     [],[], "outer_terrain_plain"),
 
   ("zendar_center",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
-    ["the_happy_boar","","zendar_merchant"],[], "outer_terrain_plain_1"),
+    ["the_happy_boar","","zendar_merchant"],[], "outer_terrain_plain"), #"outer_terrain_plain_1"),	
 #  ("zendar_center",0,"sargoth_square", "bo_sargoth_square", (-24,-22),(21,13),-100,"0",
 #    ["the_happy_boar","","zendar_merchant"],[]),
   ("the_happy_boar",sf_indoors,"interior_town_house_f", "bo_interior_town_house_f", (-100,-100),(100,100),-100,"0",
@@ -675,7 +675,8 @@ scenes = [
   ("mainplanet_1_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
     [],[],"outer_terrain_plain"),
   ("mainplanet_2_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
-    [],[],"outer_terrain_town_thir"),
+    [],[],"outer_terrain_plain"),
+	#SW - modified town_2 not to use outer_terrain_town_thir_1
   ("mainplanet_3_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
     [],[]),
   ("mainplanet_4_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
@@ -695,7 +696,8 @@ scenes = [
   ("mainplanet_11_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x400211130001e07800002ad400001172000035c4",
     [],[],"outer_terrain_snow"),
   ("mainplanet_12_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
-    [],[],"outer_terrain_town_thir"),
+    [],[],"outer_terrain_plain"),
+	#SW - modified town_12 not to use outer_terrain_town_thir_1
   ("mainplanet_13_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
     [],[]),
   ("mainplanet_14_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000420000500000334ce00001d1100003d0600000d27",
@@ -1248,9 +1250,9 @@ scenes = [
   ("mainplanet_6_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000000300005000006d9b9000052560000620000004c92", 
     [],[], "outer_terrain_plain"),
   ("mainplanet_7_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000000300005000006d9b9000052560000620000004c92",
-    [],[], "outer_terrain_plain_1"),
+    [],[], "0"), #"outer_terrain_plain_1"),
   ("mainplanet_8_land_battle",sf_generate,"none", "none", (0,0),(120,240),-100,"0x00000000300005000006d9b9000052560000620000004c92",
-    [],[], "outer_terrain_plain_1"),	#Geonosis
+    [],[], "0"), #"outer_terrain_plain_1"),	#Geonosis
   ("mainplanet_9_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x00000000400005000006edb9000063dc80003f5a00005285", ## old code >> "0x0000000234430851c0085214000041fd0000149b000039f7",
     [],[],),
 	
@@ -1263,7 +1265,7 @@ scenes = [
   ("mainplanet_12_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x00000006200005000008f23c0000753d00004f66000033c8", ## old code >> "0x00000002bc61d087400799e60000034e00004b34000059be"
     [],[], "outer_terrain_steppe"),
   ("mainplanet_13_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000000300005000006d9b9000052560000620000004c92",
-    [],[], "outer_terrain_plain_1"),	#Yavin IV
+    [],[], "0"), #"outer_terrain_plain_1"),	#Yavin IV
   ("mainplanet_14_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x0000000250c19207400691a400003efe00004b34000059be",
     [],[], "outer_terrain_desert"),
   ("mainplanet_15_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000000300005000006d9b9000052560000620000004c92", 

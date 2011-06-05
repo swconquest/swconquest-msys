@@ -15149,7 +15149,7 @@ scripts = [
         (val_add, ":instance_no", 1),
         (call_script, "script_cf_turn_windmill_fans", ":instance_no"),
     ]),
-	
+    
     # script_cf_turn_windmill_fans
     # Input: arg1 = instance_no (none = 0)
     # Output: none
@@ -25490,23 +25490,23 @@ scripts = [
                       (assign,"$g_walk_around_ship",1),
                       
                       #modify/reset visitors
-					  (faction_get_slot,":hangar_faction","fac_player_supporters_faction", slot_faction_culture),
-					  
-					  (try_begin),
-						(eq,":hangar_faction","fac_culture_1"),
-						(assign,":scene_to_use","scn_ship_interior_imp"),
-					  (else_try),
-					    (eq,":hangar_faction","fac_culture_2"),
-						(assign,":scene_to_use","scn_ship_interior_reb"),
-					  (else_try),	
-					    (eq,":hangar_faction","fac_culture_3"),
-						(assign,":scene_to_use","scn_ship_interior_hut"),
-                      (else_try), 
-					    (assign,":scene_to_use","scn_ship_interior"),
-					  (try_end),
-					  
+                      (faction_get_slot,":hangar_faction","fac_player_supporters_faction", slot_faction_culture),
+                      
+                      (try_begin),
+                        (eq,":hangar_faction","fac_culture_1"),
+                        (assign,":scene_to_use","scn_ship_interior_imp"),
+                      (else_try),
+                        (eq,":hangar_faction","fac_culture_2"),
+                        (assign,":scene_to_use","scn_ship_interior_reb"),
+                      (else_try),
+                        (eq,":hangar_faction","fac_culture_3"),
+                        (assign,":scene_to_use","scn_ship_interior_hut"),
+                      (else_try),
+                        (assign,":scene_to_use","scn_ship_interior"),
+                      (try_end),
+                      
                       (modify_visitors_at_site,":scene_to_use"),
-					  
+                      
                       #reset visitors
                       (reset_visitors),
                       
@@ -25561,8 +25561,8 @@ scripts = [
                       (set_jump_mission,"mt_ship_interior"),
                       
                       #jump to the scene
-					  (jump_to_scene,":scene_to_use"),
-					  
+                      (jump_to_scene,":scene_to_use"),
+                      
                       #start the scene
                       (change_screen_mission),
                       
@@ -25929,7 +25929,7 @@ scripts = [
                       
                       (store_script_param, ":entry_point", 1),
                       (store_script_param, ":added_troop", 2),
-					  
+                      
                       #have to clear all the override_items first
                       (mission_tpl_entry_clear_override_items, "mt_arena_melee_fight", ":entry_point"),
                       
@@ -26065,11 +26065,11 @@ scripts = [
                         (try_end),
                       (else_try),
                         (eq, "$arena_weapons", 2),	#players current equipment
-						(troop_get_type,":holod_race","$g_player_troop"),
-						(troop_set_type,":added_troop",":holod_race"),
+                        (troop_get_type,":holod_race","$g_player_troop"),
+                        (troop_set_type,":added_troop",":holod_race"),
                         (try_for_range, ":slot", 0, 9),	# ek_item_0 to ek_gloves
                           (troop_get_inventory_slot,":item","$g_player_troop",":slot"),
-						  (gt,":item",0),
+                          (gt,":item",0),
                           (mission_tpl_entry_add_override_item, "mt_arena_melee_fight", ":entry_point", ":item"),
                         (try_end),
                       (else_try),
