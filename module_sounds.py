@@ -6,8 +6,8 @@ from header_sounds import *
 
 sounds = [
  #("click", sf_2d|sf_vol_1,["drum_3.ogg"]),
- #("click", sf_2d|sf_vol_1,["int_select.mp3"]),
- ("click", sf_2d|sf_vol_1,["swc_click.mp3"]),
+ #("click", sf_2d|sf_vol_1,["int_select.ogg"]),
+ ("click", sf_2d|sf_vol_1,["swc_click.ogg"]),
  ("tutorial_1", sf_2d|sf_vol_7,["tutorial_1.ogg"]),
  ("tutorial_2", sf_2d|sf_vol_7,["tutorial_2.ogg"]),
  ("gong", sf_2d|sf_priority_9|sf_vol_7, ["s_cymbals.ogg"]),
@@ -21,21 +21,21 @@ sounds = [
  #SW - modified money_received and money_paid
  #("money_received",sf_priority_10|sf_vol_6, ["coins_dropped_1.ogg"]),
  #("money_paid",sf_priority_10|sf_vol_10, ["coins_dropped_2.ogg"]),
- ("money_received",sf_priority_10|sf_vol_6, ["ui_toggle_mouse_mode.mp3"]),
- ("money_paid",sf_priority_10|sf_vol_10, ["ui_toggle_mouse_mode.mp3"]), 
+ ("money_received",sf_priority_10|sf_vol_6, ["ui_toggle_mouse_mode.ogg"]),
+ ("money_paid",sf_priority_10|sf_vol_10, ["ui_toggle_mouse_mode.ogg"]), 
  
  #SW - modified swong_clash_#
  ("sword_clash_1", 0,["sword_clank_metal_09.ogg","sword_clank_metal_09b.ogg","sword_clank_metal_10.ogg","sword_clank_metal_10b.ogg","sword_clank_metal_12.ogg","sword_clank_metal_12b.ogg","sword_clank_metal_13.ogg","sword_clank_metal_13b.ogg"]),
  ("sword_clash_2", 0,["s_swordClash2.wav"]),
  ("sword_clash_3", 0,["s_swordClash3.wav"]),
  #
- #("sword_clash_1", 0,["saber_clash1.mp3","saber_clash2.mp3","saber_clash3.mp3"]),
- #("sword_clash_2", 0,["saber_clash1.mp3","saber_clash2.mp3","saber_clash3.mp3"]),
- #("sword_clash_3", 0,["saber_clash1.mp3","saber_clash2.mp3","saber_clash3.mp3"]),
+ #("sword_clash_1", 0,["saber_clash1.ogg","saber_clash2.ogg","saber_clash3.ogg"]),
+ #("sword_clash_2", 0,["saber_clash1.ogg","saber_clash2.ogg","saber_clash3.ogg"]),
+ #("sword_clash_3", 0,["saber_clash1.ogg","saber_clash2.ogg","saber_clash3.ogg"]),
  #SW - switched sword_swing to a lightsaber (affects ALL swords, fists, axes, etc....)
  ("sword_swing", sf_vol_8|sf_priority_6,["s_swordSwing.ogg"]),
-# ("sword_swing",sf_vol_8|sf_priority_2,["saber_swing1.mp3","saber_swing2.mp3","saber_swing3.mp3","saber_swing4.mp3","saber_swing5.mp3","saber_swing6.mp3","saber_swing7.mp3","saber_swing8.mp3",]),
-#  ("sword_swing",sf_vol_8|sf_priority_2,["silence.mp3",]),
+# ("sword_swing",sf_vol_8|sf_priority_2,["saber_swing1.ogg","saber_swing2.ogg","saber_swing3.ogg","saber_swing4.ogg","saber_swing5.ogg","saber_swing6.ogg","saber_swing7.ogg","saber_swing8.ogg",]),
+#  ("sword_swing",sf_vol_8|sf_priority_2,["silence.ogg",]),
  
  ("footstep_grass", sf_vol_4|sf_priority_1,["footstep_1.ogg","footstep_2.ogg","footstep_3.ogg","footstep_4.ogg"]),
  ("footstep_wood", sf_vol_6|sf_priority_1,["footstep_wood_1.ogg","footstep_wood_2.ogg","footstep_wood_4.ogg"]),
@@ -56,17 +56,17 @@ sounds = [
 # ("footstep_horse_4f",sf_priority_3, ["s_footstep_horse_4f.wav"]),
 # ("footstep_horse_5b",sf_priority_3, ["s_footstep_horse_5b.wav"]),
 # ("footstep_horse_5f",sf_priority_3, ["s_footstep_horse_5f.wav"]),
- # ("footstep_horse",sf_priority_3, ["speeder_idle.mp3"]),
- # ("footstep_horse_1b",sf_priority_3, ["speeder_idle.mp3"]),
- # ("footstep_horse_1f",sf_priority_3, ["speeder_idle.mp3"]),
- # ("footstep_horse_2b",sf_priority_3, ["speeder_idle.mp3"]),
- # ("footstep_horse_2f",sf_priority_3, ["speeder_idle.mp3"]),
- # ("footstep_horse_3b",sf_priority_3, ["speeder_idle.mp3"]),
- # ("footstep_horse_3f",sf_priority_3, ["speeder_idle.mp3"]),
- # ("footstep_horse_4b",sf_priority_3, ["speeder_idle.mp3"]),
- # ("footstep_horse_4f",sf_priority_3, ["speeder_idle.mp3"]),
- # ("footstep_horse_5b",sf_priority_3, ["speeder_idle.mp3"]),
- # ("footstep_horse_5f",sf_priority_3, ["speeder_idle.mp3"]), 
+ # ("footstep_horse",sf_priority_3, ["speeder_idle.ogg"]),
+ # ("footstep_horse_1b",sf_priority_3, ["speeder_idle.ogg"]),
+ # ("footstep_horse_1f",sf_priority_3, ["speeder_idle.ogg"]),
+ # ("footstep_horse_2b",sf_priority_3, ["speeder_idle.ogg"]),
+ # ("footstep_horse_2f",sf_priority_3, ["speeder_idle.ogg"]),
+ # ("footstep_horse_3b",sf_priority_3, ["speeder_idle.ogg"]),
+ # ("footstep_horse_3f",sf_priority_3, ["speeder_idle.ogg"]),
+ # ("footstep_horse_4b",sf_priority_3, ["speeder_idle.ogg"]),
+ # ("footstep_horse_4f",sf_priority_3, ["speeder_idle.ogg"]),
+ # ("footstep_horse_5b",sf_priority_3, ["speeder_idle.ogg"]),
+ # ("footstep_horse_5f",sf_priority_3, ["speeder_idle.ogg"]), 
  ("footstep_horse",sf_priority_3, []),
  ("footstep_horse_1b",sf_priority_3, []),
  ("footstep_horse_1f",sf_priority_3, []),
@@ -87,13 +87,13 @@ sounds = [
  #SW - modified horse_jump_begin and horse_jump_end
  #("horse_jump_begin", sf_vol_7|sf_priority_9,["horse_jump_begin.ogg"]),
  #("horse_jump_end", sf_vol_7|sf_priority_9,["horse_jump_end.ogg"]),
- ("horse_jump_begin", sf_vol_7|sf_priority_9,["speeder_jump_begin.mp3"]),
- ("horse_jump_end", sf_vol_7|sf_priority_9,["speeder_jump_end.mp3"]), 
+ ("horse_jump_begin", sf_vol_7|sf_priority_9,["speeder_jump_begin.ogg"]),
+ ("horse_jump_end", sf_vol_7|sf_priority_9,["speeder_jump_end.ogg"]), 
  #SW - modified horse_jump_begin_water and horse_jump_end_water
  #("horse_jump_begin_water", sf_vol_4|sf_priority_9,["jump_begin_water.ogg"]),
  #("horse_jump_end_water", sf_vol_4|sf_priority_9,["jump_end_water.ogg"]),
- ("horse_jump_begin_water", sf_vol_4|sf_priority_9,["speeder_jump_begin.mp3"]),
- ("horse_jump_end_water", sf_vol_4|sf_priority_9,["speeder_jump_end.mp3"]),
+ ("horse_jump_begin_water", sf_vol_4|sf_priority_9,["speeder_jump_begin.ogg"]),
+ ("horse_jump_end_water", sf_vol_4|sf_priority_9,["speeder_jump_end.ogg"]),
  
  #SW - modified release_bow to be silent
  #("release_bow",sf_vol_5, ["release_bow_1.ogg"]),
@@ -109,41 +109,41 @@ sounds = [
 #SW - modified reload_crossbow 
 # ("reload_crossbow",sf_vol_3, ["reload_crossbow_1.ogg"]),
 # ("reload_crossbow_continue",sf_vol_6, ["put_back_dagger.ogg"]),
- ("reload_crossbow",sf_vol_7|sf_priority_7, ["blaster_reload_a.mp3"]),
- ("reload_crossbow_continue",sf_vol_7|sf_priority_7, ["blaster_reload_b.mp3"]),
-# ("reload_pistol",sf_vol_7|sf_priority_7, ["blaster_reload_a.mp3"]),		#doesn't work. with the custom_sound flag...
-# ("reload_pistol_continue",sf_vol_7|sf_priority_7, ["blaster_reload_b.mp3"]),	#doesn't work. with the custom_sound flag...
-# ("reload_musket",sf_vol_7|sf_priority_7, ["blaster_reload_a.mp3"]),		#doesn't work. with the custom_sound flag...
-# ("reload_musket_continue",sf_vol_7|sf_priority_7, ["blaster_reload_b.mp3"]),	#doesn't work. with the custom_sound flag...
+ ("reload_crossbow",sf_vol_7|sf_priority_7, ["blaster_reload_a.ogg"]),
+ ("reload_crossbow_continue",sf_vol_7|sf_priority_7, ["blaster_reload_b.ogg"]),
+# ("reload_pistol",sf_vol_7|sf_priority_7, ["blaster_reload_a.ogg"]),		#doesn't work. with the custom_sound flag...
+# ("reload_pistol_continue",sf_vol_7|sf_priority_7, ["blaster_reload_b.ogg"]),	#doesn't work. with the custom_sound flag...
+# ("reload_musket",sf_vol_7|sf_priority_7, ["blaster_reload_a.ogg"]),		#doesn't work. with the custom_sound flag...
+# ("reload_musket_continue",sf_vol_7|sf_priority_7, ["blaster_reload_b.ogg"]),	#doesn't work. with the custom_sound flag...
  
  
  #SW - modified pull_bow and pull_arrow
  #("pull_bow",sf_vol_4, ["pull_bow_1.ogg"]),
- #("pull_bow",sf_priority_9|sf_vol_4|sf_looping|sf_start_at_random_pos, ["force_power.mp3"]),
+ #("pull_bow",sf_priority_9|sf_vol_4|sf_looping|sf_start_at_random_pos, ["force_power.ogg"]),
  ("pull_bow",sf_vol_4|sf_looping|sf_start_at_random_pos, []),
  #("pull_arrow",sf_vol_5, ["pull_arrow.ogg"]),
  ("pull_arrow",sf_vol_5, []),
 
  ("arrow_pass_by",0, ["arrow_pass_by_1.ogg","arrow_pass_by_2.ogg","arrow_pass_by_3.ogg","arrow_pass_by_4.ogg"]),
  #("bolt_pass_by",0, ["bolt_pass_by_1.ogg"]),
- ("bolt_pass_by",0, ["boltby_01.mp3","boltby_02.mp3","boltby_03.mp3","boltby_04.mp3","boltby_05.mp3","boltby_06.mp3","boltby_07.mp3","boltby_08.mp3","boltby_09.mp3","boltby_10.mp3"]),
+ ("bolt_pass_by",0, ["boltby_01.ogg","boltby_02.ogg","boltby_03.ogg","boltby_04.ogg","boltby_05.ogg","boltby_06.ogg","boltby_07.ogg","boltby_08.ogg","boltby_09.ogg","boltby_10.ogg"]),
  ("javelin_pass_by",0, ["javelin_pass_by_1.ogg","javelin_pass_by_2.ogg"]),
  ("stone_pass_by",sf_vol_9, ["stone_pass_by_1.ogg"]),
  ("axe_pass_by",0, ["axe_pass_by_1.ogg"]),
  ("knife_pass_by",0, ["knife_pass_by_1.ogg"]),
  #SW - modified bullet_pass_by
  #("bullet_pass_by",0, ["arrow_whoosh_1.ogg"]),
- ("bullet_pass_by",0, ["boltby_01.mp3","boltby_02.mp3","boltby_03.mp3","boltby_04.mp3","boltby_05.mp3","boltby_06.mp3","boltby_07.mp3","boltby_08.mp3","boltby_09.mp3","boltby_10.mp3"]),
+ ("bullet_pass_by",0, ["boltby_01.ogg","boltby_02.ogg","boltby_03.ogg","boltby_04.ogg","boltby_05.ogg","boltby_06.ogg","boltby_07.ogg","boltby_08.ogg","boltby_09.ogg","boltby_10.ogg"]),
  
 # ("incoming_arrow_hit_ground",sf_priority_7|sf_vol_7, ["arrow_hit_ground_2.ogg","arrow_hit_ground_3.ogg","incoming_bullet_hit_ground_1.ogg"]),
- ("incoming_arrow_hit_ground",sf_priority_7|sf_vol_7, ["bolthit_01.mp3","bolthit_02.mp3","bolthit_03.mp3","bolthit_04.mp3","bolthit_05.mp3","bolthit_06.mp3","bolthit_07.mp3","bolthit_08.mp3","bolthit_09.mp3","bolthit_10.mp3"
-													   ,"bolthit_11.mp3","bolthit_12.mp3","bolthit_13.mp3","bolthit_14.mp3","bolthit_15.mp3","bolthit_16.mp3","bolthit_17.mp3","bolthit_18.mp3","bolthit_19.mp3","bolthit_20.mp3"
-													   ,"bolthit_21.mp3","bolthit_22.mp3","bolthit_23.mp3"]),
+ ("incoming_arrow_hit_ground",sf_priority_7|sf_vol_7, ["bolthit_01.ogg","bolthit_02.ogg","bolthit_03.ogg","bolthit_04.ogg","bolthit_05.ogg","bolthit_06.ogg","bolthit_07.ogg","bolthit_08.ogg","bolthit_09.ogg","bolthit_10.ogg"
+													   ,"bolthit_11.ogg","bolthit_12.ogg","bolthit_13.ogg","bolthit_14.ogg","bolthit_15.ogg","bolthit_16.ogg","bolthit_17.ogg","bolthit_18.ogg","bolthit_19.ogg","bolthit_20.ogg"
+													   ,"bolthit_21.ogg","bolthit_22.ogg","bolthit_23.ogg"]),
 
  #("incoming_bolt_hit_ground",sf_priority_7|sf_vol_7, ["arrow_hit_ground_2.ogg","arrow_hit_ground_3.ogg","incoming_bullet_hit_ground_1.ogg"]),
- ("incoming_bolt_hit_ground",sf_priority_7|sf_vol_7, ["bolthit_01.mp3","bolthit_02.mp3","bolthit_03.mp3","bolthit_04.mp3","bolthit_05.mp3","bolthit_06.mp3","bolthit_07.mp3","bolthit_08.mp3","bolthit_09.mp3","bolthit_10.mp3"
-													   ,"bolthit_11.mp3","bolthit_12.mp3","bolthit_13.mp3","bolthit_14.mp3","bolthit_15.mp3","bolthit_16.mp3","bolthit_17.mp3","bolthit_18.mp3","bolthit_19.mp3","bolthit_20.mp3"
-													   ,"bolthit_21.mp3","bolthit_22.mp3","bolthit_23.mp3"]),
+ ("incoming_bolt_hit_ground",sf_priority_7|sf_vol_7, ["bolthit_01.ogg","bolthit_02.ogg","bolthit_03.ogg","bolthit_04.ogg","bolthit_05.ogg","bolthit_06.ogg","bolthit_07.ogg","bolthit_08.ogg","bolthit_09.ogg","bolthit_10.ogg"
+													   ,"bolthit_11.ogg","bolthit_12.ogg","bolthit_13.ogg","bolthit_14.ogg","bolthit_15.ogg","bolthit_16.ogg","bolthit_17.ogg","bolthit_18.ogg","bolthit_19.ogg","bolthit_20.ogg"
+													   ,"bolthit_21.ogg","bolthit_22.ogg","bolthit_23.ogg"]),
 													   
  ("incoming_javelin_hit_ground",sf_priority_7|sf_vol_7, ["incoming_javelin_hit_ground_1.ogg"]),
  ("incoming_stone_hit_ground",sf_priority_7|sf_vol_7, ["incoming_stone_hit_ground_1.ogg"]),
@@ -151,28 +151,28 @@ sounds = [
  ("incoming_knife_hit_ground",sf_priority_7|sf_vol_7, ["incoming_stone_hit_ground_1.ogg"]),
  #SW - modified incoming_bullet_hit_ground
  #("incoming_bullet_hit_ground",sf_priority_7|sf_vol_7, ["incoming_bullet_hit_ground_1.ogg"]),
- ("incoming_bullet_hit_ground",sf_priority_7|sf_vol_7, ["bolthit_01.mp3","bolthit_02.mp3","bolthit_03.mp3","bolthit_04.mp3","bolthit_05.mp3","bolthit_06.mp3","bolthit_07.mp3","bolthit_08.mp3","bolthit_09.mp3","bolthit_10.mp3"
-													   ,"bolthit_11.mp3","bolthit_12.mp3","bolthit_13.mp3","bolthit_14.mp3","bolthit_15.mp3","bolthit_16.mp3","bolthit_17.mp3","bolthit_18.mp3","bolthit_19.mp3","bolthit_20.mp3"
-													   ,"bolthit_21.mp3","bolthit_22.mp3","bolthit_23.mp3"]),
+ ("incoming_bullet_hit_ground",sf_priority_7|sf_vol_7, ["bolthit_01.ogg","bolthit_02.ogg","bolthit_03.ogg","bolthit_04.ogg","bolthit_05.ogg","bolthit_06.ogg","bolthit_07.ogg","bolthit_08.ogg","bolthit_09.ogg","bolthit_10.ogg"
+													   ,"bolthit_11.ogg","bolthit_12.ogg","bolthit_13.ogg","bolthit_14.ogg","bolthit_15.ogg","bolthit_16.ogg","bolthit_17.ogg","bolthit_18.ogg","bolthit_19.ogg","bolthit_20.ogg"
+													   ,"bolthit_21.ogg","bolthit_22.ogg","bolthit_23.ogg"]),
 
 # ("outgoing_arrow_hit_ground",sf_priority_7|sf_vol_7, ["outgoing_arrow_hit_ground.ogg"]),
- ("outgoing_arrow_hit_ground",sf_priority_7|sf_vol_7, ["bolthit_01.mp3","bolthit_02.mp3","bolthit_03.mp3","bolthit_04.mp3","bolthit_05.mp3","bolthit_06.mp3","bolthit_07.mp3","bolthit_08.mp3","bolthit_09.mp3","bolthit_10.mp3"
-													   ,"bolthit_11.mp3","bolthit_12.mp3","bolthit_13.mp3","bolthit_14.mp3","bolthit_15.mp3","bolthit_16.mp3","bolthit_17.mp3","bolthit_18.mp3","bolthit_19.mp3","bolthit_20.mp3"
-													   ,"bolthit_21.mp3","bolthit_22.mp3","bolthit_23.mp3"]), 
+ ("outgoing_arrow_hit_ground",sf_priority_7|sf_vol_7, ["bolthit_01.ogg","bolthit_02.ogg","bolthit_03.ogg","bolthit_04.ogg","bolthit_05.ogg","bolthit_06.ogg","bolthit_07.ogg","bolthit_08.ogg","bolthit_09.ogg","bolthit_10.ogg"
+													   ,"bolthit_11.ogg","bolthit_12.ogg","bolthit_13.ogg","bolthit_14.ogg","bolthit_15.ogg","bolthit_16.ogg","bolthit_17.ogg","bolthit_18.ogg","bolthit_19.ogg","bolthit_20.ogg"
+													   ,"bolthit_21.ogg","bolthit_22.ogg","bolthit_23.ogg"]), 
 
  #("outgoing_bolt_hit_ground",sf_priority_7|sf_vol_7,  ["outgoing_arrow_hit_ground.ogg"]),
- ("outgoing_bolt_hit_ground",sf_priority_7|sf_vol_7, ["bolthit_01.mp3","bolthit_02.mp3","bolthit_03.mp3","bolthit_04.mp3","bolthit_05.mp3","bolthit_06.mp3","bolthit_07.mp3","bolthit_08.mp3","bolthit_09.mp3","bolthit_10.mp3"
-													   ,"bolthit_11.mp3","bolthit_12.mp3","bolthit_13.mp3","bolthit_14.mp3","bolthit_15.mp3","bolthit_16.mp3","bolthit_17.mp3","bolthit_18.mp3","bolthit_19.mp3","bolthit_20.mp3"
-													   ,"bolthit_21.mp3","bolthit_22.mp3","bolthit_23.mp3"]), 
+ ("outgoing_bolt_hit_ground",sf_priority_7|sf_vol_7, ["bolthit_01.ogg","bolthit_02.ogg","bolthit_03.ogg","bolthit_04.ogg","bolthit_05.ogg","bolthit_06.ogg","bolthit_07.ogg","bolthit_08.ogg","bolthit_09.ogg","bolthit_10.ogg"
+													   ,"bolthit_11.ogg","bolthit_12.ogg","bolthit_13.ogg","bolthit_14.ogg","bolthit_15.ogg","bolthit_16.ogg","bolthit_17.ogg","bolthit_18.ogg","bolthit_19.ogg","bolthit_20.ogg"
+													   ,"bolthit_21.ogg","bolthit_22.ogg","bolthit_23.ogg"]), 
  ("outgoing_javelin_hit_ground",sf_priority_7|sf_vol_10, ["outgoing_arrow_hit_ground.ogg"]),
  ("outgoing_stone_hit_ground",sf_priority_7|sf_vol_7, ["incoming_stone_hit_ground_1.ogg"]),
  ("outgoing_axe_hit_ground",sf_priority_7|sf_vol_7, ["incoming_javelin_hit_ground_1.ogg"]),
  ("outgoing_knife_hit_ground",sf_priority_7|sf_vol_7, ["incoming_stone_hit_ground_1.ogg"]),
  #SW - modified outgoing_bullet_hit_ground
  #("outgoing_bullet_hit_ground",sf_priority_7|sf_vol_7, ["incoming_bullet_hit_ground_1.ogg"]),
- ("outgoing_bullet_hit_ground",sf_priority_7|sf_vol_7, ["bolthit_01.mp3","bolthit_02.mp3","bolthit_03.mp3","bolthit_04.mp3","bolthit_05.mp3","bolthit_06.mp3","bolthit_07.mp3","bolthit_08.mp3","bolthit_09.mp3","bolthit_10.mp3"
-													   ,"bolthit_11.mp3","bolthit_12.mp3","bolthit_13.mp3","bolthit_14.mp3","bolthit_15.mp3","bolthit_16.mp3","bolthit_17.mp3","bolthit_18.mp3","bolthit_19.mp3","bolthit_20.mp3"
-													   ,"bolthit_21.mp3","bolthit_22.mp3","bolthit_23.mp3"]),
+ ("outgoing_bullet_hit_ground",sf_priority_7|sf_vol_7, ["bolthit_01.ogg","bolthit_02.ogg","bolthit_03.ogg","bolthit_04.ogg","bolthit_05.ogg","bolthit_06.ogg","bolthit_07.ogg","bolthit_08.ogg","bolthit_09.ogg","bolthit_10.ogg"
+													   ,"bolthit_11.ogg","bolthit_12.ogg","bolthit_13.ogg","bolthit_14.ogg","bolthit_15.ogg","bolthit_16.ogg","bolthit_17.ogg","bolthit_18.ogg","bolthit_19.ogg","bolthit_20.ogg"
+													   ,"bolthit_21.ogg","bolthit_22.ogg","bolthit_23.ogg"]),
 
 
  ("draw_sword",sf_priority_4, ["draw_sword.ogg"]),
@@ -190,25 +190,25 @@ sounds = [
  ("put_back_spear",sf_priority_4, ["put_back_to_leather.ogg"]),
  #SW - modified draw_crossbow
  #("draw_crossbow",sf_priority_4, ["draw_crossbow.ogg"]),
- ("draw_crossbow",sf_priority_4, ["ui_equip_blaster.mp3"]),
+ ("draw_crossbow",sf_priority_4, ["ui_equip_blaster.ogg"]),
  ("put_back_crossbow",sf_priority_4, ["put_back_to_leather.ogg"]),
  #SW - modified draw_revolver
  #("draw_revolver",sf_priority_4, ["draw_from_holster.ogg"]),
- ("draw_revolver",sf_priority_4, ["ui_equip_blaster.mp3"]),
+ ("draw_revolver",sf_priority_4, ["ui_equip_blaster.ogg"]),
  ("put_back_revolver",sf_priority_4, ["put_back_to_holster.ogg"]),
  #SW - modified draw_dagger (only use itcf_carry_dagger_front_left for lightsaber weapons)
  #("draw_dagger",sf_priority_4, ["draw_dagger.ogg"]),
  #("put_back_dagger",sf_priority_4, ["put_back_dagger.ogg"]),
- ("draw_dagger",sf_priority_9|sf_vol_9, ["lightsaber_powerup.mp3"]),
- ("put_back_dagger",sf_priority_9|sf_vol_9, ["lightsaber_powerdown.mp3"]), 
+ ("draw_dagger",sf_priority_9|sf_vol_9, ["lightsaber_powerup.ogg"]),
+ ("put_back_dagger",sf_priority_9|sf_vol_9, ["lightsaber_powerdown.ogg"]), 
  ("draw_bow",sf_priority_4, ["draw_bow.ogg"]),
  ("put_back_bow",sf_priority_4, ["put_back_to_holster.ogg"]),
  #SW - modified draw_shield
  #("draw_shield",sf_priority_4|sf_vol_7, ["draw_shield.ogg"]),
- ("draw_shield",sf_priority_4|sf_vol_7, ["wep_shoulder_on.mp3"]),
+ ("draw_shield",sf_priority_4|sf_vol_7, ["wep_shoulder_on.ogg"]),
  #SW - modified put_back_shield
  #("put_back_shield",sf_priority_4|sf_vol_7, ["put_back_shield.ogg"]),
- ("put_back_shield",sf_priority_4|sf_vol_7, ["wep_shoulder_off.mp3"]),
+ ("put_back_shield",sf_priority_4|sf_vol_7, ["wep_shoulder_off.ogg"]),
  ("draw_other",sf_priority_4, ["draw_other.ogg"]),
  ("put_back_other",sf_priority_4, ["draw_other2.ogg"]),
 
@@ -226,11 +226,11 @@ sounds = [
 #                                              "hit_metal_metal_9.ogg","hit_metal_metal_10.ogg",
 #                                              "clang_metal_1.ogg","clang_metal_2.ogg"]),
 # ("hit_wood_metal",sf_priority_7|sf_vol_10, ["hit_metal_metal_1.ogg","hit_metal_metal_2.ogg","hit_wood_metal_7.ogg"]),
- ("hit_wood_wood",sf_priority_7|sf_vol_10, ["saber_clash1.mp3","saber_clash2.mp3","saber_clash3.mp3"]),#dummy
-# ("hit_metal_metal",sf_priority_7|sf_vol_10, ["saber_clash1.mp3","saber_clash2.mp3","saber_clash3.mp3"]),
+ ("hit_wood_wood",sf_priority_7|sf_vol_10, ["saber_clash1.ogg","saber_clash2.ogg","saber_clash3.ogg"]),#dummy
+# ("hit_metal_metal",sf_priority_7|sf_vol_10, ["saber_clash1.ogg","saber_clash2.ogg","saber_clash3.ogg"]),
  ("hit_metal_metal",sf_priority_7|sf_vol_10, ["hit_metal_metal_3.ogg","hit_metal_metal_4.ogg","hit_metal_metal_5.ogg","hit_metal_metal_6.ogg","hit_metal_metal_7.ogg","hit_metal_metal_8.ogg","hit_metal_metal_9.ogg","hit_metal_metal_10.ogg","clang_metal_1.ogg","clang_metal_2.ogg"]),
-# ("hit_metal_metal",sf_priority_7|sf_vol_10, ["saber_clash1.mp3","saber_clash2.mp3","saber_clash3.mp3"]),
- ("hit_wood_metal",sf_priority_7|sf_vol_10, ["saber_clash1.mp3","saber_clash2.mp3","saber_clash3.mp3"]),
+# ("hit_metal_metal",sf_priority_7|sf_vol_10, ["saber_clash1.ogg","saber_clash2.ogg","saber_clash3.ogg"]),
+ ("hit_wood_metal",sf_priority_7|sf_vol_10, ["saber_clash1.ogg","saber_clash2.ogg","saber_clash3.ogg"]),
  
 # ("clang_metal", sf_priority_9,["sword_clank_metal_09.ogg","sword_clank_metal_10.ogg","sword_clank_metal_12.ogg","sword_clank_metal_13.ogg"]),
 ## ("shield_hit_cut",sf_priority_5, ["shield_hit_cut_3.ogg","shield_hit_cut_4.ogg","shield_hit_cut_5.ogg"]),
@@ -240,10 +240,10 @@ sounds = [
  ("shield_hit_metal_metal",sf_priority_7|sf_vol_10, ["shield_hit_metal_metal_1.ogg","shield_hit_metal_metal_2.ogg","shield_hit_metal_metal_3.ogg","shield_hit_metal_metal_4.ogg"]),
 # ("shield_hit_wood_metal",sf_priority_7|sf_vol_10, ["shield_hit_cut_3.ogg","shield_hit_cut_4.ogg","shield_hit_cut_5.ogg","shield_hit_cut_10.ogg"]), #(shield is wood)
 # ("shield_hit_metal_wood",sf_priority_7|sf_vol_10, ["shield_hit_metal_wood_1.ogg","shield_hit_metal_wood_2.ogg","shield_hit_metal_wood_3.ogg"]),#(shield is metal)
- ("shield_hit_wood_wood",sf_priority_7|sf_vol_10, ["shield_hit1.mp3","shield_hit2.mp3","shield_hit3.mp3"]),
-# ("shield_hit_metal_metal",sf_priority_7|sf_vol_10, ["shield_hit1.mp3","shield_hit2.mp3","shield_hit3.mp3"]),
- ("shield_hit_wood_metal",sf_priority_7|sf_vol_10, ["shield_hit1.mp3","shield_hit2.mp3","shield_hit3.mp3"]), #(shield is wood)
- ("shield_hit_metal_wood",sf_priority_7|sf_vol_10, ["shield_hit1.mp3","shield_hit2.mp3","shield_hit3.mp3"]),#(shield is metal) 
+ ("shield_hit_wood_wood",sf_priority_7|sf_vol_10, ["shield_hit1.ogg","shield_hit2.ogg","shield_hit3.ogg"]),
+# ("shield_hit_metal_metal",sf_priority_7|sf_vol_10, ["shield_hit1.ogg","shield_hit2.ogg","shield_hit3.ogg"]),
+ ("shield_hit_wood_metal",sf_priority_7|sf_vol_10, ["shield_hit1.ogg","shield_hit2.ogg","shield_hit3.ogg"]), #(shield is wood)
+ ("shield_hit_metal_wood",sf_priority_7|sf_vol_10, ["shield_hit1.ogg","shield_hit2.ogg","shield_hit3.ogg"]),#(shield is metal) 
 
  ("shield_broken",sf_priority_9, ["shield_broken.ogg"]),
  ("man_hit",sf_priority_7|sf_vol_10, ["man_hit_5.ogg","man_hit_6.ogg","man_hit_7.ogg","man_hit_8.ogg","man_hit_9.ogg","man_hit_10.ogg","man_hit_11.ogg","man_hit_12.ogg","man_hit_13.ogg","man_hit_14.ogg","man_hit_15.ogg",
@@ -314,23 +314,23 @@ sounds = [
  
  #SW - modified neigh
  #("neigh",0, ["horse_exterior_whinny_01.ogg","horse_exterior_whinny_02.ogg","horse_exterior_whinny_03.ogg","horse_exterior_whinny_04.ogg","horse_exterior_whinny_05.ogg","horse_whinny.ogg"]),
- ("neigh",0, ["engine_stop.mp3"]),
+ ("neigh",0, ["engine_stop.ogg"]),
  #SW - modified gallop
  #("gallop",sf_vol_3, ["horse_gallop_3.ogg","horse_gallop_4.ogg","horse_gallop_5.ogg"]),
- #("gallop",sf_vol_3, ["speeder_idle.mp3"]),
- #("gallop",sf_vol_3|sf_looping, ["speeder_idle.mp3"]),
+ #("gallop",sf_vol_3, ["speeder_idle.ogg"]),
+ #("gallop",sf_vol_3|sf_looping, ["speeder_idle.ogg"]),
  ("gallop",sf_vol_3, []),
  
  
  #SW - modified battle noise
  #("battle",sf_vol_4, ["battle.ogg"]),
- ("battle",sf_vol_5, ["space_battle_noise_1.mp3","space_battle_noise_2.mp3"]),
+ ("battle",sf_vol_5, ["space_battle_noise_1.ogg","space_battle_noise_2.ogg"]),
  
 # ("bow_shoot_player",sf_priority_10|sf_vol_10, ["bow_shoot_4.ogg"]),
 # ("bow_shoot",sf_priority_4, ["bow_shoot_4.ogg"]),
 # ("crossbow_shoot",sf_priority_4, ["bow_shoot_2.ogg"]),
  #@>("arrow_hit_body",sf_priority_4, ["arrow_hit_body_1.ogg","arrow_hit_body_2.ogg","arrow_hit_body_3.ogg"]),
- ("arrow_hit_body",sf_priority_4, ["rvnshn_blaster_hit.mp3","rvnshn_blaster_hit2.mp3","rvnshn_blaster_hit3.mp3","rvnshn_blaster_hit4.mp3"]),
+ ("arrow_hit_body",sf_priority_4, ["rvnshn_blaster_hit.ogg","rvnshn_blaster_hit2.ogg","rvnshn_blaster_hit3.ogg","rvnshn_blaster_hit4.ogg"]),
  ("metal_hit_low_armor_low_damage",sf_priority_5|sf_vol_9, ["sword_hit_lo_armor_lo_dmg_1.ogg","sword_hit_lo_armor_lo_dmg_2.ogg","sword_hit_lo_armor_lo_dmg_3.ogg"]),
  ("metal_hit_low_armor_high_damage",sf_priority_5|sf_vol_9, ["sword_hit_lo_armor_hi_dmg_1.ogg","sword_hit_lo_armor_hi_dmg_2.ogg","sword_hit_lo_armor_hi_dmg_3.ogg"]),
  ("metal_hit_high_armor_low_damage",sf_priority_5|sf_vol_9, ["metal_hit_high_armor_low_damage.ogg","metal_hit_high_armor_low_damage_2.ogg","metal_hit_high_armor_low_damage_3.ogg"]),
@@ -346,7 +346,7 @@ sounds = [
  ("wooden_hit_high_armor_high_damage",sf_priority_5|sf_vol_9, ["sword_hit_lo_armor_hi_dmg_1.ogg","sword_hit_lo_armor_hi_dmg_2.ogg","sword_hit_lo_armor_hi_dmg_3.ogg"]),
  ("blunt_hit",sf_priority_5|sf_vol_9, ["punch_1.ogg","punch_4.ogg","punch_4.ogg","punch_5.ogg"]),
 # ("player_hit_by_arrow",sf_priority_10|sf_vol_10, ["player_hit_by_arrow.ogg"]),
- ("player_hit_by_arrow",sf_priority_10|sf_vol_10, ["rvnshn_blaster_hit.mp3","rvnshn_blaster_hit2.mp3","rvnshn_blaster_hit3.mp3","rvnshn_blaster_hit4.mp3"]),
+ ("player_hit_by_arrow",sf_priority_10|sf_vol_10, ["rvnshn_blaster_hit.ogg","rvnshn_blaster_hit2.ogg","rvnshn_blaster_hit3.ogg","rvnshn_blaster_hit4.ogg"]),
  ("pistol_shot",sf_priority_10|sf_vol_10, ["fl_pistol.wav"]),
  ("man_grunt",sf_priority_6|sf_vol_4, ["man_excercise_1.ogg","man_excercise_2.ogg","man_excercise_4.ogg"]),
  ("man_breath_hard",sf_priority_3|sf_vol_8, ["man_ugh_1.ogg","man_ugh_2.ogg","man_ugh_4.ogg","man_ugh_7.ogg","man_ugh_12.ogg","man_ugh_13.ogg","man_ugh_17.ogg"]),
@@ -370,7 +370,7 @@ sounds = [
  ("encounter_vaegirs_enemy",sf_2d|sf_vol_5, ["encounter_vaegirs_neutral.ogg","encounter_vaegirs_neutral_2.ogg","encounter_vaegirs_neutral_3.ogg","encounter_vaegirs_neutral_4.ogg"]),
  #SW - modified sneak_town_halt
  #("sneak_town_halt",sf_2d, ["sneak_halt_1.ogg","sneak_halt_2.ogg"]),
- ("sneak_town_halt",sf_2d, ["set_for_stun.mp3"]),
+ ("sneak_town_halt",sf_2d, ["set_for_stun.ogg"]),
 
 #SW - modified horse_walk, trop, canter, gallop, breath, snort, low_whinny
  # ("horse_walk",sf_priority_3|sf_vol_9, ["horse_walk_1.ogg","horse_walk_2.ogg","horse_walk_3.ogg","horse_walk_4.ogg"]),
@@ -380,10 +380,10 @@ sounds = [
 # ("horse_breath",sf_priority_3|sf_priority_9|sf_vol_10, ["horse_breath_4.ogg","horse_breath_5.ogg","horse_breath_6.ogg","horse_breath_7.ogg"]),
 # ("horse_snort",sf_priority_5|sf_vol_7, ["horse_snort_1.ogg","horse_snort_2.ogg","horse_snort_3.ogg","horse_snort_4.ogg","horse_snort_5.ogg"]),
 # ("horse_low_whinny",sf_vol_9, ["horse_whinny-1.ogg","horse_whinny-2.ogg"]),
- #("horse_walk",sf_priority_3|sf_vol_9, ["speeder_walk_short.mp3"]),
- #("horse_trot",sf_priority_3|sf_vol_9, ["speeder_trot_short.mp3"]),
- #("horse_canter",sf_priority_3|sf_vol_9, ["speeder_canter_short.mp3"]),
- #("horse_gallop",sf_priority_3|sf_vol_9, ["speeder_gallop_short.mp3"]),
+ #("horse_walk",sf_priority_3|sf_vol_9, ["speeder_walk_short.ogg"]),
+ #("horse_trot",sf_priority_3|sf_vol_9, ["speeder_trot_short.ogg"]),
+ #("horse_canter",sf_priority_3|sf_vol_9, ["speeder_canter_short.ogg"]),
+ #("horse_gallop",sf_priority_3|sf_vol_9, ["speeder_gallop_short.ogg"]),
  # ("horse_walk",sf_priority_3|sf_vol_9, ["speeder_walk.ogg"]),
  # ("horse_trot",sf_priority_3|sf_vol_9, ["speeder_trot.ogg"]),
  # ("horse_canter",sf_priority_3|sf_vol_9, ["speeder_canter.ogg"]),
@@ -419,60 +419,60 @@ sounds = [
  #("distant_chicken", sf_2d|sf_priority_8|sf_vol_8, ["d_chicken1.ogg","d_chicken2.ogg"]),
  #("distant_carpenter", sf_2d|sf_priority_8|sf_vol_3, ["d_carpenter1.ogg","d_saw_short3.ogg"]),
  #("distant_blacksmith", sf_2d|sf_priority_8|sf_vol_4, ["d_blacksmith2.ogg"]),
- ("distant_dog_bark", sf_2d|sf_priority_8|sf_vol_2, ["str_door_blast_open.mp3","str_door_blast_close_stop.mp3","str_door_blast_open_stop.mp3"]),
- ("blast_door_open", sf_2d|sf_priority_8|sf_vol_2, ["str_door_blast_open.mp3"]),
- ("blast_door_close", sf_2d|sf_priority_8|sf_vol_2, ["str_door_blast_close_stop.mp3"]),
- ("distant_owl", sf_2d|sf_priority_8|sf_vol_2, ["str_turret_pwr_on.mp3","veh_s_foil_movement.mp3"]),
- ("distant_chicken", sf_2d|sf_priority_8|sf_vol_2, ["veh_s_foil_movement.mp3","str_turret_pwr_on.mp3"]),
- ("distant_carpenter", sf_2d|sf_priority_8|sf_vol_2, ["veh_x_wing_flyby_1.mp3","veh_shuttle_powerdown.mp3"]),
- ("distant_blacksmith", sf_2d|sf_priority_8|sf_vol_2, ["veh_shuttle_powerdown.mp3","veh_x_wing_flyby_1.mp3"]), 
+ ("distant_dog_bark", sf_2d|sf_priority_8|sf_vol_2, ["str_door_blast_open.ogg","str_door_blast_close_stop.ogg","str_door_blast_open_stop.ogg"]),
+ ("blast_door_open", sf_2d|sf_priority_8|sf_vol_2, ["str_door_blast_open.ogg"]),
+ ("blast_door_close", sf_2d|sf_priority_8|sf_vol_2, ["str_door_blast_close_stop.ogg"]),
+ ("distant_owl", sf_2d|sf_priority_8|sf_vol_2, ["str_turret_pwr_on.ogg","veh_s_foil_movement.ogg"]),
+ ("distant_chicken", sf_2d|sf_priority_8|sf_vol_2, ["veh_s_foil_movement.ogg","str_turret_pwr_on.ogg"]),
+ ("distant_carpenter", sf_2d|sf_priority_8|sf_vol_2, ["veh_x_wing_flyby_1.ogg","veh_shuttle_powerdown.ogg"]),
+ ("distant_blacksmith", sf_2d|sf_priority_8|sf_vol_2, ["veh_shuttle_powerdown.ogg","veh_x_wing_flyby_1.ogg"]), 
  
  ("arena_ambiance", sf_2d|sf_priority_8|sf_vol_3|sf_looping, ["arena_loop11.ogg"]),
  ("town_ambiance", sf_2d|sf_priority_8|sf_vol_3|sf_looping, ["town_loop_3.ogg"]),
- ("cantina_ambiance", sf_2d|sf_priority_8|sf_vol_9|sf_looping, ["amb_cantina_large_lp.mp3"]),
+ ("cantina_ambiance", sf_2d|sf_priority_8|sf_vol_9|sf_looping, ["amb_cantina_large_lp.ogg"]),
  
  #SW - new sounds
- #("blaster04",sf_priority_8|sf_vol_8, ["blaster04 _long.mp3"]), 
- ("laser_fire",sf_priority_8|sf_vol_8, ["blaster04_long.mp3"]), 
- ("bigblaster01",sf_priority_8|sf_vol_8, ["bigblaster01.mp3"]),
- ("bigblaster15_variant",sf_priority_8|sf_vol_8, ["bigblaster15_E11_variant.mp3"]),
- ("bigblaster15",sf_priority_8|sf_vol_8, ["wep_e11_blaster.mp3"]),
- ("bigblaster19",sf_priority_8|sf_vol_8, ["bigblaster19_DL44_DH17_short.mp3"]), 
- ("bigblaster22",sf_priority_8|sf_vol_8, ["rvnshn_wookie_bowcaster.mp3"]), #["bigblaster22_EE3_bowcaster_variant.mp3"]), 
- ("ionblaster",sf_priority_8|sf_vol_8, ["ionblaster_other01.mp3"]),  
- ("sonicblaster",sf_priority_8|sf_vol_10, ["rvnshn_sonic_weapon.mp3"]), #["sonicblaster_other02.mp3"]),  
- ("stunblaster",sf_priority_8|sf_vol_8, ["stunblaster_other03.mp3"]),  
- ("littleblaster",sf_priority_8|sf_vol_8, ["littleblaster01.mp3"]),   
- ("heavyrepeater",sf_priority_8|sf_vol_8, ["rvnshn_heavy_repeater.mp3"]),   
- ("stormrifle",sf_priority_8|sf_vol_8, ["rvnshn_stormrifle.mp3"]),   
+ #("blaster04",sf_priority_8|sf_vol_8, ["blaster04 _long.ogg"]), 
+ ("laser_fire",sf_priority_8|sf_vol_8, ["blaster04_long.ogg"]), 
+ ("bigblaster01",sf_priority_8|sf_vol_8, ["bigblaster01.ogg"]),
+ ("bigblaster15_variant",sf_priority_8|sf_vol_8, ["bigblaster15_E11_variant.ogg"]),
+ ("bigblaster15",sf_priority_8|sf_vol_8, ["wep_e11_blaster.ogg"]),
+ ("bigblaster19",sf_priority_8|sf_vol_8, ["bigblaster19_DL44_DH17_short.ogg"]), 
+ ("bigblaster22",sf_priority_8|sf_vol_8, ["rvnshn_wookie_bowcaster.ogg"]), #["bigblaster22_EE3_bowcaster_variant.ogg"]), 
+ ("ionblaster",sf_priority_8|sf_vol_8, ["ionblaster_other01.ogg"]),  
+ ("sonicblaster",sf_priority_8|sf_vol_10, ["rvnshn_sonic_weapon.ogg"]), #["sonicblaster_other02.ogg"]),  
+ ("stunblaster",sf_priority_8|sf_vol_8, ["stunblaster_other03.ogg"]),  
+ ("littleblaster",sf_priority_8|sf_vol_8, ["littleblaster01.ogg"]),   
+ ("heavyrepeater",sf_priority_8|sf_vol_8, ["rvnshn_heavy_repeater.ogg"]),   
+ ("stormrifle",sf_priority_8|sf_vol_8, ["rvnshn_stormrifle.ogg"]),   
  
- ("flame_fire",sf_priority_8|sf_vol_6, ["flame_fire.mp3"]),
- ("concussion_fire",sf_priority_8|sf_vol_6, ["concussion_fire.mp3"]), 
- ("rocket_fire",sf_priority_8|sf_vol_8, ["rocket_fire.mp3"]),
- ("throw_lightsaber",sf_priority_8|sf_vol_8, ["saber_throw.mp3"]),
- ("force_push",sf_priority_8|sf_vol_8, ["force_push.mp3"]), 
- ("force_lightning",sf_priority_8|sf_vol_8, ["force_lightning_01.mp3","force_lightning_02.mp3"]), 
+ ("flame_fire",sf_priority_8|sf_vol_6, ["flame_fire.ogg"]),
+ ("concussion_fire",sf_priority_8|sf_vol_6, ["concussion_fire.ogg"]), 
+ ("rocket_fire",sf_priority_8|sf_vol_8, ["rocket_fire.ogg"]),
+ ("throw_lightsaber",sf_priority_8|sf_vol_8, ["saber_throw.ogg"]),
+ ("force_push",sf_priority_8|sf_vol_8, ["force_push.ogg"]), 
+ ("force_lightning",sf_priority_8|sf_vol_8, ["force_lightning_01.ogg","force_lightning_02.ogg"]), 
  ("ship_noise",sf_priority_1|sf_vol_1, []), 
-# ("cantina_ambience",sf_2d|sf_priority_8|sf_vol_10|sf_looping, ["mus_figrin_dan_song_1.mp3","mus_figrin_dan_song_2.mp3"]),		#using music instead
- ("bacta_injector",sf_priority_8|sf_vol_8, ["item_air_gun.mp3"]),
- ("bacta_heal",sf_priority_6|sf_vol_8, ["bacta_heal.mp3"]),
+# ("cantina_ambience",sf_2d|sf_priority_8|sf_vol_10|sf_looping, ["mus_figrin_dan_song_1.ogg","mus_figrin_dan_song_2.ogg"]),		#using music instead
+ ("bacta_injector",sf_priority_8|sf_vol_8, ["item_air_gun.ogg"]),
+ ("bacta_heal",sf_priority_6|sf_vol_8, ["bacta_heal.ogg"]),
  
  #speeders
- #("speeder_noise_idle",sf_priority_6|sf_vol_9, ["speeder_noise_idle.mp3"]),
+ #("speeder_noise_idle",sf_priority_6|sf_vol_9, ["speeder_noise_idle.ogg"]),
  ("speeder_noise_idle",sf_priority_9|sf_vol_9, ["speeder_noise_idle.ogg"]),		#don't use sf_2d or sf_looping
  ("speeder_noise_begin",sf_priority_9|sf_vol_9, ["speeder_noise_begin.ogg"]),		#don't use sf_2d or sf_looping
  ("speeder_noise_moving",sf_priority_6|sf_vol_9, ["speeder_noise_moving.ogg"]),	#don't use sf_2d or sf_looping
  ("speeder_noise_loop", sf_2d|sf_priority_9|sf_vol_9|sf_looping, ["speeder_noise_loop.ogg"]),
 
  #gonk noise
- ("gonk_noise",sf_priority_5|sf_vol_8, ["dro_gonk_voc_a.mp3","dro_gonk_voc_b.mp3","dro_gonk_voc_c.mp3","dro_gonk_voc_d.mp3"]),
+ ("gonk_noise",sf_priority_5|sf_vol_8, ["dro_gonk_voc_a.ogg","dro_gonk_voc_b.ogg","dro_gonk_voc_c.ogg","dro_gonk_voc_d.ogg"]),
  
- #("imperial_hey_you_there",sf_priority_10|sf_vol_10, ["imperial_hey_you_there.mp3"]),
- #("imperial_halt",sf_priority_10|sf_vol_10, ["imperial_halt.mp3"]),
+ #("imperial_hey_you_there",sf_priority_10|sf_vol_10, ["imperial_hey_you_there.ogg"]),
+ #("imperial_halt",sf_priority_10|sf_vol_10, ["imperial_halt.ogg"]),
 
 #SW - new functionality for BSG integration
  ("viper_cannon_impact",sf_vol_6, ["Vip_Impact_Gun.ogg"]),
- ("viper_cannon",sf_vol_10, ["bigblaster01.mp3"]),
+ ("viper_cannon",sf_vol_10, ["bigblaster01.ogg"]),
  ("cylon_cannon",sf_vol_10, ["Rdr_Cannon.ogg"]),
  ("viper_cannon_far",sf_vol_1, ["Vip_Cannon.ogg"]),
  ("cylon_cannon_far",sf_vol_2, ["Rdr_Cannon.ogg"]),
@@ -487,164 +487,164 @@ sounds = [
 #Highlander end--------------------------------------
 
 #jawa sounds
-("jawa_die",sf_priority_8|sf_vol_10, ["jawa_death1.mp3","jawa_death2.mp3","jawa_death3.mp3"]),
-("jawa_grunt",sf_priority_6|sf_vol_8, ["jawa_chatter1.mp3","jawa_confuse1.mp3","jawa_confuse2.mp3","jawa_pushed1.mp3","jawa_pushed2.mp3","jawa_pushed3.mp3"]),
-("jawa_grunt_long",sf_priority_5|sf_vol_8, ["jawa_chatter2.mp3","jawa_anger1.mp3","jawa_anger2.mp3","jawa_anger3.mp3","jawa_pushed1.mp3","jawa_pushed2.mp3","jawa_pushed3.mp3"]),
-("jawa_hit",sf_priority_7|sf_vol_10, ["jawa_pain25.mp3","jawa_pain50.mp3","jawa_pain75.mp3","jawa_pain100.mp3","jawa_choke1.mp3"]),
-("jawa_victory",sf_priority_5|sf_vol_10, ["jawa_victory1.mp3","jawa_victory2.mp3","jawa_victory3.mp3","jawa_pushed1.mp3","jawa_pushed2.mp3","jawa_pushed3.mp3"]),
-("jawa_yell",sf_priority_6|sf_vol_10, ["jawa_anger1.mp3","jawa_anger2.mp3","jawa_anger3.mp3","jawa_pushed1.mp3","jawa_pushed2.mp3","jawa_pushed3.mp3"]),
+("jawa_die",sf_priority_8|sf_vol_10, ["jawa_death1.ogg","jawa_death2.ogg","jawa_death3.ogg"]),
+("jawa_grunt",sf_priority_6|sf_vol_8, ["jawa_chatter1.ogg","jawa_confuse1.ogg","jawa_confuse2.ogg","jawa_pushed1.ogg","jawa_pushed2.ogg","jawa_pushed3.ogg"]),
+("jawa_grunt_long",sf_priority_5|sf_vol_8, ["jawa_chatter2.ogg","jawa_anger1.ogg","jawa_anger2.ogg","jawa_anger3.ogg","jawa_pushed1.ogg","jawa_pushed2.ogg","jawa_pushed3.ogg"]),
+("jawa_hit",sf_priority_7|sf_vol_10, ["jawa_pain25.ogg","jawa_pain50.ogg","jawa_pain75.ogg","jawa_pain100.ogg","jawa_choke1.ogg"]),
+("jawa_victory",sf_priority_5|sf_vol_10, ["jawa_victory1.ogg","jawa_victory2.ogg","jawa_victory3.ogg","jawa_pushed1.ogg","jawa_pushed2.ogg","jawa_pushed3.ogg"]),
+("jawa_yell",sf_priority_6|sf_vol_10, ["jawa_anger1.ogg","jawa_anger2.ogg","jawa_anger3.ogg","jawa_pushed1.ogg","jawa_pushed2.ogg","jawa_pushed3.ogg"]),
 
 #droid sounds
-("droid_die",sf_priority_8|sf_vol_10, ["droid_pain25.mp3","droid_pain50.mp3","droid_pain75.mp3"]),
-("droid_grunt",sf_priority_6|sf_vol_8, ["droid_talk01.mp3","droid_talk02.mp3","droid_talk03.mp3"]),
-("droid_grunt_long",sf_priority_5|sf_vol_8, ["droid_talk01.mp3","droid_talk02.mp3","droid_talk03.mp3"]),
-("droid_hit",sf_priority_7|sf_vol_10, ["droid_pain25.mp3","droid_pain50.mp3","droid_pain75.mp3"]),
-("droid_victory",sf_priority_5|sf_vol_10, ["droid_talk01.mp3","droid_talk02.mp3","droid_talk03.mp3"]),
-("droid_yell",sf_priority_6|sf_vol_10, ["droid_talk01.mp3","droid_talk02.mp3","droid_talk03.mp3"]),
+("droid_die",sf_priority_8|sf_vol_10, ["droid_pain25.ogg","droid_pain50.ogg","droid_pain75.ogg"]),
+("droid_grunt",sf_priority_6|sf_vol_8, ["droid_talk01.ogg","droid_talk02.ogg","droid_talk03.ogg"]),
+("droid_grunt_long",sf_priority_5|sf_vol_8, ["droid_talk01.ogg","droid_talk02.ogg","droid_talk03.ogg"]),
+("droid_hit",sf_priority_7|sf_vol_10, ["droid_pain25.ogg","droid_pain50.ogg","droid_pain75.ogg"]),
+("droid_victory",sf_priority_5|sf_vol_10, ["droid_talk01.ogg","droid_talk02.ogg","droid_talk03.ogg"]),
+("droid_yell",sf_priority_6|sf_vol_10, ["droid_talk01.ogg","droid_talk02.ogg","droid_talk03.ogg"]),
 
 #battledroid sounds
-("battledroid_die",sf_priority_8|sf_vol_10, ["battledroid_pain25.mp3","battledroid_pain50.mp3","battledroid_pain75.mp3"]),
-("battledroid_grunt",sf_priority_6|sf_vol_8, ["battledroid_talk01.mp3","battledroid_talk02.mp3","battledroid_talk03.mp3"]),
-("battledroid_grunt_long",sf_priority_5|sf_vol_8, ["battledroid_talk01.mp3","battledroid_talk02.mp3","battledroid_talk03.mp3"]),
-("battledroid_hit",sf_priority_7|sf_vol_10, ["battledroid_pain25.mp3","battledroid_pain50.mp3","battledroid_pain75.mp3"]),
-("battledroid_victory",sf_priority_5|sf_vol_10, ["battledroid_talk01.mp3","battledroid_talk02.mp3","battledroid_talk03.mp3"]),
-("battledroid_yell",sf_priority_6|sf_vol_10, ["dbattleroid_talk01.mp3","battledroid_talk02.mp3","battledroid_talk03.mp3"]),
+("battledroid_die",sf_priority_8|sf_vol_10, ["battledroid_pain25.ogg","battledroid_pain50.ogg","battledroid_pain75.ogg"]),
+("battledroid_grunt",sf_priority_6|sf_vol_8, ["battledroid_talk01.ogg","battledroid_talk02.ogg","battledroid_talk03.ogg"]),
+("battledroid_grunt_long",sf_priority_5|sf_vol_8, ["battledroid_talk01.ogg","battledroid_talk02.ogg","battledroid_talk03.ogg"]),
+("battledroid_hit",sf_priority_7|sf_vol_10, ["battledroid_pain25.ogg","battledroid_pain50.ogg","battledroid_pain75.ogg"]),
+("battledroid_victory",sf_priority_5|sf_vol_10, ["battledroid_talk01.ogg","battledroid_talk02.ogg","battledroid_talk03.ogg"]),
+("battledroid_yell",sf_priority_6|sf_vol_10, ["dbattleroid_talk01.ogg","battledroid_talk02.ogg","battledroid_talk03.ogg"]),
 
 
 #tusken sounds
-("tusken_die",sf_priority_8|sf_vol_10, ["tusken_death1.mp3","tusken_death2.mp3","tusken_falling1.mp3","tusken_jump1.mp3"]),
-("tusken_grunt",sf_priority_6|sf_vol_8, ["tusken_confuse2.mp3","tusken_confuse3.mp3","tusken_cover1.mp3","tusken_cover2.mp3","tusken_cover3.mp3"]),
-("tusken_grunt_long",sf_priority_5|sf_vol_8, ["tusken_confuse1.mp3","tusken_land1.mp3","tusken_look1.mp3","tusken_look2.mp3","tusken_outflank1.mp3","tusken_outflank2.mp3"]),
-("tusken_hit",sf_priority_7|sf_vol_10, ["tusken_pain25.mp3","tusken_pain50.mp3","tusken_gasp.mp3","tusken_land1.mp3"]),
-("tusken_victory",sf_priority_5|sf_vol_10, ["tusken_victory1.mp3","tusken_taunt.mp3","tusken_look1.mp3","tusken_outflank1.mp3"]),
-("tusken_yell",sf_priority_6|sf_vol_10, ["tusken_anger1.mp3","tusken_anger2.mp3","tusken_anger3.mp3","tusken_pushed2.mp3","tusken_pushed1.mp3"]),
+("tusken_die",sf_priority_8|sf_vol_10, ["tusken_death1.ogg","tusken_death2.ogg","tusken_falling1.ogg","tusken_jump1.ogg"]),
+("tusken_grunt",sf_priority_6|sf_vol_8, ["tusken_confuse2.ogg","tusken_confuse3.ogg","tusken_cover1.ogg","tusken_cover2.ogg","tusken_cover3.ogg"]),
+("tusken_grunt_long",sf_priority_5|sf_vol_8, ["tusken_confuse1.ogg","tusken_land1.ogg","tusken_look1.ogg","tusken_look2.ogg","tusken_outflank1.ogg","tusken_outflank2.ogg"]),
+("tusken_hit",sf_priority_7|sf_vol_10, ["tusken_pain25.ogg","tusken_pain50.ogg","tusken_gasp.ogg","tusken_land1.ogg"]),
+("tusken_victory",sf_priority_5|sf_vol_10, ["tusken_victory1.ogg","tusken_taunt.ogg","tusken_look1.ogg","tusken_outflank1.ogg"]),
+("tusken_yell",sf_priority_6|sf_vol_10, ["tusken_anger1.ogg","tusken_anger2.ogg","tusken_anger3.ogg","tusken_pushed2.ogg","tusken_pushed1.ogg"]),
 
 #trandoshan sounds
-("trandoshan_die",sf_priority_8|sf_vol_10, ["trandoshan_death1.mp3","trandoshan_death2.mp3","trandoshan_death3.mp3","trandoshan_choke1.mp3","trandoshan_choke2.mp3","trandoshan_choke3.mp3"]),
-("trandoshan_grunt",sf_priority_6|sf_vol_8, ["trandoshan_confuse1.mp3","trandoshan_confuse2.mp3","trandoshan_pushed1.mp3","trandoshan_pushed2.mp3","trandoshan_pushed3.mp3"]),
-("trandoshan_grunt_long",sf_priority_5|sf_vol_8, ["trandoshan_confuse3.mp3","trandoshan_sight1.mp3","trandoshan_sight2.mp3","trandoshan_sight3.mp3","trandoshan_chase1.mp3"]),
-("trandoshan_hit",sf_priority_7|sf_vol_10, ["trandoshan_pain25.mp3","trandoshan_pain50.mp3","trandoshan_pain75.mp3","trandoshan_pain100.mp3","trandoshan_gasp.mp3"]),
-("trandoshan_victory",sf_priority_5|sf_vol_10, ["trandoshan_victory1.mp3","trandoshan_victory2.mp3","trandoshan_victory3.mp3","trandoshan_taunt.mp3","trandoshan_look1.mp3","trandoshan_look2.mp3","trandoshan_chase2.mp3","trandoshan_chase3.mp3"]),
-("trandoshan_yell",sf_priority_6|sf_vol_10, ["trandoshan_anger1.mp3","trandoshan_anger2.mp3","trandoshan_anger3.mp3","trandoshan_taunt.mp3","trandoshan_look1.mp3"]),
+("trandoshan_die",sf_priority_8|sf_vol_10, ["trandoshan_death1.ogg","trandoshan_death2.ogg","trandoshan_death3.ogg","trandoshan_choke1.ogg","trandoshan_choke2.ogg","trandoshan_choke3.ogg"]),
+("trandoshan_grunt",sf_priority_6|sf_vol_8, ["trandoshan_confuse1.ogg","trandoshan_confuse2.ogg","trandoshan_pushed1.ogg","trandoshan_pushed2.ogg","trandoshan_pushed3.ogg"]),
+("trandoshan_grunt_long",sf_priority_5|sf_vol_8, ["trandoshan_confuse3.ogg","trandoshan_sight1.ogg","trandoshan_sight2.ogg","trandoshan_sight3.ogg","trandoshan_chase1.ogg"]),
+("trandoshan_hit",sf_priority_7|sf_vol_10, ["trandoshan_pain25.ogg","trandoshan_pain50.ogg","trandoshan_pain75.ogg","trandoshan_pain100.ogg","trandoshan_gasp.ogg"]),
+("trandoshan_victory",sf_priority_5|sf_vol_10, ["trandoshan_victory1.ogg","trandoshan_victory2.ogg","trandoshan_victory3.ogg","trandoshan_taunt.ogg","trandoshan_look1.ogg","trandoshan_look2.ogg","trandoshan_chase2.ogg","trandoshan_chase3.ogg"]),
+("trandoshan_yell",sf_priority_6|sf_vol_10, ["trandoshan_anger1.ogg","trandoshan_anger2.ogg","trandoshan_anger3.ogg","trandoshan_taunt.ogg","trandoshan_look1.ogg"]),
 
 #wookiee sounds
-("wookiee_die",sf_priority_8|sf_vol_10, ["wookiee_death1.mp3","wookiee_death2.mp3","wookiee_death3.mp3","wookiee_falling1.mp3"]),
-("wookiee_grunt",sf_priority_6|sf_vol_8, ["wookiee_pushed1.mp3","wookiee_pushed2.mp3","wookiee_pushed3.mp3","wookiee_jump1.mp3","wookiee_land1.mp3"]),
-("wookiee_grunt_long",sf_priority_5|sf_vol_8, ["wookiee_ffwarn.mp3","wookiee_pushed1.mp3","wookiee_pushed2.mp3","wookiee_pushed3.mp3"]),
-("wookiee_hit",sf_priority_7|sf_vol_10, ["wookiee_pain25.mp3","wookiee_pain50.mp3","wookiee_pain75.mp3","wookiee_pain100.mp3","wookiee_jump1.mp3","wookiee_land1.mp3"]),
-("wookiee_victory",sf_priority_5|sf_vol_10, ["wookiee_victory1.mp3","wookiee_victory2.mp3","wookiee_victory3.mp3","wookiee_taunt1.mp3"]),
-("wookiee_yell",sf_priority_6|sf_vol_10, ["wookiee_victory1.mp3","wookiee_victory2.mp3","wookiee_victory3.mp3","wookiee_taunt1.mp3","wookiee_ffwarn.mp3"]),
+("wookiee_die",sf_priority_8|sf_vol_10, ["wookiee_death1.ogg","wookiee_death2.ogg","wookiee_death3.ogg","wookiee_falling1.ogg"]),
+("wookiee_grunt",sf_priority_6|sf_vol_8, ["wookiee_pushed1.ogg","wookiee_pushed2.ogg","wookiee_pushed3.ogg","wookiee_jump1.ogg","wookiee_land1.ogg"]),
+("wookiee_grunt_long",sf_priority_5|sf_vol_8, ["wookiee_ffwarn.ogg","wookiee_pushed1.ogg","wookiee_pushed2.ogg","wookiee_pushed3.ogg"]),
+("wookiee_hit",sf_priority_7|sf_vol_10, ["wookiee_pain25.ogg","wookiee_pain50.ogg","wookiee_pain75.ogg","wookiee_pain100.ogg","wookiee_jump1.ogg","wookiee_land1.ogg"]),
+("wookiee_victory",sf_priority_5|sf_vol_10, ["wookiee_victory1.ogg","wookiee_victory2.ogg","wookiee_victory3.ogg","wookiee_taunt1.ogg"]),
+("wookiee_yell",sf_priority_6|sf_vol_10, ["wookiee_victory1.ogg","wookiee_victory2.ogg","wookiee_victory3.ogg","wookiee_taunt1.ogg","wookiee_ffwarn.ogg"]),
 
 #gamorrean sounds
-("gamorrean_die",sf_priority_8|sf_vol_10, ["gamorrean_death1.mp3","gamorrean_death2.mp3","gamorrean_death3.mp3","gamorrean_falling1.mp3"]),
-("gamorrean_grunt",sf_priority_6|sf_vol_8, ["gamorrean_taunt1.mp3","gamorrean_taunt2.mp3","gamorrean_gloat1.mp3","gamorrean_anger2.mp3"]),
-("gamorrean_grunt_long",sf_priority_5|sf_vol_8, ["gamorrean_taunt1.mp3","gamorrean_taunt2.mp3","gamorrean_gloat1.mp3","gamorrean_anger2.mp3"]),
-("gamorrean_hit",sf_priority_7|sf_vol_10, ["gamorrean_pain25.mp3","gamorrean_pain50.mp3","gamorrean_pain75.mp3","gamorrean_pain100.mp3","gamorrean_gasp.mp3","gamorrean_land1.mp3"]),
-("gamorrean_victory",sf_priority_5|sf_vol_10, ["gamorrean_victory1.mp3","gamorrean_anger2.mp3","gamorrean_taunt1.mp3","gamorrean_taunt2.mp3","gamorrean_gloat1.mp3"]),
-("gamorrean_yell",sf_priority_6|sf_vol_10, ["gamorrean_anger2.mp3","gamorrean_victory1.mp3","gamorrean_taunt1.mp3","gamorrean_taunt2.mp3","gamorrean_gloat1.mp3"]),
+("gamorrean_die",sf_priority_8|sf_vol_10, ["gamorrean_death1.ogg","gamorrean_death2.ogg","gamorrean_death3.ogg","gamorrean_falling1.ogg"]),
+("gamorrean_grunt",sf_priority_6|sf_vol_8, ["gamorrean_taunt1.ogg","gamorrean_taunt2.ogg","gamorrean_gloat1.ogg","gamorrean_anger2.ogg"]),
+("gamorrean_grunt_long",sf_priority_5|sf_vol_8, ["gamorrean_taunt1.ogg","gamorrean_taunt2.ogg","gamorrean_gloat1.ogg","gamorrean_anger2.ogg"]),
+("gamorrean_hit",sf_priority_7|sf_vol_10, ["gamorrean_pain25.ogg","gamorrean_pain50.ogg","gamorrean_pain75.ogg","gamorrean_pain100.ogg","gamorrean_gasp.ogg","gamorrean_land1.ogg"]),
+("gamorrean_victory",sf_priority_5|sf_vol_10, ["gamorrean_victory1.ogg","gamorrean_anger2.ogg","gamorrean_taunt1.ogg","gamorrean_taunt2.ogg","gamorrean_gloat1.ogg"]),
+("gamorrean_yell",sf_priority_6|sf_vol_10, ["gamorrean_anger2.ogg","gamorrean_victory1.ogg","gamorrean_taunt1.ogg","gamorrean_taunt2.ogg","gamorrean_gloat1.ogg"]),
 
 #rodian sounds
-("rodian_die",sf_priority_8|sf_vol_10, ["rodian_death1.mp3","rodian_death2.mp3","rodian_death3.mp3","rodian_choke1.mp3","rodian_choke2.mp3","rodian_choke3.mp3"]),
-("rodian_grunt",sf_priority_6|sf_vol_8, ["rodian_pushed1.mp3","rodian_pushed2.mp3","rodian_pushed3.mp3","rodian_gasp.mp3","rodian_land1.mp3","rodian_sound2.mp3"]),
-("rodian_grunt_long",sf_priority_5|sf_vol_8, ["rodian_confuse1.mp3","rodian_confuse2.mp3","rodian_confuse3.mp3","rodian_jump1.mp3","rodian_sound2.mp3"]),
-("rodian_hit",sf_priority_7|sf_vol_10, ["rodian_pain25.mp3","rodian_pain50.mp3","rodian_pain75.mp3","rodian_pain100.mp3","rodian_pushed1.mp3","rodian_pushed2.mp3","rodian_pushed3.mp3"]),
-("rodian_victory",sf_priority_5|sf_vol_10, ["rodian_victory1.mp3","rodian_victory2.mp3","rodian_victory3.mp3","rodian_cover1.mp3","rodian_cover2.mp3","rodian_cover3.mp3"]),
-("rodian_yell",sf_priority_6|sf_vol_10, ["rodian_anger1.mp3","rodian_anger2.mp3","rodian_anger3.mp3","rodian_cover1.mp3","rodian_cover2.mp3","rodian_cover3.mp3"]),
+("rodian_die",sf_priority_8|sf_vol_10, ["rodian_death1.ogg","rodian_death2.ogg","rodian_death3.ogg","rodian_choke1.ogg","rodian_choke2.ogg","rodian_choke3.ogg"]),
+("rodian_grunt",sf_priority_6|sf_vol_8, ["rodian_pushed1.ogg","rodian_pushed2.ogg","rodian_pushed3.ogg","rodian_gasp.ogg","rodian_land1.ogg","rodian_sound2.ogg"]),
+("rodian_grunt_long",sf_priority_5|sf_vol_8, ["rodian_confuse1.ogg","rodian_confuse2.ogg","rodian_confuse3.ogg","rodian_jump1.ogg","rodian_sound2.ogg"]),
+("rodian_hit",sf_priority_7|sf_vol_10, ["rodian_pain25.ogg","rodian_pain50.ogg","rodian_pain75.ogg","rodian_pain100.ogg","rodian_pushed1.ogg","rodian_pushed2.ogg","rodian_pushed3.ogg"]),
+("rodian_victory",sf_priority_5|sf_vol_10, ["rodian_victory1.ogg","rodian_victory2.ogg","rodian_victory3.ogg","rodian_cover1.ogg","rodian_cover2.ogg","rodian_cover3.ogg"]),
+("rodian_yell",sf_priority_6|sf_vol_10, ["rodian_anger1.ogg","rodian_anger2.ogg","rodian_anger3.ogg","rodian_cover1.ogg","rodian_cover2.ogg","rodian_cover3.ogg"]),
 
 #geonosian sounds
-("geonosian_die",sf_priority_8|sf_vol_10, ["geonosian_death.mp3"]),
-("geonosian_grunt",sf_priority_6|sf_vol_8, ["geonosian1.mp3","geonosian2.mp3","geonosian3.mp3","geonosian4.mp3"]),
-("geonosian_grunt_long",sf_priority_5|sf_vol_8, ["geonosian1.mp3","geonosian2.mp3","geonosian3.mp3","geonosian4.mp3"]),
-("geonosian_hit",sf_priority_7|sf_vol_10, ["geonosian1.mp3","geonosian2.mp3","geonosian3.mp3","geonosian4.mp3"]),
-("geonosian_victory",sf_priority_5|sf_vol_10, ["geonosian1.mp3","geonosian2.mp3","geonosian3.mp3","geonosian4.mp3"]),
-("geonosian_yell",sf_priority_6|sf_vol_10, ["geonosian1.mp3","geonosian2.mp3","geonosian3.mp3","geonosian4.mp3"]),
+("geonosian_die",sf_priority_8|sf_vol_10, ["geonosian_death.ogg"]),
+("geonosian_grunt",sf_priority_6|sf_vol_8, ["geonosian1.ogg","geonosian2.ogg","geonosian3.ogg","geonosian4.ogg"]),
+("geonosian_grunt_long",sf_priority_5|sf_vol_8, ["geonosian1.ogg","geonosian2.ogg","geonosian3.ogg","geonosian4.ogg"]),
+("geonosian_hit",sf_priority_7|sf_vol_10, ["geonosian1.ogg","geonosian2.ogg","geonosian3.ogg","geonosian4.ogg"]),
+("geonosian_victory",sf_priority_5|sf_vol_10, ["geonosian1.ogg","geonosian2.ogg","geonosian3.ogg","geonosian4.ogg"]),
+("geonosian_yell",sf_priority_6|sf_vol_10, ["geonosian1.ogg","geonosian2.ogg","geonosian3.ogg","geonosian4.ogg"]),
 
 #sullustan sounds - used man sounds for die, grunt, grunt_long, and hit
 #("sullustan_die",sf_priority_8|sf_vol_10, []),
 #("sullustan_grunt",sf_priority_6|sf_vol_4, []),
 #("sullustan_grunt_long",sf_priority_5|sf_vol_8, []),
 #("sullustan_hit",sf_priority_7|sf_vol_10, []),
-("sullustan_victory",sf_priority_5|sf_vol_10, ["sullustan_victory1.mp3","sullustan_victory2.mp3","sullustan_victory3.mp3","sullustan_victory4.mp3"]),
-("sullustan_yell",sf_priority_6|sf_vol_10, ["sullustan_yell1.mp3","sullustan_yell2.mp3","sullustan_yell3.mp3","sullustan_yell4.mp3"]),
+("sullustan_victory",sf_priority_5|sf_vol_10, ["sullustan_victory1.ogg","sullustan_victory2.ogg","sullustan_victory3.ogg","sullustan_victory4.ogg"]),
+("sullustan_yell",sf_priority_6|sf_vol_10, ["sullustan_yell1.ogg","sullustan_yell2.ogg","sullustan_yell3.ogg","sullustan_yell4.ogg"]),
 
 #twilek_female sounds - used female sounds for die, grunt, grunt_long, and hit
 # ("twilek_female_die",sf_priority_8|sf_vol_10, []),
 # ("twilek_female_grunt",sf_priority_6|sf_vol_4, []),
 # ("twilek_female_grunt_long",sf_priority_5|sf_vol_8, []),
 # ("twilek_female_hit",sf_priority_7|sf_vol_10, []),
-("twilek_female_victory",sf_priority_5|sf_vol_10, ["twilek_female_sound1.mp3","twilek_female_sound2.mp3","twilek_female_sound4.mp3","twilek_female_sound4.mp3"]),
-("twilek_female_yell",sf_priority_6|sf_vol_10, ["twilek_female_sound2.mp3","twilek_female_sound4.mp3","twilek_female_sound4.mp3"]),
+("twilek_female_victory",sf_priority_5|sf_vol_10, ["twilek_female_sound1.ogg","twilek_female_sound2.ogg","twilek_female_sound4.ogg","twilek_female_sound4.ogg"]),
+("twilek_female_yell",sf_priority_6|sf_vol_10, ["twilek_female_sound2.ogg","twilek_female_sound4.ogg","twilek_female_sound4.ogg"]),
 
 #special weapons
 #("lightsaber_idle",sf_vol_10, ["Vip_AB_Loop.ogg"]),
-#("lightsaber_swing",sf_priority_10|sf_vol_6,["saber_swing1.mp3","saber_swing2.mp3","saber_swing3.mp3","saber_swing4.mp3","saber_swing5.mp3","saber_swing6.mp3","saber_swing7.mp3","saber_swing8.mp3",]),
-#removed saber_swing7.mp3 & saber_swing8.mp3 since they were 1.4 seconds until the usually 0.5 - 0.9 seconds
-("lightsaber_swing",sf_priority_10|sf_vol_6,["saber_swing1.mp3","saber_swing2.mp3","saber_swing3.mp3","saber_swing4.mp3","saber_swing5.mp3","saber_swing6.mp3"]),
-("deflector_shield",sf_priority_5|sf_vol_3|sf_looping, ["deflector_shield.mp3"]),
-("deflector_shield_hit",sf_priority_1|sf_vol_10, ["deflector_shield_hit.mp3"]),
+#("lightsaber_swing",sf_priority_10|sf_vol_6,["saber_swing1.ogg","saber_swing2.ogg","saber_swing3.ogg","saber_swing4.ogg","saber_swing5.ogg","saber_swing6.ogg","saber_swing7.ogg","saber_swing8.ogg",]),
+#removed saber_swing7.ogg & saber_swing8.ogg since they were 1.4 seconds until the usually 0.5 - 0.9 seconds
+("lightsaber_swing",sf_priority_10|sf_vol_6,["saber_swing1.ogg","saber_swing2.ogg","saber_swing3.ogg","saber_swing4.ogg","saber_swing5.ogg","saber_swing6.ogg"]),
+("deflector_shield",sf_priority_5|sf_vol_3|sf_looping, ["deflector_shield.ogg"]),
+("deflector_shield_hit",sf_priority_1|sf_vol_10, ["deflector_shield_hit.ogg"]),
 #Added by Swyter, Revan Shan suggestion
-("e5",sf_priority_5|sf_vol_6,["E5-blaster.mp3"]),
-("dh17",sf_priority_5|sf_vol_6,["rvnshn_DH17.mp3"]),
-("westar",sf_priority_5|sf_vol_6,["rvnshn_westar.mp3"]),
+("e5",sf_priority_5|sf_vol_6,["E5-blaster.ogg"]),
+("dh17",sf_priority_5|sf_vol_6,["rvnshn_DH17.ogg"]),
+("westar",sf_priority_5|sf_vol_6,["rvnshn_westar.ogg"]),
 
-("vader_breath",sf_priority_1|sf_vol_6|sf_looping, ["vader_breath.mp3"]),
+("vader_breath",sf_priority_1|sf_vol_6|sf_looping, ["vader_breath.ogg"]),
 
 #New Hangar Sounds by Revan Shan
-("swc_hangar_siren", sf_vol_4|sf_priority_3|sf_looping,["swc_hangar_siren.mp3"]),
-("swc_hangar_hutt", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_hutt.mp3"]),
-("swc_hangar_imperial", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_imperial.mp3"]),
-("swc_hangar_mandalorian", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_mandalorian.mp3"]),
-("swc_hangar_neutral", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_neutral.mp3"]),
-("swc_hangar_rebel", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_rebel.mp3"]),
-("swc_hangar_sith", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_sith.mp3"]),
-("swc_hangar_wookie", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_wookie.mp3"]),
-("swc_hangar_clones", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_clones.mp3"]),
-("swc_hangar_trandoshan", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_trandoshan.mp3"]),
+("swc_hangar_siren", sf_vol_4|sf_priority_3|sf_looping,["swc_hangar_siren.ogg"]),
+("swc_hangar_hutt", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_hutt.ogg"]),
+("swc_hangar_imperial", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_imperial.ogg"]),
+("swc_hangar_mandalorian", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_mandalorian.ogg"]),
+("swc_hangar_neutral", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_neutral.ogg"]),
+("swc_hangar_rebel", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_rebel.ogg"]),
+("swc_hangar_sith", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_sith.ogg"]),
+("swc_hangar_wookie", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_wookie.ogg"]),
+("swc_hangar_clones", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_clones.ogg"]),
+("swc_hangar_trandoshan", sf_vol_10|sf_priority_1|sf_2d,["swc_hangar_trandoshan.ogg"]),
 
 
 #@> SWY - New battle sounds by Revan Shan
 
 ## REVAN SHAN'S NEUTRAL BATTLE SPEECH
-("swc_neutral_death", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_death_1.mp3","swc_neutral_death_2.mp3","swc_neutral_death_3.mp3"]),
-("swc_neutral_deployed", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_deployed_1.mp3","swc_neutral_deployed_2.mp3","swc_neutral_deployed_3.mp3"]),
-("swc_neutral_victory", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_victory_1.mp3","swc_neutral_victory_2.mp3"]),
+("swc_neutral_death", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_death_1.ogg","swc_neutral_death_2.ogg","swc_neutral_death_3.ogg"]),
+("swc_neutral_deployed", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_deployed_1.ogg","swc_neutral_deployed_2.ogg","swc_neutral_deployed_3.ogg"]),
+("swc_neutral_victory", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_victory_1.ogg","swc_neutral_victory_2.ogg"]),
 
-("swc_neutral_fired", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_fired_1.mp3","swc_neutral_fired_2.mp3"]),
-("swc_neutral_player25", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_player25_1.mp3","swc_neutral_player25_2.mp3"]),
-("swc_neutral_player50", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_player50_1.mp3","swc_neutral_player50_2.mp3"]),
-("swc_neutral_enemy25", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_enemy25_1.mp3"]),
-("swc_neutral_enemy50", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_enemy50_1.mp3","swc_neutral_enemy50_2.mp3","swc_neutral_enemy50_3.mp3"]),
+("swc_neutral_fired", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_fired_1.ogg","swc_neutral_fired_2.ogg"]),
+("swc_neutral_player25", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_player25_1.ogg","swc_neutral_player25_2.ogg"]),
+("swc_neutral_player50", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_player50_1.ogg","swc_neutral_player50_2.ogg"]),
+("swc_neutral_enemy25", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_enemy25_1.ogg"]),
+("swc_neutral_enemy50", sf_vol_10|sf_priority_1|sf_2d,["swc_neutral_enemy50_1.ogg","swc_neutral_enemy50_2.ogg","swc_neutral_enemy50_3.ogg"]),
 
 ## REVAN SHAN'S EMPIRE BATTLE SPEECH
-("swc_empire_death", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_death_1.mp3","swc_empire_death_2.mp3","swc_empire_death_3.mp3"]),
-("swc_empire_deployed", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_deployed_1.mp3","swc_empire_deployed_2.mp3","swc_empire_deployed_3.mp3","swc_empire_deployed_4.mp3"]),
-("swc_empire_victory", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_victory_1.mp3","swc_empire_victory_2.mp3","swc_empire_victory_3.mp3"]),
+("swc_empire_death", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_death_1.ogg","swc_empire_death_2.ogg","swc_empire_death_3.ogg"]),
+("swc_empire_deployed", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_deployed_1.ogg","swc_empire_deployed_2.ogg","swc_empire_deployed_3.ogg","swc_empire_deployed_4.ogg"]),
+("swc_empire_victory", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_victory_1.ogg","swc_empire_victory_2.ogg","swc_empire_victory_3.ogg"]),
 
-("swc_empire_fired", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_fired_1.mp3"]),
-("swc_empire_player25", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_player25_1.mp3","swc_empire_player25_2.mp3","swc_empire_player25_3.mp3"]),
-("swc_empire_player50", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_player50_1.mp3","swc_empire_player50_2.mp3"]),
-("swc_empire_enemy25", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_enemy25_1.mp3"]),
-("swc_empire_enemy50", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_enemy50_1.mp3","swc_empire_enemy50_2.mp3","swc_empire_enemy50_3.mp3"]),
+("swc_empire_fired", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_fired_1.ogg"]),
+("swc_empire_player25", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_player25_1.ogg","swc_empire_player25_2.ogg","swc_empire_player25_3.ogg"]),
+("swc_empire_player50", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_player50_1.ogg","swc_empire_player50_2.ogg"]),
+("swc_empire_enemy25", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_enemy25_1.ogg"]),
+("swc_empire_enemy50", sf_vol_10|sf_priority_1|sf_2d,["swc_empire_enemy50_1.ogg","swc_empire_enemy50_2.ogg","swc_empire_enemy50_3.ogg"]),
 
 ## REVAN SHAN'S REBEL BATTLE SPEECH
-("swc_rebel_death", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_death_1.mp3","swc_rebel_death_2.mp3","swc_rebel_death_3.mp3"]),
-("swc_rebel_deployed", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_deployed_1.mp3","swc_rebel_deployed_2.mp3","swc_rebel_deployed_3.mp3"]),
-("swc_rebel_victory", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_victory_1.mp3","swc_rebel_victory_2.mp3","swc_rebel_victory_3.mp3"]),
+("swc_rebel_death", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_death_1.ogg","swc_rebel_death_2.ogg","swc_rebel_death_3.ogg"]),
+("swc_rebel_deployed", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_deployed_1.ogg","swc_rebel_deployed_2.ogg","swc_rebel_deployed_3.ogg"]),
+("swc_rebel_victory", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_victory_1.ogg","swc_rebel_victory_2.ogg","swc_rebel_victory_3.ogg"]),
 
-("swc_rebel_fired", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_fired_1.mp3","swc_rebel_fired_2.mp3"]),
-("swc_rebel_player25", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_player25_1.mp3","swc_rebel_player25_2.mp3"]),
-("swc_rebel_player50", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_player50_1.mp3","swc_rebel_player50_2.mp3"]),
-("swc_rebel_enemy25", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_enemy25_1.mp3"]),
-("swc_rebel_enemy50", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_enemy50_1.mp3","swc_rebel_enemy50_2.mp3","swc_rebel_enemy50_3.mp3"]),
+("swc_rebel_fired", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_fired_1.ogg","swc_rebel_fired_2.ogg"]),
+("swc_rebel_player25", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_player25_1.ogg","swc_rebel_player25_2.ogg"]),
+("swc_rebel_player50", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_player50_1.ogg","swc_rebel_player50_2.ogg"]),
+("swc_rebel_enemy25", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_enemy25_1.ogg"]),
+("swc_rebel_enemy50", sf_vol_10|sf_priority_1|sf_2d,["swc_rebel_enemy50_1.ogg","swc_rebel_enemy50_2.ogg","swc_rebel_enemy50_3.ogg"]),
 
 ## REVAN SHAN'S HUTT BATTLE SPEECH
-("swc_hutt_death", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_death_1.mp3","swc_hutt_death_2.mp3","swc_hutt_death_3.mp3"]),
-("swc_hutt_deployed", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_deployed_1.mp3","swc_hutt_deployed_2.mp3","swc_hutt_deployed_3.mp3"]),
-("swc_hutt_victory", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_victory_1.mp3","swc_hutt_victory_2.mp3","swc_hutt_victory_3.mp3"]),
+("swc_hutt_death", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_death_1.ogg","swc_hutt_death_2.ogg","swc_hutt_death_3.ogg"]),
+("swc_hutt_deployed", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_deployed_1.ogg","swc_hutt_deployed_2.ogg","swc_hutt_deployed_3.ogg"]),
+("swc_hutt_victory", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_victory_1.ogg","swc_hutt_victory_2.ogg","swc_hutt_victory_3.ogg"]),
 
-("swc_hutt_fired", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_fired_1.mp3","swc_hutt_fired_2.mp3"]),
-("swc_hutt_player25", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_player25_1.mp3","swc_hutt_player25_2.mp3"]),
-("swc_hutt_player50", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_player50_1.mp3","swc_hutt_player50_2.mp3"]),
-("swc_hutt_enemy25", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_enemy25_1.mp3","swc_hutt_enemy25_2.mp3"]),
-("swc_hutt_enemy50", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_enemy50_1.mp3"]),
+("swc_hutt_fired", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_fired_1.ogg","swc_hutt_fired_2.ogg"]),
+("swc_hutt_player25", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_player25_1.ogg","swc_hutt_player25_2.ogg"]),
+("swc_hutt_player50", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_player50_1.ogg","swc_hutt_player50_2.ogg"]),
+("swc_hutt_enemy25", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_enemy25_1.ogg","swc_hutt_enemy25_2.ogg"]),
+("swc_hutt_enemy50", sf_vol_10|sf_priority_1|sf_2d,["swc_hutt_enemy50_1.ogg"]),
 ]

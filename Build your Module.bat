@@ -3,13 +3,13 @@ rem    please feel free to copy anything. -Greetings from Swyter
 rem    -------------------------------------------------------------
 
 @echo off
+cls && title Building your Module - Please wait...  ^|  By TaleWorlds ^+ Swyter&& color 71
 SETLOCAL ENABLEEXTENSIONS
 SETLOCAL ENABLEDELAYEDEXPANSION
 MODE CON: COLS=40 LINES=40
 rem MODE CON: COLS=130 LINES=40
 
-cls && title Building your Module - Please wait...  ^|  By TaleWorlds ^+ Swyter&& color 71
-
+rem debug ---------------------
 rem rem SET SWYCD="%CD:&=^&%"
 rem SET SWYCDB=!SWYCD!
 rem echo %SWYCD%
@@ -23,6 +23,7 @@ set CD="!CD!"
 
 rem echo cool: !CD:~1,-1!
 rem echo cook: !CD:&=^&!
+rem ----------------------------
 
 if %PROCESSOR_ARCHITECTURE%==x86 (
  set SWYPYTHON_var=32bits
