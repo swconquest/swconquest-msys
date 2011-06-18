@@ -121,6 +121,19 @@ map_icons = [
   ("outpost_a",mcn_no_shadow,"spacestation3", spacestation_scale,0),
   ("outpost_b",mcn_no_shadow,"spacestation4", spacestation_scale,0),
   
+  
+  #SWC 0.9.0.4 - New Vector Space Stations
+  ("spacestation5",mcn_no_shadow,"spacestation5", spacestation_scale,0),
+  ("spacestation6",mcn_no_shadow,"spacestation6", spacestation_scale,0),
+  ("spacestation7",mcn_no_shadow,"spacestation7", spacestation_scale,0),
+  ("spacestation8",mcn_no_shadow,"spacestation8", spacestation_scale,0),
+  
+  ("XQ_04_Station_1",mcn_no_shadow,"XQ_04_Station_1", spacestation_scale,0),
+  ("XQ_04_Station_2",mcn_no_shadow,"XQ_04_Station_2", spacestation_scale,0),
+  ("XQ_04_Station_3",mcn_no_shadow,"XQ_04_Station_3", spacestation_scale,0),
+  ("XQ_04_Station_4",mcn_no_shadow,"XQ_04_Station_4", spacestation_scale,0),
+  ("XQ_04_Station_5",mcn_no_shadow,"XQ_04_Station_5", spacestation_scale,0),
+
   #SW - have to use native icons when using the map editor
   # ("sw_planet_green",mcn_no_shadow,"map_spacestation_a", 0.35,0),
   # ("sw_outpost",mcn_no_shadow,"map_spacestation_a", 0.35,0),

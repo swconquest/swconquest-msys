@@ -100,12 +100,12 @@ parties = [
   ("zendar","Zendar",pf_disabled|icon_sw_town_green|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-138.56,-23.48),[]),
  #SW MF added base (ie. shipyards)
   ("shipyard_trade_federation","Trade_Federation",icon_cis_star_cruiser|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(41.41,-27.52),[],260),
-  ("shipyard_kuat","Kuat Shipyards",icon_shipyard|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(5.81, -19.65),[],260),
-  ("shipyard_raxus","Raxus Prime Shipyards",icon_shipyard|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(130.52, 124.81),[],260),
-  ("shipyard_corellia","Corellia Shipyards",icon_shipyard|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-7.96, -42.40),[],260),
-  ("shipyard_moncal","Mon Cal Shipyards",icon_shipyard|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(115.30, 80.93),[],260),
-  ("shipyard_mandalore","Mandalore Shipyards",icon_shipyard|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(7.65, 64.01),[],260),
-  ("shipyard_fondor","Fondor Shipyards",icon_shipyard|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-49.70, -52.52),[],260),
+  ("shipyard_kuat","Kuat Shipyards",icon_XQ_04_Station_2|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(5.81, -19.65),[],260),
+  ("shipyard_raxus","Raxus Prime Shipyards",icon_XQ_04_Station_4|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(130.52, 124.81),[],260),
+  ("shipyard_corellia","Corellia Shipyards",icon_XQ_04_Station_1|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-7.96, -42.40),[],260),
+  ("shipyard_moncal","Mon Cal Shipyards",icon_XQ_04_Station_2|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(115.30, 80.93),[],260),
+  ("shipyard_mandalore","Mandalore Shipyards",icon_XQ_04_Station_5|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(7.65, 64.01),[],260),
+  ("shipyard_fondor","Fondor Shipyards",icon_XQ_04_Station_3|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-49.70, -52.52),[],260),
   
   
 

@@ -8850,9 +8850,9 @@ common_gate_system,
 
 # END OF CUSTOM BATTLE
 #==============================================================================================================
-#SW - HokieBT - added new scene for trade_merchants
+#SW - HokieBT - added new scene for trade_federation
   (
-    "trade_merchants",0,-1,
+    "trade_federation",0,-1,
     "Visit Merchants at Trade Federation",
     [(0,mtef_scene_source|mtef_team_0,af_override_horse,0,1,pilgrim_disguise),
      (1,mtef_scene_source|mtef_team_0,af_override_horse,0,1,[]),(2,mtef_scene_source|mtef_team_0,af_override_horse,0,1,[]),

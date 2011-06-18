@@ -315,6 +315,11 @@ scene_props = [
   ("sw_poster_random_generic_2",0,"sw_poster_i","bo_sw_poster_a", []),  
   ("sw_poster_random_generic_3",0,"sw_poster_i","bo_sw_poster_a", []),  
   ("sw_poster_random_generic_4",0,"sw_poster_i","bo_sw_poster_a", []), 
+  ("swc_junk_a",0,"swc_junk_a","bo_swc_junk_a", []),
+  ("swc_junk_b",0,"swc_junk_b","bo_swc_junk_b", []),
+  ("swc_junk_c",0,"swc_junk_c","bo_swc_junk_c", []),
+  ("swc_shop",0,"swc_shop","bo_swc_shop", []),
+
   #empire
   ("sw_poster_a",0,"sw_poster_a","bo_sw_poster_a", []),
   ("sw_poster_c",0,"sw_poster_c","bo_sw_poster_a", []),
@@ -2216,6 +2221,10 @@ scene_props = [
   ("christophisis_bridge_cross",0,"christophisis_bridge_cross","bo_christophisis_bridge_cross", []),
   ("christophisis_bridge_end",0,"christophisis_bridge_end","bo_christophisis_bridge_end", []),
   ("christophisis_bridge_straight",0,"christophisis_bridge_straight","bo_christophisis_bridge_straight", []),
+  ("christophisis_bridge_small",0,"christophisis_bridge_small","bo_christophisis_bridge_small", []),
+  ("christophisis_bridge_small_pier",0,"christophisis_bridge_small_pier","bo_christophisis_bridge_small_pier", []),
+  ("christophisis_stairs",0,"christophisis_stairs","bo_christophisis_stairs", []),
+
   ("christophisis_hex",0,"christophisis_hex",0, []),
 
   

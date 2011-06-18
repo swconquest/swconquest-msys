@@ -903,7 +903,7 @@ items = [
  208 , weight(1.75)|abundance(60)|head_armor(0)|body_armor(0)|leg_armor(18)|difficulty(0) ,imodbits_cloth ], 
 ["imperial_royal_guard_boots", "Imperial Royal Guard Boots", [("imperial_royal_guard_boots",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian,0, 
  140 , weight(2.0)|abundance(50)|head_armor(0)|body_armor(0)|leg_armor(16)|difficulty(0) ,imodbits_cloth ],
-["imperial_stormtrooper_boots", "Imperial Stormtrooper Boots", [("stormtrooper_boots",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian,0, 
+["imperial_stormtrooper_boots", "Imperial Stormtrooper Boots", [("Stormtrooper_legs_L",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian,0, 
  210 , weight(2.0)|abundance(50)|head_armor(0)|body_armor(0)|leg_armor(16)|difficulty(0) ,imodbits_armor ], 
 ["imperial_scout_trooper_boots", "Imperial Scout Trooper Boots", [("scoutboots",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian,0, 
  210 , weight(2.0)|abundance(50)|head_armor(0)|body_armor(0)|leg_armor(16)|difficulty(0) ,imodbits_armor ],  
@@ -993,7 +993,7 @@ items = [
 ["skiff_guard_helmet", "Skiff Guard Helmet", [("skiffhelm",0)], itp_merchandise| itp_type_head_armor|itp_civilian ,0, 
  150 , weight(2)|abundance(60)|head_armor(12)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
  
-["imperial_stormtrooper_helmet", "Imperial Stormtrooper Helmet", [("stormtrooper_helmet",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 
+["imperial_stormtrooper_helmet", "Imperial Stormtrooper Helmet", [("Stormtrooper_helm",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 
  195 , weight(1)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
 ["imperial_pilot_helmet", "Imperial Pilot Helmet", [("tiepilot",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 
  175 , weight(1)|abundance(60)|head_armor(12)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ], 
@@ -1169,7 +1169,7 @@ items = [
  480 , weight(10)|abundance(40)|head_armor(0)|body_armor(42)|leg_armor(18)|difficulty(0) ,imodbits_cloth ],
 ["rebel_sniper_armor", "Rebel Sniper Armor", [("republic_commando_armor_b",0)], itp_merchandise| itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 
  480 , weight(10)|abundance(60)|head_armor(0)|body_armor(42)|leg_armor(18)|difficulty(0) ,imodbits_cloth ], 
-["imperial_stormtrooper_armor", "Imperial Stormtrooper Armor", [("stormtrooper_armor",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
+["imperial_stormtrooper_armor", "Imperial Stormtrooper Armor", [("Stormtrooper_body",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
  720 , weight(10)|abundance(100)|head_armor(0)|body_armor(42)|leg_armor(18)|difficulty(0) ,imodbits_armor ],
 ["shadow_stormtrooper_armor", "Shadow Stormtrooper Armor", [("shadow_stormtrooper_armor",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
  780 , weight(8)|abundance(60)|head_armor(0)|body_armor(44)|leg_armor(20)|difficulty(0) ,imodbits_armor ], 
@@ -2724,10 +2724,10 @@ items = [
 #["motor_bike","Motor Bike", [("motor_bike",0)], itp_merchandise|itp_type_horse, 0, 3000,abundance(60)|hit_points(30)|body_armor(0)|difficulty(0)|horse_speed(120)|horse_maneuver(75)|horse_charge(10),imodbits_speeder],
 
 
-["bf2_stormie", "bf2_stormie", [("bf2_stormtrooper_rigged",0)], itp_covers_head|itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0,
-  3000, weight(55)|abundance(0)|head_armor(30)|body_armor(70)|leg_armor(30)|difficulty(0) ,imodbits_none ],
-["tfu_stormie", "tfu_stormie", [("tfu_stormtrooper",0)], itp_covers_head|itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0,
-  3000, weight(55)|abundance(0)|head_armor(30)|body_armor(70)|leg_armor(30)|difficulty(0) ,imodbits_none ],
+# ["bf2_stormie", "bf2_stormie", [("bf2_stormtrooper_rigged",0)], itp_covers_head|itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0,
+  # 3000, weight(55)|abundance(0)|head_armor(30)|body_armor(70)|leg_armor(30)|difficulty(0) ,imodbits_none ],
+# ["tfu_stormie", "tfu_stormie", [("tfu_stormtrooper",0)], itp_covers_head|itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0,
+  # 3000, weight(55)|abundance(0)|head_armor(30)|body_armor(70)|leg_armor(30)|difficulty(0) ,imodbits_none ],
 	#################
 	# Autoloot: Need this dummy item here to mark end of file
 	#######

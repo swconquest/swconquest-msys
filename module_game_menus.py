@@ -4481,7 +4481,7 @@ game_menus = [
 		# (troop_add_item, "trp_player","itm_black_boots",0),
 		# (troop_add_item, "trp_player","itm_leather_boots",0),
 		(troop_add_item, "trp_player","itm_lightsaber_red_multikill",0),
-		(troop_add_item, "trp_player","itm_tfu_stormie",0),
+		#(troop_add_item, "trp_player","itm_tfu_stormie",0),
 		
 		
 		
@@ -11210,7 +11210,7 @@ game_menus = [
           (party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
           (this_or_next|eq,"$entry_to_town_forbidden",0),
           (eq, "$sneaked_into_town",1),
-#          (party_get_slot, ":scene", "$current_town", slot_mainplanet_tavern),
+#          (party_get_slot, ":scene", "$current_town", slot_mainplanet_cantina),
 #          (scene_slot_eq, ":scene", slot_scene_visited, 1), #check if scene has been visited before to allow entry from menu. Otherwise scene will only be accessible from the town center.
           ]
 		  #SW - change tavern to cantina
@@ -11240,7 +11240,7 @@ game_menus = [
 			 #(call_script, "script_init_town_walkers"),
 			 ###### CANTINA WALKER TESTING END     ########################################################
 
-             (party_get_slot, ":cur_scene", "$current_town", slot_mainplanet_tavern),
+             (party_get_slot, ":cur_scene", "$current_town", slot_mainplanet_cantina),
              (jump_to_scene, ":cur_scene"),
              (scene_set_slot, ":cur_scene", slot_scene_visited, 1),
 
@@ -16632,25 +16632,25 @@ game_menus = [
 	(assign, "$g_custom_battle_scene", "scn_custom_battle_3"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 4),
-	(assign, "$g_custom_battle_scene", "scn_mainplanet_26_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_mainplanet_felucia_land_battle"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 5),
-	(assign, "$g_custom_battle_scene", "scn_mainplanet_16_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_mainplanet_coruscant_land_battle"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 6),
-	(assign, "$g_custom_battle_scene", "scn_mainplanet_14_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_mainplanet_tatooine_land_battle"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 7),
-	(assign, "$g_custom_battle_scene", "scn_mainplanet_20_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_mainplanet_mustafar_land_battle"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 8),
-	(assign, "$g_custom_battle_scene", "scn_mainplanet_7_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_mainplanet_dantooine_land_battle"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 9),
-	(assign, "$g_custom_battle_scene", "scn_mainplanet_10_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_mainplanet_kashyyyk_land_battle"),
 	(else_try),
 	(eq, "$g_custom_battle_location", 10),
-	(assign, "$g_custom_battle_scene", "scn_mainplanet_23_land_battle"),
+	(assign, "$g_custom_battle_scene", "scn_mainplanet_raxusprime_land_battle"),
 	(end_try),
 
 
@@ -17440,8 +17440,8 @@ game_menus = [
 			(assign, "$talk_context", tc_tavern_talk),
 		
 			#modify/reset visitors
-			(modify_visitors_at_site,"scn_trade_merchants"),
-			#(modify_visitors_at_site,"scn_mainplanet_1_tavern"),
+			(modify_visitors_at_site,"scn_trade_federation"),
+			#(modify_visitors_at_site,"scn_mainplanet_mandalore_tavern"),
 			(reset_visitors),
 			
 			#set the player entry point
@@ -17494,12 +17494,12 @@ game_menus = [
 			(try_end),
 
 			#set the mission template
-			(set_jump_mission,"mt_trade_merchants"),
+			(set_jump_mission,"mt_trade_federation"),
 			#(set_jump_mission,"mt_cantina_default"),
 			
 			#jump to the scene
-			(jump_to_scene,"scn_trade_merchants"),
-			#(jump_to_scene,"scn_mainplanet_1_tavern"),			
+			(jump_to_scene,"scn_trade_federation"),
+			#(jump_to_scene,"scn_mainplanet_mandalore_tavern"),			
 			
 			#start the scene
 			(change_screen_mission),			

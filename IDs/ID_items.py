@@ -900,6 +900,4 @@ itm_power_chair = 898
 itm_horses_end = 899
 itm_practice_speeder = 900
 itm_arena_speeder = 901
-itm_bf2_stormie = 902
-itm_tfu_stormie = 903
-itm_items_end = 904
+itm_items_end = 902

@@ -134,14 +134,14 @@ slot_cattle_driven_by_player = slot_mainplanet_lord #hack
 slot_mainplanet_center        = 10
 slot_mainplanet_castle        = 11
 slot_mainplanet_prison        = 12
-slot_mainplanet_tavern        = 13
+slot_mainplanet_cantina        = 13
 slot_mainplanet_store         = 14
 slot_mainplanet_arena         = 16
 slot_mainplanet_alley         = 17
 slot_mainplanet_walls         = 18
 slot_center_culture     = 19
 
-slot_mainplanet_tavernkeeper  = 20
+slot_mainplanet_bartender  = 20
 slot_mainplanet_weaponsmith   = 21
 slot_mainplanet_armorer       = 22
 slot_mainplanet_merchant      = 23
@@ -1032,8 +1032,8 @@ centers_end   = minorplanet_end
 training_grounds_begin   = "p_training_ground_1"
 training_grounds_end     = "p_sun_1"
 
-scenes_begin = "scn_mainplanet_1_center"
-scenes_end = "scn_spacestation_1_exterior"
+scenes_begin = "scn_mainplanet_mandalore_center"
+scenes_end = "scn_spacestation_mandalore_exterior"
 
 spawn_points_begin = "p_zendar"
 spawn_points_end = "p_spawn_points_end"
@@ -1052,8 +1052,8 @@ swadian_merc_parties_end   = "p_town_8_mercs"
 vaegir_merc_parties_begin  = "p_town_8_mercs"
 vaegir_merc_parties_end    = "p_zendar"
 
-arena_masters_begin    = "trp_mainplanet_1_arena_master"
-arena_masters_end      = "trp_mainplanet_1_armorer"
+arena_masters_begin    = "trp_mainplanet_mandalore_arena_master"
+arena_masters_end      = "trp_mainplanet_mandalore_armorer"
 
 training_gound_trainers_begin    = "trp_trainer_1"
 training_gound_trainers_end      = "trp_ransom_broker_1"
@@ -1126,22 +1126,22 @@ cantina_walkers_end = "trp_cantina_drinker_1"
 cantina_drinkers_begin = "trp_cantina_drinker_1"
 cantina_drinkers_end = "trp_minorplanet_walker_1"
 
-armor_merchants_begin  = "trp_mainplanet_1_armorer"
-armor_merchants_end    = "trp_mainplanet_1_weaponsmith"
+armor_merchants_begin  = "trp_mainplanet_mandalore_armorer"
+armor_merchants_end    = "trp_mainplanet_mandalore_weaponsmith"
 
-weapon_merchants_begin = "trp_mainplanet_1_weaponsmith"
-weapon_merchants_end   = "trp_mainplanet_1_bartender"
+weapon_merchants_begin = "trp_mainplanet_mandalore_weaponsmith"
+weapon_merchants_end   = "trp_mainplanet_mandalore_bartender"
 
-tavernkeepers_begin    = "trp_mainplanet_1_bartender"
-tavernkeepers_end      = "trp_mainplanet_1_merchant"
+tavernkeepers_begin    = "trp_mainplanet_mandalore_bartender"
+tavernkeepers_end      = "trp_mainplanet_mandalore_merchant"
 
-goods_merchants_begin  = "trp_mainplanet_1_merchant"
-goods_merchants_end    = "trp_mainplanet_1_horse_merchant"
+goods_merchants_begin  = "trp_mainplanet_mandalore_merchant"
+goods_merchants_end    = "trp_mainplanet_mandalore_horse_merchant"
 
-horse_merchants_begin  = "trp_mainplanet_1_horse_merchant"
-horse_merchants_end    = "trp_mainplanet_1_mayor"
+horse_merchants_begin  = "trp_mainplanet_mandalore_horse_merchant"
+horse_merchants_end    = "trp_mainplanet_mandalore_mayor"
 
-mayors_begin           = "trp_mainplanet_1_mayor"
+mayors_begin           = "trp_mainplanet_mandalore_mayor"
 mayors_end             = "trp_minorplanet_admin_1"
 
 planet_admins_begin   = "trp_minorplanet_admin_1"
