@@ -144,6 +144,9 @@ scene_props = [
 ("sw_Yavin_Wall_Big_Hole",0,"sw_Yavin_Wall_Big_Hole","bo_sw_Yavin_Wall_Big_Hole", []),
 ("sw_Yavin_Wall_Big_Hole_2",0,"sw_Yavin_Wall_Big_Hole_2","bo_sw_Yavin_Wall_Big_Hole_2", []),
 ("sw_Yavin_Wall_Big_Hub",0,"sw_Yavin_Wall_Big_Hub","bo_sw_Yavin_Wall_Big_Hub", []),
+("sw_Yavin_Stairs_Large",0,"sw_Yavin_Stairs_Large","bo_sw_Yavin_Stairs_Large", []),
+("sw_Yavin_Great_Temple",0,"sw_Yavin_Great_Temple","bo_sw_Yavin_Great_Temple", []),
+
 ## <---  
 
   ("sw_hoth_bunker",0,"hoth_bunker","bo_hoth_bunker", []),
@@ -2193,6 +2196,11 @@ scene_props = [
   ("bespin_platform_pillar_1",0,"bespin_platform_pillar_1","bo_bespin_platform_pillar_1", []),
   ("bespin_platform_pillar_2",0,"bespin_platform_pillar_2","bo_bespin_platform_pillar_2", []),
 
+#Cato Neimodia
+  ("cato_neimodia_bridge_1",0,"cato_neimodia_bridge_1","bo_cato_neimodia_bridge_1", []),
+  ("cato_neimodia_bridge_2",0,"cato_neimodia_bridge_2","bo_cato_neimodia_bridge_2", []),
+  ("cato_neimodia_building_1",0,"cato_neimodia_building_1","bo_cato_neimodia_building_1", []),
+  
 #Corellia
   ("corellia_building_1",0,"corellia_building_1",0, []),
   ("corellia_building_2",0,"corellia_building_2",0, []),
@@ -2493,7 +2501,39 @@ scene_props = [
 ###############
    ]),	]), 
 
- 
+#@Automagically added -- Start
+#--spropbot.2011-07-06>>17:00:06
+  ("cato_neimodia_door",0,"cato_neimodia_door","0", []),
+  ("cato_neimodia_building_arch_1",0,"cato_neimodia_building_arch_1","0", []),
+  ("cato_neimodia_building_arch_2",0,"cato_neimodia_building_arch_2","0", []),
+  ("cato_neimodia_mountain_arch_1",0,"cato_neimodia_mountain_arch_1","0", []),
+  ("cato_neimodia_building_arch_main",0,"cato_neimodia_building_arch_main","0", []),
+  ("cato_neimodia_mountain_cliff",0,"cato_neimodia_mountain_cliff","0", []),
+  ("cato_neimodia_platform_1",0,"cato_neimodia_platform_1","bo_cato_neimodia_platform_1", []),
+  ("cato_neimodia_bridge_stump",0,"cato_neimodia_bridge_stump","bo_cato_neimodia_bridge_stump", []),
+  ("cato_neimodia_door",0,"cato_neimodia_door","bo_cato_neimodia_door", []),
+  ("deathstar_parts_1_doorframe",0,"deathstar_parts_1_doorframe","bo_deathstar_parts_1_doorframe", []),
+  ("deathstar_parts_1_door",0,"deathstar_parts_1_door","bo_deathstar_parts_1_door", []),
+  ("deathstar_parts_2_door",0,"deathstar_parts_2_door","bo_deathstar_parts_2_door", []),
+  ("deathstar_parts_2_corridor",0,"deathstar_parts_2_corridor","bo_deathstar_parts_2_corridor", []),
+  ("virtual_twilek_dancer_hologram",0,"virtual_twilek_dancer_hologram","bo_virtual_twilek_dancer_hologram", []),
+  ("taris_statue_base_1",0,"taris_statue_base_1","bo_taris_statue_base_1", []),
+  ("taris_statue_base_2",0,"taris_statue_base_2","bo_taris_statue_base_2", []),
+  ("taris_statue_1",0,"taris_statue_1","bo_taris_statue_1", []),
+  ("Container_1",0,"Container_1","bo_Container_1", []),
+  ("Container_2",0,"Container_2","bo_Container_2", []),
+  ("Container_3",0,"Container_3","bo_Container_3", []),
+  ("Container_4",0,"Container_4","bo_Container_4", []),
+  ("Container_5",0,"Container_5","bo_Container_5", []),
+  ("Container_6",0,"Container_6","bo_Container_6", []),
+  ("Container_7",0,"Container_7","bo_Container_7", []),
+  ("Container_8",0,"Container_8","bo_Container_8", []),
+  ("Container_9",0,"Container_9","bo_Container_9", []),
+  ("Container_10",0,"Container_10","bo_Container_10", []),
+
+#@Automagically added -- End
+
+
 #----------------------------------------------------------------------
   ("rm_end",0,"0","0", []),
    #add everything crashable here:(asteroids and etc.)
