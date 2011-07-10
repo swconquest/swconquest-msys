@@ -39,6 +39,7 @@ rem echo Pythonpath: "%pythonpath%"--
 
 echo Correcting scripts indentation...
 python.exe Process/process_line_correction.py
+rem python.exe Process/process_line_correction_templates.py
 python.exe Process/process_init.py
 python.exe Process/process_global_variables.py
 python.exe Process/process_strings.py

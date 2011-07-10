@@ -527,7 +527,7 @@ scripts = [
         ##        (party_set_slot, "p_four_ways_inn", ":offset", average_price_factor),
       (try_end),
       
-      (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_byss"),
+      (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_christophsis"),
       (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_corellia"),
       (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_geonosis"),
       (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_mon_cal"),
@@ -537,13 +537,13 @@ scripts = [
       (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_reecee"),
       (call_script, "script_set_trade_route_between_centers", "p_mandalore", "p_coruscant"),
       
-      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_corellia"),
-      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_kessel"),
-      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_geonosis"),
-      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_gamorr"),
-      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_yavin_iv"),
-      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_reecee"),
-      (call_script, "script_set_trade_route_between_centers", "p_byss", "p_coruscant"),
+      (call_script, "script_set_trade_route_between_centers", "p_christophsis", "p_corellia"),
+      (call_script, "script_set_trade_route_between_centers", "p_christophsis", "p_kessel"),
+      (call_script, "script_set_trade_route_between_centers", "p_christophsis", "p_geonosis"),
+      (call_script, "script_set_trade_route_between_centers", "p_christophsis", "p_gamorr"),
+      (call_script, "script_set_trade_route_between_centers", "p_christophsis", "p_yavin_iv"),
+      (call_script, "script_set_trade_route_between_centers", "p_christophsis", "p_reecee"),
+      (call_script, "script_set_trade_route_between_centers", "p_christophsis", "p_coruscant"),
       
       (call_script, "script_set_trade_route_between_centers", "p_endor", "p_corellia"),
       (call_script, "script_set_trade_route_between_centers", "p_endor", "p_naboo"),
@@ -632,7 +632,7 @@ scripts = [
       (call_script, "script_set_trade_route_between_centers", "p_raxusprime", "p_gamorr"),
       (call_script, "script_set_trade_route_between_centers", "p_sarapin", "p_yavin_iv"),
       (call_script, "script_set_trade_route_between_centers", "p_hypori", "p_geonosis"),
-      (call_script, "script_set_trade_route_between_centers", "p_felucia", "p_byss"),
+      (call_script, "script_set_trade_route_between_centers", "p_felucia", "p_christophsis"),
       
       (try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
         (party_set_slot, ":town_no", slot_mainplanet_tournament_max_teams, 4),
@@ -658,13 +658,13 @@ scripts = [
       (party_set_slot,"p_mandalore", slot_mainplanet_arena_melee_3_team_size,   1),
       (call_script, "script_center_change_trade_good_production", "p_mandalore", "itm_linen", 110, 0),
       
-      (party_set_slot,"p_byss", slot_mainplanet_arena_melee_1_num_teams,   4),
-      (party_set_slot,"p_byss", slot_mainplanet_arena_melee_1_team_size,   4),
-      (party_set_slot,"p_byss", slot_mainplanet_arena_melee_2_num_teams,   4),
-      (party_set_slot,"p_byss", slot_mainplanet_arena_melee_2_team_size,   6),
-      (party_set_slot,"p_byss", slot_mainplanet_arena_melee_3_num_teams,   4),
-      (party_set_slot,"p_byss", slot_mainplanet_arena_melee_3_team_size,   8),
-      (call_script, "script_center_change_trade_good_production", "p_byss", "itm_smoked_fish", 130, 0),
+      (party_set_slot,"p_christophsis", slot_mainplanet_arena_melee_1_num_teams,   4),
+      (party_set_slot,"p_christophsis", slot_mainplanet_arena_melee_1_team_size,   4),
+      (party_set_slot,"p_christophsis", slot_mainplanet_arena_melee_2_num_teams,   4),
+      (party_set_slot,"p_christophsis", slot_mainplanet_arena_melee_2_team_size,   6),
+      (party_set_slot,"p_christophsis", slot_mainplanet_arena_melee_3_num_teams,   4),
+      (party_set_slot,"p_christophsis", slot_mainplanet_arena_melee_3_team_size,   8),
+      (call_script, "script_center_change_trade_good_production", "p_christophsis", "itm_smoked_fish", 130, 0),
       
       (party_set_slot,"p_endor", slot_mainplanet_arena_melee_1_num_teams,   2),
       (party_set_slot,"p_endor", slot_mainplanet_arena_melee_1_team_size,   8),
@@ -937,6 +937,11 @@ scripts = [
         (store_add, ":cur_object_no", "scn_mainplanet_mandalore_center", ":offset"),
         (party_set_slot,":town_no", slot_mainplanet_center, ":cur_object_no"),
         (party_set_slot,":town_no", slot_mainplanet_reinforcement_party_template, "pt_center_reinforcements"),
+        
+        #Swy - 0.9.0.4 moved the initial aura effect to this init part
+        (party_add_particle_system, ":town_no", "psys_planet_icon_atmospheric_effect"),
+        
+        
       (try_end),
       
       #SW - modified to use arena_melee_fight only (nevermind, apprently no longer exists in 1.x?)
@@ -950,11 +955,11 @@ scripts = [
         
         #        (store_add, ":senechal_troop_no", "trp_spacestation_1_seneschal", ":offset"),
         #        (party_set_slot,":spacestation_no", slot_mainplanet_seneschal, ":senechal_troop_no"),
-        (store_add, ":exterior_scene_no", "scn_spacestation_mandalore_exterior", ":offset"),
+        (store_add, ":exterior_scene_no", "scn_spacestation_1_exterior", ":offset"),
         (party_set_slot,":spacestation_no", slot_spacestation_exterior, ":exterior_scene_no"),
-        (store_add, ":interior_scene_no", "scn_spacestation_mandalore_interior", ":offset"),
+        (store_add, ":interior_scene_no", "scn_spacestation_1_interior", ":offset"),
         (party_set_slot,":spacestation_no", slot_mainplanet_castle, ":interior_scene_no"),
-        (store_add, ":interior_scene_no", "scn_spacestation_mandalore_prison", ":offset"),
+        (store_add, ":interior_scene_no", "scn_spacestation_1_prison", ":offset"),
         (party_set_slot,":spacestation_no", slot_mainplanet_prison, ":interior_scene_no"),
         
         (party_set_slot,":spacestation_no", slot_mainplanet_reinforcement_party_template, "pt_center_reinforcements"),
@@ -1068,6 +1073,9 @@ scripts = [
         (call_script, "script_refresh_minorplanet_defenders", ":minorplanet_no"),
         (call_script, "script_refresh_minorplanet_defenders", ":minorplanet_no"),
         (call_script, "script_refresh_minorplanet_defenders", ":minorplanet_no"),
+        
+        #Swy - 0.9.0.4 moved the initial aura effect to this init part
+        (party_add_particle_system, ":minorplanet_no", "psys_planet_icon_atmospheric_effect"),
       (try_end),
       
       
@@ -1217,11 +1225,11 @@ scripts = [
       #SW - modified script_give_center_to_lord
       #TEST
       #(call_script, "script_give_center_to_lord", "p_mandalore",  "trp_player", 0),
-      #(call_script, "script_give_center_to_lord", "p_byss",  "trp_player", 0),
+      #(call_script, "script_give_center_to_lord", "p_christophsis",  "trp_player", 0),
       #(call_script, "script_give_center_to_lord", "p_endor",  "trp_player", 0),
       #(call_script, "script_give_center_to_lord", "p_corellia",  "trp_player", 0),
       (call_script, "script_give_center_to_lord", "p_mandalore",  "trp_knight_1_4", 0),
-      (call_script, "script_give_center_to_lord", "p_byss",  "trp_knight_1_7", 0),
+      (call_script, "script_give_center_to_lord", "p_christophsis",  "trp_knight_1_7", 0),
       (call_script, "script_give_center_to_lord", "p_endor",  "trp_knight_1_3", 0),
       (call_script, "script_give_center_to_lord", "p_corellia",  "trp_knight_1_2", 0),
       (call_script, "script_give_center_to_lord", "p_naboo",  "trp_knight_1_1", 0),
@@ -1297,7 +1305,8 @@ scripts = [
       (call_script, "script_give_center_to_faction_aux", "p_spacestation_39", "fac_rebelalliance"),
       (call_script, "script_give_center_to_faction_aux", "p_spacestation_40", "fac_huttcartel"),
       
-      
+      #@> swy - set outpost icons depending of the faction - new map icons by Vector Dalon
+      (call_script, "script_swy_map_outpost_icon_routine"),
       
       # fill_minorplanet_bound_centers
       #pass 1: Give one village to each castle
@@ -1675,6 +1684,10 @@ scripts = [
       ##      (assign, "$g_spacestation_requested_by_player", "p_spacestation_10"),
       (call_script, "script_get_player_party_morale_values"),
       (party_set_morale, "p_main_party", reg0),
+      
+      #@> swy - set aura colors depending of the faction
+      (call_script, "script_swy_map_planet_aura_routine",mainplanets_begin,mainplanets_end),
+      (call_script, "script_swy_map_planet_aura_routine",minorplanet_begin,minorplanet_end),
   ]),
   
   
@@ -12909,7 +12922,7 @@ scripts = [
         # (eq, ":closest_town", "p_mandalore"),				#Mandalore
         # (assign, ":scene_to_use", "scn_town_1_land_battle"),
         # (else_try),
-        # (eq, ":closest_town", "p_byss"),				#Byss
+        # (eq, ":closest_town", "p_christophsis"),				#christophsis
         # (assign, ":scene_to_use", "scn_town_2_land_battle"),
         # (else_try),
         # (eq, ":closest_town", "p_endor"),				#Endor
@@ -17789,7 +17802,7 @@ scripts = [
           (try_end),
           
           #SW - commented out trp_ramun_the_slave_trader and moved them to the trade federation base
-          #(party_set_slot,"p_byss",slot_center_ransom_broker,"trp_ramun_the_slave_trader"),
+          #(party_set_slot,"p_christophsis",slot_center_ransom_broker,"trp_ramun_the_slave_trader"),
       ]),
       
       #script_update_tavern_travelers
@@ -26820,7 +26833,7 @@ scripts = [
                       (call_script, "script_init_patrol_settings", "p_geonosis", 2), #Geonosis
                       (call_script, "script_init_patrol_settings", "p_corellia", 3), #corellia
                       (call_script, "script_init_patrol_settings", "p_reecee", 1), #reecee
-                      (call_script, "script_init_patrol_settings", "p_byss", 1), #byss
+                      (call_script, "script_init_patrol_settings", "p_christophsis", 1), #christophsis
                       (call_script, "script_init_patrol_settings", "p_mandalore", 2), #mandalore
                       (call_script, "script_init_patrol_settings", "p_kessel", 1), #kessel
                       (call_script, "script_init_patrol_settings", "p_endor", 3), #Endor
@@ -30255,4 +30268,72 @@ scripts = [
                           (troop_set_slot, "trp_gate_sys_array", ":cur_i",0),
                         (try_end),
                     ]),
+                    
+                    ("swy_map_outpost_icon_routine",
+                      [
+                        (try_for_range, ":cur_i", castles_begin, castles_end),
+                          (party_get_icon, ":outpost_icon", ":cur_i"),
+                          (this_or_next|eq,":outpost_icon","icon_outpost_imp"),
+                          (this_or_next|eq,":outpost_icon","icon_outpost_reb"),
+                          (             eq,":outpost_icon","icon_outpost_hut"),
+                          #if we're in front of a spacestation then ->
+                          
+                          (party_get_faction, ":outpost_faction", ":cur_i"), # also named store_faction_of_party, but is ugly, so I created an alias
+                          
+                          (try_begin),
+                            #if rebel st rebel icon ->
+                            (eq,":outpost_faction","fac_rebelalliance"),
+                            (party_set_icon, ":cur_i", "icon_outpost_reb"),
+                          (else_try),
+                            #if imperial set imp icon ->
+                            (eq,":outpost_faction","fac_galacticempire"),
+                            (party_set_icon, ":cur_i", "icon_outpost_imp"),
+                          (else_try),
+                            #if hutt set hutt icon ->
+                            (eq,":outpost_faction","fac_huttcartel"),
+                            (party_set_icon, ":cur_i", "icon_outpost_hut"),
+                          (try_end),
+                          
+                          # if not left everything unchanged and then go to the next cool boy...
+                        (try_end),
+                    ]),
+                    
+                    ("swy_map_planet_aura_routine",
+                      [
+                        (store_script_param_1 , ":planet_aura_begin"),
+                        (store_script_param_2 , ":planet_aura_end"),
+                        
+                        (try_for_range, ":cur_i", ":planet_aura_begin", ":planet_aura_end"),
+                          (party_get_faction, ":planet_aura_faction", ":cur_i"), # also named store_faction_of_party, but is ugly, so I created an alias
+                          
+                          (try_begin),
+                            #if rebel st rebel aura ->
+                            (eq,":planet_aura_faction","fac_rebelalliance"),
+                            (party_clear_particle_systems, ":cur_i"),
+                            (party_clear_particle_systems, ":cur_i"),
+                            
+                            (party_add_particle_system, ":cur_i", "psys_planet_icon_raided_effect"),
+                            
+                          (else_try),
+                            #if imperial set imp aura ->
+                            (eq,":planet_aura_faction","fac_galacticempire"),
+                            (party_clear_particle_systems, ":cur_i"),
+                            (party_clear_particle_systems, ":cur_i"),
+                            
+                            (party_add_particle_system, ":cur_i", "psys_planet_icon_atmospheric_effect"),
+                            
+                          (else_try),
+                            #if hutt set hutt aura ->
+                            (eq,":planet_aura_faction","fac_huttcartel"),
+                            (party_clear_particle_systems, ":cur_i"),
+                            (party_clear_particle_systems, ":cur_i"),
+                            
+                            (party_add_particle_system, ":cur_i", "psys_planet_icon_atmospheric_effect_polution"),
+                            
+                          (try_end),
+                          
+                          # if not left everything unchanged and then go to the next cool boy...
+                        (try_end),
+                    ]),
+                    
                   ]

@@ -131,6 +131,7 @@ simple_triggers = [
    [
        (map_free),
        (call_script, "script_music_set_situation_with_culture", mtf_sit_travel),
+	   (call_script, "script_flush_gatesys_cache"),
    
 	   #SW - trying to eliminate fog on the world map with the set_fog_distance command (doesn't seem to work)
 	   #(set_fog_distance,100000000),
@@ -140,6 +141,16 @@ simple_triggers = [
        #(assign, reg7, ":minorplanet_id"), #diagnostic only
        #(display_message, "@Village 66 = {reg7}"),#diagnostic only
     ]),
+	
+	#swy - swc 0.9.0.4 - set outpost icon depending of the faction - pretty cool and automated
+   (35,
+	[
+	   #@> swy - set outpost icons depending of the faction - new map icons by Vector Dalon
+	  (call_script, "script_swy_map_outpost_icon_routine"),
+	   #@> swy - set aura colors depending of the faction
+	  (call_script, "script_swy_map_planet_aura_routine",mainplanets_begin,mainplanets_end),
+	  (call_script, "script_swy_map_planet_aura_routine",minorplanet_begin,minorplanet_end),
+	]),
 	
 # #SW - new music (doesn't work that well, stops playing after 5 seconds)
   # (0,

@@ -206,12 +206,12 @@ strings = [
  When you reach the flag, it will move to the next waypoint on the course until you reach the finish."),
   ("tutorial_4_msg_3","Very good. Next we'll cover attacking enemies while riding. Approach the yellow flag now."),
   ("tutorial_4_msg_4","Draw your sword (using the mouse wheel) and destroy the four targets.\
- Try hitting the dummies as you pass them at full gallop -- this provides an extra challenge,\
+ Try hitting the dummies as you pass them at full speed -- this provides an extra challenge,\
  but the additional speed added to your blow will allow you to do more damage.\
  The easiest way of doing this is by pressing and holding the left mouse button until the right moment,\
  releasing it just before you pass the target."),
   ("tutorial_4_msg_5","Excellent work. Now let us try some target shooting while riding a speeder bike. Go near the yellow flag now."),
-  ("tutorial_4_msg_6","Locate the archery target beside the riding course and shoot it three times with your blaster.\
+  ("tutorial_4_msg_6","Locate the shooting target beside the riding course and shoot it three times with your blaster.\
  Although you are not required to ride while shooting, it's recommended that you try to hit the target at various speeds and angles\
  to get a feel for how your speeder bike's speed and course affects your aim."),
   ("tutorial_4_msg_7","Congratulations, you have finished this tutorial.\
@@ -511,7 +511,7 @@ strings = [
 
 # Surname
   ("surname_1",  "{s50} of Mandalore"),
-  ("surname_2",  "{s50} of Byss"),
+  ("surname_2",  "{s50} of Christophsis"),
   ("surname_3",  "{s50} of Endor"),
   ("surname_4",  "{s50} of Carellia"),
   ("surname_5",  "{s50} of Naboo"),

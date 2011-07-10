@@ -179,7 +179,7 @@ items = [
  ["apples","Apples", [("apple_basket",0)], itp_type_goods|itp_consumable|itp_food, 0, 44,weight(35)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],	#removed merch tag but didn't comment out since it may be used for scene props?
  ["blue_milk","Blue Milk", [("blue_milk",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 100,weight(25)|abundance(110)|food_quality(60)|max_ammo(80),imodbits_none],
  ["mujo_fruit","Mujo Fruit", [("mujo_fruit",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 44,weight(35)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],
- ["cheese","Byss cheese", [("cheese_b",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 95,weight(15)|abundance(110)|food_quality(40)|max_ammo(60),imodbits_none],
+ ["cheese","Christophsis cheese", [("cheese_b",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 95,weight(15)|abundance(110)|food_quality(40)|max_ammo(60),imodbits_none],
  ["chicken","Chicken", [("chicken_roasted",0)], itp_type_goods|itp_consumable|itp_food, 0, 75,weight(15)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],	#removed merch tag but didn't comment out since it may be used for scene props?
  ["protein_pack","Protein Pack", [("protein_food",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 20,weight(15)|abundance(110)|food_quality(40)|max_ammo(150),imodbits_none], 
  ["honey","Honey", [("honey_pot",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 136,weight(5)|abundance(110)|food_quality(40)|max_ammo(40),imodbits_none],

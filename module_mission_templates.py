@@ -1875,7 +1875,10 @@ common_turret = (0, 0, 0,
 #Swyter Gate System Code - Vertical Single side kind.
 common_gate_system = (1, 1, 0,
 	[],
-		[ 	(scene_prop_get_num_instances,":num_instances","spr_swy_gate.sys"),
+		[ 
+        #@~ Original code		
+		(try_begin),
+		    (scene_prop_get_num_instances,":num_instances","spr_swy_gate.sys"),
 			(gt, ":num_instances", 0),
 				(try_for_range, ":cur_i", 0, ":num_instances"),  #-> Try for every door in the scene
 					#(assign,":break_try",0),
@@ -1944,6 +1947,62 @@ common_gate_system = (1, 1, 0,
 						(try_end),
 										
 				(try_end),
+		(try_end), #--> Original code end
+		#@~ Death Star Blast Doors [deathstar_parts_1_door]
+		(try_begin),
+			(scene_prop_get_num_instances,":num_instances","spr_deathstar_parts_1_door"),
+			(gt, ":num_instances", 0),
+				(try_for_range, ":cur_i", 0, ":num_instances"),  #-> Try for every door in the scene
+					(troop_set_slot, "trp_gate_sys_counter2", ":cur_i",0),
+						(try_for_agents,":gate_sys_agent"), #-> Try for every guy in the scene
+							(scene_prop_get_instance,":instance", "spr_deathstar_parts_1_door", ":cur_i"),
+							(prop_instance_get_position,pos1,":instance"),
+							(agent_get_position, pos2, ":gate_sys_agent"),
+							(get_distance_between_positions,":dist",pos1,pos2),
+							
+								(try_begin), # How many people it's close to the door?
+									(le, ":dist", 1000), 
+									(troop_get_slot,reg1,"trp_gate_sys_counter2",":cur_i"),
+									(val_add,reg1,1),
+									(troop_set_slot, "trp_gate_sys_counter2", ":cur_i",reg1),
+								(try_end),
+						(try_end),
+							
+						(try_begin),
+								
+									(try_begin), #CLOSE DOOR -> Need to handle various ids
+
+											(troop_get_slot,reg1,"trp_gate_sys_counter2",":cur_i"),
+											(eq,reg1,0),
+											
+											(troop_get_slot,":is_open","trp_gate_sys_array2",":cur_i"),
+											(eq,":is_open",1),
+											
+											(agent_play_sound, ":gate_sys_agent", "snd_blast_door_close"),
+											(troop_set_slot, "trp_gate_sys_array2", ":cur_i",0), #used as save array: door[id]=0/1
+											
+											#@> We move the door...
+											(position_move_x,pos1,400),
+											(prop_instance_animate_to_position,":instance",pos1,200),
+									(try_end),
+									(try_begin), #OPEN DOOR -> When a guy it's 0.7 meters far from the gate it will open
+											(troop_get_slot,reg1,"trp_gate_sys_counter2",":cur_i"),
+											(gt,reg1,0),
+											
+											(troop_get_slot,":is_open","trp_gate_sys_array2",":cur_i"),
+											(neq|eq,":is_open",1),
+
+											(agent_play_sound, ":gate_sys_agent", "snd_blast_door_open"),
+											(troop_set_slot, "trp_gate_sys_array2", ":cur_i",1), #used as save array: door[id]=0/1
+											
+											#@> We move the door...
+											(position_move_x,pos1,-400),
+											(prop_instance_animate_to_position,":instance",pos1,200),
+									(try_end),
+						(try_end),
+										
+				(try_end),
+		(try_end), #--> Death Star Blast door end
 	])
 
 
@@ -5783,7 +5842,7 @@ common_gate_system,
                                            (call_script, "script_remove_siege_objects"),
                                            ]),
 
-common_gate_system,
+		common_gate_system,
 
       (0, 0, ti_once, [],
        [

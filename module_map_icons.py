@@ -116,17 +116,20 @@ map_icons = [
   #("sw_base2",mcn_no_shadow,"spacestation3", spacestation_scale,0),
   #("sw_base3",mcn_no_shadow,"spacestation4", spacestation_scale,0),
   ("asteroid_base",mcn_no_shadow,"asteroid_base", spacestation_scale,0),
+  #("shipyard",mcn_no_shadow,"spacestation1", spacestation_scale,0),
   ("shipyard",mcn_no_shadow,"spacestation1", spacestation_scale,0),
   ("battlestation",mcn_no_shadow,"spacestation5", spacestation_scale,0),
-  ("outpost_a",mcn_no_shadow,"spacestation3", spacestation_scale,0),
-  ("outpost_b",mcn_no_shadow,"spacestation4", spacestation_scale,0),
+  #("outpost_a",mcn_no_shadow,"spacestation3", spacestation_scale,0),
+  ("outpost_imp",mcn_no_shadow,"spacestation8", spacestation_scale,0),
+  #("outpost_b",mcn_no_shadow,"spacestation4", spacestation_scale,0),
+  ("outpost_reb",mcn_no_shadow,"spacestation6", spacestation_scale,0),
+  ("outpost_hut",mcn_no_shadow,"spacestation7", spacestation_scale,0), 
   
-  
-  #SWC 0.9.0.4 - New Vector Space Stations
-  ("spacestation5",mcn_no_shadow,"spacestation5", spacestation_scale,0),
-  ("spacestation6",mcn_no_shadow,"spacestation6", spacestation_scale,0),
-  ("spacestation7",mcn_no_shadow,"spacestation7", spacestation_scale,0),
-  ("spacestation8",mcn_no_shadow,"spacestation8", spacestation_scale,0),
+  #@> SWC 0.9.0.4 - New Vector Space Stations
+  #("spacestation5",mcn_no_shadow,"spacestation5", spacestation_scale,0),
+  #("spacestation6",mcn_no_shadow,"spacestation6", spacestation_scale,0),
+  #("spacestation7",mcn_no_shadow,"spacestation7", spacestation_scale,0), <--- Commented out because replaced them up there ^   :)
+  #("spacestation8",mcn_no_shadow,"spacestation8", spacestation_scale,0),
   
   ("XQ_04_Station_1",mcn_no_shadow,"XQ_04_Station_1", spacestation_scale,0),
   ("XQ_04_Station_2",mcn_no_shadow,"XQ_04_Station_2", spacestation_scale,0),
@@ -173,34 +176,34 @@ map_icons = [
   #death star
   
 #villages  
-  ("minorplanet_a",mcn_no_shadow,"planet_craters",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("minorplanet_burnt_a",mcn_no_shadow,"planet_craters", planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("minorplanet_deserted_a",mcn_no_shadow,"planet_craters",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("minorplanet_snow_a",mcn_no_shadow,"planet_gas",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("minorplanet_snow_burnt_a",mcn_no_shadow,"planet_gas",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("minorplanet_snow_deserted_a",mcn_no_shadow,"planet_gas",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),  
+  ("minorplanet_a",mcn_no_shadow,"planet_craters",planet_minor_scale, 0, []),
+  ("minorplanet_burnt_a",mcn_no_shadow,"planet_craters", planet_minor_scale, 0, []),
+  ("minorplanet_deserted_a",mcn_no_shadow,"planet_craters",planet_minor_scale, 0, []),
+  ("minorplanet_snow_a",mcn_no_shadow,"planet_gas",planet_minor_scale, 0, []),
+  ("minorplanet_snow_burnt_a",mcn_no_shadow,"planet_gas",planet_minor_scale, 0, []),
+  ("minorplanet_snow_deserted_a",mcn_no_shadow,"planet_gas",planet_minor_scale, 0, []),  
   #new icons for villages
-  ("sw_minorplanet_01",mcn_no_shadow,"Planet_Var_01",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_02",mcn_no_shadow,"Planet_Var_02",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_03",mcn_no_shadow,"Planet_Var_03",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_04",mcn_no_shadow,"Planet_Var_04",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_05",mcn_no_shadow,"Planet_Var_05",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_06",mcn_no_shadow,"Planet_Var_06",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_07",mcn_no_shadow,"Planet_Var_07",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_08",mcn_no_shadow,"Planet_Var_08",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_09",mcn_no_shadow,"Planet_Var_09",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_10",mcn_no_shadow,"Planet_Var_10",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_11",mcn_no_shadow,"Planet_Var_11",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_12",mcn_no_shadow,"Planet_Var_12",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_13",mcn_no_shadow,"Planet_Var_13",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_14",mcn_no_shadow,"Planet_Var_14",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_15",mcn_no_shadow,"Planet_Var_15",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_16",mcn_no_shadow,"Planet_Var_16",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_17",mcn_no_shadow,"Planet_Var_17",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_18",mcn_no_shadow,"Planet_Var_18",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_19",mcn_no_shadow,"Planet_Var_19",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_20",mcn_no_shadow,"Planet_Var_20",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
-  ("sw_minorplanet_21",mcn_no_shadow,"Planet_Var_21",planet_minor_scale, 0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+  ("sw_minorplanet_01",mcn_no_shadow,"Planet_Var_01",planet_minor_scale, 0, []),
+  ("sw_minorplanet_02",mcn_no_shadow,"Planet_Var_02",planet_minor_scale, 0, []),
+  ("sw_minorplanet_03",mcn_no_shadow,"Planet_Var_03",planet_minor_scale, 0, []),
+  ("sw_minorplanet_04",mcn_no_shadow,"Planet_Var_04",planet_minor_scale, 0, []),
+  ("sw_minorplanet_05",mcn_no_shadow,"Planet_Var_05",planet_minor_scale, 0, []),
+  ("sw_minorplanet_06",mcn_no_shadow,"Planet_Var_06",planet_minor_scale, 0, []),
+  ("sw_minorplanet_07",mcn_no_shadow,"Planet_Var_07",planet_minor_scale, 0, []),
+  ("sw_minorplanet_08",mcn_no_shadow,"Planet_Var_08",planet_minor_scale, 0, []),
+  ("sw_minorplanet_09",mcn_no_shadow,"Planet_Var_09",planet_minor_scale, 0, []),
+  ("sw_minorplanet_10",mcn_no_shadow,"Planet_Var_10",planet_minor_scale, 0, []),
+  ("sw_minorplanet_11",mcn_no_shadow,"Planet_Var_11",planet_minor_scale, 0, []),
+  ("sw_minorplanet_12",mcn_no_shadow,"Planet_Var_12",planet_minor_scale, 0, []),
+  ("sw_minorplanet_13",mcn_no_shadow,"Planet_Var_13",planet_minor_scale, 0, []),
+  ("sw_minorplanet_14",mcn_no_shadow,"Planet_Var_14",planet_minor_scale, 0, []),
+  ("sw_minorplanet_15",mcn_no_shadow,"Planet_Var_15",planet_minor_scale, 0, []),
+  ("sw_minorplanet_16",mcn_no_shadow,"Planet_Var_16",planet_minor_scale, 0, []),
+  ("sw_minorplanet_17",mcn_no_shadow,"Planet_Var_17",planet_minor_scale, 0, []),
+  ("sw_minorplanet_18",mcn_no_shadow,"Planet_Var_18",planet_minor_scale, 0, []),
+  ("sw_minorplanet_19",mcn_no_shadow,"Planet_Var_19",planet_minor_scale, 0, []),
+  ("sw_minorplanet_20",mcn_no_shadow,"Planet_Var_20",planet_minor_scale, 0, []),
+  ("sw_minorplanet_21",mcn_no_shadow,"Planet_Var_21",planet_minor_scale, 0, []),
 
   #SW - have to use these icons when using the map editor
   # ("minorplanet_a",mcn_no_shadow,"map_minorplanet_a",planet_minor_scale, 0),
@@ -403,19 +406,20 @@ map_icons = [
 	
     ("sw_swy_Death_Star",mcn_no_shadow,"swy_Death_Star",spacestation_scale,0),
 	 
-	("sw_swy_Planet_Coruscant",mcn_no_shadow,"swy_Planet_Coruscant",planet_main_scale,0,[(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),  ]),]),
+	("sw_swy_Planet_Coruscant",mcn_no_shadow,"swy_Planet_Coruscant",planet_main_scale,0,[]),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       #]),
 	#]),
 
+    #("sw_swy_Death_Star",mcn_no_shadow,"swy_Death_Star",spacestation_scale,0),
+	
 	 
 	("sw_swy_Planet_Endor",mcn_no_shadow,"swy_Planet_Endor",planet_main_scale,0,
 		   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -425,8 +429,7 @@ map_icons = [
 	   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -436,8 +439,7 @@ map_icons = [
 	   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		##(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -447,8 +449,7 @@ map_icons = [
 	   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -459,8 +460,7 @@ map_icons = [
 	   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -471,8 +471,7 @@ map_icons = [
 	   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -482,8 +481,7 @@ map_icons = [
 	   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -494,8 +492,7 @@ map_icons = [
 		   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -505,8 +502,7 @@ map_icons = [
 		   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -516,8 +512,7 @@ map_icons = [
 		   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -527,8 +522,7 @@ map_icons = [
 		   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -538,8 +532,7 @@ map_icons = [
 		   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -549,8 +542,7 @@ map_icons = [
 		   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -560,8 +552,7 @@ map_icons = [
 		   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -571,8 +562,7 @@ map_icons = [
 		   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -582,8 +572,7 @@ map_icons = [
 		   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -593,8 +582,7 @@ map_icons = [
 		   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -605,8 +593,7 @@ map_icons = [
 	   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -616,8 +603,7 @@ map_icons = [
 		   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect"),
+        #(store_trigger_param_1, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),#(party_clear_particle_systems, ":planet_id"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -627,8 +613,8 @@ map_icons = [
 		   [
      (ti_on_init_map_icon,
       [
-        (store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect_polution"),
+        #(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
+		#(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect_polution"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
@@ -640,13 +626,18 @@ map_icons = [
 		("sw_swy_NarShadda",mcn_no_shadow,"swy_Planet_Coruscant",planet_minor_scale,0,
 		  [
      (ti_on_init_map_icon,
-      [(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
-		(party_add_particle_system, ":planet_id", "psys_moon_icon_atmospheric_effect"),
+      [#(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
+		#(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),
+		#(party_add_particle_system, ":planet_id", "psys_moon_icon_atmospheric_effect"),
 		#(str_store_party_name,s1,":planet_id"),
 		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
       ]),
 	]),
 	
+	("sw_swy_Christophsis",mcn_no_shadow,"swy_christophsis",planet_main_scale,0,[]),
+		#(str_store_party_name,s1,":planet_id"),
+		##(display_log_message, "@DEBUG: {s1} tiene un sistema de particulas.", color_quest_and_faction_news),
+      #]),
+	#]),	
 	
 ]

@@ -12288,7 +12288,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone|plyr,"minorplanet_elder_talk", [(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
                                       (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),],
-   "I want to buy some supplies. I will pay with gold.", "minorplanet_elder_trade_begin",[]],
+   "I want to buy some supplies. I will pay very well.", "minorplanet_elder_trade_begin",[]],
 
 
   [anyone ,"minorplanet_elder_trade_begin", [], "Of course, {sir/madam}. Do you want to buy goods or nerfs?", "minorplanet_elder_trade_talk",[]],
@@ -12750,7 +12750,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 ##"Sargoth is famous for its fine linen. Many caravans come here to buy that.\
 ## I heard you can sell it at Halmar and make a nice profit.\
 ## And next time you come here bring some iron. I will pay well for iron.", "goods_merchant_town_info_completed",[]],
-##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_byss"]],
+##  [anyone,"goods_merchant_town_info", [[store_encountered_party,reg(1)],[eq,reg(1),"p_christophsis"]],
 ##"I can sell you some smoked fish with a special price.\
 ## I heard that caravans take smoked fish to Uxkhal and make a good profit.\
 ## And next time you come here bring some wool. I will pay you well for wool.", "goods_merchant_town_info_completed",[]],
@@ -13898,18 +13898,18 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                                       (party_slot_eq, "$current_town", slot_party_type, spt_mainplanet),
                                       (assign, reg4, 1),
                                     (try_end),
-                                    (str_store_string, s6, "@This is the {reg4?town:village} of {s5}, {sir/madam}."),
+                                    (str_store_string, s6, "@Welcome to {s5}, {sir/madam}."),
                                     (str_clear, s10),
                                     (try_begin),
                                       (party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player"),
-                                      (str_store_string, s10, "@{s6} Our {reg4?town:village} and the surrounding lands belong to you of course."),
+                                      (str_store_string, s10, "@{s6} Our planet and the surrounding zone belong to you of course."),
                                     (else_try),
                                       (party_get_slot, ":town_lord", "$current_town", slot_mainplanet_lord),
                                       (ge, ":town_lord", 0),
                                       (str_store_troop_name, s7, ":town_lord"),
                                       (store_troop_faction, ":town_lord_faction", ":town_lord"),
                                       (str_store_faction_name, s8, ":town_lord_faction"),
-                                      (str_store_string, s10, "@{s6} Our {reg4?town:village} and the surrounding lands belong to {s7} of {s8}."),
+                                      (str_store_string, s10, "@{s6} Our planet and the surrounding zones belong to {s7} of {s8}."),
                                     (try_end),
                                     (str_clear, s5),
                                     (assign, reg20, 0),

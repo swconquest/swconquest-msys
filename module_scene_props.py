@@ -2252,40 +2252,40 @@ scene_props = [
   ("felucia_fungus_6",0,"felucia_fungus_6","bo_felucia_fungus_6", []),
   
 #Naboo
-  ("Naboo_house_1",0,"Naboo_house_1","bo_Naboo_house_1", []),
-  ("Naboo_house_3",0,"Naboo_house_3","bo_Naboo_house_3", []),
-  ("Naboo_house_4",0,"Naboo_house_4",0, []),
-  ("naboo_house_5",0,"naboo_house_5",0, []),
+  ("Naboo_house_1",0,"naboo_house_1","bo_naboo_house_1", []),
+  ("Naboo_house_3",0,"naboo_house_3","bo_naboo_house_3", []),
+  ("Naboo_house_4",0,"naboo_house_4",0, []),
+  ("naboo_house_5",0,"naboo_house_5","bo_naboo_house_5", []),
 
-  ("Naboo_theedpalace_1",0,"Naboo_theedpalace_1",0, []),
-  ("Naboo_theedpalace_2",0,"Naboo_theedpalace_2",0, []),
-  ("Naboo_theedpalace_3",0,"Naboo_theedpalace_3",0, []),
-  ("Naboo_theedpalace_4",0,"Naboo_theedpalace_4",0, []),
-  ("Naboo_theedpalace_5",0,"Naboo_theedpalace_5",0, []),
-  ("Naboo_theedpalace_6",0,"Naboo_theedpalace_6",0, []),
-  ("Naboo_theedpalace_7",0,"Naboo_theedpalace_7",0, []),
-  ("Naboo_theedpalace_8",0,"Naboo_theedpalace_8",0, []),
-  ("Naboo_theedpalace_9",0,"Naboo_theedpalace_9",0, []),
+  ("Naboo_theedpalace_1",0,"naboo_theedpalace_1",0, []),
+  ("Naboo_theedpalace_2",0,"naboo_theedpalace_2",0, []),
+  ("Naboo_theedpalace_3",0,"naboo_theedpalace_3",0, []),
+  ("Naboo_theedpalace_4",0,"naboo_theedpalace_4",0, []),
+  ("Naboo_theedpalace_5",0,"naboo_theedpalace_5",0, []),
+  ("Naboo_theedpalace_6",0,"naboo_theedpalace_6",0, []),
+  ("Naboo_theedpalace_7",0,"naboo_theedpalace_7",0, []),
+  ("Naboo_theedpalace_8",0,"naboo_theedpalace_8",0, []),
+  ("Naboo_theedpalace_9",0,"naboo_theedpalace_9",0, []),
 
-  ("Naboo_theedpalace_10",0,"Naboo_theedpalace_10",0, []),
-  ("Naboo_theedpalace_11",0,"Naboo_theedpalace_11",0, []),
-  ("Naboo_theedpalace_12",0,"Naboo_theedpalace_12",0, []),
-  ("Naboo_theedpalace_13",0,"Naboo_theedpalace_13",0, []),
-  ("Naboo_theedpalace_14",0,"Naboo_theedpalace_14",0, []),
-  ("Naboo_theedpalace_15",0,"Naboo_theedpalace_15",0, []),
-  ("Naboo_theedpalace_16",0,"Naboo_theedpalace_16",0, []),
-  ("Naboo_theedpalace_17",0,"Naboo_theedpalace_17",0, []),
-  ("Naboo_theedpalace_18",0,"Naboo_theedpalace_18",0, []),
-  ("Naboo_theedpalace_19",0,"Naboo_theedpalace_19",0, []),
-  ("Naboo_theedpalace_20",0,"Naboo_theedpalace_20",0, []),
-  ("Naboo_theedpalace_21",0,"Naboo_theedpalace_21",0, []),
+  ("Naboo_theedpalace_10",0,"naboo_theedpalace_10",0, []),
+  ("Naboo_theedpalace_11",0,"naboo_theedpalace_11",0, []),
+  ("Naboo_theedpalace_12",0,"naboo_theedpalace_12",0, []),
+  ("Naboo_theedpalace_13",0,"naboo_theedpalace_13",0, []),
+  ("Naboo_theedpalace_14",0,"naboo_theedpalace_14",0, []),
+  ("Naboo_theedpalace_15",0,"naboo_theedpalace_15",0, []),
+  ("Naboo_theedpalace_16",0,"naboo_theedpalace_16",0, []),
+  ("Naboo_theedpalace_17",0,"naboo_theedpalace_17",0, []),
+  ("Naboo_theedpalace_18",0,"naboo_theedpalace_18",0, []),
+  ("Naboo_theedpalace_19",0,"naboo_theedpalace_19",0, []),
+  ("Naboo_theedpalace_20",0,"naboo_theedpalace_20",0, []),
+  ("Naboo_theedpalace_21",0,"naboo_theedpalace_21",0, []),
 
-  ("Naboo_theedpalace_bridge",0,"Naboo_theedpalace_bridge",0, []),
-  ("Naboo_column",0,"Naboo_column",0, []),
+  ("Naboo_theedpalace_bridge",0,"naboo_theedpalace_bridge",0, []),
+  ("Naboo_column",0,"naboo_column",0, []),
   ("naboo_arch_1",0,"naboo_arch_1",0, []),
   ("naboo_arch_2",0,"naboo_arch_2",0, []),
 
-  ("Naboo_cantina",0,"Naboo_cantina",0, []),
+  ("Naboo_cantina",0,"naboo_cantina","bo_naboo_cantina", []),
   
 #Mos Eisley
   ("moseisley_angle",0,"moseisley_angle","bo_moseisley_angle", []),
@@ -2300,10 +2300,10 @@ scene_props = [
   ("moseisley_building_2",0,"moseisley_building_2",0, []),
   
 #Saleucami
-  ("saleucami_plant_1",0,"saleucami_plant_1","bo_saleucami_plant_1", []),
-  ("saleucami_plant_2",0,"saleucami_plant_2","bo_saleucami_plant_2", []),
-  ("saleucami_plant_3",0,"saleucami_plant_3",0, []),
-  ("saleucami_plant_4",0,"saleucami_plant_4",0, []),
+  ("saleucami_plant_1",0,"saleucami_plant_1","bo_saleucami_plant_1_2", []),
+  ("saleucami_plant_2",0,"saleucami_plant_2","bo_saleucami_plant_1_2", []),
+  ("saleucami_plant_3",0,"saleucami_plant_3","bo_saleucami_plant_3_4_5_6", []),
+  ("saleucami_plant_4",0,"saleucami_plant_4","bo_saleucami_plant_3_4_5_6", []),
 
 #Taris
   ("taris_building_a_1_hw",0,"taris_building_a_1_hw",0, []),
@@ -2531,7 +2531,37 @@ scene_props = [
   ("Container_9",0,"Container_9","bo_Container_9", []),
   ("Container_10",0,"Container_10","bo_Container_10", []),
 
+#--spropbot.2011-07-07>>16:04:53
+  ("Naboo_house_2",0,"naboo_house_2","bo_naboo_house_2", []),
+  ("Naboo_house_7",0,"naboo_house_7","bo_naboo_house_7", []),
+  ("Naboo_house_8",0,"naboo_house_8","bo_naboo_house_7", []),
+  ("Naboo_theedpalace_entrance",0,"naboo_theedpalace_entrance","bo_naboo_theedpalace_entrance", []),
+  ("naboo_fence",0,"naboo_fence","0", []),
+  ("naboo_statue_guard_female",0,"naboo_statue_guard_female","bo_naboo_statue_guard", []),
+  ("naboo_statue_guard_male",0,"naboo_statue_guard_male","bo_naboo_statue_guard", []),
+
+#--spropbot.2011-07-09>>15:07:50
+  ("deathstar_parts_3_corridor",0,"deathstar_parts_3_corridor","bo_deathstar_parts_3_corridor", []),
+  ("deathstar_parts_4_wall",0,"deathstar_parts_4_wall","bo_deathstar_parts_4_wall", []),
+
+#--spropbot.2011-07-10>>17:42:53
+  ("deathstar_parts_5_stairs",0,"deathstar_parts_5_stairs","bo_deathstar_parts_5_stairs", []),
+  ("deathstar_parts_5_corridor_curve_1",0,"deathstar_parts_5_corridor_curve_1","bo_deathstar_parts_5_corridor_curve", []),
+  ("deathstar_parts_5_corridor_curve_2",0,"deathstar_parts_5_corridor_curve_2","bo_deathstar_parts_5_corridor_curve", []),
+  ("deathstar_parts_5_column_1",0,"deathstar_parts_5_column_1","bo_deathstar_parts_5_column", []),
+  ("deathstar_parts_5_column_2",0,"deathstar_parts_5_column_2","bo_deathstar_parts_5_column", []),
+  ("deathstar_parts_5_corridor_1",0,"deathstar_parts_5_corridor_1","bo_deathstar_parts_5_corridor", []),
+  ("deathstar_parts_5_corridor_2",0,"deathstar_parts_5_corridor_2","bo_deathstar_parts_5_corridor", []),
+
+
+("saleucami_plant_5",0,"saleucami_plant_5","bo_saleucami_plant_3_4_5_6", []),
+("saleucami_plant_6",0,"saleucami_plant_6","bo_saleucami_plant_3_4_5_6", []),
+
+("saleucami_plant_7",0,"saleucami_plant_7","bo_saleucami_plant_7_8", []),
+("saleucami_plant_8",0,"saleucami_plant_8","bo_saleucami_plant_7_8", []),
+
 #@Automagically added -- End
+
 
 
 #----------------------------------------------------------------------

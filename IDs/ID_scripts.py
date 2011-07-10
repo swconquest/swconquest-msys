@@ -448,5 +448,7 @@ script_sw_field_tactics = 446
 script_battle_speech = 447
 script_swy_unique_units_stuff = 448
 script_flush_gatesys_cache = 449
+script_swy_map_outpost_icon_routine = 450
+script_swy_map_planet_aura_routine = 451
 
 

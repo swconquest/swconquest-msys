@@ -1033,7 +1033,7 @@ training_grounds_begin   = "p_training_ground_1"
 training_grounds_end     = "p_sun_1"
 
 scenes_begin = "scn_mainplanet_mandalore_center"
-scenes_end = "scn_spacestation_mandalore_exterior"
+scenes_end = "scn_spacestation_1_exterior"
 
 spawn_points_begin = "p_zendar"
 spawn_points_end = "p_spawn_points_end"
