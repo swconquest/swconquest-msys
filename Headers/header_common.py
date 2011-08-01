@@ -278,3 +278,8 @@ reg62  = opmask_register|62
 reg63  = opmask_register|63
 
 reg65  = opmask_register|65
+
+#@> Constants -- Added by Swyter
+x = 1
+y = 2
+z = 3

@@ -1021,7 +1021,7 @@ minorplanet_begin = "p_minorplanet_1"
 
 mainplanets_end = castles_begin
 castles_end = minorplanet_begin
-minorplanet_end   = "p_salt_mine"
+minorplanet_end   = "p_training_ground"
 
 walled_centers_begin = mainplanets_begin
 walled_centers_end   = castles_end
@@ -1035,7 +1035,7 @@ training_grounds_end     = "p_sun_1"
 scenes_begin = "scn_mainplanet_mandalore_center"
 scenes_end = "scn_spacestation_1_exterior"
 
-spawn_points_begin = "p_zendar"
+spawn_points_begin = "p_shipyard_trade_federation" #"p_zendar"
 spawn_points_end = "p_spawn_points_end"
 
 regular_troops_begin       = "trp_novice_fighter"
@@ -1046,11 +1046,11 @@ regular_troops_end         = "trp_tournament_master"
 bandits_begin = "trp_jawa"
 bandits_end = "trp_bountyhunter"
 
-swadian_merc_parties_begin = "p_town_1_mercs"
-swadian_merc_parties_end   = "p_town_8_mercs"
+#swadian_merc_parties_begin = "p_town_1_mercs"
+#swadian_merc_parties_end   = "p_town_8_mercs"
 
-vaegir_merc_parties_begin  = "p_town_8_mercs"
-vaegir_merc_parties_end    = "p_zendar"
+#vaegir_merc_parties_begin  = "p_town_8_mercs"
+#vaegir_merc_parties_end    = "p_zendar"
 
 arena_masters_begin    = "trp_mainplanet_mandalore_arena_master"
 arena_masters_end      = "trp_mainplanet_mandalore_armorer"

@@ -146,7 +146,8 @@ simple_triggers = [
    (35,
 	[
 	   #@> swy - set outpost icons depending of the faction - new map icons by Vector Dalon
-	  (call_script, "script_swy_map_outpost_icon_routine"),
+	  (call_script, "script_swy_map_outpost_icon_routine","icon_outpost_imp","icon_outpost_reb","icon_outpost_hut"),
+	  (call_script, "script_swy_map_outpost_icon_routine","icon_XQ_04_Station_3","icon_XQ_04_Station_2","icon_XQ_04_Station_5"),
 	   #@> swy - set aura colors depending of the faction
 	  (call_script, "script_swy_map_planet_aura_routine",mainplanets_begin,mainplanets_end),
 	  (call_script, "script_swy_map_planet_aura_routine",minorplanet_begin,minorplanet_end),

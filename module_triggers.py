@@ -87,8 +87,8 @@ triggers = [
                       (set_merchandise_modifier_quality,150),
 
 
-                      (reset_item_probabilities,100),(set_item_probability_in_merchandise,"itm_salt",700),
-                      (troop_add_merchandise,"trp_salt_mine_merchant",itp_type_goods,num_merchandise_goods),
+                      #(reset_item_probabilities,100),(set_item_probability_in_merchandise,"itm_salt",700),
+                      #(troop_add_merchandise,"trp_salt_mine_merchant",itp_type_goods,num_merchandise_goods),
 
                       # Add trade goods to merchant inventories
 #                      (store_sub, ":item_to_production_slot", slot_mainplanet_trade_good_productions_begin, trade_goods_begin),
@@ -251,7 +251,8 @@ triggers = [
   (5.7, 0, 0.0, [(store_num_parties_created,reg(3),"pt_bountyhunters"),
                  (lt,reg(3),num_max_zendar_bountyhunters),
                  (store_num_parties_of_template, reg(2), "pt_bountyhunters"), (lt,reg(2),3)],
-                       [(set_spawn_radius,1),(spawn_around_party,"p_zendar","pt_bountyhunters")]),
+                      #[(set_spawn_radius,1),(spawn_around_party,"p_zendar","pt_bountyhunters")]),
+                       [(set_spawn_radius,1),(spawn_around_party,"p_tusken_raider_spawn_point_1","pt_bountyhunters")]),		
 #  (5.2, 0, 0.0, [(store_num_parties_created,reg(3),"pt_peasant"),(lt,reg(3),num_max_zendar_peasants),
 #                 (store_num_parties_of_template, reg(2), "pt_peasant"), (lt,reg(2),3)],
 #                          [(set_spawn_radius,1),(spawn_around_party,"p_zendar","pt_peasant")]),

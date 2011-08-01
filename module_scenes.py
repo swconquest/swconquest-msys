@@ -270,11 +270,11 @@ scenes = [
 #  town_12  Wercheg     #plain
 #  town_13  Rivacheg    #plain
 #  town_14  Halmar      #steppe
-  ("mainplanet_mandalore_center",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029",
-    [],["bonus_box_mainplanet_1"],"outer_terrain_plain"),
+  ("mainplanet_mandalore_center",sf_indoors, "sundari_peace_park", "bo_sundari_peace_park", (-100,-100),(100,100),-100,"0",
+    [],["bonus_box_mainplanet_1"],),
 	#SW - modified town_2 not to use outer_terrain_town_thir_1
   ("mainplanet_christophsis_center",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029",
-	[],["bonus_box_mainplanet_2"],"outer_terrain_plain"),
+	[],["bonus_box_mainplanet_2"],),
   ("mainplanet_endor_center",sf_generate,"none", "none",(0,0),(100,100),-100,"0x000000002005591e00040506000059a100002cd500005052",
     [],["bonus_box_mainplanet_3"],"outer_terrain_plain"),
   ("mainplanet_corellia_center",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029",
@@ -296,7 +296,7 @@ scenes = [
   ("mainplanet_gamorr_center",sf_generate,"none", "none",(0,0),(100,100),-100,"0x0000000020045abc000308c4000029d9000033bd000009b9",
 	[],["bonus_box_mainplanet_12"],"outer_terrain_desert"),
   ("mainplanet_yavin_iv_center",sf_generate,"none", "none",(0,0),(100,100),-100,"0x300416a600035cd600007ee80000012100003fbc",
-    [],["bonus_box_mainplanet_13"]),
+    [],["bonus_box_mainplanet_13"],"outer_terrain_plain"),
   ("mainplanet_tatooine_center",sf_generate,"none", "none",(0,0),(100,100),-100,"0x00000000200016da000364d9000060f500007591000064e7",
     [],["bonus_box_mainplanet_14"],"outer_terrain_desert"),
   ("mainplanet_reecee_center",sf_generate,"none", "none",(0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029",
@@ -509,7 +509,7 @@ scenes = [
   ("mainplanet_mandalore_arena",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
     [],[], "outer_terrain_plain"),	
   ("mainplanet_christophsis_arena",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
-    [],[], "outer_terrain_plain"),	
+    [],[],),	
   ("mainplanet_endor_arena",sf_generate,"none", "none", (0,0),(100,100),-100,"0xa0001d9300031ccb0000156f000048ba0000361c",
     [],[]),
   ("mainplanet_corellia_arena",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
@@ -622,7 +622,7 @@ scenes = [
   ("mainplanet_mandalore_walls",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029",
     [],[],"outer_terrain_plain"),
   ("mainplanet_christophsis_walls",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029",
-    [],[],"outer_terrain_plain"),
+    [],[],),
   ("mainplanet_endor_walls",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000120044ecf0005955e0000119b0000290000001f11",
     [],[],"outer_terrain_steppe"),
   ("mainplanet_corellia_walls",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029",
@@ -675,7 +675,7 @@ scenes = [
   ("mainplanet_mandalore_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
     [],[],"outer_terrain_plain"),
   ("mainplanet_christophsis_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
-    [],[],"outer_terrain_plain"),
+    [],[],),
 	#SW - modified town_2 not to use outer_terrain_town_thir_1
   ("mainplanet_endor_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
     [],[]),
@@ -755,7 +755,7 @@ scenes = [
     [],[]),
 #       4 Plain
   ("spacestation_4_exterior",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000230029cb2000709c200003c9500004b9b00002f4d",
-    [],[],"outer_terrain_plain"),
+    [],[],),
 	
   ("spacestation_4_interior",sf_generate,"none", "none", (0,0),(100,100),-10,"0x0000000040000521000258960000350400006db600003191",
     [],[],),
@@ -1240,7 +1240,7 @@ scenes = [
   ("mainplanet_mandalore_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
     [],[], "outer_terrain_plain"),
   ("mainplanet_christophsis_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000000300005000006d9b9000052560000620000004c92", 
-    [],[], "outer_terrain_plain"),
+    [],[],),
   ("mainplanet_endor_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x00000006200005000008f23c0000753d00004f66000033c8", ## old code >> "0x00000002bc61d087400799e60000034e00004b34000059be"
     [],[], "outer_terrain_plain"),
   ("mainplanet_corellia_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
@@ -1265,7 +1265,7 @@ scenes = [
   ("mainplanet_gamorr_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x00000006200005000008f23c0000753d00004f66000033c8", ## old code >> "0x00000002bc61d087400799e60000034e00004b34000059be"
     [],[], "outer_terrain_steppe"),
   ("mainplanet_yavin_iv_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000000300005000006d9b9000052560000620000004c92",
-    [],[], "0"), #"outer_terrain_plain_1"),	#Yavin IV
+    [],[], "outer_terrain_plain"),	#Yavin IV
   ("mainplanet_tatooine_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x0000000250c19207400691a400003efe00004b34000059be",
     [],[], "outer_terrain_desert"),
   ("mainplanet_reecee_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000000300005000006d9b9000052560000620000004c92", 

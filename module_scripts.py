@@ -277,6 +277,14 @@ scripts = [
       
       (item_set_slot, "itm_wine", slot_item_food_bonus, 5),
       (item_set_slot, "itm_ale", slot_item_food_bonus, 4),
+      #SWY - 0.9.0.4 Added Morale Bonus to the new supplies
+      (item_set_slot, "itm_Container_spice_1", slot_item_food_bonus, 10),
+      (item_set_slot, "itm_Container_spice_2", slot_item_food_bonus, 15),
+      (item_set_slot, "itm_Container_spice_3", slot_item_food_bonus, 25),
+      
+      (item_set_slot, "itm_Container_death_sticks", slot_item_food_bonus, 5),
+      (item_set_slot, "itm_Container_drink_2", slot_item_food_bonus, 15),
+      (item_set_slot, "itm_Container_drink_3", slot_item_food_bonus, 5),
       
       #SW - settng alternative weapon capabilities for common_toggle_weapon_capabilities code
       #lightsabers
@@ -1306,7 +1314,8 @@ scripts = [
       (call_script, "script_give_center_to_faction_aux", "p_spacestation_40", "fac_huttcartel"),
       
       #@> swy - set outpost icons depending of the faction - new map icons by Vector Dalon
-      (call_script, "script_swy_map_outpost_icon_routine"),
+      (call_script, "script_swy_map_outpost_icon_routine","icon_outpost_imp","icon_outpost_reb","icon_outpost_hut"),
+      (call_script, "script_swy_map_outpost_icon_routine","icon_XQ_04_Station_3","icon_XQ_04_Station_2","icon_XQ_04_Station_5"),
       
       # fill_minorplanet_bound_centers
       #pass 1: Give one village to each castle
@@ -1765,21 +1774,21 @@ scripts = [
         (else_try),
           (is_between, "$g_encountered_party", training_grounds_begin, training_grounds_end),
           (jump_to_menu, "mnu_training_ground"),
-        (else_try),
-          (eq, "$g_encountered_party", "p_zendar"),
-          (jump_to_menu, "mnu_zendar"),
-        (else_try),
-          (eq, "$g_encountered_party", "p_salt_mine"),
-          (jump_to_menu, "mnu_salt_mine"),
-        (else_try),
-          (eq, "$g_encountered_party", "p_four_ways_inn"),
-          (jump_to_menu, "mnu_four_ways_inn"),
-        (else_try),
-          (eq, "$g_encountered_party", "p_test_scene"),
-          (jump_to_menu, "mnu_test_scene"),
-        (else_try),
-          (eq, "$g_encountered_party", "p_battlefields"),
-          (jump_to_menu, "mnu_battlefields"),
+          # (else_try),
+          # (eq, "$g_encountered_party", "p_zendar"),
+          # (jump_to_menu, "mnu_zendar"),
+          # (else_try),
+          # (eq, "$g_encountered_party", "p_salt_mine"),
+          # (jump_to_menu, "mnu_salt_mine"),
+          # (else_try),
+          # (eq, "$g_encountered_party", "p_four_ways_inn"),
+          # (jump_to_menu, "mnu_four_ways_inn"),
+          # (else_try),
+          # (eq, "$g_encountered_party", "p_test_scene"),
+          # (jump_to_menu, "mnu_test_scene"),
+          # (else_try),
+          # (eq, "$g_encountered_party", "p_battlefields"),
+          # (jump_to_menu, "mnu_battlefields"),
         (else_try),
           (eq, "$g_encountered_party", "p_training_ground"),
           (jump_to_menu, "mnu_tutorial"),
@@ -18796,6 +18805,20 @@ scripts = [
               (assign, ":new_party", reg0),
               (store_troop_faction, ":faction_no", ":troop_no"),
               (faction_get_slot, ":tier_1_troop", ":faction_no", slot_faction_tier_1_troop),
+              (try_begin), #@> SWY - Add Incinerator Trooper and Novatrooper to the Deserters parties
+                (eq,":troop_faction","fac_galacticempire"),
+                (store_random_in_range, ":elite_random", 0, 3),
+                (try_begin),
+                  (eq,":elite_random",0),
+                  (assign,":tier_1_troop","trp_novatrooper"),
+                (else_try),
+                  (eq,":elite_random",1),
+                  (assign,":tier_1_troop","trp_incinerator_trooper"),
+                (else_try),
+                  (ge,":elite_random",2), # double possibility to be a standard stormie
+                  (assign,":tier_1_troop","trp_imperial_stormtrooper"),
+                (try_end),
+              (try_end),
               (store_character_level, ":level", "trp_player"),
               (store_mul, ":max_number_to_add", ":level", 2),
               (val_add, ":max_number_to_add", 11),
@@ -30271,11 +30294,15 @@ scripts = [
                     
                     ("swy_map_outpost_icon_routine",
                       [
+                        (store_script_param,":icon_imp",1),
+                        (store_script_param,":icon_reb",2),
+                        (store_script_param,":icon_hut",3),
+                        
                         (try_for_range, ":cur_i", castles_begin, castles_end),
                           (party_get_icon, ":outpost_icon", ":cur_i"),
-                          (this_or_next|eq,":outpost_icon","icon_outpost_imp"),
-                          (this_or_next|eq,":outpost_icon","icon_outpost_reb"),
-                          (             eq,":outpost_icon","icon_outpost_hut"),
+                          (this_or_next|eq,":outpost_icon",":icon_imp"),
+                          (this_or_next|eq,":outpost_icon",":icon_reb"),
+                          (             eq,":outpost_icon",":icon_hut"),
                           #if we're in front of a spacestation then ->
                           
                           (party_get_faction, ":outpost_faction", ":cur_i"), # also named store_faction_of_party, but is ugly, so I created an alias
@@ -30283,15 +30310,15 @@ scripts = [
                           (try_begin),
                             #if rebel st rebel icon ->
                             (eq,":outpost_faction","fac_rebelalliance"),
-                            (party_set_icon, ":cur_i", "icon_outpost_reb"),
+                            (party_set_icon, ":cur_i", ":icon_reb"),
                           (else_try),
                             #if imperial set imp icon ->
                             (eq,":outpost_faction","fac_galacticempire"),
-                            (party_set_icon, ":cur_i", "icon_outpost_imp"),
+                            (party_set_icon, ":cur_i", ":icon_imp"),
                           (else_try),
                             #if hutt set hutt icon ->
                             (eq,":outpost_faction","fac_huttcartel"),
-                            (party_set_icon, ":cur_i", "icon_outpost_hut"),
+                            (party_set_icon, ":cur_i", ":icon_hut"),
                           (try_end),
                           
                           # if not left everything unchanged and then go to the next cool boy...
@@ -30336,4 +30363,28 @@ scripts = [
                         (try_end),
                     ]),
                     
+                    ("swy_sprop_movement",
+                      [
+                        (store_script_param_1 , ":instance"),
+                        (store_script_param_2 , ":mov_type"),  #1=x axis, 2=y axis, 3=z axis
+                        (store_script_param , ":mov_value", 3), #defined by prop
+                        (store_script_param , ":mov_time", 4), #defined by prop
+                        
+                        (prop_instance_get_position,33,":instance"),
+                        (try_begin),
+                          (eq,":mov_type",x),
+                          (position_move_x,33,":mov_value"),
+                        (else_try),
+                          (eq,":mov_type",y),
+                          (position_move_y,33,":mov_value"),
+                        (else_try),
+                          (eq,":mov_type",z),
+                          (position_move_z,33,":mov_value"),
+                        (try_end),
+                        
+                        (prop_instance_animate_to_position,":instance",33,":mov_time"),
+                        
+                        (val_mul,":mov_value",-1), #negative movement, goes back in an infinite cycle
+                        (call_script,"script_swy_sprop_movement",":instance",":mov_type",":mov_value",":mov_time"), #calls_itself
+                    ]),
                   ]

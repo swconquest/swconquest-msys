@@ -51,7 +51,7 @@ party_templates = [
 ##  ("peasant","Peasant",icon_peasant,0,fac_commoners,merchant_personality,[(trp_farmer,1,6),(trp_peasant_woman,0,7)]),
 #  ("black_khergit_raiders","Black Khergit Raiders",icon_khergit_horseman_b|carries_goods(2),0,fac_black_khergits,bandit_personality,[(trp_black_khergit_guard,1,10),(trp_black_khergit_horseman,5,5)]),
 
-  ("bountyhunters","Trandoshan Slavers",icon_z95,0,fac_bountyhunters,soldier_personality,[(trp_bountyhunter,25,50),(trp_wookiee,0,1,pmf_is_prisoner)]),
+  ("bountyhunters","Trandoshan Slavers",icon_tran_slaver,0,fac_bountyhunters,soldier_personality,[(trp_bountyhunter,25,50),(trp_wookiee,0,1,pmf_is_prisoner)]),
   ("night_fang_pirates","Night Fangs Pirates",icon_mercenary_shuttle|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_steppe_bandit,5,25),(trp_steppe_bandit_female,4,8),(trp_trandoshan,1,5),(trp_twilek,1,5),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
   ("blazing_claw_pirates","Blazing Claw Pirates",icon_mercenary_fighter|carries_goods(2),0,fac_blazing_claw_pirates,bandit_personality,[(trp_blazing_claw_pirate,5,25),(trp_blazing_claw_pirate_female,4,8),(trp_rodian,1,5),(trp_sullustan_1,1,5),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
   ("tusken_raiders","Tusken Raiders",icon_mercenary_raider_brown|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_tusken_1,10,25),(trp_tusken_2,5,10)]),  
@@ -63,18 +63,18 @@ party_templates = [
 #  ("black_sun_pirates","Imperial Raiders",icon_axeman|carries_goods(2),0,fac_black_sun_pirates,bandit_personality,[(trp_imperial_trooper,5,20),(trp_imperial_recruit,5,30)]),
 #  ("tusken_raiders","Imperial Patrol",icon_axeman|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_imperial_stormtrooper,5,20),(trp_imperial_trooper,5,10),(trp_imperial_scout_trooper,5,10),(trp_sith_apprentice,2,4),(trp_sith_master,2,4)]),
 
-  ("deserters","Deserters",icon_z95|carries_goods(3),0,fac_deserters,bandit_personality,[]),
+  ("deserters","Deserters",icon_tran_slaver|carries_goods(3),0,fac_deserters,bandit_personality,[]),
  #SW - #MF added some new templates
-  ("galacticempire_escort", "Patrol Fleet", icon_z95|carries_goods(2)|pf_show_faction|pf_default_behavior,0,fac_commoners,aggressiveness_10|courage_12, [(trp_farmer,1,1)]),
+  ("galacticempire_escort", "Patrol Fleet", icon_tran_slaver|carries_goods(2)|pf_show_faction|pf_default_behavior,0,fac_commoners,aggressiveness_10|courage_12, [(trp_farmer,1,1)]),
   #("independent_traders", "Trade Federation Convoy",icon_bulk_frigate|carries_goods(20)|pf_quest_party,0,fac_commoners,escorted_merchant_personality,[(trp_caravan_master,1,1),(trp_b1series,15,30),(trp_b2series,5,10)]),
   ("independent_traders", "Merchant Convoy",icon_bulk_freighter|carries_goods(20)|pf_quest_party,0,fac_commoners,escorted_merchant_personality,[(trp_caravan_master,1,1),(trp_b1series,1,10),(trp_oom_series_command,1,1),(trp_security_guard,10,20)]),
   #SW - removed pf_auto_remove_in_town
   #("merchant_caravan","Merchant Freighter",icon_freighter|carries_goods(20)|pf_auto_remove_in_town|pf_quest_party,0,fac_commoners,escorted_merchant_personality,[(trp_caravan_master,1,1),(trp_hired_guard,5,25)]),
   ("merchant_caravan","Merchant Freighter",icon_freighter|carries_goods(20)|pf_quest_party,0,fac_commoners,escorted_merchant_personality,[(trp_caravan_master,1,1),(trp_security_guard,15,30)]),  
-  ("troublesome_bandits","Troublesome Bandits",icon_z95|carries_goods(9)|pf_quest_party,0,fac_outlaws,bandit_personality,[(trp_bandit,15,55)]),
+  ("troublesome_bandits","Troublesome Bandits",icon_tran_slaver|carries_goods(9)|pf_quest_party,0,fac_outlaws,bandit_personality,[(trp_bandit,15,55)]),
   #SW - removed pf_auto_remove_in_town
   #("bandits_awaiting_ransom","Bandits Awaiting Ransom",icon_axeman|carries_goods(9)|pf_auto_remove_in_town|pf_quest_party,0,fac_neutral,bandit_personality,[(trp_bandit,24,58),(trp_kidnapped_girl,1,1,pmf_is_prisoner)]),
-  ("bandits_awaiting_ransom","Bandits Awaiting Ransom",icon_z95|carries_goods(9)|pf_quest_party,0,fac_neutral,bandit_personality,[(trp_bandit,25,65),(trp_kidnapped_girl,1,1,pmf_is_prisoner)]),  
+  ("bandits_awaiting_ransom","Bandits Awaiting Ransom",icon_tran_slaver|carries_goods(9)|pf_quest_party,0,fac_neutral,bandit_personality,[(trp_bandit,25,65),(trp_kidnapped_girl,1,1,pmf_is_prisoner)]),  
   ("kidnapped_girl","Kidnapped Girl",icon_shuttle|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_kidnapped_girl,1,1)]),
 
 ##  ("farmers","Farmers",icon_peasant,0,fac_innocents,merchant_personality,[(trp_farmer,11,22),(trp_peasant_woman,16,44)]),
@@ -82,21 +82,21 @@ party_templates = [
 ##  ("refugees","Refugees",icon_woman_b,0,fac_innocents,merchant_personality,[(trp_refugee,19,48)]),
 ##  ("dark_hunters","Dark Hunters",icon_gray_knight,0,fac_dark_knights,soldier_personality,[(trp_dark_knight,4,42),(trp_dark_hunter,13,25)]),
 
-  ("spy_partners", "Unremarkable Travellers", icon_z95|carries_goods(3)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_spy_partner,1,1),(trp_security_guard,5,10)]),
+  ("spy_partners", "Unremarkable Travellers", icon_tran_slaver|carries_goods(3)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_spy_partner,1,1),(trp_security_guard,5,10)]),
   ("runaway_serfs","Runaway Slaves",icon_civilian_cruiser|carries_goods(8)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_farmer,6,10), (trp_peasant_woman,3,3)]),
-  ("spy", "Ordinary Townsman", icon_z95|carries_goods(3)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_spy,1,1)]),
-  ("sacrificed_messenger", "Sacrificed Messenger", icon_z95|carries_goods(3)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[]),
+  ("spy", "Ordinary Townsman", icon_tran_slaver|carries_goods(3)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_spy,1,1)]),
+  ("sacrificed_messenger", "Sacrificed Messenger", icon_tran_slaver|carries_goods(3)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[]),
 ##  ("conspirator", "Conspirators", icon_gray_knight|carries_goods(8)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_conspirator,3,4)]),
 ##  ("conspirator_leader", "Conspirator Leader", icon_gray_knight|carries_goods(8)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_conspirator_leader,1,1)]),
 ##  ("peasant_rebels", "Peasant Rebels", icon_peasant,0,fac_peasant_rebels,bandit_personality,[(trp_peasant_rebel,33,97)]),
 ##  ("noble_refugees", "Noble Refugees", icon_gray_knight|carries_goods(12)|pf_quest_party,0,fac_noble_refugees,merchant_personality,[(trp_noble_refugee,3,5),(trp_noble_refugee_woman,5,7)]),
 
-  ("forager_party","Foraging Party",icon_z95|carries_goods(5)|pf_show_faction,0,fac_commoners,merchant_personality,[]),
-  ("scout_party","Scouts",icon_z95|carries_goods(1)|pf_show_faction,0,fac_commoners,bandit_personality,[]),
-  ("patrol_party","Patrol",icon_z95|carries_goods(2)|pf_show_faction,0,fac_commoners,soldier_personality,[]),
+  ("forager_party","Foraging Party",icon_tran_slaver|carries_goods(5)|pf_show_faction,0,fac_commoners,merchant_personality,[]),
+  ("scout_party","Scouts",icon_tran_slaver|carries_goods(1)|pf_show_faction,0,fac_commoners,bandit_personality,[]),
+  ("patrol_party","Patrol",icon_tran_slaver|carries_goods(2)|pf_show_faction,0,fac_commoners,soldier_personality,[]),
 #  ("war_party", "War Party",icon_gray_knight|carries_goods(3),0,fac_commoners,soldier_personality,[]),
-  ("messenger_party","Messenger",icon_z95|pf_show_faction,0,fac_commoners,merchant_personality,[]),
-  ("raider_party","Raiders",icon_z95|carries_goods(16)|pf_quest_party,0,fac_commoners,bandit_personality,[]),
+  ("messenger_party","Messenger",icon_tran_slaver|pf_show_faction,0,fac_commoners,merchant_personality,[]),
+  ("raider_party","Raiders",icon_tran_slaver|carries_goods(16)|pf_quest_party,0,fac_commoners,bandit_personality,[]),
   ("raider_captives","Raider Captives",0,0,fac_commoners,0,[(trp_peasant_woman,6,30,pmf_is_prisoner)]),
   ("faction_caravan_party","Freighters",icon_freighter|carries_goods(25)|pf_show_faction,0,fac_commoners,merchant_personality,[(trp_caravan_master,1,1),(trp_security_guard,12,40)]),
   ("prisoner_train_party","Prisoner Train",icon_bulk_freighter|carries_goods(5)|pf_show_faction,0,fac_commoners,merchant_personality,[]),
@@ -107,7 +107,7 @@ party_templates = [
 # Caravans
 
 #SW - modified center_reinforcements
-  ("center_reinforcements","Reinforcements",icon_z95|carries_goods(16),0,fac_commoners,soldier_personality,[(trp_townsman,5,15),(trp_civilian,5,15),(trp_farmer,5,15)]),
+  ("center_reinforcements","Reinforcements",icon_tran_slaver|carries_goods(16),0,fac_commoners,soldier_personality,[(trp_townsman,5,15),(trp_civilian,5,15),(trp_farmer,5,15)]),
   
   ("faction_hero_party","War Party",icon_player|pf_show_faction|pf_default_behavior,0,fac_commoners,soldier_personality,[]),
   

@@ -168,49 +168,80 @@ items = [
 # ["dry_bread", "wheat_sack", itp_type_goods|itp_consumable, 0, slt_none,view_goods,95,weight(2),max_ammo(50),imodbits_none],
 #foods (first one is smoked_fish)
  #SW - increased food quantity (ie, max_ammo) by 2x
- ["smoked_fish","Smoked Fish", [("smoked_fish",0)], itp_type_goods|itp_consumable|itp_food, 0, 49,weight(25)|abundance(110)|food_quality(50)|max_ammo(100),imodbits_none],
- ["dried_meat","Nerf Beef", [("smoked_meat",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 72,weight(25)|abundance(100)|food_quality(70)|max_ammo(120),imodbits_none],
- ["cattle_meat","Nerf Meat", [("raw_meat",0)], itp_type_goods|itp_consumable|itp_food, 0, 103,weight(30)|abundance(100)|food_quality(80)|max_ammo(100),imodbits_none], 	#removed merch tag but didn't comment out since it may be used for scene props?
- ["bantha_steak","Bantha Steak", [("bantha_steak",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 103,weight(30)|abundance(100)|food_quality(80)|max_ammo(100),imodbits_none], 
- ["pork","Pork", [("fried_pig",0)], itp_type_goods|itp_consumable|itp_food, 0, 85,weight(20)|abundance(100)|food_quality(70)|max_ammo(100),imodbits_none],
- ["bread","Bread", [("bread_a",0)], itp_type_goods|itp_consumable|itp_food, 0, 32,weight(25)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],	#removed merch tag but didn't comment out since it may be used for scene props?
- ["vagnerian_canape","Vagnerian Canape", [("vagnerian_canape",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(5)|abundance(70)|food_quality(70)|max_ammo(25),imodbits_none],
- ["carbohydrate_pack","Carbohydrate Pack", [("carbohydrate_food",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 20,weight(15)|abundance(110)|food_quality(40)|max_ammo(150),imodbits_none], 
- ["apples","Apples", [("apple_basket",0)], itp_type_goods|itp_consumable|itp_food, 0, 44,weight(35)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],	#removed merch tag but didn't comment out since it may be used for scene props?
- ["blue_milk","Blue Milk", [("blue_milk",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 100,weight(25)|abundance(110)|food_quality(60)|max_ammo(80),imodbits_none],
- ["mujo_fruit","Mujo Fruit", [("mujo_fruit",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 44,weight(35)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],
- ["cheese","Christophsis cheese", [("cheese_b",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 95,weight(15)|abundance(110)|food_quality(40)|max_ammo(60),imodbits_none],
- ["chicken","Chicken", [("chicken_roasted",0)], itp_type_goods|itp_consumable|itp_food, 0, 75,weight(15)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],	#removed merch tag but didn't comment out since it may be used for scene props?
- ["protein_pack","Protein Pack", [("protein_food",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 20,weight(15)|abundance(110)|food_quality(40)|max_ammo(150),imodbits_none], 
- ["honey","Honey", [("honey_pot",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 136,weight(5)|abundance(110)|food_quality(40)|max_ammo(40),imodbits_none],
- ["sausages","Nerf sausages", [("sausages",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 60,weight(15)|abundance(110)|food_quality(40)|max_ammo(80),imodbits_none],
- ["cabbages","Cabbages", [("cabbage",0)], itp_type_goods|itp_consumable|itp_food, 0, 30,weight(25)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],	#removed merch tag but didn't comment out since it may be used for scene props?
- ["bristle_melon","Bristle Melon", [("bristlemelon",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 30,weight(25)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],
+  ["smoked_fish","Smoked Fish", [("smoked_fish",0)], itp_type_goods|itp_consumable|itp_food, 0, 49,weight(25)|abundance(110)|food_quality(50)|max_ammo(100),imodbits_none],
+  ["dried_meat","Nerf Beef", [("smoked_meat",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 72,weight(25)|abundance(100)|food_quality(70)|max_ammo(120),imodbits_none],
+  ["cattle_meat","Nerf Meat", [("raw_meat",0)], itp_type_goods|itp_consumable|itp_food, 0, 103,weight(30)|abundance(100)|food_quality(80)|max_ammo(100),imodbits_none], 	#removed merch tag but didn't comment out since it may be used for scene props?
+  ["bantha_steak","Bantha Steak", [("bantha_steak",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 103,weight(30)|abundance(100)|food_quality(80)|max_ammo(100),imodbits_none], 
+  ["pork","Pork", [("fried_pig",0)], itp_type_goods|itp_consumable|itp_food, 0, 85,weight(20)|abundance(100)|food_quality(70)|max_ammo(100),imodbits_none],
+  ["bread","Bread", [("bread_a",0)], itp_type_goods|itp_consumable|itp_food, 0, 32,weight(25)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],	#removed merch tag but didn't comment out since it may be used for scene props?
+  ["vagnerian_canape","Vagnerian Canape", [("vagnerian_canape",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(5)|abundance(70)|food_quality(70)|max_ammo(25),imodbits_none],
+  ["carbohydrate_pack","Carbohydrate Pack", [("carbohydrate_food",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 20,weight(15)|abundance(110)|food_quality(40)|max_ammo(150),imodbits_none], 
+  ["apples","Apples", [("apple_basket",0)], itp_type_goods|itp_consumable|itp_food, 0, 44,weight(35)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],	#removed merch tag but didn't comment out since it may be used for scene props?
+  ["blue_milk","Blue Milk", [("blue_milk",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 100,weight(25)|abundance(110)|food_quality(60)|max_ammo(80),imodbits_none],
+  ["mujo_fruit","Mujo Fruit", [("mujo_fruit",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 44,weight(35)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],
+  ["cheese","Christophsis cheese", [("cheese_b",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 95,weight(15)|abundance(110)|food_quality(40)|max_ammo(60),imodbits_none],
+  ["chicken","Chicken", [("chicken_roasted",0)], itp_type_goods|itp_consumable|itp_food, 0, 75,weight(15)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],	#removed merch tag but didn't comment out since it may be used for scene props?
+  ["protein_pack","Protein Pack", [("protein_food",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 20,weight(15)|abundance(110)|food_quality(40)|max_ammo(150),imodbits_none], 
+  ["honey","Honey", [("honey_pot",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 136,weight(5)|abundance(110)|food_quality(40)|max_ammo(40),imodbits_none],
+  ["sausages","Nerf sausages", [("sausages",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 60,weight(15)|abundance(110)|food_quality(40)|max_ammo(80),imodbits_none],
+  ["cabbages","Cabbages", [("cabbage",0)], itp_type_goods|itp_consumable|itp_food, 0, 30,weight(25)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],	#removed merch tag but didn't comment out since it may be used for scene props?
+  ["bristle_melon","Bristle Melon", [("bristlemelon",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 30,weight(25)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],
+  ["butter","Bantha butter", [("butter_pot",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(40)|max_ammo(60),imodbits_none],
+
+  #@> New Consumable supplies by Vector Dalon
+ ["Container_spice_1","Shipment of Ryll Spice", [("Container_spice_1",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(32)|abundance(110),imodbits_none],
+ ["Container_spice_2","Shipment of Gree Spice", [("Container_spice_2",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(32)|abundance(70),imodbits_none],
+ ["Container_spice_3","Shipment of Glitterstim Spice", [("Container_spice_3",0)], itp_merchandise|itp_type_goods, 0, 150,weight(32)|abundance(40),imodbits_none],
+
+ ["Container_food_1","Shipment of Vegetables", [("Container_food_1",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(40)|max_ammo(200),imodbits_none],
+ ["Container_food_2","Shipment of Carbohydrates", [("Container_food_2",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(60)|max_ammo(200),imodbits_none],
+ ["Container_food_3","Shipment of Protein", [("Container_food_3",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(80)|max_ammo(200),imodbits_none],
+
+ ["Container_metal_1","Shipment of Beskar bars", [("Container_metal_1",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(50),imodbits_none],
+ ["Container_metal_2","Shipment of Durasteel bars", [("Container_metal_2",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(70),imodbits_none],
+ ["Container_metal_3","Shipment of Bronzium bars", [("Container_metal_3",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(110),imodbits_none],
+
+ ["Container_death_sticks","Carton of Death Sticks", [("Container_death_sticks",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(110),imodbits_none],
+
+ ["Container_drink_1","Shipment of Water", [("Container_drink_1",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],
+ ["Container_drink_2","Shipment of Black Ale", [("Container_drink_2",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(60)|max_ammo(150),imodbits_none],
+ ["Container_drink_3","Shipment of Juri juice", [("Container_drink_3",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(60)|food_quality(80)|max_ammo(150),imodbits_none],
+
+ ["Carbonite_Tibanna","Carbonite Shipment of Tibanna Gas", [("Carbonite_Tibanna",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(110),imodbits_none],
+
+
+
  ["butter","Bantha butter", [("butter_pot",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(40)|max_ammo(60),imodbits_none],
 
+ 
+ 
 #other trade goods (first one is wine)
- ["wine","Mandalorian wine", [("amphora_slim",0)], itp_merchandise|itp_type_goods|itp_consumable, 0, 141,weight(30)|abundance(60)|max_ammo(50),imodbits_none],
- ["ale","Corellian ale", [("ale_barrel",0)], itp_merchandise|itp_type_goods|itp_consumable, 0, 84,weight(30)|abundance(70)|max_ammo(50),imodbits_none],
- ["spice","Spice", [("spice_sack",0)], itp_merchandise|itp_type_goods, 0, 880,weight(40)|abundance(25),imodbits_none],
- ["salt","Bassel sea salt", [("salt_sack",0)], itp_merchandise|itp_type_goods, 0, 255,weight(50)|abundance(100),imodbits_none],
- ["grain","Wheat", [("wheat_sack",0)], itp_merchandise|itp_type_goods|itp_consumable, 0, 77,weight(50)|abundance(110)|food_quality(40)|max_ammo(50),imodbits_none],
- ["flour","Flour", [("salt_sack",0)], itp_merchandise|itp_type_goods|itp_consumable, 0, 91,weight(50)|abundance(100)|food_quality(45)|max_ammo(50),imodbits_none],
- ["iron","Durasteel", [("iron",0)], itp_merchandise|itp_type_goods, 0,264,weight(60)|abundance(60),imodbits_none],
- ["bacta_injector","Bacta Injector", [("bacta_injector",0)], itp_merchandise|itp_type_goods, 0,3000,weight(5)|abundance(40),imodbits_none],
- ["bacta_capsule","Bacta Capsule", [("bacta_capsule",0)], itp_merchandise|itp_type_goods, 0,500,weight(2)|abundance(100),imodbits_none], 
- ["binocular","Macrobinoculars", [("macrobinoculars",0)], itp_merchandise|itp_type_goods, 0,3000,weight(3)|abundance(40),imodbits_none], 
- ["jetpack","Jetpack", [("macrobinoculars",0)], itp_merchandise|itp_type_goods, 0,6000,weight(6)|abundance(35),imodbits_none],  
- ["oil","Oil", [("oil",0)], itp_merchandise|itp_type_goods, 0, 484,weight(50)|abundance(60),imodbits_none],
- ["pottery","Geonosian pottery", [("jug",0)], itp_merchandise|itp_type_goods, 0, 126,weight(50)|abundance(90),imodbits_none],
- ["linen","Lashaa silk", [("linen",0)], itp_merchandise|itp_type_goods, 0, 250,weight(40)|abundance(90),imodbits_none],
- ["furs","Ewok Furs", [("fur_pack",0)], itp_merchandise|itp_type_goods, 0, 391,weight(40)|abundance(90),imodbits_none],
- ["wookiee_fur","Wookiee Pelt", [("wookiee_fur",0)], itp_type_goods|itp_always_loot, 0, 250,weight(10)|abundance(60),imodbits_none], 	#no merch, only can get by killing wookiees
- ["trandoshan_skin","Trandoshan Skin", [("trandoshan_skin",0)], itp_type_goods|itp_always_loot, 0, 250,weight(10)|abundance(60),imodbits_none], 	#no merch, only can get by killing wookiees
- ["droid_parts","Droid Parts", [("robot_parts",0)], itp_merchandise|itp_type_goods|itp_always_loot, 0, 200,weight(15)|abundance(60),imodbits_none], 	#also given to droids
- ["wool","Nerf wool", [("wool_sack",0)], itp_merchandise|itp_type_goods, 0, 130,weight(40)|abundance(90),imodbits_none],
- ["velvet","Naboo Velvet", [("velvet",0)], itp_merchandise|itp_type_goods, 0, 1025,weight(40)|abundance(30),imodbits_none],
- ["tools","Hydrospanners", [("hydrospanner",0)], itp_merchandise|itp_type_goods, 0, 410,weight(50)|abundance(90),imodbits_none],
-
+  ["wine","Mandalorian wine", [("amphora_slim",0)], itp_merchandise|itp_type_goods|itp_consumable, 0, 141,weight(30)|abundance(60)|max_ammo(50),imodbits_none],
+  ["ale","Corellian ale", [("ale_barrel",0)], itp_merchandise|itp_type_goods|itp_consumable, 0, 84,weight(30)|abundance(70)|max_ammo(50),imodbits_none],
+  ["spice","Spice", [("spice_sack",0)], itp_merchandise|itp_type_goods, 0, 880,weight(40)|abundance(25),imodbits_none],
+  ["salt","Bassel sea salt", [("salt_sack",0)], itp_merchandise|itp_type_goods, 0, 255,weight(50)|abundance(100),imodbits_none],
+  ["grain","Wheat", [("wheat_sack",0)], itp_merchandise|itp_type_goods|itp_consumable, 0, 77,weight(50)|abundance(110)|food_quality(40)|max_ammo(50),imodbits_none],
+  ["flour","Flour", [("salt_sack",0)], itp_merchandise|itp_type_goods|itp_consumable, 0, 91,weight(50)|abundance(100)|food_quality(45)|max_ammo(50),imodbits_none],
+  ["iron","Durasteel", [("iron",0)], itp_merchandise|itp_type_goods, 0,264,weight(60)|abundance(60),imodbits_none],
+  ["bacta_injector","Bacta Injector", [("bacta_injector",0)], itp_merchandise|itp_type_goods, 0,3000,weight(5)|abundance(40),imodbits_none],
+  ["bacta_capsule","Bacta Capsule", [("bacta_capsule",0)], itp_merchandise|itp_type_goods, 0,500,weight(2)|abundance(100),imodbits_none], 
+  ["binocular","Macrobinoculars", [("macrobinoculars",0)], itp_merchandise|itp_type_goods, 0,3000,weight(3)|abundance(40),imodbits_none], 
+  ["jetpack","Jetpack", [("macrobinoculars",0)], itp_merchandise|itp_type_goods, 0,6000,weight(6)|abundance(35),imodbits_none],  
+  ["oil","Oil", [("oil",0)], itp_merchandise|itp_type_goods, 0, 484,weight(50)|abundance(60),imodbits_none],
+  ["pottery","Geonosian pottery", [("jug",0)], itp_merchandise|itp_type_goods, 0, 126,weight(50)|abundance(90),imodbits_none],
+  ["linen","Lashaa silk", [("linen",0)], itp_merchandise|itp_type_goods, 0, 250,weight(40)|abundance(90),imodbits_none],
+  ["furs","Ewok Furs", [("fur_pack",0)], itp_merchandise|itp_type_goods, 0, 391,weight(40)|abundance(90),imodbits_none],
+  ["wookiee_fur","Wookiee Pelt", [("wookiee_fur",0)], itp_type_goods|itp_always_loot, 0, 250,weight(10)|abundance(60),imodbits_none], 	#no merch, only can get by killing wookiees
+  ["trandoshan_skin","Trandoshan Skin", [("trandoshan_skin",0)], itp_type_goods|itp_always_loot, 0, 250,weight(10)|abundance(60),imodbits_none], 	#no merch, only can get by killing wookiees
+  ["droid_parts","Droid Parts", [("robot_parts",0)], itp_merchandise|itp_type_goods|itp_always_loot, 0, 200,weight(15)|abundance(60),imodbits_none], 	#also given to droids
+  ["wool","Nerf wool", [("wool_sack",0)], itp_merchandise|itp_type_goods, 0, 130,weight(40)|abundance(90),imodbits_none],
+  ["velvet","Naboo Velvet", [("velvet",0)], itp_merchandise|itp_type_goods, 0, 1025,weight(40)|abundance(30),imodbits_none],
+  ["tools","Hydrospanners", [("hydrospanner",0)], itp_merchandise|itp_type_goods, 0, 410,weight(50)|abundance(90),imodbits_none],
+#@> New Trade Suplies by Vector Dalon
+ # ["tools","Hydrospanners", [("hydrospanner",0)], itp_merchandise|itp_type_goods, 0, 410,weight(50)|abundance(90),imodbits_none],
+ # ["tools","Hydrospanners", [("hydrospanner",0)], itp_merchandise|itp_type_goods, 0, 410,weight(50)|abundance(90),imodbits_none],
+ # ["tools","Hydrospanners", [("hydrospanner",0)], itp_merchandise|itp_type_goods, 0, 410,weight(50)|abundance(90),imodbits_none],
+ # ["tools","Hydrospanners", [("hydrospanner",0)], itp_merchandise|itp_type_goods, 0, 410,weight(50)|abundance(90),imodbits_none],
 
 #************************************************************************************************
 # ITEMS before this point are hardcoded into item_codes.h and their order should not be changed!
@@ -437,8 +468,8 @@ items = [
 #["turret_hat_green", "Barbette", [("turret_hat_g",0)],itp_merchandise|itp_type_head_armor|itp_civilian|itp_fit_to_head,0,70, weight(0.5)|abundance(100)|head_armor(6)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
 ["head_wrappings","head_wrapping",[("head_wrapping",0)],itp_type_head_armor|itp_fit_to_head,0,16, weight(0.25)|head_armor(3),imodbit_tattered | imodbit_ragged | imodbit_sturdy | imodbit_thick],
 ["court_hat", "Turret Hat", [("court_hat",0)], itp_type_head_armor  |itp_civilian|itp_fit_to_head ,0, 80 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ], 
-["wimple_a", "Wimple", [("wimple_a",0)],itp_merchandise|itp_type_head_armor|itp_civilian|itp_fit_to_head,0,10, weight(0.5)|abundance(100)|head_armor(4)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
-["wimple_with_veil", "Wimple with Veil", [("wimple_b",0)],itp_merchandise|itp_type_head_armor|itp_civilian|itp_fit_to_head,0,10, weight(0.5)|abundance(100)|head_armor(4)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
+#["wimple_a", "Wimple", [("wimple_a",0)],itp_merchandise|itp_type_head_armor|itp_civilian|itp_fit_to_head,0,10, weight(0.5)|abundance(100)|head_armor(4)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
+#["wimple_with_veil", "Wimple with Veil", [("wimple_b",0)],itp_merchandise|itp_type_head_armor|itp_civilian|itp_fit_to_head,0,10, weight(0.5)|abundance(100)|head_armor(4)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
 ["straw_hat", "Straw Hat", [("straw_hat",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,9, weight(1)|abundance(100)|head_armor(2)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
 ["common_hood", "Hood", [("hood_a",0),("hood_b",0),("hood_c",0),("hood_d",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,9, weight(1)|abundance(100)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
 ["headcloth", "Headcloth", [("headcloth",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 1 , weight(0.5)|abundance(100)|head_armor(4)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
@@ -452,10 +483,10 @@ items = [
 ["leather_cap", "Leather Cap", [("leather_cap",0)], itp_merchandise| itp_type_head_armor|itp_civilian ,0, 6 , weight(1)|abundance(100)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["arming_cap", "Arming Cap", [("linen_arming_cap",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 6 , weight(1)|abundance(100)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["female_hood", "Lady's Hood", [("woolen_hood",0)], itp_merchandise| itp_type_head_armor |itp_civilian  ,0, 9 , weight(1)|abundance(100)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
-["leather_steppe_cap_a", "Leather Steppe Cap", [("nomad_cap_a",0)], itp_merchandise|itp_type_head_armor   ,0, 24 , weight(1)|abundance(100)|head_armor(12)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
-["leather_steppe_cap_b", "Leather Steppe Cap", [("leather_steppe_cap_a",0)], itp_merchandise|itp_type_head_armor   ,0, 36 , weight(1)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
-["leather_steppe_cap_c", "Leather Steppe Cap", [("leather_steppe_cap_b",0)], itp_merchandise|itp_type_head_armor   ,0, 51 , weight(1)|abundance(100)|head_armor(16)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
-["leather_warrior_cap", "Leather Warrior Cap", [("skull_cap_new_b",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 , weight(1)|abundance(100)|head_armor(18)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+#["leather_steppe_cap_a", "Leather Steppe Cap", [("nomad_cap_a",0)], itp_merchandise|itp_type_head_armor   ,0, 24 , weight(1)|abundance(100)|head_armor(12)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+#["leather_steppe_cap_b", "Leather Steppe Cap", [("leather_steppe_cap_a",0)], itp_merchandise|itp_type_head_armor   ,0, 36 , weight(1)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+#["leather_steppe_cap_c", "Leather Steppe Cap", [("leather_steppe_cap_b",0)], itp_merchandise|itp_type_head_armor   ,0, 51 , weight(1)|abundance(100)|head_armor(16)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+#["leather_warrior_cap", "Leather Warrior Cap", [("skull_cap_new_b",0)], itp_merchandise| itp_type_head_armor  |itp_civilian ,0, 14 , weight(1)|abundance(100)|head_armor(18)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 #["skullcap", "Skullcap", [("skull_cap_new_a",0)], itp_merchandise| itp_type_head_armor   ,0, 60 , weight(1.0)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_plate ],
 #["mail_coif", "Mail Coif", [("mail_coif",0)], itp_merchandise| itp_type_head_armor   ,0, 71 , weight(1.25)|abundance(100)|head_armor(22)|body_armor(0)|leg_armor(0)|difficulty(7) ,imodbits_armor ],
 #["footman_helmet", "Footman's_Helmet", [("skull_cap_new",0)], itp_merchandise| itp_type_head_armor   ,0, 95 , weight(1.5)|abundance(100)|head_armor(24)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_plate ],
@@ -905,6 +936,8 @@ items = [
  140 , weight(2.0)|abundance(50)|head_armor(0)|body_armor(0)|leg_armor(16)|difficulty(0) ,imodbits_cloth ],
 ["imperial_stormtrooper_boots", "Imperial Stormtrooper Boots", [("Stormtrooper_legs_L",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian,0, 
  210 , weight(2.0)|abundance(50)|head_armor(0)|body_armor(0)|leg_armor(16)|difficulty(0) ,imodbits_armor ], 
+["imperial_stormtrooper_boots_incinerator", "Incinerator Trooper Boots", [("Incinerator_legs_L",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian,0, 
+ 257 , weight(2.0)|abundance(30)|head_armor(0)|body_armor(0)|leg_armor(26)|difficulty(0) ,imodbits_armor ], 
 ["imperial_scout_trooper_boots", "Imperial Scout Trooper Boots", [("scoutboots",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian,0, 
  210 , weight(2.0)|abundance(50)|head_armor(0)|body_armor(0)|leg_armor(16)|difficulty(0) ,imodbits_armor ],  
 ["shadow_scout_trooper_boots", "Shadow Scout Trooper Boots", [("shadow_scoutboots",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian,0, 
@@ -995,6 +1028,10 @@ items = [
  
 ["imperial_stormtrooper_helmet", "Imperial Stormtrooper Helmet", [("Stormtrooper_helm",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 
  195 , weight(1)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
+["imperial_stormtrooper_helmet_incinerator", "Incinerator Trooper Helmet", [("Incinerator_Trooper_helm",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 
+ 241 , weight(1)|abundance(40)|head_armor(20)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
+["imperial_stormtrooper_helmet_novatrooper", "NovaTrooper Helmet", [("Novatrooper_helm",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 
+ 216 , weight(1)|abundance(50)|head_armor(18)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
 ["imperial_pilot_helmet", "Imperial Pilot Helmet", [("tiepilot",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 
  175 , weight(1)|abundance(60)|head_armor(12)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ], 
 ["shadow_stormtrooper_helmet", "Shadow Stormtrooper Helmet", [("shadow_stormtrooper_helmet",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 
@@ -1171,6 +1208,13 @@ items = [
  480 , weight(10)|abundance(60)|head_armor(0)|body_armor(42)|leg_armor(18)|difficulty(0) ,imodbits_cloth ], 
 ["imperial_stormtrooper_armor", "Imperial Stormtrooper Armor", [("Stormtrooper_body",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
  720 , weight(10)|abundance(100)|head_armor(0)|body_armor(42)|leg_armor(18)|difficulty(0) ,imodbits_armor ],
+["imperial_stormtrooper_armor_incinerator", "Incinerator Trooper Armor", [("Incinerator_Trooper_body",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
+ 963 , weight(10)|abundance(40)|head_armor(0)|body_armor(51)|leg_armor(24)|difficulty(0) ,imodbits_armor ],
+["imperial_stormtrooper_armor_novatrooper", "Novatrooper Armor", [("Novatrooper_body",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
+ 840 , weight(10)|abundance(50)|head_armor(0)|body_armor(45)|leg_armor(21)|difficulty(0) ,imodbits_armor ],
+["imperial_stormtrooper_armor", "Imperial Stormtrooper Armor", [("Stormtrooper_body",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
+ 720 , weight(10)|abundance(100)|head_armor(0)|body_armor(42)|leg_armor(18)|difficulty(0) ,imodbits_armor ],
+
 ["shadow_stormtrooper_armor", "Shadow Stormtrooper Armor", [("shadow_stormtrooper_armor",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
  780 , weight(8)|abundance(60)|head_armor(0)|body_armor(44)|leg_armor(20)|difficulty(0) ,imodbits_armor ], 
 ["rebel_honor_guard_armor", "Rebel Honor Guard Armor", [("outfit_green",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
