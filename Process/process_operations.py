@@ -456,7 +456,21 @@ def save_statement_block(ofile,statement_name,can_fail_statement,statement_block
     if (local_var_uses[i] == 0 and not(local_vars[i].startswith("unused"))):
       print "WARNING: Local variable never used: " + local_vars[i]
     i = i + 1
-
+# Indentation Enhancement By Vorne
+# http://forums.taleworlds.com/index.php/topic,189368.0.html
+  if current_depth != 0:
+    if current_depth > 0:
+      missing = " missing"
+    else:
+      missing = " extra"
+      current_depth *= -1
+	  
+    if statement_name != 0:
+      print "WARNING: " + `current_depth` + missing + " try_end: " + str(statement_name)
+    else:
+      print "WARNING: " + `current_depth` + missing + " try_end: \r\n------------\r\n" + str(statement_block) + "\r\n------------"
+#>
+	
 def compile_global_vars(statement_block,variable_list, variable_uses):
   for statement in statement_block:
     compile_global_vars_in_statement(statement, variable_list, variable_uses)

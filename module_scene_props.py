@@ -814,8 +814,8 @@ scene_props = [
   #SW - modified destroy_a and destroy_b
   #("destroy_a",0,"destroy_a","0", []),
   #("destroy_b",0,"destroy_b","0", []),
-  ("destroy_a",0,"transparent","0", []),
-  ("destroy_b",0,"transparent","0", []),
+  ("destroy_a",0,"0","0", []),     #"transparent","0", []),
+  ("destroy_b",0,"0","0", []),     #"transparent","0", []),
 
 
 
@@ -825,21 +825,21 @@ scene_props = [
   ("grave_a",0,"grave_a","bo_grave_a", []),
 
   
-  ("village_house_e",0,"village_house_e","bo_village_house_e", []),
-  ("village_house_f",0,"village_house_f","bo_village_house_f", []),
-  ("village_house_g",0,"village_house_g","bo_village_house_g", []),
-  ("village_house_h",0,"village_house_h","bo_village_house_h", []),
-  ("village_house_i",0,"village_house_i","bo_village_house_i", []),
-  ("village_house_j",0,"village_house_j","bo_village_house_j", []),
-  ("village_wall_a",0,"village_wall_a","bo_village_wall_a", []),
-  ("village_wall_b",0,"village_wall_b","bo_village_wall_b", []),
+  ("village_house_e",0,"0","0", []),     #"village_house_e","bo_village_house_e", []),
+  ("village_house_f",0,"0","0", []),     #"village_house_f","bo_village_house_f", []),
+  ("village_house_g",0,"0","0", []),     #"village_house_g","bo_village_house_g", []),
+  ("village_house_h",0,"0","0", []),     #"village_house_h","bo_village_house_h", []),
+  ("village_house_i",0,"0","0", []),     #"village_house_i","bo_village_house_i", []),
+  ("village_house_j",0,"0","0", []),     #"village_house_j","bo_village_house_j", []),
+  ("village_wall_a",0,"0","0", []),     #"village_wall_a","bo_village_wall_a", []),
+  ("village_wall_b",0,"0","0", []),     #"village_wall_b","bo_village_wall_b", []),
 
-  ("village_snowy_house_a",0,"village_snowy_house_a","bo_village_snowy_house_a", []),
-  ("village_snowy_house_b",0,"village_snowy_house_b","bo_village_snowy_house_b", []),
-  ("village_snowy_house_c",0,"village_snowy_house_c","bo_village_snowy_house_c", []),
-  ("village_snowy_house_d",0,"village_snowy_house_d","bo_village_snowy_house_d", []),
-  ("village_snowy_house_e",0,"village_snowy_house_e","bo_village_snowy_house_e", []),
-  ("village_snowy_house_f",0,"village_snowy_house_f","bo_village_snowy_house_f", []),
+  ("village_snowy_house_a",0,"0","0", []),     #"village_snowy_house_a","bo_village_snowy_house_a", []),
+  ("village_snowy_house_b",0,"0","0", []),     #"village_snowy_house_b","bo_village_snowy_house_b", []),
+  ("village_snowy_house_c",0,"0","0", []),     #"village_snowy_house_c","bo_village_snowy_house_c", []),
+  ("village_snowy_house_d",0,"0","0", []),     #"village_snowy_house_d","bo_village_snowy_house_d", []),
+  ("village_snowy_house_e",0,"0","0", []),     #"village_snowy_house_e","bo_village_snowy_house_e", []),
+  ("village_snowy_house_f",0,"0","0", []),     #"village_snowy_house_f","bo_village_snowy_house_f", []),
 
 
 
@@ -874,13 +874,13 @@ scene_props = [
   ("snowy_fence",0,"snowy_fence","bo_snowy_fence", []),
   ("snowy_wood_heap",0,"snowy_wood_heap","bo_snowy_wood_heap", []),
 
-  ("village_snowy_stable_a",0,"village_snowy_stable_a","bo_village_snowy_stable_a", []),
+  ("village_snowy_stable_a",0,"0","0", []),     #"village_snowy_stable_a","bo_village_snowy_stable_a", []),
 
 
   # ("village_straw_house_a",0,"village_straw_house_a","bo_village_straw_house_a", []),
   # ("village_stable_a",0,"village_stable_a","bo_village_stable_a", []),
-  ("village_shed_a",0,"village_shed_a","bo_village_shed_a", []),
-  ("village_shed_b",0,"village_shed_b","bo_village_shed_b", []),
+  ("village_shed_a",0,"0","0", []),     #"village_shed_a","bo_village_shed_a", []),
+  ("village_shed_b",0,"0","0", []),     #"village_shed_b","bo_village_shed_b", []),
 
 #  ("trunks_snowy",0,"trunks_snowy","0", []),
 
@@ -1094,8 +1094,8 @@ scene_props = [
   # ("castle_g_square_keep_a",0,"castle_g_square_keep_a","bo_castle_g_square_keep_a", []),
 
 
-  ("mosque_a",0,"mosque_a","bo_mosque_a", []),
-  ("stone_minaret_a",0,"stone_minaret_a","bo_stone_minaret_a", []),
+  ("mosque_a",0,"0","0", []),
+  ("stone_minaret_a",0,"0","0", []),
   # ("stone_house_a",0,"stone_house_a","bo_stone_house_a", []),
   # ("stone_house_b",0,"stone_house_b","bo_stone_house_b", []),
   # ("stone_house_c",0,"stone_house_c","bo_stone_house_c", []),
@@ -1352,32 +1352,32 @@ scene_props = [
   ("table_small",0,"table_small","botable_small", []),
   ("table_small_b",0,"table_small_b","bo_table_small_b", []),
   ("small_timber_frame_house_a",0,"small_timber_frame_house_a","bo_small_timber_frame_house_a", []),
-  ("timber_frame_house_b",0,"tf_house_b","bo_tf_house_b", []),
-  ("timber_frame_house_c",0,"tf_house_c","bo_tf_house_c", []),
-  ("timber_frame_extension_a",0,"timber_frame_extension_a","bo_timber_frame_extension_a", []),
-  ("timber_frame_extension_b",0,"timber_frame_extension_b","bo_timber_frame_extension_b", []),
-  ("stone_stairs_a",0,"stone_stairs_a","bo_stone_stairs_a", []),
-  ("stone_stairs_b",0,"stone_stairs_b","bo_stone_stairs_b", []),
+  ("timber_frame_house_b",0,"0","0", []),     #"tf_house_b","bo_tf_house_b", []),
+  ("timber_frame_house_c",0,"0","0", []),     #"tf_house_c","bo_tf_house_c", []),
+  ("timber_frame_extension_a",0,"0","0", []),     #"timber_frame_extension_a","bo_timber_frame_extension_a", []),
+  ("timber_frame_extension_b",0,"0","0", []),     #"timber_frame_extension_b","bo_timber_frame_extension_b", []),
+  ("stone_stairs_a",0,"0","0", []),     #"stone_stairs_a","bo_stone_stairs_a", []),
+  ("stone_stairs_b",0,"0","0", []),     #"stone_stairs_b","bo_stone_stairs_b", []),
   ("railing_a",0,"railing_a","bo_railing_a", []),
   ("side_building_a",0,"side_building_a","bo_side_building_a", []),
-  ("battlement_a",0,"battlement_a","bo_battlement_a", []),
+  ("battlement_a",0,"0","0", []),     #"battlement_a","bo_battlement_a", []),
 
-  ("battlement_a_destroyed",0,"battlement_a_destroyed","bo_battlement_a_destroyed", []),
+  ("battlement_a_destroyed",0,"0","0", []),     #"battlement_a_destroyed","bo_battlement_a_destroyed", []),
 
 
-  ("round_tower_a",0,"round_tower_a","bo_round_tower_a", []),
-  ("small_round_tower_a",0,"small_round_tower_a","bo_small_round_tower_a", []),
-  ("small_round_tower_roof_a",0,"small_round_tower_roof_a","bo_small_round_tower_roof_a", []),
-  ("square_keep_a",0,"square_keep_a","bo_square_keep_a", []),
-  ("square_tower_roof_a",0,"square_tower_roof_a","0", []),
-  ("gate_house_a",0,"gate_house_a","bo_gate_house_a", []),
-  ("gate_house_b",0,"gate_house_b","bo_gate_house_b", []),
-  ("small_wall_a",0,"small_wall_a","bo_small_wall_a", []),
-  ("small_wall_b",0,"small_wall_b","bo_small_wall_b", []),
-  ("small_wall_c",0,"small_wall_c","bo_small_wall_c", []),
-  ("small_wall_c_destroy",0,"small_wall_c_destroy","bo_small_wall_c_destroy", []),
-  ("small_wall_d",0,"small_wall_d","bo_small_wall_d", []),
-  ("small_wall_e",0,"small_wall_e","bo_small_wall_d", []),
+  ("round_tower_a",0,"0","0", []),     #"round_tower_a","bo_round_tower_a", []),
+  ("small_round_tower_a",0,"0","0", []),     #"small_round_tower_a","bo_small_round_tower_a", []),
+  ("small_round_tower_roof_a",0,"0","0", []),     #"small_round_tower_roof_a","bo_small_round_tower_roof_a", []),
+  ("square_keep_a",0,"0","0", []),     #"square_keep_a","bo_square_keep_a", []),
+  ("square_tower_roof_a",0,"0","0", []),     #"square_tower_roof_a","0", []),
+  ("gate_house_a",0,"0","0", []),     #"gate_house_a","bo_gate_house_a", []),
+  ("gate_house_b",0,"0","0", []),     #"gate_house_b","bo_gate_house_b", []),
+  ("small_wall_a",0,"0","0", []),     #"small_wall_a","bo_small_wall_a", []),
+  ("small_wall_b",0,"0","0", []),     #"small_wall_b","bo_small_wall_b", []),
+  ("small_wall_c",0,"0","0", []),     #"small_wall_c","bo_small_wall_c", []),
+  ("small_wall_c_destroy",0,"0","0", []),     #"small_wall_c_destroy","bo_small_wall_c_destroy", []),
+  ("small_wall_d",0,"0","0", []),     #"small_wall_d","bo_small_wall_d", []),
+  ("small_wall_e",0,"0","0", []),     #"small_wall_e","bo_small_wall_d", []),
 
 
   # ("town_house_a",0,"town_house_a","bo_town_house_a", []),
@@ -1433,9 +1433,9 @@ scene_props = [
   # ("town_house_z",0,"town_house_z","bo_town_house_z", []),
   # ("town_house_za",0,"town_house_za","bo_town_house_za", []),
   
-  ("windmill",0,"windmill","bo_windmill", []),
-  ("windmill_fan_turning",sokf_moveable,"windmill_fan_turning","bo_windmill_fan_turning", []),
-  ("windmill_fan",0,"windmill_fan","bo_windmill_fan", []),
+  ("windmill",0,"0","0",[]), 							#"windmill","bo_windmill", []),
+  ("windmill_fan_turning",sokf_moveable,"0","0",[]),	#"windmill_fan_turning","bo_windmill_fan_turning", []),
+  ("windmill_fan",0,"0","0",[]), 						#"windmill_fan","bo_windmill_fan", []),
   # ("fake_house_a",0,"fake_house_a","bo_fake_house_a", []),
   # ("fake_house_b",0,"fake_house_b","bo_fake_house_b", []),
   # ("fake_house_c",0,"fake_house_c","bo_fake_house_c", []),
@@ -1515,23 +1515,23 @@ scene_props = [
   # ("snowy_castle_square_keep_a",0,"snowy_castle_square_keep_a","bo_snowy_castle_square_keep_a", []),
   # ("snowy_castle_stairs_a",0,"snowy_castle_stairs_a","bo_snowy_castle_stairs_a", []),
 
-  ("square_keep_b",0,"square_keep_b","bo_square_keep_b", []),
-  ("square_keep_c",0,"square_keep_c","bo_square_keep_c", []),
-  ("square_keep_d",0,"square_keep_d","bo_square_keep_d", []),
-  ("square_keep_e",0,"square_keep_e","bo_square_keep_e", []),
-  ("square_keep_f",0,"square_keep_f","bo_square_keep_f", []),
+  ("square_keep_b",0,"0","0", []),     #"square_keep_b","bo_square_keep_b", []),
+  ("square_keep_c",0,"0","0", []),     #"square_keep_c","bo_square_keep_c", []),
+  ("square_keep_d",0,"0","0", []),     #"square_keep_d","bo_square_keep_d", []),
+  ("square_keep_e",0,"0","0", []),     #"square_keep_e","bo_square_keep_e", []),
+  ("square_keep_f",0,"0","0", []),     #"square_keep_f","bo_square_keep_f", []),
 
 
-  ("square_extension_a",0,"square_extension_a","bo_square_extension_a", []),
-  ("square_stairs_a",0,"square_stairs_a","bo_square_stairs_a", []),
+  ("square_extension_a",0,"0","0", []),     #"square_extension_a","bo_square_extension_a", []),
+  ("square_stairs_a",0,"0","0", []),     #"square_stairs_a","bo_square_stairs_a", []),
 
   ("castle_courtyard_house_a",0,"castle_courtyard_house_a","bo_castle_courtyard_house_a", []),
   ("castle_courtyard_house_b",0,"castle_courtyard_house_b","bo_castle_courtyard_house_b", []),
   ("castle_courtyard_house_c",0,"castle_courtyard_house_c","bo_castle_courtyard_house_c", []),
   ("castle_courtyard_a",0,"castle_courtyard_a","bo_castle_courtyard_a", []),
 
-  ("gatehouse_b",0,"gatehouse_b","bo_gatehouse_b", []),
-  ("castle_gaillard",0,"castle_gaillard","bo_castle_gaillard", []),
+  ("gatehouse_b",0,"0","0", []),     #"gatehouse_b","bo_gatehouse_b", []),
+  ("castle_gaillard",0,"0","0", []),     #"castle_gaillard","bo_castle_gaillard", []),
   
   # ("castle_e_battlement_a",0,"castle_e_battlement_a","bo_castle_e_battlement_a", []),
   # ("castle_e_battlement_a_destroyed",0,"castle_e_battlement_a_destroyed","bo_castle_e_battlement_a_destroyed", []),
@@ -1609,8 +1609,8 @@ scene_props = [
   ("castle_gate_house_a",0,"sw_castle_gate_house_a","bo_sw_castle_gate_house_a", []),  
   ("castle_square_keep_a",0,"sw_castle_square_keep_a","bo_sw_castle_square_keep_a", []),
   
-  ("castle_round_tower_a",0,"castle_round_tower_a","bo_castle_round_tower_a", []),
-  ("castle_stairs_a",0,"castle_stairs_a","bo_castle_stairs_a", []),
+  ("castle_round_tower_a",0,"0","0", []),     #"castle_round_tower_a","bo_castle_round_tower_a", []),
+  ("castle_stairs_a",0,"0","0", []),     #"castle_stairs_a","bo_castle_stairs_a", []),
 
   ("castle_drawbridge_open",0,"castle_drawbridges_open","bo_castle_drawbridges_open", []),
   #SW - made the castle drawbridges destructable
@@ -1689,10 +1689,10 @@ scene_props = [
 
   ("bed_f",0,"bed_f","bo_bed_f", []),
 
-  ("towngate_door_left",0,"door_g_left","bo_door_left", []),
-  ("towngate_door_right",0,"door_g_right","bo_door_right", []),
-  ("towngate_rectangle_door_left",0,"towngate_rectangle_door_left","bo_towngate_rectangle_door_left", []),
-  ("towngate_rectangle_door_right",0,"towngate_rectangle_door_right","bo_towngate_rectangle_door_right", []),
+  ("towngate_door_left",0,"0","0",[]), 										#"door_g_left","bo_door_left", []),
+  ("towngate_door_right",0,"0","0",[]), 									#"door_g_right","bo_door_right", []),
+  ("towngate_rectangle_door_left",0,"0","0",[]), 							#"towngate_rectangle_door_left","bo_towngate_rectangle_door_left", []),
+  ("towngate_rectangle_door_right",0,"0","0",[]), 							#"towngate_rectangle_door_right","bo_towngate_rectangle_door_right", []),
   
   ("door_screen",0,"door_screen","0", []),
   ("door_a",0,"door_a","bo_door_a", []),
@@ -1714,8 +1714,8 @@ scene_props = [
   ("chain_10m",0,"chain_10m","0", []),
   ("bridge_modular_a",0,"bridge_modular_a","bo_bridge_modular_a", []),
   ("bridge_modular_b",0,"bridge_modular_b","bo_bridge_modular_b", []),
-  ("church_a",0,"church_a","bo_church_a", []),
-  ("church_tower_a",0,"church_tower_a","bo_church_tower_a", []),
+  ("church_a",0,"0","0", []),     #"church_a","bo_church_a", []),
+  ("church_tower_a",0,"0","0", []),     #"church_tower_a","bo_church_tower_a", []),
   ("stone_step_a",0,"floor_stone_a","bo_floor_stone_a", []),
   ("stone_step_b",0,"stone_step_b","0", []),
   ("stone_step_c",0,"stone_step_c","0", []),
@@ -2610,6 +2610,15 @@ scene_props = [
   ("sundari_small_block_3",0,"sundari_small_block_3","0", []),
   ("endor_walkway",0,"endor_walkway","bo_endor_walkway", []),
   ("endor_walkway_support",0,"endor_walkway_support","bo_endor_walkway_support", []),
+  ("ahto_city",0,"ahto_city","bo_ahto_city", []),
+  ("Hoth_radio",0,"Hoth_radio","bo_Hoth_radio", []),
+  ("Hoth_turret",0,"Hoth_turret","bo_Hoth_turret", []),
+  ("Hoth_heater",0,"Hoth_heater","bo_Hoth_heater", []),
+  ("Hoth_droid",0,"Hoth_droid","bo_Hoth_droid", []),
+  ("Felucia_flower1",0,"Felucia_flower1","bo_Felucia_flower1", []),
+  ("Hoth_floor1",0,"Hoth_floor1","bo_Hoth_floor1", []),
+  ("Hoth_pillar1",0,"Hoth_pillar1","bo_Hoth_pillar", []),
+  ("Hoth_pillar2",0,"Hoth_pillar2","bo_Hoth_pillar", []),
 
 #@Automagically added -- End
 

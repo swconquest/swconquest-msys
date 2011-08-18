@@ -639,7 +639,7 @@ dialogs = [
                     (eq, "$talk_context", tc_party_encounter)],
    "Do you want me to rejoin you?", "member_wilderness_talk",[]],
 #  [anyone,"start", [(neg|main_party_has_troop,"$g_talk_troop"),(eq, "$g_encountered_party", "p_four_ways_inn")], "Do you want me to rejoin you?", "member_inn_talk",[]],
-  [anyone,"start", [(neg|main_party_has_troop,"$g_talk_troop")], "Do you want me to rejoin you?", "member_inn_talk",[]],
+#  [anyone,"start", [(neg|main_party_has_troop,"$g_talk_troop")], "Do you want me to rejoin you?", "member_inn_talk",[]],
 #  [anyone,"member_separate_inn", [], "I don't know what you will do without me, but you are the boss. I'll wait for you at the Four Ways inn.", "close_window",
 #  [anyone,"member_separate_inn", [], "All right then. I'll meet you at the four ways inn. Good luck.", "close_window",
 #   [(remove_member_from_party,"$g_talk_troop", "p_main_party"),(add_troop_to_site, "$g_talk_troop", "scn_four_ways_inn", borcha_inn_entry)]],
@@ -658,7 +658,7 @@ dialogs = [
   [anyone|plyr, "member_lady_1", [],  "Very soon. We're almost there.", "member_lady_2b", []],
 
   [anyone ,"member_lady_2a", [],  "Ah, I am going to enjoy the journey for a while longer then. I won't complain.\
- I find flying out in the open so much more pleasant than sitting on the planet all day.\
+ I find flying out in the open so much more pleasant than staying on my planet all day.\
  You know, I envy you. You can live like this all the time.", "close_window", []],
   [anyone ,"member_lady_2b", [],  "That's good news. Not that I don't like your company, but I did miss my little luxuries.\
  Still I am sorry that I'll leave you soon. You must promise me, you'll come visit me when you can.", "close_window", []],
@@ -14021,7 +14021,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
   [anyone,"start", [(eq, "$talk_context", 0),
                     (is_between,"$g_talk_troop",regular_troops_begin, regular_troops_end),
                     (is_between,"$g_encountered_party_faction",factions_begin, factions_end),
-                     ], "Mind your manners within the walls and we'll have no trouble.", "close_window",[]],
+                     ], "Mind your manners and we'll have no trouble.", "close_window",[]],
 
   [anyone,"start", [(eq, "$talk_context", tc_court_talk),
                     (is_between,"$g_talk_troop",regular_troops_begin, regular_troops_end),

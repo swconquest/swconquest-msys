@@ -74,8 +74,8 @@ items = [
  243 , weight(1.5)|spd_rtng(99) | weapon_length(95)|swing_damage(21 , blunt) | thrust_damage(20 ,  blunt),imodbits_sword_high ],
  ["arena_sword_two_handed",  "Two Handed Sword", [("arena_sword_two_handed",0)], itp_type_two_handed_wpn|itp_two_handed|itp_primary, itc_greatsword|itcf_carry_sword_back,
  670 , weight(2.75)|spd_rtng(93) | weapon_length(110)|swing_damage(29 , blunt) | thrust_damage(24 ,  blunt),imodbits_sword_high ],
- ["arena_lance",         "Lance", [("arena_lance",0)], itp_type_polearm|itp_spear|itp_primary|itp_penalty_with_shield, itc_staff|itcf_carry_spear,
- 90 , weight(2.5)|spd_rtng(96) | weapon_length(150)|swing_damage(20 , blunt) | thrust_damage(25 ,  blunt),imodbits_polearm ],
+ # ["arena_lance",         "Lance", [("arena_lance",0)], itp_type_polearm|itp_spear|itp_primary|itp_penalty_with_shield, itc_staff|itcf_carry_spear,
+ # 90 , weight(2.5)|spd_rtng(96) | weapon_length(150)|swing_damage(20 , blunt) | thrust_damage(25 ,  blunt),imodbits_polearm ],
  ["practice_staff","Practice Staff", [("wooden_staff",0)],itp_type_polearm|itp_spear|itp_primary|itp_penalty_with_shield,itc_staff|itcf_carry_sword_back,9, weight(2.5)|spd_rtng(103) | weapon_length(118)|swing_damage(16,blunt) | thrust_damage(16,blunt),imodbits_none],
  ["practice_lance","Practice Lance", [("joust_of_peace",0)], itp_type_polearm|itp_spear|itp_primary|itp_penalty_with_shield, itc_greatlance, 18,weight(4.25)|spd_rtng(58)|weapon_length(218)|swing_damage(0,blunt)|thrust_damage(15,blunt),imodbits_none],
  ["practice_shield","Practice Shield", [("shield_round_a",0)], itp_type_shield, 0, 20,weight(3.5)|body_armor(1)|hit_points(200)|spd_rtng(100)|weapon_length(50),imodbits_none],
@@ -98,7 +98,7 @@ items = [
  ["practice_arrows_10_amount","Practice Arrows", [("arrow",0),("flying_missile",ixmesh_flying_ammo),("quiver", ixmesh_carry)], itp_type_arrows, itcf_carry_quiver_back, 0,weight(1.5)|weapon_length(95)|max_ammo(10),imodbits_missile],
  ["practice_arrows_100_amount","Practice Arrows", [("arrow",0),("flying_missile",ixmesh_flying_ammo),("quiver", ixmesh_carry)], itp_type_arrows, itcf_carry_quiver_back, 0,weight(1.5)|weapon_length(95)|max_ammo(100),imodbits_missile],
  ["practice_bolts_9_amount","Practice Bolts", [("bolt",0),("flying_missile",ixmesh_flying_ammo),("bolt_bag", ixmesh_carry),("bolt_bag_b", ixmesh_carry|imodbit_large_bag)], itp_type_bolts, itcf_carry_quiver_right_vertical, 0,weight(2.25)|weapon_length(55)|max_ammo(9),imodbits_missile],
- ["practice_boots", "Practice Boots", [("boot_nomad_a",0)], itp_type_foot_armor |itp_civilian  | itp_attach_armature,0, 11 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(10), imodbits_cloth ],
+ ["practice_boots", "Practice Boots", [("boot_slim_black_reinforced_L",0),("boot_slim_black_reinforced_inventory",ixmesh_inventory)], itp_type_foot_armor |itp_civilian  | itp_attach_armature,0, 11 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(10), imodbits_cloth ],
  ["red_tourney_armor","Red Tourney Armor", [("tourn_armor_a",0)], itp_type_body_armor|itp_covers_legs, 0, 152,weight(15.0)|body_armor(20)|leg_armor(6),imodbits_none],
  ["blue_tourney_armor","Blue Tourney Armor", [("mail_shirt",0)], itp_type_body_armor|itp_covers_legs, 0, 152,weight(15.0)|body_armor(20)|leg_armor(6),imodbits_none],
  ["green_tourney_armor","Green Tourney Armor", [("leather_vest",0)], itp_type_body_armor|itp_covers_legs, 0, 152,weight(15.0)|body_armor(20)|leg_armor(6),imodbits_none],
@@ -315,9 +315,9 @@ items = [
 # 19 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(9)|difficulty(0) ,imodbits_cloth ],
 ["hide_boots", "Hide Boots", [("boot_nomad_a",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
  90 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
-["ankle_boots", "Ankle Boots", [("ankle_boots_a",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+["ankle_boots", "Ankle Boots", [("boot_slim_black_reinforced2_L",0),("boot_slim_black_reinforced2_inventory",ixmesh_inventory)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
  110 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(12)|difficulty(0) ,imodbits_cloth ],
-["nomad_boots", "Nomad Boots", [("boot_nomad_b",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian | itp_attach_armature,0,
+["nomad_boots", "Nomad Boots", [("black_boots",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian | itp_attach_armature,0,
  128 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(14)|difficulty(0) ,imodbits_cloth ],
 #SW - created different leather boots defined below
 #["leather_boots", "Leather Boots", [("boot_khergit",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian | itp_attach_armature,0,
@@ -330,10 +330,10 @@ items = [
 # ["splinted_greaves", "Splinted Greaves", [("spl_greaves",0)], itp_merchandise| itp_type_foot_armor | itp_attach_armature,0,
  # 1153 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(28)|difficulty(7) ,imodbits_armor ],
 #SW - mail boots and iron greaves used for module_tableau_materials.py so I removed merchandise tag
-  ["mail_boots", "Mail Boots", [("shoe_cm",0)], itp_type_foot_armor | itp_attach_armature  ,0,
-  1746 , weight(3)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(31)|difficulty(8) ,imodbits_armor ],
- ["iron_greaves", "Iron Greaves", [("iron_greaves",0)], itp_type_foot_armor | itp_attach_armature,0,
-  295 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_armor ],
+  # ["mail_boots", "Mail Boots", [("shoe_cm",0)], itp_type_foot_armor | itp_attach_armature  ,0,
+  # 1746 , weight(3)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(31)|difficulty(8) ,imodbits_armor ],
+ # ["iron_greaves", "Iron Greaves", [("iron_greaves",0)], itp_type_foot_armor | itp_attach_armature,0,
+  # 295 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(33)|difficulty(9) ,imodbits_armor ],
 # ["black_greaves", "Black Greaves", [("black_greaves",0)], itp_type_foot_armor  | itp_attach_armature,0,
  # 3561 , weight(3.5)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(35)|difficulty(0) ,imodbits_armor ],
 
@@ -367,8 +367,8 @@ items = [
  50 , weight(5)|abundance(100)|head_armor(0)|body_armor(10)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["leather_armor", "Leather Armor", [("lthr_armor_a",0)], itp_merchandise|itp_type_body_armor |itp_covers_legs, 0, 
  110 , weight(7)|abundance(100)|head_armor(0)|body_armor(18)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
-["fur_coat", "Fur Coat", [("fur_coat",0)], itp_merchandise| itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
- 130 , weight(6)|abundance(100)|head_armor(0)|body_armor(13)|leg_armor(6)|difficulty(0) ,imodbits_armor ],
+#["fur_coat", "Fur Coat", [("fur_coat",0)], itp_merchandise| itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
+# 130 , weight(6)|abundance(100)|head_armor(0)|body_armor(13)|leg_armor(6)|difficulty(0) ,imodbits_armor ],
 ["shirt", "Shirt", [("shirt",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs|itp_civilian ,0,
  40 , weight(1)|abundance(100)|head_armor(0)|body_armor(5)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
 ["linen_tunic", "Linen Tunic", [("linen_tunic",0)], itp_merchandise| itp_type_body_armor |itp_civilian |itp_covers_legs ,0,
@@ -385,8 +385,8 @@ items = [
  170 , weight(3)|abundance(100)|head_armor(0)|body_armor(14)|leg_armor(6)|difficulty(0) ,imodbits_cloth ],
 ["leather_vest", "Leather Vest", [("leather_vest",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs|itp_civilian ,0,
  180 , weight(4)|abundance(100)|head_armor(0)|body_armor(15)|leg_armor(7)|difficulty(0) ,imodbits_cloth ],
-["steppe_armor", "Steppe Armor", [("lamellar_leather",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
- 190 , weight(5)|abundance(100)|head_armor(0)|body_armor(16)|leg_armor(8)|difficulty(0) ,imodbits_cloth ],
+#["steppe_armor", "Steppe Armor", [("lamellar_leather",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
+# 190 , weight(5)|abundance(100)|head_armor(0)|body_armor(16)|leg_armor(8)|difficulty(0) ,imodbits_cloth ],
 #SW - removed merchandise tag from gambesons since it was used for armor_faction but it still equipped for some of the town mayors/weaponsmiths/etc
 ["gambeson", "Gambeson", [("white_gambeson",0)], itp_type_body_armor|itp_covers_legs|itp_civilian,0,
  200 , weight(5)|abundance(100)|head_armor(0)|body_armor(20)|leg_armor(5)|difficulty(0) ,imodbits_cloth ],
@@ -450,9 +450,9 @@ items = [
  # 9496 , weight(28)|abundance(100)|head_armor(0)|body_armor(57)|leg_armor(18)|difficulty(10) ,imodbits_plate ],
 
 #SW - used in other parts of the code, removed merch tag 
-["heraldic_mail_with_surcoat", "Heraldic Mail with Surcoat", [("heraldic_armor_a",0)], itp_type_body_armor  |itp_covers_legs ,0,
- 660 , weight(22)|abundance(100)|head_armor(0)|body_armor(49)|leg_armor(17)|difficulty(7) ,imodbits_armor,
- [(ti_on_init_item, [(store_trigger_param_1, ":agent_no"),(store_trigger_param_2, ":troop_no"),(call_script, "script_shield_item_set_banner", "tableau_heraldic_armor_a", ":agent_no", ":troop_no")])]],
+# ["heraldic_mail_with_surcoat", "Heraldic Mail with Surcoat", [("heraldic_armor_a",0)], itp_type_body_armor  |itp_covers_legs ,0,
+ # 660 , weight(22)|abundance(100)|head_armor(0)|body_armor(49)|leg_armor(17)|difficulty(7) ,imodbits_armor,
+ # [(ti_on_init_item, [(store_trigger_param_1, ":agent_no"),(store_trigger_param_2, ":troop_no"),(call_script, "script_shield_item_set_banner", "tableau_heraldic_armor_a", ":agent_no", ":troop_no")])]],
 ##["heraldic_mail_with_tunic", "Heraldic_Mail", [("heraldic_armor_b",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs ,0,
 ## 3520 , weight(22)|abundance(100)|head_armor(0)|body_armor(50)|leg_armor(16)|difficulty(7) ,imodbits_armor,
 ## [(ti_on_init_item, [(store_trigger_param_1, ":agent_no"),(store_trigger_param_2, ":troop_no"),(call_script, "script_shield_item_set_banner", "tableau_heraldic_armor_b", ":agent_no", ":troop_no")])]],
@@ -460,13 +460,13 @@ items = [
 ## 3610 , weight(22)|abundance(100)|head_armor(0)|body_armor(50)|leg_armor(16)|difficulty(7) ,imodbits_armor,
 ## [(ti_on_init_item, [(store_trigger_param_1, ":agent_no"),(store_trigger_param_2, ":troop_no"),(call_script, "script_shield_item_set_banner", "tableau_heraldic_armor_c", ":agent_no", ":troop_no")])]],
 #SW - used in other parts of the code, removed merch tag
-["heraldic_mail_with_tabard", "Heraldic_Mail_with_Tabard", [("heraldic_armor_d",0)], itp_type_body_armor  |itp_covers_legs ,0,
- 675 , weight(21)|abundance(100)|head_armor(0)|body_armor(51)|leg_armor(15)|difficulty(7) ,imodbits_armor,
- [(ti_on_init_item, [(store_trigger_param_1, ":agent_no"),(store_trigger_param_2, ":troop_no"),(call_script, "script_shield_item_set_banner", "tableau_heraldic_armor_d", ":agent_no", ":troop_no")])]],
+# ["heraldic_mail_with_tabard", "Heraldic_Mail_with_Tabard", [("heraldic_armor_d",0)], itp_type_body_armor  |itp_covers_legs ,0,
+ # 675 , weight(21)|abundance(100)|head_armor(0)|body_armor(51)|leg_armor(15)|difficulty(7) ,imodbits_armor,
+ # [(ti_on_init_item, [(store_trigger_param_1, ":agent_no"),(store_trigger_param_2, ":troop_no"),(call_script, "script_shield_item_set_banner", "tableau_heraldic_armor_d", ":agent_no", ":troop_no")])]],
 #["turret_hat_ruby", "Turret Hat", [("turret_hat_r",0)], itp_type_head_armor  |itp_civilian|itp_fit_to_head ,0, 70 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ], 
 #["turret_hat_blue", "Turret Hat", [("turret_hat_b",0)], itp_type_head_armor  |itp_civilian|itp_fit_to_head ,0, 80 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ], 
 #["turret_hat_green", "Barbette", [("turret_hat_g",0)],itp_merchandise|itp_type_head_armor|itp_civilian|itp_fit_to_head,0,70, weight(0.5)|abundance(100)|head_armor(6)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
-["head_wrappings","head_wrapping",[("head_wrapping",0)],itp_type_head_armor|itp_fit_to_head,0,16, weight(0.25)|head_armor(3),imodbit_tattered | imodbit_ragged | imodbit_sturdy | imodbit_thick],
+#["head_wrappings","head_wrapping",[("head_wrapping",0)],itp_type_head_armor|itp_fit_to_head,0,16, weight(0.25)|head_armor(3),imodbit_tattered | imodbit_ragged | imodbit_sturdy | imodbit_thick],
 ["court_hat", "Turret Hat", [("court_hat",0)], itp_type_head_armor  |itp_civilian|itp_fit_to_head ,0, 80 , weight(0.5)|abundance(100)|head_armor(8)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ], 
 #["wimple_a", "Wimple", [("wimple_a",0)],itp_merchandise|itp_type_head_armor|itp_civilian|itp_fit_to_head,0,10, weight(0.5)|abundance(100)|head_armor(4)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
 #["wimple_with_veil", "Wimple with Veil", [("wimple_b",0)],itp_merchandise|itp_type_head_armor|itp_civilian|itp_fit_to_head,0,10, weight(0.5)|abundance(100)|head_armor(4)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
@@ -856,17 +856,17 @@ items = [
  280 , weight(5)|abundance(100)|head_armor(0)|body_armor(26)|leg_armor(7)|difficulty(0) ,imodbits_armor ],
 ["light_leather_boots",  "Light Leather Boots", [("light_leather_boots",0)], itp_type_foot_armor |itp_merchandise| itp_attach_armature,0, 
  140 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(15)|difficulty(0) ,imodbits_cloth ],
-["mail_and_plate", "Mail and Plate", [("mail_and_plate",0)], itp_type_body_armor|itp_covers_legs   ,0, 
- 450 , weight(16)|abundance(100)|head_armor(0)|body_armor(34)|leg_armor(12)|difficulty(0) ,imodbits_armor ],
-["light_mail_and_plate", "Light Mail and Plate", [("light_mail_and_plate",0)], itp_type_body_armor|itp_covers_legs   ,0, 
- 510 , weight(10)|abundance(100)|head_armor(0)|body_armor(32)|leg_armor(12)|difficulty(0) ,imodbits_armor ],
+#["mail_and_plate", "Mail and Plate", [("mail_and_plate",0)], itp_type_body_armor|itp_covers_legs   ,0, 
+ # 450 , weight(16)|abundance(100)|head_armor(0)|body_armor(34)|leg_armor(12)|difficulty(0) ,imodbits_armor ],
+#["light_mail_and_plate", "Light Mail and Plate", [("light_mail_and_plate",0)], itp_type_body_armor|itp_covers_legs   ,0, 
+ # 510 , weight(10)|abundance(100)|head_armor(0)|body_armor(32)|leg_armor(12)|difficulty(0) ,imodbits_armor ],
 
-["byzantion_helmet_a", "Byzantion Helmet", [("byzantion_helmet_a",0)], itp_type_head_armor   ,0, 278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
-["magyar_helmet_a", "Magyar Helmet", [("magyar_helmet_a",0)], itp_type_head_armor   ,0, 278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
-["rus_helmet_a", "Rus Helmet", [("rus_helmet_a",0)], itp_type_head_armor   ,0, 278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
-["sipahi_helmet_a", "Sipahi Helmet", [("sipahi_helmet_a",0)], itp_type_head_armor   ,0, 278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
-["shahi", "Shahi", [("shahi",0)], itp_type_head_armor   ,0, 278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
-["rabati", "Rabati", [("rabati",0)], itp_type_head_armor   ,0, 278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+# ["byzantion_helmet_a", "Byzantion Helmet", [("byzantion_helmet_a",0)], itp_type_head_armor   ,0, 278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+# ["magyar_helmet_a", "Magyar Helmet", [("magyar_helmet_a",0)], itp_type_head_armor   ,0, 278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+# ["rus_helmet_a", "Rus Helmet", [("rus_helmet_a",0)], itp_type_head_armor   ,0, 278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+# ["sipahi_helmet_a", "Sipahi Helmet", [("sipahi_helmet_a",0)], itp_type_head_armor   ,0, 278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+# ["shahi", "Shahi", [("shahi",0)], itp_type_head_armor   ,0, 278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
+# ["rabati", "Rabati", [("rabati",0)], itp_type_head_armor   ,0, 278 , weight(2)|abundance(100)|head_armor(20)|body_armor(0)|leg_armor(0) ,imodbits_cloth ],
 
 #====================================================================================================================
 
@@ -1390,12 +1390,17 @@ items = [
 ["wookiee_female_hands","Wookiee Female Hands", [("wookiee_female_mittenL",0)], itp_unique|itp_type_hand_armor|itp_civilian,0, 50, weight(0.2)|abundance(0)|body_armor(3)|difficulty(0),imodbits_cloth],
 ["wookiee_female_feet", "Wookiee Female Feet", [("wookiee_female_feet",0)], itp_unique |itp_type_foot_armor | itp_attach_armature|itp_civilian,0, 150 , weight(2)|abundance(80)|head_armor(0)|body_armor(0)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
 
+
+["kaminoan_female_head", "Kaminoan Female Head", [("kaminoan_head",0)], itp_unique|itp_type_head_armor|itp_covers_head|itp_attach_armature |itp_civilian ,0, 75 , weight(1)|abundance(0)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["kaminoan_female_body", "Kaminoan Female Body", [("kaminoan_body",0)], itp_unique|itp_type_body_armor|itp_covers_legs |itp_civilian ,0, 530, weight(3)|abundance(0)|head_armor(0)|body_armor(32)|leg_armor(12)|difficulty(0) ,imodbits_cloth ],
+
+
 #bothan
-#["bothan_head", "Bothan Head", [("bothan_head",0)], itp_unique|itp_type_head_armor|itp_covers_head |itp_civilian ,0, 
 # 75 , weight(1)|abundance(80)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+#["bothan_head", "Bothan Head", [("bothan_head",0)], itp_unique|itp_type_head_armor|itp_covers_head |itp_civilian ,0, 
 
 #no attack ability since the droid armor moves and the animation looks bad when they attack
-["droid_weapon_no_attack","Droid Melee Weapon (No Attack)", [("transparent",0),("force_block_inv",ixmesh_inventory)], itp_type_two_handed_wpn|itp_unique|itp_primary, 0, 
+["droid_weapon_no_attack","Droid Melee Weapon (No Attack)", [("transparent",0),("force_block_inv",ixmesh_inventory)], itp_unique|itp_primary, 0, 
  1 , weight(1)|abundance(0)|difficulty(0)|spd_rtng(40) | weapon_length(25)|swing_damage(0, blunt) | thrust_damage(0, blunt),imodbits_none ],
 
 #r2series

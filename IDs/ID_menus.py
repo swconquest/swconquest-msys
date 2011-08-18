@@ -255,5 +255,3 @@ menu_choose_scenes_468 = 253
 menu_choose_scenes_481 = 254
 menu_choose_scenes_494 = 255
 menu_choose_scenes_507 = 256
-menu_choose_scenes_520 = 257
-menu_choose_scenes_533 = 258

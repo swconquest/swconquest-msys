@@ -9032,7 +9032,6 @@ common_gate_system,
 				#get health
 				(store_agent_hit_points,":player_agent_health",":player_agent",0),	#relative number, 0-100
 				(try_begin),
-				(try_begin),
 					(eq, ":player_agent_health", 100),	#player is fully healed
 					(le, ":dist", 125),	#very close
 					(display_message, "@You are not injured and do not need the Bacta Tank at this time."),

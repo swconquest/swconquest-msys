@@ -234,7 +234,7 @@ skins = [
   
   (
     "woman", skf_use_morph_key_10,
-    "woman_body",  "woman_calf_l", "f_handL",
+    "woman_body",  "woman_calf_l", "w_handL",
     "female_head_new", woman_face_keys,
     ["woman_hair_p","woman_hair_n","woman_hair_o","woman_hair_q","woman_hair_r","woman_hair_t","woman_hair_s","woman_hair_buns","zabrak_horns"], #woman_hair_meshes
 	#    ["woman_hair_a","woman_hair_b","woman_hair_c","woman_hair_d","woman_hair_e","woman_hair_f","woman_hair_g"], #woman_hair_meshes
