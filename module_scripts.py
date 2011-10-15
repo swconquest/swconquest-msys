@@ -3,7 +3,7 @@
 # By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
 
 # -*- coding: cp1254 -*-
-# -*- coding: cp1254 -*-
+
 from header_common import *
 from header_operations import *
 from module_constants import *
@@ -30338,6 +30338,7 @@ scripts = [
                   (store_script_param_1 , ":planet_aura_begin"),
                   (store_script_param_2 , ":planet_aura_end"),
                   
+                  
                   (try_for_range, ":cur_i", ":planet_aura_begin", ":planet_aura_end"),
                     (party_get_faction, ":planet_aura_faction", ":cur_i"), # also named store_faction_of_party, but is ugly, so I created an alias
                     
@@ -30365,34 +30366,43 @@ scripts = [
                       
                       (party_add_particle_system, ":cur_i", "psys_planet_icon_atmospheric_effect_polution"),
                       
+                    (else_try),
+                      #if neutral or player set player aura ->
+                      (this_or_next|eq,":planet_aura_faction","fac_no_faction"),
+                      (this_or_next|eq,":planet_aura_faction","fac_neutral"),
+                      (this_or_next|eq,":planet_aura_faction","fac_player_faction"),
+                      (             eq,":planet_aura_faction","fac_player_supporters_faction"),
+                      (party_clear_particle_systems, ":cur_i"),
+                      (party_clear_particle_systems, ":cur_i"),
+                      
+                      (party_add_particle_system, ":cur_i", "psys_planet_icon_neutral_effect"),
+                      
                     (try_end),
-                    
                     # if not left everything unchanged and then go to the next cool boy...
                   (try_end),
               ]),
               
+              
               ("swy_sprop_movement",
                 [
-                  (store_script_param_1 , ":instance"  ),
-                  (store_script_param_2 , ":mov_type"  ), #1=x axis, 2=y axis, 3=z axis
-                  (store_script_param , ":mov_value", 3), #defined by prop
-                  (store_script_param , ":mov_time" , 4), #defined by prop
+                  (store_script_param_1, ":instance"    ),
+                  (store_script_param_2, ":axis"        ),
+                  (store_script_param,   ":mov_value", 3),
+                  (store_script_param,   ":mov_time" , 4),
                   
-                  (prop_instance_get_position,33,":instance"),
+                  (prop_instance_get_position, pos33, ":instance"),
                   (try_begin),
-                    (eq,":mov_type",x),
-                    (position_move_x,33,":mov_value"),
+                    (eq, ":axis", x),
+                    (position_move_x, pos33, ":mov_value"),
                   (else_try),
-                    (eq,":mov_type",y),
-                    (position_move_y,33,":mov_value"),
+                    (eq, ":axis", y),
+                    (position_move_y, pos33, ":mov_value"),
                   (else_try),
-                    (eq,":mov_type",z),
-                    (position_move_z,33,":mov_value"),
+                    (eq, ":axis", z),
+                    (position_move_z, pos33, ":mov_value"),
                   (try_end),
-                  
-                  (prop_instance_animate_to_position,":instance",33,":mov_time"),
-                  
-                  (val_mul,":mov_value",-1), #negative movement, goes back in an infinite cycle
-                  (call_script,"script_swy_sprop_movement",":instance",":mov_type",":mov_value",":mov_time"), #calls_itself
+                  (prop_instance_animate_to_position, ":instance", pos33, ":mov_time"),
+                  (val_mul, ":mov_value", -1),
+                  (call_script, "script_swy_sprop_movement", ":instance", ":axis", ":mov_value", ":mov_time") #  <-- mov type (x,y,z), mov value, mov time
               ]),
             ]

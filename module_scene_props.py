@@ -270,9 +270,9 @@ scene_props = [
   ("sw_sign_random_all_2",0,"sw_sign_e","bo_sw_sign_a", []),
   ("sw_sign_random_all_3",0,"sw_sign_e","bo_sw_sign_a", []),
   ("sw_sign_random_all_4",0,"sw_sign_e","bo_sw_sign_a", []),
-  ("sw_sign_random_towngalacticempire",0,"sw_sign_a","bo_sw_sign_a", []),
-  ("sw_sign_random_townrebelalliance",0,"sw_sign_a","bo_sw_sign_a", []),
-  ("sw_sign_random_townhuttcartel",0,"sw_sign_a","bo_sw_sign_a", []),
+  ("sw_sign_random_galacticempire",0,"sw_sign_a","bo_sw_sign_a", []),
+  ("sw_sign_random_rebelalliance",0,"sw_sign_a","bo_sw_sign_a", []),
+  ("sw_sign_random_huttcartel",0,"sw_sign_a","bo_sw_sign_a", []),
   ("sw_sign_random_townfaction_4",0,"sw_sign_a","bo_sw_sign_a", []),
   ("sw_sign_random_generic_1",0,"sw_sign_i","bo_sw_sign_a", []),
   ("sw_sign_random_generic_2",0,"sw_sign_i","bo_sw_sign_a", []),
@@ -1800,7 +1800,7 @@ scene_props = [
   ("fish_a",0,"fish_a","0", []),
   ("fish_roasted_a",0,"fish_roasted_a","0", []),
   ("chicken_roasted",0,"chicken_roasted","0", []),
-  ("food_steam",0,"0","0",
+  ("food_steam",sokf_invisible,"psys_helper","0",
    [
    (ti_on_scene_prop_init,
     [
@@ -1809,7 +1809,7 @@ scene_props = [
     ]),
    ]),
   ########################
-  ("city_smoke",0,"0","0",
+  ("city_smoke",sokf_invisible,"psys_helper","0",
    [
    (ti_on_scene_prop_init,
     [
@@ -1819,7 +1819,7 @@ scene_props = [
      (particle_system_add_new, "psys_night_smoke_1"),
     ]),
    ]),
-    ("city_fire_fly_night",0,"0","0",
+    ("city_fire_fly_night",sokf_invisible,"psys_helper","0",
    [
    (ti_on_scene_prop_init,
     [
@@ -1829,28 +1829,28 @@ scene_props = [
      (particle_system_add_new, "psys_fire_fly_1"),
     ]),
    ]),
-    ("city_fly_day",0,"0","0",
+    ("city_fly_day",sokf_invisible,"psys_helper","0",
    [
    (ti_on_scene_prop_init,
     [
      (particle_system_add_new, "psys_bug_fly_1"),
     ]),
    ]),
-    ("flue_smoke_tall",0,"0","0",
+    ("flue_smoke_tall",sokf_invisible,"psys_helper","0",
    [
    (ti_on_scene_prop_init,
     [
      (particle_system_add_new, "psys_flue_smoke_tall"),
     ]),
    ]),
-      ("flue_smoke_short",0,"0","0",
+      ("flue_smoke_short",sokf_invisible,"psys_helper","0",
    [
    (ti_on_scene_prop_init,
     [
      (particle_system_add_new, "psys_flue_smoke_short"),
     ]),
    ]),
-      ("moon_beam",0,"0","0",
+      ("moon_beam",sokf_invisible,"psys_helper","0",
    [
    (ti_on_scene_prop_init,
     [
@@ -1858,28 +1858,28 @@ scene_props = [
      (particle_system_add_new, "psys_moon_beam_paricle_1"),
     ]),
    ]),
-    ("fire_small",0,"0","0",
+    ("fire_small",sokf_invisible,"psys_helper","0",
    [
    (ti_on_scene_prop_init,
     [
      (particle_system_add_new, "psys_fireplace_fire_small"),
     ]),
    ]),
-  ("fire_big",0,"0","0",
+  ("fire_big",sokf_invisible,"psys_helper","0",
    [
    (ti_on_scene_prop_init,
     [
      (particle_system_add_new, "psys_fireplace_fire_big"),
     ]),
    ]),
-    ("battle_field_smoke",0,"0","0",
+    ("battle_field_smoke",sokf_invisible,"psys_helper","0",
    [
    (ti_on_scene_prop_init,
     [
      (particle_system_add_new, "psys_war_smoke_tall"),
     ]),
    ]),
-      ("Village_fire_big",0,"0","0",
+    ("Village_fire_big",sokf_invisible,"psys_helper","0",
    [
    (ti_on_scene_prop_init,
     [
@@ -1940,7 +1940,7 @@ scene_props = [
   ("window_night",0,"window_night","0", []),
   ("fried_pig",0,"fried_pig","0", []),
   ("village_oven",0,"village_oven","bo_village_oven", []),
-  ("dungeon_water_drops",0,"0","0",
+  ("dungeon_water_drops",sokf_invisible,"psys_helper","0",
    [
    (ti_on_scene_prop_init,
     [
@@ -2053,7 +2053,7 @@ scene_props = [
     ("swy_city_wall_floor_imperial",0,"swy_city_wall_floor_imperial","bo_swy_city_wall", []),
 	("swy_ground_floor_imperial_hangar",0,"swy_ground_floor_imperial_hangar","bo_swy_city_ground", []),
     ("swy_city_wall_floor_imperial_hangar",0,"swy_city_wall_floor_imperial_hangar","bo_swy_city_wall", []),
-	("swy_ground_floor_rebel",0,"swy_ground_floor_rebel","bo_swy_city_ground", []),
+	("swy_ground_a",0,"swy_ground_floor_rebel","bo_swy_city_ground", []),
     ("swy_city_wall_floor_rebel",0,"swy_city_wall_floor_rebel","bo_swy_city_wall", []),
 	("swy_ground_moncal_light",0,"swy_ground_moncal_light","bo_swy_city_ground", []),
     ("swy_city_wall_moncal_light",0,"swy_city_wall_moncal_light","bo_swy_city_wall", []),
@@ -2131,12 +2131,54 @@ scene_props = [
     ("swy_gate.sys",0,"ship_door2","bo_ship_door2", []),
 	
 	#New holographic signs
-    ("swy_sign_arena",0,"swy_sign_arena",0, []),
-	("swy_sign_cantina",0,"swy_sign_cantina",0, []),
-	("swy_sign_shop",0,"swy_sign_shop",0, []),
-	("swy_sign_extra1",0,"swy_sign_extra1",0, []),
-	("swy_sign_extra2",0,"swy_sign_extra2",0, []),
-	("swy_sign_extra3",0,"swy_sign_extra3",0, []),	
+    ("swy_sign_arena",0,"swy_sign_arena",0, [
+	
+	(ti_on_init_scene_prop,
+      [
+          (set_current_color, 170, 30, 30), #red
+          (set_position_delta,0,0,0),
+          (add_point_light, 30, 200),
+      ]),]),
+	("swy_sign_cantina",0,"swy_sign_cantina",0, [
+	
+	(ti_on_init_scene_prop,
+      [
+          (set_current_color, 170, 122, 30), #orange
+          (set_position_delta,0,0,0),
+          (add_point_light, 30, 200),
+      ]),]),
+	("swy_sign_shop",0,"swy_sign_shop",0, [
+	
+	(ti_on_init_scene_prop,
+      [
+          (set_current_color, 100, 30, 170), #violet
+          (set_position_delta,0,0,0),
+          (add_point_light, 30, 200),
+      ]),]),
+	("swy_sign_extra1",0,"swy_sign_extra1",0, [
+	
+	(ti_on_init_scene_prop,
+      [
+          (set_current_color, 141, 207, 30), #green
+          (set_position_delta,0,0,0),
+          (add_point_light, 30, 200),
+      ]),]),
+	("swy_sign_extra2",0,"swy_sign_extra2",0, [
+	
+	(ti_on_init_scene_prop,
+      [
+          (set_current_color, 117, 22, 142), #pinky
+          (set_position_delta,0,0,0),
+          (add_point_light, 30, 200),
+      ]),]),
+	("swy_sign_extra3",0,"swy_sign_extra3",0, [
+	
+	(ti_on_init_scene_prop,
+      [
+          (set_current_color, 191, 217, 22), #yellow
+          (set_position_delta,0,0,0),
+          (add_point_light, 30, 200),
+      ]),]),
 	
 	#Glasses
 	("swy_glass",0,"swy_glass",0, []),	
@@ -2519,7 +2561,7 @@ scene_props = [
   ("virtual_twilek_dancer_hologram",0,"virtual_twilek_dancer_hologram","bo_virtual_twilek_dancer_hologram", []),
   ("taris_statue_base_1",0,"taris_statue_base_1","bo_taris_statue_base_1", []),
   ("taris_statue_base_2",0,"taris_statue_base_2","bo_taris_statue_base_2", []),
-  ("taris_statue_1",0,"taris_statue_1","bo_taris_statue_1",
+  ("taris_statue_1",sokf_moveable|spanim_loop_linear,"taris_statue_1","bo_taris_statue_1",
 [ (ti_on_scene_prop_init,[ 
 		 (store_trigger_param_1, ":instance"),
 		 (call_script,"script_swy_sprop_movement",":instance",y,30,10), #  <-- mov type (x,y,z), mov value, mov time
@@ -2620,15 +2662,24 @@ scene_props = [
   ("Hoth_pillar1",0,"Hoth_pillar1","bo_Hoth_pillar", []),
   ("Hoth_pillar2",0,"Hoth_pillar2","bo_Hoth_pillar", []),
 
+  ("endor_fac_1",0,"endor_fac_1","bo_endor_fac_1_2", []),
+  ("endor_fac_2",0,"endor_fac_2","bo_endor_fac_1_2", []),
+
+  ("Hoth_radar",0,"Hoth_radar","bo_Hoth_radar", []),
+  ("Hoth_cannon",0,"Hoth_cannon","bo_Hoth_cannon", []),
+  ("Hoth_battery_2",0,"Hoth_battery_2","0", []),
+  ("Hoth_battery_3",0,"Hoth_battery_3","0", []),
+  ("Hoth_battery_4",0,"Hoth_battery_4","0", []),
+
 #@Automagically added -- End
 
 
 
 #----------------------------------------------------------------------
-  ("rm_end",0,"0","0", []),
+  ("rm_end",sokf_invisible,"psys_helper","0", []),
    #add everything crashable here:(asteroids and etc.)
-  ("col_end",0,"0","0", []),
+  ("col_end",sokf_invisible,"psys_helper","0", []),
 #Highlander begin--------------------------------------
-  ("scene_props_end",0,"0","0", []), #leave this at the last position
+  ("scene_props_end",sokf_invisible,"psys_helper","0", []), #leave this at the last position
 #Highlander end--------------------------------------
 ]

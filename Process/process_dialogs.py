@@ -49,8 +49,9 @@ def save_triggers(variable_list,variable_uses,triggers,tag_uses,quick_strings):
   for i in xrange(len(triggers)):
     trigger = triggers[i]
     file.write("%f %f %f "%(trigger[trigger_check_pos],trigger[trigger_delay_pos],trigger[trigger_rearm_pos]))
-    save_statement_block(file,0,1,trigger[trigger_conditions_pos]  , variable_list, variable_uses,tag_uses,quick_strings)
-    save_statement_block(file,0,1,trigger[trigger_consequences_pos], variable_list, variable_uses,tag_uses,quick_strings)
+    trigger_id = "trigger " + str(i)
+    save_statement_block(file,0,1,trigger[trigger_conditions_pos]  , variable_list, variable_uses,tag_uses,quick_strings, trigger_id)
+    save_statement_block(file,0,1,trigger[trigger_consequences_pos], variable_list, variable_uses,tag_uses,quick_strings, trigger_id)
 #    for condition in trigger[trigger_conditions_pos]:
 #      save_operation(file,condition,variable_list)
 #    file.write(" %d "%(len(trigger[trigger_consequences_pos])))
@@ -163,13 +164,13 @@ def save_sentences(variable_list,variable_uses,sentences,tag_uses,quick_strings,
     try:
       dialog_id = create_auto_id2(sentence,auto_ids)
       file.write("%s %d %d "%(dialog_id,sentence[speaker_pos],input_states[i]))
-      save_statement_block(file, 0, 1, sentence[sentence_conditions_pos], variable_list,variable_uses,tag_uses,quick_strings)
+      save_statement_block(file, 0, 1, sentence[sentence_conditions_pos], variable_list,variable_uses,tag_uses,quick_strings, dialog_id+" condition block")
 
       file.write("%s "%(string.replace(sentence[text_pos]," ","_")))
       if (len(sentence[text_pos]) == 0):
         file.write("NO_TEXT ")
       file.write(" %d "%(output_states[i]))
-      save_statement_block(file, 0, 1, sentence[sentence_consequences_pos], variable_list,variable_uses,tag_uses,quick_strings)
+      save_statement_block(file, 0, 1, sentence[sentence_consequences_pos], variable_list,variable_uses,tag_uses,quick_strings, dialog_id+" consequence block")
       file.write("\n")
     except:
       print "Error in dialog line:"

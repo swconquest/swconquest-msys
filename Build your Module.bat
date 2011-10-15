@@ -31,7 +31,8 @@ if %PROCESSOR_ARCHITECTURE%==x86 (
  set SWYPYTHON_var=64bits
 )
 
-set PATH=%PATH%;!CD:~1,-1!\Python\%SWYPYTHON_var%
+set PATH=!CD:~1,-1!\Python\%SWYPYTHON_var%
+rem set PATH=%PATH%;!CD:~1,-1!\Python\%SWYPYTHON_var%
 set PYTHONPATH=%PYTHONPATH%;!CD:~1,-1!\IDs;!CD:~1,-1!\Headers;!CD:~1,-1!\Process;!CD:~1,-1!\Extras;!CD:~1,-1!
 
 rem echo Path: "%path%"--

@@ -6571,7 +6571,7 @@ presentations = [
 		(presentation_set_duration, 999999),
 		#main title
 		(create_text_overlay, reg1, "@Shipyard Stock List - select the ship you want to view or purchase",tf_center_justify),
-		(position_set_x, pos3, 512),
+		(position_set_x, pos3, 387), #swy-> moved to the left a bit (position_set_x, pos3, 512),
         (position_set_y, pos3, 690),
         (overlay_set_position, reg1, pos3),
 		(overlay_set_color, reg1, 000066),
@@ -6622,10 +6622,11 @@ presentations = [
 		(overlay_set_color, "$g_presentation_obj_2", 000066),
 		
 		#main text block
-        (create_text_overlay , reg1, "@{s1}", tf_left_align|tf_vertical_align_center),
+        (create_text_overlay , reg1, "@>{s1}", tf_left_align|tf_vertical_align_center),
         (position_set_x, pos3, 40),
         (position_set_y, pos3, 350),
         (overlay_set_position, reg1, pos3),
+		(overlay_set_color, reg1, 000060), #swy
 		# (position_set_x, pos1, 300),
         # (position_set_y, pos1, 300),
         # (overlay_set_area_size, reg1, pos1),
