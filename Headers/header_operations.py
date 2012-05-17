@@ -789,7 +789,7 @@ store_partner_faction           = 2201 # (store_partner_faction,<destination>),
 store_encountered_party         = 2202 # (store_encountered_party,<destination>),
 store_encountered_party2        = 2203 # (store_encountered_party2,<destination>),
 store_faction_of_party          = 2204 # (store_faction_of_party,<destination>),
-
+party_get_faction = store_faction_of_party #alias
 
 #store_current_town              = 2210 # deprecated, use store_current_scene instead
 #store_current_site              = 2211 # deprecated, use store_current_scene instead
