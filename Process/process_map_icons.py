@@ -4,6 +4,7 @@ from module_map_icons import *
 
 from process_common import *
 from process_operations import *
+from process__swyhelper import *
 
 def save_map_icons(variable_list,variable_uses,tag_uses,quick_strings):
   ofile = open(export_dir + "map_icons.txt","w")
@@ -12,11 +13,11 @@ def save_map_icons(variable_list,variable_uses,tag_uses,quick_strings):
   for map_icon in map_icons:
     triggers = []
     if (len(map_icon) >= 8):
-      ofile.write("%s %d %s %f %d %f %f %f "%(map_icon[0],map_icon[1],map_icon[2],map_icon[3],map_icon[4],map_icon[5],map_icon[6],map_icon[7]))
+      ofile.write("%s %d %s %s %d %s %s %s "%(map_icon[0],map_icon[1],map_icon[2],swytrailzro(map_icon[3]),map_icon[4],swytrailzro(map_icon[5]),swytrailzro(map_icon[6]),swytrailzro(map_icon[7])))
       if (len(map_icon) == 9):
         triggers = map_icon[8]
     else:
-      ofile.write("%s %d %s %f %d 0 0 0 "%(map_icon[0],map_icon[1],map_icon[2],map_icon[3],map_icon[4]))
+      ofile.write("%s %d %s %s %d 0 0 0 "%(map_icon[0],map_icon[1],map_icon[2],swytrailzro(map_icon[3]),map_icon[4]))
       if (len(map_icon) == 6):
         triggers = map_icon[5]
     save_simple_triggers(ofile,triggers, variable_list,variable_uses,tag_uses,quick_strings)

@@ -3,6 +3,7 @@ from header_common import *
 from module_info import *
 from module_animations import *
 from process_common import *
+from process__swyhelper import *
 
 def compile_action_sets(actions):
   action_codes = []
@@ -30,17 +31,17 @@ def write_actions(action_set,num_action_codes,action_codes,file_name):
         file.write(" %s %d "%(action_codes[i_action_code],action[1])) #print flags
         file.write(" %d\n"%(len(action)-2))
         for elem in action[2:]:
-          file.write("  %f %s %d %d %d "%(elem[0],elem[1],elem[2],elem[3],elem[4]))
+          file.write("  %s %s %d %d %d "%(swytrailzro(elem[0]),elem[1],elem[2],elem[3],elem[4]))
           if (len(elem) > 5):
             file.write("%d "%elem[5])
           else:
             file.write("0 ")
           if (len(elem) > 6):
-            file.write("%f %f %f  "%elem[6])
+            file.write("%s %s %s  "%(swytrailzro(elem[6][0]),swytrailzro(elem[6][1]),swytrailzro(elem[6][2])))
           else:
             file.write("0.0 0.0 0.0 ")
           if (len(elem) > 7):
-            file.write("%f \n"%(elem[7]))
+            file.write("%s \n"%(swytrailzro(elem[7])))
           else:
             file.write("0.0 \n")
         action_found = 1

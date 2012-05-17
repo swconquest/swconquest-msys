@@ -18,7 +18,7 @@ def save_scripts(variable_list,variable_uses,scripts,tag_uses,quick_strings):
       file.write("%s -1\n"%(convert_to_identifier(func[0])))
       save_statement_block(file,convert_to_identifier(func[0]), 0,func[1], variable_list,variable_uses,tag_uses,quick_strings, convert_to_identifier(func[0]) )
     else:
-      file.write("%s %f\n"%(convert_to_identifier(func[0]), func[1]))
+      file.write("%s %s\n"%(convert_to_identifier(func[0]), swytrailzro(func[1])))
       save_statement_block(file,convert_to_identifier(func[0]), 0,func[2], variable_list,variable_uses,tag_uses,quick_strings, convert_to_identifier(func[0]) )
     file.write("\n")
   file.close()

@@ -22,8 +22,4 @@ from module_info import *
 #! Based on: http://stackoverflow.com/a/2440786
 def swytrailzro(num):
 	import decimal
-	
-	if swysdk['enable_optimizations']:
-		return ('%f' % num).rstrip('0').rstrip('.')
-	else:
-		return ('%f' % num)
+	return ('%f' % num).rstrip('0').rstrip('.')

@@ -2,6 +2,7 @@ from module_info import *
 from module_factions import *
 
 from process_common import *
+from process__swyhelper import *
 
 faction_name_pos = 0
 faction_flags_pos = 2
@@ -41,7 +42,7 @@ def save_factions(relations):
       fac_color = faction[6]
     file.write("fac_%s %s %d %d \n"%(convert_to_identifier(faction[0]), replace_spaces(faction[1]), faction[2], fac_color))
     for reln in relations[i_faction]:
-      file.write(" %f "%reln)
+      file.write(" %s "%swytrailzro(reln))
     file.write("\n")
     ranks = []
     if (len(faction) > (faction_ranks_pos)):

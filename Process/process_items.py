@@ -2,6 +2,7 @@ import string
 
 from process_common import *
 from module_items import *
+from process__swyhelper import *
 
 def get_item_code(item):
   prefix = "it_"
@@ -41,8 +42,8 @@ def write_items(variable_list,variable_uses,tag_uses,quick_strings):
 	
     for item_variation in item_variations:
       ofile.write(" %s %d "%(item_variation[0],item_variation[1]))
-    ofile.write(" %d %d %d %d %f %d %d %d %d %d %d %d %d %d %d %d %d\n"%(item[3], item[4], item[5], item[7],
-                                                   get_weight(item[6]),
+    ofile.write(" %d %d %d %d %s %d %d %d %d %d %d %d %d %d %d %d %d\n"%(item[3], item[4], item[5], item[7],
+                                                   swytrailzro(get_weight(item[6])),
                                                    get_abundance(item[6]),                  
                                                    get_head_armor(item[6]),
                                                    get_body_armor(item[6]),

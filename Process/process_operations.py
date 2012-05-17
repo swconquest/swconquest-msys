@@ -27,7 +27,7 @@ from module_presentations import *
 from module_map_icons import *
 from module_tableau_materials import *
 from module_animations import *
-
+from process__swyhelper import *
 
 def get_id_value(tag, identifier, tag_uses):
   tag_type = -1
@@ -482,7 +482,7 @@ def save_simple_triggers(ofile,triggers,variable_list, variable_uses,tag_uses,qu
   ofile.write("%d\n"%len(triggers))
   trigger_id = 0
   for trigger in triggers:
-    ofile.write("%f "%(trigger[0]))
+    ofile.write("%s "%(swytrailzro(trigger[0])))
     save_statement_block(ofile,0,1,trigger[1]  , variable_list, variable_uses,tag_uses,quick_strings, "trigger " + str(trigger_id))
     ofile.write("\n")
     trigger_id += 1

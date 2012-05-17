@@ -42,9 +42,9 @@ def save_parties(parties):
     file.write("%d %d "%(ai_behavior_object,ai_behavior_object))
     position = party[9]
     default_behavior_location = position
-    file.write("%f %f "%(default_behavior_location[0],default_behavior_location[1]))
-    file.write("%f %f "%(default_behavior_location[0],default_behavior_location[1]))
-    file.write("%f %f 0.0 "%position)
+    file.write("%s %s "%(swytrailzro(default_behavior_location[0]),swytrailzro(default_behavior_location[1])))
+    file.write("%s %s "%(swytrailzro(default_behavior_location[0]),swytrailzro(default_behavior_location[1])))
+    file.write("%s %s 0.0 "%(swytrailzro(position[0]),swytrailzro(position[1])))
     member_list = party[10]
     file.write("%d "%len(member_list))
     for member in member_list:
@@ -53,7 +53,7 @@ def save_parties(parties):
     bearing = 0.0
     if (len(party) > 11):
       bearing = (3.1415926 / 180.0) * party[11]
-    file.write("\n%f\n"%(bearing))
+    file.write("\n%s\n"%(swytrailzro(bearing)))
   file.close()
 
 def save_python_header(parties):
