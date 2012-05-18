@@ -1,4 +1,4 @@
-# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M
 # / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
 # By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
 
@@ -14,54 +14,54 @@ from ID_sounds import *
 #     The prefix icon_ is automatically added before each map icon id.
 #  2) Map icon flags. See header_map icons.py for a list of available flags
 #  3) Mesh name.
-#  4) Scale. 
+#  4) Scale.
 #  5) Sound.
 #  6) Offset x position for the flag icon.
 #  7) Offset y position for the flag icon.
 #  8) Offset z position for the flag icon.
 ####################################################################################################################
 
-banner_scale = 0.35
-#avatar_scale = 0.15
-planet_main_scale = 0.80
-planet_training_scale = 0.55
-planet_minor_scale = 0.5
-death_star_scale = 0.7
-spacestation_scale = 0.5
+banner_scale           = 0.35
+#avatar_scale          = 0.15
+planet_main_scale      = 0.80
+planet_training_scale  = 0.55
+planet_minor_scale     = 0.5
+death_star_scale       = 0.7
+spacestation_scale     = 0.5
 cis_star_cruiser_scale = 0.60
 
-ship_verylarge_scale = 0.80
-ship_large_scale = 0.65
-ship_medium_scale = 0.50
-ship_small_scale = 0.40
-ship_verysmall_scale = 0.30
+ship_verylarge_scale   = 0.80
+ship_large_scale       = 0.65
+ship_medium_scale      = 0.50
+ship_small_scale       = 0.40
+ship_verysmall_scale   = 0.30
 
 #SW - switched all map icons to planets or ships
 
 map_icons = [
-  #("player",mcn_no_shadow,"civilian_transport", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),
+ #("player",mcn_no_shadow,"civilian_transport", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("player",mcn_no_shadow,"Action_IV", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),
-  
-  ##@> //purchasable ships - empire
+
+ ##@> //purchasable ships - empire
   ("imperial_star_destroyer",mcn_no_shadow,"Imp_ISD", ship_verylarge_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("imperial_star_destroyer_interdictor",mcn_no_shadow,"Imp_ISD_Interdictor", ship_verylarge_scale, snd_ship_noise, 0.15, 0.173, 0),
-  ("imperial_victory_c2_frigate",mcn_no_shadow,"Imp_Victory_Class_II_Frigate", ship_verylarge_scale, snd_ship_noise, 0.15, 0.173, 0),  
-  ("imperial_dreadnaught_frigate",mcn_no_shadow,"Imp_Dreadnaught_Frigate", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),  
+  ("imperial_victory_c2_frigate",mcn_no_shadow,"Imp_Victory_Class_II_Frigate", ship_verylarge_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("imperial_dreadnaught_frigate",mcn_no_shadow,"Imp_Dreadnaught_Frigate", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("imperial_trade_frigate",mcn_no_shadow,"Imp_trade_frigate", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("tie_fighter",mcn_no_shadow,"tie_fighter", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("imperial_shuttle",mcn_no_shadow,"imperial_shuttle", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
-  ##@> //purchasable ships - rebel
-  ("a_wing",mcn_no_shadow,"a_wing", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),	
+##@> //purchasable ships - rebel
+  ("a_wing",mcn_no_shadow,"a_wing", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("rebel_transport",mcn_no_shadow,"rebel_transport", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("corellian_gunship",mcn_no_shadow,"Cor_Gunship", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("corellian_corvette",mcn_no_shadow,"swy_corellian_corvette", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("moncal_cruiser",mcn_no_shadow,"Moncal_Cruiser", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
-  ("x_wing",mcn_no_shadow,"xwing", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
-  ("x_wing2",mcn_no_shadow,"xwing_2", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
-  ("x_wing3",mcn_no_shadow,"xwing_3", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
-  ("x_wing4",mcn_no_shadow,"xwing_4", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
-  ("x_wing5",mcn_no_shadow,"xwing_5", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
-  ("y_wing",mcn_no_shadow,"y_wing_gold", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
+  ("x_wing",mcn_no_shadow,"xwing", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("x_wing2",mcn_no_shadow,"xwing_2", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("x_wing3",mcn_no_shadow,"xwing_3", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("x_wing4",mcn_no_shadow,"xwing_4", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("x_wing5",mcn_no_shadow,"xwing_5", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("y_wing",mcn_no_shadow,"y_wing_gold", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ##@> //purchasable ships - hutt
   ("hutt_cruiser",mcn_no_shadow,"Hutt_Cruiser", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("hutt_frigate_mk2",mcn_no_shadow,"Hutt_Frigate_MK2", ship_large_scale, snd_ship_noise, 0.15, 0.173, 0),
@@ -73,116 +73,116 @@ map_icons = [
   ("starchaser",mcn_no_shadow,"vec_starchaser", ship_small_scale,0),
   ("z95",mcn_no_shadow,"z96", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("tran_slaver",mcn_no_shadow,"tran_slaver", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
-  ("scyk_fighter",mcn_no_shadow,"hutt_scyk_fighter", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),	
-  #("mercenary_raider",mcn_no_shadow,"mercenary_raider", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("scyk_fighter",mcn_no_shadow,"hutt_scyk_fighter", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+ #("mercenary_raider",mcn_no_shadow,"mercenary_raider", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("mercenary_raider",mcn_no_shadow,"Wild_Karrde", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
- # ("freighter",mcn_no_shadow,"freighter", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),  
-  ("freighter",mcn_no_shadow,"swy_nebulon", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0), 
-  ("bulk_freighter",mcn_no_shadow,"bulk_frigate", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),  
-  #("mercenary_fighter",mcn_no_shadow,"z95", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),    
-  ("mercenary_fighter",mcn_no_shadow,"vec_starchaser", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),    
-  #("mercenary_shuttle",mcn_no_shadow,"shuttle", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),    
-  ("mercenary_shuttle",mcn_no_shadow,"Interceptor_IV", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),   
-  #("civilian_transport",mcn_no_shadow,"civilian_transport", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
-  #("civilian_cruiser",mcn_no_shadow,"civilian_transport_2", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
+ #("freighter",mcn_no_shadow,"freighter", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("freighter",mcn_no_shadow,"swy_nebulon", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("bulk_freighter",mcn_no_shadow,"bulk_frigate", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
+ #("mercenary_fighter",mcn_no_shadow,"z95", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("mercenary_fighter",mcn_no_shadow,"vec_starchaser", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+ #("mercenary_shuttle",mcn_no_shadow,"shuttle", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("mercenary_shuttle",mcn_no_shadow,"Interceptor_IV", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+ #("civilian_transport",mcn_no_shadow,"civilian_transport", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+ #("civilian_cruiser",mcn_no_shadow,"civilian_transport_2", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("civilian_transport",mcn_no_shadow,"Action_IV", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("civilian_cruiser",mcn_no_shadow,"swy_nebulon", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("cis_star_cruiser",mcn_no_shadow,"CIS_Station", cis_star_cruiser_scale,0),
   ##@> //other, not currently purchasable or used
   ##@> //purchasable ships - rebel
-  
+
   ##@> //Purchasable ships
-  ("shuttle",mcn_no_shadow,"shuttle_civilian", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),  
+  ("shuttle",mcn_no_shadow,"shuttle_civilian", ship_verysmall_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("mercenary_raider_grey",mcn_no_shadow,"mercenary_raider_grey", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("jawa_ship",mcn_no_shadow,"jawaship", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("mercenary_raider_brown",mcn_no_shadow,"Action_IV_Tusken", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
-  ("mercenary_shuttle_grey",mcn_no_shadow,"shuttle_grey", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),  
-  ("mercenary_shuttle_brown",mcn_no_shadow,"Wild_Karrde", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),  
-  ("mercenary_fighter_grey",mcn_no_shadow,"z95_grey", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),  
-  ("mercenary_fighter_brown",mcn_no_shadow,"z95_brown", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),  
+  ("mercenary_shuttle_grey",mcn_no_shadow,"shuttle_grey", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("mercenary_shuttle_brown",mcn_no_shadow,"Wild_Karrde", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("mercenary_fighter_grey",mcn_no_shadow,"z95_grey", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("mercenary_fighter_brown",mcn_no_shadow,"z95_brown", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   #unique icons
   ##@> SWY, deprecated, new DS icon ("death_star",mcn_no_shadow,"death_star",death_star_scale,0),
-  
+
   #ship debris
-  ("y_wing_debris",mcn_no_shadow,"y_wing_gold_debris", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),	  
-  ("z95_debris",mcn_no_shadow,"z95_debris", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),  
-  ("tie_fighter_debris",mcn_no_shadow,"tie_fighter_debris", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),  
-  
-  #castles  
+  ("y_wing_debris",mcn_no_shadow,"y_wing_gold_debris", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("z95_debris",mcn_no_shadow,"z95_debris", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("tie_fighter_debris",mcn_no_shadow,"tie_fighter_debris", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
+
+  #castles
   #SW - new base & outpost icon & planet
   ("sw_planet_green",mcn_no_shadow,"planet_green", spacestation_scale,0),
-  #("sw_outpost",mcn_no_shadow,"spacestation1", spacestation_scale,0),
-  #("sw_outpost_grey",mcn_no_shadow,"spacestation1_grey", spacestation_scale,0),
-  #("sw_base1",mcn_no_shadow,"spacestation5", spacestation_scale,0),
-  #("sw_base2",mcn_no_shadow,"spacestation3", spacestation_scale,0),
-  #("sw_base3",mcn_no_shadow,"spacestation4", spacestation_scale,0),
+ #("sw_outpost",mcn_no_shadow,"spacestation1", spacestation_scale,0),
+ #("sw_outpost_grey",mcn_no_shadow,"spacestation1_grey", spacestation_scale,0),
+ #("sw_base1",mcn_no_shadow,"spacestation5", spacestation_scale,0),
+ #("sw_base2",mcn_no_shadow,"spacestation3", spacestation_scale,0),
+ #("sw_base3",mcn_no_shadow,"spacestation4", spacestation_scale,0),
   ("asteroid_base",mcn_no_shadow,"asteroid_base", spacestation_scale,0),
-  #("shipyard",mcn_no_shadow,"spacestation1", spacestation_scale,0),
+ #("shipyard",mcn_no_shadow,"spacestation1", spacestation_scale,0),
   ("shipyard",mcn_no_shadow,"spacestation1", spacestation_scale,0),
   ("battlestation",mcn_no_shadow,"spacestation5", spacestation_scale,0),
-  #("outpost_a",mcn_no_shadow,"spacestation3", spacestation_scale,0),
+ #("outpost_a",mcn_no_shadow,"spacestation3", spacestation_scale,0),
   ("outpost_imp",mcn_no_shadow,"spacestation8", spacestation_scale,0),
-  #("outpost_b",mcn_no_shadow,"spacestation4", spacestation_scale,0),
+ #("outpost_b",mcn_no_shadow,"spacestation4", spacestation_scale,0),
   ("outpost_reb",mcn_no_shadow,"spacestation6", spacestation_scale,0),
-  ("outpost_hut",mcn_no_shadow,"spacestation7", spacestation_scale,0), 
-  
-  #@> SWC 0.9.0.4 - New Vector Space Stations
-  #("spacestation5",mcn_no_shadow,"spacestation5", spacestation_scale,0),
-  #("spacestation6",mcn_no_shadow,"spacestation6", spacestation_scale,0),
-  #("spacestation7",mcn_no_shadow,"spacestation7", spacestation_scale,0), <--- Commented out because replaced them up there ^   :)
-  #("spacestation8",mcn_no_shadow,"spacestation8", spacestation_scale,0),
-  
+  ("outpost_hut",mcn_no_shadow,"spacestation7", spacestation_scale,0),
+
+ #@> SWC 0.9.0.4 - New Vector Space Stations
+ #("spacestation5",mcn_no_shadow,"spacestation5", spacestation_scale,0),
+ #("spacestation6",mcn_no_shadow,"spacestation6", spacestation_scale,0),
+ #("spacestation7",mcn_no_shadow,"spacestation7", spacestation_scale,0), <--- Commented out because replaced them up there ^   :)
+ #("spacestation8",mcn_no_shadow,"spacestation8", spacestation_scale,0),
+
   ("XQ_04_Station_1",mcn_no_shadow,"XQ_04_Station_1", spacestation_scale,0),
   ("XQ_04_Station_2",mcn_no_shadow,"XQ_04_Station_2", spacestation_scale,0),
   ("XQ_04_Station_3",mcn_no_shadow,"XQ_04_Station_3", spacestation_scale,0),
   ("XQ_04_Station_4",mcn_no_shadow,"XQ_04_Station_4", spacestation_scale,0),
   ("XQ_04_Station_5",mcn_no_shadow,"XQ_04_Station_5", spacestation_scale,0),
 
-  #SW - have to use native icons when using the map editor
-  # ("sw_planet_green",mcn_no_shadow,"map_spacestation_a", 0.35,0),
-  # ("sw_outpost",mcn_no_shadow,"map_spacestation_a", 0.35,0),
-  # ("sw_outpost_grey",mcn_no_shadow,"map_spacestation_a", 0.35,0),
-  # ("sw_base1",mcn_no_shadow,"map_spacestation_a", 0.35,0),
-  # ("sw_base2",mcn_no_shadow,"map_spacestation_a", 0.35,0),
-  # ("sw_base3",mcn_no_shadow,"map_spacestation_a", 0.35,0),    
-  # ("asteroid_base",mcn_no_shadow,"map_spacestation_a", spacestation_scale,0),
-  # ("trade_federation_base",mcn_no_shadow,"map_spacestation_a", spacestation_scale,0),
-  
+ #SW - have to use native icons when using the map editor
+ # ("sw_planet_green",mcn_no_shadow,"map_spacestation_a", 0.35,0),
+ # ("sw_outpost",mcn_no_shadow,"map_spacestation_a", 0.35,0),
+ # ("sw_outpost_grey",mcn_no_shadow,"map_spacestation_a", 0.35,0),
+ # ("sw_base1",mcn_no_shadow,"map_spacestation_a", 0.35,0),
+ # ("sw_base2",mcn_no_shadow,"map_spacestation_a", 0.35,0),
+ # ("sw_base3",mcn_no_shadow,"map_spacestation_a", 0.35,0),
+ # ("asteroid_base",mcn_no_shadow,"map_spacestation_a", spacestation_scale,0),
+ # ("trade_federation_base",mcn_no_shadow,"map_spacestation_a", spacestation_scale,0),
+
 #towns
   #SW - new town icon
   ("sw_town_green",mcn_no_shadow,"planet_green",planet_main_scale,0),
-  ("sw_town_green_water",mcn_no_shadow,"planet_green_water",planet_main_scale,0),  
-  ("sw_town_snow",mcn_no_shadow,"planet_snow",planet_main_scale,0),  
-  ("sw_town_snow_water",mcn_no_shadow,"planet_snow",planet_main_scale,0),    
-  #("sw_town_gas",mcn_no_shadow,"planet_gas",planet_main_scale,0),      
-  ("sw_town_plain",mcn_no_shadow,"planet_plain",planet_main_scale,0),        
-  ("sw_town_craters",mcn_no_shadow,"planet_craters",planet_main_scale,0),   
-  ("sw_town_green_b",mcn_no_shadow,"planet_green_b",planet_main_scale,0),   
-  ("sw_town_green_rock",mcn_no_shadow,"planet_green_rock",planet_main_scale,0),   
-  ("sw_town_ice_rock",mcn_no_shadow,"planet_ice_rock",planet_main_scale,0),   
-  ("sw_town_red_rock",mcn_no_shadow,"planet_red_rock",planet_main_scale,0),   
-  ("sw_town_volcanic",mcn_no_shadow,"planet_volcanic",planet_main_scale,0),   
-  ("sw_town_water",mcn_no_shadow,"planet_water",planet_main_scale,0),   
+  ("sw_town_green_water",mcn_no_shadow,"planet_green_water",planet_main_scale,0),
+  ("sw_town_snow",mcn_no_shadow,"planet_snow",planet_main_scale,0),
+  ("sw_town_snow_water",mcn_no_shadow,"planet_snow",planet_main_scale,0),
+ #("sw_town_gas",mcn_no_shadow,"planet_gas",planet_main_scale,0),
+  ("sw_town_plain",mcn_no_shadow,"planet_plain",planet_main_scale,0),
+  ("sw_town_craters",mcn_no_shadow,"planet_craters",planet_main_scale,0),
+  ("sw_town_green_b",mcn_no_shadow,"planet_green_b",planet_main_scale,0),
+  ("sw_town_green_rock",mcn_no_shadow,"planet_green_rock",planet_main_scale,0),
+  ("sw_town_ice_rock",mcn_no_shadow,"planet_ice_rock",planet_main_scale,0),
+  ("sw_town_red_rock",mcn_no_shadow,"planet_red_rock",planet_main_scale,0),
+  ("sw_town_volcanic",mcn_no_shadow,"planet_volcanic",planet_main_scale,0),
+  ("sw_town_water",mcn_no_shadow,"planet_water",planet_main_scale,0),
   ("sw_town_industrial",mcn_no_shadow,"planet_industrial", planet_main_scale,0),
-  
+
  #SW - have to use these icons when using the map editor?
   # ("sw_town_green",mcn_no_shadow,"map_town_a",planet_main_scale,0),
-  # ("sw_town_green_water",mcn_no_shadow,"map_town_a",planet_main_scale,0),  
-  # ("sw_town_snow",mcn_no_shadow,"map_town_a",planet_main_scale,0),  
-  # ("sw_town_snow_water",mcn_no_shadow,"map_town_a",planet_main_scale,0),    
-  # #("sw_town_gas",mcn_no_shadow,"planet_gas",planet_main_scale,0),      
-  # ("sw_town_plain",mcn_no_shadow,"map_town_a",planet_main_scale,0),        
-  # ("sw_town_craters",mcn_no_shadow,"map_town_a",planet_main_scale,0),            
-  
+  # ("sw_town_green_water",mcn_no_shadow,"map_town_a",planet_main_scale,0),
+  # ("sw_town_snow",mcn_no_shadow,"map_town_a",planet_main_scale,0),
+  # ("sw_town_snow_water",mcn_no_shadow,"map_town_a",planet_main_scale,0),
+  # #("sw_town_gas",mcn_no_shadow,"planet_gas",planet_main_scale,0),
+  # ("sw_town_plain",mcn_no_shadow,"map_town_a",planet_main_scale,0),
+  # ("sw_town_craters",mcn_no_shadow,"map_town_a",planet_main_scale,0),
+
   #death star
-  
-#villages  
+
+#villages
   ("minorplanet_a",mcn_no_shadow,"planet_craters",planet_minor_scale, 0, []),
   ("minorplanet_burnt_a",mcn_no_shadow,"planet_craters", planet_minor_scale, 0, []),
   ("minorplanet_deserted_a",mcn_no_shadow,"planet_craters",planet_minor_scale, 0, []),
   ("minorplanet_snow_a",mcn_no_shadow,"planet_gas",planet_minor_scale, 0, []),
   ("minorplanet_snow_burnt_a",mcn_no_shadow,"planet_gas",planet_minor_scale, 0, []),
-  ("minorplanet_snow_deserted_a",mcn_no_shadow,"planet_gas",planet_minor_scale, 0, []),  
+  ("minorplanet_snow_deserted_a",mcn_no_shadow,"planet_gas",planet_minor_scale, 0, []),
   #new icons for villages
   ("sw_minorplanet_01",mcn_no_shadow,"Planet_Var_01",planet_minor_scale, 0, []),
   ("sw_minorplanet_02",mcn_no_shadow,"Planet_Var_02",planet_minor_scale, 0, []),
@@ -212,24 +212,24 @@ map_icons = [
   # ("minorplanet_deserted_a",mcn_no_shadow,"map_minorplanet_a",planet_minor_scale, 0),
   # ("minorplanet_snow_a",mcn_no_shadow,"map_minorplanet_a",planet_minor_scale, 0),
   # ("minorplanet_snow_burnt_a",mcn_no_shadow,"map_minorplanet_a",planet_minor_scale, 0),
-  # ("minorplanet_snow_deserted_a",mcn_no_shadow,"map_minorplanet_a",planet_minor_scale, 0),  
-  
+  # ("minorplanet_snow_deserted_a",mcn_no_shadow,"map_minorplanet_a",planet_minor_scale, 0),
+
 #training ground
   ("training_ground",mcn_no_shadow,"planet_industrial", planet_training_scale,0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_planet_icon_atmospheric_effect_polution"),  ]),]),
   ("strategicmap_sun",mcn_no_shadow,"planet_red", 0.0001,0, [(ti_on_init_map_icon,[(store_trigger_param_1, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_clear_particle_systems, ":planet_id"),(party_add_particle_system, ":planet_id", "psys_sun_icon_effect"),  ]),]),
 
-  #bridges  
+  #bridges
   ("bridge_a",mcn_no_shadow,"planet_red", 0.4,0),
   ("bridge_b",mcn_no_shadow,"planet_red", 0.4,0),
   ("bridge_snow_a",mcn_no_shadow,"planet_red", 0.4,0),
 #SW - have to use native icons when using the map editor
-# #training ground
+  # #training ground
   # ("training_ground",mcn_no_shadow,"map_spacestation_a", planet_training_scale,0),
-# #bridges  
+  # #bridges
   # ("bridge_a",mcn_no_shadow,"map_spacestation_a", 0.4,0),
   # ("bridge_b",mcn_no_shadow,"map_spacestation_a", 0.4,0),
-  # ("bridge_snow_a",mcn_no_shadow,"map_spacestation_a", 0.4,0),  
-  
+  # ("bridge_snow_a",mcn_no_shadow,"map_spacestation_a", 0.4,0),
+
   ("custom_banner_01",0,"custom_map_banner_01", banner_scale, 0,
    [
      (ti_on_init_map_icon,
@@ -272,8 +272,8 @@ map_icons = [
   # ("banner_01",0,"map_flag_01", banner_scale,0),
   #banner_a.dds
   ("banner_01",0,"sw_map_banner_01", banner_scale,0),
-  ("banner_02",0,"sw_map_banner_02", banner_scale,0),  
-  ("banner_03",0,"sw_map_banner_03", banner_scale,0),    
+  ("banner_02",0,"sw_map_banner_02", banner_scale,0),
+  ("banner_03",0,"sw_map_banner_03", banner_scale,0),
   ("banner_04",0,"sw_map_banner_04", banner_scale,0),
   ("banner_05",0,"sw_map_banner_05", banner_scale,0),
   ("banner_06",0,"sw_map_banner_06", banner_scale,0),
@@ -284,7 +284,7 @@ map_icons = [
   ("banner_11",0,"sw_map_banner_11", banner_scale,0),
   ("banner_12",0,"sw_map_banner_12", banner_scale,0),
   ("banner_13",0,"sw_map_banner_13", banner_scale,0),
-  ("banner_14",0,"sw_map_banner_14", banner_scale,0),  
+  ("banner_14",0,"sw_map_banner_14", banner_scale,0),
   ("banner_15",0,"sw_map_banner_15", banner_scale,0),
   ("banner_16",0,"sw_map_banner_16", banner_scale,0),
   ("banner_17",0,"sw_map_banner_17", banner_scale,0),
@@ -399,82 +399,82 @@ map_icons = [
   # ("banner_124",0,"map_flag_f19", banner_scale,0),
   # ("banner_125",0,"map_flag_f20", banner_scale,0),
   # ("banner_126",0,"map_flag_15", banner_scale,0),
-  
-  
-  
-  # New map icons - Swyter
-  	##>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  MAIN PLANET ICONS
-	
-    ("sw_swy_Death_Star",mcn_no_shadow,"swy_Death_Star",spacestation_scale,0),
-	 
-	("sw_swy_Planet_Coruscant",mcn_no_shadow,"swy_Planet_Coruscant",planet_main_scale,0,
-		   []),
-	 
-	("sw_swy_Planet_Endor",mcn_no_shadow,"swy_Planet_Endor",planet_main_scale,0,
-		   []),
 
-	("sw_swy_christophsis",mcn_no_shadow,"swy_christophsis",planet_main_scale,0,
-		   []),	
-	
-	("sw_swy_Planet_forest",mcn_no_shadow,"swy_Planet_forest",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_Planet_Taris",mcn_no_shadow,"swy_Planet_Taris",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_Planet_Tatooine",mcn_no_shadow,"swy_Planet_Tatooine",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_Planet_geonosis",mcn_no_shadow,"swy_Planet_geonosis",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_Planet_Kessel",mcn_no_shadow,"swy_Planet_Kessel",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_Planet_frozen",mcn_no_shadow,"swy_Planet_frozen",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_Planet_lava",mcn_no_shadow,"swy_Planet_lava",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_rePlanet_gas",mcn_no_shadow,"swy_rePlanet_gas",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_rePlanet_earth",mcn_no_shadow,"swy_rePlanet_earth",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_rePlanet_snow",mcn_no_shadow,"swy_rePlanet_snow",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_rePlanet_ice",mcn_no_shadow,"swy_rePlanet_ice",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_rePlanet_craters",mcn_no_shadow,"swy_rePlanet_craters",planet_minor_scale,0,
-		   []),
-	
-	("sw_swy_rePlanet_water",mcn_no_shadow,"swy_rePlanet_water",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_rePlanet_kashyyyk",mcn_no_shadow,"swy_rePlanet_kashyyyk",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_rePlanet_wilderness",mcn_no_shadow,"swy_rePlanet_wilderness",planet_main_scale,0,
-		   []),
-	
-	("sw_swy_rePlanet_rock",mcn_no_shadow,"swy_rePlanet_rock",planet_main_scale,0,	
-		   []),
-	
-	# ("sw_galaxy",mcn_no_shadow,"swy_rePlanet_rock",planet_main_scale,0,
-	# 	   []),
-	
-	("sw_swy_Planet_Sarapin",mcn_no_shadow,"swy_Planet_Sarapin",planet_main_scale,0,	
-		   []),
-	
-	("sw_swy_Planet_RaxusPrime",mcn_no_shadow,"swy_Planet_RaxusPrime",planet_main_scale,0,	
-		   []),
-	
-	##>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  MOON PLANET ICONS
-	("sw_swy_NarShadda",mcn_no_shadow,"swy_Planet_Coruscant",planet_minor_scale,0,
-		   []),
-	
+
+
+  # New map icons - Swyter
+  ##>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  MAIN PLANET ICONS
+
+  ("sw_swy_Death_Star",mcn_no_shadow,"swy_Death_Star",spacestation_scale,0),
+
+  ("sw_swy_Planet_Coruscant",mcn_no_shadow,"swy_Planet_Coruscant",planet_main_scale,0,
+       []),
+
+  ("sw_swy_Planet_Endor",mcn_no_shadow,"swy_Planet_Endor",planet_main_scale,0,
+       []),
+
+  ("sw_swy_christophsis",mcn_no_shadow,"swy_christophsis",planet_main_scale,0,
+       []),
+
+  ("sw_swy_Planet_forest",mcn_no_shadow,"swy_Planet_forest",planet_main_scale,0,
+       []),
+
+  ("sw_swy_Planet_Taris",mcn_no_shadow,"swy_Planet_Taris",planet_main_scale,0,
+       []),
+
+  ("sw_swy_Planet_Tatooine",mcn_no_shadow,"swy_Planet_Tatooine",planet_main_scale,0,
+       []),
+
+  ("sw_swy_Planet_geonosis",mcn_no_shadow,"swy_Planet_geonosis",planet_main_scale,0,
+       []),
+
+  ("sw_swy_Planet_Kessel",mcn_no_shadow,"swy_Planet_Kessel",planet_main_scale,0,
+       []),
+
+  ("sw_swy_Planet_frozen",mcn_no_shadow,"swy_Planet_frozen",planet_main_scale,0,
+       []),
+
+  ("sw_swy_Planet_lava",mcn_no_shadow,"swy_Planet_lava",planet_main_scale,0,
+       []),
+
+  ("sw_swy_rePlanet_gas",mcn_no_shadow,"swy_rePlanet_gas",planet_main_scale,0,
+       []),
+
+  ("sw_swy_rePlanet_earth",mcn_no_shadow,"swy_rePlanet_earth",planet_main_scale,0,
+       []),
+
+  ("sw_swy_rePlanet_snow",mcn_no_shadow,"swy_rePlanet_snow",planet_main_scale,0,
+       []),
+
+  ("sw_swy_rePlanet_ice",mcn_no_shadow,"swy_rePlanet_ice",planet_main_scale,0,
+       []),
+
+  ("sw_swy_rePlanet_craters",mcn_no_shadow,"swy_rePlanet_craters",planet_minor_scale,0,
+       []),
+
+  ("sw_swy_rePlanet_water",mcn_no_shadow,"swy_rePlanet_water",planet_main_scale,0,
+       []),
+
+  ("sw_swy_rePlanet_kashyyyk",mcn_no_shadow,"swy_rePlanet_kashyyyk",planet_main_scale,0,
+       []),
+
+  ("sw_swy_rePlanet_wilderness",mcn_no_shadow,"swy_rePlanet_wilderness",planet_main_scale,0,
+       []),
+
+  ("sw_swy_rePlanet_rock",mcn_no_shadow,"swy_rePlanet_rock",planet_main_scale,0,
+       []),
+
+# ("sw_galaxy",mcn_no_shadow,"swy_rePlanet_rock",planet_main_scale,0,
+#      []),
+
+  ("sw_swy_Planet_Sarapin",mcn_no_shadow,"swy_Planet_Sarapin",planet_main_scale,0,
+       []),
+
+  ("sw_swy_Planet_RaxusPrime",mcn_no_shadow,"swy_Planet_RaxusPrime",planet_main_scale,0,
+       []),
+
+  ##>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  MOON PLANET ICONS
+  ("sw_swy_NarShadda",mcn_no_shadow,"swy_Planet_Coruscant",planet_minor_scale,0,
+       []),
+
 ]
