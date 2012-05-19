@@ -2673,7 +2673,26 @@ scene_props = [
 
 #@Automagically added -- End
 
-
+  ("Container_ore"             ,0,"Container_ore"             ,"bo_Container_ore"             , []),
+  ("endor_fac_3"               ,0,"endor_fac_3"               ,"bo_endor_fac_3"               , []),
+  ("endor_fac_4"               ,0,"endor_fac_4"               ,"bo_endor_fac_4"               , []),
+  ("endor_fac_block"           ,0,"endor_fac_block"           ,"bo_endor_fac_block"           , []),
+  ("endor_fac_com"             ,0,"endor_fac_com"             ,"bo_endor_fac_com"             , []),
+  ("endor_fac_container_lava"  ,0,"endor_fac_container_lava"  ,"bo_endor_fac_container_lava"  , []),
+  ("endor_fac_container_emputy",0,"endor_fac_container_emputy","bo_endor_fac_container_emputy", []),
+  ("endor_fac_small_1"         ,0,"endor_fac_small_1"         ,"bo_endor_fac_small_1"         , []),
+  ("endor_fac_small_2"         ,0,"endor_fac_small_2"         ,"bo_endor_fac_small_2"         , []),
+  ("endor_fac_terminal5"       ,0,"endor_fac_terminal5"       ,"bo_endor_fac_terminal5"       , []),
+  ("endor_fac_terminal6"       ,0,"endor_fac_terminal6"       ,"bo_endor_fac_terminal6"       , []),
+  ("endor_fac_terminal7"       ,0,"endor_fac_terminal7"       ,"bo_endor_fac_terminal7"       , []),
+  ("endor_fac_tower_1"         ,0,"endor_fac_tower_1"         ,"bo_endor_fac_tower_1"         , []),
+  ("endor_fac_tower_2"         ,0,"endor_fac_tower_2"         ,"bo_endor_fac_tower_2"         , []),
+  ("endor_fac_rail_1"          ,0,"endor_fac_rail_1"          ,"bo_endor_fac_rail_1"          , []),
+  ("endor_fac_rail_2"          ,0,"endor_fac_rail_2"          ,"bo_endor_fac_rail_2"          , []),
+  ("endor_fac_pipe_1"          ,0,"endor_fac_pipe_1"          ,"bo_endor_fac_pipe_1"          , []),
+  ("lava_tile"                 ,0,"lava_tile"                 ,"bo_lava_tile"                 , []),
+  ("lava_tile_2"               ,0,"lava_tile_2"               ,"bo_lava_tile_2"               , []),
+  ("lava_tile_3"               ,0,"lava_tile_3"               ,"bo_lava_tile_3"               , []),
 
 #----------------------------------------------------------------------
   ("rm_end",sokf_invisible,"psys_helper","0", []),

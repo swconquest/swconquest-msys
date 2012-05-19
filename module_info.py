@@ -4,4 +4,4 @@
 
 
 #export_dir = "../"
-export_dir  = "../Star Wars Conquest Dev/"
+export_dir  = "../swconquest/"
