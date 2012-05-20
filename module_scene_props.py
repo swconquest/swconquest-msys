@@ -2694,10 +2694,14 @@ scene_props = [
   ("lava_tile_2"               ,0,"lava_tile_2"               ,"bo_lava_tile_2"               , []),
   ("lava_tile_3"               ,0,"lava_tile_3"               ,"bo_lava_tile_3"               , []),
 
+  
+  ("acclamator_ship_crash"               ,0,"acclamator_ship_crash"               ,"acclamator_ship_crash"               , []),
+  ("spr_acclamator_crash_parta"          ,0,"spr_acclamator_crash_parta"          ,"spr_acclamator_crash_parta"               , []),
+  ("spr_acclamator_crash_partb"          ,0,"spr_acclamator_crash_partb"          ,"spr_acclamator_crash_partb"               , []),
+  ("spr_acclamator_crash_partc"          ,0,"spr_acclamator_crash_partc"          ,"spr_acclamator_crash_partc"               , []),
+  ("spr_acclamator_crash_partd"          ,0,"spr_acclamator_crash_partd"          ,"spr_acclamator_crash_partd"               , []),
 #----------------------------------------------------------------------
-  ("rm_end",sokf_invisible,"psys_helper","0", []),
-   #add everything crashable here:(asteroids and etc.)
-  ("col_end",sokf_invisible,"psys_helper","0", []),
+#add everything crashable here:(asteroids and etc.)
 #Highlander begin--------------------------------------
   ("scene_props_end",sokf_invisible,"psys_helper","0", []), #leave this at the last position
 #Highlander end--------------------------------------

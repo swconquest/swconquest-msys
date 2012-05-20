@@ -23495,7 +23495,7 @@ scripts = [
               # OUTPUT: reg0 = ideal_prosperity
               ("calculate_fighter_damages",
                 [
-                  (try_for_range,":collision","spr_viper_mk2","spr_col_end"),
+                  (try_for_range,":collision","spr_viper_mk2","spr_scene_props_end"),
                     (scene_prop_get_num_instances,":instance_no", ":collision"),
                     (try_for_range,":col_object",0,":instance_no"),
                       (scene_prop_get_instance,":col_instance", ":collision", ":col_object"),

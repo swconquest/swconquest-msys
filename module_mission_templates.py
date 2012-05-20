@@ -2006,37 +2006,37 @@ common_gate_system = (1, 1, 0,
 	])
 
 
-holo_animate =(1.34567, 5, 0,
-	[],
-[ 
-#my brand new movable holographic signs
-	(scene_prop_get_num_instances,":num_instances","spr_swy_sign_arena"),
-	(gt, ":num_instances", 0),
-	(try_for_range, ":cur_i", 0, ":num_instances"),
-		(scene_prop_get_instance,":instance", "spr_swy_sign_arena", ":cur_i"),
-		(prop_instance_get_position,pos1,":instance"),
-		(position_rotate_z,pos1,360),
-		(prop_instance_animate_to_position,":instance",pos1,500),
-	(try_end),
-#my brand new movable holographic signs
-	(scene_prop_get_num_instances,":num_instances","spr_swy_sign_cantina"),
-	(gt, ":num_instances", 0),
-	(try_for_range, ":cur_i", 0, ":num_instances"),
-		(scene_prop_get_instance,":instance", "spr_swy_sign_cantina", ":cur_i"),
-		(prop_instance_get_position,pos1,":instance"),
-		(position_rotate_z,pos1,360),
-		(prop_instance_animate_to_position,":instance",pos1,500),
-	(try_end),
-#my brand new movable holographic signs
-	(scene_prop_get_num_instances,":num_instances","spr_swy_sign_shop"),
-	(gt, ":num_instances", 0),
-	(try_for_range, ":cur_i", 0, ":num_instances"),
-		(scene_prop_get_instance,":instance", "spr_swy_sign_shop", ":cur_i"),
-		(prop_instance_get_position,pos1,":instance"),
-		(position_rotate_z,pos1,360),
-		(prop_instance_animate_to_position,":instance",pos1,500),
-	(try_end),
-])
+#holo_animate =(1.34567, 5, 0,
+# 	[],
+# [ 
+# #my brand new movable holographic signs
+# 	(scene_prop_get_num_instances,":num_instances","spr_swy_sign_arena"),
+# 	(gt, ":num_instances", 0),
+# 	(try_for_range, ":cur_i", 0, ":num_instances"),
+# 		(scene_prop_get_instance,":instance", "spr_swy_sign_arena", ":cur_i"),
+# 		(prop_instance_get_position,pos1,":instance"),
+# 		(position_rotate_z,pos1,360),
+# 		(prop_instance_animate_to_position,":instance",pos1,500),
+# 	(try_end),
+# #my brand new movable holographic signs
+# 	(scene_prop_get_num_instances,":num_instances","spr_swy_sign_cantina"),
+# 	(gt, ":num_instances", 0),
+# 	(try_for_range, ":cur_i", 0, ":num_instances"),
+# 		(scene_prop_get_instance,":instance", "spr_swy_sign_cantina", ":cur_i"),
+# 		(prop_instance_get_position,pos1,":instance"),
+# 		(position_rotate_z,pos1,360),
+# 		(prop_instance_animate_to_position,":instance",pos1,500),
+# 	(try_end),
+# #my brand new movable holographic signs
+# 	(scene_prop_get_num_instances,":num_instances","spr_swy_sign_shop"),
+# 	(gt, ":num_instances", 0),
+# 	(try_for_range, ":cur_i", 0, ":num_instances"),
+# 		(scene_prop_get_instance,":instance", "spr_swy_sign_shop", ":cur_i"),
+# 		(prop_instance_get_position,pos1,":instance"),
+# 		(position_rotate_z,pos1,360),
+# 		(prop_instance_animate_to_position,":instance",pos1,500),
+# 	(try_end),
+# ])
 	
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 common_crouch_button = (0, 0, 0,
@@ -3311,7 +3311,7 @@ mission_templates = [
 		common_crouch_button,
 		#common_turret, -> unstable
 		common_gate_system,
-		holo_animate,
+		#holo_animate,
       ],
     ),
 
@@ -9518,7 +9518,7 @@ common_gate_system,
           (position_move_y,pos14,-200),
           (position_move_x,pos14,-125),
           (position_move_z,pos14,-20),
-          (try_for_range,":collision","spr_viper_mk2","spr_col_end"),
+          (try_for_range,":collision","spr_viper_mk2","spr_scene_props_end"),
              (scene_prop_get_num_instances,":instance_no", ":collision"),
              (try_for_range,":col_object",0,":instance_no"),
                  (scene_prop_get_instance,":col_instance", ":collision", ":col_object"),
