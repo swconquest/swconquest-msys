@@ -1339,19 +1339,19 @@ particle_systems = [
      3,                       #rotation damping
     ),
 	
-	("swy_damage_sparksv2", psf_billboard_3d|psf_global_emit_dir|psf_always_emit|psf_randomize_rotation,  "swy_psys_sparkv2",
-     40, 3, 6, 2, 10, 2,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
-     (0.0, 1.0), (1, 1.0),          #alpha keys
-     (1.0, 1.0), (1, 1.0),      #red keys
-     (1.0, 1.0), (1, 1.0),      #green keys
-     (1.0, 1.0), (1, 1.0),      #blue keys
-     (0.0, 1),   (1, 0.7),      #scale keys
-     (0.2, 0.2, 0.5),           #emit box size
-     (1, 1, 0),                 #emit velocity
-     2.3,                       #emit dir randomness
-     200,                       #rotation speed
-     3,                       #rotation damping
-    ),
+	# ("swy_damage_sparksv2", psf_billboard_3d|psf_global_emit_dir|psf_always_emit|psf_randomize_rotation,  "swy_psys_sparkv2",
+     # 40, 3, 6, 2, 10, 2,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength
+     # (0.0, 1.0), (1, 1.0),          #alpha keys
+     # (1.0, 1.0), (1, 1.0),      #red keys
+     # (1.0, 1.0), (1, 1.0),      #green keys
+     # (1.0, 1.0), (1, 1.0),      #blue keys
+     # (0.0, 1),   (1, 0.7),      #scale keys
+     # (0.2, 0.2, 0.5),           #emit box size
+     # (1, 1, 0),                 #emit velocity
+     # 2.3,                       #emit dir randomness
+     # 200,                       #rotation speed
+     # 3,                       #rotation damping
+    # ),
 	
     ("swy_muzzleflare", psf_billboard_3d|psf_global_emit_dir|psf_always_emit|psf_randomize_rotation,  "swy_psys_muzzleflare",
      1, 0.0001, 0, 0, 0, 0,     #num_particles, life, damping, gravity_strength, turbulance_size, turbulance_strength

@@ -77,5 +77,4 @@ psys_deflector_shield_hit = 75
 psys_deflector_shield_hit_red = 76
 psys_swy_damage_smoke = 77
 psys_swy_damage_sparks = 78
-psys_swy_damage_sparksv2 = 79
-psys_swy_muzzleflare = 80
+psys_swy_muzzleflare = 79

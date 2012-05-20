@@ -2695,11 +2695,11 @@ scene_props = [
   ("lava_tile_3"               ,0,"lava_tile_3"               ,"bo_lava_tile_3"               , []),
 
   
-  ("acclamator_ship_crash"               ,0,"acclamator_ship_crash"               ,"acclamator_ship_crash"               , []),
-  ("spr_acclamator_crash_parta"          ,0,"spr_acclamator_crash_parta"          ,"spr_acclamator_crash_parta"               , []),
-  ("spr_acclamator_crash_partb"          ,0,"spr_acclamator_crash_partb"          ,"spr_acclamator_crash_partb"               , []),
-  ("spr_acclamator_crash_partc"          ,0,"spr_acclamator_crash_partc"          ,"spr_acclamator_crash_partc"               , []),
-  ("spr_acclamator_crash_partd"          ,0,"spr_acclamator_crash_partd"          ,"spr_acclamator_crash_partd"               , []),
+  ("acclamator_ship_crash"           ,0,"acclamator_ship_crash"           ,"bo_acclamator_ship_crash"            , []),
+  ("acclamator_crash_parta"          ,0,"acclamator_crash_parta"          ,"bo_acclamator_crash_parta"           , []),
+  ("acclamator_crash_partb"          ,0,"acclamator_crash_partb"          ,"bo_acclamator_crash_partb"           , []),
+  ("acclamator_crash_partc"          ,0,"acclamator_crash_partc"          ,"bo_acclamator_crash_partc"           , []),
+  ("acclamator_crash_partd"          ,0,"acclamator_crash_partd"          ,"bo_acclamator_crash_partd"           , []),
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)
 #Highlander begin--------------------------------------
