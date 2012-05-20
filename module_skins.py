@@ -219,7 +219,7 @@ skins = [
 	#SW - why was voice_warcry removed?  should we add it back in?
 	#[(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_warcry,"snd_man_victory"),(voice_victory,"snd_man_victory")], #voice sounds
     "skel_human", 1.0,
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
     #psys_game_blood_green,psys_game_blood_2_green,
     [[1.7, comp_greater_than, (1.0,face_width), (1.0,temple_width)], #constraints: ex: 1.7 > (face_width + temple_width)
@@ -263,7 +263,7 @@ skins = [
 # HC - Added in new sounds for snd_woman_die - #SW also added in voice_yell
     [(voice_die,"snd_woman_die"),(voice_hit,"snd_woman_hit"),(voice_grunt,"snd_woman_grunt"),(voice_grunt_long,"snd_woman_grunt_long"),(voice_yell,"snd_woman_yell"),(voice_victory,"snd_woman_victory")], #voice sounds
     "skel_human", 1.0,
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
   ),
 
@@ -299,7 +299,7 @@ skins = [
      #"skel_human", 1.0,
 	 "skel_human", 0.56,		#attempting to make the hitbox a little smaller
 	 #"skel_jawa", 1.0,		#new skel_jawa skeleton
-	 psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+	 psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
    ),
 
@@ -317,7 +317,7 @@ skins = [
 	], #face_textures
      [(voice_die,"snd_tusken_die"),(voice_hit,"snd_tusken_hit"),(voice_grunt,"snd_tusken_grunt"),(voice_grunt_long,"snd_tusken_grunt_long"),(voice_yell,"snd_tusken_yell"),(voice_warcry,"snd_tusken_victory"),(voice_victory,"snd_tusken_victory")], #man voice sounds
      "skel_human", 0.9,
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
    ),
 
@@ -337,7 +337,7 @@ skins = [
 	 ], #face_textures
      [(voice_die,"snd_rodian_die"),(voice_hit,"snd_rodian_hit"),(voice_grunt,"snd_rodian_grunt"),(voice_grunt_long,"snd_rodian_grunt_long"),(voice_yell,"snd_rodian_yell"),(voice_warcry,"snd_rodian_victory"),(voice_victory,"snd_rodian_victory")], #man voice sounds
      "skel_human", 0.7,
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
    ),
 
@@ -355,7 +355,7 @@ skins = [
 	 ], #face_textures
      [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_victory,"snd_man_victory")], #man voice sounds
      "skel_human", 1.3,
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
    ),
 
@@ -378,7 +378,7 @@ skins = [
      [(voice_die,"snd_trandoshan_die"),(voice_hit,"snd_trandoshan_hit"),(voice_grunt,"snd_trandoshan_grunt"),(voice_grunt_long,"snd_trandoshan_grunt_long"),(voice_yell,"snd_trandoshan_yell"),(voice_warcry,"snd_trandoshan_victory"),(voice_victory,"snd_trandoshan_victory")], #man voice sounds
      "skel_human", 1.0,
 	 #psys_game_blood_green,psys_game_blood_2_green,
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
    ),
 
@@ -402,7 +402,7 @@ skins = [
      #"skel_human", 1.0,
 	 "skel_human", 1.4,		#attempting to make the hitbox a little smaller
 	 #"skel_horse", 1.0,	# does doing this seem to cause the game to randomly crash?  seemed to happen a few times after I made this change, so not sure if its related.  AncientWanker confirmed this was an issue
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
 	 #psys_droid_blood,psys_droid_blood_2,
    ),
 
@@ -440,7 +440,7 @@ skins = [
      [(voice_die,"snd_wookiee_die"),(voice_hit,"snd_wookiee_hit"),(voice_grunt,"snd_wookiee_grunt"),(voice_grunt_long,"snd_wookiee_grunt_long"),(voice_yell,"snd_wookiee_yell"),(voice_warcry,"snd_wookiee_victory"),(voice_victory,"snd_wookiee_victory")], #man voice sounds
      "skel_human", 1.5,
 	 #"skel_wookiee", 1.0,
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
    ),   
 
@@ -457,7 +457,7 @@ skins = [
 	 ], #face_textures
      [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_sullustan_yell"),(voice_warcry,"snd_sullustan_victory"),(voice_victory,"snd_sullustan_victory")], #man voice sounds
      "skel_human", 1.0,
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
    ),      
    
@@ -474,7 +474,7 @@ skins = [
 	 ], #face_textures
      [(voice_die,"snd_gamorrean_die"),(voice_hit,"snd_gamorrean_hit"),(voice_grunt,"snd_gamorrean_grunt"),(voice_grunt_long,"snd_gamorrean_grunt_long"),(voice_yell,"snd_gamorrean_yell"),(voice_warcry,"snd_gamorrean_victory"),(voice_victory,"snd_gamorrean_victory")], #man voice sounds
      "skel_human", 0.87,
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
    ),   
 
@@ -500,7 +500,7 @@ skins = [
 	 ], #face_textures
      [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_victory,"snd_man_victory")], #man voice sounds
      "skel_human", 1.0,
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
    ),
 
@@ -525,7 +525,7 @@ skins = [
 # HC - Added in new sounds for snd_woman_die	#SW - also added in voice_yell
     [(voice_die,"snd_woman_die"),(voice_hit,"snd_woman_hit"),(voice_grunt,"snd_woman_grunt"),(voice_grunt_long,"snd_woman_grunt_long"),(voice_yell,"snd_twilek_female_yell"),(voice_victory,"snd_twilek_female_victory")], #voice sounds
     "skel_human", 1.0,
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
   ),   
 
@@ -543,7 +543,7 @@ skins = [
 	 ], #face_textures
      [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_victory,"snd_man_victory")], #man voice sounds
      "skel_human", 0.9,
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
    ),
 
@@ -560,7 +560,7 @@ skins = [
 	 ], #face_textures
      [(voice_die,"snd_geonosian_die"),(voice_hit,"snd_geonosian_hit"),(voice_grunt,"snd_geonosian_grunt"),(voice_grunt_long,"snd_geonosian_grunt_long"),(voice_yell,"snd_geonosian_yell"),(voice_warcry,"snd_geonosian_victory"),(voice_victory,"snd_geonosian_victory")], #man voice sounds
      "skel_human", 0.5,
-	 psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+	 psys_swy_damage_sparks,psys_swy_damage_smoke,
    ),   
 
 	#SW - new rancor skin
@@ -577,7 +577,7 @@ skins = [
      [(voice_die,"snd_gamorrean_die"),(voice_hit,"snd_gamorrean_hit"),(voice_grunt,"snd_gamorrean_grunt"),(voice_grunt_long,"snd_gamorrean_grunt_long"),(voice_yell,"snd_gamorrean_yell"),(voice_warcry,"snd_gamorrean_victory"),(voice_victory,"snd_gamorrean_victory")], #man voice sounds
      "skel_human", 0.6,
 	 #"skel_rancor", 1.0,	#new rancor skeleton
-    psys_swy_damage_sparksv2,psys_swy_damage_smoke,
+    psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
    ),   
 

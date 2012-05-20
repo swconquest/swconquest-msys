@@ -71,7 +71,7 @@ map_icons = [
   ##@> //purchasable ships - other
   ("nebulon",mcn_no_shadow,"swy_nebulon", cis_star_cruiser_scale,0),
   ("starchaser",mcn_no_shadow,"vec_starchaser", ship_small_scale,0),
-  ("z95",mcn_no_shadow,"z96", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("z95",mcn_no_shadow,"indie_ship", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("tran_slaver",mcn_no_shadow,"tran_slaver", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("scyk_fighter",mcn_no_shadow,"hutt_scyk_fighter", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
  #("mercenary_raider",mcn_no_shadow,"mercenary_raider", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),

@@ -2423,7 +2423,7 @@ common_change_fog = (
 		(set_fog_distance, 170, 0xFF92b595), 
 	(else_try),
 		(eq, "$current_town","p_raxusprime"),
-		(set_fog_distance, 170, 0xFFBDAF86), 
+		(set_fog_distance, 220, 0xFFBDAF86), 
 	(else_try),
 		(this_or_next|eq, "$current_town","p_tatooine"),
 		(eq, "$current_town","p_ryloth"),

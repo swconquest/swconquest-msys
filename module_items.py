@@ -1285,7 +1285,7 @@ items = [
  900 , weight(8)|abundance(40)|head_armor(0)|body_armor(50)|leg_armor(25)|difficulty(0) ,imodbits_armor ], 
 #["imperial_stormtrooper_armor_black", "Imperial Darktrooper Armor", [("imperial_stormtrooper_armor_black",0)], itp_merchandise| itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 
 # 500 , weight(12)|abundance(100)|head_armor(0)|body_armor(45)|leg_armor(22)|difficulty(0) ,imodbits_armor ],
-["imperial_stormtrooper_armor_officer", "Imperial Stormtrooper Officer Armor", [("Stormtrooper_Officer_body",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
+["imperial_stormtrooper_armor_officer", "Imperial Stormtrooper Officer Armor", [("Sandtrooper_body_orangepauldron",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
  825 , weight(12)|abundance(80)|head_armor(0)|body_armor(45)|leg_armor(22)|difficulty(0) ,imodbits_armor ], 
 ["sw_desert_armor", "Heavy Desert Armor", [("desert_armor_heavy",0)], itp_merchandise| itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 
  795 , weight(14)|abundance(60)|head_armor(0)|body_armor(45)|leg_armor(22)|difficulty(0) ,imodbits_armor ],
