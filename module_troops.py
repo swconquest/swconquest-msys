@@ -1651,12 +1651,13 @@ troops = [
 	bothan_face1, bothan_face2
 ],
 ["kaminoan","Kaminoan","Kaminoans",
-	tf_bothan|tf_guarantee_armor|tf_guarantee_boots|tf_guarantee_ranged|tf_guarantee_shield|tf_guarantee_helmet,
+	tf_bothan|tf_guarantee_all_armor|tf_guarantee_ranged|tf_guarantee_shield|tf_guarantee_helmet,
 	no_scene,reserved,fac_commoners,
-	[	itm_kaminoan_female_head,
+	[	
+		itm_transparent_hands,
+		itm_kaminoan_female_head,
 		itm_kaminoan_female_body,
 		itm_transparent_feet,
-		itm_transparent_hands,
 	],
 	def_attrib_4|level(30),
 	wp(150)|wp_crossbow(160),
