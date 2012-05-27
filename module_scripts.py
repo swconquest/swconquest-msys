@@ -8981,9 +8981,10 @@ scripts = [
           (party_set_icon, "$pout_party", "icon_moncal_cruiser"),
         (else_try),
           (is_between, ":troop_no", "trp_knight_2_12", "trp_knight_2_22"),
-          (party_set_icon, "$pout_party", "icon_rebel_transport"),
+          (party_set_icon, "$pout_party", "icon_corellian_gunship"),
         (else_try),
-          (eq,":troop_no","trp_knight_2_18"), # Antilles
+          (this_or_next|eq,":troop_no","trp_knight_2_18"), # Antilles
+          (eq,":troop_no","trp_knight_2_21"), # Nik Sant
           (party_set_icon, "$pout_party", "icon_corellian_corvette"),
         (else_try),
           (store_random_in_range,":chosen_ship",0,1),
