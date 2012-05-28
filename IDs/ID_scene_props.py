@@ -1497,4 +1497,5 @@ spr_!dirtdecal1 = 1495
 spr_!dirtdecal2 = 1496
 spr_!dirtdecal3 = 1497
 spr_!dirtdecal4 = 1498
-spr_scene_props_end = 1499
+spr_deathstar_parts_6_wall = 1499
+spr_scene_props_end = 1500

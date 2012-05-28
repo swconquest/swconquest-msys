@@ -189,16 +189,16 @@ scene_props = [
   ("sw_sarlacc",0,"sarlacc","bo_sarlacc", []),  
   
   #freddex scene props
-  ("sw_building_new_a",0,"building_new_a","bo_building_new_a", []),  
-  ("sw_bunker_concrete",0,"bunker_concrete","bo_bunker_metal_a", []),  
-  ("sw_bunker_metal_a",0,"bunker_metal_a","bo_bunker_metal_a", []),
-  ("sw_bunker_metal_b",0,"bunker_metal_b","bo_bunker_metal_a", []),
-  ("sw_bunker_sandstone",0,"bunker_sandstone","bo_bunker_metal_a", []),
-  ("sw_wall_new_concrete",0,"wall_new_concrete","bo_wall_new_metal_a", []),
-  ("sw_wall_new_glass_cubes",0,"wall_new_glass_cubes","bo_wall_new_metal_a", []),
-  ("sw_wall_new_metal_a",0,"wall_new_metal_a","bo_wall_new_metal_a", []),
-  ("sw_wall_new_metal_b",0,"wall_new_metal_b","bo_wall_new_metal_a", []),
-  ("sw_wall_new_sandstone",0,"wall_new_sandstone","bo_wall_new_metal_a", []),  
+  ("sw_building_new_a",0,"0","0", []),  
+  ("sw_bunker_concrete",0,"0","0", []),  
+  ("sw_bunker_metal_a",0,"0","0", []),
+  ("sw_bunker_metal_b",0,"0","0", []),
+  ("sw_bunker_sandstone",0,"0","0", []),
+  ("sw_wall_new_concrete",0,"0","0", []),
+  ("sw_wall_new_glass_cubes",0,"0","0", []),
+  ("sw_wall_new_metal_a",0,"0","0", []),
+  ("sw_wall_new_metal_b",0,"0","0", []),
+  ("sw_wall_new_sandstone",0,"0","0", []),  
   
   #wookiee padawan / mr sparrow scene props
   ("sw_ruin_02",0,"ruin_02","bo_ruin_02", []),  
@@ -2736,6 +2736,8 @@ scene_props = [
 ("!dirtdecal2",0,"!dirtdecal2","0", []),
 ("!dirtdecal3",0,"!dirtdecal3","0", []),
 ("!dirtdecal4",0,"!dirtdecal4","0", []),
+
+("deathstar_parts_6_wall",0,"deathstar_parts_6_wall","bo_deathstar_parts_6_wall", []),
 
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)
