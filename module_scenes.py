@@ -403,7 +403,7 @@ scenes = [
     [],[]),
   ("mainplanet_corellia_cantina",sf_indoors,"cantina_bar", "bo_cantina_bar", (-100,-100),(100,100),-100,"0",
     [],[]),
-  ("mainplanet_naboo_cantina",sf_indoors,"naboo_cantina", "bo_naboo_cantina", (-100,-100),(100,100),-100,"0",
+  ("mainplanet_naboo_cantina",sf_generate,"none", "none",(0,0),(100,100),-100,"0x0000000030078000000380e0000037960000573900003f48", #switched to a exterior that uses the Naboo_cantina sprop
     [],[]),
   ("mainplanet_kessel_cantina",sf_indoors,"cantina_bar", "bo_cantina_bar", (-100,-100),(100,100),-100,"0",
     [],[]),

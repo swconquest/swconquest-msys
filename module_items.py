@@ -315,8 +315,8 @@ items = [
 #footwear
 ["wrapping_boots", "Wrapping Boots", [("jawa_boots",0)], itp_merchandise| itp_type_foot_armor |itp_civilian | itp_attach_armature ,0,
  20 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(3)|difficulty(0) ,imodbits_cloth ],
-["woolen_hose", "Woolen Hose", [("dark_boots",0)], itp_merchandise| itp_type_foot_armor |itp_civilian | itp_attach_armature ,0,
- 30 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(4)|difficulty(0) ,imodbits_cloth ],
+#["woolen_hose", "Woolen Hose", [("dark_boots",0)], itp_merchandise| itp_type_foot_armor |itp_civilian | itp_attach_armature ,0,
+# 30 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(4)|difficulty(0) ,imodbits_cloth ],
 ["blue_hose", "Blue Hose", [("light_leather_boots",0)], itp_merchandise| itp_type_foot_armor |itp_civilian | itp_attach_armature ,0,
  40 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(5)|difficulty(0) ,imodbits_cloth ],
 #["hunter_boots", "Hunter Boots", [("boot_hunter",0)], itp_merchandise| itp_type_foot_armor |itp_civilian | itp_attach_armature,0,
@@ -3008,11 +3008,11 @@ items = [
 #["swoop_bike","Swoop Bike", [("swoop_bike",0)], itp_merchandise|itp_type_horse, 0, 2500,abundance(100)|hit_points(120)|body_armor(60)|difficulty(2)|horse_speed(65)|horse_maneuver(65)|horse_charge(20),imodbits_speeder],
 ["speeder_fc20","FC-20 Speeder Bike", [("speeder_fc20",0)], itp_merchandise|itp_type_horse, 0, 2500,abundance(60)|hit_points(60)|body_armor(20)|difficulty(2)|horse_speed(95)|horse_maneuver(80)|horse_charge(15),imodbits_speeder],
 ["horus_winged_cruiser","Horus Winged Cruiser", [("a_horus",0)], itp_merchandise|itp_type_horse, 0, 2000,abundance(70)|hit_points(65)|body_armor(35)|difficulty(2)|horse_speed(75)|horse_maneuver(60)|horse_charge(30),imodbits_speeder],
-["speeder_sparrow","Sparrow Speeder", [("speeder_sparrow",0),("speeder_sparrow_inv",ixmesh_inventory)], itp_merchandise|itp_type_horse, 0, 2000,abundance(70)|hit_points(60)|body_armor(30)|difficulty(2)|horse_speed(80)|horse_maneuver(60)|horse_charge(25),imodbits_speeder],
-["pod_racer","Pod Racer", [("pod_racer",0)], itp_merchandise|itp_type_horse, 0, 3000,abundance(60)|hit_points(20)|body_armor(0)|difficulty(3)|horse_speed(125)|horse_maneuver(75)|horse_charge(10),imodbits_speeder],
-["swoop_bike","Swoop Bike", [("swoop_bike",0)], itp_merchandise|itp_type_horse, 0, 2500,abundance(60)|hit_points(25)|body_armor(0)|difficulty(3)|horse_speed(115)|horse_maneuver(75)|horse_charge(10),imodbits_speeder],
+#["speeder_sparrow","Sparrow Speeder", [("speeder_sparrow",0),("speeder_sparrow_inv",ixmesh_inventory)], itp_merchandise|itp_type_horse, 0, 2000,abundance(70)|hit_points(60)|body_armor(30)|difficulty(2)|horse_speed(80)|horse_maneuver(60)|horse_charge(25),imodbits_speeder],
+#["pod_racer","Pod Racer", [("pod_racer",0)], itp_merchandise|itp_type_horse, 0, 3000,abundance(60)|hit_points(20)|body_armor(0)|difficulty(3)|horse_speed(125)|horse_maneuver(75)|horse_charge(10),imodbits_speeder],
+#["swoop_bike","Swoop Bike", [("swoop_bike",0)], itp_merchandise|itp_type_horse, 0, 2500,abundance(60)|hit_points(25)|body_armor(0)|difficulty(3)|horse_speed(115)|horse_maneuver(75)|horse_charge(10),imodbits_speeder],
 ["speeder_dagger","Dagger Speeder Bike", [("speeder_dagger",0)],                        itp_merchandise|itp_type_horse, 0, 2000,abundance(70)|hit_points(45)|body_armor(10)|difficulty(2)|horse_speed(75)|horse_maneuver(65)|horse_charge(35),imodbits_speeder],
-["power_chair","Power Chair", [("power_chair",0)],                        itp_merchandise|itp_type_horse, 0, 500,abundance(50)|hit_points(20)|body_armor(0)|difficulty(0)|horse_speed(45)|horse_maneuver(35)|horse_charge(10),imodbits_speeder_basic],
+#["power_chair","Power Chair", [("power_chair",0)],                        itp_merchandise|itp_type_horse, 0, 500,abundance(50)|hit_points(20)|body_armor(0)|difficulty(0)|horse_speed(45)|horse_maneuver(35)|horse_charge(10),imodbits_speeder_basic],
 ["horses_end","<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
 
 #practice/training (no merchandise flag)
