@@ -13921,7 +13921,7 @@ game_menus = [
   (
     "invite_player_to_faction_without_center",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "You receive an offer of vassalage!^^\
- {s8} of {s9} has sent a royal herald to bring you an invititation in his own hand.\
+ {s8} of {s9} has sent a royal herald to bring you an invitation in his own hand.\
  You would be granted the honour of becoming a vassal {lord/lady} of {s9},\
  and in return {s8} asks you to swear an oath of homage to him and fight in his military campaigns,\
  although he offers you no lands or titles.\

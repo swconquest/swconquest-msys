@@ -209,7 +209,7 @@ items = [
  ["Container_metal_1","Shipment of Beskar bars", [("Container_metal_1",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(50),imodbits_none],
  ["Container_metal_2","Shipment of Durasteel bars", [("Container_metal_2",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(70),imodbits_none],
  ["Container_metal_3","Shipment of Bronzium bars", [("Container_metal_3",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(110),imodbits_none],
-
+ 
  ["Container_death_sticks","Carton of Death Sticks", [("Container_death_sticks",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(110),imodbits_none],
 
  ["Container_drink_1","Shipment of Water", [("Container_drink_1",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],
@@ -217,8 +217,7 @@ items = [
  ["Container_drink_3","Shipment of Juri juice", [("Container_drink_3",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(60)|food_quality(80)|max_ammo(150),imodbits_none],
 
  ["Carbonite_Tibanna","Carbonite Shipment of Tibanna Gas", [("Carbonite_Tibanna",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(110),imodbits_none],
-
-
+ ["Container_ore","Ore container", [("Container_ore",0)], itp_merchandise|itp_type_goods, 0, 87,weight(56)|abundance(340),imodbits_none],
 
  ["butter","Bantha butter", [("butter_pot",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(40)|max_ammo(60),imodbits_none],
 

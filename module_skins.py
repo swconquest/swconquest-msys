@@ -30,147 +30,146 @@ from ID_particle_systems import *
 #SW NOTE - there seems to be a maximum value of 16 skins that can be defined
 
 man_face_keys = [
-(20,0, 0.7,-0.6, "Chin Size"),
-(260,0, -0.6,1.4, "Chin Shape"),
-(10,0,-0.5,0.9, "Chin Forward"),
-(240,0,0.9,-0.8, "Jaw Width"),
-(210,0,-0.5,1.0, "Jaw Position"),
-(250,0,0.8,-1.0, "Mouth-Nose Distance"),
-(200,0,-0.3,1.0, "Mouth Width"),
-(50,0,-1.5,1.0, "Cheeks"),
-(220,0,-0.1,0.9, "Neck Width"),
+  (20, 0,  0.7, -0.6, "Chin Size"),
+  (260,0, -0.6,  1.4, "Chin Shape"),
+  (10, 0, -0.5,  0.9, "Chin Forward"),
+  (240,0,  0.9, -0.8, "Jaw Width"),
+  (210,0, -0.5,  1.0, "Jaw Position"),
+  (250,0,  0.8, -1.0, "Mouth-Nose Distance"),
+  (200,0, -0.3,  1.0, "Mouth Width"),
+  (50, 0, -1.5,  1.0, "Cheeks"),
+  (220,0, -0.1,  0.9, "Neck Width"),
 
-(60,0,-0.4,1.35, "Nose Height"),
-(70,0,-0.6,0.7, "Nose Width"),
-(80,0,1.0,-0.1, "Nose Size"),
-(270,0,-0.5,1.0, "Nose Shape"),
-(290,0,0.0,1.0, "Nasal Curvature"),
-(90,0,-0.2,1.4, "Nose Bridge"),
+  (60, 0, -0.4,  1.35,"Nose Height"),
+  (70, 0, -0.6,  0.7, "Nose Width"),
+  (80, 0,  1.0, -0.1, "Nose Size"),
+  (270,0, -0.5,  1.0, "Nose Shape"),
+  (290,0,  0.0,  1.0, "Nasal Curvature"),
+  (90, 0, -0.2,  1.4, "Nose Bridge"),
 
-(100,0,-0.3,1.5, "Cheek Bones"),
-(150,0,-0.2,3.0, "Eye Width"),
-(110,0,1.5,-0.9, "Eye to Eye Dist"),
-(120,0,1.9,-1.0, "Eye Shape"),
-(130,0,-0.5, 1.1, "Eye Depth"),
-(140,0,1.0,-1.2, "Eyelids"),
+  (100,0, -0.3,  1.5, "Cheek Bones"),
+  (150,0, -0.2,  3.0, "Eye Width"),
+  (110,0,  1.5, -0.9, "Eye to Eye Dist"),
+  (120,0,  1.9, -1.0, "Eye Shape"),
+  (130,0, -0.5,  1.1, "Eye Depth"),
+  (140,0,  1.0, -1.2, "Eyelids"),
 
-(160,0,1.3,-0.2, "Eyebrow Position"),
-(170,0,-0.1,1.9, "Eyebrow Height"),
-#SW - modified to use Barf's updated male_head model
-#(220,0,-0.1,0.9, "Eyebrow Depth"),
-(180,0,-1.1,1.6, "Eyebrow Shape"),
-(230,0,1.2,-0.7, "Temple Width"),
-#(310,0,-1.1,1.6, "Zabrak Horns"),
+  (160,0,  1.3, -0.2, "Eyebrow Position"),
+  (170,0, -0.1,  1.9, "Eyebrow Height"),
+ #SW - modified to use Barf's updated male_head model
+ #(220,0, -0.1,  0.9, "Eyebrow Depth"),
+  (180,0, -1.1,  1.6, "Eyebrow Shape"),
+  (230,0,  1.2, -0.7, "Temple Width"),
+ #(310,0, -1.1,  1.6, "Zabrak Horns"),
 
-(30,0,-0.6,0.9, "Face Depth"),
-(40,0,0.9,-0.6, "Face Ratio"),
-(190,0,0.0,0.95, "Face Width"),
+  (30, 0, -0.6,  0.9, "Face Depth"),
+  (40, 0,  0.9, -0.6, "Face Ratio"),
+  (190,0,  0.0,  0.95,"Face Width"),
 
-(280,0,0.0,1.0, "Post-Edit"),
+  (280,0,0.0 ,1.0 , "Post-Edit"),
 ]
+
 # Face width-Jaw width Temple width
 woman_face_keys = [
-(230,0,0.8,-1.0, "Chin Size"), 
-(220,0,-1.0,1.0, "Chin Shape"), 
-(10,0,-1.2,1.0, "Chin Forward"),
-(20,0, -0.6, 1.2, "Jaw Width"), 
-(40,0,-0.7,1.0, "Jaw Position"),
-(270,0,0.9,-0.9, "Mouth-Nose Distance"),
-(30,0,-0.5,1.0, "Mouth Width"),
-(50,0, -0.5,1.0, "Cheeks"),
+  (230,0, 0.8,-1.0, "Chin Size"), 
+  (220,0,-1.0, 1.0, "Chin Shape"), 
+  (10, 0,-1.2, 1.0, "Chin Forward"),
+  (20, 0,-0.6, 1.2, "Jaw Width"), 
+  (40, 0,-0.7, 1.0, "Jaw Position"),
+  (270,0, 0.9,-0.9, "Mouth-Nose Distance"),
+  (30, 0,-0.5, 1.0, "Mouth Width"),
+  (50, 0,-0.5, 1.0, "Cheeks"),
 
-(60,0,-0.5,1.0, "Nose Height"),
-(70,0,-0.5,1.1, "Nose Width"),
-(80,0,1.5,-0.3, "Nose Size"),
-(240,0,-1.0,0.8, "Nose Shape"),
-(90,0, 0.0,1.1, "Nose Bridge"),
+  (60, 0,-0.5, 1.0, "Nose Height"),
+  (70, 0,-0.5, 1.1, "Nose Width"),
+  (80, 0, 1.5,-0.3, "Nose Size"),
+  (240,0,-1.0, 0.8, "Nose Shape"),
+  (90, 0, 0.0, 1.1, "Nose Bridge"),
 
-(100,0,-0.5,1.5, "Cheek Bones"),
-(150,0,-0.4,1.0, "Eye Width"),
-(110,0,1.0,0.0, "Eye to Eye Dist"),
-(120,0,-0.2,1.0, "Eye Shape"),
-(130,0,-0.1,1.6, "Eye Depth"),
-(140,0,-0.2,1.0, "Eyelids"),
+  (100,0,-0.5, 1.5, "Cheek Bones"),
+  (150,0,-0.4, 1.0, "Eye Width"),
+  (110,0, 1.0, 0.0, "Eye to Eye Dist"),
+  (120,0,-0.2, 1.0, "Eye Shape"),
+  (130,0,-0.1, 1.6, "Eye Depth"),
+  (140,0,-0.2, 1.0, "Eyelids"),
 
+  (160,0,-0.2, 1.2, "Eyebrow Position"),
+  (170,0,-0.2, 0.7, "Eyebrow Height"),
+  (250,0,-0.4, 0.9, "Eyebrow Depth"),
+  (180,0,-1.5, 1.2, "Eyebrow Shape"),
+  (260,0, 1.0,-0.7, "Temple Width"),
 
-(160,0,-0.2,1.2, "Eyebrow Position"),
-(170,0,-0.2,0.7, "Eyebrow Height"),
-(250,0,-0.4,0.9, "Eyebrow Depth"),
-(180,0,-1.5,1.2, "Eyebrow Shape"),
-(260,0,1.0,-0.7, "Temple Width"),
+  (200,0,-0.5, 1.0, "Face Depth"),
+  (210,0,-0.5, 0.9, "Face Ratio"),
+  (190,0,-0.4, 0.8, "Face Width"),
 
-(200,0,-0.5,1.0, "Face Depth"),
-(210,0,-0.5,0.9, "Face Ratio"),
-(190,0,-0.4,0.8, "Face Width"),
-
-(280,0,0.0,1.0, "Post-Edit"),
+  (280,0, 0.0, 1.0, "Post-Edit")
 ]
 #undead_face_keys = []
 
 #SW - new face keys
-#jawa_face_keys = []		# used tusken body for jawa
-tusken_face_keys = []
-rodian_face_keys = []
-moncal_face_keys = []
+#jawa_face_keys      = []		# used tusken body for jawa
+tusken_face_keys     = []
+rodian_face_keys     = []
+moncal_face_keys     = []
 trandoshan_face_keys = []
-droid_face_keys = []
-#weequay_face_keys = man_face_keys
-wookiee_face_keys = []
-sullustan_face_keys = []
-#chiss_face_keys = man_face_keys
+droid_face_keys      = []
+#weequay_face_keys   = man_face_keys
+wookiee_face_keys    = []
+sullustan_face_keys  = []
+#chiss_face_keys     = man_face_keys
 #chiss_female_face_keys = woman_face_keys
-gamorrean_face_keys = []
-twilek_face_keys = []
+gamorrean_face_keys  = []
+twilek_face_keys     = []
 twilek_female_face_keys = woman_face_keys
-bothan_face_keys = [
 
-(10,0,0.0,1.0, "Bothan Face Shape"),
-(30,0,0.0,1.0, "Bothan Mouth Forward"),
-(50,0,0.0,1.0, "Bothan Head Size"),
-(0,0,1.0,0.0, "Post-Edit"),
+bothan_face_keys = [
+  (10,0,0.0,1.0, "Bothan Face Shape"),
+  (30,0,0.0,1.0, "Bothan Mouth Forward"),
+  (50,0,0.0,1.0, "Bothan Head Size"),
+  ( 0,0,1.0,0.0, "Post-Edit")
 ]
 
 geonosian_face_keys = [
-
-(10,0,0.0,1.0, "Exoskeleton Shape"),
-(30,0,0.0,1.0, "Exoskeleton Forward"),
-(50,0,1.0,0.0, "Exoskeleton Size"),
-(0,0,1.0,0.0, "Post-Edit"),
+  (10,0,0.0,1.0, "Exoskeleton Shape"),
+  (30,0,0.0,1.0, "Exoskeleton Forward"),
+  (50,0,1.0,0.0, "Exoskeleton Size"),
+  ( 0,0,1.0,0.0, "Post-Edit")
 ]
 
 clone_face_keys = []
 rancor_face_keys = []
 
-chin_size = 0
-chin_shape = 1
-chin_forward = 2
-jaw_width = 3
-jaw_position = 4
-mouth_nose_distance = 5
-mouth_width = 6
-cheeks = 7
-nose_height = 8
-nose_width = 9
-nose_size = 10
-nose_shape = 11
-nose_bridge = 12
-cheek_bones = 13
-eye_width = 14
-eye_to_eye_dist = 15
-eye_shape = 16
-eye_depth = 17
-eyelids = 18
-eyebrow_position = 19
-eyebrow_height = 20
-eyebrow_depth = 21
-eyebrow_shape = 22
-temple_width = 23
-face_depth = 24
-face_ratio = 25
-face_width = 26
+chin_size           =   0
+chin_shape          =   1
+chin_forward        =   2
+jaw_width           =   3
+jaw_position        =   4
+mouth_nose_distance =   5
+mouth_width         =   6
+cheeks              =   7
+nose_height         =   8
+nose_width          =   9
+nose_size           =  10
+nose_shape          =  11
+nose_bridge         =  12
+cheek_bones         =  13
+eye_width           =  14
+eye_to_eye_dist     =  15
+eye_shape           =  16
+eye_depth           =  17
+eyelids             =  18
+eyebrow_position    =  19
+eyebrow_height      =  20
+eyebrow_depth       =  21
+eyebrow_shape       =  22
+temple_width        =  23
+face_depth          =  24
+face_ratio          =  25
+face_width          =  26
 
-comp_less_than = -1;
-comp_greater_than = 1;
+comp_less_than      = -1;
+comp_greater_than   =  1;
 
 skins = [
   (
@@ -244,20 +243,20 @@ skins = [
 	["hair_blonde"], #hair textures
     [],
     [
-	 ("womanface_young",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),
-     ("womanface_a",0xffe8dfe5,["hair_blonde"],[0xff502a19, 0xff19100c, 0xff0c0d19]),
-     ("womanface_b",0xffdfdfdf,["hair_blonde"],[0xffa5481f, 0xff502a19, 0xff19100c, 0xff0c0d19]),
-     ("womanface_new_a",0xffe8dfe5,["hair_blonde"],[0xff502a19, 0xff19100c, 0xff0c0d19]),
-     ("womanface_new_b",0xffdfdfdf,["hair_blonde"],[0xffa5481f, 0xff502a19, 0xff19100c, 0xff0c0d19]),	 
-     ("Jed_Q_w_1",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),	#from Jed_Q
-	 ("womanface_brown",0xffaf9f7e,["hair_blonde"],[0xff19100c, 0xff0c0d19, 0xff007080c]),
-	 ("sibylla_womanface_amidala",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),	#from Jed_Q
-     ("womanface_african",0xff808080,["hair_blonde"],[0xff120808, 0xff007080c]),	 
-	 ("sith_darth_maul_female",0x0097392c,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),	# from I-V-I-O-R-T
-	 ("chiss_female_face_a",0x00355bff,["hair_blonde"],[0xff120808, 0xff007080c]),
-	 ("womanface_new_young",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),
-	 ("woman_face_nightsister",0x00c2b59a,["hair_blonde"],[0xff120808, 0xff34312a]),
-	 ("woman_face_silri",0x00c2b59a,["hair_blonde"],[0xff120808, 0xff34312a]),
+      ("womanface_young",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),
+      ("womanface_a",0xffe8dfe5,["hair_blonde"],[0xff502a19, 0xff19100c, 0xff0c0d19]),
+      ("womanface_b",0xffdfdfdf,["hair_blonde"],[0xffa5481f, 0xff502a19, 0xff19100c, 0xff0c0d19]),
+      ("womanface_new_a",0xffe8dfe5,["hair_blonde"],[0xff502a19, 0xff19100c, 0xff0c0d19]),
+      ("womanface_new_b",0xffdfdfdf,["hair_blonde"],[0xffa5481f, 0xff502a19, 0xff19100c, 0xff0c0d19]),	 
+      ("Jed_Q_w_1",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),	#from Jed_Q
+      ("womanface_brown",0xffaf9f7e,["hair_blonde"],[0xff19100c, 0xff0c0d19, 0xff007080c]),
+      ("sibylla_womanface_amidala",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),	#from Jed_Q
+      ("womanface_african",0xff808080,["hair_blonde"],[0xff120808, 0xff007080c]),	 
+      ("sith_darth_maul_female",0x0097392c,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),	# from I-V-I-O-R-T
+      ("chiss_female_face_a",0x00355bff,["hair_blonde"],[0xff120808, 0xff007080c]),
+      ("womanface_new_young",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),
+      #("woman_face_nightsister",0x00c2b59a,["hair_blonde"],[0xff120808, 0xff34312a]),
+      #("woman_face_silri",0x00c2b59a,["hair_blonde"],[0xff120808, 0xff34312a]),
 #     ("womanface_midage",0xffe5eaf0,["hair_black","hair_brunette","hair_red","hair_white"],[0xffffcded, 0xffbbcded, 0xff99eebb]),
      ],#woman_face_textures
 # HC - Added in new sounds for snd_woman_die - #SW also added in voice_yell

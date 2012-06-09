@@ -88,6 +88,7 @@ map_icons = [
   ("civilian_transport",mcn_no_shadow,"Action_IV", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("civilian_cruiser",mcn_no_shadow,"swy_nebulon", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("cis_star_cruiser",mcn_no_shadow,"CIS_Station", cis_star_cruiser_scale,0),
+  ("y8_mining",mcn_no_shadow,"y8_mining", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ##@> //other, not currently purchasable or used
   ##@> //purchasable ships - rebel
 

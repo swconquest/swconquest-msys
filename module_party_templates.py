@@ -71,6 +71,7 @@ party_templates = [
   #SW - removed pf_auto_remove_in_town
   #("merchant_caravan","Merchant Freighter",icon_freighter|carries_goods(20)|pf_auto_remove_in_town|pf_quest_party,0,fac_commoners,escorted_merchant_personality,[(trp_caravan_master,1,1),(trp_hired_guard,5,25)]),
   ("merchant_caravan","Merchant Freighter",icon_freighter|carries_goods(20)|pf_quest_party,0,fac_commoners,escorted_merchant_personality,[(trp_caravan_master,1,1),(trp_security_guard,15,30)]),  
+  ("miningvessel", "Mining Vessel",icon_y8_mining|carries_goods(30)|pf_quest_party,0,fac_commoners,miningvessel_personality,[(trp_caravan_master,1,1),(trp_b1series,1,10),(trp_oom_series_command,1,1),(trp_security_guard,10,20)]),
   ("troublesome_bandits","Troublesome Bandits",icon_tran_slaver|carries_goods(9)|pf_quest_party,0,fac_outlaws,bandit_personality,[(trp_bandit,15,55)]),
   #SW - removed pf_auto_remove_in_town
   #("bandits_awaiting_ransom","Bandits Awaiting Ransom",icon_axeman|carries_goods(9)|pf_auto_remove_in_town|pf_quest_party,0,fac_neutral,bandit_personality,[(trp_bandit,24,58),(trp_kidnapped_girl,1,1,pmf_is_prisoner)]),

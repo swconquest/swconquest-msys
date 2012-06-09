@@ -2374,20 +2374,20 @@ scene_props = [
   ("taris_cantina_table",0,"taris_cantina_table",0, []),
   
 #Jabba Palace	
-  ("jabba_palace_building_1",0,"jabba_palace_building_1",0, []),
-  ("jabba_palace_building_2",0,"jabba_palace_building_2",0, []),
-  ("jabba_palace_building_3",0,"jabba_palace_building_3",0, []),
-  ("jabba_palace_building_4",0,"jabba_palace_building_4",0, []),
-  ("jabba_palace_building_5",0,"jabba_palace_building_5",0, []),
-  ("jabba_palace_building_6",0,"jabba_palace_building_6",0, []),
+  ("jabba_palace_building_1",0,"jabba_palace_building_1","bo_jabba_palace_building_1", []),
+  ("jabba_palace_building_2",0,"jabba_palace_building_2","bo_jabba_palace_building_2", []),
+  ("jabba_palace_building_3",0,"jabba_palace_building_3","bo_jabba_palace_building_3", []),
+  ("jabba_palace_building_4",0,"jabba_palace_building_4","bo_jabba_palace_building_4", []),
+  ("jabba_palace_building_5",0,"jabba_palace_building_5","bo_jabba_palace_building_5", []),
+  ("jabba_palace_building_6",0,"jabba_palace_building_6","bo_jabba_palace_building_6", []),
 
 #Jabba Palace Rough reskins by RevanShan / had to retouch the normals
-  ("trandoshan_building_1",0,"trandoshan_building_1",0, []),
-  ("trandoshan_building_2",0,"trandoshan_building_2",0, []),
-  ("trandoshan_building_3",0,"trandoshan_building_3",0, []),
-  ("trandoshan_building_4",0,"trandoshan_building_4",0, []),
-  ("trandoshan_building_5",0,"trandoshan_building_5",0, []),
-  ("trandoshan_building_6",0,"trandoshan_building_6",0, []),
+  ("trandoshan_building_1",0,"trandoshan_building_1","bo_jabba_palace_building_1", []),
+  ("trandoshan_building_2",0,"trandoshan_building_2","bo_jabba_palace_building_2", []),
+  ("trandoshan_building_3",0,"trandoshan_building_3","bo_jabba_palace_building_3", []),
+  ("trandoshan_building_4",0,"trandoshan_building_4","bo_jabba_palace_building_4", []),
+  ("trandoshan_building_5",0,"trandoshan_building_5","bo_jabba_palace_building_5", []),
+  ("trandoshan_building_6",0,"trandoshan_building_6","bo_jabba_palace_building_6", []),
 
 #Kashyyyk
   ("kashyyyk_house",0,"kashyyyk_house",0, []),
@@ -2738,6 +2738,22 @@ scene_props = [
 ("!dirtdecal4",0,"!dirtdecal4","0", []),
 
 ("deathstar_parts_6_wall",0,"deathstar_parts_6_wall","bo_deathstar_parts_6_wall", []),
+
+("decal_1",0,"decal_1","0", []), #crosshair
+("decal_2",0,"decal_2","0", []), #rebel
+("decal_3",0,"decal_3","0", []), #imperial
+("decal_4",0,"decal_4","0", []), #mandalorian
+
+("pipe_1",0,"pipe_1","bo_pipe_1", []),
+("pipe_2",0,"pipe_2","bo_pipe_2", []),
+("pipe_3",0,"pipe_3","bo_pipe_3", []),
+("pipe_hutta_1",0,"pipe_hutta_1","bo_pipe_hutta_1", []),
+("pipe_hutta_2",0,"pipe_hutta_2","bo_pipe_hutta_2", []),
+("pipe_hutta_3",0,"pipe_hutta_3","bo_pipe_hutta_3", []),
+
+("hologram_terminal_1",0,"hologram_terminal_1","bo_hologram_terminal_1", []),
+("hologram_terminal_2",0,"hologram_terminal_2","bo_hologram_terminal_2", []),
+("hologram_terminal_3",0,"hologram_terminal_3","bo_hologram_terminal_3", []),
 
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)

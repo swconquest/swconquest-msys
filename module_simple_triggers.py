@@ -3298,6 +3298,66 @@ simple_triggers = [
 	# (try_end),
 	# ]),
 	
+#Mining Vessel spwning (every map day) -- swyter
+(24,[
+
+    ##--> Count the number of mining vessels spawned in the map...
+    (assign, ":mvess_count", 0),
+    (try_for_parties,":i"),
+      (party_get_template_id,":i_pt",":i"),
+      (eq,":i_pt","pt_miningvessel"),
+      (val_add, ":mvess_count", 1), # +1 to the counter
+    (try_end),
+    
+    ##--> Pseudocode for the above
+    # count=0
+    # for parties in map do
+    #   if parties.template_id == "pt_miningvessel" then
+    #       count++
+    #   end
+    # end
+    
+    ##--> If we are in bounds skip, if not then create a new one, populating the map once at a time.
+    (try_begin),
+      #if less then 10 mining vessels
+      (lt,":mvess_count",10),
+      
+      #spawn around debris of asteroids
+      (set_spawn_radius, 5),
+      (store_random_in_range,":spawn_point", "p_debris_01","p_debris_10"),
+      (spawn_around_party,   ":spawn_point", "pt_miningvessel"),
+       
+      #get the instance number
+      (assign, ":instance", reg0),
+      (party_get_position, pos1, ":instance"),
+      
+      #add properties
+      #(party_set_ai_behavior,":instance", ai_bhvr_patrol_party),
+      #(party_set_ai_object,  ":instance", ":spawn_point"),
+      
+      (party_set_ai_behavior, ":instance", ai_bhvr_patrol_location),
+      (party_set_ai_patrol_radius,":instance", 4),
+      (party_set_ai_target_position, ":instance", pos1),
+      
+      (party_set_flags, ":instance", pf_default_behavior|pf_is_ship|pf_hide_defenders, 1),
+      (party_set_bandit_attraction, ":instance", 50), #hmmm tasty miners
+      (party_set_extra_text, ":instance", "@Mining asteroids for ore..."),
+      
+      
+      #--> from here dbg
+      (call_script, "script_get_closest_center", ":instance"),
+      (try_begin),
+        (gt, reg0, 0),
+        (str_store_party_name, s1, reg0),
+       (else_try),
+        (str_store_string, s1, "@unknown place"),
+      (try_end),
+      
+      (display_message, "@$--->Mining vessel spawned, near {s1}",color_bad_news),
+      #(party_relocate_near_party,":instance","p_main_party",1),
+    (try_end),
+	]),
+
 #spare trigger 1
 (24*7,	[
 
