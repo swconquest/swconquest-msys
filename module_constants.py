@@ -1473,3 +1473,8 @@ hrsb_r_back_hoof = 25
 hrsb_tail_1      = 26
 hrsb_tail_2      = 27
 # <-
+
+#Speech aliases
+speech_death    = 1
+speech_victory  = 2
+speech_deployed = 3

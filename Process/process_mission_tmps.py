@@ -2,7 +2,7 @@ import string
 import types
 
 from module_info import *
-from module_mission_templates import *
+from module_mission_templates_common import *
 
 from process_common import *
 from process_operations import *
