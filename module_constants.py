@@ -1475,6 +1475,6 @@ hrsb_tail_2      = 27
 # <-
 
 #Speech aliases
-speech_death    = 1
+speech_death    = 3
 speech_victory  = 2
-speech_deployed = 3
+speech_deployed = 1
