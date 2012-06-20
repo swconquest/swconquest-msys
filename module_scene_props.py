@@ -2398,19 +2398,19 @@ scene_props = [
   ("kashyyyk_platform_eighth_fence_houseup_addon",0,"kashyyyk_platform_eighth_fence_houseup_addon",0, []),
   ("kashyyyk_platform_eighth_platform",0,"kashyyyk_platform_eighth_platform",0, []),
   ("kashyyyk_platform_house_a",0,"kashyyyk_platform_house_a",0, []),
-  ("kashyyyk_platform_house_b",0,"kashyyyk_platform_house_b",0, []),
+  ("kashyyyk_platform_house_b",0,"kashyyyk_platform_house_b","bo_kashyyyk_platform_house_b", []),
   ("kashyyyk_platform_house_bridge",0,"kashyyyk_platform_house_bridge",0, []),
-  ("kashyyyk_platform_offtree_a",0,"kashyyyk_platform_offtree_a",0, []),
+  ("kashyyyk_platform_offtree_a",0,"kashyyyk_platform_offtree_a","bo_kashyyyk_platform_offtree_a", []),
   ("kashyyyk_platform_sixteenth_fence",0,"kashyyyk_platform_sixteenth_fence",0, []),
   ("kashyyyk_platform_sixteenth_fence_bridge",0,"kashyyyk_platform_sixteenth_fence_bridge",0, []),
   ("kashyyyk_platform_sixteenth_platform",0,"kashyyyk_platform_sixteenth_platform",0, []),
   ("kashyyyk_platform_stringer",0,"kashyyyk_platform_stringer",0, []),
   ("kashyyyk_platform_stringer_bridge",0,"kashyyyk_platform_stringer_bridge",0, []),
   ("kashyyyk_stairs",0,"kashyyyk_stairs",0, []),
-  ("kashyyyk_tree1",0,"kashyyyk_tree1",0, []),
-  ("kashyyyk_tree2",0,"kashyyyk_tree2",0, []),
-  ("kashyyyyk_cliff_1",0,"kashyyyyk_cliff_1",0, []),
-  ("kashyyyyk_cliff_2",0,"kashyyyyk_cliff_2",0, []),
+  ("kashyyyk_tree1",0,"kashyyyk_tree1","bo_kashyyyk_tree1", []),
+  ("kashyyyk_tree2",0,"kashyyyk_tree2","bo_kashyyyk_tree2", []),
+  ("kashyyyyk_cliff_1",0,"kashyyyyk_cliff_1","bo_kashyyyyk_cliff_1", []),
+  ("kashyyyyk_cliff_2",0,"kashyyyyk_cliff_2","bo_kashyyyyk_cliff_2", []),
   
 #Spaceviews
   ("spaceview_coruscant",0,"spaceview_coruscant",0, []),
@@ -2754,6 +2754,9 @@ scene_props = [
 ("hologram_terminal_1",0,"hologram_terminal_1","bo_hologram_terminal_1", []),
 ("hologram_terminal_2",0,"hologram_terminal_2","bo_hologram_terminal_2", []),
 ("hologram_terminal_3",0,"hologram_terminal_3","bo_hologram_terminal_3", []),
+
+("naboo_arena_wall_fix",0,"naboo_arena_wall_fix","bo_naboo_arena_wall_fix", []),
+("naboo_arena_corner",0,"naboo_arena_corner","bo_naboo_arena_corner", []),
 
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)

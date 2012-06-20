@@ -1511,4 +1511,6 @@ spr_pipe_hutta_3 = 1509
 spr_hologram_terminal_1 = 1510
 spr_hologram_terminal_2 = 1511
 spr_hologram_terminal_3 = 1512
-spr_scene_props_end = 1513
+spr_naboo_arena_wall_fix = 1513
+spr_naboo_arena_corner = 1514
+spr_scene_props_end = 1515
