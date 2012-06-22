@@ -26364,9 +26364,10 @@ scripts = [
                     (store_random_in_range, ":random", 50, 100),
                     (set_rain,1,":random"),
                   (else_try),
-                    (eq, "$current_town", "p_hoth"),					#Hoth
-                    (store_random_in_range, ":random", 60, 100),
-                    (set_rain,2,":random"),
+                    #@FIXME -- snow/rain disabled on hoth
+                    #(eq, "$current_town", "p_hoth"),					#Hoth
+                    #(store_random_in_range, ":random", 60, 100),
+                    #(set_rain,2,":random"),
                   (else_try),
                     (eq, "$current_town", "p_kamino"),				#Kamino
                     (set_rain,1,100),
@@ -30261,8 +30262,8 @@ scripts = [
                     (agent_get_troop_id, ":cur_agent_troop", ":agent_no"),
                     (try_begin),
                       #Rancors
-                      (this_or_next|eq, "trp_rancor", ":cur_agent_troop"),
-                      (eq, "trp_rancor_mutant", ":cur_agent_troop"),
+                      (this_or_next|eq, "trp_rancor",        ":cur_agent_troop"),
+                      (eq,              "trp_rancor_mutant", ":cur_agent_troop"),
                       (agent_set_speed_limit,":agent_no",3),
                     (else_try),
                       #Darth Vader
@@ -30275,8 +30276,8 @@ scripts = [
                       (agent_set_speed_limit,":agent_no",4),
                     (else_try),
                       #B2 Droids
-                      (this_or_next|eq, "trp_b2series", ":cur_agent_troop"),
-                      (eq, "trp_b2series_enhanced", ":cur_agent_troop"),
+                      (this_or_next|eq, "trp_b2series",          ":cur_agent_troop"),
+                      (eq,              "trp_b2series_enhanced", ":cur_agent_troop"),
                       (agent_set_stand_animation, ":agent_no", "anim_b2_stand"),
                       (agent_set_walk_forward_animation, ":agent_no", "anim_b2_walk"),
                       (agent_set_speed_limit,":agent_no",6),

@@ -2758,6 +2758,29 @@ scene_props = [
 ("naboo_arena_wall_fix",0,"naboo_arena_wall_fix","bo_naboo_arena_wall_fix", []),
 ("naboo_arena_corner",0,"naboo_arena_corner","bo_naboo_arena_corner", []),
 
+("endor_fac_wall",0,"endor_fac_wall","bo_endor_fac_wall", []),
+("endor_fac_floor",0,"endor_fac_floor","bo_endor_fac_floor", []),
+
+("sarapin_fac_tower_2",0,"sarapin_fac_tower_2","bo_sarapin_fac_tower_2", []),
+("sarapin_fac_floor",0,"sarapin_fac_floor","bo_sarapin_fac_floor", []),
+("sarapin_fac_container_emputy",0,"sarapin_fac_container_emputy","bo_sarapin_fac_container_emputy", []),
+("sarapin_fac_container_lava",0,"sarapin_fac_container_lava","bo_sarapin_fac_container_lava", []),
+("sarapin_fac_wall",0,"sarapin_fac_wall","bo_sarapin_fac_wall", []),
+("sarapin_walkway_support",0,"sarapin_walkway_support","bo_sarapin_walkway_support", []),
+("sarapin_walkway",0,"sarapin_walkway","bo_sarapin_walkway", []),
+("sarapin_fac_rail_2",0,"sarapin_fac_rail_2","bo_sarapin_fac_rail_2", []),
+("sarapin_fac_1",0,"sarapin_fac_1","bo_sarapin_fac_1", []),
+("sarapin_fac_4",0,"sarapin_fac_4","bo_sarapin_fac_4", []),
+("sarapin_fac_com",0,"sarapin_fac_com","bo_sarapin_fac_com", []),
+("sarapin_fac_2",0,"sarapin_fac_2","bo_sarapin_fac_2", []),
+("sarapin_terminal1",0,"sarapin_terminal1","bo_sarapin_terminal1", []),
+("sarapin_terminal2",0,"sarapin_terminal2","bo_sarapin_terminal2", []),
+("sarapin_terminal3",0,"sarapin_terminal3","bo_sarapin_terminal3", []),
+("sarapin_terminal4",0,"sarapin_terminal4","bo_sarapin_terminal4", []),
+("sarapin_fac_terminal5",0,"sarapin_fac_terminal5","bo_sarapin_fac_terminal5", []),
+("sarapin_fac_terminal6",0,"sarapin_fac_terminal6","bo_sarapin_fac_terminal6", []),
+("sarapin_fac_terminal7",0,"sarapin_fac_terminal7","bo_sarapin_fac_terminal7", []),
+
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)
 #Highlander begin--------------------------------------

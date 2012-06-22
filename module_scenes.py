@@ -289,8 +289,10 @@ scenes = [
     [],["bonus_box_mainplanet_8"],"outer_terrain_plain"),
   ("mainplanet_mon_cal_center",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029",
     [],["bonus_box_mainplanet_9"],),
-  ("mainplanet_kashyyyk_center",sf_generate,"none", "none",(0,0),(100,100),-100,"0x00000000200016da000364d9000060f500007591000064e7",
-    [],["bonus_box_mainplanet_10"],"outer_terrain_plain"),
+#  ("mainplanet_kashyyyk_center",sf_generate,"none", "none",(0,0),(100,100),-100,"0x00000000200016da000364d9000060f500007591000064e7",
+#    [],["bonus_box_mainplanet_10"],"outer_terrain_plain"),
+  ("mainplanet_kashyyyk_center",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x00000006200005000008f23c0000753d00004f66000033c8", ## old code >> "0x00000002bc61d087400799e60000034e00004b34000059be"
+    [],["bonus_box_mainplanet_10"],),
   ("mainplanet_hoth_center",sf_generate,"none", "none",(0,0),(120,120),-200,"0x000000043000050000029caa00000001000048c000001029",
     [],["bonus_box_mainplanet_11"],"outer_terrain_snow"),
   ("mainplanet_gamorr_center",sf_generate,"none", "none",(0,0),(100,100),-100,"0x0000000020045abc000308c4000029d9000033bd000009b9",

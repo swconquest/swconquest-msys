@@ -1,4 +1,4 @@
-# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M
 # / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
 # By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
 
@@ -55,15 +55,15 @@ mission_templates = [
             (eq, "$talk_context", tc_tavern_talk),
             (call_script, "script_music_set_situation_with_culture", mtf_sit_tavern),
           (else_try),
-			#SW - attempting to fix bug with mtf_sit_town (nevermind, the town_default mission template seems to be used for a lot of random scenes?)
+            #SW - attempting to fix bug with mtf_sit_town (nevermind, the town_default mission template seems to be used for a lot of random scenes?)
             (call_script, "script_music_set_situation_with_culture", mtf_sit_travel),
-			#(call_script, "script_music_set_situation_with_culture", mtf_sit_town),
+            #(call_script, "script_music_set_situation_with_culture", mtf_sit_town),
           (try_end),
 
         ]),
       (ti_before_mission_start, 0, 0, [], [(call_script, "script_change_banners_and_chest")]),
       #SW - from blackjack mod
-	  #(ti_inventory_key_pressed, 0, 0, [(set_trigger_result,1)], []),
+      #(ti_inventory_key_pressed, 0, 0, [(set_trigger_result,1)], []),
       #(ti_tab_pressed, 0, 0, [(set_trigger_result,1)], []),
       (ti_inventory_key_pressed, 0, 0, [
           (eq, "$black_jack",0),#plus blackjack
@@ -72,23 +72,21 @@ mission_templates = [
           (eq, "$black_jack",0),#plus blackjack
           (set_trigger_result,1)], []),
 
-	  #SW - add custom lightsaber noise to town scenes
-	  #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	  lightsaber_noise_player,
-	  #lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_switch_sw_scene_props,
-	  common_crouch_button,
+    #SW - add custom lightsaber noise to town scenes
+    #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+    lightsaber_noise_player,
+    #lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_switch_sw_scene_props,
+    common_crouch_button,
 
-	#SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+  #SWY - trigger to make unique agents behavior - custom scripting
+    (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
     ],
   ),
 
@@ -109,11 +107,11 @@ mission_templates = [
      (27,mtef_visitor_source,0,0,1,[]),(28,mtef_visitor_source,0,0,1,[]),(29,mtef_visitor_source,0,0,1,[]),(30,mtef_visitor_source,0,0,1,[]),(31,mtef_visitor_source,0,0,1,[]),
      ],
     [
-
-		  #SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-
-	],
+    
+    #SWY - trigger to make unique agents behavior - custom scripting
+    (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+    
+    ],
   ),
 
 #----------------------------------------------------------------
@@ -133,178 +131,136 @@ mission_templates = [
      (12,mtef_scene_source,af_override_horse,0,1,[]),(13,mtef_scene_source,0,0,1,[]),(14,mtef_scene_source,0,0,1,[]),(15,mtef_scene_source,0,0,1,[]),
      (16,mtef_visitor_source,af_override_horse,0,1,[]),(17,mtef_visitor_source,af_override_horse,0,1,[]),(18,mtef_visitor_source,af_override_horse,0,1,[]),(19,mtef_visitor_source,af_override_horse,0,1,[]),(20,mtef_visitor_source,af_override_horse,0,1,[]),(21,mtef_visitor_source,af_override_horse,0,1,[]),(22,mtef_visitor_source,af_override_horse,0,1,[]),(23,mtef_visitor_source,af_override_horse,0,1,[]),(24,mtef_visitor_source,af_override_horse,0,1,[]),
      (25,mtef_visitor_source,af_override_horse,0,1,[]),(26,mtef_visitor_source,af_override_horse,0,1,[]),(27,mtef_visitor_source,af_override_horse,0,1,[]),(28,mtef_visitor_source,af_override_horse,0,1,[]),(29,mtef_visitor_source,af_override_horse,0,1,[]),(30,mtef_visitor_source,af_override_horse,0,1,[]),(31,mtef_visitor_source,af_override_horse,0,1,[]),
-	 (32,mtef_visitor_source,af_override_horse,0,1,[]),(33,mtef_visitor_source,af_override_horse,0,1,[]),(34,mtef_visitor_source,af_override_horse,0,1,[]),(35,mtef_visitor_source,af_override_horse,0,1,[]),(36,mtef_visitor_source,af_override_horse,0,1,[]),(37,mtef_visitor_source,af_override_horse,0,1,[]),(38,mtef_visitor_source,af_override_horse,0,1,[]),(39,mtef_visitor_source,af_override_horse,0,1,[]),
-	 #SW - new cantina_drinkers
-	 (40,mtef_visitor_source,af_override_horse,0,1,[]),(41,mtef_visitor_source,af_override_horse,0,1,[]),(42,mtef_visitor_source,af_override_horse,0,1,[]),(43,mtef_visitor_source,af_override_horse,0,1,[]),(44,mtef_visitor_source,af_override_horse,0,1,[]),(45,mtef_visitor_source,af_override_horse,0,1,[]),
-     ],
- 
-    [
+     (32,mtef_visitor_source,af_override_horse,0,1,[]),(33,mtef_visitor_source,af_override_horse,0,1,[]),(34,mtef_visitor_source,af_override_horse,0,1,[]),(35,mtef_visitor_source,af_override_horse,0,1,[]),(36,mtef_visitor_source,af_override_horse,0,1,[]),(37,mtef_visitor_source,af_override_horse,0,1,[]),(38,mtef_visitor_source,af_override_horse,0,1,[]),(39,mtef_visitor_source,af_override_horse,0,1,[]),
 
+     #SW - new cantina_drinkers
+     (40,mtef_visitor_source,af_override_horse,0,1,[]),(41,mtef_visitor_source,af_override_horse,0,1,[]),(42,mtef_visitor_source,af_override_horse,0,1,[]),(43,mtef_visitor_source,af_override_horse,0,1,[]),(44,mtef_visitor_source,af_override_horse,0,1,[]),(45,mtef_visitor_source,af_override_horse,0,1,[]),
+     ],
+
+    [
       (1, 0, ti_once, [], [
           (store_current_scene, ":cur_scene"),
           (scene_set_slot, ":cur_scene", slot_scene_visited, 1),
-		  #start the cantina_ambiance
-		  (play_sound, "snd_cantina_ambiance", sf_looping),
-		  #set the music
-          (try_begin),
-            (eq, "$sneaked_into_town", 1),
-            (call_script, "script_music_set_situation_with_culture", mtf_sit_town_infiltrate),
-          (else_try),
-            (eq, "$talk_context", tc_tavern_talk),
-            (call_script, "script_music_set_situation_with_culture", mtf_sit_tavern),
-          (else_try),
-            (call_script, "script_music_set_situation_with_culture", mtf_sit_travel),
-          (try_end),
+          #start the cantina_ambiance
+          (play_sound, "snd_cantina_ambiance", sf_looping),
+          #set the music
+              (try_begin),
+                (eq, "$sneaked_into_town", 1),
+                (call_script, "script_music_set_situation_with_culture", mtf_sit_town_infiltrate),
+              (else_try),
+                (eq, "$talk_context", tc_tavern_talk),
+                (call_script, "script_music_set_situation_with_culture", mtf_sit_tavern),
+              (else_try),
+                (call_script, "script_music_set_situation_with_culture", mtf_sit_travel),
+              (try_end),
         ]),
 
-	# #tavern brawl
-	# (0, 0, ti_once,[
-					# (get_player_agent_no, ":player_agent"),
-					# (try_for_agents, ":cur_agent"),
-						# #(agent_get_troop_id, ":cur_agent_troop", ":cur_agent"),
-						# #(eq, ":cur_agent_troop", "$g_assassin"),
-						# (neq, ":cur_agent", ":player_agent"),
-						# (agent_set_team, ":cur_agent", 1),	# maybe it is possible to also give them the aif_start_alarmed flag?
-					# (try_end),
-					# ],[]),
-
-      (ti_before_mission_start, 0, 0, [], 	[
-											(assign, "$tavern_brawl", 0),	#tavern brawl is deactivated
-											(call_script, "script_change_banners_and_chest")
-											]),
-      #SW - from blackjack mod
-	  #(ti_inventory_key_pressed, 0, 0, [(set_trigger_result,1)], []),
-      #(ti_tab_pressed, 0, 0, [(set_trigger_result,1)], []),
+      (ti_before_mission_start, 0, 0, [],   [
+                      (assign, "$tavern_brawl", 0),  #tavern brawl is deactivated
+                      (call_script, "script_change_banners_and_chest")
+                      ]),
+                      
+                      
+     #SW - from blackjack mod
+     #(ti_inventory_key_pressed, 0, 0, [(set_trigger_result,1)], []),
+     #(ti_tab_pressed, 0, 0, [(set_trigger_result,1)], []),
+     
       (ti_inventory_key_pressed, 0, 0, [
           (eq, "$black_jack",0),#plus blackjack
           (set_trigger_result,1)], []),
       (ti_tab_pressed, 0, 0, [
           (eq, "$black_jack",0),#plus blackjack
-		  (call_script, "script_flush_gatesys_cache"),
+          (call_script, "script_flush_gatesys_cache"),
           (set_trigger_result,1)], []),
 
-		(1, 0, ti_once,[],
-			[
-			(call_script, "script_init_town_fight"),	#allow player to start a fight by shooting somebody
-			(assign, "$g_init_fight", 1),
-			]
-		),
+      (1, 0, ti_once,[],
+        [
+        (call_script, "script_init_town_fight"),  #allow player to start a fight by shooting somebody
+        (assign, "$g_init_fight", 1),
+        ]
+      ),
 
-		# #set seated animation for agents
-		# (30, 0, 0, [], [
-		#(2, 0, ti_once, [], [
-		(0, 0, ti_once, [], [
+    # #set seated animation for agents
+    # (30, 0, 0, [], [
+    #(2, 0, ti_once, [], [
+    (0, 0, ti_once, [], [
 
-			(eq, "$tavern_brawl", 0),	#only set animations when not in a brawl
-			(get_player_agent_no, ":player_agent"),
-			(try_begin),
-				(scene_prop_get_num_instances,":num_instances","spr_sw_chair_a_no_collision"),
-				(gt, ":num_instances", 0),
-				(try_for_range, ":cur_i", 0, ":num_instances"),
-					(scene_prop_get_instance,":instance", "spr_sw_chair_a_no_collision", ":cur_i"),
-					(prop_instance_get_position,pos1,":instance"),
-					(try_for_agents, ":agent"),
-						(neq, ":agent", ":player_agent",),
-						(agent_get_position,pos2,":agent"),
-						(get_distance_between_positions,":dist",pos1,pos2),
-						(try_begin),
-							(le, ":dist", 75),	#sitting
-							#(store_random_in_range, ":random_num", 0, 100),
-							(try_begin),
-								(agent_has_item_equipped, ":agent", "itm_grey_gloves_with_bottle"),		#bottle is equipped, make them drink
-								#(le, ":random_num", 25),
-								#(agent_set_animation, ":agent", "anim_drinking"),
-								#(agent_set_animation, ":agent", "anim_sitting"),
-								(agent_set_stand_animation, ":agent", "anim_drinking"),
-								(agent_set_animation, ":agent", "anim_drinking"),
-								(store_random_in_range, ":random_no", 0, 100),
-								(agent_set_animation_progress, ":agent", ":random_no"),
-							(else_try),
-								#(agent_set_animation, ":agent", "anim_sitting"),
-								(agent_set_stand_animation, ":agent", "anim_sitting"),
-								(agent_set_animation, ":agent", "anim_sitting"),
-								(store_random_in_range, ":random_no", 0, 100),
-								(agent_set_animation_progress, ":agent", ":random_no"),
-							(try_end),
-						(try_end),
-					(try_end),
-				(try_end),
-			(try_end),
-		]),
-
-		#set seated animation for agents
-		# (0, 0, ti_once, [], [
-
-			# (eq, "$tavern_brawl", 0),	#only set animations when not in a brawl
-			# (get_player_agent_no, ":player_agent"),
-			# (try_begin),
-				# (scene_prop_get_num_instances,":num_instances","spr_sw_chair_a_no_collision"),
-				# (gt, ":num_instances", 0),
-				# (try_for_range, ":cur_i", 0, ":num_instances"),
-					# (scene_prop_get_instance,":instance", "spr_sw_chair_a_no_collision", ":cur_i"),
-					# (prop_instance_get_position,pos1,":instance"),
-					# (try_for_agents, ":agent"),
-						# (neq, ":agent", ":player_agent",),
-						# (agent_get_position,pos2,":agent"),
-						# (get_distance_between_positions,":dist",pos1,pos2),
-						# (try_begin),
-							# (le, ":dist", 75),	#sitting
-							# #(agent_set_stand_animation, ":agent", "anim_sitting"),
-							# #(agent_set_stand_animation, ":agent", "anim_sitting"),
-							# (agent_set_stand_animation, ":agent", "anim_sit_cantina_agent"),
-							# #move them to the proper spot (nevermind, moving on the z position doesn't work)
-							# #(agent_get_position, pos2, ":agent"),	#get the agent's position
-							# #(position_move_x, pos2, 100),
-							# #(position_move_y, pos2, 100),
-							# #(position_move_z, pos2, 200),	#blah, doesn't work for agents...
-							# #(agent_set_position, ":agent", pos2),
-						# (try_end),
-					# (try_end),
-				# (try_end),
-			# (try_end),
-		# ]),
+      (eq, "$tavern_brawl", 0),  #only set animations when not in a brawl
+      (get_player_agent_no, ":player_agent"),
+      (try_begin),
+        (scene_prop_get_num_instances,":num_instances","spr_sw_chair_a_no_collision"),
+        (gt, ":num_instances", 0),
+        (try_for_range, ":cur_i", 0, ":num_instances"),
+          (scene_prop_get_instance,":instance", "spr_sw_chair_a_no_collision", ":cur_i"),
+          (prop_instance_get_position,pos1,":instance"),
+          (try_for_agents, ":agent"),
+            (neq, ":agent", ":player_agent",),
+            (agent_get_position,pos2,":agent"),
+            (get_distance_between_positions,":dist",pos1,pos2),
+            (try_begin),
+              (le, ":dist", 75),  #sitting
+              #(store_random_in_range, ":random_num", 0, 100),
+              (try_begin),
+                (agent_has_item_equipped, ":agent", "itm_grey_gloves_with_bottle"),    #bottle is equipped, make them drink
+                #(le, ":random_num", 25),
+                #(agent_set_animation, ":agent", "anim_drinking"),
+                #(agent_set_animation, ":agent", "anim_sitting"),
+                (agent_set_stand_animation, ":agent", "anim_drinking"),
+                (agent_set_animation, ":agent", "anim_drinking"),
+                (store_random_in_range, ":random_no", 0, 100),
+                (agent_set_animation_progress, ":agent", ":random_no"),
+              (else_try),
+                #(agent_set_animation, ":agent", "anim_sitting"),
+                (agent_set_stand_animation, ":agent", "anim_sitting"),
+                (agent_set_animation, ":agent", "anim_sitting"),
+                (store_random_in_range, ":random_no", 0, 100),
+                (agent_set_animation_progress, ":agent", ":random_no"),
+              (try_end),
+            (try_end),
+          (try_end),
+        (try_end),
+      (try_end),
+    ]),
 
 #random scene encounters
-	# commented out tavern attack since there isn't an AI mesh and since the cantina_walkers don't move the assassin will spawn on top of somebody
-	#(0, 0, ti_once,[(call_script, "script_cf_setup_random_scene_encounter",1,20)],[]),
+  # commented out tavern attack since there isn't an AI mesh and since the cantina_walkers don't move the assassin will spawn on top of somebody
+  #(0, 0, ti_once,[(call_script, "script_cf_setup_random_scene_encounter",1,20)],[]),
 #End random scene encounters
 
-			#SW - commented out since cantina noise will now be 'music'
+      #SW - commented out since cantina noise will now be 'music'
       # (0, 0, ti_once, [],
-		# [
-			# (try_begin),
-			  # (eq, "$talk_context", tc_tavern_talk),
-				# (stop_all_sounds, 2),
-				# #(play_sound, "snd_cantina_ambience", sf_looping),
-				# (play_sound, "snd_cantina_ambience"),
-			# (try_end),
-		# ]
-	  # ),
+    # [
+      # (try_begin),
+        # (eq, "$talk_context", tc_tavern_talk),
+        # (stop_all_sounds, 2),
+        # #(play_sound, "snd_cantina_ambience", sf_looping),
+        # (play_sound, "snd_cantina_ambience"),
+      # (try_end),
+    # ]
+    # ),
 
-	  common_check_town_fight,
+    common_check_town_fight,
 
-	  #SW - add custom lightsaber noise to town scenes
-	  #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	  lightsaber_noise_player,
-	  #lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_switch_sw_scene_props,
-	  common_crouch_button,
-	  common_gate_system,
+    #SW - add custom lightsaber noise to town scenes
+    #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+    lightsaber_noise_player,
+    #lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_switch_sw_scene_props,
+    common_crouch_button,
+    common_gate_system,
 
-	 #SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-
+   #SWY - trigger to make unique agents behavior - custom scripting
+    (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
     ],
   ),
-################################################################################################################
+  
+########################
 
   (
     "town_center",0,-1,
@@ -321,28 +277,26 @@ mission_templates = [
      (8,mtef_scene_source,af_override_horse,0,1,[]),
      (9,mtef_visitor_source,af_override_horse,0,1,[]),(10,mtef_visitor_source,af_override_horse,0,1,[]),(11,mtef_visitor_source,af_override_horse,0,1,[]),(12,mtef_visitor_source,af_override_horse,0,1,[]),(13,mtef_scene_source,0,0,1,[]),(14,mtef_scene_source,0,0,1,[]),(15,mtef_scene_source,0,0,1,[]),
      (16,mtef_visitor_source,af_override_horse,0,1,[]),(17,mtef_visitor_source,af_override_horse,0,1,[]),(18,mtef_visitor_source,af_override_horse,0,1,[]),(19,mtef_visitor_source,af_override_horse,0,1,[]),(20,mtef_visitor_source,af_override_horse,0,1,[]),(21,mtef_visitor_source,af_override_horse,0,1,[]),(22,mtef_visitor_source,af_override_horse,0,1,[]),(23,mtef_visitor_source,af_override_horse,0,1,[]),
-#     (24,mtef_visitor_source,af_override_horse,0,1,[]),(25,mtef_visitor_source,af_override_horse,0,1,[]),(26,mtef_visitor_source,af_override_horse,0,1,[]),(27,mtef_visitor_source,af_override_horse,0,1,[]),(28,mtef_visitor_source,af_override_horse,0,1,[]),(29,mtef_visitor_source,af_override_horse,0,1,[]),(30,mtef_visitor_source,af_override_horse,0,1,[]),(31,mtef_visitor_source,af_override_horse,0,1,[]),
-#     (32,mtef_visitor_source,af_override_horse,0,1,[]),(33,mtef_visitor_source,af_override_horse,0,1,[]),(34,mtef_visitor_source,af_override_horse,0,1,[]),(35,mtef_visitor_source,af_override_horse,0,1,[]),(36,mtef_visitor_source,af_override_horse,0,1,[]),(37,mtef_visitor_source,af_override_horse,0,1,[]),(38,mtef_visitor_source,af_override_horse,0,1,[]),(39,mtef_visitor_source,af_override_horse,0,1,[]),
-#     (40,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(41,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(42,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(43,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+#    (24,mtef_visitor_source,af_override_horse,0,1,[]),(25,mtef_visitor_source,af_override_horse,0,1,[]),(26,mtef_visitor_source,af_override_horse,0,1,[]),(27,mtef_visitor_source,af_override_horse,0,1,[]),(28,mtef_visitor_source,af_override_horse,0,1,[]),(29,mtef_visitor_source,af_override_horse,0,1,[]),(30,mtef_visitor_source,af_override_horse,0,1,[]),(31,mtef_visitor_source,af_override_horse,0,1,[]),
+#    (32,mtef_visitor_source,af_override_horse,0,1,[]),(33,mtef_visitor_source,af_override_horse,0,1,[]),(34,mtef_visitor_source,af_override_horse,0,1,[]),(35,mtef_visitor_source,af_override_horse,0,1,[]),(36,mtef_visitor_source,af_override_horse,0,1,[]),(37,mtef_visitor_source,af_override_horse,0,1,[]),(38,mtef_visitor_source,af_override_horse,0,1,[]),(39,mtef_visitor_source,af_override_horse,0,1,[]),
+#    (40,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(41,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(42,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(43,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
      (24,mtef_visitor_source,af_override_horse,0,1,[]),(25,mtef_visitor_source,af_override_horse,0,1,[]),(26,mtef_visitor_source,af_override_horse,0,1,[]),(27,mtef_visitor_source,af_override_horse,0,1,[]),(28,mtef_visitor_source,af_override_horse,0,1,[]),(29,mtef_visitor_source,af_override_horse,0,1,[]),(30,mtef_visitor_source,af_override_horse,aif_start_alarmed,1,[]),(31,mtef_visitor_source,af_override_horse,aif_start_alarmed,1,[]),
      (32,mtef_visitor_source,af_override_horse,aif_start_alarmed,1,[]),(33,mtef_visitor_source,af_override_horse,aif_start_alarmed,1,[]),(34,mtef_visitor_source,af_override_horse,aif_start_alarmed,1,[]),(35,mtef_visitor_source,af_override_horse,aif_start_alarmed,1,[]),(36,mtef_visitor_source,af_override_horse,aif_start_alarmed,1,[]),(37,mtef_visitor_source,af_override_horse,aif_start_alarmed,1,[]),(38,mtef_visitor_source,af_override_horse,aif_start_alarmed,1,[]),(39,mtef_visitor_source,af_override_horse,aif_start_alarmed,1,[]),
      (40,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(41,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(42,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(43,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
      (44,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(45,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(46,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(47,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
 
-	 #SW - new entry point for player's companion - seems like you need to play for a few minutes before you can set_visitors?
-	 #new entry points for player companions (when player uses entry point 0, no horse)
-	 (48,mtef_visitor_source,af_override_horse,0,1,[]),
-	 #new entry points for player companions (when player uses entry point 1, with horse)
-	 (49,mtef_visitor_source,0,0,1,[]),
+     #SW - new entry point for player's companion - seems like you need to play for a few minutes before you can set_visitors?
+     #new entry points for player companions (when player uses entry point 0, no horse)
+     (48,mtef_visitor_source,af_override_horse,0,1,[]),
+     #new entry points for player companions (when player uses entry point 1, with horse)
+     (49,mtef_visitor_source,0,0,1,[]),
 
      ],
-
-	 
-    [
-      (ti_on_agent_spawn, 0, 0, [],
-       [
-         (store_trigger_param_1, ":agent_no"),
-         (call_script, "script_init_town_agent", ":agent_no"),
+     [
+        (ti_on_agent_spawn, 0, 0, [],
+         [
+           (store_trigger_param_1, ":agent_no"),
+           (call_script, "script_init_town_agent", ":agent_no"),
          ]),
 
 
@@ -358,47 +312,47 @@ mission_templates = [
              (eq, "$sneaked_into_town", 1),
              (call_script, "script_music_set_situation_with_culture", mtf_sit_town_infiltrate),
            (else_try),
-		     #SW - modified town_center situation/culture
+             #SW - modified town_center situation/culture
              #(call_script, "script_music_set_situation_with_culture", mtf_sit_travel),
-			 #(music_set_situation, 0),
-			 (call_script, "script_music_set_situation_with_culture", mtf_sit_town),
-			 (music_set_culture, 0),
-           
+             #(music_set_situation, 0),
+             (call_script, "script_music_set_situation_with_culture", mtf_sit_town),
+             (music_set_culture, 0),
 
-			#------------------------------------------------------------------------------------------------------------------------------------------------------
-			#set music depending on the location
-			#SW - attempting to add town specific music (this concept doesn't seem to work at all?  I had to add that persist until finished flag...)
-			(try_begin),
-				(this_or_next|eq, "$current_town", "p_endor"),		#Endor
-				(eq, "$current_town", "p_dantooine"),		#Dantooine
-				(play_track, "track_town_endor", 2),	# 0 = default, 1 = fade out current track, 2 = stop current track
-			(else_try),
-				(this_or_next|eq, "$current_town", "p_gamorr"),		#Gamorr
-				(this_or_next|eq, "$current_town", "p_kashyyyk"),		#Kashyyyk
-				(eq, "$current_town", "p_nalhutta"),		#Nal_Hutta
-				(play_track, "track_town_wookiee", 2),	# 0 = default, 1 = fade out current track, 2 = stop current track
-			(else_try),
-				(this_or_next|eq, "$current_town", "p_tatooine"),		#Tatooine
-				(eq, "$current_town", "p_ryloth"),		#Ryloth
-				(play_track, "track_town_desert", 2),	# 0 = default, 1 = fade out current track, 2 = stop current track
-				#(play_track, "track_town_test", 2),		# 0 = default, 1 = fade out current track, 2 = stop current track
-			(try_end),
-			#------------------------------------------------------------------------------------------------------------------------------------------------------
 
-			(try_end),
-		 ]),
+              #------------------------------------------------------------------------------------------------------------------------------------------------------
+              #set music depending on the location
+              #SW - attempting to add town specific music (this concept doesn't seem to work at all?  I had to add that persist until finished flag...)
+              (try_begin),
+                (this_or_next|eq, "$current_town", "p_endor"),    #Endor
+                (eq, "$current_town", "p_dantooine"),    #Dantooine
+                (play_track, "track_town_endor", 2),  # 0 = default, 1 = fade out current track, 2 = stop current track
+              (else_try),
+                (this_or_next|eq, "$current_town", "p_gamorr"),    #Gamorr
+                (this_or_next|eq, "$current_town", "p_kashyyyk"),    #Kashyyyk
+                (eq, "$current_town", "p_nalhutta"),    #Nal_Hutta
+                (play_track, "track_town_wookiee", 2),  # 0 = default, 1 = fade out current track, 2 = stop current track
+              (else_try),
+                (this_or_next|eq, "$current_town", "p_tatooine"),    #Tatooine
+                (eq, "$current_town", "p_ryloth"),    #Ryloth
+                (play_track, "track_town_desert", 2),  # 0 = default, 1 = fade out current track, 2 = stop current track
+                #(play_track, "track_town_test", 2),    # 0 = default, 1 = fade out current track, 2 = stop current track
+              (try_end),
+              #------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        (try_end),
+        ]),
 
         (ti_before_mission_start, 0, 0, [],
-			[
-				(call_script, "script_change_banners_and_chest"),
-				#SW - added script_change_rain
-				(call_script, "script_change_rain", "$current_town"),
-			]),
+        [
+        (call_script, "script_change_banners_and_chest"),
+        #SW - added script_change_rain
+        (call_script, "script_change_rain", "$current_town"),
+        ]),
         (ti_inventory_key_pressed, 0, 0,
          [
            (try_begin),
              (this_or_next|eq, "$g_mt_mode", tcm_default),
-			 (eq, "$g_init_fight", 0),
+        (eq, "$g_init_fight", 0),
              (set_trigger_result,1),
            (else_try),
              (eq, "$g_mt_mode", tcm_disguised),
@@ -412,8 +366,8 @@ mission_templates = [
            (try_begin),
              (this_or_next|eq, "$g_mt_mode", tcm_default),
              (this_or_next|eq, "$g_mt_mode", tcm_disguised),
-			 (eq, "$g_init_fight", 0),
-			 (call_script, "script_flush_gatesys_cache"),
+        (eq, "$g_init_fight", 0),
+        (call_script, "script_flush_gatesys_cache"),
              (set_trigger_result,1),
            (else_try),
              (display_message, "@Cannot leave now."),
@@ -427,159 +381,158 @@ mission_templates = [
             (try_end),
             ], []),
 
-	# #SW - trigger to have companion follow player around the scene (code by Highlander of 1866 mod) - nevermind, I'm going to try team_give_order
-    # (1,0,0,[],
-		# [
-		   # (get_player_agent_no,":player_agent"),
-		   # (assign,":cur_agent",-1),
-		   # (try_for_agents,":agent"),
-		     # (agent_get_entry_no,":entry_no",":agent"),
-		     # (this_or_next|eq,":entry_no",48),
-		     # (eq,":entry_no",49),
-		     # (assign,":cur_agent",":agent"),
-		   # (try_end),
-		   # (gt,":cur_agent",0),
-		   # (agent_get_position,pos1,":player_agent"),
-		   # (agent_get_position,pos2,":cur_agent"),
-		   # (get_distance_between_positions,":distance",pos1,pos2),
-		   # (gt,":distance",500),
-		   # (assign,":lowest_distance",99999),
-		   # (assign,":cur_degrees",0),
-		   # (try_for_range,":degrees",0,36),
-		     # (copy_position,pos3,pos1),
-		     # (val_mul,":degrees",10),
-		     # (position_rotate_z,pos3,":degrees"),
-		     # (position_move_y,pos3,400),
-		     # (get_distance_between_positions,":distance",pos1,pos3),
-		     # (lt,":distance",":lowest_distance"),
-		     # (assign,":cur_degrees",":degrees"),
-		   # (try_end),
-		   # (copy_position,pos3,pos1),
-		   # (position_rotate_z,pos3,":cur_degrees"),
-		   # (position_move_y,pos3,200),
-		   # (agent_set_scripted_destination,":cur_agent",pos3,1),
-		# ]),
+        # #SW - trigger to have companion follow player around the scene (code by Highlander of 1866 mod) - nevermind, I'm going to try team_give_order
+        # (1,0,0,[],
+        # [
+           # (get_player_agent_no,":player_agent"),
+           # (assign,":cur_agent",-1),
+           # (try_for_agents,":agent"),
+             # (agent_get_entry_no,":entry_no",":agent"),
+             # (this_or_next|eq,":entry_no",48),
+             # (eq,":entry_no",49),
+             # (assign,":cur_agent",":agent"),
+           # (try_end),
+           # (gt,":cur_agent",0),
+           # (agent_get_position,pos1,":player_agent"),
+           # (agent_get_position,pos2,":cur_agent"),
+           # (get_distance_between_positions,":distance",pos1,pos2),
+           # (gt,":distance",500),
+           # (assign,":lowest_distance",99999),
+           # (assign,":cur_degrees",0),
+           # (try_for_range,":degrees",0,36),
+             # (copy_position,pos3,pos1),
+             # (val_mul,":degrees",10),
+             # (position_rotate_z,pos3,":degrees"),
+             # (position_move_y,pos3,400),
+             # (get_distance_between_positions,":distance",pos1,pos3),
+             # (lt,":distance",":lowest_distance"),
+             # (assign,":cur_degrees",":degrees"),
+           # (try_end),
+           # (copy_position,pos3,pos1),
+           # (position_rotate_z,pos3,":cur_degrees"),
+           # (position_move_y,pos3,200),
+           # (agent_set_scripted_destination,":cur_agent",pos3,1),
+        # ]),
 
-    (1.2,0,ti_once,[],
-		[
-			(set_show_messages, 0),		#0 disables window messages 1 re-enables them.
-			(team_give_order, 0, grc_everyone, mordr_follow),		#so your companions follow you
-			(set_show_messages, 1),		#0 disables window messages 1 re-enables them.
-		]),
+        (1.2,0,ti_once,[],
+        [
+          (set_show_messages, 0),    #0 disables window messages 1 re-enables them.
+          (team_give_order, 0, grc_everyone, mordr_follow),    #so your companions follow you
+          (set_show_messages, 1),    #0 disables window messages 1 re-enables them.
+        ]),
 
 
-#random scene encounters
-	#(0, 0, ti_once,[(call_script, "script_cf_setup_random_scene_encounter",0,40)],[]),
-	(1.5, 0, ti_once,[
-					(assign, "$g_init_fight", 0),
-					(try_begin),
-						(eq, "$g_mt_mode", tcm_default),	#default town visit, setup a random battle or allow the player to start a fight
+        #random scene encounters
+        #(0, 0, ti_once,[(call_script, "script_cf_setup_random_scene_encounter",0,40)],[]),
+        (1.5, 0, ti_once,[
+                (assign, "$g_init_fight", 0),
+                (try_begin),
+                  (eq, "$g_mt_mode", tcm_default),  #default town visit, setup a random battle or allow the player to start a fight
 
-						(store_random_in_range, ":random", 1, 101),
-						(try_begin),
-							(le, ":random", 50),	#give assassin first priority over random scene battle
-							#assassins code first
-							(store_random_in_range, ":random", 1, 101),
-							(try_begin),
-								(le, ":random", "$random_scene_assassination"),	#start a random assassination
-								(call_script, "script_init_town_fight"),	#allow player to start a fight by shooting somebody
-								(call_script, "script_cf_setup_random_scene_assassination",0),		#sets assassin to team 1
-								#(dialog_box, "@An informant warns you that an assassin has been spotted in the area!", "@Warning"),	# display dialog popup ?
-								(assign, "$g_init_fight", 1),				#so we don't check if the player killed a friendly troop
-							(else_try),
-								(le, ":random", "$random_scene_battles"),	#start a random battle
-								(call_script, "script_init_town_fight"),	#sets everybody to team 0
-								(assign, "$g_init_fight", 2),				#so we don't check if the player killed a friendly troop
-								(call_script, "script_cf_setup_random_scene_encounter",0),		#sets some enemies to team 1
-								(dialog_box, "@As you land your ship you notice that this area is under attack!", "@Alert"),	# display dialog popup ?
-								(assign, "$g_started_battle_random_by_enemy_faction", 1),
+                  (store_random_in_range, ":random", 1, 101),
+                  (try_begin),
+                    (le, ":random", 50),  #give assassin first priority over random scene battle
+                    #assassins code first
+                    (store_random_in_range, ":random", 1, 101),
+                    (try_begin),
+                      (le, ":random", "$random_scene_assassination"),  #start a random assassination
+                      (call_script, "script_init_town_fight"),  #allow player to start a fight by shooting somebody
+                      (call_script, "script_cf_setup_random_scene_assassination",0),    #sets assassin to team 1
+                      #(dialog_box, "@An informant warns you that an assassin has been spotted in the area!", "@Warning"),  # display dialog popup ?
+                      (assign, "$g_init_fight", 1),        #so we don't check if the player killed a friendly troop
+                    (else_try),
+                      (le, ":random", "$random_scene_battles"),  #start a random battle
+                      (call_script, "script_init_town_fight"),  #sets everybody to team 0
+                      (assign, "$g_init_fight", 2),        #so we don't check if the player killed a friendly troop
+                      (call_script, "script_cf_setup_random_scene_encounter",0),    #sets some enemies to team 1
+                      (dialog_box, "@As you land your ship you notice that this area is under attack!", "@Alert"),  # display dialog popup ?
+                      (assign, "$g_started_battle_random_by_enemy_faction", 1),
 
-								#play a specific music track for the start of the fight
-								(play_track, "track_town_battle", 2),	# 0 = default, 1 = fade out current track, 2 = stop current track
+                      #play a specific music track for the start of the fight
+                      (play_track, "track_town_battle", 2),  # 0 = default, 1 = fade out current track, 2 = stop current track
 
-								#switch the music situtation after the fight track finishes
-								(call_script, "script_music_set_situation_with_culture", mtf_sit_fight),
+                      #switch the music situtation after the fight track finishes
+                      (call_script, "script_music_set_situation_with_culture", mtf_sit_fight),
 
-							(else_try),
-								(call_script, "script_init_town_fight"),	#allow player to start a fight by shooting somebody
-								(assign, "$g_init_fight", 1),
-							(try_end),
-						(else_try),
-							#give scene battle first priority over random assassin
-							(store_random_in_range, ":random", 1, 101),
-							(try_begin),
-								(le, ":random", "$random_scene_battles"),	#start a random battle
-								(call_script, "script_init_town_fight"),	#sets everybody to team 0
-								(assign, "$g_init_fight", 2),				#so we don't check if the player killed a friendly troop
-								(call_script, "script_cf_setup_random_scene_encounter",0),		#sets some enemies to team 1
-								(dialog_box, "@As you land your ship you notice that this area is under attack!", "@Alert"),	# display dialog popup ?
-								(assign, "$g_started_battle_random_by_enemy_faction", 1),
-								#play a specific music track for the start of the fight
-								(play_track, "track_town_battle", 2),	# 0 = default, 1 = fade out current track, 2 = stop current track
+                    (else_try),
+                      (call_script, "script_init_town_fight"),  #allow player to start a fight by shooting somebody
+                      (assign, "$g_init_fight", 1),
+                    (try_end),
+                  (else_try),
+                    #give scene battle first priority over random assassin
+                    (store_random_in_range, ":random", 1, 101),
+                    (try_begin),
+                      (le, ":random", "$random_scene_battles"),  #start a random battle
+                      (call_script, "script_init_town_fight"),  #sets everybody to team 0
+                      (assign, "$g_init_fight", 2),        #so we don't check if the player killed a friendly troop
+                      (call_script, "script_cf_setup_random_scene_encounter",0),    #sets some enemies to team 1
+                      (dialog_box, "@As you land your ship you notice that this area is under attack!", "@Alert"),  # display dialog popup ?
+                      (assign, "$g_started_battle_random_by_enemy_faction", 1),
+                      #play a specific music track for the start of the fight
+                      (play_track, "track_town_battle", 2),  # 0 = default, 1 = fade out current track, 2 = stop current track
 
-								#switch the music situtation after the fight track finishes
-								(call_script, "script_music_set_situation_with_culture", mtf_sit_fight),
+                      #switch the music situtation after the fight track finishes
+                      (call_script, "script_music_set_situation_with_culture", mtf_sit_fight),
 
-							(else_try),
-								(le, ":random", "$random_scene_assassination"),	#start a random assassination
-								(call_script, "script_init_town_fight"),	#sets everybody to team 0
-								(call_script, "script_cf_setup_random_scene_assassination",0),		#sets assassin to team 1
-								#(dialog_box, "@An informant warns you that an assassin has been spotted in the area!", "@Warning"),	# display dialog popup ?
-								(assign, "$g_init_fight", 1),				#so we don't check if the player killed a friendly troop
-							(else_try),
-								(call_script, "script_init_town_fight"),	#allow player to start a fight by shooting somebody
-								(assign, "$g_init_fight", 1),
-							(try_end),
-						(try_end),
-					(else_try),
-						(eq, "$g_mt_mode", tcm_disguised),	#disguised town visit, allow the player to start a fight
-						(call_script, "script_init_town_fight"),	#allow player to start a fight by shooting somebody
-						(assign, "$g_init_fight", 1),
-					(try_end),
-					],[]),
-#End random scene encounters
+                    (else_try),
+                      (le, ":random", "$random_scene_assassination"),  #start a random assassination
+                      (call_script, "script_init_town_fight"),  #sets everybody to team 0
+                      (call_script, "script_cf_setup_random_scene_assassination",0),    #sets assassin to team 1
+                      #(dialog_box, "@An informant warns you that an assassin has been spotted in the area!", "@Warning"),  # display dialog popup ?
+                      (assign, "$g_init_fight", 1),        #so we don't check if the player killed a friendly troop
+                    (else_try),
+                      (call_script, "script_init_town_fight"),  #allow player to start a fight by shooting somebody
+                      (assign, "$g_init_fight", 1),
+                    (try_end),
+                  (try_end),
+                (else_try),
+                  (eq, "$g_mt_mode", tcm_disguised),  #disguised town visit, allow the player to start a fight
+                  (call_script, "script_init_town_fight"),  #allow player to start a fight by shooting somebody
+                  (assign, "$g_init_fight", 1),
+                (try_end),
+                ],[]),
+        #End random scene encounters
 
-		common_check_town_fight,
+          common_check_town_fight,
 
-        (0.1, 0, ti_once, [], [(party_slot_eq, "$current_town", slot_party_type, spt_mainplanet),
-                             (call_script, "script_town_init_doors", 0),
-                             (try_begin),
-                               (eq, "$town_nighttime", 0),
-                               (play_sound, "snd_town_ambiance", sf_looping),
-                             (try_end),
-                             ]),
-        (3, 0, 0, [(call_script, "script_tick_town_walkers")], []),
-        (2, 0, 0, [(call_script, "script_center_ambiance_sounds")], []),
+              (0.1, 0, ti_once, [], [(party_slot_eq, "$current_town", slot_party_type, spt_mainplanet),
+                                   (call_script, "script_town_init_doors", 0),
+                                   (try_begin),
+                                     (eq, "$town_nighttime", 0),
+                                     (play_sound, "snd_town_ambiance", sf_looping),
+                                   (try_end),
+                                   ]),
+              (3, 0, 0, [(call_script, "script_tick_town_walkers")], []),
+              (2, 0, 0, [(call_script, "script_center_ambiance_sounds")], []),
 
-		#SW - added shield bash integration
-		shield_bash_kit_1,
-		shield_bash_kit_2,
-		shield_bash_kit_3,
-		shield_bash_kit_4,
+        #SW - added shield bash integration
+        shield_bash_kit_1,
+        shield_bash_kit_2,
+        shield_bash_kit_3,
+        shield_bash_kit_4,
 
-	    #SW - add custom lightsaber noise to town scenes
-	    #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	    lightsaber_noise_player,
-	    #lightsaber_noise_agent,
-		common_change_fog,
-		common_use_healthpack,
-		#common_use_binocular_1,
-		#common_use_binocular_2,
-		common_helmet_view,
-		#common_player_damage,
-		common_zoom_view,
-		common_use_jetpack,
-		common_fix_droid_walking,
-		common_toggle_weapon_capabilities,
-		#warcry_player,
-		common_speeder_trigger_1,
-		common_speeder_trigger_2,
-		common_switch_sw_scene_props,
-		common_crouch_button,
-		#common_turret, -> unstable
-		common_gate_system,
-		#holo_animate,
-      ]+AI_triggers,
+        #SW - add custom lightsaber noise to town scenes
+        #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+        lightsaber_noise_player,
+        #lightsaber_noise_agent,
+        common_change_fog,
+        common_use_healthpack,
+        #common_use_binocular_1,
+        #common_use_binocular_2,
+        common_helmet_view,
+        #common_player_damage,
+        common_zoom_view,
+        common_use_jetpack,
+        common_fix_droid_walking,
+        common_toggle_weapon_capabilities,
+        #warcry_player,
+        common_speeder_trigger_1,
+        common_speeder_trigger_2,
+        common_switch_sw_scene_props,
+        common_crouch_button,
+        #common_turret, -> unstable
+        common_gate_system,
+     ]+AI_triggers,
     ),
 
   (
@@ -601,14 +554,14 @@ mission_templates = [
      (32,mtef_visitor_source,af_override_horse,0,1,[]),(33,mtef_visitor_source,af_override_horse,0,1,[]),(34,mtef_visitor_source,af_override_horse,0,1,[]),(35,mtef_visitor_source,af_override_horse,0,1,[]),(36,mtef_visitor_source,af_override_horse,0,1,[]),(37,mtef_visitor_source,af_override_horse,0,1,[]),(38,mtef_visitor_source,af_override_horse,0,1,[]),(39,mtef_visitor_source,af_override_horse,0,1,[]),
      (40,mtef_visitor_source,af_override_horse,0,1,[]),(41,mtef_visitor_source,af_override_horse,0,1,[]),(42,mtef_visitor_source,af_override_horse,0,1,[]),(43,mtef_visitor_source,af_override_horse,0,1,[]),(44,mtef_visitor_source,af_override_horse,0,1,[]),(45,mtef_visitor_source,af_override_horse,0,1,[]),(46,mtef_visitor_source,af_override_horse,0,1,[]),(47,mtef_visitor_source,af_override_horse,0,1,[]),
      ],
-    [
+     [
       (1, 0, ti_once, [], [
           (store_current_scene, ":cur_scene"),
           (scene_set_slot, ":cur_scene", slot_scene_visited, 1),
           (call_script, "script_init_town_walker_agents"),
-		  #SW - attempting to fix bug with mtf_sit_town
+      #SW - attempting to fix bug with mtf_sit_town
           #(call_script, "script_music_set_situation_with_culture", mtf_sit_travel),
-		  (call_script, "script_music_set_situation_with_culture", mtf_sit_town),
+      (call_script, "script_music_set_situation_with_culture", mtf_sit_town),
 
         ]),
       (ti_before_mission_start, 0, 0, [], [(call_script, "script_change_banners_and_chest"),]),
@@ -625,7 +578,7 @@ mission_templates = [
                                   (call_script, "script_succeed_quest", "qst_hunt_down_fugitive"),
                                 (try_end),
                               (try_end),
-							  (call_script, "script_flush_gatesys_cache"),
+                (call_script, "script_flush_gatesys_cache"),
                               (set_trigger_result,1)], []),
       (ti_on_leave_area, 0, 0, [
           (try_begin),
@@ -635,11 +588,11 @@ mission_templates = [
       (3, 0, 0, [(call_script, "script_tick_town_walkers")], []),
       (2, 0, 0, [(call_script, "script_center_ambiance_sounds")], []),
 
-	  #SW - allow player to start a fight
-	  (1, 0, ti_once, [
-						(call_script, "script_init_town_fight"),	#allow player to start a fight by shooting somebody
-						(assign, "$g_init_fight", 1),
-					  ], []),
+      #SW - allow player to start a fight
+      (1, 0, ti_once, [
+            (call_script, "script_init_town_fight"),  #allow player to start a fight by shooting somebody
+            (assign, "$g_init_fight", 1),
+            ], []),
 
 
       (1, 0, ti_once, [(check_quest_active, "qst_hunt_down_fugitive"),
@@ -666,7 +619,7 @@ mission_templates = [
         (try_end),
         ]),
 
-		#SW - Bounty Hunting Start - http://forums.taleworlds.com/index.php/topic,59300.0.html
+      #SW - Bounty Hunting Start - http://forums.taleworlds.com/index.php/topic,59300.0.html
       (ti_tab_pressed, 0, 0, [(try_begin),
                                 (check_quest_active, "qst_bounty_1"),
                                 (neg|check_quest_succeeded, "qst_bounty_1"),
@@ -752,15 +705,15 @@ mission_templates = [
                        (quest_slot_eq, "qst_bounty_1", slot_quest_current_state, 1),
                        (assign, ":not_alive", 0),
 
-					   	#(assign, reg1, "$bounty_target_1"), #debug only
-						#(display_message, "@bounty_target_1 = {reg1}"),	#debug only
+               #(assign, reg1, "$bounty_target_1"), #debug only
+            #(display_message, "@bounty_target_1 = {reg1}"),  #debug only
 
                        (try_begin),
                          (call_script, "script_cf_troop_agent_is_alive", "$bounty_target_1"),
-						 #3(display_message, "@agent is alive!"),
+             #3(display_message, "@agent is alive!"),
                        (else_try),
                          (assign, ":not_alive", 1),
-						 #3(display_message, "@agent is NOT alive!"),
+             #3(display_message, "@agent is NOT alive!"),
                        (try_end),
                        (this_or_next|main_hero_fallen),
                        (eq, ":not_alive", 1),
@@ -771,7 +724,7 @@ mission_templates = [
           (call_script, "script_fail_quest", "qst_bounty_1"),
           (finish_mission, 4),
         (else_try),
-          #(call_script, "script_change_player_relation_with_center", "$current_town", -2),		#SW - commented out relation hit
+          #(call_script, "script_change_player_relation_with_center", "$current_town", -2),    #SW - commented out relation hit
           (call_script, "script_succeed_quest", "qst_bounty_1"),
         (try_end),
         ]),
@@ -794,7 +747,7 @@ mission_templates = [
           (call_script, "script_fail_quest", "qst_bounty_2"),
           (finish_mission, 4),
         (else_try),
-          #(call_script, "script_change_player_relation_with_center", "$current_town", -2),		#SW - commented out relation hit
+          #(call_script, "script_change_player_relation_with_center", "$current_town", -2),    #SW - commented out relation hit
           (call_script, "script_succeed_quest", "qst_bounty_2"),
         (try_end),
         ]),
@@ -817,7 +770,7 @@ mission_templates = [
           (call_script, "script_fail_quest", "qst_bounty_3"),
           (finish_mission, 4),
         (else_try),
-          #(call_script, "script_change_player_relation_with_center", "$current_town", -2),		#SW - commented out relation hit
+          #(call_script, "script_change_player_relation_with_center", "$current_town", -2),    #SW - commented out relation hit
           (call_script, "script_succeed_quest", "qst_bounty_3"),
         (try_end),
         ]),
@@ -840,7 +793,7 @@ mission_templates = [
           (call_script, "script_fail_quest", "qst_bounty_4"),
           (finish_mission, 4),
         (else_try),
-          #(call_script, "script_change_player_relation_with_center", "$current_town", -2),		#SW - commented out relation hit
+          #(call_script, "script_change_player_relation_with_center", "$current_town", -2),    #SW - commented out relation hit
           (call_script, "script_succeed_quest", "qst_bounty_4"),
         (try_end),
         ]),
@@ -863,7 +816,7 @@ mission_templates = [
           (call_script, "script_fail_quest", "qst_bounty_5"),
           (finish_mission, 4),
         (else_try),
-          #(call_script, "script_change_player_relation_with_center", "$current_town", -2),		#SW - commented out relation hit
+          #(call_script, "script_change_player_relation_with_center", "$current_town", -2),    #SW - commented out relation hit
           (call_script, "script_succeed_quest", "qst_bounty_5"),
         (try_end),
         ]),
@@ -886,49 +839,46 @@ mission_templates = [
           (call_script, "script_fail_quest", "qst_bounty_6"),
           (finish_mission, 4),
         (else_try),
-          #(call_script, "script_change_player_relation_with_center", "$current_town", -2),		#SW - commented out relation hit
+          #(call_script, "script_change_player_relation_with_center", "$current_town", -2),    #SW - commented out relation hit
           (call_script, "script_succeed_quest", "qst_bounty_6"),
         (try_end),
         ]),
-		#SW - Bounty Hunting End
+      #SW - Bounty Hunting End
 
-		#SW - added shield bash integration
-		shield_bash_kit_1,
-		shield_bash_kit_2,
-		shield_bash_kit_3,
-		shield_bash_kit_4,
+      #SW - added shield bash integration
+      shield_bash_kit_1,
+      shield_bash_kit_2,
+      shield_bash_kit_3,
+      shield_bash_kit_4,
 
-		#SW - added the ability to start a fight
-		common_check_town_fight,
+      #SW - added the ability to start a fight
+      common_check_town_fight,
 
-	    #SW - add custom lightsaber noise to town scenes
-	    #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	    lightsaber_noise_player,
-		#lightsaber_noise_player_2,			# play sound on release doesn't seem to work correctly
-	    #lightsaber_noise_agent,
-		common_change_fog,
-		common_use_healthpack,
-		#common_use_binocular_1,
-		#common_use_binocular_2,
-		common_helmet_view,
-		common_zoom_view,
-		common_use_jetpack,
-		common_fix_droid_walking,
-		common_toggle_weapon_capabilities,
-		#common_speeder_attack,	#testing
-		common_speeder_trigger_1,
-		common_speeder_trigger_2,
-		common_switch_sw_scene_props,
-		common_crouch_button,
-		#common_turret, -> unstable
-		common_gate_system,
-		
-			#SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+      #SW - add custom lightsaber noise to town scenes
+      #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+      lightsaber_noise_player,
+      #lightsaber_noise_player_2,      # play sound on release doesn't seem to work correctly
+      #lightsaber_noise_agent,
+      common_change_fog,
+      common_use_healthpack,
+      #common_use_binocular_1,
+      #common_use_binocular_2,
+      common_helmet_view,
+      common_zoom_view,
+      common_use_jetpack,
+      common_fix_droid_walking,
+      common_toggle_weapon_capabilities,
+      #common_speeder_attack,  #testing
+      common_speeder_trigger_1,
+      common_speeder_trigger_2,
+      common_switch_sw_scene_props,
+      common_crouch_button,
+      #common_turret, -> unstable
+      common_gate_system,
 
-
-
-    ]+AI_triggers,
+      #SWY - trigger to make unique agents behavior - custom scripting
+      (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+     ]+AI_triggers,
   ),
 
   (
@@ -952,16 +902,16 @@ mission_templates = [
      (44,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(45,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(46,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),(47,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
      ],
     [
-		lightsaber_noise_player,
-		common_change_fog,
-		common_use_healthpack,
-		#common_use_binocular_1,
-		#common_use_binocular_2,
-		common_helmet_view,
-		common_zoom_view,
-		common_use_jetpack,
-		common_toggle_weapon_capabilities,
-		common_crouch_button,
+      lightsaber_noise_player,
+      common_change_fog,
+      common_use_healthpack,
+      #common_use_binocular_1,
+      #common_use_binocular_2,
+      common_helmet_view,
+      common_zoom_view,
+      common_use_jetpack,
+      common_toggle_weapon_capabilities,
+      common_crouch_button,
 
 
       (ti_on_agent_spawn, 0, 0, [],
@@ -1013,9 +963,9 @@ mission_templates = [
          (finish_mission),
          ]),
 
-		#SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-      ]+AI_triggers,
+      #SWY - trigger to make unique agents behavior - custom scripting
+      (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+    ]+AI_triggers,
   ),
 
 
@@ -1023,24 +973,24 @@ mission_templates = [
     "minorplanet_training", mtf_arena_fight, -1,
     "minorplanet_training",
     [
-	 #SW - modified af_override and weapons (switched practice_staff to durasteel_staff)
-	 #(2,mtef_visitor_source|mtef_team_0,af_override_everything,aif_start_alarmed,1,[itm_durasteel_staff, itm_practice_boots]),
+   #SW - modified af_override and weapons (switched practice_staff to durasteel_staff)
+   #(2,mtef_visitor_source|mtef_team_0,af_override_everything,aif_start_alarmed,1,[itm_durasteel_staff, itm_practice_boots]),
      #(4,mtef_visitor_source|mtef_team_1,af_override_everything,aif_start_alarmed,1,[itm_durasteel_staff, itm_practice_boots]),
-	 (2,mtef_visitor_source|mtef_team_0,af_override_weapons|af_override_horse,aif_start_alarmed,1,[itm_durasteel_staff, itm_practice_boots]),
+   (2,mtef_visitor_source|mtef_team_0,af_override_weapons|af_override_horse,aif_start_alarmed,1,[itm_durasteel_staff, itm_practice_boots]),
      (4,mtef_visitor_source|mtef_team_1,af_override_weapons|af_override_horse,aif_start_alarmed,1,[itm_durasteel_staff, itm_practice_boots]),
      ],
     [
 
-	lightsaber_noise_player,
-	common_change_fog,
-	common_use_healthpack,
-	#common_use_binocular_1,
-	#common_use_binocular_2,
-	common_helmet_view,
-	common_zoom_view,
-	common_use_jetpack,
-	common_toggle_weapon_capabilities,
-	common_crouch_button,
+      lightsaber_noise_player,
+      common_change_fog,
+      common_use_healthpack,
+      #common_use_binocular_1,
+      #common_use_binocular_2,
+      common_helmet_view,
+      common_zoom_view,
+      common_use_jetpack,
+      common_toggle_weapon_capabilities,
+      common_crouch_button,
 
 
       (ti_before_mission_start, 0, 0, [],
@@ -1073,127 +1023,125 @@ mission_templates = [
          (finish_mission),
          ]),
 
-	  #SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-
-      ]+AI_triggers,
+      #SWY - trigger to make unique agents behavior - custom scripting
+      (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+    ]+AI_triggers,
   ),
+
 
   (
     "visit_town_castle",0,-1,
     "You enter the halls of the lord.",
-	#SW - modified so you do not remove your helmet when you enter a lords hall (removed af_override_head flag)
-	[(0,mtef_scene_source|mtef_team_0,af_override_horse|af_override_weapons,0,1,[]),
-     (1,mtef_scene_source|mtef_team_0,af_override_horse,0,1,[]),(2,mtef_scene_source|mtef_team_0,af_override_horse,0,1,[]),(3,mtef_scene_source|mtef_team_0,af_override_horse,0,1,[]), (4,mtef_scene_source|mtef_team_0,af_override_horse,0,1,[]), #for doors
-     (5,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(6,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(7,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),
-     (8,mtef_visitor_source,af_override_horse,0,1,[]),(9,mtef_visitor_source,af_override_horse,0,1,[]),(10,mtef_scene_source,af_override_horse,0,1,[]),(11,mtef_scene_source,af_override_horse,0,1,[]),
-     (12,mtef_visitor_source,af_override_horse,0,1,[]),(13,mtef_visitor_source,0,0,1,[]),(14,mtef_visitor_source,0,0,1,[]),(15,mtef_visitor_source,0,0,1,[]),
-     (16,mtef_visitor_source,af_spacestation_lord,0,1,[]),(17,mtef_visitor_source,af_spacestation_lord,0,1,[]),(18,mtef_visitor_source,af_spacestation_lord,0,1,[]),(19,mtef_visitor_source,af_spacestation_lord,0,1,[]),(20,mtef_visitor_source,af_spacestation_lord,0,1,[]),(21,mtef_visitor_source,af_spacestation_lord,0,1,[]),(22,mtef_visitor_source,af_spacestation_lord,0,1,[]),(23,mtef_visitor_source,af_spacestation_lord,0,1,[]),(24,mtef_visitor_source,af_spacestation_lord,0,1,[]),
-     (25,mtef_visitor_source,af_spacestation_lord,0,1,[]),(26,mtef_visitor_source,af_spacestation_lord,0,1,[]),(27,mtef_visitor_source,af_spacestation_lord,0,1,[]),(28,mtef_visitor_source,af_spacestation_lord,0,1,[]),(29,mtef_visitor_source,af_spacestation_lord,0,1,[]),(30,mtef_visitor_source,af_spacestation_lord,0,1,[]),(31,mtef_visitor_source,af_spacestation_lord,0,1,[]),
-	 #new entry points (unused)
-	 (32,mtef_visitor_source,af_override_horse,0,1,[]),(33,mtef_visitor_source,af_override_horse,0,1,[]),(34,mtef_visitor_source,af_override_horse,0,1,[]),(35,mtef_visitor_source,af_override_horse,0,1,[]),(36,mtef_visitor_source,af_override_horse,0,1,[]),(37,mtef_visitor_source,af_override_horse,0,1,[]),
-	 #entry point #38 & 39 are for slave dancers
-	 (38,mtef_visitor_source,af_override_horse,0,1,[]),(39,mtef_visitor_source,af_override_horse,0,1,[]),
-	 #SWY - entry point 40-45 for extra guards in Yavin and Hoth
-	 (40,mtef_scene_source,af_override_horse,0,1,[]),(41,mtef_scene_source,af_override_horse,0,1,[]),(42,mtef_scene_source,af_override_horse,0,1,[]),(43,mtef_scene_source,af_override_horse,0,1,[]),(44,mtef_scene_source,af_override_horse,0,1,[]),(45,mtef_scene_source,af_override_horse,0,1,[])
+  #SW - modified so you do not remove your helmet when you enter a lords hall (removed af_override_head flag)
+  [(0,mtef_scene_source|mtef_team_0,af_override_horse|af_override_weapons,0,1,[]),
+   (1,mtef_scene_source|mtef_team_0,af_override_horse,0,1,[]),(2,mtef_scene_source|mtef_team_0,af_override_horse,0,1,[]),(3,mtef_scene_source|mtef_team_0,af_override_horse,0,1,[]), (4,mtef_scene_source|mtef_team_0,af_override_horse,0,1,[]), #for doors
+   (5,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(6,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(7,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),
+   (8,mtef_visitor_source,af_override_horse,0,1,[]),(9,mtef_visitor_source,af_override_horse,0,1,[]),(10,mtef_scene_source,af_override_horse,0,1,[]),(11,mtef_scene_source,af_override_horse,0,1,[]),
+   (12,mtef_visitor_source,af_override_horse,0,1,[]),(13,mtef_visitor_source,0,0,1,[]),(14,mtef_visitor_source,0,0,1,[]),(15,mtef_visitor_source,0,0,1,[]),
+   (16,mtef_visitor_source,af_spacestation_lord,0,1,[]),(17,mtef_visitor_source,af_spacestation_lord,0,1,[]),(18,mtef_visitor_source,af_spacestation_lord,0,1,[]),(19,mtef_visitor_source,af_spacestation_lord,0,1,[]),(20,mtef_visitor_source,af_spacestation_lord,0,1,[]),(21,mtef_visitor_source,af_spacestation_lord,0,1,[]),(22,mtef_visitor_source,af_spacestation_lord,0,1,[]),(23,mtef_visitor_source,af_spacestation_lord,0,1,[]),(24,mtef_visitor_source,af_spacestation_lord,0,1,[]),
+   (25,mtef_visitor_source,af_spacestation_lord,0,1,[]),(26,mtef_visitor_source,af_spacestation_lord,0,1,[]),(27,mtef_visitor_source,af_spacestation_lord,0,1,[]),(28,mtef_visitor_source,af_spacestation_lord,0,1,[]),(29,mtef_visitor_source,af_spacestation_lord,0,1,[]),(30,mtef_visitor_source,af_spacestation_lord,0,1,[]),(31,mtef_visitor_source,af_spacestation_lord,0,1,[]),
+   #new entry points (unused)
+   (32,mtef_visitor_source,af_override_horse,0,1,[]),(33,mtef_visitor_source,af_override_horse,0,1,[]),(34,mtef_visitor_source,af_override_horse,0,1,[]),(35,mtef_visitor_source,af_override_horse,0,1,[]),(36,mtef_visitor_source,af_override_horse,0,1,[]),(37,mtef_visitor_source,af_override_horse,0,1,[]),
+   #entry point #38 & 39 are for slave dancers
+   (38,mtef_visitor_source,af_override_horse,0,1,[]),(39,mtef_visitor_source,af_override_horse,0,1,[]),
+   #SWY - entry point 40-45 for extra guards in Yavin and Hoth
+   (40,mtef_scene_source,af_override_horse,0,1,[]),(41,mtef_scene_source,af_override_horse,0,1,[]),(42,mtef_scene_source,af_override_horse,0,1,[]),(43,mtef_scene_source,af_override_horse,0,1,[]),(44,mtef_scene_source,af_override_horse,0,1,[]),(45,mtef_scene_source,af_override_horse,0,1,[])
      ],
-	 
     [
-	  lightsaber_noise_player,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_switch_sw_scene_props,
-	  common_crouch_button,
-
-
-	  (ti_on_agent_spawn, 0, 0, [],
-       [
-         (store_trigger_param_1, ":agent_no"),
-         (call_script, "script_init_town_agent", ":agent_no"),
-         ]),
+      lightsaber_noise_player,
+      common_change_fog,
+      common_use_healthpack,
+      #common_use_binocular_1,
+      #common_use_binocular_2,
+      common_helmet_view,
+      common_zoom_view,
+      common_use_jetpack,
+      common_toggle_weapon_capabilities,
+      common_switch_sw_scene_props,
+      common_crouch_button,
+      common_gate_system,
+      
+      (ti_on_agent_spawn, 0, 0, [],
+         [
+           (store_trigger_param_1, ":agent_no"),
+           (call_script, "script_init_town_agent", ":agent_no"),
+           ]),
       (ti_before_mission_start, 0, 0, [],
        [
          (call_script, "script_change_banners_and_chest"),
-         ]),
+       ]),
       (ti_inventory_key_pressed, 0, 0, [(set_trigger_result,1)], []),
       (ti_tab_pressed, 0, 0, [(call_script, "script_flush_gatesys_cache"),(set_trigger_result,1)], []),
       (0, 0, ti_once, [], [
         #(set_fog_distance, 150, 0xFF736252)
         (try_begin),
           (eq, "$talk_context", tc_court_talk),
-#          (call_script, "script_music_set_situation_with_culture", mtf_sit_lords_hall),
+      #          (call_script, "script_music_set_situation_with_culture", mtf_sit_lords_hall),
         (else_try),
           (call_script, "script_music_set_situation_with_culture", 0), #prison
         (try_end),
         ]),
 
       (0, 0, ti_once, [],
-			[
-			#------------------------------------------------------------------------------------------------------------------------------------------------------
-			#set music depending on the faction
-			#SW - attempting to add castle specific music (this concept doesn't seem to work at all?  I had to add that persist until finished flag...)
-			(store_faction_of_party, ":spacestation_faction", "$current_town"),
-			(try_begin),
-				(eq, ":spacestation_faction", "fac_galacticempire"), 	#empire
-				(store_random_in_range, ":random", 1, 4),
-				(try_begin),
-					(eq, ":random", 1),
-					(assign, ":spacestation_track", "track_throne_empire_1"),
-				(else_try),
-					(eq, ":random", 2),
-					(assign, ":spacestation_track", "track_throne_empire_2"),
-				(else_try),
-					#(eq, ":random", 3),
-					(assign, ":spacestation_track", "track_throne_empire_3"),
-				(try_end),
-			(else_try),
-				(eq, ":spacestation_faction", "fac_rebelalliance"), 	#rebel
-				(store_random_in_range, ":random", 1, 5),
-				(try_begin),
-					(eq, ":random", 1),
-					(assign, ":spacestation_track", "track_throne_rebel_1"),
-				(else_try),
-					(eq, ":random", 2),
-					(assign, ":spacestation_track", "track_throne_rebel_2"),
-				(else_try),
-					(eq, ":random", 3),
-					(assign, ":spacestation_track", "track_throne_rebel_3"),
-				(else_try),
-					#(eq, ":random", 4),
-					(assign, ":spacestation_track", "track_throne_rebel_4"),
-				(try_end),
-			(else_try),
-				#hutt/other
-				(store_random_in_range, ":random", 1, 4),
-				(try_begin),
-					(eq, ":random", 1),
-					(assign, ":spacestation_track", "track_throne_hutt_1"),
-				(else_try),
-					(eq, ":random", 2),
-					(assign, ":spacestation_track", "track_throne_hutt_2"),
-				(else_try),
-					#(eq, ":random", 3),
-					(assign, ":spacestation_track", "track_throne_hutt_3"),
-				(try_end),
-			(try_end),
-			(play_track, ":spacestation_track", 2),	# 0 = default, 1 = fade out current track, 2 = stop current track
-			#------------------------------------------------------------------------------------------------------------------------------------------------------
+      [
+      #------------------------------------------------------------------------------------------------------------------------------------------------------
+      #set music depending on the faction
+      #SW - attempting to add castle specific music (this concept doesn't seem to work at all?  I had to add that persist until finished flag...)
+      (store_faction_of_party, ":spacestation_faction", "$current_town"),
+      (try_begin),
+        (eq, ":spacestation_faction", "fac_galacticempire"),   #empire
+        (store_random_in_range, ":random", 1, 4),
+        (try_begin),
+          (eq, ":random", 1),
+          (assign, ":spacestation_track", "track_throne_empire_1"),
+        (else_try),
+          (eq, ":random", 2),
+          (assign, ":spacestation_track", "track_throne_empire_2"),
+        (else_try),
+          #(eq, ":random", 3),
+          (assign, ":spacestation_track", "track_throne_empire_3"),
+        (try_end),
+      (else_try),
+        (eq, ":spacestation_faction", "fac_rebelalliance"),   #rebel
+        (store_random_in_range, ":random", 1, 5),
+        (try_begin),
+          (eq, ":random", 1),
+          (assign, ":spacestation_track", "track_throne_rebel_1"),
+        (else_try),
+          (eq, ":random", 2),
+          (assign, ":spacestation_track", "track_throne_rebel_2"),
+        (else_try),
+          (eq, ":random", 3),
+          (assign, ":spacestation_track", "track_throne_rebel_3"),
+        (else_try),
+          #(eq, ":random", 4),
+          (assign, ":spacestation_track", "track_throne_rebel_4"),
+        (try_end),
+      (else_try),
+        #hutt/other
+        (store_random_in_range, ":random", 1, 4),
+        (try_begin),
+          (eq, ":random", 1),
+          (assign, ":spacestation_track", "track_throne_hutt_1"),
+        (else_try),
+          (eq, ":random", 2),
+          (assign, ":spacestation_track", "track_throne_hutt_2"),
+        (else_try),
+          #(eq, ":random", 3),
+          (assign, ":spacestation_track", "track_throne_hutt_3"),
+        (try_end),
+      (try_end),
+      (play_track, ":spacestation_track", 2),  # 0 = default, 1 = fade out current track, 2 = stop current track
+      #------------------------------------------------------------------------------------------------------------------------------------------------------
 
-			]),
+      ]),
 
-	  #SWY - trigger to make unique agents behavior
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",1)]),
-	   common_gate_system,
-
+      #SWY - trigger to make unique agents behavior
+      (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",1)]),
     ]+AI_triggers,
   ),
 
+  
   (
     "back_alley_kill_local_merchant",mtf_arena_fight,-1,
     "You enter the back alley",
@@ -1202,16 +1150,16 @@ mission_templates = [
       (3,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
     ],
     [
-	lightsaber_noise_player,
-	common_change_fog,
-	common_use_healthpack,
-	#common_use_binocular_1,
-	#common_use_binocular_2,
-	common_helmet_view,
-	common_zoom_view,
-	common_use_jetpack,
-	common_toggle_weapon_capabilities,
-	common_crouch_button,
+      lightsaber_noise_player,
+      common_change_fog,
+      common_use_healthpack,
+      #common_use_binocular_1,
+      #common_use_binocular_2,
+      common_helmet_view,
+      common_zoom_view,
+      common_use_jetpack,
+      common_toggle_weapon_capabilities,
+      common_crouch_button,
 
       common_inventory_not_available,
       (ti_tab_pressed, 0, 0, [(display_message,"@Cannot leave now.")], []),
@@ -1221,7 +1169,7 @@ mission_templates = [
       (0, 0, ti_once, [],
        [
          (call_script, "script_music_set_situation_with_culture", mtf_sit_ambushed),
-         ]),
+       ]),
 
       (0, 0, ti_once, [
           (store_mission_timer_a,":cur_time"),
@@ -1271,32 +1219,32 @@ mission_templates = [
            (finish_mission),
            ]),
 
-
-	#SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+      #SWY - trigger to make unique agents behavior - custom scripting
+      (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
     ]+AI_triggers,
   ),
+
 
   (
     "back_alley_revolt",mtf_battle_mode,charge,
     "You lead your men to battle.",
-	#SW - modified so you do not remove your helmet (removed af_override_head flag) also switched weapon to a durasteel staff
-	[(0,mtef_team_0|mtef_use_exact_number,af_override_horse|af_override_weapons,aif_start_alarmed,4,[itm_durasteel_staff]),
-     (3,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-     ],
+   #SW - modified so you do not remove your helmet (removed af_override_head flag) also switched weapon to a durasteel staff
     [
-
-	lightsaber_noise_player,
-	common_change_fog,
-	common_use_healthpack,
-	#common_use_binocular_1,
-	#common_use_binocular_2,
-	common_helmet_view,
-	common_zoom_view,
-	common_use_jetpack,
-	common_toggle_weapon_capabilities,
-    common_inventory_not_available,
-	common_crouch_button,
+     (0,mtef_team_0|mtef_use_exact_number,af_override_horse|af_override_weapons,aif_start_alarmed,4,[itm_durasteel_staff]),
+     (3,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    ],
+    [
+      lightsaber_noise_player,
+      common_change_fog,
+      common_use_healthpack,
+      #common_use_binocular_1,
+      #common_use_binocular_2,
+      common_helmet_view,
+      common_zoom_view,
+      common_use_jetpack,
+      common_toggle_weapon_capabilities,
+      common_inventory_not_available,
+      common_crouch_button,
 
 
       (ti_tab_pressed, 0, 0, [],
@@ -1314,7 +1262,7 @@ mission_templates = [
       (0, 0, ti_once, [],
        [
          (call_script, "script_music_set_situation_with_culture", mtf_sit_fight),
-         ]),
+       ]),
 
       (1, 4, ti_once, [(this_or_next|main_hero_fallen),(num_active_teams_le,1)],
        [
@@ -1326,9 +1274,9 @@ mission_templates = [
            (try_end),
            (finish_mission),
            ]),
-           
     ]+AI_triggers,
   ),
+
 
   (
     "lead_charge",mtf_battle_mode,charge,
@@ -1341,16 +1289,16 @@ mission_templates = [
      ],
     [
 
-   sw_victory_defeat_conditions,
+      sw_victory_defeat_conditions,
 
-   (4, 0, 0, [(eq,"$battle_won",1),], [ (display_message,"str_msg_battle_won"), ]),
+      (4, 0, 0, [(eq,"$battle_won",1),], [ (display_message,"str_msg_battle_won"), ]),
 
 
-#Highlander begin--------------------------------------
-common_physics_init,
-common_timer,
-common_physics,
-#Highlander end--------------------------------------
+      #Highlander begin--------------------------------------
+      common_physics_init,
+      common_timer,
+      common_physics,
+      #Highlander end--------------------------------------
 
       (ti_on_agent_spawn, 0, 0, [],
        [
@@ -1383,52 +1331,52 @@ common_physics,
       common_music_situation_update,
       common_battle_check_friendly_kills,
 
-      (1.223455, 0, 5.429003, [(lt,"$defender_reinforcement_stage",2),
+      (1.22, 0, 5.42, [(lt,"$defender_reinforcement_stage",2),
                  (store_mission_timer_a,":mission_time"),
                  (ge,":mission_time",10),
                  (store_normalized_team_count,":num_defenders", 0),
                  (lt,":num_defenders",6),
-#                 (assign, reg2, ":num_defenders"),
-#                 (display_message,"@num_defenders = {reg2}")
+      #                 (assign, reg2, ":num_defenders"),
+      #                 (display_message,"@num_defenders = {reg2}")
                  ],
            [(add_reinforcements_to_entry,0,7),(val_add,"$defender_reinforcement_stage",1)]),
 
-      (1.997115, 0, 5.644421, [(lt,"$attacker_reinforcement_stage",2),
+      (1.99, 0, 5.6, [(lt,"$attacker_reinforcement_stage",2),
                  (store_mission_timer_a,":mission_time"),
                  (ge,":mission_time",10),
                  (store_normalized_team_count,":num_attackers", 1),
                  (lt,":num_attackers",6),
-#                 (assign, reg2, ":num_attackers"),
-#                 (display_message,"@num_attackers = {reg2}")
+      #                 (assign, reg2, ":num_attackers"),
+      #                 (display_message,"@num_attackers = {reg2}")
                  ],
            [(add_reinforcements_to_entry,3,7),(val_add,"$attacker_reinforcement_stage",1)]),
 
 
-      (1.395044, 4.56644, ti_once, [(main_hero_fallen)],
+      (1.39, 4.56, ti_once, [(main_hero_fallen)],
           [
-			  (call_script,"script_battle_speech",3),
+        (call_script,"script_battle_speech",3),
               (assign, "$pin_player_fallen", 1),
-			  (display_message, "@You have been knocked out by the enemy. Watch your men continue the fight without you or press Tab to retreat."),
-			  (call_script,"script_get_key","$deathcam_forward_key"),
-			  (str_store_string,s1,s13),
-			  (call_script,"script_get_key","$deathcam_backward_key"),
-			  (str_store_string,s2,s13),
-			  #(display_message, "@If you choose to watch the fight you can use the M and N keys to change your camera view."),
-			  (display_message, "@If you choose to watch the fight you can use the '{s1}' and '{s2}' keys to change your camera view."),
+        (display_message, "@You have been knocked out by the enemy. Watch your men continue the fight without you or press Tab to retreat."),
+        (call_script,"script_get_key","$deathcam_forward_key"),
+        (str_store_string,s1,s13),
+        (call_script,"script_get_key","$deathcam_backward_key"),
+        (str_store_string,s2,s13),
+        #(display_message, "@If you choose to watch the fight you can use the M and N keys to change your camera view."),
+        (display_message, "@If you choose to watch the fight you can use the '{s1}' and '{s2}' keys to change your camera view."),
               # (str_store_string, s5, "str_retreat"),
               # (call_script, "script_simulate_retreat", 10, 20),
               # (assign, "$g_battle_result", -1),
               # (set_mission_result,-1),
               # (call_script, "script_count_mission_casualties_from_agents"),
               # (finish_mission,0)
-			  ]),
+        ]),
 
-#SW Deathcam
+      #SW Deathcam
 
-sw_deathcam_follow_troop,
-sw_deathcam_valkyrie_move_camera,
-sw_deathcam_cycle_fowards,
-sw_deathcam_cycle_backwards,
+      sw_deathcam_follow_troop,
+      sw_deathcam_valkyrie_move_camera,
+      sw_deathcam_cycle_fowards,
+      sw_deathcam_cycle_backwards,
 
       common_battle_inventory,
 
@@ -1442,25 +1390,23 @@ sw_deathcam_cycle_backwards,
       #common_regeneration_store_info,
       #common_regeneration,
 
-	  #SW - add custom lightsaber noise
-	  #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_speeder_trigger_1,
-	  common_speeder_trigger_2,
-	  common_agent_droid_refill_trigger,
-	  common_fix_droid_walking,
-	  common_crouch_button,
-
-
+      #SW - add custom lightsaber noise
+      #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+      lightsaber_noise_player,
+      lightsaber_noise_agent,
+      common_change_fog,
+      common_use_healthpack,
+      #common_use_binocular_1,
+      #common_use_binocular_2,
+      common_helmet_view,
+      common_zoom_view,
+      common_use_jetpack,
+      common_toggle_weapon_capabilities,
+      common_speeder_trigger_1,
+      common_speeder_trigger_2,
+      common_agent_droid_refill_trigger,
+      common_fix_droid_walking,
+      common_crouch_button,
 
       #AI Tiggers
        #(0, 0, ti_once, [
@@ -1477,24 +1423,23 @@ sw_deathcam_cycle_backwards,
       common_battle_order_panel,
       common_battle_order_panel_tick,
 
-############################################################################################################
-##### Custom Commander(CC)
-############################################################################################################
+      ############################################################################################################
+      ##### Custom Commander(CC)
+      ############################################################################################################
       common_npc_proficiency_limit,
       common_npc_raise_proficiency,
       common_check_player_can_join_battle,
-############################################################################################################
-##### Custom Commander(CC)
-############################################################################################################
+      ############################################################################################################
+      ##### Custom Commander(CC)
+      ############################################################################################################
 
-	#@> Swyter Battle Speech
-	(3.6543, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
-	(0, 5.4332, ti_once, [], [(call_script,"script_battle_speech",1)]),
+      #@> Swyter Battle Speech
+      (3.65, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
+      (0, 5.43, ti_once, [], [(call_script,"script_battle_speech",1)]),
 
-	  #SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-		common_gate_system,
-
+      #SWY - trigger to make unique agents behavior - custom scripting
+      (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+      common_gate_system,
     ],
   ),
 
@@ -1512,65 +1457,64 @@ sw_deathcam_cycle_backwards,
 
      ],
     [
+      ##@> Swyter's Hangar Speech
+      (1.5,0,ti_once,[],
+      [
+      (faction_get_slot,":hangar_faction","fac_player_supporters_faction", slot_faction_culture),
+      #(store_troop_faction,":hangar_faction","trp_player"),
+      (play_sound,"snd_swc_hangar_siren",1),
 
-##@> Swyter's Hangar Speech
-(1.5,0,ti_once,[],
-[
-(faction_get_slot,":hangar_faction","fac_player_supporters_faction", slot_faction_culture),
-#(store_troop_faction,":hangar_faction","trp_player"),
-(play_sound,"snd_swc_hangar_siren",1),
+        (try_begin),
+          (eq, ":hangar_faction", "fac_culture_1"),
+          (play_sound,"snd_swc_hangar_imperial",1),
+        (else_try),
+          (eq, ":hangar_faction", "fac_culture_2"),
+          (play_sound,"snd_swc_hangar_rebel",1),
+        (else_try),
+          (eq, ":hangar_faction", "fac_culture_3"),
+          (play_sound,"snd_swc_hangar_hutt",1),
+        (else_try),
+          (eq, ":hangar_faction", "fac_culture_4"),
+          (play_sound,"snd_swc_hangar_wookie",1),
+        (else_try),
+          (eq, ":hangar_faction", "fac_culture_5"),
+          (play_sound,"snd_swc_hangar_sith",1),
+        (else_try),
+          (eq, ":hangar_faction", "fac_culture_6"),
+          (play_sound,"snd_swc_hangar_clones",1),
+        (else_try),
+          (eq, ":hangar_faction", "fac_culture_7"),
+          (play_sound,"snd_swc_hangar_trandoshan",1),
+        (else_try),
+          (play_sound,"snd_swc_hangar_neutral",1),
+        (try_end),
+      ]),
 
-	(try_begin),
-		(eq, ":hangar_faction", "fac_culture_1"),
-		(play_sound,"snd_swc_hangar_imperial",1),
-	(else_try),
-		(eq, ":hangar_faction", "fac_culture_2"),
-		(play_sound,"snd_swc_hangar_rebel",1),
-	(else_try),
-		(eq, ":hangar_faction", "fac_culture_3"),
-		(play_sound,"snd_swc_hangar_hutt",1),
-	(else_try),
-		(eq, ":hangar_faction", "fac_culture_4"),
-		(play_sound,"snd_swc_hangar_wookie",1),
-	(else_try),
-		(eq, ":hangar_faction", "fac_culture_5"),
-		(play_sound,"snd_swc_hangar_sith",1),
-	(else_try),
-		(eq, ":hangar_faction", "fac_culture_6"),
-		(play_sound,"snd_swc_hangar_clones",1),
-	(else_try),
-		(eq, ":hangar_faction", "fac_culture_7"),
-		(play_sound,"snd_swc_hangar_trandoshan",1),
-	(else_try),
-		(play_sound,"snd_swc_hangar_neutral",1),
-	(try_end),
-]),
+      (20,0,ti_once,[],
+      [
+      (stop_all_sounds),
+      ]),
 
-(20,0,ti_once,[],
-[
-(stop_all_sounds),
-]),
+      (53,0,ti_once,[],
+      [
+      (play_sound,"snd_swc_hangar_siren",1),
+      ]),
 
-(53,0,ti_once,[],
-[
-(play_sound,"snd_swc_hangar_siren",1),
-]),
-
-(73,0,ti_once,[],
-[
-(stop_all_sounds),
-]),
-#Highlander begin--------------------------------------
-(0.06933,0,ti_once,[],
-[
-(get_player_agent_no,":agent"),
-(agent_get_position,pos1,":agent"),
-(position_get_z,"$ground_level",pos1),
-]),
-common_physics_init,
-common_timer,
-common_physics,
-#Highlander end--------------------------------------
+      (73,0,ti_once,[],
+      [
+      (stop_all_sounds),
+      ]),
+      #Highlander begin--------------------------------------
+      (0.06933,0,ti_once,[],
+      [
+      (get_player_agent_no,":agent"),
+      (agent_get_position,pos1,":agent"),
+      (position_get_z,"$ground_level",pos1),
+      ]),
+      common_physics_init,
+      common_timer,
+      common_physics,
+      #Highlander end--------------------------------------
 
       (ti_on_agent_spawn, 0, 0, [],
        [
@@ -1599,19 +1543,21 @@ common_physics,
          (team_set_relation, 1, 3, 1),
          (call_script, "script_place_player_banner_near_inventory_bms"),
 
-		 #SW - disable rain in lead_charge_no_horse (ship battle)
-		 (set_rain,1,0),
+        #SW - disable rain in lead_charge_no_horse (ship battle)
+        (set_rain,1,0),
 
-         ]),
+       ]),
 
 
       (0, 0, ti_once, [], [(assign,"$battle_won",0),
                            (assign,"$defender_reinforcement_stage",0),
                            (assign,"$attacker_reinforcement_stage",0),
                            (assign,"$g_presentation_battle_active", 0),
-						   #SW Deathcam
-						   (assign, "$dmod_current_agent", -1),
-						   (assign, "$dmod_move_camera", -1),
+                           
+                           #SW Deathcam
+                           (assign, "$dmod_current_agent", -1),
+                           (assign, "$dmod_move_camera", -1),
+                           
                            (call_script, "script_place_player_banner_near_inventory"),
                            (call_script, "script_combat_music_set_situation_with_culture"),
 
@@ -1625,8 +1571,8 @@ common_physics,
                  (ge,":mission_time",10),
                  (store_normalized_team_count,":num_defenders", 0),
                  (lt,":num_defenders",6),
-#                 (assign, reg2, ":num_defenders"),
-#                 (display_message,"@num_defenders = {reg2}")
+      #          (assign, reg2, ":num_defenders"),
+      #          (display_message,"@num_defenders = {reg2}")
                  ],
            [(add_reinforcements_to_entry,0,7),(val_add,"$defender_reinforcement_stage",1)]),
 
@@ -1635,8 +1581,8 @@ common_physics,
                  (ge,":mission_time",10),
                  (store_normalized_team_count,":num_attackers", 1),
                  (lt,":num_attackers",6),
-#                 (assign, reg2, ":num_attackers"),
-#                 (display_message,"@num_attackers = {reg2}")
+      #          (assign, reg2, ":num_attackers"),
+      #          (display_message,"@num_attackers = {reg2}")
                  ],
            [(add_reinforcements_to_entry,3,7),(val_add,"$attacker_reinforcement_stage",1)]),
 
@@ -1645,22 +1591,22 @@ common_physics,
 
       (1, 4, ti_once, [(main_hero_fallen)],
           [
-              (assign, "$pin_player_fallen", 1),
-			  (display_message, "@You have fallen in battle. You can watch the rest of the fight or press tab to exit"),
-              # (str_store_string, s5, "str_retreat"),
-              # (call_script, "script_simulate_retreat", 10, 20),
-              # (assign, "$g_battle_result", -1),
-              # (set_mission_result,-1),
-              # (call_script, "script_count_mission_casualties_from_agents"),
-              # (finish_mission,0)
-			  ]),
+            (assign, "$pin_player_fallen", 1),
+            (display_message, "@You have fallen in battle. You can watch the rest of the fight or press tab to exit"),
+          # (str_store_string, s5, "str_retreat"),
+          # (call_script, "script_simulate_retreat", 10, 20),
+          # (assign, "$g_battle_result", -1),
+          # (set_mission_result,-1),
+          # (call_script, "script_count_mission_casualties_from_agents"),
+          # (finish_mission,0)
+        ]),
 
-#SW Deathcam
+      #SW Deathcam
 
-sw_deathcam_follow_troop,
-sw_deathcam_valkyrie_move_camera,
-sw_deathcam_cycle_fowards,
-sw_deathcam_cycle_backwards,
+      sw_deathcam_follow_troop,
+      sw_deathcam_valkyrie_move_camera,
+      sw_deathcam_cycle_fowards,
+      sw_deathcam_cycle_backwards,
 
       common_battle_inventory,
 
@@ -1674,21 +1620,21 @@ sw_deathcam_cycle_backwards,
       #common_regeneration_store_info,
       #common_regeneration,
 
-	  #SW - add custom lightsaber noise
-	  #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_agent_droid_refill_trigger,
-	  common_fix_droid_walking,
-	  common_crouch_button,
+      #SW - add custom lightsaber noise
+      #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+      lightsaber_noise_player,
+      lightsaber_noise_agent,
+      common_change_fog,
+      common_use_healthpack,
+      #common_use_binocular_1,
+      #common_use_binocular_2,
+      common_helmet_view,
+      common_zoom_view,
+      common_use_jetpack,
+      common_toggle_weapon_capabilities,
+      common_agent_droid_refill_trigger,
+      common_fix_droid_walking,
+      common_crouch_button,
 
 
       #AI Tiggers
@@ -1706,32 +1652,31 @@ sw_deathcam_cycle_backwards,
       common_battle_order_panel,
       common_battle_order_panel_tick,
 
-############################################################################################################
-##### Custom Commander(CC)
-############################################################################################################
+      ############################################################################################################
+      ##### Custom Commander(CC)
+      ############################################################################################################
       common_npc_proficiency_limit,
       common_npc_raise_proficiency,
       common_check_player_can_join_battle,
-############################################################################################################
-##### Custom Commander(CC)
-############################################################################################################
+      ############################################################################################################
+      ##### Custom Commander(CC)
+      ############################################################################################################
 
-	  #SWYTER - Darth Vader Scripting
-	  #SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+      #SWYTER - Darth Vader Scripting
+      #SWY - trigger to make unique agents behavior - custom scripting
+      (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
 
-
-	 # SW - script to stop riderless horses (ie. speeders) from moving (script from KON_Air) - not necessary in lead_charge_no_horse mt
-#     (0.1, 0, 0,
-#      [
-#	  (try_for_agents, ":cur_agent"),
-#	   (agent_is_alive, ":cur_agent"),	#so we don't try dead agents
-#	    (neg|agent_is_human,":cur_agent"),	#agent is a horse
-#	     (agent_get_rider,":cur_rider", ":cur_agent"),
-#	      (lt, ":cur_rider", 0),	#horse does not have a rider
-#		   (agent_set_animation, ":cur_agent", "anim_speeder_stationary"),	#so the horse doesn't move, must include module_animations at the top
-#	  (try_end),
-#      ], []),
+      # SW - script to stop riderless horses (ie. speeders) from moving (script from KON_Air) - not necessary in lead_charge_no_horse mt
+      #     (0.1, 0, 0,
+      #      [
+      #    (try_for_agents, ":cur_agent"),
+      #     (agent_is_alive, ":cur_agent"),  #so we don't try dead agents
+      #      (neg|agent_is_human,":cur_agent"),  #agent is a horse
+      #       (agent_get_rider,":cur_rider", ":cur_agent"),
+      #        (lt, ":cur_rider", 0),  #horse does not have a rider
+      #       (agent_set_animation, ":cur_agent", "anim_speeder_stationary"),  #so the horse doesn't move, must include module_animations at the top
+      #    (try_end),
+      #      ], []),
     ]+AI_triggers,
   ),
 
@@ -1746,18 +1691,18 @@ sw_deathcam_cycle_backwards,
      (1,mtef_visitor_source|mtef_team_0,0,aif_start_alarmed,1,[]),
      ],
     [
-	lightsaber_noise_player,
-	lightsaber_noise_agent,
-	common_change_fog,
-	common_use_healthpack,
-	#common_use_binocular_1,
-	#common_use_binocular_2,
-	common_helmet_view,
-	common_zoom_view,
-	common_use_jetpack,
-	common_toggle_weapon_capabilities,
-	common_agent_droid_refill_trigger,
-	common_crouch_button,
+  lightsaber_noise_player,
+  lightsaber_noise_agent,
+  common_change_fog,
+  common_use_healthpack,
+  #common_use_binocular_1,
+  #common_use_binocular_2,
+  common_helmet_view,
+  common_zoom_view,
+  common_use_jetpack,
+  common_toggle_weapon_capabilities,
+  common_agent_droid_refill_trigger,
+  common_crouch_button,
 
 
     common_battle_tab_press,
@@ -1776,9 +1721,9 @@ sw_deathcam_cycle_backwards,
                            (assign, "$defender_reinforcement_stage", 0),
                            (assign, "$attacker_reinforcement_stage", 0),
                            (assign, "$g_presentation_battle_active", 0),
-							#SW Deathcam
-						   (assign, "$dmod_current_agent", -1),
-						   (assign, "$dmod_move_camera", -1),
+              #SW Deathcam
+               (assign, "$dmod_current_agent", -1),
+               (assign, "$dmod_move_camera", -1),
                            (try_begin),
                              (eq, "$g_mt_mode", vba_after_training),
                              (add_reinforcements_to_entry, 1, 6),
@@ -1796,14 +1741,14 @@ sw_deathcam_cycle_backwards,
       (1, 4, ti_once, [(main_hero_fallen)],
           [
               (assign, "$pin_player_fallen", 1),
-			  (display_message, "@You have fallen in battle. Watch the rest of the fight or press tab to exit"),
+        (display_message, "@You have fallen in battle. Watch the rest of the fight or press tab to exit"),
               # (str_store_string, s5, "str_retreat"),
               # (call_script, "script_simulate_retreat", 10, 20),
               # (assign, "$g_battle_result", -1),
               # (set_mission_result, -1),
               # (call_script, "script_count_mission_casualties_from_agents"),
               # (finish_mission, 0)
-			  ]),
+        ]),
 
 #SW Deathcam
 
@@ -1841,21 +1786,21 @@ sw_deathcam_cycle_backwards,
      (1,mtef_attackers|mtef_team_1,0,aif_start_alarmed,0,[]),
      ],
     [
-		lightsaber_noise_player,
-		lightsaber_noise_agent,
-		common_change_fog,
-		common_use_healthpack,
-		#common_use_binocular_1,
-		#common_use_binocular_2,
-		common_helmet_view,
-		common_zoom_view,
-		common_use_jetpack,
-		common_toggle_weapon_capabilities,
-		common_agent_droid_refill_trigger,
-		common_crouch_button,
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_agent_droid_refill_trigger,
+    common_crouch_button,
 
 
-		common_battle_tab_press,
+    common_battle_tab_press,
 
       (ti_question_answered, 0, 0, [],
        [(store_trigger_param_1,":answer"),
@@ -1870,9 +1815,9 @@ sw_deathcam_cycle_backwards,
                            (assign,"$defender_reinforcement_stage",0),
                            (assign,"$attacker_reinforcement_stage",0),
                            (assign, "$g_presentation_battle_active", 0),
-						   #SW Deathcam
-						   (assign, "$dmod_current_agent", -1),
-						   (assign, "$dmod_move_camera", -1),
+               #SW Deathcam
+               (assign, "$dmod_current_agent", -1),
+               (assign, "$dmod_move_camera", -1),
                            (call_script, "script_combat_music_set_situation_with_culture"),
                            ]),
 
@@ -1907,9 +1852,9 @@ sw_deathcam_cycle_backwards,
            (eq, "$g_minorplanet_raid_evil", 0),
            (call_script, "script_play_victorious_sound"),
          (else_try),
-			#SW - didn't want to have to include track_victorious_evil in module_music.py
+      #SW - didn't want to have to include track_victorious_evil in module_music.py
            #(play_track, "track_victorious_evil", 1),
-		   (call_script, "script_play_victorious_sound"),
+       (call_script, "script_play_victorious_sound"),
          (try_end),
          ],
        [
@@ -1922,14 +1867,14 @@ sw_deathcam_cycle_backwards,
       (1, 4, ti_once, [(main_hero_fallen)],
           [
               (assign, "$pin_player_fallen", 1),
-			  (display_message, "@You have fallen in battle. Watch the rest of the fight or press tab to exit"),
+        (display_message, "@You have fallen in battle. Watch the rest of the fight or press tab to exit"),
               # (str_store_string, s5, "str_retreat"),
               # (call_script, "script_simulate_retreat", 10, 20),
               # (assign, "$g_battle_result", -1),
               # (set_mission_result,-1),
               # (call_script, "script_count_mission_casualties_from_agents"),
               # (finish_mission,0)
-			  ]),
+        ]),
 #SW Deathcam
 
 sw_deathcam_follow_troop,
@@ -1979,18 +1924,18 @@ sw_deathcam_cycle_backwards,
      (20, mtef_defenders|mtef_use_exact_number|mtef_team_0,af_override_horse,aif_start_alarmed,1,[]),
      ],
     [
-		lightsaber_noise_player,
-		lightsaber_noise_agent,
-		common_change_fog,
-		common_use_healthpack,
-		#common_use_binocular_1,
-		#common_use_binocular_2,
-		common_helmet_view,
-		common_zoom_view,
-		common_use_jetpack,
-		common_toggle_weapon_capabilities,
-		common_agent_droid_refill_trigger,
-		common_crouch_button,
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_agent_droid_refill_trigger,
+    common_crouch_button,
     common_gate_system,
 
 
@@ -2012,9 +1957,9 @@ sw_deathcam_cycle_backwards,
 
       (0, 0, ti_once, [], [(assign,"$battle_won",0),
                            (assign,"$g_presentation_battle_active", 0),
-						   #SW Deathcam
-						   (assign, "$dmod_current_agent", -1),
-						   (assign, "$dmod_move_camera", -1),
+               #SW Deathcam
+               (assign, "$dmod_current_agent", -1),
+               (assign, "$dmod_move_camera", -1),
                            (call_script, "script_music_set_situation_with_culture", mtf_sit_ambushed),
                            ]),
 
@@ -2033,7 +1978,7 @@ sw_deathcam_cycle_backwards,
       (1, 4, ti_once, [(main_hero_fallen)],
           [
               (assign, "$pin_player_fallen", 1),
-			  (display_message, "@You have fallen in battle. Watch the rest of the fight or press tab to exit"),
+        (display_message, "@You have fallen in battle. Watch the rest of the fight or press tab to exit"),
               # (str_store_string, s5, "str_retreat"),
               # (call_script, "script_simulate_retreat", 5, 20),
               # (assign, "$g_battle_result", -1),
@@ -2083,18 +2028,18 @@ sw_deathcam_cycle_backwards,
       (ti_before_mission_start, 0, 0, [], [(call_script, "script_change_banners_and_chest")]),
 
       common_battle_tab_press,
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_agent_droid_refill_trigger,
-	  common_crouch_button,
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_agent_droid_refill_trigger,
+    common_crouch_button,
     common_gate_system,
 
 
@@ -2112,9 +2057,9 @@ sw_deathcam_cycle_backwards,
 
       (0, 0, ti_once, [], [(assign,"$battle_won",0),
                            (assign,"$g_presentation_battle_active", 0),
-						   #SW Deathcam
-						   (assign, "$dmod_current_agent", -1),
-						   (assign, "$dmod_move_camera", -1),
+               #SW Deathcam
+               (assign, "$dmod_current_agent", -1),
+               (assign, "$dmod_move_camera", -1),
                            (call_script, "script_music_set_situation_with_culture", mtf_sit_ambushed),
                            ]),
 
@@ -2133,7 +2078,7 @@ sw_deathcam_cycle_backwards,
       (1, 4, ti_once, [(main_hero_fallen)],
           [
               (assign, "$pin_player_fallen", 1),
-			  (display_message, "@You have fallen in battle. Watch the rest of the fight or press tab to exit"),
+        (display_message, "@You have fallen in battle. Watch the rest of the fight or press tab to exit"),
               # (str_store_string, s5, "str_retreat"),
               # (call_script, "script_simulate_retreat", 5, 20),
               # (assign, "$g_battle_result", -1),
@@ -2175,18 +2120,18 @@ sw_deathcam_cycle_backwards,
      (3,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,0,[]),
      ],
     [
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_agent_droid_refill_trigger,
-	  common_crouch_button,
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_agent_droid_refill_trigger,
+    common_crouch_button,
 
 
       (ti_on_agent_spawn, 0, 0, [],
@@ -2216,9 +2161,9 @@ sw_deathcam_cycle_backwards,
 
       (0, 0, ti_once, [], [(assign,"$battle_won",0),
                            (assign,"$g_presentation_battle_active", 0),
-						   #SW Deathcam
-						   (assign, "$dmod_current_agent", -1),
-						   (assign, "$dmod_move_camera", -1),
+               #SW Deathcam
+               (assign, "$dmod_current_agent", -1),
+               (assign, "$dmod_move_camera", -1),
                            (call_script, "script_combat_music_set_situation_with_culture"),
                            ]),
 
@@ -2246,14 +2191,14 @@ sw_deathcam_cycle_backwards,
       (1, 4, ti_once, [(main_hero_fallen)],
           [
               (assign, "$pin_player_fallen", 1),
-			  (display_message, "@You have fallen in battle. Watch the rest of the fight or press tab to exit"),
+        (display_message, "@You have fallen in battle. Watch the rest of the fight or press tab to exit"),
               # (str_store_string, s5, "str_retreat"),
               # (call_script, "script_simulate_retreat", 5, 20),
               # (assign, "$g_battle_result", -1),
               # (set_mission_result, -1),
               # (call_script, "script_count_mission_casualties_from_agents"),
               # (finish_mission,0)
-			  ]),
+        ]),
 #SW Deathcam
 
 sw_deathcam_follow_troop,
@@ -2300,17 +2245,17 @@ common_gate_system,
      (47,mtef_defenders|mtef_team_0|mtef_archers_first,af_override_horse,aif_start_alarmed,1,[]),
      ],
     [
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_crouch_button,
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_crouch_button,
 
 
       common_battle_mission_start,
@@ -2327,9 +2272,9 @@ common_gate_system,
          (team_give_order, "$attacker_team", grc_everyone, mordr_spread_out),
          (team_give_order, "$attacker_team", grc_everyone, mordr_spread_out),
          (team_give_order, "$attacker_team", grc_everyone, mordr_spread_out),
-		 #SW Deathcam
-						   (assign, "$dmod_current_agent", -1),
-						   (assign, "$dmod_move_camera", -1),
+     #SW Deathcam
+               (assign, "$dmod_current_agent", -1),
+               (assign, "$dmod_move_camera", -1),
          (set_show_messages, 1),
          ], []),
 
@@ -2346,10 +2291,10 @@ common_gate_system,
       common_siege_check_defeat_condition,
       common_battle_order_panel,
       common_battle_order_panel_tick,
-	  #SW - modified inventory to be available in battle
+    #SW - modified inventory to be available in battle
       #common_inventory_not_available,
-	  (ti_inventory_key_pressed, 0, 0, [(set_trigger_result,1)], []),
-	  #SW Deathcam
+    (ti_inventory_key_pressed, 0, 0, [(set_trigger_result,1)], []),
+    #SW Deathcam
 
 sw_deathcam_follow_troop,
 sw_deathcam_valkyrie_move_camera,
@@ -2377,15 +2322,15 @@ common_gate_system,
     "spacestation_attack_walls_ladder",mtf_battle_mode,-1,
     "You attack the walls of the castle...",
     [
-	#SW - increased attacker troops from 12 to 15
+  #SW - increased attacker troops from 12 to 15
      (0,mtef_attackers|mtef_team_1,af_override_horse,aif_start_alarmed,15,[]),
      (0,mtef_attackers|mtef_team_1,af_override_horse,aif_start_alarmed,0,[]),
      (10,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,0,[]),
-	 #SW - decreased defender infantry troops from 7 to 5
+   #SW - decreased defender infantry troops from 7 to 5
      (11,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,5,[]),
      (15,mtef_defenders|mtef_team_0,af_override_horse,aif_start_alarmed,0,[]),
 
-	#SW increased the number of archer troops at each entry point from 1 to 4
+  #SW increased the number of archer troops at each entry point from 1 to 4
      (40,mtef_defenders|mtef_team_0|mtef_archers_first,af_override_horse,aif_start_alarmed,4,[]),
      (41,mtef_defenders|mtef_team_0|mtef_archers_first,af_override_horse,aif_start_alarmed,4,[]),
      (42,mtef_defenders|mtef_team_0|mtef_archers_first,af_override_horse,aif_start_alarmed,4,[]),
@@ -2395,22 +2340,22 @@ common_gate_system,
      (46,mtef_defenders|mtef_team_0|mtef_archers_first,af_override_horse,aif_start_alarmed,4,[]),
      ],
     [
-	(0, 0, ti_once, [],[
-							#SW Deathcam
-						   (assign, "$dmod_current_agent", -1),
-						   (assign, "$dmod_move_camera", -1),
-						   ]),
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_crouch_button,
+  (0, 0, ti_once, [],[
+              #SW Deathcam
+               (assign, "$dmod_current_agent", -1),
+               (assign, "$dmod_move_camera", -1),
+               ]),
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_crouch_button,
     common_gate_system,
 
 
@@ -2433,15 +2378,15 @@ common_gate_system,
       common_siege_check_defeat_condition,
       common_battle_order_panel,
       common_battle_order_panel_tick,
-	  #SW - modified inventory to be available in battle
+    #SW - modified inventory to be available in battle
       #common_inventory_not_available,
-	  #SW Deathcam
+    #SW Deathcam
 
 sw_deathcam_follow_troop,
 sw_deathcam_valkyrie_move_camera,
 sw_deathcam_cycle_fowards,
 sw_deathcam_cycle_backwards,
-	  (ti_inventory_key_pressed, 0, 0, [(set_trigger_result,1)], []),
+    (ti_inventory_key_pressed, 0, 0, [(set_trigger_result,1)], []),
 
 ############################################################################################################
 ##### Custom Commander(CC)
@@ -2475,8 +2420,8 @@ sw_deathcam_cycle_backwards,
      (28,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(29,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(30,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(31,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),
      (32,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(33,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(34,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(35,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),
      (36,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(37,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),
-	 #entry point #38 & 39 are for slave dancers
-	 (38,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(39,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),
+   #entry point #38 & 39 are for slave dancers
+   (38,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),(39,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),
      # Party members
      (40,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),
      (41,mtef_visitor_source|mtef_team_0,af_override_horse,0,1,[]),
@@ -2489,33 +2434,33 @@ sw_deathcam_cycle_backwards,
     [
 
 
-	  #SW - trigger to make some agents dance in the scene
-	  (1, 0, ti_once, [], [
+    #SW - trigger to make some agents dance in the scene
+    (1, 0, ti_once, [], [
       #(ti_on_agent_spawn, 0, 0, [], [
-		#(store_trigger_param_1, ":agent_no"),
-		(try_for_agents, ":agent_no"),
-			(agent_get_entry_no, ":entry_no", ":agent_no"),
-			(this_or_next|eq,":entry_no",38),
-			(eq,":entry_no",39),
-			(agent_set_stand_animation, ":agent_no", "anim_slave_dance"),
-			(agent_set_animation, ":agent_no", "anim_slave_dance"),
-			(store_random_in_range, ":random_no", 0, 100),
-			(agent_set_animation_progress, ":agent_no", ":random_no"),
-		(try_end),
+    #(store_trigger_param_1, ":agent_no"),
+    (try_for_agents, ":agent_no"),
+      (agent_get_entry_no, ":entry_no", ":agent_no"),
+      (this_or_next|eq,":entry_no",38),
+      (eq,":entry_no",39),
+      (agent_set_stand_animation, ":agent_no", "anim_slave_dance"),
+      (agent_set_animation, ":agent_no", "anim_slave_dance"),
+      (store_random_in_range, ":random_no", 0, 100),
+      (agent_set_animation_progress, ":agent_no", ":random_no"),
+    (try_end),
       ]),
 
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_switch_sw_scene_props,
-	  common_crouch_button,
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_switch_sw_scene_props,
+    common_crouch_button,
 
 
       (ti_on_agent_spawn, 0, 0, [],
@@ -2528,7 +2473,7 @@ sw_deathcam_cycle_backwards,
                                            (call_script, "script_remove_siege_objects"),
                                            ]),
 
-		common_gate_system,
+    common_gate_system,
 
       (0, 0, ti_once, [],
        [
@@ -2585,7 +2530,7 @@ sw_deathcam_cycle_backwards,
     "training_ground_trainer_training",mtf_arena_fight,-1,
     "You will fight a match in the arena.",
     [
-	  #SW - modified training equipment
+    #SW - modified training equipment
       (16, mtef_visitor_source|mtef_team_0,af_override_all,aif_start_alarmed,1,[itm_arena_tunic_green,itm_vibro_sword3_gold,itm_energy_shield_yellow_small]),
       (17, mtef_visitor_source|mtef_team_1,af_override_all,aif_start_alarmed,1,[itm_arena_tunic_red,itm_vibro_sword2b]),
       (18, mtef_visitor_source|mtef_team_2,af_override_all,aif_start_alarmed,1,[itm_arena_tunic_blue,itm_vibro_sword1b,itm_energy_shield_yellow_small]),
@@ -2639,7 +2584,7 @@ sw_deathcam_cycle_backwards,
     "training_ground_training", mtf_arena_fight, -1,
     "Training.",
     [
-	  #SW - switched itm_practice_staff to itm_electro_staff_long, switched af_override functionalityaaa
+    #SW - switched itm_practice_staff to itm_electro_staff_long, switched af_override functionalityaaa
       #(0,mtef_visitor_source|mtef_team_0,af_override_everything,aif_start_alarmed,1,[itm_vibro_sword3_gold]),
       #(1,mtef_visitor_source|mtef_team_1,af_override_everything,aif_start_alarmed,1,[itm_vibro_sword3_gold]),
       #(2,mtef_visitor_source|mtef_team_1,af_override_everything,aif_start_alarmed,1,[itm_vibro_sword3_gold]),
@@ -2651,7 +2596,7 @@ sw_deathcam_cycle_backwards,
       (3,mtef_visitor_source|mtef_team_1,af_override_weapons|af_override_horse,aif_start_alarmed,1,[itm_electro_staff_long]),
       (4,mtef_visitor_source|mtef_team_1,af_override_weapons|af_override_horse,aif_start_alarmed,1,[itm_electro_staff_long]),
 
-	  #SW - modified so you do not remove your helmet (removed af_override_head flag)
+    #SW - modified so you do not remove your helmet (removed af_override_head flag)
       (8,mtef_visitor_source,af_override_weapons|af_override_horse,0,1,[]),
       (9,mtef_visitor_source,af_override_weapons|af_override_horse,0,1,[]),
       (10,mtef_visitor_source,af_override_weapons|af_override_horse,0,1,[]),
@@ -2743,8 +2688,8 @@ sw_deathcam_cycle_backwards,
              (val_add, ":num_gourds", 1),
              (prop_instance_get_position, pos0, ":target_object_2"),
              #SW - raised the height of the gourd
-			 #(position_move_z, pos0, 150),
-			 (position_move_z, pos0, 200),
+       #(position_move_z, pos0, 150),
+       (position_move_z, pos0, 200),
              (prop_instance_set_position, ":target_object", pos0),
              (prop_instance_animate_to_position, ":target_object", pos0, 1),
            (try_end),
@@ -2872,17 +2817,17 @@ sw_deathcam_cycle_backwards,
 #      (9,mtef_visitor_source|mtef_team_0,0,aif_start_alarmed,1,[]),
     ],
     [
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_crouch_button,
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_crouch_button,
 
 
       (ti_before_mission_start, 0, 0, [], [(call_script, "script_change_banners_and_chest")]),
@@ -2953,10 +2898,10 @@ sw_deathcam_cycle_backwards,
   (
     "arena_melee_fight",mtf_arena_fight,-1,
     #"You enter a melee fight in the arena.",
-	"You enter a fight in the arena.",
+  "You enter a fight in the arena.",
     [
 
-	  #SW - 0 to 31 used for tournament participants ?		switched af_override_all to af_override_everything (so it also overrides boots, so I added boots to all of these)
+    #SW - 0 to 31 used for tournament participants ?    switched af_override_all to af_override_everything (so it also overrides boots, so I added boots to all of these)
       (0,mtef_visitor_source|mtef_team_0,af_override_everything,aif_start_alarmed,1,[itm_leather_boots,itm_arena_tunic_red,itm_speeder,itm_vibro_sword2b]),
       (1,mtef_visitor_source|mtef_team_0,af_override_everything,aif_start_alarmed,1,[itm_leather_boots,itm_arena_tunic_red,itm_energy_shield_yellow_medium,itm_vibro_sword3_gold]),
       (2,mtef_visitor_source|mtef_team_0,af_override_everything,aif_start_alarmed,1,[itm_leather_boots,itm_arena_tunic_red,itm_speeder,itm_vibro_axe_long_2h]),
@@ -3022,7 +2967,7 @@ sw_deathcam_cycle_backwards,
       (24,mtef_visitor_source|mtef_team_3,af_override_everything,aif_start_alarmed,1,[itm_leather_boots,itm_arena_tunic_white,itm_energy_shield_yellow_small,itm_vibro_blade1]),
       (24,mtef_visitor_source|mtef_team_3,af_override_everything,aif_start_alarmed,1,[itm_leather_boots,itm_arena_tunic_white,itm_energy_shield_yellow_small,itm_vibro_blade1]),
 
-	  #SW - modified so you do not remove your helmet (removed af_override_head flag)
+    #SW - modified so you do not remove your helmet (removed af_override_head flag)
       (50, mtef_scene_source,af_override_horse|af_override_weapons,0,1,[]),
       (51, mtef_visitor_source,af_override_horse|af_override_weapons,0,1,[]),
       (52, mtef_scene_source,af_override_horse,0,1,[]),
@@ -3032,7 +2977,7 @@ sw_deathcam_cycle_backwards,
       (56, mtef_visitor_source|mtef_team_0, af_override_all, aif_start_alarmed, 1, [itm_vibro_sword2b, itm_padded_cloth,itm_leather_cap]),
       (57, mtef_visitor_source|mtef_team_0, af_override_all, aif_start_alarmed, 1, [itm_vibro_sword2b, itm_padded_cloth,itm_leather_cap]),
     ],
-	tournament_triggers
+  tournament_triggers
   ),
 
 ################################## START OF SPARING KIT http://forums.taleworlds.net/index.php/topic,57741.0.html ############################
@@ -3076,9 +3021,9 @@ sw_deathcam_cycle_backwards,
       (30,mtef_visitor_source|mtef_team_3,0,aif_start_alarmed,1,[]),
       (31,mtef_visitor_source|mtef_team_3,0,aif_start_alarmed,1,[]),
 
-	  #SW - removed af_override_head since some characters should have helmets (ie. darth vader)
+    #SW - removed af_override_head since some characters should have helmets (ie. darth vader)
       #(50, mtef_scene_source,af_override_horse|af_override_weapons|af_override_head,0,1,[]),
-	  (50, mtef_scene_source,af_override_horse|af_override_weapons,0,1,[]),
+    (50, mtef_scene_source,af_override_horse|af_override_weapons,0,1,[]),
       (52, mtef_scene_source,af_override_horse,0,1,[]),
       (53, mtef_scene_source,af_override_horse,0,1,[]),
       (54, mtef_scene_source,af_override_horse,0,1,[]),
@@ -3110,9 +3055,9 @@ sw_deathcam_cycle_backwards,
 
     (0.1, 0, 0, [],
       [
-	    (get_player_agent_no,":player_no"),		#added to get the player agent
+      (get_player_agent_no,":player_no"),    #added to get the player agent
         (try_for_agents,":agent"),
-		  (neq,":agent",":player_no"),			#added so player won't have particle effects
+      (neq,":agent",":player_no"),      #added so player won't have particle effects
           (agent_is_alive,":agent"),
           (agent_is_human,":agent"),
           (agent_get_position,pos1,":agent"),
@@ -3196,7 +3141,7 @@ sw_deathcam_cycle_backwards,
     "tutorial_1",0,-1,
     "You enter the training ground.",
     [
-	#SW - modified training weapons
+  #SW - modified training weapons
     (0,mtef_leader_only,af_override_horse|af_override_weapons,0,1,[itm_arena_tunic_white,itm_energy_shield_yellow_small,itm_tutorial_lightsaber,itm_practice_dl44,itm_laser_bolts_training_pistol]), #af_override_weapons
      ],
     [
@@ -3246,7 +3191,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_a", 0),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, -90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (scene_prop_get_instance, ":flag_object", "spr_tutorial_flag_yellow", 0),
                    (entry_point_get_position,pos1,2),
@@ -3268,7 +3213,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_a", 1),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, 90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (scene_prop_get_instance, ":flag_object", "spr_tutorial_flag_yellow", 0),
                    (entry_point_get_position,pos1,3),
@@ -3287,7 +3232,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_a", 2),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, 90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                  (else_try),
                    (eq, "$tutorial_1_state", 3),
@@ -3341,7 +3286,7 @@ sw_deathcam_cycle_backwards,
     "tutorial_2",mtf_arena_fight,-1,
     "You enter the training ground.",
     [
-		#SW - modified training shield
+    #SW - modified training shield
         (0,mtef_leader_only|mtef_team_0,af_override_horse|af_override_weapons,0,1,[itm_tutorial_energy_shield]),
         (2,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
         (4,mtef_visitor_source|mtef_team_1,0,0,1,[]),
@@ -3407,7 +3352,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_a", 0),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, 90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (val_add, "$tutorial_2_state", 1),
                  (else_try),
@@ -3420,7 +3365,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_a", 0),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, -90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (val_add, "$tutorial_2_state", 1),
                  (else_try),
@@ -3491,7 +3436,7 @@ sw_deathcam_cycle_backwards,
                      (scene_prop_get_instance, ":door_object", "spr_tutorial_door_a", 1),
                      (prop_instance_get_position, pos1, ":door_object"),
                      #(position_rotate_z, pos1, 90),
-					 (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                      (prop_instance_animate_to_position, ":door_object", pos1, 150),
                      (val_add, "$tutorial_2_melee_agent_state", 1),
                      (val_add, "$tutorial_2_state", 1),
@@ -3506,7 +3451,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_a", 1),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, -90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (store_mission_timer_a,"$tutorial_time"),
                    (val_add, "$tutorial_2_state", 1),
@@ -3525,7 +3470,7 @@ sw_deathcam_cycle_backwards,
                    (entry_point_get_position,pos1,5),
                    (set_spawn_position, pos1),
                    #SW - modified training sword
-				   (spawn_item, "itm_tutorial_lightsaber"),
+           (spawn_item, "itm_tutorial_lightsaber"),
                    (call_script, "script_cf_get_first_agent_with_troop_id", "trp_tutorial_maceman"),
                    (assign, ":cur_agent", reg0),
                    (entry_point_get_position, pos1, 3),
@@ -3534,7 +3479,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_a", 2),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, 90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (val_add, "$tutorial_2_state", 1),
                  (else_try),
@@ -3553,7 +3498,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_a", 2),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, -90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (val_add, "$tutorial_2_state", 1),
                  (else_try),
@@ -3566,11 +3511,11 @@ sw_deathcam_cycle_backwards,
                    (try_end),
                    (get_player_agent_no, ":player_agent"),
                    #SW - modified tutorial sword
-				   (agent_has_item_equipped, ":player_agent", "itm_tutorial_lightsaber"),
+           (agent_has_item_equipped, ":player_agent", "itm_tutorial_lightsaber"),
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_a", 3),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, -90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (val_add, "$tutorial_2_state", 1),
                  (else_try),
@@ -3592,7 +3537,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_a", 4),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, -90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (val_add, "$tutorial_2_state", 1),
                  (else_try),
@@ -3682,12 +3627,12 @@ sw_deathcam_cycle_backwards,
                      (agent_set_scripted_destination, ":cur_agent", pos1, 0),
                      (entry_point_get_position, pos1, 1),
                      (set_spawn_position, pos1),
-					 #SW - modified training items
-					 (spawn_item, "itm_practice_vibro_axe_long_no_attack"),
+           #SW - modified training items
+           (spawn_item, "itm_practice_vibro_axe_long_no_attack"),
                    (try_end),
                    (get_player_agent_no, ":player_agent"),
                    #SW - modified training items
-				   (agent_has_item_equipped, ":player_agent", "itm_practice_vibro_axe_long_no_attack"),
+           (agent_has_item_equipped, ":player_agent", "itm_practice_vibro_axe_long_no_attack"),
                    (val_add, "$tutorial_3_state", 1),
                  (else_try),
                    (eq, "$tutorial_3_state", 1),
@@ -3705,7 +3650,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_b", 0),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, -90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (val_add, "$tutorial_3_state", 1),
                  (else_try),
@@ -3718,7 +3663,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_b", 0),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, 90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (val_add, "$tutorial_3_state", 1),
                  (else_try),
@@ -3787,12 +3732,12 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_b", 1),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, -90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_b", 3),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, -90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (val_add, "$tutorial_3_state", 1),
                  (else_try),
@@ -3805,7 +3750,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_b", 1),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, 90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (val_add, "$tutorial_3_state", 1),
                  (else_try),
@@ -3885,7 +3830,7 @@ sw_deathcam_cycle_backwards,
     "You enter the training ground.",
     [
         #SW - modified training items
-		(0,mtef_leader_only|mtef_team_0,af_override_horse|af_override_weapons,0,1,[itm_practice_vibro_axe_long]),
+    (0,mtef_leader_only|mtef_team_0,af_override_horse|af_override_weapons,0,1,[itm_practice_vibro_axe_long]),
         (4,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
         (6,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
      ],
@@ -3947,7 +3892,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_b", 0),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, -90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (val_add, "$tutorial_3_state", 1),
                  (else_try),
@@ -3966,7 +3911,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_b", 0),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, 90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (call_script, "script_cf_get_first_agent_with_troop_id", "trp_tutorial_maceman"),
                    (agent_clear_scripted_mode, reg0),
@@ -3978,12 +3923,12 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_b", 1),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, -90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_b", 3),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, -90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (val_add, "$tutorial_3_state", 1),
                  (else_try),
@@ -4002,7 +3947,7 @@ sw_deathcam_cycle_backwards,
                    (scene_prop_get_instance, ":door_object", "spr_tutorial_door_b", 1),
                    (prop_instance_get_position, pos1, ":door_object"),
                    #(position_rotate_z, pos1, 90),
-				   (position_move_z,pos1,400),
+           (position_move_z,pos1,400),
                    (prop_instance_animate_to_position, ":door_object", pos1, 150),
                    (call_script, "script_cf_get_first_agent_with_troop_id", "trp_tutorial_swordsman"),
                    (agent_clear_scripted_mode, reg0),
@@ -4040,7 +3985,7 @@ sw_deathcam_cycle_backwards,
     "You enter the training ground.",
     [
         #SW - modified tutorial items
-		(0,mtef_leader_only|mtef_team_0,af_override_horse|af_override_weapons,0,1,[itm_arena_tunic_white,itm_tutorial_lightsaber,itm_practice_dl44,itm_laser_bolts_training_pistol]), #af_override_weapons
+    (0,mtef_leader_only|mtef_team_0,af_override_horse|af_override_weapons,0,1,[itm_arena_tunic_white,itm_tutorial_lightsaber,itm_practice_dl44,itm_laser_bolts_training_pistol]), #af_override_weapons
      ],
     [
       (ti_tab_pressed, 0, 0, [],
@@ -4079,7 +4024,7 @@ sw_deathcam_cycle_backwards,
                      (entry_point_get_position, pos1, 1),
                      (set_spawn_position, 1),
                      #SW - modified tutorial items
-					 (spawn_horse, "itm_practice_speeder"),
+           (spawn_horse, "itm_practice_speeder"),
                      (assign, "$tutorial_num_total_dummies_destroyed", 0),
                    (try_end),
                    (get_player_agent_no, ":player_agent"),
@@ -4247,7 +4192,7 @@ sw_deathcam_cycle_backwards,
     "You enter the training ground.",
     [
         #SW - modified tutorial arena
-		(0,mtef_visitor_source|mtef_team_0,af_override_horse|af_override_weapons,0,1,[itm_arena_tunic_white,itm_tutorial_lightsaber,itm_energy_shield_yellow_small,itm_practice_dl44,itm_laser_bolts_training_pistol,itm_practice_speeder]),
+    (0,mtef_visitor_source|mtef_team_0,af_override_horse|af_override_weapons,0,1,[itm_arena_tunic_white,itm_tutorial_lightsaber,itm_energy_shield_yellow_small,itm_practice_dl44,itm_laser_bolts_training_pistol,itm_practice_speeder]),
         (1,mtef_visitor_source|mtef_team_0,0,aif_start_alarmed,1,[]),
         (2,mtef_visitor_source|mtef_team_0,0,aif_start_alarmed,1,[]),
         (3,mtef_visitor_source|mtef_team_0,0,aif_start_alarmed,1,[]),
@@ -4362,7 +4307,7 @@ sw_deathcam_cycle_backwards,
                    (val_add, "$tutorial_5_state", 1),
                    (modify_visitors_at_site,"scn_tutorial_5"),
                    (reset_visitors),
-				   #SW - modified tutorial troops
+           #SW - modified tutorial troops
                    (set_visitor,5,"trp_security_guard"),
                    (set_visitor,6,"trp_security_guard"),
                    (set_visitor,7,"trp_security_guard"),
@@ -4441,7 +4386,7 @@ sw_deathcam_cycle_backwards,
                  ], []),
 
     ],
- 
+
   ),
 
   (
@@ -4485,13 +4430,13 @@ sw_deathcam_cycle_backwards,
       (31,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
      ],
     [
-	#may cause problems with the victory condition, or Tab function... nevermind, pasted at the end of batch
+  #may cause problems with the victory condition, or Tab function... nevermind, pasted at the end of batch
       common_custom_battle_tab_press,
       common_custom_battle_question_answered,
       common_inventory_not_available,
 
 
-	  	  #@> Swyter Battle Speech
+        #@> Swyter Battle Speech
    (4, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
    (0, 5, ti_once, [], [(call_script,"script_battle_speech",1)]),
 
@@ -4504,22 +4449,22 @@ sw_deathcam_cycle_backwards,
       common_music_situation_update,
 
 
-	  #SW - add custom lightsaber noise
-	  #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_crouch_button,
+    #SW - add custom lightsaber noise
+    #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_crouch_button,
 
-	  #SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+    #SWY - trigger to make unique agents behavior - custom scripting
+    (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
     ]+AI_triggers,
 
   ),
@@ -4591,22 +4536,22 @@ sw_deathcam_cycle_backwards,
       common_siege_assign_men_to_belfry,
       common_siege_ai_trigger_init_2,
 
-	  #SW - add custom lightsaber noise
-	  #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_crouch_button,
+    #SW - add custom lightsaber noise
+    #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_crouch_button,
 
-	  	  #SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+        #SWY - trigger to make unique agents behavior - custom scripting
+    (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
       ],
     ),
 
@@ -4614,10 +4559,10 @@ sw_deathcam_cycle_backwards,
     "custom_battle_siege_8",mtf_battle_mode,-1,
     "You lead your men to battle.",
     [
-	  #attackers (team_0)
+    #attackers (team_0)
       (0,mtef_visitor_source|mtef_team_0,0,aif_start_alarmed,1,[]),
       (1,mtef_visitor_source|mtef_team_0,0,aif_start_alarmed,1,[]),
-	  #defenders (team 1, holds ground)
+    #defenders (team 1, holds ground)
       (2,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
       (3,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
       (4,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
@@ -4645,7 +4590,7 @@ sw_deathcam_cycle_backwards,
       (0, 0, ti_once,
        [
          #SW - modified
-		 (assign, "$defender_team", 1),
+     (assign, "$defender_team", 1),
          (assign, "$attacker_team", 0),
          (assign, "$defender_team_2", 2),
          (assign, "$attacker_team_2", 3),
@@ -4667,22 +4612,22 @@ sw_deathcam_cycle_backwards,
       common_siege_assign_men_to_belfry,
       common_siege_ai_trigger_init_2,
 
-	  #SW - add custom lightsaber noise
-	  #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_crouch_button,
+    #SW - add custom lightsaber noise
+    #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_crouch_button,
 
-	  	  #SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+        #SWY - trigger to make unique agents behavior - custom scripting
+    (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
       ],
     ),
 
@@ -4708,22 +4653,22 @@ sw_deathcam_cycle_backwards,
       (13,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
       (14,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
       (15,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  #SW - added new entry points for endor bunker siege
-	  (16,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (17,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (18,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (19,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (20,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (21,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (22,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (23,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (24,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (25,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (26,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (27,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (28,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (29,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
-	  (30,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    #SW - added new entry points for endor bunker siege
+    (16,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (17,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (18,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (19,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (20,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (21,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (22,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (23,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (24,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (25,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (26,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (27,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (28,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (29,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
+    (30,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
 
       (40,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
       (41,mtef_visitor_source|mtef_team_1,af_override_horse,aif_start_alarmed,1,[]),
@@ -4761,22 +4706,22 @@ sw_deathcam_cycle_backwards,
       common_siege_rotate_belfry,
       common_siege_assign_men_to_belfry,
 
-	  #SW - add custom lightsaber noise
-	  #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_crouch_button,
+    #SW - add custom lightsaber noise
+    #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_crouch_button,
 
-	  	  #SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+    #SWY - trigger to make unique agents behavior - custom scripting
+    (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
     ],
   ),
 
@@ -4863,41 +4808,41 @@ sw_deathcam_cycle_backwards,
       (ti_tab_pressed, 0, 0, [],
        [(question_box,"str_give_up_fight")]),
 
-	   (ti_before_mission_start,0,0,[],
-	   [
-		# Setup weather/time choices
-		(try_begin),
-		(eq, "$g_rain_settings", 1),
-		(set_rain,1,20),
-		(else_try),
-		(eq, "$g_rain_settings", 2),
-		(set_rain,1,50),
-		(else_try),
-		(eq, "$g_rain_settings", 3),
-		(set_rain,1,80),
-		(else_try),
-		(eq, "$g_rain_settings", 4),
-		(set_rain,2,20),
-		(else_try),
-		(eq, "$g_rain_settings", 5),
-		(set_rain,2,50),
-		(else_try),
-		(eq, "$g_rain_settings", 6),
-		(set_rain,2,80),
-		(end_try),
-		(try_begin),
-		(eq, "$g_fog_settings", 1),
-		(set_fog_distance, 80, 0xFF736252),
-		(else_try),
-		(eq, "$g_fog_settings", 2),
-		(set_fog_distance,50, 0xFF736252),
-		(else_try),
-		(eq, "$g_fog_settings", 3),
-		(set_fog_distance, 20, 0xFF736252),
-		(else_try),
-		(eq, "$g_fog_settings", 0),
-		(end_try),
-		]),
+       (ti_before_mission_start,0,0,[],
+       [
+      # Setup weather/time choices
+      (try_begin),
+      (eq, "$g_rain_settings", 1),
+      (set_rain,1,20),
+      (else_try),
+      (eq, "$g_rain_settings", 2),
+      (set_rain,1,50),
+      (else_try),
+      (eq, "$g_rain_settings", 3),
+      (set_rain,1,80),
+      (else_try),
+      (eq, "$g_rain_settings", 4),
+      (set_rain,2,20),
+      (else_try),
+      (eq, "$g_rain_settings", 5),
+      (set_rain,2,50),
+      (else_try),
+      (eq, "$g_rain_settings", 6),
+      (set_rain,2,80),
+      (end_try),
+      (try_begin),
+      (eq, "$g_fog_settings", 1),
+      (set_fog_distance, 80, 0xFF736252),
+      (else_try),
+      (eq, "$g_fog_settings", 2),
+      (set_fog_distance,50, 0xFF736252),
+      (else_try),
+      (eq, "$g_fog_settings", 3),
+      (set_fog_distance, 20, 0xFF736252),
+      (else_try),
+      (eq, "$g_fog_settings", 0),
+      (end_try),
+      ]),
 
       (ti_question_answered, 0, 0, [],
        [(store_trigger_param_1,":answer"),
@@ -4954,30 +4899,30 @@ sw_deathcam_cycle_backwards,
        (call_script, "script_update_order_panel_statistics_and_map_2"),
         ], []),
 
-			  #@> Swyter Battle Speech
+        #@> Swyter Battle Speech
    (4, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
    (0, 5, ti_once, [], [(call_script,"script_battle_speech",1)]),
 
-	  #SW - add custom lightsaber noise
-	  #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_crouch_button,
-	  
-	  #SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-	  
+    #SW - add custom lightsaber noise
+    #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_crouch_button,
+
+    #SWY - trigger to make unique agents behavior - custom scripting
+    (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+
     ]+AI_triggers,
 
-	 ),
+   ),
   (
     "custom_battle_2vs2",mtf_battle_mode,-1,
     "You lead your men to battle.",
@@ -5005,7 +4950,7 @@ sw_deathcam_cycle_backwards,
       (19,mtef_visitor_source|mtef_team_0,0,aif_start_alarmed,1,[]),
       (20,mtef_visitor_source|mtef_team_0,0,aif_start_alarmed,1,[]),
 
-	  (31,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
+    (31,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
       (32,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
       (33,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
       (34,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
@@ -5016,7 +4961,7 @@ sw_deathcam_cycle_backwards,
       (39,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
       (40,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
 
-	  (41,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
+    (41,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
       (42,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
       (43,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
       (44,mtef_visitor_source|mtef_team_1,0,aif_start_alarmed,1,[]),
@@ -5032,41 +4977,41 @@ sw_deathcam_cycle_backwards,
       (ti_tab_pressed, 0, 0, [],
        [(question_box,"str_give_up_fight")]),
 
-	   (ti_before_mission_start,0,0,[],
-	   [
-		# Setup weather/time choices
-		(try_begin),
-		(eq, "$g_rain_settings", 1),
-		(set_rain,1,20),
-		(else_try),
-		(eq, "$g_rain_settings", 2),
-		(set_rain,1,50),
-		(else_try),
-		(eq, "$g_rain_settings", 3),
-		(set_rain,1,80),
-		(else_try),
-		(eq, "$g_rain_settings", 4),
-		(set_rain,2,20),
-		(else_try),
-		(eq, "$g_rain_settings", 5),
-		(set_rain,2,50),
-		(else_try),
-		(eq, "$g_rain_settings", 6),
-		(set_rain,2,80),
-		(end_try),
-		(try_begin),
-		(eq, "$g_fog_settings", 1),
-		(set_fog_distance, 80, 0xFF736252),
-		(else_try),
-		(eq, "$g_fog_settings", 2),
-		(set_fog_distance,50, 0xFF736252),
-		(else_try),
-		(eq, "$g_fog_settings", 3),
-		(set_fog_distance, 20, 0xFF736252),
-		(else_try),
-		(eq, "$g_fog_settings", 0),
-		(end_try),
-		]),
+     (ti_before_mission_start,0,0,[],
+     [
+    # Setup weather/time choices
+    (try_begin),
+    (eq, "$g_rain_settings", 1),
+    (set_rain,1,20),
+    (else_try),
+    (eq, "$g_rain_settings", 2),
+    (set_rain,1,50),
+    (else_try),
+    (eq, "$g_rain_settings", 3),
+    (set_rain,1,80),
+    (else_try),
+    (eq, "$g_rain_settings", 4),
+    (set_rain,2,20),
+    (else_try),
+    (eq, "$g_rain_settings", 5),
+    (set_rain,2,50),
+    (else_try),
+    (eq, "$g_rain_settings", 6),
+    (set_rain,2,80),
+    (end_try),
+    (try_begin),
+    (eq, "$g_fog_settings", 1),
+    (set_fog_distance, 80, 0xFF736252),
+    (else_try),
+    (eq, "$g_fog_settings", 2),
+    (set_fog_distance,50, 0xFF736252),
+    (else_try),
+    (eq, "$g_fog_settings", 3),
+    (set_fog_distance, 20, 0xFF736252),
+    (else_try),
+    (eq, "$g_fog_settings", 0),
+    (end_try),
+    ]),
 
       (ti_question_answered, 0, 0, [],
        [(store_trigger_param_1,":answer"),
@@ -5089,7 +5034,7 @@ sw_deathcam_cycle_backwards,
 
       (ti_inventory_key_pressed, 0, 0, [(display_message,"str_cant_use_inventory_now")], []),
 
-	  #@> Swyter Battle Speech
+    #@> Swyter Battle Speech
    (4, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
    (0, 5, ti_once, [], [(call_script,"script_battle_speech",1)]),
 
@@ -5127,27 +5072,27 @@ sw_deathcam_cycle_backwards,
        (call_script, "script_update_order_panel_statistics_and_map"),
         ], []),
 
-	  #SW - add custom lightsaber noise
-	  #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	  lightsaber_noise_player,
-	  lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_crouch_button,
+    #SW - add custom lightsaber noise
+    #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+    lightsaber_noise_player,
+    lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_crouch_button,
 
-	  
-	  #SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),	  
-	  
+
+    #SWY - trigger to make unique agents behavior - custom scripting
+    (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+
     ]+AI_triggers,
 
-	),
+  ),
 
 # END OF CUSTOM BATTLE
 #==============================================================================================================
@@ -5163,65 +5108,65 @@ sw_deathcam_cycle_backwards,
      (12,mtef_scene_source,af_override_horse,0,1,[]),(13,mtef_scene_source,0,0,1,[]),(14,mtef_scene_source,0,0,1,[]),(15,mtef_scene_source,0,0,1,[]),
      (16,mtef_visitor_source,af_override_horse,0,1,[]),(17,mtef_visitor_source,af_override_horse,0,1,[]),(18,mtef_visitor_source,af_override_horse,0,1,[]),(19,mtef_visitor_source,af_override_horse,0,1,[]),(20,mtef_visitor_source,af_override_horse,0,1,[]),(21,mtef_visitor_source,af_override_horse,0,1,[]),(22,mtef_visitor_source,af_override_horse,0,1,[]),(23,mtef_visitor_source,af_override_horse,0,1,[]),(24,mtef_visitor_source,af_override_horse,0,1,[]),
      (25,mtef_visitor_source,af_override_horse,0,1,[]),(26,mtef_visitor_source,af_override_horse,0,1,[]),(27,mtef_visitor_source,af_override_horse,0,1,[]),(28,mtef_visitor_source,af_override_horse,0,1,[]),(29,mtef_visitor_source,af_override_horse,0,1,[]),(30,mtef_visitor_source,af_override_horse,0,1,[]),(31,mtef_visitor_source,af_override_horse,0,1,[]),
-	 (32,mtef_visitor_source,af_override_horse,0,1,[]),(33,mtef_visitor_source,af_override_horse,0,1,[]),(34,mtef_visitor_source,af_override_horse,0,1,[]),(35,mtef_visitor_source,af_override_horse,0,1,[]),(36,mtef_visitor_source,af_override_horse,0,1,[]),(37,mtef_visitor_source,af_override_horse,0,1,[]),(38,mtef_visitor_source,af_override_horse,0,1,[]),(39,mtef_visitor_source,af_override_horse,0,1,[]),
+   (32,mtef_visitor_source,af_override_horse,0,1,[]),(33,mtef_visitor_source,af_override_horse,0,1,[]),(34,mtef_visitor_source,af_override_horse,0,1,[]),(35,mtef_visitor_source,af_override_horse,0,1,[]),(36,mtef_visitor_source,af_override_horse,0,1,[]),(37,mtef_visitor_source,af_override_horse,0,1,[]),(38,mtef_visitor_source,af_override_horse,0,1,[]),(39,mtef_visitor_source,af_override_horse,0,1,[]),
      ],
     [
       (1, 0, ti_once, [], [
-		(call_script, "script_music_set_situation_with_culture", mtf_sit_town),
+    (call_script, "script_music_set_situation_with_culture", mtf_sit_town),
       ]),
 
-      (ti_before_mission_start, 0, 0, [], 	[
-											(call_script, "script_change_banners_and_chest")
-											]),
+      (ti_before_mission_start, 0, 0, [],   [
+                      (call_script, "script_change_banners_and_chest")
+                      ]),
 
       (ti_inventory_key_pressed, 0, 0, [
           (set_trigger_result,1)], []),
       (ti_tab_pressed, 0, 0, [
           (set_trigger_result,1)], []),
 
-	  #SW - trigger to make some agents dance in the scene
-	  # (1, 0, ti_once, [], [
+    #SW - trigger to make some agents dance in the scene
+    # (1, 0, ti_once, [], [
       ##(ti_on_agent_spawn, 0, 0, [], [
-		##(store_trigger_param_1, ":agent_no"),
-		# (try_for_agents, ":agent_no"),
-			# (agent_get_entry_no, ":entry_no", ":agent_no"),
-			# (this_or_next|eq,":entry_no",38),
-			# (eq,":entry_no",39),
-			# (agent_set_stand_animation, ":agent_no", "anim_slave_dance"),
-			# (agent_set_animation, ":agent_no", "anim_slave_dance"),
-			# (store_random_in_range, ":random_no", 0, 100),
-			# (agent_set_animation_progress, ":agent_no", ":random_no"),
-		# (try_end),
+    ##(store_trigger_param_1, ":agent_no"),
+    # (try_for_agents, ":agent_no"),
+      # (agent_get_entry_no, ":entry_no", ":agent_no"),
+      # (this_or_next|eq,":entry_no",38),
+      # (eq,":entry_no",39),
+      # (agent_set_stand_animation, ":agent_no", "anim_slave_dance"),
+      # (agent_set_animation, ":agent_no", "anim_slave_dance"),
+      # (store_random_in_range, ":random_no", 0, 100),
+      # (agent_set_animation_progress, ":agent_no", ":random_no"),
+    # (try_end),
 
-		# (try_for_agents, ":agent_no"),
-			# (agent_get_troop_id,":is_vader", ":agent_no"),
-			# (eq,":is_vader","trp_knight_1_1"),
-			# (agent_play_sound, ":agent_no", "snd_vader_breath"),
-			# (agent_set_stand_animation, ":agent_no", "anim_vader_stand"),
-			##(agent_set_animation, ":agent_no", "anim_vader_stand"),
-			##(store_random_in_range, ":random_no", 0, 100),
-			##(agent_set_animation_progress, ":agent_no", ":random_no"),
-		# (try_end),
+    # (try_for_agents, ":agent_no"),
+      # (agent_get_troop_id,":is_vader", ":agent_no"),
+      # (eq,":is_vader","trp_knight_1_1"),
+      # (agent_play_sound, ":agent_no", "snd_vader_breath"),
+      # (agent_set_stand_animation, ":agent_no", "anim_vader_stand"),
+      ##(agent_set_animation, ":agent_no", "anim_vader_stand"),
+      ##(store_random_in_range, ":random_no", 0, 100),
+      ##(agent_set_animation_progress, ":agent_no", ":random_no"),
+    # (try_end),
       # ]),
 
-	  #SW - add custom lightsaber noise to town scenes
-	  #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	  lightsaber_noise_player,
-	  #lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_switch_sw_scene_props,
-	  #common_custom_commander_camera,
-	  common_crouch_button,
+    #SW - add custom lightsaber noise to town scenes
+    #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+    lightsaber_noise_player,
+    #lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_switch_sw_scene_props,
+    #common_custom_commander_camera,
+    common_crouch_button,
 
-		  	  #SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+          #SWY - trigger to make unique agents behavior - custom scripting
+    (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
 
     ],
   ),
@@ -5231,98 +5176,98 @@ sw_deathcam_cycle_backwards,
     "ship_interior",0,-1,
     "Walk around the ship.",
     [
-	(0,mtef_visitor_source,af_override_horse,0,1,[]),
-	(1,mtef_visitor_source,af_override_horse,0,1,[]),(2,mtef_visitor_source,af_override_horse,0,1,[]),(3,mtef_visitor_source,af_override_horse,0,1,[]),(4,mtef_visitor_source,af_override_horse,0,1,[]),(5,mtef_visitor_source,af_override_horse,0,1,[]),
-	(6,mtef_visitor_source,af_override_horse,0,1,[]),(7,mtef_visitor_source,af_override_horse,0,1,[]),(8,mtef_visitor_source,af_override_horse,0,1,[]),(9,mtef_visitor_source,af_override_horse,0,1,[]),(10,mtef_visitor_source,af_override_horse,0,1,[]),
-	(11,mtef_visitor_source,af_override_horse,0,1,[]),(12,mtef_visitor_source,af_override_horse,0,1,[]),(13,mtef_visitor_source,af_override_horse,0,1,[]),(14,mtef_visitor_source,af_override_horse,0,1,[]),(15,mtef_visitor_source,af_override_horse,0,1,[]),
-	(16,mtef_visitor_source,af_override_horse,0,1,[]),(17,mtef_visitor_source,af_override_horse,0,1,[]),(18,mtef_visitor_source,af_override_horse,0,1,[]),(19,mtef_visitor_source,af_override_horse,0,1,[]),(20,mtef_visitor_source,af_override_horse,0,1,[]),
-	(21,mtef_visitor_source,af_override_horse,0,1,[]),(22,mtef_visitor_source,af_override_horse,0,1,[]),(23,mtef_visitor_source,af_override_horse,0,1,[]),(24,mtef_visitor_source,af_override_horse,0,1,[]),(25,mtef_visitor_source,af_override_horse,0,1,[]),
-	(26,mtef_visitor_source,af_override_horse,0,1,[]),(27,mtef_visitor_source,af_override_horse,0,1,[]),(28,mtef_visitor_source,af_override_horse,0,1,[]),(29,mtef_visitor_source,af_override_horse,0,1,[]),(30,mtef_visitor_source,af_override_horse,0,1,[]),
-	(31,mtef_visitor_source,af_override_horse,0,1,[]),(32,mtef_visitor_source,af_override_horse,0,1,[]),(33,mtef_visitor_source,af_override_horse,0,1,[]),(34,mtef_visitor_source,af_override_horse,0,1,[]),(35,mtef_visitor_source,af_override_horse,0,1,[]),
-	(36,mtef_visitor_source,af_override_horse,0,1,[]),(37,mtef_visitor_source,af_override_horse,0,1,[]),(38,mtef_visitor_source,af_override_horse,0,1,[]),(39,mtef_visitor_source,af_override_horse,0,1,[]),(40,mtef_visitor_source,af_override_horse,0,1,[]),
-	(41,mtef_visitor_source,af_override_horse,0,1,[]),(42,mtef_visitor_source,af_override_horse,0,1,[]),(43,mtef_visitor_source,af_override_horse,0,1,[]),(44,mtef_visitor_source,af_override_horse,0,1,[]),(45,mtef_visitor_source,af_override_horse,0,1,[]),
-	(46,mtef_visitor_source,af_override_horse,0,1,[]),(47,mtef_visitor_source,af_override_horse,0,1,[]),(48,mtef_visitor_source,af_override_horse,0,1,[]),(49,mtef_visitor_source,af_override_horse,0,1,[]),(50,mtef_visitor_source,af_override_horse,0,1,[]),
-	(51,mtef_visitor_source,af_override_horse,0,1,[]),(52,mtef_visitor_source,af_override_horse,0,1,[]),(53,mtef_visitor_source,af_override_horse,0,1,[]),(54,mtef_visitor_source,af_override_horse,0,1,[]),(55,mtef_visitor_source,af_override_horse,0,1,[]),
-	(56,mtef_visitor_source,af_override_horse,0,1,[]),(57,mtef_visitor_source,af_override_horse,0,1,[]),(58,mtef_visitor_source,af_override_horse,0,1,[]),(59,mtef_visitor_source,af_override_horse,0,1,[]),(60,mtef_visitor_source,af_override_horse,0,1,[]),
-	#(61,mtef_visitor_source,af_override_horse,0,1,[]),(62,mtef_visitor_source,af_override_horse,0,1,[]),(63,mtef_visitor_source,af_override_horse,0,1,[]),(64,mtef_visitor_source,af_override_horse,0,1,[]),(65,mtef_visitor_source,af_override_horse,0,1,[]),
-	#(66,mtef_visitor_source,af_override_horse,0,1,[]),(67,mtef_visitor_source,af_override_horse,0,1,[]),(68,mtef_visitor_source,af_override_horse,0,1,[]),(69,mtef_visitor_source,af_override_horse,0,1,[]),(70,mtef_visitor_source,af_override_horse,0,1,[]),
+  (0,mtef_visitor_source,af_override_horse,0,1,[]),
+  (1,mtef_visitor_source,af_override_horse,0,1,[]),(2,mtef_visitor_source,af_override_horse,0,1,[]),(3,mtef_visitor_source,af_override_horse,0,1,[]),(4,mtef_visitor_source,af_override_horse,0,1,[]),(5,mtef_visitor_source,af_override_horse,0,1,[]),
+  (6,mtef_visitor_source,af_override_horse,0,1,[]),(7,mtef_visitor_source,af_override_horse,0,1,[]),(8,mtef_visitor_source,af_override_horse,0,1,[]),(9,mtef_visitor_source,af_override_horse,0,1,[]),(10,mtef_visitor_source,af_override_horse,0,1,[]),
+  (11,mtef_visitor_source,af_override_horse,0,1,[]),(12,mtef_visitor_source,af_override_horse,0,1,[]),(13,mtef_visitor_source,af_override_horse,0,1,[]),(14,mtef_visitor_source,af_override_horse,0,1,[]),(15,mtef_visitor_source,af_override_horse,0,1,[]),
+  (16,mtef_visitor_source,af_override_horse,0,1,[]),(17,mtef_visitor_source,af_override_horse,0,1,[]),(18,mtef_visitor_source,af_override_horse,0,1,[]),(19,mtef_visitor_source,af_override_horse,0,1,[]),(20,mtef_visitor_source,af_override_horse,0,1,[]),
+  (21,mtef_visitor_source,af_override_horse,0,1,[]),(22,mtef_visitor_source,af_override_horse,0,1,[]),(23,mtef_visitor_source,af_override_horse,0,1,[]),(24,mtef_visitor_source,af_override_horse,0,1,[]),(25,mtef_visitor_source,af_override_horse,0,1,[]),
+  (26,mtef_visitor_source,af_override_horse,0,1,[]),(27,mtef_visitor_source,af_override_horse,0,1,[]),(28,mtef_visitor_source,af_override_horse,0,1,[]),(29,mtef_visitor_source,af_override_horse,0,1,[]),(30,mtef_visitor_source,af_override_horse,0,1,[]),
+  (31,mtef_visitor_source,af_override_horse,0,1,[]),(32,mtef_visitor_source,af_override_horse,0,1,[]),(33,mtef_visitor_source,af_override_horse,0,1,[]),(34,mtef_visitor_source,af_override_horse,0,1,[]),(35,mtef_visitor_source,af_override_horse,0,1,[]),
+  (36,mtef_visitor_source,af_override_horse,0,1,[]),(37,mtef_visitor_source,af_override_horse,0,1,[]),(38,mtef_visitor_source,af_override_horse,0,1,[]),(39,mtef_visitor_source,af_override_horse,0,1,[]),(40,mtef_visitor_source,af_override_horse,0,1,[]),
+  (41,mtef_visitor_source,af_override_horse,0,1,[]),(42,mtef_visitor_source,af_override_horse,0,1,[]),(43,mtef_visitor_source,af_override_horse,0,1,[]),(44,mtef_visitor_source,af_override_horse,0,1,[]),(45,mtef_visitor_source,af_override_horse,0,1,[]),
+  (46,mtef_visitor_source,af_override_horse,0,1,[]),(47,mtef_visitor_source,af_override_horse,0,1,[]),(48,mtef_visitor_source,af_override_horse,0,1,[]),(49,mtef_visitor_source,af_override_horse,0,1,[]),(50,mtef_visitor_source,af_override_horse,0,1,[]),
+  (51,mtef_visitor_source,af_override_horse,0,1,[]),(52,mtef_visitor_source,af_override_horse,0,1,[]),(53,mtef_visitor_source,af_override_horse,0,1,[]),(54,mtef_visitor_source,af_override_horse,0,1,[]),(55,mtef_visitor_source,af_override_horse,0,1,[]),
+  (56,mtef_visitor_source,af_override_horse,0,1,[]),(57,mtef_visitor_source,af_override_horse,0,1,[]),(58,mtef_visitor_source,af_override_horse,0,1,[]),(59,mtef_visitor_source,af_override_horse,0,1,[]),(60,mtef_visitor_source,af_override_horse,0,1,[]),
+  #(61,mtef_visitor_source,af_override_horse,0,1,[]),(62,mtef_visitor_source,af_override_horse,0,1,[]),(63,mtef_visitor_source,af_override_horse,0,1,[]),(64,mtef_visitor_source,af_override_horse,0,1,[]),(65,mtef_visitor_source,af_override_horse,0,1,[]),
+  #(66,mtef_visitor_source,af_override_horse,0,1,[]),(67,mtef_visitor_source,af_override_horse,0,1,[]),(68,mtef_visitor_source,af_override_horse,0,1,[]),(69,mtef_visitor_source,af_override_horse,0,1,[]),(70,mtef_visitor_source,af_override_horse,0,1,[]),
      ],
     [
 
       (1, 0, ti_once, [], [
-		(call_script, "script_music_set_situation_with_culture", mtf_sit_town),
+    (call_script, "script_music_set_situation_with_culture", mtf_sit_town),
       ]),
 
-      (ti_before_mission_start, 0, 0, [], 	[
-											(call_script, "script_change_banners_and_chest")
-											]),
+      (ti_before_mission_start, 0, 0, [],   [
+                      (call_script, "script_change_banners_and_chest")
+                      ]),
 
       (ti_inventory_key_pressed, 0, 0, [
           (set_trigger_result,1)], []),
       (ti_tab_pressed, 0, 0, [
           (set_trigger_result,1)], []),
 
-	  (4, 0, 0, [], [		#run every X seconds
-			(get_player_agent_no, ":player_agent"),
-			(scene_prop_get_num_instances,":num_instances","spr_sw_bacta_tank_new_heal"),
-			(gt, ":num_instances", 0),
-			(try_for_range, ":cur_i", 0, ":num_instances"),
-				(scene_prop_get_instance,":instance", "spr_sw_bacta_tank_new_heal", ":cur_i"),
-				(prop_instance_get_position,pos1,":instance"),
-				(agent_get_position, pos2, ":player_agent"),
-				(get_distance_between_positions,":dist",pos1,pos2),
-				#get health
-				(store_agent_hit_points,":player_agent_health",":player_agent",0),	#relative number, 0-100
-				(try_begin),
-					(eq, ":player_agent_health", 100),	#player is fully healed
-					(le, ":dist", 125),	#very close
-					(display_message, "@You are not injured and do not need the Bacta Tank at this time."),
-				(else_try),
-					(lt, ":player_agent_health", 100),	#player is injured
-					(le, ":dist", 125),	#very close
-					(display_message, "@You are being healed by the Bacta Tank..."),
-					(val_add, ":player_agent_health", 10),	#add 10%
-					(try_begin),
-						(gt, ":player_agent_health", 100),
-						(assign, ":player_agent_health", 100),		#so we don't try and set hit points > 100%
-					(try_end),
-					(agent_set_hit_points,":player_agent",":player_agent_health",0),
-					(troop_set_health, "$g_player_troop", ":player_agent_health"),
-					(agent_play_sound, ":player_agent", "snd_bacta_heal"),
-				(else_try),
-					(le, ":dist", 1300),	#in room
-					(display_message, "@Walk into the Bacta Tank to heal yourself."),
-				(try_end),
-			(try_end),
-		]),
+    (4, 0, 0, [], [    #run every X seconds
+      (get_player_agent_no, ":player_agent"),
+      (scene_prop_get_num_instances,":num_instances","spr_sw_bacta_tank_new_heal"),
+      (gt, ":num_instances", 0),
+      (try_for_range, ":cur_i", 0, ":num_instances"),
+        (scene_prop_get_instance,":instance", "spr_sw_bacta_tank_new_heal", ":cur_i"),
+        (prop_instance_get_position,pos1,":instance"),
+        (agent_get_position, pos2, ":player_agent"),
+        (get_distance_between_positions,":dist",pos1,pos2),
+        #get health
+        (store_agent_hit_points,":player_agent_health",":player_agent",0),  #relative number, 0-100
+        (try_begin),
+          (eq, ":player_agent_health", 100),  #player is fully healed
+          (le, ":dist", 125),  #very close
+          (display_message, "@You are not injured and do not need the Bacta Tank at this time."),
+        (else_try),
+          (lt, ":player_agent_health", 100),  #player is injured
+          (le, ":dist", 125),  #very close
+          (display_message, "@You are being healed by the Bacta Tank..."),
+          (val_add, ":player_agent_health", 10),  #add 10%
+          (try_begin),
+            (gt, ":player_agent_health", 100),
+            (assign, ":player_agent_health", 100),    #so we don't try and set hit points > 100%
+          (try_end),
+          (agent_set_hit_points,":player_agent",":player_agent_health",0),
+          (troop_set_health, "$g_player_troop", ":player_agent_health"),
+          (agent_play_sound, ":player_agent", "snd_bacta_heal"),
+        (else_try),
+          (le, ":dist", 1300),  #in room
+          (display_message, "@Walk into the Bacta Tank to heal yourself."),
+        (try_end),
+      (try_end),
+    ]),
 
 
-	  #SW - allow player to start a fight
-	  (1, 0, ti_once, [
-						(call_script, "script_init_town_fight"),	#allow player to start a fight by shooting somebody
-						(assign, "$g_init_fight", 1),
-					  ], []),
+    #SW - allow player to start a fight
+    (1, 0, ti_once, [
+            (call_script, "script_init_town_fight"),  #allow player to start a fight by shooting somebody
+            (assign, "$g_init_fight", 1),
+            ], []),
 
-	  #SW - added the ability to start a fight
-	  common_check_town_fight,
+    #SW - added the ability to start a fight
+    common_check_town_fight,
 
-	  #SW - add custom lightsaber noise to town scenes
-	  #lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	  lightsaber_noise_player,
-	  #lightsaber_noise_agent,
-	  common_change_fog,
-	  common_use_healthpack,
-	  #common_use_binocular_1,
-	  #common_use_binocular_2,
-	  common_helmet_view,
-	  common_zoom_view,
-	  common_use_jetpack,
-	  common_toggle_weapon_capabilities,
-	  common_crouch_button,
+    #SW - add custom lightsaber noise to town scenes
+    #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+    lightsaber_noise_player,
+    #lightsaber_noise_agent,
+    common_change_fog,
+    common_use_healthpack,
+    #common_use_binocular_1,
+    #common_use_binocular_2,
+    common_helmet_view,
+    common_zoom_view,
+    common_use_jetpack,
+    common_toggle_weapon_capabilities,
+    common_crouch_button,
 
 
-	  	 #SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+       #SWY - trigger to make unique agents behavior - custom scripting
+    (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
 
     ],
   ),
@@ -5335,12 +5280,12 @@ sw_deathcam_cycle_backwards,
   (
     "space_battle_entry",0,-1,
     "space_battle_entry",
-	#SW - modified so you do not remove your helmet when you enter a lords hall (removed af_override_head flag)
-	[
+  #SW - modified so you do not remove your helmet when you enter a lords hall (removed af_override_head flag)
+  [
   (0,mtef_scene_source|mtef_team_0,af_override_horse|af_override_weapons,0,1,[]),
   ],
     [
-	  common_change_fog,
+    common_change_fog,
 
       (ti_on_agent_spawn, 0, 0, [],
        [
@@ -5353,8 +5298,8 @@ sw_deathcam_cycle_backwards,
       #   ]),
       (ti_inventory_key_pressed, 0, 0, [(set_trigger_result,1)], []),
       (ti_tab_pressed, 0, 0, [
-			(set_trigger_result,1)
-		], []),
+      (set_trigger_result,1)
+    ], []),
       (0, 0, ti_once, [], [
         (try_begin),
           (eq, "$talk_context", tc_court_talk),
@@ -5363,11 +5308,11 @@ sw_deathcam_cycle_backwards,
           (call_script, "script_music_set_situation_with_culture", 0), #prison
         (try_end),
         ]),
-	(0.0, 1.0, ti_once, [],
-		[
-			(tutorial_box, "str_space_combat_practice", "@Space Combat practice"),
-		]
-	),
+  (0.0, 1.0, ti_once, [],
+    [
+      (tutorial_box, "str_space_combat_practice", "@Space Combat practice"),
+    ]
+  ),
      # (0.0, 1.0, 2.0,
       # [(lt, "$trainer_help_message", 2),
         # ],
@@ -5386,36 +5331,36 @@ sw_deathcam_cycle_backwards,
   (
     "space_battle",0,-1,
     #"You lead your squad to battle.",
-	"space_battle",
+  "space_battle",
     [
       (0,mtef_visitor_source,af_override_horse,0,1,[]),
      ],
     [
      common_change_fog,
-	 #SW BSG integration - new tab key, question_answered, add_xp_to_troop functionality
-	 common_space_battle_tab_press,
-	 (ti_question_answered, 0, 0, [],
+   #SW BSG integration - new tab key, question_answered, add_xp_to_troop functionality
+   common_space_battle_tab_press,
+   (ti_question_answered, 0, 0, [],
        [
          (store_trigger_param_1,":answer"),
          (eq,":answer",0),
-		   (add_xp_to_troop,100,"$g_player_troop"),	#since custom commander is integrated
-		   (stop_all_sounds,2),	#stop the engine sound from the space combat
-		   (finish_mission),
+       (add_xp_to_troop,100,"$g_player_troop"),  #since custom commander is integrated
+       (stop_all_sounds,2),  #stop the engine sound from the space combat
+       (finish_mission),
          ]),
      (ti_before_mission_start, 0, 0, [], [(set_rain,2,0)]),
       (0, 0, ti_once, [], [
           (assign,"$cam_follow",1),
           (assign,"$player_ship","spr_p_viper_mk7"),
-          (assign,"$player_max_speed",200),		#with higher speeds we need to add code to also adjust the position the guns/engine fire from (setting it to 200 for now)
+          (assign,"$player_max_speed",200),    #with higher speeds we need to add code to also adjust the position the guns/engine fire from (setting it to 200 for now)
           (assign,"$player_speed",40),
           (assign,"$player_rotate_y",0),
           (assign,"$player_rotate_x",0),
           (assign,"$player_missiles",0),
           #(assign,"$player_cannons",22500000),
-		  (assign,"$player_cannons",100000),
+      (assign,"$player_cannons",100000),
           (assign,"$player_damage",100),
           (assign,"$player_cannon_damage",3),
-		  (assign,"$mouse_y_control",-1),			#mouse_up = down, mouse_down = up (can toggle with T key)
+      (assign,"$mouse_y_control",-1),      #mouse_up = down, mouse_down = up (can toggle with T key)
     #      (assign,"$auto_control",0),
     #      (assign,"$auto_slow_down",0),
           (call_script,"script_set_fighters","spr_cylon_raider","spr_viper_mk7"), #This edited by Ibanez after HokieBT's port.
@@ -5490,7 +5435,7 @@ sw_deathcam_cycle_backwards,
         ]),
       #camera tracking,particles,status,collision detect,destroy,loopsounds
       (0, 0, ti_once, [], [
-		(mission_cam_set_mode,1),
+    (mission_cam_set_mode,1),
         ]),
       (0, 0, 0, [(eq,"$cam_follow",1),], [
           (scene_prop_get_instance,":s_instance", "$player_ship", 0),
@@ -5511,19 +5456,19 @@ sw_deathcam_cycle_backwards,
      (0, 0, 0, [], [
           (scene_prop_get_instance,":s_instance", "$player_ship", 0),
           (prop_instance_get_position,pos1,":s_instance"),
-          (position_move_y,pos1,-400),	#switched from -350
-          (position_move_x,pos1,-140),	#switched from -40
-          (position_move_z,pos1,-25),	#switched from 0
+          (position_move_y,pos1,-400),  #switched from -350
+          (position_move_x,pos1,-140),  #switched from -40
+          (position_move_z,pos1,-25),  #switched from 0
           (particle_system_burst,"psys_viper_engine",pos1,10),
           (prop_instance_get_position,pos1,":s_instance"),
-          (position_move_y,pos1,-400),	#switched from -350
-          (position_move_x,pos1,140),	#switched from 40
+          (position_move_y,pos1,-400),  #switched from -350
+          (position_move_x,pos1,140),  #switched from 40
           (position_move_z,pos1,-25), #switched from 0
           (particle_system_burst,"psys_viper_engine",pos1,10),
           #(prop_instance_get_position,pos1,":s_instance"),
-          #(position_move_y,pos1,-450),	#switched from -350
+          #(position_move_y,pos1,-450),  #switched from -350
           #(position_move_x,pos1,0),
-          #(position_move_z,pos1,100),	#switched from 75
+          #(position_move_z,pos1,100),  #switched from 75
           #(particle_system_burst,"psys_viper_engine",pos1,2),
 
           (assign,reg1,"$player_speed"),
@@ -5548,26 +5493,26 @@ sw_deathcam_cycle_backwards,
           (troop_get_slot,reg19,"trp_viper_g",slot_troop_damage),
           (troop_get_slot,reg20,"trp_viper_h",slot_troop_damage),
 
-		  #added by swyter
+      #added by swyter
 
 
-		 # #Little Pos Helper by Kuba begin
-		 # #http://forums.taleworlds.com/index.php/topic,8652.msg2373733.html#msg2373733
-		 # #(set_fixed_point_multiplier, 1000),
-		 # (mouse_get_position, pos1),
-		 # (position_get_x, reg21, pos1),
-		 # (position_get_y, reg22, pos1),
-		 # #(str_store_string, s1, "@DEBUG: x = {reg1}, y = {reg2}"),
-		 # #(overlay_set_text, "$g_little_pos_helper", "@DEBUG: x = {reg1}, y = {reg2}"),
-		 # (tutorial_message, s1),
-		 # #Little Pos Helper by Kuba end
+     # #Little Pos Helper by Kuba begin
+     # #http://forums.taleworlds.com/index.php/topic,8652.msg2373733.html#msg2373733
+     # #(set_fixed_point_multiplier, 1000),
+     # (mouse_get_position, pos1),
+     # (position_get_x, reg21, pos1),
+     # (position_get_y, reg22, pos1),
+     # #(str_store_string, s1, "@DEBUG: x = {reg1}, y = {reg2}"),
+     # #(overlay_set_text, "$g_little_pos_helper", "@DEBUG: x = {reg1}, y = {reg2}"),
+     # (tutorial_message, s1),
+     # #Little Pos Helper by Kuba end
 
-		  #THE MESSAGE IS SHOWN HERE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+      #THE MESSAGE IS SHOWN HERE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
           (tutorial_message,"str_viper_status"),
           (call_script,"script_fighter_explosions","spr_cylon_raider","spr_viper_mk7"),
         ]),
      #(0.1, 0, 0, [(key_is_down, key_numpad_plus),(gt,"$player_damage",0),], [
-	 (0.1, 0, 0, [(key_is_down, key_c),(gt,"$player_damage",0),], [
+   (0.1, 0, 0, [(key_is_down, key_c),(gt,"$player_damage",0),], [
           (try_begin),
               (gt,"$cam_follow",0),
               (assign,"$cam_follow",0),
@@ -5611,42 +5556,42 @@ sw_deathcam_cycle_backwards,
 
      ### S W    B S G     C O N T R O L S  ############
 
-	  (0, 0, 0, [
-				(key_is_down, key_t),
-				],
-		[
-			(val_mul,"$mouse_y_control",-1),
-			#(display_message, "@The vertical mouse control was modified."),
-		]
-	  ),
+    (0, 0, 0, [
+        (key_is_down, key_t),
+        ],
+    [
+      (val_mul,"$mouse_y_control",-1),
+      #(display_message, "@The vertical mouse control was modified."),
+    ]
+    ),
 
-	  (0, 0, 0, [
-				#(key_is_down, key_middle_mouse_button),
-				(gt,"$player_speed",0),
-				],
-		[
+    (0, 0, 0, [
+        #(key_is_down, key_middle_mouse_button),
+        (gt,"$player_speed",0),
+        ],
+    [
           (mouse_get_position, pos1),
           (set_fixed_point_multiplier, 1000),
           (position_get_x, ":mouse_x", pos1),
           (position_get_y, ":mouse_y", pos1),
 
-		  #CENTER THE XY GRID [LEFT-DOWN BY DEFAULT]
-		  (val_sub,":mouse_x",500),
-		  (val_sub,":mouse_y",380),
+      #CENTER THE XY GRID [LEFT-DOWN BY DEFAULT]
+      (val_sub,":mouse_x",500),
+      (val_sub,":mouse_y",380),
 
 
-		#MAKE PLAYABLE COORS (LITTLE NUMBERS)
-		  (val_div,":mouse_x",70),
-		  (val_div,":mouse_y",70),
+    #MAKE PLAYABLE COORS (LITTLE NUMBERS)
+      (val_div,":mouse_x",70),
+      (val_div,":mouse_y",70),
 
-		  #INVERSE CONTROLS (NEG 2 POSIT & VICEVERSA)
-		  (val_mul,":mouse_x",-1),
-		  #(val_mul,":mouse_y",-1),		#up/down
-		  (val_mul,":mouse_y","$mouse_y_control"),		#up/down
+      #INVERSE CONTROLS (NEG 2 POSIT & VICEVERSA)
+      (val_mul,":mouse_x",-1),
+      #(val_mul,":mouse_y",-1),    #up/down
+      (val_mul,":mouse_y","$mouse_y_control"),    #up/down
 
-		 # BIND DATA TO THE PLAYER'S SHIP
-	     (assign,"$player_rotate_x",":mouse_y"),
-	     (assign,"$player_rotate_z",":mouse_x"),
+     # BIND DATA TO THE PLAYER'S SHIP
+       (assign,"$player_rotate_x",":mouse_y"),
+       (assign,"$player_rotate_z",":mouse_x"),
 
 
 
@@ -5660,31 +5605,31 @@ sw_deathcam_cycle_backwards,
      #     (val_sub,"$player_speed",30),
      #   ]),
      #(0.1, 0, 0, [(key_is_down, key_w),(gt,"$player_rotate_x",-6),(gt,"$player_damage",0),], [
-	 (0.1, 0, 0, [(key_is_down, key_w),(lt,"$player_speed","$player_max_speed"),(gt,"$player_damage",0),], [
+   (0.1, 0, 0, [(key_is_down, key_w),(lt,"$player_speed","$player_max_speed"),(gt,"$player_damage",0),], [
           #(val_add,"$player_speed",50),
-		  (val_add,"$player_speed",20),
+      (val_add,"$player_speed",20),
         ]),
      #(0.1, 0, 0, [(key_is_down, key_s),(lt,"$player_rotate_x",6),(gt,"$player_damage",0),], [
-	 (0.1, 0, 0, [(key_is_down, key_s),(gt,"$player_speed",0),(gt,"$player_damage",0),], [
+   (0.1, 0, 0, [(key_is_down, key_s),(gt,"$player_speed",0),(gt,"$player_damage",0),], [
           #(val_sub,"$player_speed",40),
-		  (val_sub,"$player_speed",20),
+      (val_sub,"$player_speed",20),
         ]),
      (0.1, 0, 0, [(key_is_down, key_a),(gt,"$player_rotate_y",-8),(gt,"$player_damage",0),], [
           (val_sub,"$player_rotate_y",1),
-		]),
-		         #SWY - LEFT LIMITER
-		        (0.2, 0, 0, [(lt,"$player_rotate_y",1),], [
-				(val_add,"$player_rotate_y",1),
+    ]),
+             #SWY - LEFT LIMITER
+            (0.2, 0, 0, [(lt,"$player_rotate_y",1),], [
+        (val_add,"$player_rotate_y",1),
         ]),
      (0.1, 0, 0, [(key_is_down, key_d),(lt,"$player_rotate_y",8),(gt,"$player_damage",0),], [
           (val_add,"$player_rotate_y",1),
-		]),
-		         #SWY - RIGHT LIMITER
-		  		(0.2, 0, 0, [(gt,"$player_rotate_y",-1),], [
-				(val_sub,"$player_rotate_y",1),
+    ]),
+             #SWY - RIGHT LIMITER
+          (0.2, 0, 0, [(gt,"$player_rotate_y",-1),], [
+        (val_sub,"$player_rotate_y",1),
         ]),
 
-		## CONTROLS END ########
+    ## CONTROLS END ########
 
      (0, 0, 0, [], [
           (scene_prop_get_instance,":s_instance", "$player_ship", 0),
@@ -5700,8 +5645,8 @@ sw_deathcam_cycle_backwards,
           (prop_instance_get_position,pos10,":s_instance"),
           (position_rotate_y,pos1,"$player_rotate_y"),
           (position_rotate_x,pos1,"$player_rotate_x"),
-		  (position_rotate_z,pos1,"$player_rotate_z"),
-          (position_move_y,pos1,"$player_speed"),		#moves the player forward or backwards depending on their speed?
+      (position_rotate_z,pos1,"$player_rotate_z"),
+          (position_move_y,pos1,"$player_speed"),    #moves the player forward or backwards depending on their speed?
           (prop_instance_animate_to_position,":s_instance",pos1,10),
 
           (position_move_y,pos2,1000),
@@ -5767,24 +5712,24 @@ sw_deathcam_cycle_backwards,
          (end_try),
         ]),
      (0, 0, 0, [
-				(this_or_next|key_is_down, key_left_mouse_button),
-				(key_is_down, key_space),
-				(gt,"$player_cannons",0),
-				(gt,"$player_damage",0),
-				],
-				[
+        (this_or_next|key_is_down, key_left_mouse_button),
+        (key_is_down, key_space),
+        (gt,"$player_cannons",0),
+        (gt,"$player_damage",0),
+        ],
+        [
          (scene_prop_get_instance,":s_instance", "$player_ship", 0),
          (prop_instance_get_position,pos1,":s_instance"),
          (prop_instance_get_position,pos2,":s_instance"),
          #SW BSG - modified viper_machine_gun to remove the middle gun, pos3
          #(prop_instance_get_position,pos3,":s_instance"),
-         (position_move_y,pos1,25),	  #
+         (position_move_y,pos1,25),    #
          (position_move_x,pos1,-230), # original value was -300
          (position_move_z,pos1,30),   # original value was -45
          (position_move_y,pos2,25),
          (position_move_x,pos2,230),  # original value was 300
-         (position_move_z,pos2,30),	  #original value was -45
-		 #(position_move_y,pos3,-110),
+         (position_move_z,pos2,30),    #original value was -45
+     #(position_move_y,pos3,-110),
          #(position_move_x,pos3,0),
          #(position_move_z,pos3,190),
          (particle_system_burst,"psys_viper_machine_gun",pos1,1),
@@ -5838,7 +5783,7 @@ sw_deathcam_cycle_backwards,
                  (troop_set_slot,":cylon",slot_troop_ai_target_troop,"trp_viper_b"),
              (else_try),
                  (eq,":randomized_number",3),
-				 (scene_prop_get_instance,":s_instance", "spr_viper_mk7", 2),
+         (scene_prop_get_instance,":s_instance", "spr_viper_mk7", 2),
                  (troop_set_slot,":cylon",slot_troop_ai_target_troop,"trp_viper_c"),
              (else_try),
                  (eq,":randomized_number",4),
@@ -5914,7 +5859,7 @@ sw_deathcam_cycle_backwards,
       (0,mtef_visitor_source,af_override_horse,0,1,[]),
      ],
     [
-	  common_change_fog,
+    common_change_fog,
       (ti_before_mission_start, 0, 0, [], [(set_rain,2,0),]),
     ],
   ),
@@ -5973,21 +5918,21 @@ sw_deathcam_cycle_backwards,
     #common_regeneration_store_info,
     #common_regeneration,
 
-	#SW - add custom lightsaber noise
-	#lightsaber_noise_idle,			#commented out, not necessary and idle noise sometimes interupts saber swing
-	lightsaber_noise_player,
-	lightsaber_noise_agent,
-	common_change_fog,
-	common_use_healthpack,
-	#common_use_binocular_1,
-	#common_use_binocular_2,
-	common_helmet_view,
-	common_zoom_view,
-	common_use_jetpack,
-	common_toggle_weapon_capabilities,
-	common_crouch_button,
+  #SW - add custom lightsaber noise
+  #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
+  lightsaber_noise_player,
+  lightsaber_noise_agent,
+  common_change_fog,
+  common_use_healthpack,
+  #common_use_binocular_1,
+  #common_use_binocular_2,
+  common_helmet_view,
+  common_zoom_view,
+  common_use_jetpack,
+  common_toggle_weapon_capabilities,
+  common_crouch_button,
 
-	common_inventory_not_available,
+  common_inventory_not_available,
 
 
    (ti_tab_pressed, 0, 0, [],
@@ -6065,8 +6010,8 @@ sw_deathcam_cycle_backwards,
     ]),
 
 
-		#SWY - trigger to make unique agents behavior - custom scripting
-	  (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
+    #SWY - trigger to make unique agents behavior - custom scripting
+    (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
 
  ],
 ),
