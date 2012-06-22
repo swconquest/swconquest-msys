@@ -1291,11 +1291,10 @@ mission_templates = [
     [
 
       sw_victory_defeat_conditions,
+      
+      (4, 0, 0, [(eq,"$battle_won",1)], [ (display_message,"str_msg_battle_won"), ]),
 
-      (4, 0, 0, [(eq,"$battle_won",1),], [ (display_message,"str_msg_battle_won"), ]),
-
-
-      #Highlander begin--------------------------------------
+      #Highlander begin------------------------------------
       common_physics_init,
       common_timer,
       common_physics,
