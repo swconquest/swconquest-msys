@@ -2781,6 +2781,8 @@ scene_props = [
 ("sarapin_fac_terminal6",0,"sarapin_fac_terminal6","bo_sarapin_fac_terminal6", []),
 ("sarapin_fac_terminal7",0,"sarapin_fac_terminal7","bo_sarapin_fac_terminal7", []),
 
+("sarapin_fac_drill",0,"sarapin_fac_drill","bo_sarapin_fac_drill", []),
+
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)
 #Highlander begin--------------------------------------

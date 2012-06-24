@@ -1534,4 +1534,5 @@ spr_sarapin_terminal4 = 1532
 spr_sarapin_fac_terminal5 = 1533
 spr_sarapin_fac_terminal6 = 1534
 spr_sarapin_fac_terminal7 = 1535
-spr_scene_props_end = 1536
+spr_sarapin_fac_drill = 1536
+spr_scene_props_end = 1537
