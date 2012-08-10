@@ -1436,6 +1436,7 @@ common_check_town_fight = (
             (else_try),
               (gt, ":wounded", 0),
               (dialog_box,"@You have attacked a citizen and are now wanted by the local authorities!", "@Alert"),  # display dialog popup ?
+              (assign, "$g_started_battle_random_by_enemy_faction", 0), #swy--fixes gaining relation with faction when attacking a citizen!
               (call_script, "script_start_town_fight"),
               (assign, "$g_init_fight", 2),
             (try_end),
@@ -1476,14 +1477,12 @@ common_check_town_fight = (
               (add_xp_to_troop,100,"$g_player_troop"),  #since custom commander is integrated
               (call_script, "script_troop_add_gold", "$g_player_troop", 100),
               (assign, "$g_init_fight", 0),  #turn it off
-                  #@> SWY - Added some conditionals for changing nynamically the faction ralections
+              (store_faction_of_party, ":minorplanet_faction", "$current_town"),
+                  #@> SWY - Added some conditionals for changing dynamically the faction relations
                   (try_begin),
                     (eq, "$g_started_battle_random_by_enemy_faction", 1),
-                    (store_faction_of_party, ":minorplanet_faction", "$current_town"),
                     (call_script, "script_change_player_relation_with_faction", ":minorplanet_faction", 1),
                   (else_try),
-                    #(eq,"$g_started_battle_random_by_enemy_faction",1),
-                    (store_faction_of_party, ":minorplanet_faction", "$current_town"),
                     (call_script, "script_change_player_relation_with_faction", ":minorplanet_faction", -3),
                   (try_end),
             (try_end),

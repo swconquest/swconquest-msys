@@ -26541,6 +26541,7 @@ scripts = [
               ]),
               
               #script_update_fs_merchants
+              #Jedi Stuff Seller
               # INPUT: none
               # OUTPUT: none
               ("update_fs_merchants",
@@ -26569,6 +26570,7 @@ scripts = [
               ]),
               
               #script_update_fs_merchants
+              #Clone Wars Merchant
               # INPUT: none
               # OUTPUT: none
               ("update_ce_merchants",

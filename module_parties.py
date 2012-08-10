@@ -100,12 +100,12 @@ parties = [
   #("zendar","Zendar",pf_disabled|icon_sw_town_green|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-138.56,-23.48),[]),
  #SW MF added base (ie. shipyards)
   ("shipyard_trade_federation","Trade_Federation",icon_cis_star_cruiser|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(41.41,-27.52),[],260),
-  ("shipyard_kuat","Kuat Shipyards",icon_XQ_04_Station_2|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(5.81, -19.65),[],260),
-  ("shipyard_raxus","Raxus Prime Shipyards",icon_XQ_04_Station_4|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(130.52, 124.81),[],260),
-  ("shipyard_corellia","Corellia Shipyards",icon_XQ_04_Station_1|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-7.96, -42.40),[],260),
-  ("shipyard_moncal","Mon Cal Shipyards",icon_XQ_04_Station_2|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(115.30, 80.93),[],260),
-  ("shipyard_mandalore","Mandalore Shipyards",icon_XQ_04_Station_5|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(7.65, 64.01),[],260),
-  ("shipyard_fondor","Fondor Shipyards",icon_XQ_04_Station_3|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-49.70, -52.52),[],260),
+  ("shipyard_kuat","Kuat_Shipyards",icon_XQ_04_Station_2|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(5.81, -19.65),[],260),
+  ("shipyard_raxus","Raxus_Prime_Shipyards",icon_XQ_04_Station_4|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(130.52, 124.81),[],260),
+  ("shipyard_corellia","Corellia_Shipyards",icon_XQ_04_Station_1|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-7.96, -42.40),[],260),
+  ("shipyard_moncal","Mon_Cal_Shipyards",icon_XQ_04_Station_2|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(115.30, 80.93),[],260),
+  ("shipyard_mandalore","Mandalore_Shipyards",icon_XQ_04_Station_5|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(7.65, 64.01),[],260),
+  ("shipyard_fondor","Fondor_Shipyards",icon_XQ_04_Station_3|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-49.70, -52.52),[],260),
   
   
 
@@ -137,7 +137,7 @@ parties = [
   ("taris","Taris",  icon_sw_swy_Planet_Taris|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(15.66,90.63),[],135), #new pos
   
   ## SWY 0.9.0.4 - Added Raxus Prime and Sarapin
-  ("raxusprime","Raxus Prime",  icon_sw_swy_Planet_RaxusPrime|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(99.90,114.62),[],135), #newpos
+  ("raxusprime","Raxus_Prime",  icon_sw_swy_Planet_RaxusPrime|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(99.90,114.62),[],135), #newpos
   ("sarapin","Sarapin",  icon_sw_swy_Planet_Sarapin|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-6.5,17),[],135), #new pos
   ("hypori","Hypori",  icon_sw_swy_Planet_Tatooine|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(92,-91),[],135), #new pos
   ("felucia","Felucia",  icon_sw_swy_Planet_forest|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(84.56,108.78),[],135), #newpos
@@ -187,7 +187,7 @@ parties = [
   ("spacestation_39","Mon_Cal_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(126.61,78.28),[],280),
   ("spacestation_40","Tatooine_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(108.11,-73.07),[],260),
 #Rhen Var
-  ("spacestation_41","Rhen Var",icon_sw_swy_rePlanet_snow|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-100.11,63.07),[],260),
+  ("spacestation_41","Rhen_Var",icon_sw_swy_rePlanet_snow|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-100.11,63.07),[],260),
   ("spacestation_42","Saleucami",icon_sw_swy_rePlanet_snow|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-108.11,-93.07),[],260),
 #     Rinimad      
 #              Rietal Derchios Gerdus
@@ -238,14 +238,14 @@ parties = [
   ("minorplanet_40","Saki",  icon_sw_minorplanet_16|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(56.34,-30.29),[],170),
 
   ("minorplanet_41","Nar_Shadda",  icon_sw_swy_NarShadda|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(93.44,-11),[],100), #new pos
-  ("minorplanet_42","Bothawui Moon",  icon_sw_minorplanet_01|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(66.38,-47.51),[],110),
+  ("minorplanet_42","Bothawui_Moon",  icon_sw_minorplanet_01|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(66.38,-47.51),[],110),
   ("minorplanet_43","Alzoc_III",  icon_sw_minorplanet_18|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(96.32,-141.22),[],120),
   ("minorplanet_44","Ruusan",  icon_sw_minorplanet_19|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(10.82,-30.01),[],130),
   ("minorplanet_45","Dathomir_Moon",  icon_sw_minorplanet_16|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-19.07,98.41),[],170),
   ("minorplanet_46","Yag'Dhul",  icon_sw_minorplanet_20|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-36.96,-66.68),[],170),
   ("minorplanet_47","Selvaris",  icon_sw_minorplanet_21|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-133.92,27.49),[],170),
   ("minorplanet_48","Sump",  icon_sw_minorplanet_01|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-139.37,-124.54),[],170),
-  ("minorplanet_49","Mustafar Moon",  icon_sw_minorplanet_19|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-22.68,-120.10),[],10),
+  ("minorplanet_49","Mustafar_Moon",  icon_sw_minorplanet_19|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-22.68,-120.10),[],10),
   ("minorplanet_50","Dosuun",  icon_sw_minorplanet_02|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-140.92,-144.82),[],170),
 
   ("minorplanet_51","Yaga_Minor",  icon_sw_minorplanet_03|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-135.01,65.11),[],100),
@@ -262,7 +262,7 @@ parties = [
   ("minorplanet_61","Thisspias",  icon_sw_minorplanet_12|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-0.31,-11.03),[],100),
   ("minorplanet_62","Vjun",  icon_sw_minorplanet_13|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(77.34,70.70),[],100),
   ("minorplanet_63","Drongar",  icon_sw_minorplanet_14|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(80,58),[],100),
-  ("minorplanet_64","Kamino Moon",  icon_sw_swy_rePlanet_rock|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(106.83,-61.80),[],100),
+  ("minorplanet_64","Kamino_Moon",  icon_sw_swy_rePlanet_rock|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(106.83,-61.80),[],100),
   ("minorplanet_65","Mimban",  icon_sw_minorplanet_16|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(20.89,-48.58),[],100),
   ("minorplanet_66","Alaris_Prime",  icon_sw_minorplanet_07|pf_minorplanet,  no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(35.60,3.90),[],100),
   ("minorplanet_67","Wayland",  icon_sw_minorplanet_18|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-18.76,43.36),[],100),

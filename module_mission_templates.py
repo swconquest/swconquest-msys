@@ -531,7 +531,7 @@ mission_templates = [
       common_crouch_button,
       #common_turret, -> unstable
       common_gate_system,
-     ]+AI_triggers,
+     ]#+AI_triggers,
     ),
 
   (
@@ -1292,7 +1292,7 @@ mission_templates = [
 
       sw_victory_defeat_conditions,
       
-      (4, 0, 0, [(eq,"$battle_won",1)], [ (display_message,"str_msg_battle_won"), ]),
+      (4, 0, 0, [(eq,"$battle_won",1),(all_enemies_defeated)], [ (display_message,"str_msg_battle_won"), ]),
 
       #Highlander begin------------------------------------
       common_physics_init,
@@ -1434,8 +1434,8 @@ mission_templates = [
       ############################################################################################################
 
       #@> Swyter Battle Speech
-      (3.65, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
-      (0, 5.43, ti_once, [], [(call_script,"script_battle_speech",1)]),
+      (3.65, 0, ti_once, [(eq,"$battle_won",1),(all_enemies_defeated)],[(call_script,"script_battle_speech",speech_victory)]),
+      (0, 5.43, ti_once, [], [(call_script,"script_battle_speech",speech_deployed)]),
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
@@ -4435,8 +4435,8 @@ mission_templates = [
 
 
           #@> Swyter Battle Speech
-      (4, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
-      (0, 5, ti_once, [], [(call_script,"script_battle_speech",1)]),
+      (4, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",speech_victory)]),
+      (0, 5, ti_once, [], [(call_script,"script_battle_speech",speech_deployed)]),
 
         (0, 0, ti_once, [],
           [
@@ -4898,8 +4898,8 @@ mission_templates = [
         ], []),
 
       #@> Swyter Battle Speech
-     (4, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
-     (0, 5, ti_once, [], [(call_script,"script_battle_speech",1)]),
+     (4, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",speech_victory)]),
+     (0, 5, ti_once, [], [(call_script,"script_battle_speech",speech_deployed)]),
 
       #SW - add custom lightsaber noise
       #lightsaber_noise_idle,      #commented out, not necessary and idle noise sometimes interupts saber swing
@@ -5033,8 +5033,8 @@ mission_templates = [
       (ti_inventory_key_pressed, 0, 0, [(display_message,"str_cant_use_inventory_now")], []),
 
       #@> Swyter Battle Speech
-      (4, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",2)]),
-      (0, 5, ti_once, [], [(call_script,"script_battle_speech",1)]),
+      (4, 0, ti_once, [(eq,"$battle_won",1),],[(call_script,"script_battle_speech",speech_victory)]),
+      (0, 5, ti_once, [], [(call_script,"script_battle_speech",speech_deployed)]),
 
       (0, 0, 0,
       [(key_clicked, key_backspace),
