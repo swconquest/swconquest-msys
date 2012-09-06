@@ -6,7 +6,7 @@
 
 bignum = 0x40000000000000000000000000000000
 
-op_num_value_bits = 24 + 32
+op_num_value_bits = 24 + 32 #56
 
 tag_register        =  1
 tag_variable        =  2
@@ -30,7 +30,7 @@ tag_skill           = 19
 tag_mesh            = 20
 tag_presentation    = 21
 tag_quick_string    = 22
-tag_track	    = 23
+tag_track           = 23
 tag_tableau         = 24
 tag_animation       = 25
 tags_end            = 26
