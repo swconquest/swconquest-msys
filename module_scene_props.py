@@ -2515,7 +2515,7 @@ scene_props = [
   ("skybox_cloud_2",0,"skybox_cloud_2_prop","0", []),
   ("skybox_night_1",0,"skybox_night_1_prop","0", []),   
   ("skybox_sunset_1",0,"skybox_sunset_1_prop","0", []),
-  ("skybox_space",0,"compass_prop","0", []),	
+  ("skybox_space",0,"skybox_space_prop","0", []),	
   ("skybox_vjun",0,"skybox_vjun","0", []),   
   ("skybox_kamino",0,"skybox_kamino","0", []),  
   ("skybox_volcanic",0,"skybox_volcanic","0", []),  
@@ -2640,16 +2640,17 @@ scene_props = [
 
 #--spropbot.2011-07-21>>15:02:57
   ("sundari_peace_park",0,"sundari_peace_park","bo_sundari_peace_park", []),
-  ("sundari_block_1",0,"sundari_block_1","0", []),
+  ("sundari_block_1",0,"sundari_block_1","bo_sundari_block_1", []),
 
 #--spropbot.2011-07-22>>22:32:12
-  ("sundari_block_2",0,"sundari_block_2","0", []),
-  ("sundari_block_3",0,"sundari_block_3","0", []),
-  ("sundari_block_4",0,"sundari_block_4","0", []),
-  ("sundari_block_5",0,"sundari_block_5","0", []),
-  ("sundari_small_block_1",0,"sundari_small_block_1","0", []),
-  ("sundari_small_block_2",0,"sundari_small_block_2","0", []),
-  ("sundari_small_block_3",0,"sundari_small_block_3","0", []),
+  ("sundari_block_2",0,"sundari_block_2","bo_sundari_block_2", []),
+  ("sundari_block_3",0,"sundari_block_3","bo_sundari_block_3", []),
+  ("sundari_block_4",0,"sundari_block_4","bo_sundari_block_4", []),
+  ("sundari_block_5",0,"sundari_block_5","bo_sundari_block_5", []),
+  ("sundari_block_6",0,"sundari_block_6","bo_sundari_block_6", []),
+  ("sundari_small_block_1",0,"sundari_small_block_1","bo_sundari_small_block_1", []),
+  ("sundari_small_block_2",0,"sundari_small_block_2","bo_sundari_small_block_2", []),
+  ("sundari_small_block_3",0,"sundari_small_block_3","bo_sundari_small_block_3", []),
   ("endor_walkway",0,"endor_walkway","bo_endor_walkway", []),
   ("endor_walkway_support",0,"endor_walkway_support","bo_endor_walkway_support", []),
   ("ahto_city",0,"ahto_city","bo_ahto_city", []),
@@ -2782,6 +2783,27 @@ scene_props = [
 ("sarapin_fac_terminal7",0,"sarapin_fac_terminal7","bo_sarapin_fac_terminal7", []),
 
 ("sarapin_fac_drill",0,"sarapin_fac_drill","bo_sarapin_fac_drill", []),
+
+  ("christophisis_arena",0,"christophisis_arena","bo_christophisis_arena", []),
+  ("deathstar_parts_1_door_static",0,"deathstar_parts_1_door_static","bo_deathstar_parts_1_door_static", []),
+  ("echo_base_outer",0,"echo_base_outer","bo_echo_base_outer", []),
+  ("outer_snow",0,"outer_snow","0", []),
+  ("ahto_wall_small",0,"ahto_wall_small","bo_ahto_wall_small", []),
+  ("ahto_wall_tiny",0,"ahto_wall_tiny","bo_ahto_wall_tiny", []),
+  ("ahto_cube",0,"ahto_cube","bo_ahto_cube", []),
+  ("dantooine_path_1",0,"dantooine_path_1","bo_dantooine_path_1", []),
+  ("dantooine_path_2",0,"dantooine_path_2","bo_dantooine_path_2", []),
+  ("dantooine_path_3",0,"dantooine_path_3","bo_dantooine_path_3", []),
+  ("dantooine_building_1",0,"dantooine_building_1","bo_dantooine_building_1", []),
+  ("dantooine_building_2",0,"dantooine_building_2","bo_dantooine_building_2", []),
+  ("dantooine_stone",0,"dantooine_stone","bo_dantooine_stone", []),
+  ("dantooine_building_3",0,"dantooine_building_3","bo_dantooine_building_3", []),
+  ("dantooine_building_4",0,"dantooine_building_4","bo_dantooine_building_4", []),
+  ("dantooine_building_5",0,"dantooine_building_5","bo_dantooine_building_5", []),
+  ("dantooine_block",0,"dantooine_block","bo_dantooine_block", []),
+  ("skybox_sundari",0,"skybox_sundari","0", []),
+  ("sundari_battle",0,"sundari_battle","bo_sundari_battle", []),
+  ("hutt_arena",0,"hutt_arena","bo_hutt_arena", []),
 
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)
