@@ -3300,26 +3300,11 @@ simple_triggers = [
 	
 #Mining Vessel spwning (every map day) -- swyter
 (24,[
-
-    ##--> Count the number of mining vessels spawned in the map...
-    (assign, ":mvess_count", 0),
-    (try_for_parties,":i"),
-      (party_get_template_id,":i_pt",":i"),
-      (eq,":i_pt","pt_miningvessel"),
-      (val_add, ":mvess_count", 1), # +1 to the counter
-    (try_end),
-    
-    ##--> Pseudocode for the above
-    # count=0
-    # for parties in map do
-    #   if parties.template_id == "pt_miningvessel" then
-    #       count++
-    #   end
-    # end
     
     ##--> If we are in bounds skip, if not then create a new one, populating the map once at a time.
     (try_begin),
-      #if less then 10 mining vessels
+      #if less than 10 mining vessels
+      (store_num_parties_of_template, ":mvess_count", "pt_miningvessel"),
       (lt,":mvess_count",10),
       
       #spawn around debris of asteroids
@@ -3330,19 +3315,23 @@ simple_triggers = [
       #get the instance number
       (assign, ":instance", reg0),
       (party_get_position, pos1, ":instance"),
+      (map_get_random_position_around_position, pos2, pos1, 1),
       
       #add properties
       #(party_set_ai_behavior,":instance", ai_bhvr_patrol_party),
       #(party_set_ai_object,  ":instance", ":spawn_point"),
       
       (party_set_ai_behavior, ":instance", ai_bhvr_patrol_location),
-      (party_set_ai_patrol_radius,":instance", 4),
-      (party_set_ai_target_position, ":instance", pos1),
+      (party_set_ai_patrol_radius,":instance", 10),
+      (party_set_ai_target_position, ":instance", pos2),
+      (party_set_ai_object, ":instance", ":spawn_point"),
       
-      (party_set_flags, ":instance", pf_default_behavior|pf_is_ship|pf_hide_defenders, 1),
+      (party_set_flags, ":instance", pf_default_behavior|slot_party_ai_substate, 0),
+      (party_set_flags, ":instance", pf_is_ship|pf_hide_defenders, 1),
       (party_set_bandit_attraction, ":instance", 50), #hmmm tasty miners
       (party_set_extra_text, ":instance", "@Mining asteroids for ore..."),
-      
+	  
+      (party_set_slot, ":instance", slot_center_player_relation, 0), #neutral by default, as they are independent
       
       #--> from here dbg
       (call_script, "script_get_closest_center", ":instance"),

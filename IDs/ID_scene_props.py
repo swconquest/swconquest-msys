@@ -1556,4 +1556,5 @@ spr_dantooine_block = 1554
 spr_skybox_sundari = 1555
 spr_sundari_battle = 1556
 spr_hutt_arena = 1557
-spr_scene_props_end = 1558
+spr_kashyyyk_floor = 1558
+spr_scene_props_end = 1559

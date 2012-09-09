@@ -6062,7 +6062,7 @@ game_menus = [
 ##### Custom Commander(CC)
 ############################################################################################################
 
-		#SW - script_setup_random_scene is based on the closest town, determine its name
+		#SW - script_setup_random_scene is based on the closest planet, determine its name
 		(assign, ":closest_dist",100000),
 		(assign, ":closest_town", -1),
 		(try_for_range, ":cur_town", mainplanets_begin, mainplanets_end),

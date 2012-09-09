@@ -1649,9 +1649,22 @@ items = [
 #black sun 
 ["black_sun_helmet", "Black Sun Helmet", [("black_sun_helmet",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian,0, 
  270 , weight(2)|abundance(60)|head_armor(20)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
+["black_sun_helmet_tan", "Black Sun Helmet", [("black_sun_helmet_tan",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian,0, 
+ 270 , weight(2)|abundance(60)|head_armor(20)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
+["black_sun_helmet_teal", "Black Sun Helmet", [("black_sun_helmet_teal",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian,0, 
+ 270 , weight(2)|abundance(60)|head_armor(20)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
+["black_sun_helmet_red", "Black Sun Helmet", [("black_sun_helmet_red",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian,0, 
+ 270 , weight(2)|abundance(60)|head_armor(20)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
+ 
 ["black_sun_armor", "Black Sun Armor", [("black_sun_armor",0)], itp_merchandise| itp_type_body_armor |itp_civilian |itp_covers_legs,0, 
  780 , weight(6)|abundance(60)|head_armor(0)|body_armor(46)|leg_armor(14)|difficulty(0) ,imodbits_armor ],
- 
+["black_sun_armor_tan", "Black Sun Armor", [("black_sun_armor_tan",0)], itp_merchandise| itp_type_body_armor |itp_civilian |itp_covers_legs,0, 
+ 780 , weight(6)|abundance(60)|head_armor(0)|body_armor(46)|leg_armor(14)|difficulty(0) ,imodbits_armor ],
+["black_sun_armor_teal", "Black Sun Armor", [("black_sun_armor_teal",0)], itp_merchandise| itp_type_body_armor |itp_civilian |itp_covers_legs,0, 
+ 780 , weight(6)|abundance(60)|head_armor(0)|body_armor(46)|leg_armor(14)|difficulty(0) ,imodbits_armor ],
+["black_sun_armor_red", "Black Sun Armor", [("black_sun_armor_red",0)], itp_merchandise| itp_type_body_armor |itp_civilian |itp_covers_legs,0, 
+ 780 , weight(6)|abundance(60)|head_armor(0)|body_armor(46)|leg_armor(14)|difficulty(0) ,imodbits_armor ],
+
 # gamorrean
 # ["gamorrean_head", "Gamorrean Head", [("gamorrean_head",0)], itp_unique|itp_type_head_armor|itp_covers_head |itp_civilian ,0, 
  # 75 , weight(4)|abundance(80)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
@@ -3011,7 +3024,7 @@ items = [
 #["speeder_sparrow","Sparrow Speeder", [("speeder_sparrow",0),("speeder_sparrow_inv",ixmesh_inventory)], itp_merchandise|itp_type_horse, 0, 2000,abundance(70)|hit_points(60)|body_armor(30)|difficulty(2)|horse_speed(80)|horse_maneuver(60)|horse_charge(25),imodbits_speeder],
 #["pod_racer","Pod Racer", [("pod_racer",0)], itp_merchandise|itp_type_horse, 0, 3000,abundance(60)|hit_points(20)|body_armor(0)|difficulty(3)|horse_speed(125)|horse_maneuver(75)|horse_charge(10),imodbits_speeder],
 #["swoop_bike","Swoop Bike", [("swoop_bike",0)], itp_merchandise|itp_type_horse, 0, 2500,abundance(60)|hit_points(25)|body_armor(0)|difficulty(3)|horse_speed(115)|horse_maneuver(75)|horse_charge(10),imodbits_speeder],
-["speeder_dagger","Dagger Speeder Bike", [("speeder_dagger",0)],                        itp_merchandise|itp_type_horse, 0, 2000,abundance(70)|hit_points(45)|body_armor(10)|difficulty(2)|horse_speed(75)|horse_maneuver(65)|horse_charge(35),imodbits_speeder],
+["speeder_dagger","Bladed 74-Z Speeder Bike", [("speeder_dagger",0)],                        itp_merchandise|itp_type_horse, 0, 2000,abundance(70)|hit_points(45)|body_armor(10)|difficulty(2)|horse_speed(75)|horse_maneuver(65)|horse_charge(35),imodbits_speeder],
 #["power_chair","Power Chair", [("power_chair",0)],                        itp_merchandise|itp_type_horse, 0, 500,abundance(50)|hit_points(20)|body_armor(0)|difficulty(0)|horse_speed(45)|horse_maneuver(35)|horse_charge(10),imodbits_speeder_basic],
 ["horses_end","<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
 

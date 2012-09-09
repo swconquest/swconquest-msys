@@ -294,7 +294,7 @@ scenes = [
   ("mainplanet_kashyyyk_center",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x00000006200005000008f23c0000753d00004f66000033c8", ## old code >> "0x00000002bc61d087400799e60000034e00004b34000059be"
     [],["bonus_box_mainplanet_10"],),
   ("mainplanet_hoth_center",sf_generate,"none", "none",(0,0),(120,120),-200,"0x000000043000050000029caa00000001000048c000001029",
-    [],["bonus_box_mainplanet_11"],"outer_terrain_snow"),
+    [],["bonus_box_mainplanet_11"],"outer_snow"), #outer_terrain_snow"),
   ("mainplanet_gamorr_center",sf_generate,"none", "none",(0,0),(100,100),-100,"0x0000000020045abc000308c4000029d9000033bd000009b9",
 	[],["bonus_box_mainplanet_12"],"outer_terrain_desert"),
   ("mainplanet_yavin_iv_center",sf_generate,"none", "none",(0,0),(100,100),-100,"0x300416a600035cd600007ee80000012100003fbc",
@@ -1262,8 +1262,8 @@ scenes = [
     [],[],),
 	
 	#Hoth land battle       With trees: 0x0000000242c3d08f4008aa2a00003efe00004b34000059be   Without trees: 0x000000024003d08f0008aa2a00003efe00004b34000059be
-  ("mainplanet_hoth_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x000000024003d08f0008aa2a00003efe00004b34000059be",
-    [],[], "outer_terrain_snow"),
+  ("mainplanet_hoth_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x000000024003d08f000b92e400003efe00004b34000059be", #740x740 um
+    [],[], "outer_snow"), #""outer_terrain_snow"),
   ("mainplanet_gamorr_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x00000006200005000008f23c0000753d00004f66000033c8", ## old code >> "0x00000002bc61d087400799e60000034e00004b34000059be"
     [],[], "outer_terrain_steppe"),
   ("mainplanet_yavin_iv_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000000300005000006d9b9000052560000620000004c92",

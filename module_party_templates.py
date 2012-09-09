@@ -55,7 +55,7 @@ party_templates = [
   ("night_fang_pirates","Night Fangs Pirates",icon_mercenary_shuttle|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_steppe_bandit,5,25),(trp_steppe_bandit_female,4,8),(trp_trandoshan,1,5),(trp_twilek,1,5),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
   ("blazing_claw_pirates","Blazing Claw Pirates",icon_mercenary_fighter|carries_goods(2),0,fac_blazing_claw_pirates,bandit_personality,[(trp_blazing_claw_pirate,5,25),(trp_blazing_claw_pirate_female,4,8),(trp_rodian,1,5),(trp_sullustan_1,1,5),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
   ("tusken_raiders","Tusken Raiders",icon_mercenary_raider_brown|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_tusken_1,10,25),(trp_tusken_2,5,10)]),  
-  ("black_sun_pirates","Black Sun Pirates",icon_starchaser|carries_goods(2),0,fac_black_sun_pirates,bandit_personality,[(trp_black_sun_pirate_1,10,20),(trp_black_sun_pirate_2,5,10),(trp_black_sun_pirate_3,5,10),(trp_black_sun_pirate_4,1,10),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
+  ("black_sun_pirates","Black Sun Pirates",icon_starchaser|carries_goods(2),0,fac_black_sun_pirates,bandit_personality,[(trp_black_sun_pirate_1,10,20),(trp_black_sun_pirate_2,5,10),(trp_black_sun_pirate_3,5,10),(trp_black_sun_pirate_4,2,15),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
   
 #SW - new outlaw party templates with Imperial Troops (nevermind, back to regular bandits)
 #  ("steppe_bandits","Imperial Scouts",icon_axeman|carries_goods(2),0,fac_outlaws,bandit_personality,[(trp_imperial_stormtrooper_mounted,8,15),(trp_imperial_scout_trooper,10,20)]),

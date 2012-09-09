@@ -415,6 +415,25 @@ dialogs = [
     ]],
   [anyone|plyr,"minorplanet_farmer_talk", [], "Carry on, then. Good-bye.", "close_window",[(assign, "$g_leave_encounter",1)]],
 
+#SWY Added mining vessel dialogs
+  [party_tpl|pt_miningvessel,"start", [(eq,"$talk_context",tc_party_encounter)],
+   "{reg1?We're independent asteroid miners. Our shipment is ore of the best quality. Are you here for business, sir?"
+       +":You again? This isn't going to solve anything. We're working, please go away and keep it civil.}", "miningvessel_talk",
+   [(assign,reg1,1),
+    (try_begin),
+       (neg|party_slot_ge,"$g_encountered_party",slot_center_player_relation,0),
+       (assign,reg1,0), #-->Use the second pair of strings it the relation with this miners is bad (<0)
+    (try_end),
+   ]],
+
+  [anyone|plyr,"miningvessel_talk", [], "{reg1?Ore? That sounds pricey. Prepare to be plundered, scum."
+                                            +":I've come back to finish you off, this is getting personal.}", "close_window",
+											[(party_set_slot, "$g_encountered_party", slot_center_player_relation, -6),(assign, "$encountered_party_friendly", 0),]],
+
+  [anyone|plyr,"miningvessel_talk", [], "{reg1?You all seem busy. I'll leave you alone. Good-bye."
+                                            +":Understood, I've leant my lesson.}", "close_window",
+										    [(assign, "$g_leave_encounter",1)]],
+  
  #SW MF added dialog for patrol units and trader convoys
 #patrols - can attack if relation with faction is 0 or below
 [party_tpl|pt_galacticempire_escort,"start", [

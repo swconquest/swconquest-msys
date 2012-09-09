@@ -2805,6 +2805,8 @@ scene_props = [
   ("sundari_battle",0,"sundari_battle","bo_sundari_battle", []),
   ("hutt_arena",0,"hutt_arena","bo_hutt_arena", []),
 
+  ("kashyyyk_floor",0,"kashyyyk_floor","bo_kashyyyk_floor", []),
+  
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)
 #Highlander begin--------------------------------------

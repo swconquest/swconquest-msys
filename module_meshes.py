@@ -559,5 +559,5 @@ meshes = [
   ("cpov", 0, "cpov", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   #### JEDEDIAH Q mesh for Companions Overview END ##############################
   ("swc_logo", 0, "warrider_logo", 0, 0, 0, 0, 0, 0, 1, 1, 1),
-  ("galaxy", 0, "compass_prop", 0, 0, 0, 0, 0, 0, .2, .2, .2),
+  ("galaxy", 0, "skybox_space_prop", 0, 0, 0, 0, 0, 0, .2, .2, .2),
 ]

@@ -18740,7 +18740,7 @@ scripts = [
         #SW - modified so spawn point is somewhat random
         (store_random_in_range, ":rand", 0, 100),
         (try_begin),
-          (lt, ":rand", 75),	#75% chance to spawn in one of the bandits primary locations
+          (le, ":rand", 75),	#75% chance to spawn in one of the bandits primary locations
           (store_random,":spawn_point",num_blazing_claw_pirate_spawn_points),
           (val_add,":spawn_point","p_blazing_claw_pirate_spawn_point"),
         (else_try),			#25% chance for bandit to spawn around a random village
