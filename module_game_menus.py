@@ -6053,6 +6053,10 @@ game_menus = [
 ############################################################################################################
       ("encounter_attack",[
           (eq, "$encountered_party_friendly", 0),
+          
+          #--> Mining vessels suck at open battlefield, only battle in space!
+          (party_get_template_id,":i_pt","$g_encountered_party"),
+          (neq,":i_pt","pt_miningvessel"),
 ############################################################################################################
 ##### Custom Commander(CC)
 ############################################################################################################

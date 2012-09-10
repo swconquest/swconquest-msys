@@ -417,8 +417,8 @@ dialogs = [
 
 #SWY Added mining vessel dialogs
   [party_tpl|pt_miningvessel,"start", [(eq,"$talk_context",tc_party_encounter)],
-   "{reg1?We're independent asteroid miners. Our shipment is ore of the best quality. Are you here for business, sir?"
-       +":You again? This isn't going to solve anything. We're working, please go away and keep it civil.}", "miningvessel_talk",
+   "{reg1?We are miners contracted by the Corellia Mining Corporation and we have no business in getting involved with this war. Now we have a tight deadline to get this ore shipment out, so please leave the area so we can get back to our work."
+       +":The Corellia Mining Corporation has no business in dealing with pirate scum like you, now leave this area so we can continue with our work.}", "miningvessel_talk",
    [(assign,reg1,1),
     (try_begin),
        (neg|party_slot_ge,"$g_encountered_party",slot_center_player_relation,0),
@@ -426,9 +426,10 @@ dialogs = [
     (try_end),
    ]],
 
-  [anyone|plyr,"miningvessel_talk", [], "{reg1?Ore? That sounds pricey. Prepare to be plundered, scum."
-                                            +":I've come back to finish you off, this is getting personal.}", "close_window",
-											[(party_set_slot, "$g_encountered_party", slot_center_player_relation, -6),(assign, "$encountered_party_friendly", 0),]],
+  [anyone|plyr,"miningvessel_talk", [], "{reg1?Ore shipment? That sounds valuable. You can either surrender the shipment to me or I will take it by force!"
+                                            +":I've come back to put an end to your pathetic mining operation.}", "close_window",
+											[(party_set_slot, "$g_encountered_party", slot_center_player_relation, -6),
+                                             (assign, "$encountered_party_friendly", 0)]],
 
   [anyone|plyr,"miningvessel_talk", [], "{reg1?You all seem busy. I'll leave you alone. Good-bye."
                                             +":Understood, I've leant my lesson.}", "close_window",

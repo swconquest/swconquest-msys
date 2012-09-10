@@ -3308,14 +3308,14 @@ simple_triggers = [
       (lt,":mvess_count",10),
       
       #spawn around debris of asteroids
-      (set_spawn_radius, 5),
+      (set_spawn_radius, 2),
       (store_random_in_range,":spawn_point", "p_debris_01","p_debris_10"),
       (spawn_around_party,   ":spawn_point", "pt_miningvessel"),
        
       #get the instance number
       (assign, ":instance", reg0),
       (party_get_position, pos1, ":instance"),
-      (map_get_random_position_around_position, pos2, pos1, 1),
+      (map_get_random_position_around_position, pos2, pos1, 5),
       
       #add properties
       #(party_set_ai_behavior,":instance", ai_bhvr_patrol_party),
@@ -3326,11 +3326,12 @@ simple_triggers = [
       (party_set_ai_target_position, ":instance", pos2),
       (party_set_ai_object, ":instance", ":spawn_point"),
       
-      (party_set_flags, ":instance", pf_default_behavior|slot_party_ai_substate, 0),
+      (party_set_flags, ":instance", pf_default_behavior, 0),
+      (party_set_flags, ":instance", slot_party_ai_substate, 0),
       (party_set_flags, ":instance", pf_is_ship|pf_hide_defenders, 1),
       (party_set_bandit_attraction, ":instance", 50), #hmmm tasty miners
       (party_set_extra_text, ":instance", "@Mining asteroids for ore..."),
-	  
+      
       (party_set_slot, ":instance", slot_center_player_relation, 0), #neutral by default, as they are independent
       
       #--> from here dbg
@@ -3345,7 +3346,22 @@ simple_triggers = [
       (display_message, "@$--->Mining vessel spawned, near {s1}",color_bad_news),
       #(party_relocate_near_party,":instance","p_main_party",1),
     (try_end),
-	]),
+    ]),
+    
+#Mining Vessel movement, from time to time -- swyter
+(2, [
+    (try_for_parties,":i"),
+      (party_get_template_id,":i_pt",":i"),
+      (eq,":i_pt","pt_miningvessel"),
+      
+      #--> in case we're dealing with such a badass...
+      
+      (party_get_position, pos1, ":i"),
+      (map_get_random_position_around_position, pos2, pos1, 2),
+      (party_set_ai_behavior, ":i", ai_bhvr_travel_to_point),  #pick a random point and go there, ore!
+      (party_set_ai_target_position, ":i", pos2),
+    (try_end)
+    ]),
 
 #spare trigger 1
 (24*7,	[
