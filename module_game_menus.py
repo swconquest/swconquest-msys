@@ -426,13 +426,6 @@ game_menus = [
     [
 	  #SW - modified custom battle name
 	  #("custom_battle_scenario_1",[], "Defend the village from Imperials",
-      ("custom_battle_scenario_1",[], "Assault the Endor Bunker",
-       [
-           (assign, "$g_custom_battle_scenario", 0),
-           (jump_to_menu, "mnu_custom_battle_2"),
-
-        ]
-       ),
 ##      ("custom_battle_scenario_2",[],"Siege Attack 1",
 ##       [
 ##           (assign, "$g_custom_battle_scenario", 1),
@@ -440,26 +433,10 @@ game_menus = [
 ##
 ##        ]
 ##       ),
-	  #SW - modified custom battle name
-      #("custom_battle_scenario_3",[],"Attack the Endor Bunker",
-	  ("custom_battle_scenario_3",[],"Attack the Imperial Outpost",
-       [
-           (assign, "$g_custom_battle_scenario", 1),
-           (jump_to_menu, "mnu_custom_battle_2"),
-
-        ]
-       ),
 	  #SW - modified custom battle name	   
        ("custom_battle_scenario_4",[],"Tusken Raider Attack",
        [
            (assign, "$g_custom_battle_scenario", 2),
-           (jump_to_menu, "mnu_custom_battle_2"),
-        ]
-       ),
-	  #SW - modified custom battle name	   
-       ("custom_battle_scenario_5",[],"Attack the Imperials",
-       [
-           (assign, "$g_custom_battle_scenario", 3),
            (jump_to_menu, "mnu_custom_battle_2"),
         ]
        ),
@@ -477,14 +454,7 @@ game_menus = [
            (assign, "$g_custom_battle_scenario", 8),
            (jump_to_menu, "mnu_custom_battle_2"),
         ]
-       ),	   	   
-	  #SW - modified custom battle name	   
-       ("custom_battle_scenario_9",[],"The Maze",
-       [
-           (assign, "$g_custom_battle_scenario", 9),
-           (jump_to_menu, "mnu_custom_battle_2"),
-        ]
-       ),	   
+       ),	 
 	  #SW - added menu for custom battle mod
 	  ("custom_battle",[],"Start a Custom Battle",
 	   [
@@ -714,75 +684,7 @@ game_menus = [
 
      (reset_visitors),
 ##   Scene 1 Start "Shalow Lake War"
-     (try_begin),
-       (eq, "$g_custom_battle_scenario", 0),
-       #(assign, "$g_player_troop", "trp_quick_battle_player_mounted"),
-	   (assign, "$g_player_troop", "trp_quick_battle_player"),
-       (set_player_troop, "$g_player_troop"),
-     
-       (assign, "$g_custom_battle_scene", "scn_quick_battle_1"),
-       (modify_visitors_at_site, "$g_custom_battle_scene"),
-       (set_visitor, 0, "$g_player_troop"),
-
-	   #SW - modified player's custom battle equipment
-       (troop_add_item, "trp_player","itm_leather_boots",0),
-       (troop_add_item, "trp_player","itm_quick_battle_armor",0),
-       (troop_add_item, "trp_player","itm_leather_gloves",0),
-       (troop_add_item, "trp_player","itm_lightsaber_yellow",0),
-       (troop_add_item, "trp_player","itm_a280",0),
-       (troop_add_item, "trp_player","itm_stun_beam_rifle",0),
-       #(troop_add_item, "trp_player","itm_practice_speeder",0),
-       (troop_add_item, "trp_player","itm_energy_shield_yellow_medium",0),
-       (troop_equip_items, "trp_player"),
-     
-       (set_visitors, 1, "trp_knight_2_2", 1),
-       (set_visitors, 2, "trp_knight_2_4", 1),
-       (set_visitors, 3, "trp_knight_2_5", 1),
-       (set_visitors, 4, "trp_knight_2_7", 1),
-       (set_visitors, 5, "trp_rebel_commando_veteran", 4),
-       (set_visitors, 6, "trp_rebel_commando", 6),
-     
-##     Enemy
-       (set_visitors, 16, "trp_imperial_stormtrooper", 6),
-       (set_visitors, 17, "trp_imperial_stormtrooper", 6),
-       (set_visitors, 18, "trp_imperial_scout_trooper", 6),
-       (set_visitors, 19, "trp_imperial_scout_trooper", 6),
-       (set_visitors, 20, "trp_imperial_stormtrooper", 6),
-       (str_store_string, s16, "str_custom_battle_1"),
-
-##   SCENE 3 Start "Black Sun Pirate Hunt"
-     (else_try),
-       (eq, "$g_custom_battle_scenario", 1),
-       #(assign, "$g_player_troop", "trp_quick_battle_player_mounted"),
-	   (assign, "$g_player_troop", "trp_quick_battle_player"),
-       (set_player_troop, "$g_player_troop"),
-     
-       (assign, "$g_custom_battle_scene", "scn_quick_battle_3"),
-       (modify_visitors_at_site, "$g_custom_battle_scene"),
-       (set_visitor, 0, "$g_player_troop"),
-     
-	   #SW - modified Quick Battle - Skirmish 2
-       (set_visitors, 1, "trp_rebel_commando", 5),
-       (set_visitors, 2, "trp_rebel_commando", 5),
-       (set_visitors, 3, "trp_rebel_commando", 4),
-       (set_visitors, 4, "trp_rebel_commando_veteran", 3),
-       (set_visitors, 5, "trp_rebel_sniper", 5),
-       (set_visitors, 6, "trp_rebel_sniper", 3),
-## ENEMY
-		#SW - modified troops
-       (set_visitors, 16, "trp_imperial_stormtrooper", 8),
-       (set_visitors, 17, "trp_imperial_stormtrooper", 8),
-       (set_visitors, 18, "trp_imperial_stormtrooper", 8),
-       (set_visitors, 19, "trp_imperial_stormtrooper_officer", 3),
-       (set_visitors, 20, "trp_imperial_scout_trooper_marksman", 8),
-       (set_visitors, 21, "trp_imperial_scout_trooper_marksman", 8),
-       (set_visitors, 22, "trp_imperial_stormtrooper", 8),
-       (set_visitors, 23, "trp_imperial_stormtrooper", 8),
-       (set_visitors, 24, "trp_imperial_stormtrooper", 8),
-       (str_store_string, s16, "str_custom_battle_2"),
-
-##   SCENE 4 Start "Grand Stand"
-     (else_try),
+     (try_begin), #--> Tusken Raider Attack
        (eq, "$g_custom_battle_scenario", 2),
        (assign, "$g_player_troop", "trp_quick_battle_player"),
        (set_player_troop, "$g_player_troop"),
@@ -799,20 +701,20 @@ game_menus = [
        (troop_raise_skill, "$g_player_troop", skl_weapon_master, 4),    
        (troop_raise_skill, "$g_player_troop", skl_ironflesh, 6),
        (troop_raise_proficiency_linear, "$g_player_troop", wpt_one_handed_weapon, 200),
-	   (troop_raise_proficiency_linear, "$g_player_troop", wpt_two_handed_weapon, 200),
+	     (troop_raise_proficiency_linear, "$g_player_troop", wpt_two_handed_weapon, 200),
        (troop_raise_proficiency_linear, "$g_player_troop", wpt_polearm, 20),
        (troop_raise_proficiency_linear, "$g_player_troop", wpt_crossbow, 200),
        (troop_raise_proficiency_linear, "$g_player_troop", wpt_throwing, 10),
-	   (troop_raise_proficiency_linear, "$g_player_troop", wpt_archery, 10),
-		#SW - added firearm proficiency to quick battles
-	   (troop_raise_proficiency_linear, "$g_player_troop", wpt_firearm, 200),
+	     (troop_raise_proficiency_linear, "$g_player_troop", wpt_archery, 10),
+       #SW - added firearm proficiency to quick battles
+	     (troop_raise_proficiency_linear, "$g_player_troop", wpt_firearm, 200),
 	   
        (assign, "$g_custom_battle_scene", "scn_quick_battle_4"),
        (modify_visitors_at_site, "$g_custom_battle_scene"),
        (set_visitor, 0, "$g_player_troop"),
      
        (troop_clear_inventory, "$g_player_troop"),
-	   #SW - modified items for quick battles
+	     #SW - modified items for quick battles
        (troop_add_item, "trp_player","itm_leather_boots",0),
        (troop_add_item, "trp_player","itm_quick_battle_armor",0),
        (troop_add_item, "trp_player","itm_leather_gloves",0),
@@ -840,31 +742,7 @@ game_menus = [
        (str_store_string, s16, "str_custom_battle_3"),
 	   
 ##   Scene 5 START
-     (else_try),
-       (eq, "$g_custom_battle_scenario", 3),
-       (assign, "$g_player_troop", "trp_quick_battle_player_mounted"),
-       (set_player_troop, "$g_player_troop"),
-
-       (assign, "$g_custom_battle_scene", "scn_quick_battle_5"),
-       (modify_visitors_at_site, "$g_custom_battle_scene"),
-       (set_visitor, 0, "$g_player_troop"),
-     
-## US     
-       (set_visitors, 1, "trp_jedi_padawan", 3),
-       (set_visitors, 2, "trp_rebel_trooper", 4),
-       (set_visitors, 3, "trp_rebel_commando", 8),
-       (set_visitors, 4, "trp_jedi_warrior_master", 8),
-       (set_visitors, 5, "trp_rebel_trooper", 2),
-     
-##     enemy
-       (set_visitors, 16, "trp_imperial_stormtrooper", 8),
-       (set_visitors, 17, "trp_imperial_stormtrooper", 10),
-       (set_visitors, 18, "trp_sith_marauder", 4),
-       (set_visitors, 19, "trp_imperial_stormtrooper", 10),
-       (set_visitors, 20, "trp_sith_apprentice", 7),
-       (str_store_string, s16, "str_custom_battle_4"),
-     
-     (else_try),
+     (else_try),  #--> Attack on the Yavin IV Shrine
        (eq, "$g_custom_battle_scenario", 4),
 
 ##       (assign, "$g_custom_battle_scene", "scn_quick_battle_6"),
@@ -899,7 +777,7 @@ game_menus = [
        (set_visitors, 23, "trp_rebel_trooper", 4),
        (str_store_string, s16, "str_custom_battle_5"),
 
-     (else_try),
+     (else_try),  #--> Assault the Imperial Spaceship
        (eq, "$g_custom_battle_scenario", 8),
        (assign, "$g_player_troop", "trp_quick_battle_player"),
        (set_player_troop, "$g_player_troop"),
@@ -916,13 +794,13 @@ game_menus = [
        (troop_raise_skill, "$g_player_troop", skl_weapon_master, 4),    
        (troop_raise_skill, "$g_player_troop", skl_ironflesh, 6),
        (troop_raise_proficiency_linear, "$g_player_troop", wpt_one_handed_weapon, 200),
-	   (troop_raise_proficiency_linear, "$g_player_troop", wpt_two_handed_weapon, 200),
+       (troop_raise_proficiency_linear, "$g_player_troop", wpt_two_handed_weapon, 200),
        (troop_raise_proficiency_linear, "$g_player_troop", wpt_polearm, 20),
        (troop_raise_proficiency_linear, "$g_player_troop", wpt_crossbow, 200),
        (troop_raise_proficiency_linear, "$g_player_troop", wpt_throwing, 10),
-	   (troop_raise_proficiency_linear, "$g_player_troop", wpt_archery, 10),
-		#SW - added firearm proficiency to quick battles
-	   (troop_raise_proficiency_linear, "$g_player_troop", wpt_firearm, 200),
+	     (troop_raise_proficiency_linear, "$g_player_troop", wpt_archery, 10),
+		  #SW - added firearm proficiency to quick battles
+       (troop_raise_proficiency_linear, "$g_player_troop", wpt_firearm, 200),
 	   
        (assign, "$g_custom_battle_scene", "scn_quick_battle_8"),
        (modify_visitors_at_site, "$g_custom_battle_scene"),
@@ -948,42 +826,20 @@ game_menus = [
        (set_visitors, 6, "trp_imperial_stormtrooper", 1),
        (set_visitors, 7, "trp_imperial_stormtrooper", 4),
        (set_visitors, 8, "trp_imperial_stormtrooper", 1),
-	   (set_visitors, 9, "trp_imperial_stormtrooper", 4),
-	   (set_visitors, 10, "trp_imperial_stormtrooper", 5),
-	   (set_visitors, 11, "trp_imperial_stormtrooper", 6),
-	   (set_visitors, 12, "trp_imperial_stormtrooper", 1),
-	   (set_visitors, 13, "trp_imperial_stormtrooper", 3),
-	   (set_visitors, 14, "trp_imperial_stormtrooper", 3),
-	   (set_visitors, 15, "trp_imperial_stormtrooper", 3),
-	   (set_visitors, 16, "trp_imperial_stormtrooper", 2),
-	   (set_visitors, 17, "trp_imperial_stormtrooper", 2),
-	   (set_visitors, 18, "trp_imperial_stormtrooper", 1),
-	   (set_visitors, 19, "trp_imperial_stormtrooper", 1),
-	   (set_visitors, 20, "trp_imperial_stormtrooper_officer", 4),
-	   (set_visitors, 21, "trp_imperial_stormtrooper", 4),
-       (str_store_string, s16, "str_custom_battle_8"),
-
-     (else_try),
-       (eq, "$g_custom_battle_scenario", 9),
-       #(assign, "$g_player_troop", "trp_quick_battle_player_mounted"),
-	   (assign, "$g_player_troop", "trp_quick_battle_player"),
-       (set_player_troop, "$g_player_troop"),
-     
-       (assign, "$g_custom_battle_scene", "scn_quick_battle_9"),
-       (modify_visitors_at_site, "$g_custom_battle_scene"),
-     
-	   #SW -team 1
-	   (set_visitor, 0, "$g_player_troop"),
-       #(set_visitors, 1, "trp_rebel_commando", 5),
-       #(set_visitors, 2, "trp_rebel_commando", 5),
-## ENEMY
-		#SW - team 2
-       (set_visitors, 16, "trp_imperial_stormtrooper", 1),
-       (set_visitors, 17, "trp_imperial_stormtrooper", 1),
+       (set_visitors, 9, "trp_imperial_stormtrooper", 4),
+       (set_visitors, 10, "trp_imperial_stormtrooper", 5),
+       (set_visitors, 11, "trp_imperial_stormtrooper", 6),
+       (set_visitors, 12, "trp_imperial_stormtrooper", 1),
+       (set_visitors, 13, "trp_imperial_stormtrooper", 3),
+       (set_visitors, 14, "trp_imperial_stormtrooper", 3),
+       (set_visitors, 15, "trp_imperial_stormtrooper", 3),
+       (set_visitors, 16, "trp_imperial_stormtrooper", 2),
+       (set_visitors, 17, "trp_imperial_stormtrooper", 2),
        (set_visitors, 18, "trp_imperial_stormtrooper", 1),
        (set_visitors, 19, "trp_imperial_stormtrooper", 1),
-       (str_store_string, s16, "str_custom_battle_9"),
-	   
+       (set_visitors, 20, "trp_imperial_stormtrooper_officer", 4),
+       (set_visitors, 21, "trp_imperial_stormtrooper", 4),
+       (str_store_string, s16, "str_custom_battle_8"),
      (try_end),
      (set_show_messages, 1),
      ],
@@ -991,17 +847,11 @@ game_menus = [
     [
       ("custom_battle_go",[],"Start.",
        [(try_begin),
-          (eq, "$g_custom_battle_scenario", 0),
-          (set_jump_mission,"mt_custom_battle_5"),
-	    (else_try),
           (eq, "$g_custom_battle_scenario", 2),
           (set_jump_mission,"mt_custom_battle_siege"),
-	    (else_try),
+	      (else_try),
           (eq, "$g_custom_battle_scenario", 8),
-          (set_jump_mission,"mt_custom_battle_siege_8"),
-	    (else_try),
-          (eq, "$g_custom_battle_scenario", 9),
-          (set_jump_mission,"mt_custom_battle_siege"),		  		  
+          (set_jump_mission,"mt_custom_battle_siege_8"),	  
         (else_try),
           (eq, "$g_custom_battle_scenario", 4),
           (set_jump_mission,"mt_custom_battle_5"),
@@ -7234,85 +7084,85 @@ game_menus = [
   ),
   
 # Towns
-  (
-    "zendar",menu_text_color(0xFF000d2c)|mnf_auto_enter,
-    "You enter the town of Zendar.",
-    "none",
-    [(reset_price_rates,0),(set_price_rate_for_item,"itm_tools",70),(set_price_rate_for_item,"itm_salt",140)],
-    [
-      ("zendar_enter",[],"_",[(set_jump_mission,"mt_town_default"),(jump_to_scene,"scn_zendar_center"),(change_screen_mission)],"Door to the town center."),
-      ("zendar_tavern",[],"_",[(set_jump_mission,"mt_town_default"),
-                                                   (jump_to_scene,"scn_the_happy_boar"),
-                                                   (change_screen_mission)],"Door to the cantina."),
-      ("zendar_merchant",[],"_",[(set_jump_mission,"mt_town_default"),
-                                                   (jump_to_scene,"scn_zendar_merchant"),
-                                                   (change_screen_mission)],"Door to the merchant."),
-      ("zendar_arena",[],"_",[(set_jump_mission,"mt_town_default"),
-                                                   (jump_to_scene,"scn_zendar_arena"),
-                                                   (change_screen_mission)],"Door to the arena."),
+  # (
+    # "zendar",menu_text_color(0xFF000d2c)|mnf_auto_enter,
+    # "You enter the town of Zendar.",
+    # "none",
+    # [(reset_price_rates,0),(set_price_rate_for_item,"itm_tools",70),(set_price_rate_for_item,"itm_salt",140)],
+    # [
+      # ("zendar_enter",[],"_",[(set_jump_mission,"mt_town_default"),(jump_to_scene,"scn_zendar_center"),(change_screen_mission)],"Door to the town center."),
+      # ("zendar_tavern",[],"_",[(set_jump_mission,"mt_town_default"),
+                                                   # (jump_to_scene,"scn_the_happy_boar"),
+                                                   # (change_screen_mission)],"Door to the cantina."),
+      # ("zendar_merchant",[],"_",[(set_jump_mission,"mt_town_default"),
+                                                   # (jump_to_scene,"scn_zendar_merchant"),
+                                                   # (change_screen_mission)],"Door to the merchant."),
+      # ("zendar_arena",[],"_",[(set_jump_mission,"mt_town_default"),
+                                                   # (jump_to_scene,"scn_zendar_arena"),
+                                                   # (change_screen_mission)],"Door to the arena."),
 #      ("zendar_leave",[],"Leave town.",[[leave_encounter],[change_screen_return]]),
-      ("town_1_leave",[],"_",[(leave_encounter),(change_screen_return)]),
-    ]
-  ),
-  (
-    "salt_mine",menu_text_color(0xFF000d2c)|mnf_auto_enter,
-    "You enter the salt mine.",
-    "none",
-    [(reset_price_rates,0),(set_price_rate_for_item,"itm_salt",55)],
-    [
-      ("enter",[],"Enter.",[(set_jump_mission,"mt_town_center"),(jump_to_scene,"scn_salt_mine"),(change_screen_mission)]),
-      ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
-    ]
-  ),
-  (
-    "four_ways_inn",menu_text_color(0xFF000d2c)|mnf_auto_enter,
-    "You arrive at the Four Ways Inn.",
-    "none",
-    [],
-    [
+      # ("town_1_leave",[],"_",[(leave_encounter),(change_screen_return)]),
+    # ]
+  # ),
+  # (
+    # "salt_mine",menu_text_color(0xFF000d2c)|mnf_auto_enter,
+    # "You enter the salt mine.",
+    # "none",
+    # [(reset_price_rates,0),(set_price_rate_for_item,"itm_salt",55)],
+    # [
+      # ("enter",[],"Enter.",[(set_jump_mission,"mt_town_center"),(jump_to_scene,"scn_salt_mine"),(change_screen_mission)]),
+      # ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
+    # ]
+  # ),
+  # (
+    # "four_ways_inn",menu_text_color(0xFF000d2c)|mnf_auto_enter,
+    # "You arrive at the Four Ways Inn.",
+    # "none",
+    # [],
+    # [
 
 #      ("enter",[],"Enter.",[[set_jump_mission,"mt_town_default"],[jump_to_scene,"scn_conversation_scene"],[change_screen_mission]]),
-      ("enter",[],"Enter.",[(set_jump_mission,"mt_camera_test"),(jump_to_scene,"scn_four_ways_inn"),(change_screen_mission)]),
-      ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
-    ]
-  ),
-  (
-    "test_scene",menu_text_color(0xFF000d2c)|mnf_auto_enter,
-    "You enter the test scene.",
-    "none",
-    [],
-    [
+      # ("enter",[],"Enter.",[(set_jump_mission,"mt_camera_test"),(jump_to_scene,"scn_four_ways_inn"),(change_screen_mission)]),
+      # ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
+    # ]
+  # ),
+  # (
+    # "test_scene",menu_text_color(0xFF000d2c)|mnf_auto_enter,
+    # "You enter the test scene.",
+    # "none",
+    # [],
+    # [
 
-      ("enter",[],"Enter.",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_test_scene"],[change_screen_mission]]),
-      ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
-    ]
-  ),
-  (
-    "battlefields",menu_text_color(0xFF000d2c),
-    "Select a field...",
-    "none",
-    [],
-    [
+      # ("enter",[],"Enter.",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_test_scene"],[change_screen_mission]]),
+      # ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
+    # ]
+  # ),
+  # (
+    # "battlefields",menu_text_color(0xFF000d2c),
+    # "Select a field...",
+    # "none",
+    # [],
+    # [
 
-      ("enter_f1",[],"Field 1",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_field_1"],[change_screen_mission]]),
-      ("enter_f2",[],"Field 2",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_field_2"],[change_screen_mission]]),
-      ("enter_f3",[],"Field 3",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_field_3"],[change_screen_mission]]),
-      ("enter_f4",[],"Field 4",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_field_4"],[change_screen_mission]]),
-      ("enter_f5",[],"Field 5",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_field_5"],[change_screen_mission]]),
-      ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
-    ]
-  ),
-  (
-    "dhorak_keep",menu_text_color(0xFF000d2c),
+      # ("enter_f1",[],"Field 1",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_field_1"],[change_screen_mission]]),
+      # ("enter_f2",[],"Field 2",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_field_2"],[change_screen_mission]]),
+      # ("enter_f3",[],"Field 3",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_field_3"],[change_screen_mission]]),
+      # ("enter_f4",[],"Field 4",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_field_4"],[change_screen_mission]]),
+      # ("enter_f5",[],"Field 5",[[set_jump_mission,"mt_ai_training"],[jump_to_scene,"scn_field_5"],[change_screen_mission]]),
+      # ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
+    # ]
+  # ),
+  # (
+    # "dhorak_keep",menu_text_color(0xFF000d2c),
 #    "Dhorak Keep, the stronghold of the bandits stands overlooking the barren wilderness.",
-    "You enter the Dhorak Keep",
-    "none",
-    [],
-    [
-      ("enter",[],"Enter.",[(set_jump_mission,"mt_town_center"),(jump_to_scene,"scn_dhorak_keep"),(change_screen_mission)]),
-      ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
-    ]
-  ),
+    # "You enter the Dhorak Keep",
+    # "none",
+    # [],
+    # [
+      # ("enter",[],"Enter.",[(set_jump_mission,"mt_town_center"),(jump_to_scene,"scn_dhorak_keep"),(change_screen_mission)]),
+      # ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
+    # ]
+  # ),
   
 ##  (
 ##    "center_under_attack_while_resting",menu_text_color(0xFF000d2c),

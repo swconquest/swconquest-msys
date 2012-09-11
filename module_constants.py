@@ -1042,7 +1042,7 @@ spawn_points_begin   = "p_shipyard_trade_federation" #"p_zendar"
 spawn_points_end     = "p_spawn_points_end"
 
 regular_troops_begin = "trp_novice_fighter"
-regular_troops_end   = "trp_tournament_master"
+regular_troops_end   = "trp_Ramun_the_slave_trader"
 
 #SW
 #MF - added this one to use with party speed script.
@@ -1114,7 +1114,7 @@ minorplanet_walkers_begin = "trp_minorplanet_walker_1"
 minorplanet_walkers_end   = "trp_spy_walker_1"
 
 assassins_begin = "trp_assassin_male"
-assassins_end   = "trp_tournament_master"
+assassins_end   = "trp_Ramun_the_slave_trader"
 
 spy_walkers_begin = "trp_spy_walker_1"
 spy_walkers_end   = "trp_assassin_male"

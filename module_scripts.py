@@ -963,11 +963,11 @@ scripts = [
         
         #        (store_add, ":senechal_troop_no", "trp_spacestation_1_seneschal", ":offset"),
         #        (party_set_slot,":spacestation_no", slot_mainplanet_seneschal, ":senechal_troop_no"),
-        (store_add, ":exterior_scene_no", "scn_spacestation_1_exterior", ":offset"),
+        (store_add, ":exterior_scene_no", "scn_spacestation_2_exterior", ":offset"),
         (party_set_slot,":spacestation_no", slot_spacestation_exterior, ":exterior_scene_no"),
-        (store_add, ":interior_scene_no", "scn_spacestation_1_interior", ":offset"),
+        (store_add, ":interior_scene_no", "scn_spacestation_2_interior", ":offset"),
         (party_set_slot,":spacestation_no", slot_mainplanet_castle, ":interior_scene_no"),
-        (store_add, ":interior_scene_no", "scn_spacestation_1_prison", ":offset"),
+        (store_add, ":interior_scene_no", "scn_spacestation_2_prison", ":offset"),
         (party_set_slot,":spacestation_no", slot_mainplanet_prison, ":interior_scene_no"),
         
         (party_set_slot,":spacestation_no", slot_mainplanet_reinforcement_party_template, "pt_center_reinforcements"),
@@ -12910,7 +12910,7 @@ scripts = [
       
       ###@> New selection, autocorrelation code
       
-      (assign, ":scene_to_use", "scn_random_scene_plain"),
+      (assign, ":scene_to_use", "scn_mainplanet_mandalore_land_battle"),
       
       (try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
         (store_sub, ":offset", ":town_no", mainplanets_begin),

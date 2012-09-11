@@ -5528,18 +5528,18 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["assassin_hkseries","HK-Series Assassin Droid","HK-Series Assassin Droids",tf_guarantee_all_armor|tf_guarantee_ranged|tf_randomize_face,0,0,fac_commoners, [itm_droid_parts,itm_hk_attack,itm_hk_head,itm_hk_body,itm_hk_hands,itm_hk_feet,itm_a280,itm_a295,itm_dlt19,itm_laser_bolts_orange_rifle,itm_laser_bolts_orange_rifle], def_attrib_3|level(24),wp(150),starwars_skills_3,droid_face1, droid_face2],
 
 # Zendar (next troop is marked as spy_walkers_end)
-["tournament_master","Tournament Master","Tournament Master",tf_hero|tf_randomize_face, scn_zendar_center|entry(1),reserved,  fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a,itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common,sw_man_face_1,sw_man_face_2],
-["trainer","Trainer","Trainer",tf_hero|tf_randomize_face, scn_zendar_center|entry(2),reserved,  fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a,itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common,sw_man_face_1,sw_man_face_2],
-["Constable_Hareck","Constable Hareck","Constable Hareck",tf_hero|tf_randomize_face, scn_zendar_center|entry(5),reserved,  fac_commoners,[itm_shirt,itm_hide_boots],def_attrib|level(5),wp(20),knows_common,sw_man_face_1,sw_man_face_2],
+#["tournament_master","Tournament Master","Tournament Master",tf_hero|tf_randomize_face, scn_zendar_center|entry(1),reserved,  fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a,itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common,sw_man_face_1,sw_man_face_2],
+#["trainer","Trainer","Trainer",tf_hero|tf_randomize_face, scn_zendar_center|entry(2),reserved,  fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a,itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common,sw_man_face_1,sw_man_face_2],
+#["Constable_Hareck","Constable Hareck","Constable Hareck",tf_hero|tf_randomize_face, scn_zendar_center|entry(5),reserved,  fac_commoners,[itm_shirt,itm_hide_boots],def_attrib|level(5),wp(20),knows_common,sw_man_face_1,sw_man_face_2],
 # Ryan BEGIN
 #SW - modified Ramun_the_slave_trader
 #["Ramun_the_slave_trader","Ramun, the slave trader","Ramun, the slave trader",tf_hero|tf_randomize_face, no_scene,reserved, fac_commoners,[itm_leather_jacket,itm_hide_boots],def_attrib|level(5),wp(20),knows_common,sw_man_face_1,sw_man_face_2],
 ["Ramun_the_slave_trader","Slave Trader","Slave Trader",tf_hero|tf_randomize_face, no_scene,reserved, fac_commoners,[itm_shirt,itm_hide_boots],def_attrib|level(5),wp(20),knows_common,sw_man_face_1,sw_man_face_2],
 ["guide","Quick Jimmy","Quick Jimmy",tf_hero|tf_randomize_face, no_scene,0,  fac_commoners,[itm_coarse_tunic,itm_hide_boots],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1,sw_man_face_2],
 # Ryan END
-["Xerina","Xerina","Xerina",tf_hero|tf_female|tf_randomize_face, scn_the_happy_boar|entry(5),reserved,  fac_commoners,[itm_tunic_green,itm_hide_boots],def_attrib|str_15|agi_15|level(39),wp(312),knows_power_strike_5|knows_ironflesh_5|knows_riding_6|knows_power_draw_4|knows_athletics_8|knows_shield_3,sw_woman_face_1,sw_woman_face_2],
-["Dranton","Dranton","Dranton",tf_hero|tf_randomize_face, scn_the_happy_boar|entry(2),reserved,  fac_commoners,[itm_tunic_green,itm_hide_boots],def_attrib|str_15|agi_14|level(42),wp(324),knows_power_strike_5|knows_ironflesh_7|knows_riding_4|knows_power_draw_4|knows_athletics_4|knows_shield_3,sw_man_face_1,sw_man_face_2],
-["Kradus","Kradus","Kradus",tf_hero|tf_randomize_face, scn_the_happy_boar|entry(3),reserved,  fac_commoners,[itm_tunic_green,itm_hide_boots],def_attrib|str_15|agi_14|level(43),wp(270),knows_power_strike_5|knows_ironflesh_7|knows_riding_4|knows_power_draw_4|knows_athletics_4|knows_shield_3,sw_man_face_1,sw_man_face_2],
+#["Xerina","Xerina","Xerina",tf_hero|tf_female|tf_randomize_face, scn_the_happy_boar|entry(5),reserved,  fac_commoners,[itm_tunic_green,itm_hide_boots],def_attrib|str_15|agi_15|level(39),wp(312),knows_power_strike_5|knows_ironflesh_5|knows_riding_6|knows_power_draw_4|knows_athletics_8|knows_shield_3,sw_woman_face_1,sw_woman_face_2],
+#["Dranton","Dranton","Dranton",tf_hero|tf_randomize_face, scn_the_happy_boar|entry(2),reserved,  fac_commoners,[itm_tunic_green,itm_hide_boots],def_attrib|str_15|agi_14|level(42),wp(324),knows_power_strike_5|knows_ironflesh_7|knows_riding_4|knows_power_draw_4|knows_athletics_4|knows_shield_3,sw_man_face_1,sw_man_face_2],
+#["Kradus","Kradus","Kradus",tf_hero|tf_randomize_face, scn_the_happy_boar|entry(3),reserved,  fac_commoners,[itm_tunic_green,itm_hide_boots],def_attrib|str_15|agi_14|level(43),wp(270),knows_power_strike_5|knows_ironflesh_7|knows_riding_4|knows_power_draw_4|knows_athletics_4|knows_shield_3,sw_man_face_1,sw_man_face_2],
 #Tutorial
 ["tutorial_trainer","Training Ground Master","Training Ground Master",tf_hero|tf_randomize_face, scn_training_ground|entry(2),reserved, fac_commoners,[itm_vest_closed_a,itm_black_boots,itm_dl44a,itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_common,sw_man_face_1,sw_man_face_2],
 
@@ -6267,7 +6267,7 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["mainplanet_felucia_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_mainplanet_felucia_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_3, sw_woman_face_2],
 ["mainplanet_bespin_merchant","Merchant","Merchant",tf_female|tf_hero|tf_randomize_face|tf_is_merchant, scn_mainplanet_bespin_store|entry(9),0, fac_commoners,    [itm_female_jacket_a, itm_black_boots, itm_vibro_blade1, itm_q2, itm_laser_bolts_yellow_pistol],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_woman_face_3, sw_woman_face_2],
 
-["salt_mine_merchant","Barezan","Barezan",                tf_hero|tf_randomize_face|tf_is_merchant, scn_salt_mine|entry(1),0, fac_commoners,        [itm_leather_apron, itm_leather_boots],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
+#["salt_mine_merchant","Barezan","Barezan",                tf_hero|tf_randomize_face|tf_is_merchant, scn_salt_mine|entry(1),0, fac_commoners,        [itm_leather_apron, itm_leather_boots],def_attrib|level(2),wp(20),knows_inventory_management_10, sw_man_face_1, sw_man_face_2],
 
 # Horse Merchants
 #SW - renamed to Transportation Merchant ?
@@ -6440,7 +6440,7 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 ["merchants_end","merchants_end","merchants_end",tf_hero, 0,0, fac_commoners,[],def_attrib|level(2),wp(20),knows_inventory_management_10,0],
 
 # Chests
-["zendar_chest","Zendar Chest","Zendar Chest",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[],def_attrib|level(18),wp(60),knows_common, 0],
+#["zendar_chest","Zendar Chest","Zendar Chest",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[],def_attrib|level(18),wp(60),knows_common, 0],
 #SW - modified tutorial_chests
 ["tutorial_chest_1","Melee Weapons Chest","Melee Weapons Chest",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[],def_attrib|level(18),wp(60),knows_common, 0],
 ["tutorial_chest_2","Ranged Weapons Chest","Ranged Weapons Chest",tf_hero|tf_inactive, 0,reserved,  fac_neutral,[],def_attrib|level(18),wp(60),knows_common, 0],
