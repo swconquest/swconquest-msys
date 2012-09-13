@@ -109,12 +109,12 @@ sw_deathcam_follow_troop = (0, 0, 0,[
      ],[])
 sw_deathcam_valkyrie_move_camera = (0, 1, 2.1,[
   (eq, "$dmod_move_camera", 1),
-        (agent_get_position, 2, "$dmod_current_agent"),
-        (position_move_z, 2, 300),
-        (mission_cam_set_mode,1),
-        (mission_cam_set_position, 2),
-        (position_move_z, 2, 600),
-        (mission_cam_animate_to_position, 2, 1000),
+        (agent_get_position, pos2, "$dmod_current_agent"),
+        (position_move_z, pos2, 300),
+        (mission_cam_set_mode, pos1),
+        (mission_cam_set_position, pos2),
+        (position_move_z, pos2, 600),
+        (mission_cam_animate_to_position, pos2, 1000),
      ],[
         (mission_cam_set_mode, 0, 1000, 1),
         (assign, "$dmod_move_camera", 2),
@@ -1422,6 +1422,17 @@ common_check_town_fight = (
               (agent_is_human,":agent"), # SWY @> It shouldn't be triggered by horse damage
               (agent_get_team  ,":team", ":agent"),(eq, ":team", 2),  #citizens
               (neq, ":agent", ":player_agent"), # SWY @> non-player agents only
+              
+              #SWY @> Bounty hunters don't trigger a civilian kill
+              #<https://bitbucket.org/Swyter/swconquest/issue/87/bounty-hunter-missions-end-in-riots>
+              (agent_get_troop_id,":trp_agent", ":agent"),
+              (neq, ":trp_agent", "$bounty_target_1"),
+              (neq, ":trp_agent", "$bounty_target_2"),
+              (neq, ":trp_agent", "$bounty_target_3"),
+              (neq, ":trp_agent", "$bounty_target_4"),
+              (neq, ":trp_agent", "$bounty_target_5"),
+              (neq, ":trp_agent", "$bounty_target_6"),
+              
               (store_agent_hit_points,":agent_hp",":agent",1),  #set to 1 to retrive absolute hp
               (agent_get_slot, ":old_agent_hp", ":agent", slot_agent_hit_points),
               (try_begin),

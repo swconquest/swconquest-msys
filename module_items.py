@@ -234,7 +234,7 @@ items = [
   ["bacta_injector","Bacta Injector", [("bacta_injector",0)], itp_merchandise|itp_type_goods, 0,3000,weight(5)|abundance(40),imodbits_none],
   ["bacta_capsule","Bacta Capsule", [("bacta_capsule",0)], itp_merchandise|itp_type_goods, 0,500,weight(2)|abundance(100),imodbits_none], 
   ["binocular","Macrobinoculars", [("macrobinoculars",0)], itp_merchandise|itp_type_goods, 0,3000,weight(3)|abundance(40),imodbits_none], 
-  ["jetpack","Jetpack", [("macrobinoculars",0)], itp_merchandise|itp_type_goods, 0,6000,weight(6)|abundance(35),imodbits_none],  
+  ["jetpack","Jetpack", [("macrobinoculars",0)], itp_unique, 0,6000,weight(6)|abundance(35),imodbits_none],  
   ["oil","Oil", [("oil",0)], itp_merchandise|itp_type_goods, 0, 484,weight(50)|abundance(60),imodbits_none],
   ["pottery","Geonosian pottery", [("jug",0)], itp_merchandise|itp_type_goods, 0, 126,weight(50)|abundance(90),imodbits_none],
   ["linen","Lashaa silk", [("linen",0)], itp_merchandise|itp_type_goods, 0, 250,weight(40)|abundance(90),imodbits_none],

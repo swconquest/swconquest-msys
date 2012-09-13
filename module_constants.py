@@ -5,6 +5,7 @@
 from ID_items import *
 from ID_quests import *
 from ID_factions import *
+from ID_map_icons import *
 
  ##############################################################
 # These constants are used in various files.
@@ -1244,7 +1245,7 @@ custom_banner_map_icons_begin        = "icon_custom_banner_01"
 custom_banner_map_icons_end          = "icon_banner_01"
 
 banner_map_icons_begin               = "icon_banner_01"
-banner_map_icons_end_minus_one       = "icon_banner_126"
+banner_map_icons_end_minus_one       = icon_banner_42+1
 
 banner_scene_props_begin             = "spr_banner_a"
 banner_scene_props_end_minus_one     = "spr_banner_cu"

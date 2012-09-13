@@ -150,7 +150,7 @@ scenes = [
     [],[],"outer_terrain_plain"),
 #--> Assault the Imperial Spaceship
   ("quick_battle_8",sf_generate,"none", "none", (0,0),(120,120),-100,"0x0000000050001d63c005114300006228000053bf00004eb9", 
-    [],[], "outer_terrain_steppe"),
+    [],[]),
 # START OF CUSTOM BATTLE MOD
   ("custom_battle_1",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00000000300005000006d9b9000052560000620000004c92", 
     [],[], "outer_terrain_plain"), #"outer_terrain_plain_1"),	

@@ -81,8 +81,8 @@ scene_props = [
   ("sw_bulk_frigate",0,"bulk_frigate","bo_bulk_frigate", []),
   
   #vector dalon scene props
-  ("sw_ship_hangar_closed",0,"ship_hangar_closed","bo_ship_hangar_closed", []),
-  ("sw_ship_hangar_open",0,"ship_hangar_open","bo_ship_hangar_open", []),
+  ("sw_ship_hangar_closed",0,"0","0", []),
+  ("sw_ship_hangar_open",0,"0","0", []),
   ("sw_gun_turret",0,"gun_turret","bo_gun_turret", []),
   ("sw_chest1",0,"player_chest_sw","bo_player_chest_sw", []),
   ("sw_box_a",sokf_dynamic|sokf_moveable ,"box_a_sw_sp","bo_box_a_sw_sp", []),
@@ -189,8 +189,8 @@ scene_props = [
   ("sw_sarlacc",0,"sarlacc","bo_sarlacc", []),  
   
   #freddex scene props
-  ("sw_building_new_a",0,"0","0", []),  
-  ("sw_bunker_concrete",0,"0","0", []),  
+  ("sw_building_new_a",0,"0","0", []),
+  ("sw_bunker_concrete",0,"0","0", []),
   ("sw_bunker_metal_a",0,"0","0", []),
   ("sw_bunker_metal_b",0,"0","0", []),
   ("sw_bunker_sandstone",0,"0","0", []),
@@ -198,7 +198,7 @@ scene_props = [
   ("sw_wall_new_glass_cubes",0,"0","0", []),
   ("sw_wall_new_metal_a",0,"0","0", []),
   ("sw_wall_new_metal_b",0,"0","0", []),
-  ("sw_wall_new_sandstone",0,"0","0", []),  
+  ("sw_wall_new_sandstone",0,"0","0", []),
   
   #wookiee padawan / mr sparrow scene props
   ("sw_ruin_02",0,"ruin_02","bo_ruin_02", []),  
@@ -518,7 +518,7 @@ scene_props = [
   ("sw_sandstone_building_a",0,"abuilding","bo_abuilding", []),
   ("sw_sandstone_building_b",0,"bbuilding","bo_bbuilding", []),
   ("sw_sandstone_building_c",0,"cbuilding","bo_cbuilding", []),
-  ("sw_small_camp",0,"rebelcamp","bo_rebelcamp", []),
+  ("sw_small_camp",0,"0","0", []),
   ("sw_tent_a",0,"tent_a","bo_tent_a", []),
   ("sw_tent_b",0,"tent_b","bo_tent_b", []),
   ("sw_tent_c",0,"tent_c","bo_tent_c", []),

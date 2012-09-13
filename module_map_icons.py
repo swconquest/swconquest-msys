@@ -314,7 +314,7 @@ map_icons = [
   ("banner_39",0,"sw_map_banner_39", banner_scale,0),
   ("banner_40",0,"sw_map_banner_40", banner_scale,0),
   ("banner_41",0,"sw_map_banner_41", banner_scale,0),
-  ("banner_42",0,"sw_map_banner_41", banner_scale,0),
+  ("banner_42",0,"sw_map_banner_42", banner_scale,0),
   #native
   # ("banner_43",0,"map_flag_43", banner_scale,0),
   # ("banner_44",0,"map_flag_44", banner_scale,0),
