@@ -2693,6 +2693,48 @@ troops = [
 ],
 
 
+#Special unit specifically for minning vessels
+["asteroid_miner","Asteroid Miner","Asteroid Miners",tf_guarantee_helmet|tf_guarantee_boots|tf_guarantee_armor|tf_guarantee_shield,no_scene,reserved,fac_commoners,
+	[
+  
+  itm_mining_helmet,
+  itm_mining_helmet,
+  
+  itm_ubese_armor,
+  itm_ubese_armor,
+  itm_ubese_armor_alt,
+  itm_ubese_armor_alt,
+  
+  itm_nomad_boots,
+  
+		itm_pipe1,
+		itm_pipe2,
+		itm_ddc_defender,
+		itm_ddc_defender,
+		itm_dl44a,
+		itm_dl44a,
+		itm_dl44a,
+		itm_dl44a,
+    
+    #they come with goodies
+    itm_container_ore,
+    itm_container_ore,
+    itm_container_ore,
+    itm_container_ore,
+    itm_container_ore,
+    itm_container_ore,
+    itm_container_ore,
+    
+    itm_container_food_1,
+    itm_container_food_2,
+    itm_container_drink_1,
+    itm_container_drink_1
+	],
+	def_attrib_3|level(10),
+	wp(125)|wp_firearm(90),
+	starwars_skills_melee_1,
+   sw_man_face_1, sw_man_face_2
+  ],   
 
 ######################################################################
 # droids primarily used as town_walkers or prisoners

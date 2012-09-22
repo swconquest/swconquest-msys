@@ -111,7 +111,7 @@ sw_deathcam_valkyrie_move_camera = (0, 1, 2.1,[
   (eq, "$dmod_move_camera", 1),
         (agent_get_position, pos2, "$dmod_current_agent"),
         (position_move_z, pos2, 300),
-        (mission_cam_set_mode, pos1),
+        (mission_cam_set_mode, 1),
         (mission_cam_set_position, pos2),
         (position_move_z, pos2, 600),
         (mission_cam_animate_to_position, pos2, 1000),

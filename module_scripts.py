@@ -28021,17 +28021,21 @@ scripts = [
                   
                   (try_begin),
                       (eq, ":new_agent", -1),
-                      #--> If there's no new agent, check if we had one selected and use that one.
-
-                      (try_begin),
-                        (neq, ":last_agent", -1),
-                        (assign, ":new_agent", ":last_agent"),
-                      (else_try),
-                        #--> Oops, no troops left, bad luck.
-                        (display_message, "@No Troops Left."),
-                      (try_end),
+                      (neq, ":last_agent", -1),
                       
+                      #--> If there's no new agent, check if we had one selected and use that one.
+                      (assign, ":new_agent", ":last_agent"),
                   (else_try),
+                      (eq, ":new_agent", -1),
+                      (eq, ":last_agent", -1),
+
+                      #--> Oops, no troops left, bad luck.
+                      (display_message, "@No Troops Left."),
+                  (try_end),
+                      
+                  (try_begin),
+                      (neq, ":new_agent", -1),
+
                       #--> If we do have a new agent in the list, then assign it and move the cam.
                       (assign, "$dmod_current_agent", ":new_agent"),
                       (str_store_agent_name, s1, "$dmod_current_agent"),

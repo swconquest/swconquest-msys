@@ -207,8 +207,8 @@ items = [
  ["Container_food_3","Shipment of Protein", [("Container_food_3",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(80)|max_ammo(200),imodbits_none],
 
  ["Container_metal_1","Shipment of Beskar bars", [("Container_metal_1",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(50),imodbits_none],
- ["Container_metal_2","Shipment of Durasteel bars", [("Container_metal_2",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(70),imodbits_none],
- ["Container_metal_3","Shipment of Bronzium bars", [("Container_metal_3",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(110),imodbits_none],
+ ["Container_metal_2","Shipment of Durasteel bars", [("Container_metal_2",0)], itp_merchandise|itp_type_goods, 0, 180,weight(12)|abundance(70),imodbits_none],
+ ["Container_metal_3","Shipment of Bronzium bars", [("Container_metal_3",0)], itp_merchandise|itp_type_goods, 0, 210,weight(12)|abundance(110),imodbits_none],
  
  ["Container_death_sticks","Carton of Death Sticks", [("Container_death_sticks",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(110),imodbits_none],
 
@@ -1365,6 +1365,8 @@ items = [
 
 #other
 ["ubese_armor", "Ubese Armor", [("ubese_armour",0)], itp_merchandise| itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 
+ 430 , weight(5)|abundance(80)|head_armor(0)|body_armor(35)|leg_armor(14)|difficulty(0) ,imodbits_cloth ],   
+["ubese_armor_alt", "Ubese Armor", [("ubese_armour_alt",0)], itp_merchandise| itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 
  430 , weight(5)|abundance(80)|head_armor(0)|body_armor(35)|leg_armor(14)|difficulty(0) ,imodbits_cloth ],   
 
 # mercenary equipment
