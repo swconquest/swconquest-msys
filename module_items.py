@@ -902,7 +902,7 @@ items = [
  400, weight(0.3)|abundance(60)|body_armor(6)|difficulty(0),imodbits_none],
 ["imperial_royal_guard_gloves","Imperial Royal Guard Gloves", [("imperial_royal_guard_glove_L",0)], itp_merchandise|itp_type_hand_armor|itp_civilian,0, 
  28, weight(0.25)|abundance(40)|body_armor(3)|difficulty(0),imodbits_cloth],
-["imperial_stormtrooper_gloves","Imperial Stormtrooper Gloves", [("stormtrooper_glove_L",0)], itp_merchandise|itp_type_hand_armor|itp_civilian,0, 
+["imperial_stormtrooper_gloves","Imperial Stormtrooper Gloves", [("stormie_glov_L",0)], itp_merchandise|itp_type_hand_armor|itp_civilian,0, 
  28, weight(0.25)|abundance(80)|body_armor(3)|difficulty(0),imodbits_cloth], 
 ["shadow_stormtrooper_gloves","Shadow Stormtrooper Gloves", [("shadow_stormtrooper_glove_L",0)], itp_merchandise|itp_type_hand_armor|itp_civilian,0, 
  28, weight(0.25)|abundance(40)|body_armor(3)|difficulty(0),imodbits_cloth],  

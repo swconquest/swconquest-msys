@@ -245,4 +245,3 @@ menu_choose_scenes_416 = 243
 menu_choose_scenes_429 = 244
 menu_choose_scenes_442 = 245
 menu_choose_scenes_455 = 246
-menu_choose_scenes_468 = 247

@@ -4,4 +4,4 @@
 
 
 #export_dir = "../"
-export_dir  = "../swconquest/"
+export_dir  = "../swconquest-branch/"

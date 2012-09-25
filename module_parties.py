@@ -119,7 +119,7 @@ parties = [
   ("kessel","Kessel",   icon_sw_swy_Planet_Kessel|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(111.7,30),[], 155),   #new pos
   ("dantooine","Dantooine",   icon_sw_swy_rePlanet_wilderness|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-41.56,125.2),[],240), #new pos-custom #[swycartographr] prev. coords: (-29.21, 129.68) #[swycartographr] prev. coords: (-40.5, 125.46)
   ("geonosis","Geonosis", icon_sw_swy_Planet_geonosis|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(114.27,-100.68),[], 175),  #new pos #[swycartographr] prev. coords: (78.7, -103.7) #[swycartographr] prev. coords: (96.99, -98.68) #[swycartographr] prev. coords: (114.85, -102.48)
-  ("mon_cal","Mon_Cal",   icon_sw_swy_rePlanet_water|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(106.7,69.21),[],90), #new pos  #[swycartographr] prev. coords: (123.16, 98.66)
+  ("mon_cal","Dac",   icon_sw_swy_rePlanet_water|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(106.7,69.21),[],90), #new pos  #[swycartographr] prev. coords: (123.16, 98.66)
   ("kashyyyk","Kashyyyk",   icon_sw_swy_rePlanet_kashyyyk|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(65.63,36.1),[], 310),  #new pos #[swycartographr] prev. coords: (-49.5, 36.5)
   ("hoth","Hoth",   icon_sw_swy_rePlanet_snow|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-96.76,-122.34),[], 150), #new pos--close enough   #[swycartographr] prev. coords: (-45, -136.7) #[swycartographr] prev. coords: (-98.02, -123.04)
   ("gamorr","Gamorr", icon_sw_swy_rePlanet_gas|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(107.58,-27.77),[],25), #new pos      #[swycartographr] prev. coords: (112.41, -49.92)

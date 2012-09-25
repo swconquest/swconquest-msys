@@ -961,14 +961,22 @@ scripts = [
         (store_sub, ":offset", ":spacestation_no", castles_begin),
         (val_mul, ":offset", 3),
         
-        #        (store_add, ":senechal_troop_no", "trp_spacestation_1_seneschal", ":offset"),
-        #        (party_set_slot,":spacestation_no", slot_mainplanet_seneschal, ":senechal_troop_no"),
+        
+          (assign, reg1, ":offset"),   
+        
+        #(store_add, ":senechal_troop_no", "trp_spacestation_1_seneschal", ":offset"),
+        #(party_set_slot,":spacestation_no", slot_mainplanet_seneschal, ":senechal_troop_no"),
         (store_add, ":exterior_scene_no", "scn_spacestation_2_exterior", ":offset"),
         (party_set_slot,":spacestation_no", slot_spacestation_exterior, ":exterior_scene_no"),
+        #(assign, reg2, ":exterior_scene_no"),
         (store_add, ":interior_scene_no", "scn_spacestation_2_interior", ":offset"),
         (party_set_slot,":spacestation_no", slot_mainplanet_castle, ":interior_scene_no"),
-        (store_add, ":interior_scene_no", "scn_spacestation_2_prison", ":offset"),
-        (party_set_slot,":spacestation_no", slot_mainplanet_prison, ":interior_scene_no"),
+        #(assign, reg3, ":interior_scene_no"),
+        (store_add, ":prison_scene_no", "scn_spacestation_2_prison", ":offset"),
+        (party_set_slot,":spacestation_no", slot_mainplanet_prison, ":prison_scene_no"),
+        #(assign, reg4, ":prison_scene_no"),
+        
+        #(display_log_message, "@spc{reg1}/ext={reg2}/int={reg3}/pris={reg4}"),
         
         (party_set_slot,":spacestation_no", slot_mainplanet_reinforcement_party_template, "pt_center_reinforcements"),
         (party_set_slot,":spacestation_no", slot_party_type, spt_castle),
@@ -26360,21 +26368,22 @@ scripts = [
                   #(try_begin), # same mnu_town is used for towns and castles
                   #(party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
                   (try_begin),
-                    (eq, "$current_town", "p_mon_cal"),				#Mon Cal
-                    (store_random_in_range, ":random", 50, 100),
-                    (set_rain,1,":random"),
-                  (else_try),
+                    #@FIXME -- snow/rain disabled on mon cal
+                   #(eq, "$current_town", "p_mon_cal"),				#Mon Cal
+                   #(store_random_in_range, ":random", 50, 100),
+                   #(set_rain,1,":random"),
+                 #(else_try),
                     #@FIXME -- snow/rain disabled on hoth
                     #(eq, "$current_town", "p_hoth"),					#Hoth
                     #(store_random_in_range, ":random", 60, 100),
                     #(set_rain,2,":random"),
-                  (else_try),
+                 #(else_try),
                     (eq, "$current_town", "p_kamino"),				#Kamino
                     (set_rain,1,100),
                     #(set_fog_distance, 20, 0xFFFFFFFF),
                   (else_try),
                     (eq, "$current_town", "p_minorplanet_62"),		#vjun
-                    (store_random_in_range, ":random", 79, 100),
+                    #(store_random_in_range, ":random", 79, 100),
                     (set_rain,1,100),
                     #(set_fog_distance, 40, 0xFFFFFFFF),
                   (else_try),
@@ -26387,7 +26396,6 @@ scripts = [
                     # (eq, ":c_town", "p_hypori"),			            	#Hypori   / without atmosferic effects
                     (set_rain,0,0),
                   (try_end),
-                  #(try_end),
                 ]
               ),
               
@@ -29324,7 +29332,7 @@ scripts = [
                   (party_set_slot, "p_spaceship_mercenary_shuttle", slot_spaceship_trade_computer_max, 0),
                   (party_set_slot, "p_spaceship_mercenary_shuttle", slot_spaceship_cargo_capacity_min, 1),
                   (party_set_slot, "p_spaceship_mercenary_shuttle", slot_spaceship_cargo_capacity_max, 2),
-                  #mercenary_fighter
+                  #mercenary_fighter -- t-wing
                   (party_set_slot, "p_spaceship_mercenary_fighter", slot_spaceship_name, "str_spaceship_mercenary_fighter_name"),
                   (party_set_slot, "p_spaceship_mercenary_fighter", slot_spaceship_price, 13000),
                   (party_set_slot, "p_spaceship_mercenary_fighter", slot_spaceship_desc, "str_spaceship_mercenary_fighter_desc"),

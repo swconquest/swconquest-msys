@@ -80,7 +80,7 @@ map_icons = [
   ("freighter",mcn_no_shadow,"swy_nebulon", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("bulk_freighter",mcn_no_shadow,"bulk_frigate", ship_medium_scale, snd_ship_noise, 0.15, 0.173, 0),
  #("mercenary_fighter",mcn_no_shadow,"z95", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
-  ("mercenary_fighter",mcn_no_shadow,"vec_starchaser", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
+  ("mercenary_fighter",mcn_no_shadow,"t_wing", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
  #("mercenary_shuttle",mcn_no_shadow,"shuttle", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
   ("mercenary_shuttle",mcn_no_shadow,"Interceptor_IV", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),
  #("civilian_transport",mcn_no_shadow,"civilian_transport", ship_small_scale, snd_ship_noise, 0.15, 0.173, 0),

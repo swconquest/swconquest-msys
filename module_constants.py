@@ -1037,7 +1037,7 @@ training_grounds_begin   = "p_training_ground_1"
 training_grounds_end     = "p_sun_01"
 
 scenes_begin         = "scn_mainplanet_mandalore_center"
-scenes_end           = "scn_spacestation_1_exterior"
+scenes_end           = "scn_spacestation_2_exterior"
 
 spawn_points_begin   = "p_shipyard_trade_federation" #"p_zendar"
 spawn_points_end     = "p_spawn_points_end"

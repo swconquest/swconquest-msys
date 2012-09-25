@@ -2807,6 +2807,10 @@ scene_props = [
 
   ("kashyyyk_floor",0,"kashyyyk_floor","bo_kashyyyk_floor", []),
   
+  ("gamorr_wall_1",0,"gamorr_wall_1","bo_gamorr_wall_1", []),
+  ("gamorr_wall_2",0,"gamorr_wall_2","bo_gamorr_wall_2", []),
+  ("moncal_battle",0,"moncal_battle","bo_moncal_battle", []),
+
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)
 #Highlander begin--------------------------------------

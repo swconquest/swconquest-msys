@@ -505,7 +505,7 @@ scenes = [
     [],[],),	
   ("mainplanet_endor_arena",sf_generate,"none", "none", (0,0),(100,100),-100,"0xa0001d9300031ccb0000156f000048ba0000361c",
     [],[]),
-  ("mainplanet_corellia_arena",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
+  ("mainplanet_corellia_arena",sf_generate,"none", "none", (0,0),(220,220),30,"0x000000043000050000029caa00000001000048c000001029",
     [],[], "outer_terrain_plain"),	
   ("mainplanet_naboo_arena",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
     [],[], "outer_terrain_plain"),	
@@ -515,7 +515,7 @@ scenes = [
     [],[]),
   ("mainplanet_geonosis_arena",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
     [],[], "outer_terrain_plain"),	
-  ("mainplanet_mon_cal_arena",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000002500005004005f57b00005885000046bd00006d9c",
+  ("mainplanet_mon_cal_arena",sf_generate,"none", "none", (0,0),(220,220),30,"0x000000043000050000029caa00000001000048c000001029",
     [],[],),
   ("mainplanet_kashyyyk_arena",sf_generate,"none", "none", (0,0),(100,100),-100,"0xa0001d9300031ccb0000156f000048ba0000361c",
     [],[]),
@@ -542,7 +542,7 @@ scenes = [
 #old code: 0x00000002500005004005f57b00005885000046bd00006d9c  new code:0x0000000250000500000d234800005885000046bd00006d9c
   ("mainplanet_kamino_arena",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000002500005004005f57b00005885000046bd00006d9c",
     [],[],"swy_outer_sea"),
-  ("mainplanet_taris_arena",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000002500005004005f57b00005885000046bd00006d9c",
+  ("mainplanet_taris_arena",sf_generate,"none", "none", (0,0),(220,220),30,"0x000000043000050000029caa00000001000048c000001029",
     [],[],"outer_terrain_plain"),	
   ("mainplanet_raxusprime_arena",sf_generate,"none", "none", (0,0),(240,240),-8,"0x00000040400681000a46298a003702000051a10000512f00", 
     [],[],),	
@@ -724,14 +724,6 @@ scenes = [
 #0x30054d228004050000005a768000688400002e3b
 #0x30054da28004050000005a76800022aa00002e3b
 #Castles:
-
-#       1 Steppe
-  ("spacestation_1_exterior",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000230029cb2000709c200003c9500004b9b00002f4d",
-    [],[],"outer_terrain_plain"),
-  ("spacestation_1_interior",sf_indoors, "imperial_office_grey", "bo_imperial_office_ramp", (-100,-100),(100,100),-100,"0",
-    ["exit"],["spacestation_1_seneschal"]),
-  ("spacestation_1_prison",sf_indoors,"interior_prison_a", "bo_interior_prison_a", (-100,-100),(100,100),-100,"0",
-    [],[]),
 #       2 Plain
   ("spacestation_2_exterior",sf_indoors,"bunker_a", "bo_bunker_a", (-100,-100),(100,100),-100,"0",
     [],[]),

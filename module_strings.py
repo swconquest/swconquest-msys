@@ -2261,7 +2261,7 @@ We apologize sincerely if you contributed your suggestions and feedback but were
   ("spaceship_freighter_name", "Freighter"),
   #("spaceship_freighter_desc", "This model Freighter is the workhorse of traders around the galaxy. ^^Its basic engines are somewhat outdated but can easily be upgraded to MK-III.^^The ship has a pressurized cargo hold with room for four additional units to be installed. ^^The MK-I trade computer will make sure you get a fair price but if you ^really want to hunt for the sharpest deal, you can uprade to a MK-V model. ^^There is also room for two prisoner comparments, with one already installed."),
   ("spaceship_freighter_desc", "This standard Freighter is the workhorse of traders around the galaxy."),
-  ("spaceship_mercenary_fighter_name", "Mercenary Fighter"),
+  ("spaceship_mercenary_fighter_name", "T-Wing interceptor"),
   ("spaceship_mercenary_fighter_desc", "A respectful combination of good weaponry and powerful drives"),
   ("spaceship_mercenary_shuttle_name", "Mercenary Shuttle"),
   ("spaceship_mercenary_shuttle_desc", "The standard mercenary shuttle isn't designed for intense combat, ^but it's quite fast and versatile."),
