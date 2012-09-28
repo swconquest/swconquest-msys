@@ -15438,97 +15438,102 @@ scripts = [
       
       #modified town_walkers so certain planets only have certain walkers - example code originally posted by Keedo420
       # NOTE - any changes to this script must be updated in both the center_set_walker_to_type and fix_town_walker scripts
-      (try_begin),	#village
-        (party_slot_eq, ":center_no", slot_party_type, spt_minorplanet),
-        (store_random_in_range, ":walker_troop_id", minorplanet_walkers_begin, minorplanet_walkers_end),
-      (else_try),	#town/castle
-        
+
+        #condition to set town specific walkers instead of regular walkers in town
         (try_begin),
-          (eq, ":center_no", "p_geonosis"), #condition to set town specific walkers instead of regular walkers in town
+          (eq, ":center_no", "p_geonosis"), 
           (assign, ":town_walkers_modified_begin",town8_walkers_begin),
-          (assign, ":town_walkers_modified_end",town8_walkers_end),
+          (assign, ":town_walkers_modified_end",  town8_walkers_end),
         (else_try),
-          (eq, ":center_no", "p_mon_cal"), #condition to set town specific walkers instead of regular walkers in town
+          (eq, ":center_no", "p_mon_cal"),
           (assign, ":town_walkers_modified_begin",town9_walkers_begin),
-          (assign, ":town_walkers_modified_end",town9_walkers_end),
+          (assign, ":town_walkers_modified_end",  town9_walkers_end),
         (else_try),
-          (eq, ":center_no", "p_kashyyyk"), #condition to set town specific walkers instead of regular walkers in town
+          (eq, ":center_no", "p_kashyyyk"),
           (assign, ":town_walkers_modified_begin",town10_walkers_begin),
-          (assign, ":town_walkers_modified_end",town10_walkers_end),
+          (assign, ":town_walkers_modified_end",  town10_walkers_end),
         (else_try),
-          (eq, ":center_no", "p_gamorr"), #condition to set town specific walkers instead of regular walkers in town
+          (eq, ":center_no", "p_gamorr"),
           (assign, ":town_walkers_modified_begin",town12_walkers_begin),
-          (assign, ":town_walkers_modified_end",town12_walkers_end),
+          (assign, ":town_walkers_modified_end",  town12_walkers_end),
         (else_try),
-          (eq, ":center_no", "p_tatooine"), #condition to set town specific walkers instead of regular walkers in town
+          (eq, ":center_no", "p_tatooine"),
           (assign, ":town_walkers_modified_begin",town14_walkers_begin),
-          (assign, ":town_walkers_modified_end",town14_walkers_end),
+          (assign, ":town_walkers_modified_end",  town14_walkers_end),
         (else_try),
-          (eq, ":center_no", "p_ryloth"), #condition to set town specific walkers instead of regular walkers in town
+          (eq, ":center_no", "p_ryloth"),
           (assign, ":town_walkers_modified_begin",town17_walkers_begin),
-          (assign, ":town_walkers_modified_end",town17_walkers_end),
+          (assign, ":town_walkers_modified_end",  town17_walkers_end),
         (else_try),
-          (eq, ":center_no", "p_kamino"), #condition to set town specific walkers instead of regular walkers in town
+          (eq, ":center_no", "p_kamino"),         #Kamino - Kaminoan walkers
           (assign, ":town_walkers_modified_begin","trp_kaminoan"),
-          (assign, ":town_walkers_modified_end","trp_kaminoan"),
+          (assign, ":town_walkers_modified_end",  "trp_kaminoan"),
         (else_try),
           (eq, ":center_no", "p_minorplanet_35"), #Iridonia - Zabrak walkers
           (assign, ":town_walkers_modified_begin",iridonia_walkers_begin),
-          (assign, ":town_walkers_modified_end",iridonia_walkers_end),
+          (assign, ":town_walkers_modified_end",  iridonia_walkers_end),
         (else_try),
           (eq, ":center_no", "p_minorplanet_53"), #Pzob - Gamorreans
           (assign, ":town_walkers_modified_begin",pzob_walkers_begin),
-          (assign, ":town_walkers_modified_end",pzob_walkers_end),
+          (assign, ":town_walkers_modified_end",  pzob_walkers_end),
         (else_try),
           (eq, ":center_no", "p_minorplanet_58"), #Rodia - Added Rodians
           (assign, ":town_walkers_modified_begin",rodia_walkers_begin),
-          (assign, ":town_walkers_modified_end",rodia_walkers_end),
+          (assign, ":town_walkers_modified_end",  rodia_walkers_end),
         (else_try),
           (eq, ":center_no", "p_minorplanet_42"), #Bothawui Moon - Added Bothans
           (assign, ":town_walkers_modified_begin",bothaw_moon_walkers_begin),
-          (assign, ":town_walkers_modified_end",bothaw_moon_walkers_end),
+          (assign, ":town_walkers_modified_end",  bothaw_moon_walkers_end),
         (else_try),
           (assign, ":town_walkers_modified_begin",town_walkers_neutral_begin),
-          (assign, ":town_walkers_modified_end",town_walkers_neutral_end),
-          #(assign, ":default_town_walkers",1),
+          (assign, ":town_walkers_modified_end",  town_walkers_neutral_end),
+          
+          (assign, ":default_town_walkers",1),
+          (try_begin),
+            #minor planets have their own sub-type of farming people. so, replace the city ones.-
+            (party_slot_eq, ":center_no", slot_party_type, spt_minorplanet),
+            (assign, ":town_walkers_modified_begin",minorplanet_walkers_begin),
+            (assign, ":town_walkers_modified_end",  minorplanet_walkers_end),
+          (try_end),
+          
         (try_end),
         
         (store_faction_of_party, ":faction_no", ":center_no"),
         (try_begin),
-          #(eq, ":default_town_walkers",1),
-          (eq, ":faction_no", "fac_galacticempire"),	#empire
-          (store_random_in_range, ":rand", 0, 100),
-          (try_begin),
-            (le, ":rand", 30),
-            (store_random_in_range, ":walker_troop_id", town_walkers_empire_begin, town_walkers_empire_end),
-          (else_try),
-            (store_random_in_range, ":walker_troop_id", ":town_walkers_modified_begin", ":town_walkers_modified_end"),
-          (try_end),
-        (else_try),
-          #(eq, ":default_town_walkers",1),
-          (eq, ":faction_no", "fac_rebelalliance"),	#rebel
-          (store_random_in_range, ":rand", 0, 100),
-          (try_begin),
-            (le, ":rand", 30),
-            (store_random_in_range, ":walker_troop_id", town_walkers_rebel_begin, town_walkers_rebel_end),
-          (else_try),
-            (store_random_in_range, ":walker_troop_id", ":town_walkers_modified_begin", ":town_walkers_modified_end"),
-          (try_end),
-        (else_try),
-          #(eq, ":default_town_walkers",1),
-          (eq, ":faction_no", "fac_huttcartel"),	#hutt
-          (store_random_in_range, ":rand", 0, 100),
-          (try_begin),
-            (le, ":rand", 30),
-            (store_random_in_range, ":walker_troop_id", town_walkers_hutt_begin, town_walkers_hutt_end),
-          (else_try),
-            (store_random_in_range, ":walker_troop_id", ":town_walkers_modified_begin", ":town_walkers_modified_end"),
-          (try_end),
-        (else_try),	#default
-          (store_random_in_range, ":walker_troop_id", ":town_walkers_modified_begin", ":town_walkers_modified_begin"),
+            #if this planet doesn't have any custom race to show walking over there
+            (eq, ":default_town_walkers",1),
+            
+            #get the default faction walker range for that main planet
+            (try_begin),
+              (eq, ":faction_no", "fac_galacticempire"),#empire
+              (assign, ":faction_walker_bgin",town_walkers_empire_begin),
+              (assign, ":faction_walker_fnal",town_walkers_empire_end),
+            (else_try),
+              (eq, ":faction_no", "fac_rebelalliance"),	#rebel
+              (assign, ":faction_walker_bgin",town_walkers_rebel_begin),
+              (assign, ":faction_walker_fnal",town_walkers_rebel_end),
+            (else_try),
+              (eq, ":faction_no", "fac_huttcartel"),	  #hutt
+              (assign, ":faction_walker_bgin",town_walkers_hutt_begin),
+              (assign, ":faction_walker_fnal",town_walkers_hutt_end),
+            (else_try),
+              #default faction, neutrals. no specific martial units, 100% of probability down there.
+              (assign, ":faction_walker_bgin",":town_walkers_modified_begin"),
+              (assign, ":faction_walker_fnal",":town_walkers_modified_end"),
+            (try_end),
+            
+            #once we have our faction, then drop the dice and we have a 30% of probability of faction walkers.
+            (store_random_in_range, ":rand", 0, 100),
+            (try_begin),
+              (le, ":rand", 30),
+              (store_random_in_range, ":walker_troop_id", ":faction_walker_bgin", ":faction_walker_fnal"),
+            (else_try),
+              #if the odds are against us this walker will be neutral, generic
+              (store_random_in_range, ":walker_troop_id", ":town_walkers_modified_begin", ":town_walkers_modified_end"),
+            (try_end),
         (try_end),
-      (try_end),
-      
+
+
       (try_begin),
         (eq,":walker_type",walkert_spy),
         (assign,":original_walker",":walker_troop_id"),
@@ -26423,31 +26428,31 @@ scripts = [
                       #modified town_walkers so certain planets only have certain walkers - example code originally posted by Keedo420
                       # NOTE - any changes to this script must be updated in both the center_set_walker_to_type and fix_town_walker scripts
                       (try_begin),
-                        (eq, ":center_no", "p_geonosis"), #condition to set town specific walkers instead of regular walkers in town
+                        (eq, ":center_no", "p_geonosis"),
                         (assign, ":town_walkers_modified_begin",town8_walkers_begin),
                         (assign, ":town_walkers_modified_end",town8_walkers_end),
                       (else_try),
-                        (eq, ":center_no", "p_mon_cal"), #condition to set town specific walkers instead of regular walkers in town
+                        (eq, ":center_no", "p_mon_cal"),
                         (assign, ":town_walkers_modified_begin",town9_walkers_begin),
                         (assign, ":town_walkers_modified_end",town9_walkers_end),
                       (else_try),
-                        (eq, ":center_no", "p_kashyyyk"), #condition to set town specific walkers instead of regular walkers in town
+                        (eq, ":center_no", "p_kashyyyk"),
                         (assign, ":town_walkers_modified_begin",town10_walkers_begin),
                         (assign, ":town_walkers_modified_end",town10_walkers_end),
                       (else_try),
-                        (eq, ":center_no", "p_gamorr"), #condition to set town specific walkers instead of regular walkers in town
+                        (eq, ":center_no", "p_gamorr"),
                         (assign, ":town_walkers_modified_begin",town12_walkers_begin),
                         (assign, ":town_walkers_modified_end",town12_walkers_end),
                       (else_try),
-                        (eq, ":center_no", "p_tatooine"), #condition to set town specific walkers instead of regular walkers in town
+                        (eq, ":center_no", "p_tatooine"),
                         (assign, ":town_walkers_modified_begin",town14_walkers_begin),
                         (assign, ":town_walkers_modified_end",town14_walkers_end),
                       (else_try),
-                        (eq, ":center_no", "p_ryloth"), #condition to set town specific walkers instead of regular walkers in town
+                        (eq, ":center_no", "p_ryloth"),
                         (assign, ":town_walkers_modified_begin",town17_walkers_begin),
                         (assign, ":town_walkers_modified_end",town17_walkers_end),
                       (else_try),
-                        (eq, ":center_no", "p_kamino"), #condition to set town specific walkers instead of regular walkers in town
+                        (eq, ":center_no", "p_kamino"),
                         (assign, ":town_walkers_modified_begin","trp_kaminoan"),
                         (assign, ":town_walkers_modified_end","trp_kaminoan"),
                       (else_try),

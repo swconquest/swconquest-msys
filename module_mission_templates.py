@@ -878,7 +878,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ]+AI_triggers,
+    ],
   ),
 
   (
