@@ -547,7 +547,7 @@ scene_props = [
   ("sw_office_table_a",0,"office_table_a","bo_office_table_a", []),
   ("sw_table_light_a",0,"table_light_a","bo_table_light_a", []),
   ("sw_cantina_building",0,"cantina_bar","bo_cantina_bar", []),
-  ("sw_ship_interior",0,"hangar","bo_hangar", []),
+  ("sw_ship_interior",0,"0","0", []),
   ("sw_imperial_office_brown",0,"imperial_office_brown","bo_imperial_office_ramp", []),
   ("sw_imperial_office_green",0,"imperial_office_green","bo_imperial_office_ramp", []),
   ("sw_imperial_office_grey",0,"imperial_office_grey","bo_imperial_office_ramp", []),
@@ -2810,6 +2810,11 @@ scene_props = [
   ("gamorr_wall_1",0,"gamorr_wall_1","bo_gamorr_wall_1", []),
   ("gamorr_wall_2",0,"gamorr_wall_2","bo_gamorr_wall_2", []),
   ("moncal_battle",0,"moncal_battle","bo_moncal_battle", []),
+  
+  ("moncal_flora_bed_1",0,"moncal_flora_bed_1","bo_moncal_flora_bed_1", []),
+  ("moncal_flora_bed_2",0,"moncal_flora_bed_2","bo_moncal_flora_bed_2", []),
+  ("moncal_center",0,"moncal_center","bo_moncal_center", []),
+
 
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)

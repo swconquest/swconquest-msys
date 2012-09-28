@@ -65,6 +65,8 @@ muzzleflare_system = [
   (position_move_z,pos1,   0),(particle_system_burst,"psys_swy_muzzleflare",pos1,1) #,(set_current_color,255, 0, 255),(add_point_light, 10, 30)
 ]
 
+#lightsaber price bonus--some balancing comes in handy in more civilized times
+lsbr_vluemul=1.7
 
 # Replace winged mace/spiked mace with: Flanged mace / Knobbed mace?
 # Fauchard (majowski glaive) 
@@ -1744,98 +1746,98 @@ items = [
 
 # special arena lightsabers with no strength requirements (this is lightsaber_noise_begin)
 ["lightsaber_green_arena", "Lightsaber", [("lightsaber_green",0),("lightsaber_greenoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_unique| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left,
- 1500 , weight(0.5)|abundance(0)|difficulty(0)|spd_rtng(120) | weapon_length(115)|swing_damage(50, blunt) | thrust_damage(35, blunt),imodbits_none ],
+ 1500*lsbr_vluemul , weight(0.5)|abundance(0)|difficulty(0)|spd_rtng(120) | weapon_length(115)|swing_damage(50, blunt) | thrust_damage(35, blunt),imodbits_none ],
 ["lightsaber_blue_arena", "Lightsaber", [("lightsaber_blue",0),("lightsaber_blueoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_unique| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left,
- 1500 , weight(0.5)|abundance(0)|difficulty(0)|spd_rtng(120) | weapon_length(115)|swing_damage(50, blunt) | thrust_damage(35, blunt),imodbits_none ],
+ 1500*lsbr_vluemul , weight(0.5)|abundance(0)|difficulty(0)|spd_rtng(120) | weapon_length(115)|swing_damage(50, blunt) | thrust_damage(35, blunt),imodbits_none ],
 ["lightsaber_yellow_arena", "Lightsaber", [("lightsaber_yellow",0),("lightsaber_yellowoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_unique| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left,
- 1500 , weight(0.5)|abundance(0)|difficulty(0)|spd_rtng(120) | weapon_length(115)|swing_damage(50, blunt) | thrust_damage(35, blunt),imodbits_none ],
+ 1500*lsbr_vluemul , weight(0.5)|abundance(0)|difficulty(0)|spd_rtng(120) | weapon_length(115)|swing_damage(50, blunt) | thrust_damage(35, blunt),imodbits_none ],
 ["lightsaber_red_arena", "Lightsaber", [("lightsaber_red",0),("lightsaber_redoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_unique| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left,
- 1500 , weight(0.5)|abundance(0)|difficulty(0)|spd_rtng(120) | weapon_length(115)|swing_damage(50, blunt) | thrust_damage(35, blunt),imodbits_none ],
+ 1500*lsbr_vluemul , weight(0.5)|abundance(0)|difficulty(0)|spd_rtng(120) | weapon_length(115)|swing_damage(50, blunt) | thrust_damage(35, blunt),imodbits_none ],
 
 # weapons - lightsabers  (abundance is reduced since you can buy them all from the force-sensitive merchant at the trade federation base)
 ["weapons_begin", "<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
 ["lightsaber_green", "Lightsaber", [("lightsaber_green",0),("lightsaber_greenoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left,
- 900 , weight(0.5)|abundance(30)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber, ],
+ 900*lsbr_vluemul , weight(0.5)|abundance(30)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber, ],
  #@> SWY - Tried to add a real lightpoint, the game crashes when used: [(ti_on_init_item), [(assign,":scale",2),(store_mul, ":red", 2 * 157, ":scale"),(store_mul, ":green", 2 * 250, ":scale"),(store_mul, ":blue", 2 * 157, ":scale"),(val_div, ":red", 100),(val_div, ":green", 100),(val_div, ":blue", 100),(set_current_color,":red", ":green", ":blue"),(set_position_delta,0,0,0),(add_point_light, 10, 30)])]],
 #[(ti_on_init_item), [(position_move_y,pos1,10),(particle_system_add_new,"psys_planet_icon_atmospheric_effect_polution",pos1)])]],
 
 ["lightsaber_blue", "Lightsaber", [("lightsaber_blue",0),("lightsaber_blueoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left,
- 900 , weight(0.5)|abundance(30)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+ 900*lsbr_vluemul , weight(0.5)|abundance(30)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_orange", "Lightsaber", [("lightsaber_orange",0),("lightsaber_orangeoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left,
- 900 , weight(0.5)|abundance(10)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+ 900*lsbr_vluemul , weight(0.5)|abundance(10)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_purple", "Lightsaber", [("lightsaber_purple",0),("lightsaber_purpleoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left,
- 900 , weight(0.5)|abundance(20)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+ 900*lsbr_vluemul , weight(0.5)|abundance(20)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_yellow", "Lightsaber", [("lightsaber_yellow",0),("lightsaber_yellowoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left,
- 900 , weight(0.5)|abundance(10)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+ 900*lsbr_vluemul , weight(0.5)|abundance(10)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_red", "Lightsaber", [("lightsaber_red",0),("lightsaber_redoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left,
- 900 , weight(0.5)|abundance(30)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+ 900*lsbr_vluemul , weight(0.5)|abundance(30)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 # reverse-grip lightsabers  (abundance is reduced since you can buy them all from the force-sensitive merchant at the trade federation base)
 ["lightsaber_green_reverse", "Reverse Grip Lightsaber", [("lightsaber_green_reverse",0),("lightsaber_greenoff",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
- 1050 , weight(0.5)|abundance(15)|difficulty(14)|spd_rtng(135) | weapon_length(130)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
- ["lightsaber_blue_reverse", "Reverse Grip Lightsaber", [("lightsaber_blue_reverse",0),("lightsaber_blueoff",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
- 1050 , weight(0.5)|abundance(15)|difficulty(14)|spd_rtng(135) | weapon_length(130)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
- ["lightsaber_orange_reverse", "Reverse Grip Lightsaber", [("lightsaber_orange_reverse",0),("lightsaber_orangeoff",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
- 1050 , weight(0.5)|abundance(5)|difficulty(14)|spd_rtng(135) | weapon_length(130)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
- ["lightsaber_purple_reverse", "Reverse Grip Lightsaber", [("lightsaber_purple_reverse",0),("lightsaber_purpleoff",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
- 1050 , weight(0.5)|abundance(5)|difficulty(14)|spd_rtng(135) | weapon_length(130)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
- ["lightsaber_yellow_reverse", "Reverse Grip Lightsaber", [("lightsaber_yellow_reverse",0),("lightsaber_yellowoff",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
- 1050 , weight(0.5)|abundance(5)|difficulty(14)|spd_rtng(135) | weapon_length(130)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+ 1050*lsbr_vluemul , weight(0.5)|abundance(15)|difficulty(14)|spd_rtng(135) | weapon_length(130)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+["lightsaber_blue_reverse", "Reverse Grip Lightsaber", [("lightsaber_blue_reverse",0),("lightsaber_blueoff",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
+ 1050*lsbr_vluemul , weight(0.5)|abundance(15)|difficulty(14)|spd_rtng(135) | weapon_length(130)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+["lightsaber_orange_reverse", "Reverse Grip Lightsaber", [("lightsaber_orange_reverse",0),("lightsaber_orangeoff",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
+ 1050*lsbr_vluemul , weight(0.5)|abundance(5)|difficulty(14)|spd_rtng(135) | weapon_length(130)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+["lightsaber_purple_reverse", "Reverse Grip Lightsaber", [("lightsaber_purple_reverse",0),("lightsaber_purpleoff",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
+ 1050*lsbr_vluemul , weight(0.5)|abundance(5)|difficulty(14)|spd_rtng(135) | weapon_length(130)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+["lightsaber_yellow_reverse", "Reverse Grip Lightsaber", [("lightsaber_yellow_reverse",0),("lightsaber_yellowoff",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
+ 1050*lsbr_vluemul , weight(0.5)|abundance(5)|difficulty(14)|spd_rtng(135) | weapon_length(130)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_red_reverse", "Reverse Grip Lightsaber", [("lightsaber_red_reverse",0),("lightsaber_redoff",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
- 1050 , weight(0.5)|abundance(15)|difficulty(14)|spd_rtng(135) | weapon_length(130)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+ 1050*lsbr_vluemul , weight(0.5)|abundance(15)|difficulty(14)|spd_rtng(135) | weapon_length(130)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 # double-bladed lightsaber added itp_two_handed so you cannot use a shield at the same time  (abundance is reduced since you can buy them all from the force-sensitive merchant at the trade federation base)
 ["lightsaber_blue_double", "Double-Bladed Lightsaber", [("lightsaber_blue_double",0),("lightsaber_blue_doubleoff",ixmesh_carry)], itp_type_polearm|itp_merchandise|itp_two_handed| itp_spear|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_double|itcf_carry_sword_back, 
-1310 , weight(0.8)|abundance(15)|difficulty(14)|spd_rtng(150) | weapon_length(170)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+ 1310*lsbr_vluemul , weight(0.8)|abundance(15)|difficulty(14)|spd_rtng(150) | weapon_length(170)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_green_double", "Double-Bladed Lightsaber", [("lightsaber_green_double",0),("lightsaber_green_doubleoff",ixmesh_carry)], itp_type_polearm|itp_merchandise|itp_two_handed| itp_spear|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_double|itcf_carry_dagger_front_left, 
-1310 , weight(0.8)|abundance(15)|difficulty(14)|spd_rtng(150) | weapon_length(170)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+ 1310*lsbr_vluemul , weight(0.8)|abundance(15)|difficulty(14)|spd_rtng(150) | weapon_length(170)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 #["lightsaber_greenblue_double", "Double-Bladed Lightsaber", [("lightsaber_greenblue_double",0),("lightsaber_off",ixmesh_carry)], itp_type_polearm|itp_merchandise|itp_two_handed| itp_spear|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_double|itcf_carry_dagger_front_left, 
 #1700 , weight(0.8)|abundance(70)|difficulty(16)|spd_rtng(150) | weapon_length(170)|swing_damage(100 , cut) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_orange_double", "Double-Bladed Lightsaber", [("lightsaber_orange_double",0),("lightsaber_orange_doubleoff_separate",ixmesh_carry)], itp_type_polearm|itp_merchandise|itp_two_handed| itp_spear|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_double|itcf_carry_dagger_front_left, 
-1310 , weight(0.8)|abundance(5)|difficulty(14)|spd_rtng(150) | weapon_length(170)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+ 1310*lsbr_vluemul , weight(0.8)|abundance(5)|difficulty(14)|spd_rtng(150) | weapon_length(170)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_purple_double", "Double-Bladed Lightsaber", [("lightsaber_purple_double",0),("lightsaber_purple_doubleoff",ixmesh_carry)], itp_type_polearm|itp_merchandise|itp_two_handed| itp_spear|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_double|itcf_carry_dagger_front_left, 
-1310 , weight(0.8)|abundance(10)|difficulty(14)|spd_rtng(150) | weapon_length(170)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+ 1310*lsbr_vluemul , weight(0.8)|abundance(10)|difficulty(14)|spd_rtng(150) | weapon_length(170)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_red_double", "Double-Bladed Lightsaber", [("lightsaber_red_double",0),("lightsaber_red_doubleoff",ixmesh_carry)], itp_type_polearm|itp_merchandise|itp_two_handed| itp_spear|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_double|itcf_carry_dagger_front_left, 
-1310 , weight(0.8)|abundance(20)|difficulty(14)|spd_rtng(150) | weapon_length(170)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+ 1310*lsbr_vluemul , weight(0.8)|abundance(20)|difficulty(14)|spd_rtng(150) | weapon_length(170)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_yellow_double", "Double-Bladed Lightsaber", [("lightsaber_yellow_double",0),("lightsaber_yellow_doubleoff_separate",ixmesh_carry)], itp_type_polearm|itp_merchandise|itp_two_handed| itp_spear|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_double|itcf_carry_dagger_front_left, 
-1310 , weight(0.8)|abundance(5)|difficulty(14)|spd_rtng(150) | weapon_length(170)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
+ 1310*lsbr_vluemul , weight(0.8)|abundance(5)|difficulty(14)|spd_rtng(150) | weapon_length(170)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 # two handed lightsabers - added itp_two_handed so you cannot use a shield at the same time (higher speed as a bonus since the blade isn't 'heavy')
 ["lightsaber_green_2h", "Two Handed Lightsaber", [("lightsaber_green_2h",0),("lightsaber_green_2hoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise|itp_two_handed| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_2h|itcf_carry_dagger_front_left,
- 1195 , weight(0.6)|abundance(15)|difficulty(12)|spd_rtng(135) | weapon_length(130)|swing_damage(90 , pierce) | thrust_damage(90 ,  pierce),imodbits_lightsaber ],
+ 1195*lsbr_vluemul , weight(0.6)|abundance(15)|difficulty(12)|spd_rtng(135) | weapon_length(130)|swing_damage(90 , pierce) | thrust_damage(90 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_blue_2h", "Two Handed Lightsaber", [("lightsaber_blue_2h",0),("lightsaber_blue_2hoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise|itp_two_handed| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_2h|itcf_carry_dagger_front_left,
- 1195 , weight(0.6)|abundance(15)|difficulty(12)|spd_rtng(135) | weapon_length(130)|swing_damage(90 , pierce) | thrust_damage(90 ,  pierce),imodbits_lightsaber ],
+ 1195*lsbr_vluemul , weight(0.6)|abundance(15)|difficulty(12)|spd_rtng(135) | weapon_length(130)|swing_damage(90 , pierce) | thrust_damage(90 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_orange_2h", "Two Handed Lightsaber", [("lightsaber_orange_2h",0),("lightsaber_orange_2hoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise|itp_two_handed| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_2h|itcf_carry_dagger_front_left,
- 1195 , weight(0.6)|abundance(5)|difficulty(12)|spd_rtng(135) | weapon_length(130)|swing_damage(90 , pierce) | thrust_damage(90 ,  pierce),imodbits_lightsaber ],
+ 1195*lsbr_vluemul , weight(0.6)|abundance(5)|difficulty(12)|spd_rtng(135) | weapon_length(130)|swing_damage(90 , pierce) | thrust_damage(90 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_purple_2h", "Two Handed Lightsaber", [("lightsaber_purple_2h",0),("lightsaber_purple_2hoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise|itp_two_handed| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_2h|itcf_carry_dagger_front_left,
- 1195 , weight(0.6)|abundance(10)|difficulty(12)|spd_rtng(135) | weapon_length(130)|swing_damage(90 , pierce) | thrust_damage(90 ,  pierce),imodbits_lightsaber ],
+ 1195*lsbr_vluemul , weight(0.6)|abundance(10)|difficulty(12)|spd_rtng(135) | weapon_length(130)|swing_damage(90 , pierce) | thrust_damage(90 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_yellow_2h", "Two Handed Lightsaber", [("lightsaber_yellow_2h",0),("lightsaber_yellow_2hoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise|itp_two_handed| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_2h|itcf_carry_dagger_front_left,
- 1195 , weight(0.6)|abundance(5)|difficulty(12)|spd_rtng(135) | weapon_length(130)|swing_damage(90 , pierce) | thrust_damage(90 ,  pierce),imodbits_lightsaber ],
+ 1195*lsbr_vluemul , weight(0.6)|abundance(5)|difficulty(12)|spd_rtng(135) | weapon_length(130)|swing_damage(90 , pierce) | thrust_damage(90 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_red_2h", "Two Handed Lightsaber", [("lightsaber_red_2h",0),("lightsaber_red_2hoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise|itp_two_handed| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_2h|itcf_carry_dagger_front_left,
- 1195 , weight(0.6)|abundance(20)|difficulty(12)|spd_rtng(135) | weapon_length(130)|swing_damage(90 , pierce) | thrust_damage(90 ,  pierce),imodbits_lightsaber ],
+ 1195*lsbr_vluemul , weight(0.6)|abundance(20)|difficulty(12)|spd_rtng(135) | weapon_length(130)|swing_damage(90 , pierce) | thrust_damage(90 ,  pierce),imodbits_lightsaber ],
 # one handed lightsabers (lower speed)
 ["lightsaber_green_1h", "One Handed Lightsaber", [("lightsaber_green_1h",0),("lightsaber_green_1hoff",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
- 605 , weight(0.4)|abundance(15)|difficulty(10)|spd_rtng(105) | weapon_length(100)|swing_damage(60 , pierce) | thrust_damage(60 ,  pierce),imodbits_lightsaber ],
+ 605*lsbr_vluemul , weight(0.4)|abundance(15)|difficulty(10)|spd_rtng(105) | weapon_length(100)|swing_damage(60 , pierce) | thrust_damage(60 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_blue_1h", "One Handed Lightsaber", [("lightsaber_blue_1h",0),("lightsaber_blue_1hoff",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
- 605 , weight(0.4)|abundance(15)|difficulty(10)|spd_rtng(105) | weapon_length(100)|swing_damage(60 , pierce) | thrust_damage(60 ,  pierce),imodbits_lightsaber ],
+ 605*lsbr_vluemul , weight(0.4)|abundance(15)|difficulty(10)|spd_rtng(105) | weapon_length(100)|swing_damage(60 , pierce) | thrust_damage(60 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_orange_1h", "One Handed Lightsaber", [("lightsaber_orange_1h",0),("lightsaber_orange_1hoff",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
- 605 , weight(0.4)|abundance(5)|difficulty(10)|spd_rtng(105) | weapon_length(100)|swing_damage(60 , pierce) | thrust_damage(60 ,  pierce),imodbits_lightsaber ],
+ 605*lsbr_vluemul , weight(0.4)|abundance(5)|difficulty(10)|spd_rtng(105) | weapon_length(100)|swing_damage(60 , pierce) | thrust_damage(60 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_purple_1h", "One Handed Lightsaber", [("lightsaber_purple_1h",0),("lightsaber_purple_1hoff",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
- 605 , weight(0.4)|abundance(10)|difficulty(10)|spd_rtng(105) | weapon_length(100)|swing_damage(60 , pierce) | thrust_damage(60 ,  pierce),imodbits_lightsaber ],
+ 605*lsbr_vluemul , weight(0.4)|abundance(10)|difficulty(10)|spd_rtng(105) | weapon_length(100)|swing_damage(60 , pierce) | thrust_damage(60 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_yellow_1h", "One Handed Lightsaber", [("lightsaber_yellow_1h",0),("lightsaber_yellow_1hoff",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
- 605 , weight(0.4)|abundance(5)|difficulty(10)|spd_rtng(105) | weapon_length(100)|swing_damage(60 , pierce) | thrust_damage(60 ,  pierce),imodbits_lightsaber ],
+ 605*lsbr_vluemul , weight(0.4)|abundance(5)|difficulty(10)|spd_rtng(105) | weapon_length(100)|swing_damage(60 , pierce) | thrust_damage(60 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_red_1h", "One Handed Lightsaber", [("lightsaber_red_1h",0),("lightsaber_red_1hoff",ixmesh_carry)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h|itcf_carry_dagger_front_left,
- 605 , weight(0.4)|abundance(20)|difficulty(10)|spd_rtng(105) | weapon_length(100)|swing_damage(60 , pierce) | thrust_damage(60 ,  pierce),imodbits_lightsaber ], 
+ 605*lsbr_vluemul , weight(0.4)|abundance(20)|difficulty(10)|spd_rtng(105) | weapon_length(100)|swing_damage(60 , pierce) | thrust_damage(60 ,  pierce),imodbits_lightsaber ], 
 # lightsaber_pike  (abundance is reduced since you can buy them all from the force-sensitive merchant at the trade federation base)
 ["lightsaber_green_pike","Lightsaber Pike", [("lightsaber_green_pike",0),("lightsaber_pike_off",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_spear|itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_pike|itcf_carry_spear,
- 1040 , weight(1.2)|abundance(10)|difficulty(10)|spd_rtng(120) | weapon_length(150)|swing_damage(75, pierce) | thrust_damage(75,  pierce),imodbits_lightsaber ],
+ 1040*lsbr_vluemul , weight(1.2)|abundance(10)|difficulty(10)|spd_rtng(120) | weapon_length(150)|swing_damage(75, pierce) | thrust_damage(75,  pierce),imodbits_lightsaber ],
 ["lightsaber_blue_pike","Lightsaber Pike", [("lightsaber_blue_pike",0),("lightsaber_pike_off",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_spear|itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_pike|itcf_carry_spear,
- 1040 , weight(1.2)|abundance(10)|difficulty(10)|spd_rtng(120) | weapon_length(150)|swing_damage(75, pierce) | thrust_damage(75,  pierce),imodbits_lightsaber ],
+ 1040*lsbr_vluemul , weight(1.2)|abundance(10)|difficulty(10)|spd_rtng(120) | weapon_length(150)|swing_damage(75, pierce) | thrust_damage(75,  pierce),imodbits_lightsaber ],
 ["lightsaber_orange_pike","Lightsaber Pike", [("lightsaber_orange_pike",0),("lightsaber_pike_off",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_spear|itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_pike|itcf_carry_spear,
- 1040 , weight(1.2)|abundance(5)|difficulty(10)|spd_rtng(120) | weapon_length(150)|swing_damage(75, pierce) | thrust_damage(75,  pierce),imodbits_lightsaber ],
+ 1040*lsbr_vluemul , weight(1.2)|abundance(5)|difficulty(10)|spd_rtng(120) | weapon_length(150)|swing_damage(75, pierce) | thrust_damage(75,  pierce),imodbits_lightsaber ],
 ["lightsaber_purple_pike","Lightsaber Pike", [("lightsaber_purple_pike",0),("lightsaber_pike_off",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_spear|itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_pike|itcf_carry_spear,
- 1040 , weight(1.2)|abundance(5)|difficulty(10)|spd_rtng(120) | weapon_length(150)|swing_damage(75, pierce) | thrust_damage(75,  pierce),imodbits_lightsaber ],
+ 1040*lsbr_vluemul , weight(1.2)|abundance(5)|difficulty(10)|spd_rtng(120) | weapon_length(150)|swing_damage(75, pierce) | thrust_damage(75,  pierce),imodbits_lightsaber ],
 ["lightsaber_yellow_pike","Lightsaber Pike", [("lightsaber_yellow_pike",0),("lightsaber_pike_off",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_spear|itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_pike|itcf_carry_spear,
- 1040 , weight(1.2)|abundance(5)|difficulty(10)|spd_rtng(120) | weapon_length(150)|swing_damage(75, pierce) | thrust_damage(75,  pierce),imodbits_lightsaber ],
+ 1040*lsbr_vluemul , weight(1.2)|abundance(5)|difficulty(10)|spd_rtng(120) | weapon_length(150)|swing_damage(75, pierce) | thrust_damage(75,  pierce),imodbits_lightsaber ],
 ["lightsaber_red_pike","Lightsaber Pike", [("lightsaber_red_pike",0),("lightsaber_pike_off",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_spear|itp_primary|itp_penalty_with_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_pike|itcf_carry_spear,
- 1040 , weight(1.2)|abundance(20)|difficulty(10)|spd_rtng(120) | weapon_length(150)|swing_damage(75, pierce) | thrust_damage(75,  pierce),imodbits_lightsaber ], 
+ 1040*lsbr_vluemul , weight(1.2)|abundance(20)|difficulty(10)|spd_rtng(120) | weapon_length(150)|swing_damage(75, pierce) | thrust_damage(75,  pierce),imodbits_lightsaber ], 
 #unique lightsabers
 ["darth_vader_lightsaber", "Darth Vader's Lightsaber", [("lightsaber_red",0),("lightsaber_redoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left, 4000 , weight(2.1)|difficulty(14)|spd_rtng(140) | weapon_length(120)|swing_damage(100 , pierce) | thrust_damage(100 ,  pierce),imodbits_none ],
 ["obi_wan_lightsaber", "Obi-Wan Kenobi's Lightsaber", [("lightsaber_blue",0),("lightsaber_blueoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left, 4000 , weight(2.1)|difficulty(14)|spd_rtng(140) | weapon_length(120)|swing_damage(125 , pierce) | thrust_damage(100 ,  pierce),imodbits_none ],
@@ -1845,7 +1847,7 @@ items = [
 #["lightsaber_red", "Lightsaber", [("lightsaber_red",0),("lightsaber_redoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left,
 # 900 , weight(0.5)|abundance(60)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber ],
 ["lightsaber_red_multikill","Multi-hit Lightsaber (in development)", [("lightsaber_red",0),("lightsaber_redoff",ixmesh_carry)], itp_type_thrown|itp_unique|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack ,itc_lightsaber|itcf_carry_dagger_front_left, 
-	3000 , weight(0.5)|abundance(0)|difficulty(0)|spd_rtng(120)|weapon_length(115)|shoot_speed(1)|swing_damage(75,pierce)|thrust_damage(75,pierce)|max_ammo(1),imodbits_none,
+	3000*lsbr_vluemul , weight(0.5)|abundance(0)|difficulty(0)|spd_rtng(120)|weapon_length(115)|shoot_speed(1)|swing_damage(75,pierce)|thrust_damage(75,pierce)|max_ammo(1),imodbits_none,
 	[
 	
 	#ISSUES - non-player agents won't use it because it is a 'throwing' weapon
@@ -2495,145 +2497,9 @@ items = [
 	muzzleflare_system,
 	#</muzzleflare system>#
 	)]], 
- # one handed blasters (ie. pistol)
-["dh17", "DH-17", [("DH17",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	550 , weight(1.24)|abundance(100)|difficulty(0)|spd_rtng(110) | shoot_speed(160) | thrust_damage(36 ,pierce)|max_ammo(500)|accuracy(88),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_dh17"),(position_move_x, pos1,12),(position_move_y, pos1,15)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]],
-["dh17_stun", "Stun DH-17", [("DH17",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	550 , weight(1.24)|abundance(80)|difficulty(0)|spd_rtng(110) | shoot_speed(160) | thrust_damage(36 ,blunt)|max_ammo(500)|accuracy(88),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_stunblaster"),(position_move_x, pos1,12),(position_move_y, pos1,15)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]], 
-
-["se14r", "SE-14R", [("se_14r",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	410 , weight(2)|abundance(100)|difficulty(0)|spd_rtng(110) | shoot_speed(160) | thrust_damage(36 ,pierce)|max_ammo(16)|accuracy(88),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster19"),(position_move_x, pos1,12),(position_move_y, pos1,15)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]],	
-["dl44a", "DL-44", [("DL44a",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	750 , weight(1.5)|abundance(100)|difficulty(0)|spd_rtng(120) | shoot_speed(140) | thrust_damage(26,pierce)|max_ammo(25)|accuracy(87),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster19"),(position_move_x, pos1,12),(position_move_y, pos1,15)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]],
-["dl44a_stun", "Stun DL-44", [("DL44a",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	750 , weight(1.5)|abundance(80)|difficulty(0)|spd_rtng(120) | shoot_speed(140) | thrust_damage(26,blunt)|max_ammo(25)|accuracy(87),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_stunblaster"),(position_move_x, pos1,12),(position_move_y, pos1,15)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]], 
-["dl44b", "Modified DL-44", [("DL44b",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	860 , weight(1.6)|abundance(70)|difficulty(0)|spd_rtng(140) | shoot_speed(160) | thrust_damage(32,pierce)|max_ammo(25)|accuracy(89),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster19"),(position_move_x, pos1,4),(position_move_y, pos1,5)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]], 
-#removed the carry flag from the q2 since its typically a small hidden weapon
-["q2", "Q2", [("Q2",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_reload_pistol, 
-	300 , weight(0.51)|abundance(100)|difficulty(0)|spd_rtng(120) | shoot_speed(140) | thrust_damage(24 ,pierce)|max_ammo(6)|accuracy(85),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_littleblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]], 
-["q2_stun", "Stun Q2", [("Q2",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	300 , weight(0.51)|abundance(80)|difficulty(0)|spd_rtng(120) | shoot_speed(140) | thrust_damage(24 ,blunt)|max_ammo(6)|accuracy(85),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_stunblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]],  
-["elg3a", "ELG-3A", [("ELG_3A",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	500 , weight(0.51)|abundance(80)|difficulty(0)|spd_rtng(125) | shoot_speed(150) | thrust_damage(29 ,pierce)|max_ammo(100)|accuracy(88),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_littleblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]], 
-["elg3a_stun", "Stun ELG-3A", [("ELG_3A",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	500 , weight(0.51)|abundance(60)|difficulty(0)|spd_rtng(125) | shoot_speed(150) | thrust_damage(29 ,blunt)|max_ammo(100)|accuracy(88),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_stunblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]],	
-["scout_trooper_pistol", "Scout Trooper Pistol", [("scout_trooper_pistol",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	595 , weight(1.5)|abundance(100)|difficulty(0)|spd_rtng(130) | shoot_speed(150) | thrust_damage(28 ,pierce)|max_ammo(14)|accuracy(90),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_littleblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]], 
-["ddc_defender", "DDC Defender", [("DDC_defender",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	347 , weight(1.17)|abundance(100)|difficulty(0)|spd_rtng(130) | shoot_speed(140) | thrust_damage(24 ,pierce)|max_ammo(100)|accuracy(90),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_littleblaster"),(position_move_x, pos1,12),(position_move_y, pos1,15)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]],  
-["geonosian_sonic_pistol", "Geonosian Sonic Pistol", [("geonosian_sonic_pistol",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	772 , weight(1.5)|abundance(70)|difficulty(0)|spd_rtng(90) | shoot_speed(150) | thrust_damage(36 ,blunt)|max_ammo(10)|accuracy(89),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_sonicblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]],   
-["dl18", "DL-18", [("dl18",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	500 , weight(1.13)|abundance(100)|difficulty(0)|spd_rtng(120) | shoot_speed(130) | thrust_damage(22 ,pierce)|max_ammo(100)|accuracy(89),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_laser_fire"),(position_move_x, pos1,7),(position_move_y, pos1,9)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]],  
-["westar", "Westar-34", [("westar",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	1300 , weight(1.5)|abundance(40)|difficulty(0)|spd_rtng(130) | shoot_speed(140) | thrust_damage(40 ,pierce)|max_ammo(20)|accuracy(90),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_westar"),(position_move_x, pos1,7),(position_move_y, pos1,9)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]],  
-["westar_stun", "Stun Westar-34", [("westar",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	1300 , weight(1.5)|abundance(40)|difficulty(0)|spd_rtng(130) | shoot_speed(140) | thrust_damage(40 ,blunt)|max_ammo(20)|accuracy(90),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_westar"),(position_move_x, pos1,17),(position_move_y, pos1,9)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]],    
-["ion_pistol", "Ion Pistol", [("ion_pistol",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-	800 , weight(3.1)|abundance(70)|difficulty(0)|spd_rtng(60) | shoot_speed(120) | thrust_damage(36,blunt)|max_ammo(15)|accuracy(85),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_ionblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]], 
-#["trandoshan_supressor", "Trandoshan Supressor", [("trandoshan_supressor",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
-["trandoshan_supressor", "Trandoshan Supressor", [("trandoshan_supressor",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_quiver_right_vertical|itcf_reload_pistol, 
-	795 , weight(1.5)|abundance(70)|difficulty(0)|spd_rtng(110) | shoot_speed(150) | thrust_damage(32,blunt)|max_ammo(10)|accuracy(90),imodbits_gun,
-	[(ti_on_weapon_attack, [(play_sound,"snd_stunblaster"),(position_move_x, pos1,10),(position_move_y, pos1,14)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]],    
-["wrist_blaster", "Wrist Mounted Blaster", [("0",0),("wrist_blaster",ixmesh_inventory)], itp_merchandise|itp_type_pistol|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_reload_pistol, 
-	500 , weight(1.3)|abundance(60)|difficulty(0)|spd_rtng(105) | shoot_speed(135) | thrust_damage(35,pierce)|max_ammo(24)|accuracy(90),imodbits_none,
-	[(ti_on_weapon_attack, [(play_sound,"snd_laser_fire"),(position_move_x, pos1,0),(position_move_y, pos1,0)]
-	+#<muzzleflare system>#
-	muzzleflare_system,
-	#</muzzleflare system>#
-	)]],		
+  
 #@> Added by Swyter...
-["heavy_repeater", "Imperial Heavy Repeater", [("HeavyRepeater",0),("HeavyRepeater_inv",ixmesh_inventory),("HeavyRepeater_carried",ixmesh_carry)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_throw_javelin|itcf_carry_quiver_back|itcf_reload_pistol,
+["heavy_repeater", "Imperial Heavy Repeater", [("HeavyRepeater",0),("HeavyRepeater_inv",ixmesh_inventory),("HeavyRepeater_carried",ixmesh_carry)], itp_type_crossbow|itp_two_handed|itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_throw_javelin|itcf_carry_quiver_back|itcf_reload_pistol,
 	1500 , weight(4.68)|abundance(100)|difficulty(0)|spd_rtng(120) | shoot_speed(169) | thrust_damage(36 ,pierce)|max_ammo(400)|accuracy(94),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_heavyrepeater"),(position_move_x, pos1,30),(position_move_y, pos1,30)]
 	+#<muzzleflare system>#
@@ -2641,13 +2507,94 @@ items = [
 	#</muzzleflare system>#
 	)]],
 
-["storm_rifle", "StormTrooper Rifle", [("uio0000_stormtrooperrifle",0),("uio0000_stormtrooperrifle_inv",ixmesh_inventory)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_spear|itcf_reload_musket, 
+["storm_rifle", "StormTrooper Rifle", [("uio0000_stormtrooperrifle",0),("uio0000_stormtrooperrifle_inv",ixmesh_inventory)], itp_type_crossbow|itp_two_handed|itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_spear|itcf_reload_musket, 
 	871 , weight(3.4)|abundance(70)|difficulty(0)|spd_rtng(85) | shoot_speed(170) | thrust_damage(47 ,pierce)|max_ammo(30)|accuracy(94),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_stormrifle"),(position_move_x, pos1,6),(position_move_y, pos1,8)]
 	+#<muzzleflare system>#
 	muzzleflare_system,
 	#</muzzleflare system>#
 	)]],  
+  
+ # ONE HANDED BLASTERS (ie. pistol)
+["dh17", "DH-17", [("DH17",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	550 , weight(1.24)|abundance(100)|difficulty(0)|spd_rtng(110) | shoot_speed(160) | thrust_damage(36 ,pierce)|max_ammo(500)|accuracy(88),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_dh17"),(position_move_x, pos1,12),(position_move_y, pos1,15)]
+	)]],
+["dh17_stun", "Stun DH-17", [("DH17",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	550 , weight(1.24)|abundance(80)|difficulty(0)|spd_rtng(110) | shoot_speed(160) | thrust_damage(36 ,blunt)|max_ammo(500)|accuracy(88),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_stunblaster"),(position_move_x, pos1,12),(position_move_y, pos1,15)]
+	)]], 
+
+["se14r", "SE-14R", [("se_14r",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	410 , weight(2)|abundance(100)|difficulty(0)|spd_rtng(110) | shoot_speed(160) | thrust_damage(36 ,pierce)|max_ammo(16)|accuracy(88),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster19"),(position_move_x, pos1,12),(position_move_y, pos1,15)]
+	)]],	
+["dl44a", "DL-44", [("DL44a",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	750 , weight(1.5)|abundance(100)|difficulty(0)|spd_rtng(120) | shoot_speed(140) | thrust_damage(26,pierce)|max_ammo(25)|accuracy(87),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster19"),(position_move_x, pos1,12),(position_move_y, pos1,15)]
+	)]],
+["dl44a_stun", "Stun DL-44", [("DL44a",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	750 , weight(1.5)|abundance(80)|difficulty(0)|spd_rtng(120) | shoot_speed(140) | thrust_damage(26,blunt)|max_ammo(25)|accuracy(87),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_stunblaster"),(position_move_x, pos1,12),(position_move_y, pos1,15)]
+	)]], 
+["dl44b", "Modified DL-44", [("DL44b",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	860 , weight(1.6)|abundance(70)|difficulty(0)|spd_rtng(140) | shoot_speed(160) | thrust_damage(32,pierce)|max_ammo(25)|accuracy(89),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster19"),(position_move_x, pos1,4),(position_move_y, pos1,5)]
+	)]], 
+#removed the carry flag from the q2 since its typically a small hidden weapon
+["q2", "Q2", [("Q2",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_reload_pistol, 
+	300 , weight(0.51)|abundance(100)|difficulty(0)|spd_rtng(120) | shoot_speed(140) | thrust_damage(24 ,pierce)|max_ammo(6)|accuracy(85),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_littleblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
+	)]], 
+["q2_stun", "Stun Q2", [("Q2",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	300 , weight(0.51)|abundance(80)|difficulty(0)|spd_rtng(120) | shoot_speed(140) | thrust_damage(24 ,blunt)|max_ammo(6)|accuracy(85),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_stunblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
+	)]],  
+["elg3a", "ELG-3A", [("ELG_3A",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	500 , weight(0.51)|abundance(80)|difficulty(0)|spd_rtng(125) | shoot_speed(150) | thrust_damage(29 ,pierce)|max_ammo(100)|accuracy(88),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_littleblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
+	)]], 
+["elg3a_stun", "Stun ELG-3A", [("ELG_3A",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	500 , weight(0.51)|abundance(60)|difficulty(0)|spd_rtng(125) | shoot_speed(150) | thrust_damage(29 ,blunt)|max_ammo(100)|accuracy(88),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_stunblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
+	)]],	
+["scout_trooper_pistol", "Scout Trooper Pistol", [("scout_trooper_pistol",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	595 , weight(1.5)|abundance(100)|difficulty(0)|spd_rtng(130) | shoot_speed(150) | thrust_damage(28 ,pierce)|max_ammo(14)|accuracy(90),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_littleblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
+	)]], 
+["ddc_defender", "DDC Defender", [("DDC_defender",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	347 , weight(1.17)|abundance(100)|difficulty(0)|spd_rtng(130) | shoot_speed(140) | thrust_damage(24 ,pierce)|max_ammo(100)|accuracy(90),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_littleblaster"),(position_move_x, pos1,12),(position_move_y, pos1,15)]
+	)]],  
+["geonosian_sonic_pistol", "Geonosian Sonic Pistol", [("geonosian_sonic_pistol",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	772 , weight(1.5)|abundance(70)|difficulty(0)|spd_rtng(90) | shoot_speed(150) | thrust_damage(36 ,blunt)|max_ammo(10)|accuracy(89),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_sonicblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
+	)]],   
+["dl18", "DL-18", [("dl18",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	500 , weight(1.13)|abundance(100)|difficulty(0)|spd_rtng(120) | shoot_speed(130) | thrust_damage(22 ,pierce)|max_ammo(100)|accuracy(89),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_laser_fire"),(position_move_x, pos1,7),(position_move_y, pos1,9)]
+	)]],  
+["westar", "Westar-34", [("westar",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	1300 , weight(1.5)|abundance(40)|difficulty(0)|spd_rtng(130) | shoot_speed(140) | thrust_damage(40 ,pierce)|max_ammo(20)|accuracy(90),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_westar"),(position_move_x, pos1,7),(position_move_y, pos1,9)]
+	)]],  
+["westar_stun", "Stun Westar-34", [("westar",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	1300 , weight(1.5)|abundance(40)|difficulty(0)|spd_rtng(130) | shoot_speed(140) | thrust_damage(40 ,blunt)|max_ammo(20)|accuracy(90),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_westar"),(position_move_x, pos1,17),(position_move_y, pos1,9)]
+	)]],    
+["ion_pistol", "Ion Pistol", [("ion_pistol",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+	800 , weight(3.1)|abundance(70)|difficulty(0)|spd_rtng(60) | shoot_speed(120) | thrust_damage(36,blunt)|max_ammo(15)|accuracy(85),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_ionblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)]
+	)]], 
+#["trandoshan_supressor", "Trandoshan Supressor", [("trandoshan_supressor",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 
+["trandoshan_supressor", "Trandoshan Supressor", [("trandoshan_supressor",0)], itp_type_pistol |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_quiver_right_vertical|itcf_reload_pistol, 
+	795 , weight(1.5)|abundance(70)|difficulty(0)|spd_rtng(110) | shoot_speed(150) | thrust_damage(32,blunt)|max_ammo(10)|accuracy(90),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_stunblaster"),(position_move_x, pos1,10),(position_move_y, pos1,14)]
+	)]],    
+["wrist_blaster", "Wrist Mounted Blaster", [("0",0),("wrist_blaster",ixmesh_inventory)], itp_merchandise|itp_type_pistol|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_reload_pistol, 
+	500 , weight(1.3)|abundance(60)|difficulty(0)|spd_rtng(105) | shoot_speed(135) | thrust_damage(35,pierce)|max_ammo(24)|accuracy(90),imodbits_none,
+	[(ti_on_weapon_attack, [(play_sound,"snd_laser_fire"),(position_move_x, pos1,0),(position_move_y, pos1,0)]
+	)]],
 
 ["ranged_weapons_end", "<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
  
