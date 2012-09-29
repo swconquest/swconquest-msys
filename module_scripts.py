@@ -27976,6 +27976,7 @@ scripts = [
                     
                     (neq, ":agent_moved", 1),
                     (neq, ":agent_no", ":player_agent"),
+                    (neq, ":agent_no", "$dmod_current_agent"),
 
                     (agent_get_team, ":cur_team", ":agent_no"),
                     (eq, ":cur_team", ":player_team"),
@@ -27984,6 +27985,7 @@ scripts = [
                       (lt, ":first_agent", 0),
                       (assign, ":first_agent", ":agent_no"),
                     (try_end),
+                    
                     (gt, ":agent_no", "$dmod_current_agent"),
                     (assign, "$dmod_current_agent", ":agent_no"),
                     (assign, ":agent_moved", 1),
@@ -28024,6 +28026,8 @@ scripts = [
                       (agent_is_human, ":agent_no"),
                       
                       (neq, ":agent_no", ":player_agent"),
+                      (neq, ":agent_no", "$dmod_current_agent"),
+                      
                       (agent_get_team, ":cur_team", ":agent_no"),
                       (eq, ":cur_team", ":player_team"),
                       #(agent_get_troop_id, ":agent_troop", ":agent_no"),
