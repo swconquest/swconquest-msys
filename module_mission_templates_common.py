@@ -2048,23 +2048,26 @@ common_crouch_button = (0, 0, 0,
   ])
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 #SW - new helmet view
-common_helmet_view = (0, 0, 0, [
-  #(key_clicked, key_v),
-  (key_clicked, "$helmet_view_key"),
-  (neg|conversation_screen_is_active),
-  ],
-  [
-    (get_player_agent_no, ":player_agent"),
-    (agent_is_alive, ":player_agent"),
+common_helmet_view = [
+  (0, .01, ti_once, [(eq, "$helmet_view", 1),], [(start_presentation, "prsnt_helmet_view")]),
+  (0, 0, 0, [
+    #(key_clicked, key_v),
+    (key_clicked, "$helmet_view_key"),
+    (neg|conversation_screen_is_active),
+    ],
+    [
+      (get_player_agent_no, ":player_agent"),
+      (agent_is_alive, ":player_agent"),
 
-    (try_begin),
-      (le, "$helmet_view", 0),  #incase this variable isn't set yet
-      (assign, "$helmet_view", 1),
-      (start_presentation, "prsnt_helmet_view"),
-    (else_try),
-      (assign, "$helmet_view", 0),
-    (try_end),
-  ])
+      (try_begin),
+        (le, "$helmet_view", 0),  #incase this variable isn't set yet
+        (assign, "$helmet_view", 1),
+        (start_presentation, "prsnt_helmet_view"),
+      (else_try),
+        (assign, "$helmet_view", 0),
+      (try_end),
+    ])
+ ]
 #--------------------------------------------------------------------------------------------------------------------------------------------------
 #SW - new zoom view
 common_zoom_view = (0, 0, 0, [

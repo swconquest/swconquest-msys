@@ -3428,8 +3428,8 @@ troops = [
 		itm_imperial_stormtrooper_helmet_incinerator,
 		itm_imperial_stormtrooper_boots_incinerator,
 		itm_imperial_stormtrooper_boots_incinerator,
-		itm_black_gloves_long,
-		itm_black_gloves_long,
+		itm_incinerator_trooper_gloves,
+		itm_incinerator_trooper_gloves,
 		itm_baton,
 		itm_baton,
 		itm_laser_bolts_red_rifle,
@@ -3459,8 +3459,8 @@ troops = [
 		itm_imperial_stormtrooper_helmet_novatrooper,
 		itm_imperial_stormtrooper_boots_novatrooper,
 		itm_imperial_stormtrooper_boots_novatrooper,
-		itm_imperial_stormtrooper_gloves,
-		itm_imperial_stormtrooper_gloves,
+		itm_novatrooper_gloves,
+		itm_novatrooper_gloves,
 		itm_baton,
 		itm_baton,
 		itm_laser_bolts_red_rifle,
@@ -6713,8 +6713,12 @@ upgrade2(troops,"imperial_army_trooper","imperial_stormtrooper","imperial_scout_
 upgrade2(troops,"imperial_scout_trooper","imperial_scout_trooper_veteran","imperial_scout_trooper_marksman")
 upgrade(troops,"imperial_scout_trooper_marksman","imperial_scout_trooper_sniper")
 upgrade(troops,"imperial_scout_trooper_veteran","imperial_scout_trooper_captain")
-upgrade(troops,"imperial_stormtrooper","imperial_stormtrooper_veteran")
-upgrade2(troops,"imperial_stormtrooper_veteran","imperial_stormtrooper_officer","imperial_royal_guard")
+
+upgrade2(troops,"imperial_stormtrooper","imperial_stormtrooper_veteran","imperial_stormtrooper_officer")
+upgrade2(troops,"imperial_stormtrooper_veteran","novatrooper","incinerator_trooper")
+upgrade(troops,"imperial_stormtrooper_officer","imperial_royal_guard")
+
+
 upgrade(troops,"sith_hopeful","sith_acolyte")
 upgrade(troops,"sith_acolyte","sith_apprentice")
 upgrade(troops,"sith_apprentice","sith_knight")

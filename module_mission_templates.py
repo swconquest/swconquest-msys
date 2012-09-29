@@ -77,7 +77,6 @@ mission_templates = [
       #lightsaber_noise_agent,
       common_change_fog,
       common_use_healthpack,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -86,7 +85,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ],
+    ]+common_helmet_view,
   ),
 
 # This template is used in party encounters and such.
@@ -245,7 +244,6 @@ mission_templates = [
       #lightsaber_noise_agent,
       common_change_fog,
       common_use_healthpack,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -255,7 +253,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ],
+    ]+common_helmet_view,
   ),
   
 ########################
@@ -518,7 +516,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       #common_player_damage,
       common_zoom_view,
       common_use_jetpack,
@@ -531,7 +528,7 @@ mission_templates = [
       common_crouch_button,
       #common_turret, -> unstable
       common_gate_system,
-     ]#+AI_triggers,
+     ]+common_helmet_view,
     ),
 
   (
@@ -863,7 +860,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_fix_droid_walking,
@@ -878,7 +874,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ],
+    ]+common_helmet_view,
   ),
 
   (
@@ -908,7 +904,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -966,7 +961,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
   ),
 
 
@@ -986,7 +981,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -1025,7 +1019,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
   ),
 
 
@@ -1054,7 +1048,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -1139,7 +1132,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",1)]),
-    ],
+    ]+common_helmet_view,
   ),
 
   
@@ -1156,7 +1149,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -1222,7 +1214,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
   ),
 
 
@@ -1240,7 +1232,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -1275,7 +1266,7 @@ mission_templates = [
            (try_end),
            (finish_mission),
            ]),
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
   ),
 
 
@@ -1398,7 +1389,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -1440,7 +1430,7 @@ mission_templates = [
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
       common_gate_system,
-    ],
+    ]+common_helmet_view,
   ),
 
 #########################################################################################################################
@@ -1628,7 +1618,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -1677,7 +1666,7 @@ mission_templates = [
       #       (agent_set_animation, ":cur_agent", "anim_speeder_stationary"),  #so the horse doesn't move, must include module_animations at the top
       #    (try_end),
       #      ], []),
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
   ),
 
 #########################################################################################################################
@@ -1697,7 +1686,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -1770,7 +1758,7 @@ mission_templates = [
         ############################################################################################################
         ##### Custom Commander(CC)
         ############################################################################################################
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
   ),
 
 
@@ -1791,7 +1779,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -1906,7 +1893,7 @@ mission_templates = [
       ##          (store_mission_timer_a,reg(1)),(ge,reg(1),4),
       ##          (call_script, "script_battle_tactic_apply"),
       ##          ], []),
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
   ),
 
   (
@@ -1929,7 +1916,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -2007,7 +1993,7 @@ mission_templates = [
       ############################################################################################################
       ##### Custom Commander(CC)
       ############################################################################################################
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
   ),
 
   (
@@ -2033,7 +2019,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -2106,7 +2091,7 @@ mission_templates = [
       ##### Custom Commander(CC)
       ############################################################################################################
 
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
   ),
 
   (
@@ -2125,7 +2110,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -2220,7 +2204,7 @@ mission_templates = [
       ##### Custom Commander(CC)
       ############################################################################################################
       common_gate_system,
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
   ),
 
 
@@ -2250,7 +2234,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -2314,7 +2297,7 @@ mission_templates = [
         ##### Custom Commander(CC)
         ############################################################################################################
         common_gate_system,
-    ],
+    ]+common_helmet_view,
   ),
 
   (
@@ -2350,7 +2333,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -2396,7 +2378,7 @@ mission_templates = [
       ############################################################################################################
       ##### Custom Commander(CC)
       ############################################################################################################
-    ],
+    ]+common_helmet_view,
   ),
 
 
@@ -2455,7 +2437,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -2482,7 +2463,7 @@ mission_templates = [
 
       #      (ti_before_mission_start, 0, 0, [],
       #          [(scene_prop_disable,"spr_ramp_12m"),(scene_prop_disable,"spr_portcullis")]),
-    ],
+    ]+common_helmet_view,
   ),
 
 
@@ -2823,7 +2804,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -2852,7 +2832,7 @@ mission_templates = [
        [(assign,"$auto_menu",-1),(jump_to_menu,"mnu_sneak_into_town_caught_ran_away"),(finish_mission,0)]),
 
       (ti_inventory_key_pressed, 0, 0, [(display_message,"str_cant_use_inventory_arena")], []),
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
 
   ),
 
@@ -4455,7 +4435,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -4463,7 +4442,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
 
   ),
 
@@ -4542,7 +4521,6 @@ mission_templates = [
         common_use_healthpack,
         #common_use_binocular_1,
         #common_use_binocular_2,
-        common_helmet_view,
         common_zoom_view,
         common_use_jetpack,
         common_toggle_weapon_capabilities,
@@ -4550,7 +4528,7 @@ mission_templates = [
 
           #SWY - trigger to make unique agents behavior - custom scripting
         (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ],
+    ]+common_helmet_view,
     ),
 
   (
@@ -4618,7 +4596,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -4626,7 +4603,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ],
+    ]+common_helmet_view,
     ),
 
   (
@@ -4712,7 +4689,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -4720,7 +4696,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ],
+    ]+common_helmet_view,
   ),
 
 #==============================================================================================================
@@ -4909,7 +4885,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -4917,7 +4892,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
 
   ),
   (
@@ -5078,7 +5053,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -5087,7 +5061,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ]+AI_triggers,
+    ]+common_helmet_view+AI_triggers,
 
   ),
 
@@ -5155,7 +5129,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -5165,7 +5138,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ],
+    ]+common_helmet_view,
   ),
 #==============================================================================================================
 #SW - HokieBT - added new scene for ship_interior
@@ -5256,7 +5229,6 @@ mission_templates = [
       common_use_healthpack,
       #common_use_binocular_1,
       #common_use_binocular_2,
-      common_helmet_view,
       common_zoom_view,
       common_use_jetpack,
       common_toggle_weapon_capabilities,
@@ -5265,7 +5237,7 @@ mission_templates = [
 
        #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ],
+    ]+common_helmet_view,
   ),
 
 #==============================================================================================================
@@ -5918,7 +5890,6 @@ mission_templates = [
     common_use_healthpack,
     #common_use_binocular_1,
     #common_use_binocular_2,
-    common_helmet_view,
     common_zoom_view,
     common_use_jetpack,
     common_toggle_weapon_capabilities,
@@ -6005,7 +5976,7 @@ mission_templates = [
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
 
- ],
+ ]+common_helmet_view,
 ),
 
 ########################## Duel Mod End ##############################

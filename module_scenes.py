@@ -61,13 +61,13 @@ scenes = [
  #@-> ("ship_hangar_open_3b",sf_indoors,"hangar", "bo_hangar", (-100,-100),(100,100),-100,"0",
  #@->   [],[]),
 
-  ("ship_hangar_imp",sf_indoors,"none", "none", (-100,-100),(100,100),-100,"0",
+  ("ship_hangar_imp",sf_indoors,"0", "bo_Container_closed", (-100,-100),(100,100),-100,"0",
     [],[]),
-  ("ship_hangar_reb",sf_indoors,"none", "none", (-100,-100),(100,100),-100,"0",
+  ("ship_hangar_reb",sf_indoors,"0", "bo_Container_closed", (-100,-100),(100,100),-100,"0",
     [],[]),
-  ("ship_hangar_hut",sf_indoors,"none", "none", (-100,-100),(100,100),-100,"0",
+  ("ship_hangar_hut",sf_indoors,"0", "bo_Container_closed", (-100,-100),(100,100),-100,"0",
     [],[]),
-  ("ship_hangar",sf_indoors,"none", "none", (-100,-100),(100,100),-100,"0",
+  ("ship_hangar",    sf_indoors,"0", "bo_Container_closed", (-100,-100),(100,100),-100,"0",
     [],[]),	
 
 	

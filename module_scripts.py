@@ -3068,7 +3068,8 @@ scripts = [
         (set_trigger_result, 0x00ff7f), #Green text
       (else_try),
         (this_or_next|eq, ":item_no", "itm_imperial_stormtrooper_helmet"),
-        (this_or_next|eq, ":item_no", "itm_shadow_stormtrooper_helmet"),
+        (this_or_next|eq, ":item_no", "itm_imperial_stormtrooper_helmet_incinerator"),
+        (this_or_next|eq, ":item_no", "itm_imperial_stormtrooper_helmet_novatrooper"),
         (this_or_next|eq, ":item_no", "itm_imperial_scout_trooper_helmet"),
         (this_or_next|eq, ":item_no", "itm_shadow_scout_trooper_helmet"),
         (this_or_next|eq, ":item_no", "itm_fang_helmet"),

@@ -906,8 +906,11 @@ items = [
  28, weight(0.25)|abundance(40)|body_armor(3)|difficulty(0),imodbits_cloth],
 ["imperial_stormtrooper_gloves","Imperial Stormtrooper Gloves", [("stormie_glov_L",0)], itp_merchandise|itp_type_hand_armor|itp_civilian,0, 
  28, weight(0.25)|abundance(80)|body_armor(3)|difficulty(0),imodbits_cloth], 
-["shadow_stormtrooper_gloves","Shadow Stormtrooper Gloves", [("shadow_stormtrooper_glove_L",0)], itp_merchandise|itp_type_hand_armor|itp_civilian,0, 
- 28, weight(0.25)|abundance(40)|body_armor(3)|difficulty(0),imodbits_cloth],  
+["novatrooper_gloves","Novatrooper Gloves", [("stnova_glov_L",0)], itp_merchandise|itp_type_hand_armor|itp_civilian,0, 
+ 38, weight(0.25)|abundance(40)|body_armor(4)|difficulty(0),imodbits_cloth],
+["incinerator_trooper_gloves","Incinerator Trooper Gloves", [("stincn_glov_L",0)], itp_merchandise|itp_type_hand_armor|itp_civilian,0, 
+ 43, weight(0.25)|abundance(40)|body_armor(5)|difficulty(0),imodbits_cloth],  
+ 
 #clone gloves (w, g, b, r, y, o)
 ["clone_trooper_gloves_white","Clone Trooper Gloves", [("ArcTrooperWhite_glove_L",0)], itp_type_hand_armor|itp_civilian,0, 
  28, weight(0.25)|abundance(80)|body_armor(3)|difficulty(0),imodbits_cloth], 
@@ -953,8 +956,6 @@ items = [
  210 , weight(2.0)|abundance(50)|head_armor(0)|body_armor(0)|leg_armor(16)|difficulty(0) ,imodbits_armor ],  
 ["shadow_scout_trooper_boots", "Shadow Scout Trooper Boots", [("shadow_scoutboots",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian,0, 
  240 , weight(2.0)|abundance(40)|head_armor(0)|body_armor(0)|leg_armor(18)|difficulty(0) ,imodbits_armor ],   
-["shadow_stormtrooper_boots", "Shadow Stormtrooper Boots", [("shadow_stormtrooper_boots",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian,0, 
- 240 , weight(2.0)|abundance(40)|head_armor(0)|body_armor(0)|leg_armor(18)|difficulty(0) ,imodbits_armor ],  
 #removed merch flag on clone_trooper_boots
 ["clone_trooper_boots", "Clone Trooper Boots", [("ArcTrooperFeet",0)], itp_type_foot_armor  |itp_civilian,0, 
  210 , weight(2.0)|abundance(20)|head_armor(0)|body_armor(0)|leg_armor(16)|difficulty(0) ,imodbits_armor ],  
@@ -1045,8 +1046,6 @@ items = [
  216 , weight(1)|abundance(50)|head_armor(18)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
 ["imperial_pilot_helmet", "Imperial Pilot Helmet", [("tiepilot",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 
  175 , weight(1)|abundance(60)|head_armor(12)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ], 
-["shadow_stormtrooper_helmet", "Shadow Stormtrooper Helmet", [("shadow_stormtrooper_helmet",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 
- 225 , weight(1)|abundance(60)|head_armor(16)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ], 
 # removed merchandise, added unique & civilian, removed civilian from all clone_trooper_helmets so the head would be used indoors  (nevermind, added civilian back)
 ["clone_trooper_head", "Clone Trooper Head", [("cloneface_helmet",0)], itp_unique|itp_type_head_armor|itp_covers_head|itp_civilian ,0, 150 , weight(1)|abundance(0)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
 ["clone_trooper_head_scar", "Clone Trooper Head", [("cloneface_scar_helmet",0)], itp_unique|itp_type_head_armor|itp_covers_head|itp_civilian ,0, 150 , weight(1)|abundance(0)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
@@ -1226,8 +1225,6 @@ items = [
 ["imperial_stormtrooper_armor", "Imperial Stormtrooper Armor", [("Stormtrooper_body",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
  720 , weight(10)|abundance(100)|head_armor(0)|body_armor(42)|leg_armor(18)|difficulty(0) ,imodbits_armor ],
 
-["shadow_stormtrooper_armor", "Shadow Stormtrooper Armor", [("shadow_stormtrooper_armor",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
- 780 , weight(8)|abundance(60)|head_armor(0)|body_armor(44)|leg_armor(20)|difficulty(0) ,imodbits_armor ], 
 ["rebel_honor_guard_armor", "Rebel Honor Guard Armor", [("outfit_green",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
  760 , weight(6)|abundance(50)|head_armor(0)|body_armor(44)|leg_armor(20)|difficulty(0) ,imodbits_armor ],  
  
