@@ -1371,6 +1371,9 @@ slot_troop_duel_won          = 142      #duel mod - how many duels player won ag
 slot_troop_duel_lost         = 143      #duel mod - how many duels player lost against this troop
 slot_troop_duel_started      = 144      #duel mod - if player started dueling with this troop
 
+#Rubik's Easy regulars upgrading kit -- http://forums.taleworlds.com/index.php/topic,8652.msg1689787.html#msg1689787
+slot_root_troop = 166
+
 # Duel mod constants
 #king_renown_for_duel = 150      # Minimum renown needed to challenge a king to a friendly duel
 king_renown_for_duel  =   0      # Minimum renown needed to challenge a king to a friendly duel

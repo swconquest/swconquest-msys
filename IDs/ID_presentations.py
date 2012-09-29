@@ -26,3 +26,4 @@ prsnt_ship_details = 24
 prsnt_key_assignment = 25
 prsnt_faction_selection = 26
 prsnt_class_selection = 27
+prsnt_upgrade_troops = 28
