@@ -1552,5 +1552,8 @@ str_spaceship_starchaser_name = 1550
 str_spaceship_starchaser_desc = 1551
 str_swy_space_battles_won = 1552
 str_swy_space_battles_won_desc = 1553
+str_swconquest_credits_years = 1554
+str_swconquest_credits_prefc = 1555
+str_swconquest_credits_contb = 1556
 
 

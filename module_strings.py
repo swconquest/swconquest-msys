@@ -1,6 +1,9 @@
+# -*- coding: utf-8 -*-
 # S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
 # / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
 # By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
+
+from datetime import datetime
 
 strings = [
   ("no_string", "NO STRING!"),
@@ -2283,4 +2286,70 @@ We apologize sincerely if you contributed your suggestions and feedback but were
   ("swy_space_battles_won", "-Victory-"),
   ("swy_space_battles_won_desc", "Congratulations, commander^You have won the battle..."),
   
+  
+# swconquest 1.011 -- in-game credits
+  ("swconquest_credits_years",'2006-'+str(datetime.now().year)+' THE STAR WARS CONQUEST DEV TEAM^'+ #-> from now on the year changes automatically.
+                              '<http://getconquest.net>'),
+                              
+  ("swconquest_credits_prefc",'This module is dedicated to everyone who believed in our team.^'+
+                              'Their valuable support has inspired us to make this even bigger.^^'+
+                              
+                              'Patience is always rewarded.'),
+                              
+  ('swconquest_credits_contb','Original Programming and Development:^'+
+                              ' Brian Tommasini^^'+
+
+                              'Main Programing and Coordinator:^'+
+                              ' Ismael Ferreras^^'+
+
+                              'Senior Modeling and Contributors:^'+
+                              ' Tim Ramsay^'+
+                              ' Yiyang Chen^'+
+                              ' Daniel Harrington^'+
+                              ' Josh <HappyStormTrooper>^'+
+                              ' Marosh <Geroj>^^'+
+
+                              'Music Composition and Performance:^'+
+                              ' Vladan Zivanovic^^'+
+
+                              'Additional AI Programming:^'+
+                              ' Michael Richter^^'+
+
+                              'Additional Gameplay Programming:^'+
+                              ' Martin F.^^'+
+
+                              'Original Artwork and Conceptualization:^'+
+                              ' Giordano Pranzoni^'+
+                              ' Benjamin Carré^^'+
+
+                              'Scene Editing:^'+
+                              ' Tim Ramsay^'+
+                              ' Miguel Angel Centeno^^^^'+
+                              
+                              
+
+                              'Additional Modeling:^'+
+                              ' Dustin Matthew Blamey^'+
+                              ' Sam <uio0000>^'+
+                              ' <Grocat>^'+
+                              ' <LordOfTheSithLords>^'+
+                              ' <Highelf>^'+
+                              ' <Takijap>^'+
+                              ' <Thorgils>^'+
+                              ' <WookiePadawan>^'+
+                              ' <Tyrinius>^'+
+                              ' <Freddex>^^'+
+
+                              'Our best gratitude to the Old Team:^'+
+                              ' Brian, Tim, Josh and Marosh^^'+
+
+                              'Special Thanks:^'+
+                              ' Marco Tarini <mtarini> - OpenBRF is our cornerstone^'+
+                              ' Luke Challand  <ithilienranger> – For the annoying questions^'+
+                              ' Alex <Panda666> - Dialog modernizer^'+
+                              ' Scott Reismanis <INtense!> – ModDB is a better place^'+
+                              ' Creators of the included mods, code snippets and enhancements – 1866,^'+
+                              ' Gangs of Glasgow, Mount&Shotgun, MAXHARDMAN, Rubik, Gutekfiutek...^^'+
+
+                              ' To all our fans and supporters, may the force be with you, always.'),
 ]

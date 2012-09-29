@@ -103,7 +103,7 @@ parties = [
   ("shipyard_kuat","Kuat_Shipyards",icon_XQ_04_Station_2|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(22.17, 17.35),[],260),     #[swycartographr] prev. coords: (5.81, -19.65)
   ("shipyard_raxus","Raxus_Prime_Shipyards",icon_XQ_04_Station_4|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(105.63, 102.11),[],260), #[swycartographr] prev. coords: (130.52, 124.81)
   ("shipyard_corellia","Corellia_Shipyards",icon_XQ_04_Station_1|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(17.5, -42.40),[],260), #[swycartographr] prev. coords: (-7.96, -17.45) #[swycartographr] prev. coords: (-5.01, -42.4)
-  ("shipyard_moncal","Mon_Cal_Shipyards",icon_XQ_04_Station_2|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(115.30, 70.99),[],260), #[swycartographr] prev. coords: (115.3, 80.93)
+  ("shipyard_moncal","Dac_Shipyards",icon_XQ_04_Station_2|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(115.30, 70.99),[],260), #[swycartographr] prev. coords: (115.3, 80.93)
   ("shipyard_mandalore","Mandalore_Shipyards",icon_XQ_04_Station_5|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(6.69, 62.78),[],260), #[swycartographr] prev. coords: (7.65, 64.01)
   ("shipyard_fondor","Fondor_Shipyards",icon_XQ_04_Station_3|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-49.70, -52.52),[],260),
   
@@ -152,7 +152,7 @@ parties = [
   ("spacestation_4","Dagobah",icon_sw_swy_Planet_forest|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(8.04,-107.31),[],180), #custom-close #[swycartographr] prev. coords: (0.5, -120.47) #[swycartographr] prev. coords: (10.61, -108.43) #[swycartographr] prev. coords: (10.45, -108.84)
   ("spacestation_5","Death Star",icon_sw_swy_Death_Star|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-87.69,-91.31),[],90),#new pos #[swycartographr] prev. coords: (-93, -93)
   ("spacestation_6","Endor_Outpost",icon_asteroid_base|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-81.63,-80.35),[],55),     #[swycartographr] prev. coords: (-93.99, -67.09) #[swycartographr] prev. coords: (-84.93, -79.38)
-  ("spacestation_7","Mon_Cal_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(106.1,87.90),[],45), #[swycartographr] prev. coords: (104.38, 87.9)
+  ("spacestation_7","Dac_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(106.1,87.90),[],45), #[swycartographr] prev. coords: (104.38, 87.9)
   ("spacestation_8","Ryloth_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(60.59,-106.50),[],30), #[swycartographr] prev. coords: (67.35, -109.13) #[swycartographr] prev. coords: (63.41, -106.5)
   ("spacestation_9","Christophsis_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(39.9,-62.21),[],100), #[swycartographr] prev. coords: (-86, -30.28)
   ("spacestation_10","Kessel_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(112.38,37.59),[],110),
@@ -184,7 +184,7 @@ parties = [
   ("spacestation_36","Coruscant_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(4.88,32.73),[],260), #[swycartographr] prev. coords: (-61.59, 17.84)
   ("spacestation_37","Yavin_IV_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(56.14,117.18),[],260),   #[swycartographr] prev. coords: (62.89, 111.74) #[swycartographr] prev. coords: (58.13, 117.71)
   ("spacestation_38","Nal_Hutta_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(84.76,15.43),[],260),   #[swycartographr] prev. coords: (82.23, 21.23)
-  ("spacestation_39","Mon_Cal_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(127.53,76.29),[],280),    #[swycartographr] prev. coords: (126.61, 78.28)
+  ("spacestation_39","Dac_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(127.53,76.29),[],280),    #[swycartographr] prev. coords: (126.61, 78.28)
   ("spacestation_40","Tatooine_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(87.68,-84.21),[],260),   #[swycartographr] prev. coords: (108.11, -73.07) #[swycartographr] prev. coords: (86.59, -83.24)
 #Rhen Var
   ("spacestation_41","Rhen_Var",icon_sw_swy_rePlanet_snow|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-100.11,63.07),[],260),
@@ -213,7 +213,7 @@ parties = [
   ("minorplanet_17","Lannik",  icon_sw_minorplanet_17|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-6.50,-15.63),[],35),  #[swycartographr] prev. coords: (-6.5, -29.11)
   ("minorplanet_18","Fondor",  icon_sw_minorplanet_18|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-55.08,-49.59),[],170),
   ("minorplanet_19","Bakura_Moon",  icon_sw_minorplanet_19|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-94.14,-67.80),[],170), #[swycartographr] prev. coords: (-136.16, -67.8)
-  ("minorplanet_20","Mon_Cal_Moon",  icon_sw_minorplanet_16|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(106.79,63),[],170), #[swycartographr] prev. coords: (124.17, 92.05)
+  ("minorplanet_20","Dac_Moon",  icon_sw_minorplanet_16|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(106.79,63),[],170), #[swycartographr] prev. coords: (124.17, 92.05)
 
   ("minorplanet_21","Isde_Naha",  icon_sw_minorplanet_20|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-41.59,-127.52),[],100), #[swycartographr] prev. coords: (-55.38, -126.97) #[swycartographr] prev. coords: (-63.71, -117.22)
   ("minorplanet_22","Duro",  icon_sw_minorplanet_21|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(42.7,-14.92),[],110),    #[swycartographr] prev. coords: (-33.05, -46.17)
