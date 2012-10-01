@@ -118,11 +118,11 @@ parties = [
   ("naboo","Naboo",  icon_sw_swy_rePlanet_kashyyyk|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-7.29,-82.01),[], 90), #new pos   #[swycartographr] prev. coords: (26.6, -104) #[swycartographr] prev. coords: (23.81, -84.66)
   ("kessel","Kessel",   icon_sw_swy_Planet_Kessel|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(111.7,30),[], 155),   #new pos
   ("dantooine","Dantooine",   icon_sw_swy_rePlanet_wilderness|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-41.56,125.2),[],240), #new pos-custom #[swycartographr] prev. coords: (-29.21, 129.68) #[swycartographr] prev. coords: (-40.5, 125.46)
-  ("geonosis","Geonosis", icon_sw_swy_Planet_geonosis|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(114.27,-100.68),[], 175),  #new pos #[swycartographr] prev. coords: (78.7, -103.7) #[swycartographr] prev. coords: (96.99, -98.68) #[swycartographr] prev. coords: (114.85, -102.48)
+  ("geonosis","Geonosis", icon_sw_swy_Planet_geonosis|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(117.74,-104.31),[], 175),  #new pos #[swycartographr] prev. coords: (78.7, -103.7) #[swycartographr] prev. coords: (96.99, -98.68) #[swycartographr] prev. coords: (114.85, -102.48) #[swycartographr] prev. coords: (114.27, -100.68)
   ("mon_cal","Dac",   icon_sw_swy_rePlanet_water|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(106.7,69.21),[],90), #new pos  #[swycartographr] prev. coords: (123.16, 98.66)
   ("kashyyyk","Kashyyyk",   icon_sw_swy_rePlanet_kashyyyk|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(65.63,36.1),[], 310),  #new pos #[swycartographr] prev. coords: (-49.5, 36.5)
   ("hoth","Hoth",   icon_sw_swy_rePlanet_snow|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-96.76,-122.34),[], 150), #new pos--close enough   #[swycartographr] prev. coords: (-45, -136.7) #[swycartographr] prev. coords: (-98.02, -123.04)
-  ("gamorr","Gamorr", icon_sw_swy_rePlanet_gas|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(107.58,-27.77),[],25), #new pos      #[swycartographr] prev. coords: (112.41, -49.92)
+  ("gamorr","Gamorr", icon_sw_swy_rePlanet_gas|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(105.02,-26.83),[],25), #new pos      #[swycartographr] prev. coords: (112.41, -49.92) #[swycartographr] prev. coords: (107.58, -27.77)
   ("yavin_iv","Yavin_IV",icon_sw_swy_rePlanet_wilderness|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(41.44,110.26),[],60), #new pos #[swycartographr] prev. coords: (47.74, 112.5) #[swycartographr] prev. coords: (45.69, 107.87)
   ("tatooine","Tatooine",  icon_sw_swy_Planet_Tatooine|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(73.65,-83.19),[],135), #new pos #[swycartographr] prev. coords: (77.3, -96.6) #[swycartographr] prev. coords: (72.28, -82.5)
  #("reecee","Reecee",  icon_sw_swy_rePlanet_ice|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-108.73,28.57),[],135),
@@ -130,7 +130,7 @@ parties = [
   ("coruscant","Coruscant",  icon_sw_swy_Planet_Coruscant|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-7.36,25.45),[],135), #new pos #[swycartographr] prev. coords: (-30.5, 34)
   ("ryloth","Ryloth",  icon_sw_swy_Planet_Tatooine|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(60.25,-129.63),[], 135), #new pos--close enough  #[swycartographr] prev. coords: (82, -116.12)
   ("nalhutta","Nal_Hutta",  icon_sw_swy_Planet_Tatooine|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(87.27, 6.93),[],135),  #new pos #[swycartographr] prev. coords: (89, -6) #[swycartographr] prev. coords: (85.55, 1.43)
-  ("bothawui","Bothawui",  icon_sw_swy_rePlanet_kashyyyk|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(75,-50.78),[],135), #new pos
+  ("bothawui","Bothawui",  icon_sw_swy_rePlanet_kashyyyk|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(71.24,-50.11),[],135), #new pos #[swycartographr] prev. coords: (75, -50.78)
   ("mustafar","Mustafar",  icon_sw_swy_Planet_lava|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-7.1,-128.51),[],135), #custom pos #[swycartographr] prev. coords: (-24.1, -144.38) #[swycartographr] prev. coords: (-7.12, -125.6)
   ("kamino","Kamino",  icon_sw_swy_rePlanet_water|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(100,-59),[],135), #new pos--close enough
   ## SWY 0.9.0.3 - Added Taris
@@ -158,7 +158,7 @@ parties = [
   ("spacestation_10","Kessel_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(112.38,37.59),[],110),
   ("spacestation_11","Avatar_Platform",icon_asteroid_base|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(27.56,-3.15),[],75),    #[swycartographr] prev. coords: (18.43, 12.32)
   ("spacestation_12","Manaan_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-106.89,32.62),[],95),     #[swycartographr] prev. coords: (-105.11, 33.15)
-  ("spacestation_13","Christophsis_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-67.20,-75.15),[],115), #[swycartographr] prev. coords: (-67.2, -24.32)
+  ("spacestation_13","Christophsis_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-67.20,-71.45),[],115), #[swycartographr] prev. coords: (27.84, -24.32) #[swycartographr] prev. coords: (-67.2, -75.15)
   ("spacestation_14","Nal_Hutta_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(101.27,1.99),[],90), #[swycartographr] prev. coords: (105.38, 16.21) #[swycartographr] prev. coords: (105.37, 13.95)
   ("spacestation_15","Dantooine_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-73.43,111.51),[],235), #[swycartographr] prev. coords: (-94.65, 88.16)
   ("spacestation_16","Kashyyyk_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(56.82,28.85),[],45),      #[swycartographr] prev. coords: (16.12, -3.18) #[swycartographr] prev. coords: (41.45, 13.6)
@@ -169,9 +169,9 @@ parties = [
   ("spacestation_21","Mandalore_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(25.07,60.5),[],260), #[swycartographr] prev. coords: (24.34, 59.15)
   ("spacestation_22","Manaan_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-90.92,14.96),[],260), #[swycartographr] prev. coords: (-97.63, 29.82)
   ("spacestation_23","Corellia_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-3.87,-33.73),[],80), #[swycartographr] prev. coords: (8.37, -48.62)
-  ("spacestation_24","Geonosis_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(111.61,-106.24),[],260), #[swycartographr] prev. coords: (112.72, -129.28) #[swycartographr] prev. coords: (108.41, -116.13) #[swycartographr] prev. coords: (109.71, -114.15)
+  ("spacestation_24","Geonosis_Battlestation",icon_battlestation|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(112.26,-112.96),[],260), #[swycartographr] prev. coords: (112.72, -129.28) #[swycartographr] prev. coords: (108.41, -116.13) #[swycartographr] prev. coords: (109.71, -114.15) #[swycartographr] prev. coords: (111.61, -106.24)
   ("spacestation_25","Mandalore_Outpost",icon_asteroid_base|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-5.67,65.92),[],260),
-  ("spacestation_26","Geonosis_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(109.55,-97.53),[],260),  #[swycartographr] prev. coords: (118.97, -112.78) #[swycartographr] prev. coords: (107.96, -96.29)
+  ("spacestation_26","Geonosis_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(114.9,-97.94),[],260),  #[swycartographr] prev. coords: (118.97, -112.78) #[swycartographr] prev. coords: (107.96, -96.29) #[swycartographr] prev. coords: (109.55, -97.53)
   ("spacestation_27","Kessel_Outpost",icon_asteroid_base|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(120.35,49.99),[],260),   #[swycartographr] prev. coords: (120.24, 54.11)
   ("spacestation_28","Dathomir",icon_sw_planet_green|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-16.84,90.30),[],260),
   ("spacestation_29","Hoth_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-100.45,-129.02),[],280),
