@@ -1563,4 +1563,5 @@ spr_moncal_battle = 1561
 spr_moncal_flora_bed_1 = 1562
 spr_moncal_flora_bed_2 = 1563
 spr_moncal_center = 1564
-spr_scene_props_end = 1565
+spr_coruscant_ground = 1565
+spr_scene_props_end = 1566

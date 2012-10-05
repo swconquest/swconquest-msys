@@ -27363,7 +27363,7 @@ scripts = [
                       #recall party if it chases an enemy too far
                     (else_try),
                       (eq,":cur_behavior", ai_bhvr_attack_party),
-                      (gt, ":distance", 30),
+                      (gt, ":distance", 24),
                       (party_set_ai_behavior, ":cur_patrol", ai_bhvr_hold),
                       #			(display_message, "@recalled a patrol due to chasing too far."), #for testing
                       
@@ -27371,7 +27371,7 @@ scripts = [
                       
                       
                     (else_try),
-                      (gt, ":distance", 25),
+                      (gt, ":distance", 20),
                       (neq, ":cur_behavior", ai_bhvr_attack_party),
                       (party_get_position, pos1, ":cur_home_base"),
                       (map_get_random_position_around_position, pos2, pos1, 4),

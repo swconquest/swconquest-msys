@@ -2814,7 +2814,8 @@ scene_props = [
   ("moncal_flora_bed_1",0,"moncal_flora_bed_1","bo_moncal_flora_bed_1", []),
   ("moncal_flora_bed_2",0,"moncal_flora_bed_2","bo_moncal_flora_bed_2", []),
   ("moncal_center",0,"moncal_center","bo_moncal_center", []),
-
+  
+  ("coruscant_ground",0,"coruscant_ground","bo_coruscant_ground", []),
 
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)

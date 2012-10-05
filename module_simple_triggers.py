@@ -3335,15 +3335,15 @@ simple_triggers = [
       (party_set_slot, ":instance", slot_center_player_relation, 0), #neutral by default, as they are independent
       
       #--> from here dbg
-      (call_script, "script_get_closest_center", ":instance"),
-      (try_begin),
-        (gt, reg0, 0),
-        (str_store_party_name, s1, reg0),
-       (else_try),
-        (str_store_string, s1, "@unknown place"),
-      (try_end),
+      #(call_script, "script_get_closest_center", ":instance"),
+      #(try_begin),
+      #  (gt, reg0, 0),
+      #  (str_store_party_name, s1, reg0),
+      # (else_try),
+      #  (str_store_string, s1, "@unknown place"),
+      #(try_end),
       
-      (display_message, "@$--->Mining vessel spawned, near {s1}",color_bad_news),
+      #(display_message, "@$--->Mining vessel spawned, near {s1}",color_bad_news),
       #(party_relocate_near_party,":instance","p_main_party",1),
     (try_end),
     ]),

@@ -1986,8 +1986,8 @@ items = [
  
 # unique items, no merchandise tag - removed itp_unique flag since that means its un-lootable, instead I gave these to troops so there is a chance they will be dropped after a battle
 # some unique items are in other parts of the file (lightsabers had to be between lightsabers_noise_begin, etc)
-["darth_vader_helmet", "Darth Vader's Helmet", [("TFU_vader_helmet",0)], itp_type_head_armor|itp_civilian|itp_covers_head ,0, 2000 , weight(2)|head_armor(28)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ],
-["darth_vader_armor", "Darth Vader's Armor", [("TFU_vader_armor",0)], itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 3000 , weight(6)|head_armor(0)|body_armor(60)|leg_armor(18)|difficulty(0) ,imodbits_none ],
+["darth_vader_helmet", "Darth Vader's Helmet", [("dvader_helm",0)], itp_type_head_armor|itp_civilian|itp_covers_head ,0, 2000 , weight(2)|head_armor(28)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ],
+["darth_vader_armor", "Darth Vader's Armor",   [("dvader_body",0)], itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 3000 , weight(6)|head_armor(0)|body_armor(60)|leg_armor(18)|difficulty(0) ,imodbits_none ],
 ["darth_vader_feet", "Darth Vader's Feet", [("0",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_foot_armor|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(0)|leg_armor(47)|difficulty(0) ,imodbits_none ],
 ["princess_leia_outfit", "Princess Leia's Outfit", [("princess_leia_outfit",0)], itp_type_body_armor  |itp_covers_legs|itp_civilian ,0, 1200 , weight(2)|head_armor(0)|body_armor(40)|leg_armor(12)|difficulty(0) ,imodbits_none ],
 ["princess_leia_blaster", "Princess Leia's DDC Defender", [("DDC_defender",0)], itp_type_pistol|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 2000 , weight(1.2)|difficulty(0)|spd_rtng(150) | shoot_speed(170) | thrust_damage(30 ,pierce)|max_ammo(16)|accuracy(95),imodbits_none, [(ti_on_weapon_attack, [(play_sound,"snd_littleblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)])]],  

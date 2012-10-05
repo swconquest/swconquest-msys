@@ -2232,7 +2232,7 @@ game_menus = [
 		#SW - added faction specific changes
 		(try_begin),
 			(eq, "$faction_choice", cb0_empire),
-			(call_script, "script_change_player_relation_with_faction", "fac_galacticempire", 50),
+			(call_script, "script_change_player_relation_with_faction", "fac_galacticempire", 25),
 			(troop_set_slot, "trp_player", slot_troop_renown, 250),		# may be necessary so you aren't hired as a merc when you join the faction
 			#(troop_set_faction, "trp_player", "fac_galacticempire"),
 			#(call_script, "script_player_join_faction", "fac_galacticempire"),
@@ -2261,7 +2261,7 @@ game_menus = [
 			(call_script, "script_change_culture_empire"),
 		(else_try),
 			(eq, "$faction_choice", cb0_rebel),
-			(call_script, "script_change_player_relation_with_faction", "fac_rebelalliance", 50),
+			(call_script, "script_change_player_relation_with_faction", "fac_rebelalliance", 25),
 			(troop_set_slot, "trp_player", slot_troop_renown, 250),		# may be necessary so you aren't hired as a merc when you join the faction			
 			#(troop_set_faction, "trp_player", "fac_rebelalliance"),
 			#(call_script, "script_player_join_faction", "fac_rebelalliance"),
@@ -2290,7 +2290,7 @@ game_menus = [
 			(call_script, "script_change_culture_rebel"),			
 		(else_try),
 			(eq, "$faction_choice", cb0_hutt),
-			(call_script, "script_change_player_relation_with_faction", "fac_huttcartel", 50),
+			(call_script, "script_change_player_relation_with_faction", "fac_huttcartel", 25),
 			(troop_set_slot, "trp_player", slot_troop_renown, 250),		# may be necessary so you aren't hired as a merc when you join the faction			
 			#(troop_set_faction, "trp_player", "fac_huttcartel"),
 			#(call_script, "script_player_join_faction", "fac_huttcartel"),
@@ -13524,7 +13524,7 @@ game_menus = [
              (party_is_active, "$capturer_party"),
              (party_relocate_near_party, "p_main_party", "$capturer_party", 2),
            (try_end),
-           (call_script, "script_set_parties_around_player_ignore_player", 2, 4),
+           (call_script, "script_set_parties_around_player_ignore_player", 2, 6),
            (assign, "$g_player_icon_state", pis_normal),
            (set_camera_follow_party, "p_main_party"),
            (rest_for_hours, 0, 0, 0), #stop resting

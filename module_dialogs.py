@@ -7767,7 +7767,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
 							 (troop_slot_ge, "$g_talk_troop", slot_troop_prisoner_of_party, 0),
   ], "I must leave now.", "lord_leave_prison",[]],
   [anyone|plyr,"lord_talk", [(lt, "$g_talk_troop_faction_relation", 0)], "This audience is over. I leave now.", "lord_leave",[]],
-  [anyone|plyr,"lord_talk", [(ge, "$g_talk_troop_faction_relation", 0)], "I must beg my leave.", "lord_leave",[]],
+  [anyone|plyr,"lord_talk", [(ge, "$g_talk_troop_faction_relation", 0)], "I must leave now.", "lord_leave",[]],
 
   [anyone,"lord_leave", [#(troop_slot_eq, "$g_talk_troop", slot_troop_is_prisoner, 0),
       (neg|troop_slot_ge, "$g_talk_troop", slot_troop_prisoner_of_party, 0),
@@ -8156,7 +8156,7 @@ They are going around making terrible accusations against me, impugning my honou
 
   [anyone,"lady_restore_relation_cant_afford", [], "I am afraid, I can't be of much help in that case, {playername}. I am sorry.", "lady_pretalk",[]],
  
-  [anyone|plyr,"lady_talk", [], "I must beg my leave.", "lady_leave",[]],
+  [anyone|plyr,"lady_talk", [], "I must leave now.", "lady_leave",[]],
   
   [anyone|auto_proceed,"lady_leave", [], "Good-bye, {playername}.", "close_window",[(eq,"$talk_context",tc_party_encounter),(assign, "$g_leave_encounter", 1)]],
 
