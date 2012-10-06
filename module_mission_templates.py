@@ -1019,7 +1019,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ]+common_helmet_view+AI_triggers,
+    ]+common_helmet_view,
   ),
 
 
@@ -1214,7 +1214,7 @@ mission_templates = [
 
       #SWY - trigger to make unique agents behavior - custom scripting
       (0.352, 0, ti_once, [], [(call_script,"script_swy_unique_units_stuff",-1)]),
-    ]+common_helmet_view+AI_triggers,
+    ]+common_helmet_view,
   ),
 
 
@@ -3084,7 +3084,7 @@ mission_templates = [
          (set_jump_entry, 50),
          (jump_to_scene, ":arena_scene"),
         ]),
-    ]+AI_triggers,
+    ],
   ),
 ################################## END OF SPARING KIT http://forums.taleworlds.net/index.php/topic,57741.0.html ############################
   (

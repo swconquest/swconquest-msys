@@ -2288,7 +2288,7 @@ We apologize sincerely if you contributed your suggestions and feedback but were
   
   
 # swconquest 1.011 -- in-game credits
-  ("swconquest_credits_years",'2006-'+str(datetime.now().year)+' THE STAR WARS CONQUEST DEV TEAM^'+ #-> from now on the year changes automatically.
+  ("swconquest_credits_years",'2008-'+str(datetime.now().year)+' THE STAR WARS CONQUEST DEV TEAM^'+ #-> from now on the year changes automatically.
                               '<http://getconquest.net>'),
                               
   ("swconquest_credits_prefc",'This module is dedicated to everyone who believed in our team.^'+
