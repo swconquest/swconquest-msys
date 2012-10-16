@@ -732,7 +732,7 @@ scenes = [
   ("spacestation_2_prison",sf_indoors,"interior_prison_d", "bo_interior_prison_d", (-100,-100),(100,100),-100,"0",#### B bkullanilmayacak
     [],[]),
 #       3 Plain
-  ("spacestation_3_exterior",sf_generate,"none", "none", (0,0),(100,100),-100,"0x0000000650000500400709c2000000000000000000000000",
+  ("spacestation_3_exterior",sf_indoors,"bunker_a", "bo_bunker_a", (-100,-100),(100,100),-100,"0",
     [],[],),
   ("spacestation_3_interior",sf_indoors, "imperial_office_grey", "bo_imperial_office_ramp", (-100,-100),(100,100),-100,"0",
     ["exit"],["spacestation_3_seneschal"]),

@@ -2331,6 +2331,7 @@ We apologize sincerely if you contributed your suggestions and feedback but were
                               'Additional Modeling:^'+
                               ' Dustin Matthew Blamey^'+
                               ' Sam <uio0000>^'+
+                              ' <Zahar>^'+
                               ' <Grocat>^'+
                               ' <LordOfTheSithLords>^'+
                               ' <Highelf>^'+
@@ -2349,7 +2350,7 @@ We apologize sincerely if you contributed your suggestions and feedback but were
                               ' Alex <Panda666> - Dialog modernizer^'+
                               ' Scott Reismanis <INtense!> – ModDB is a better place^'+
                               ' Creators of the included mods, code snippets and enhancements – 1866,^'+
-                              ' Gangs of Glasgow, Mount&Shotgun, MAXHARDMAN, Rubik, Gutekfiutek...^^'+
+                              ' Gangs of Glasgow, Mount&Shotgun, MAXHARDMAN, Rubik, Gutekfiutek, hapslash...^^'+
 
                               ' To all our fans and supporters, may the force be with you, always.'),
 ]

@@ -2522,26 +2522,8 @@ scene_props = [
   #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 ## Some animated traffic stuff
-
-   ("swc_traffic",0,"swc_traffic",0,
-   [   (ti_on_scene_prop_init,[ 
-###############
-
-        (store_trigger_param_1, ":instance_no"),
-        (prop_instance_get_position, pos1, ":instance_no"),
-        (play_sound, "snd_dummy_destroyed"),
-		(particle_system_burst, "psys_explosion_fire", pos1, 100),		#percentage_burst_strength is 100
-        #(position_rotate_x, 5),			#use these if you wish to rotate it
-        #(position_rotate_y, 5),
-        #(position_rotate_z, 5),		
-        #(position_move_z, pos2, -1200),	#up/down
-		#(position_move_x, pos2, -200),		#left/right
-		(position_move_y, pos1, 2000),		#forward/back
-        (prop_instance_animate_to_position, ":instance_no", 1, 1000), #animate to position in10 seconds
-
-
-###############
-   ]),	]), 
+  #Animated city traffic -- lively!!
+   ("swc_traffic",0,"swc_traffic",0, []), 
 
 #@Automagically added -- Start
 #--spropbot.2011-07-06>>17:00:06
@@ -2561,12 +2543,7 @@ scene_props = [
   ("virtual_twilek_dancer_hologram",0,"virtual_twilek_dancer_hologram","bo_virtual_twilek_dancer_hologram", []),
   ("taris_statue_base_1",0,"taris_statue_base_1","bo_taris_statue_base_1", []),
   ("taris_statue_base_2",0,"taris_statue_base_2","bo_taris_statue_base_2", []),
-  ("taris_statue_1",sokf_moveable|spanim_loop_linear,"taris_statue_1","bo_taris_statue_1",
-[ (ti_on_scene_prop_init,[ 
-		 (store_trigger_param_1, ":instance"),
-		 (call_script,"script_swy_sprop_movement",":instance",y,30,10), #  <-- mov type (x,y,z), mov value, mov time
-   ]),
-]),
+  ("taris_statue_1",sokf_moveable|spanim_loop_linear,"taris_statue_1","bo_taris_statue_1",[]),
   
   ("Container_1",0,"Container_1","bo_Container_1_2_3_4", []),
   ("Container_2",0,"Container_2","bo_Container_1_2_3_4", []),

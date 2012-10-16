@@ -237,7 +237,7 @@ parties = [
   ("minorplanet_39","Helska",  icon_sw_swy_rePlanet_rock|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-118.43,124.49),[],170),
   ("minorplanet_40","Saki",  icon_sw_minorplanet_16|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(56.34,-30.29),[],170),
 
-  ("minorplanet_41","Nar_Shadda",  icon_sw_swy_NarShadda|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(85.9,0.96),[],100), #new pos #[swycartographr] prev. coords: (93.44, -11)
+  ("minorplanet_41","Nar_Shaddaa",  icon_sw_swy_NarShadda|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(85.9,0.96),[],100), #new pos #[swycartographr] prev. coords: (93.44, -11)
   ("minorplanet_42","Bothawui_Moon",  icon_sw_minorplanet_01|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(66.38,-47.51),[],110),
   ("minorplanet_43","Alzoc_III",  icon_sw_minorplanet_18|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(96.67,-138.7),[],120), #[swycartographr] prev. coords: (96.32, -141.22)
   ("minorplanet_44","Ruusan",  icon_sw_minorplanet_19|pf_minorplanet, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(28.49,-9.97),[],130),  #[swycartographr] prev. coords: (10.82, -30.01)
