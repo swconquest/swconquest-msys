@@ -447,9 +447,12 @@ map_icons = [
   ("sw_swy_rePlanet_snow",mcn_no_shadow,"swy_rePlanet_snow",planet_main_scale,0,
        []),
 
-  ("sw_swy_rePlanet_ice",mcn_no_shadow,"swy_rePlanet_ice",planet_main_scale,0,
+  ("sw_swy_rePlanet_ice",mcn_no_shadow,"swy_rePlanet_ice",planet_minor_scale,0,
        []),
-
+       
+  ("sw_swy_rePlanet_Saleucami",mcn_no_shadow,"swy_rePlanet_Saleucami",planet_main_scale,0,
+       []),
+       
   ("sw_swy_rePlanet_craters",mcn_no_shadow,"swy_rePlanet_craters",planet_minor_scale,0,
        []),
 
@@ -462,7 +465,7 @@ map_icons = [
   ("sw_swy_rePlanet_wilderness",mcn_no_shadow,"swy_rePlanet_wilderness",planet_main_scale,0,
        []),
 
-  ("sw_swy_rePlanet_rock",mcn_no_shadow,"swy_rePlanet_rock",planet_main_scale,0,
+  ("sw_swy_rePlanet_rock",mcn_no_shadow,"swy_rePlanet_rock",planet_minor_scale,0,
        []),
 
 # ("sw_galaxy",mcn_no_shadow,"swy_rePlanet_rock",planet_main_scale,0,

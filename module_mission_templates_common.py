@@ -2389,28 +2389,29 @@ common_change_fog = (
   #SW - set_fog_distance to a very high number to disable fog in scenes
   (try_begin),
     (eq, "$current_town","p_kamino"),
-    (set_fog_distance, 170, 0xEE121118),
+    (set_fog_distance, 175, 0xEE121118),
   (else_try),
     (eq, "$current_town","p_mustafar"),
-    (set_fog_distance, 170, 0xEE272222),
+    (set_fog_distance, 175, 0xEE272222),
   (else_try),
     (eq, "$current_town","p_corellia"),
-    (set_fog_distance, 170, 0xEE654a2f),
+    (set_fog_distance, 175, 0xEE654a2f),
   (else_try),
     (eq, "$current_town","p_felucia"),
-    (set_fog_distance, 160, 0xAA92b595),
+    (set_fog_distance, 165, 0xAA92b595),
   (else_try),
     (eq, "$current_town","p_raxusprime"),
-    (set_fog_distance, 160, 0xAABDAF86),
+    (set_fog_distance, 165, 0xAABDAF86),
   (else_try),
-    (this_or_next|eq, "$current_town","p_tatooine"),
+    (this_or_next
+    |eq, "$current_town","p_tatooine"),
     (eq, "$current_town","p_ryloth"),
-    (set_fog_distance, 170, 0xEE655436),
+    (set_fog_distance, 175, 0xEE655436),
   (else_try),
     (eq, "$current_town","p_spacestation_4"), #Dagobah
     (set_fog_distance, 220, 0xEE222722),
   (else_try),
-    (set_fog_distance, 100000000),
+    (set_fog_distance, 100000000), #otherwise fog isn't well received here
   (try_end),
     ], [])
 

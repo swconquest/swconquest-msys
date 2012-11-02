@@ -325,7 +325,7 @@ items = [
 # 19 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(9)|difficulty(0) ,imodbits_cloth ],
 ["hide_boots", "Hide Boots", [("grey_boots",0)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
  90 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
-["ankle_boots", "Ankle Boots", [("boot_slim_black_reinforced2_L",0),("boot_slim_black_reinforced2_inventory",ixmesh_inventory)], itp_merchandise| itp_type_foot_armor |itp_civilian  | itp_attach_armature,0,
+["ankle_boots", "Ankle Boots", [("boot_slim_black_reinforced2_L",0),("boot_slim_black_reinforced2_inventory",ixmesh_inventory)], itp_merchandise| itp_type_foot_armor |itp_civilian,0,
  110 , weight(1)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(12)|difficulty(0) ,imodbits_cloth ],
 ["nomad_boots", "Nomad Boots", [("black_boots",0)], itp_merchandise| itp_type_foot_armor  |itp_civilian | itp_attach_armature,0,
  128 , weight(1.25)|abundance(100)|head_armor(0)|body_armor(0)|leg_armor(14)|difficulty(0) ,imodbits_cloth ],
