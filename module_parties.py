@@ -188,7 +188,7 @@ parties = [
   ("spacestation_40","Tatooine_Outpost",icon_outpost_imp|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(87.68,-84.21),[],260),   #[swycartographr] prev. coords: (108.11, -73.07) #[swycartographr] prev. coords: (86.59, -83.24)
 #Rhen Var
   ("spacestation_41","Rhen_Var",icon_sw_swy_rePlanet_snow|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-100.11,63.07),[],260),
-  ("spacestation_42","Saleucami",icon_sw_swy_rePlanet_snow|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(88.89,46.37),[],260), #[swycartographr] prev. coords: (-108.11, -93.07) #[swycartographr] prev. coords: (-107.57, -92.93)
+  ("spacestation_42","Saleucami",icon_sw_swy_rePlanet_Saleucami|pf_castle, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(88.89,46.37),[],260), #[swycartographr] prev. coords: (-108.11, -93.07) #[swycartographr] prev. coords: (-107.57, -92.93)
 #     Rinimad      
 #              Rietal Derchios Gerdus
 # Tuavus   Pamir   vezona 
