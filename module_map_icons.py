@@ -449,10 +449,7 @@ map_icons = [
 
   ("sw_swy_rePlanet_ice",mcn_no_shadow,"swy_rePlanet_ice",planet_minor_scale,0,
        []),
-       
-  ("sw_swy_rePlanet_Saleucami",mcn_no_shadow,"swy_rePlanet_Saleucami",planet_main_scale,0,
-       []),
-       
+
   ("sw_swy_rePlanet_craters",mcn_no_shadow,"swy_rePlanet_craters",planet_minor_scale,0,
        []),
 
@@ -479,6 +476,9 @@ map_icons = [
 
   ##>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  MOON PLANET ICONS
   ("sw_swy_NarShadda",mcn_no_shadow,"swy_Planet_Coruscant",planet_minor_scale,0,
+       []),
+
+  ("sw_swy_rePlanet_Saleucami",mcn_no_shadow,"swy_rePlanet_Saleucami",planet_main_scale,0,
        []),
 
 ]
