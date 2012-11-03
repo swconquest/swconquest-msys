@@ -1,0 +1,17 @@
+def gender_fix(register, trp="player"):
+  if (trp[0] != ":") and (trp[0] != "$"):
+    trp = "trp_" + trp
+  return [(call_script, "script_gender_fix", trp),(assign,register,reg33)]
+
+---
+Example:
+(troop_get_type, reg65, "$g_talk_troop"),
+]+gender_fix(reg65, "$g_talk_troop")+[
+
+
+
+Search regex:
+\(troop_get_type,[ ]{1,}?(.+)\),
+---
+Replace by:
+]+gender_fix\(\1\)+[

@@ -8620,7 +8620,8 @@ game_menus = [
      (else_try),
        (assign, reg3, 0),
      (try_end),
-     (troop_get_type, reg4, ":faction_leader"),
+     #(troop_get_type, reg4, ":faction_leader"),
+     (call_script, "script_gender_fix", ":faction_leader"),(assign,reg4,reg33)
     ],
     [
       ("continue",[],"Continue.",
@@ -11660,7 +11661,8 @@ game_menus = [
           (troop_is_hero, ":winner_troop"),
           (call_script, "script_change_troop_renown", ":winner_troop", 20),
         (try_end),
-        (troop_get_type, reg3, ":winner_troop"),
+        #(troop_get_type, reg3, ":winner_troop"),
+        (call_script, "script_gender_fix", ":winner_troop"),(assign,reg3,reg33)
         ],
     [
       ("continue", [], "Continue...",

@@ -23,6 +23,10 @@ from ID_animations import *
 # 1) Script id: The prefix "script_" will be inserted when referencing scripts.
 # 2) Operation block: This must be a valid operation block. See header_operations.py for reference.
 ####################################################################################################################
+def gender_fix(register, trp="player"):
+  if (trp[0] != ":") and (trp[0] != "$"):
+    trp = "trp_" + trp
+  return [(call_script, "script_gender_fix", trp),(assign,register,reg33)]
 
 scripts = [
   
@@ -6461,7 +6465,7 @@ scripts = [
               (assign, ":cur_object_troop", ":cur_object_troop_2"),
             (try_end),
             (gt, ":cur_object_troop", 0),#Skip lords without a lady
-            (troop_get_type, ":cur_troop_gender", ":cur_object_troop"),
+            ]+gender_fix(":cur_troop_gender", ":cur_object_troop")+[
             (eq, ":cur_troop_gender", 1),#Skip if it is not female
             (gt, ":giver_center_no", 0),#Skip if lord is outside the center
             (troop_slot_eq, ":cur_object_troop", slot_troop_cur_center, ":giver_center_no"),#Skip if the lady is not at the same center
@@ -12827,7 +12831,7 @@ scripts = [
     [
       (store_script_param_1, ":troop_no"),
       (store_script_param_2, reg3),
-      (troop_get_type, reg4, ":troop_no"),
+      ]+gender_fix(reg4, ":troop_no")+[
       (str_store_troop_name, s2, ":troop_no"),
       
       (assign, ":found", 0),
@@ -14639,7 +14643,7 @@ scripts = [
         (val_add, ":num_family", 1),
       (try_end),
       
-      (troop_get_type, ":gender", ":troop_no"),
+      ]+gender_fix(":gender", ":troop_no")+[
       (try_begin),
         (eq, ":gender", 0),
         (str_store_string, s5, "str_he"),
@@ -14680,7 +14684,7 @@ scripts = [
     [
       (store_script_param_1, ":troop_no"),
       (store_script_param_2, ":family_no"),
-      (troop_get_type, ":gender", ":troop_no"),
+      ]+gender_fix(":gender", ":troop_no")+[
       (assign, ":slot_no", slot_troop_family_begin),
       (try_for_range, ":unused", slot_troop_family_begin, slot_troop_family_end),
         (this_or_next|gt, ":family_no", 0),
@@ -14740,7 +14744,7 @@ scripts = [
     [
       #Completing family relations
       (try_for_range, ":troop_id", heroes_begin, heroes_end),
-        (troop_get_type, ":troop_gender", ":troop_id"),
+        ]+gender_fix(":troop_gender", ":troop_id")+[
         (try_begin),
           (troop_get_slot, ":cur_spouse", ":troop_id", slot_troop_spouse),
           (gt, ":cur_spouse", 0),
@@ -15773,7 +15777,7 @@ scripts = [
         (this_or_next|is_between, ":troop_no", armor_merchants_begin, armor_merchants_end),
         (is_between, ":troop_no", weapon_merchants_begin, weapon_merchants_end),
         (try_begin),
-          (troop_get_type, ":cur_troop_gender", ":troop_no"),
+          ]+gender_fix(":cur_troop_gender", ":troop_no")+[
           (eq, ":cur_troop_gender", 0),
           (agent_set_animation, ":agent_no", "anim_stand_townguard"),
         (else_try),
@@ -18163,7 +18167,7 @@ scripts = [
           (try_end),
           (val_add, ":num_centers", 1),
         (try_end),
-        (troop_get_type, reg3, ":troop_no"),
+        ]+gender_fix(reg3, ":troop_no")+[
         (troop_get_slot, reg5, ":troop_no", slot_troop_renown),
         (str_clear, s59),
         (try_begin),
@@ -18196,13 +18200,13 @@ scripts = [
       (call_script, "script_get_information_about_troops_position", ":troop_no", 1),
       (try_begin),
         (neq, reg0, 0),
-        (troop_get_type, reg1, ":troop_no"),
-        (call_script, "script_gender_fix", ":troop_no"),		#SW - added to fix male/female for aliens
+        ]+gender_fix(reg1, ":troop_no")+[
+        #(call_script, "script_gender_fix", ":troop_no"),		#SW - added to fix male/female for aliens
         (try_begin),
           (eq, ":see_or_hear", 0),
-          (add_troop_note_from_sreg, ":troop_no", 2, "@The last time you saw {reg33?her:him}, {s1}", 1),
+          (add_troop_note_from_sreg, ":troop_no", 2, "@The last time you saw {reg1?her:him}, {s1}", 1),
         (else_try),
-          (add_troop_note_from_sreg, ":troop_no", 2, "@The last time you heard about {reg33?her:him}, {s1}", 1),
+          (add_troop_note_from_sreg, ":troop_no", 2, "@The last time you heard about {reg1?her:him}, {s1}", 1),
         (try_end),
       (try_end),
   ]),
