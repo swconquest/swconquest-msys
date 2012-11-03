@@ -17823,16 +17823,37 @@ scripts = [
   # OUTPUT: none
   ("update_ransom_brokers",
     [(try_for_range, ":town_no", mainplanets_begin, mainplanets_end),
+        # Blank out all the ransom brokers everywhere
         (party_set_slot, ":town_no", slot_center_ransom_broker, 0),
-      (try_end),
-      
-      (try_for_range, ":troop_no", ransom_brokers_begin, ransom_brokers_end),
-        (store_random_in_range, ":town_no", mainplanets_begin, mainplanets_end),
-        (party_set_slot, ":town_no", slot_center_ransom_broker, ":troop_no"),
-      (try_end),
-      
-      #SW - commented out trp_ramun_the_slave_trader and moved them to the trade federation base
-      #(party_set_slot,"p_christophsis",slot_center_ransom_broker,"trp_ramun_the_slave_trader"),
+     (try_end),
+  
+    (try_for_range, ":troop_no", ransom_brokers_begin, ransom_brokers_end),
+        (assign,":chosen_planet",mainplanets_end), #cheap conditional loop break!
+        
+        # Hutt cartel planets always have ramson brokers!
+        # <http://www.moddb.com/mods/swconquest/forum/thread/some-bugs-glitches-suggestions>
+        
+        (try_for_range, ":curr_center", mainplanets_begin, ":chosen_planet"), #mainplanets_end),
+          (store_faction_of_party, ":curr_planet_faction", ":curr_center"),
+          
+          (           eq, ":curr_planet_faction", fac_huttcartel),
+          (party_slot_eq, ":curr_center",         slot_center_ransom_broker, 0),
+          
+          #if hutt and is blank then choose it
+          (assign,":chosen_planet", ":curr_center"),
+        (try_end),
+          
+        # If not blank hutt planets left, then add ransom brokers to random planets
+        (try_begin),
+          (eq,":chosen_planet", mainplanets_end),
+          (store_random_in_range, ":chosen_planet", mainplanets_begin, mainplanets_end),
+        (try_end),
+        
+        (party_set_slot, ":chosen_planet", slot_center_ransom_broker, ":troop_no"),
+    (try_end),
+
+    #SW - commented out trp_ramun_the_slave_trader and moved them to the trade federation base
+    #(party_set_slot,"p_christophsis",slot_center_ransom_broker,"trp_ramun_the_slave_trader"),
   ]),
   
   #script_update_tavern_travelers
