@@ -582,13 +582,13 @@ strings = [
  You end up a beggar in {s9}, living on alms and the charity of the church."),
   ("retirement_text_2", "Only too late do you realise that your money won't last.\
  It doesn't take you long to fritter away what little you bothered to save.\
- Once every denar has evaporated in your hands you are forced to start a life of crime in the backstreets of {s9},\
+ Once every credit has evaporated in your hands you are forced to start a life of crime in the backstreets of {s9},\
  using your skills to eke out a living robbing coppers from women and poor citizens."),
   ("retirement_text_3", "Only too late do you realise that your money won't last.\
  It doesn't take you long to fritter away what little you bothered to save,\
  and you end up a penniless drifter, going from cantina to cantina\
  blagging drinks from indulgent patrons by regaling them with war stories that no one ever believes."),
-  ("retirement_text_4", "The silver you've saved doesn't last long,\
+  ("retirement_text_4", "The credits you've saved doesn't last long,\
  but you manage to put together enough to buy some land near the planet of {s7}.\
  There you become a free farmer, and you soon begin to attract potential {wives/husbands}.\
  In time the villagers come to treat you as their local hero.\
@@ -1478,7 +1478,7 @@ strings = [
   ("comment_you_defeated_my_friend_enemy_spiteful",   "Your fame runs before you, {playername}. {s54} may have fallen for your tricks, but if you fight me, you'll find a me a much more slippery foe."), 
   ("comment_you_defeated_my_friend_enemy",            "They say that you have defeated {s54}. But I will be a truer test of your skill at arms."), 
 
-  ("comment_you_captured_a_lord_allied_friendly_spiteful",   "I heard that you captured {s54}. I hope that you squeezed him for every denar."), 
+  ("comment_you_captured_a_lord_allied_friendly_spiteful",   "I heard that you captured {s54}. I hope that you squeezed him for every credit."), 
   ("comment_you_captured_a_lord_allied_unfriendly_spiteful", "I heard that you captured {s54}. Your coffers must be well-bloated with ransom by now. Such a pity that money cannot transform a low-born cur into a gentleman!"), 
   ("comment_you_captured_a_lord_allied_chivalrous",          "I heard that you captured {s54}. Well done. I assume, of course, that he has been been treated with the honours due his rank."), 
   ("comment_you_captured_a_lord_allied",                     "I heard that you captured {s54}. Well done. His ransom must be worth quite something."), 

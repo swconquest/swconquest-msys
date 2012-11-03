@@ -10445,7 +10445,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
                      ],
    "Greetings, friend. You look like the kind of {man/person} who'd do well to know me.\
  I travel a lot all across the Galaxy and keep an open ear.\
- I can provide you information that you might find useful. For a meager price of course.", "tavern_traveler_talk", [(assign, "$traveler_land_asked", 0)]],
+ I can provide you information that you might find useful. For a small price of course.", "tavern_traveler_talk", [(assign, "$traveler_land_asked", 0)]],
 
   [anyone, "start",
    [
@@ -10489,63 +10489,63 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
  A commander can own planets and get rich with the taxes and revenues of these locations.\
  Normally, only rulers of the faction own star systems in this way,\
  but in time of war, a commander will not hesitate to accept someone who distinugishes {himself/herself} on the battlefield as a commander, and grant {him/her} the right to own planets.",
-   "tavern_traveler_tell_factions_4", []],
-
-  [anyone, "tavern_traveler_tell_factions_4", [], "The only path closed to a an adventurer such as you would be becoming the leader of a faction.\
- The people and rulers of the Galaxy would never accept an upstart adventurer as their ruler.\
- But don't think that leaders can sit on their thrones too comfortably, either. They have their own rivals,\
- those who are born to the right family, who could go around and stir up trouble saying they have a better claim to the faction than the current leader.\
- If those claim holders could find supporters, they could easily start their civil wars and perhaps even replace the leader one day.",
    "tavern_traveler_tell_factions_5", []],
 
-  [anyone|plyr, "tavern_traveler_tell_factions_5", [], "Interesting. Where can I find these claim holders?", "tavern_traveler_tell_factions_6", []],
+  # [anyone, "tavern_traveler_tell_factions_4", [], "The only path closed to a an adventurer such as you would be becoming the leader of a faction.\
+ # The people and rulers of the Galaxy would never accept an upstart adventurer as their ruler.\
+ # But don't think that leaders can sit on their thrones too comfortably, either. They have their own rivals,\
+ # those who are born to the right family, who could go around and stir up trouble saying they have a better claim to the faction than the current leader.\
+ # If those claim holders could find supporters, they could easily start their civil wars and perhaps even replace the leader one day.",
+   # "tavern_traveler_tell_factions_5", []],
+
+  #[anyone|plyr, "tavern_traveler_tell_factions_5", [], "Interesting. Where can I find these claim holders?", "tavern_traveler_tell_factions_6", []],
   [anyone|plyr, "tavern_traveler_tell_factions_5", [], "I guess I heard enough already. Thank you.", "close_window", []],
 
-  [anyone, "tavern_traveler_tell_factions_6", [], "A claim holder's life would be in danger in his own territory of course.\
- Therefore, they usually stay at rival courts, raising support and hoping to find someone willing to champion their cause.\
- I usually hear news about some of them, and may be able to tell you their location with some precision.\
- But of course, I would ask for a little something for such a service.",
-   "tavern_traveler_pretalk", [(assign, "$traveller_claimants_mentioned", 1)]],
+  # [anyone, "tavern_traveler_tell_factions_6", [], "A claim holder's life would be in danger in his own territory of course.\
+ # Therefore, they usually stay at rival courts, raising support and hoping to find someone willing to champion their cause.\
+ # I usually hear news about some of them, and may be able to tell you their location with some precision.\
+ # But of course, I would ask for a little something for such a service.",
+   # "tavern_traveler_pretalk", [(assign, "$traveller_claimants_mentioned", 1)]],
 
-  [anyone|plyr, "tavern_traveler_talk", [(eq, "$traveller_claimants_mentioned", 1)], "I want to know the location of a claimant.", "tavern_traveler_pretender_location", []],
-  [anyone, "tavern_traveler_pretender_location", [], "Whose location do you want to know?", "tavern_traveler_pretender_location_ask", []],
+  # [anyone|plyr, "tavern_traveler_talk", [(eq, "$traveller_claimants_mentioned", 1)], "I want to know the location of a claimant.", "tavern_traveler_pretender_location", []],
+  # [anyone, "tavern_traveler_pretender_location", [], "Whose location do you want to know?", "tavern_traveler_pretender_location_ask", []],
 
-  [anyone|plyr|repeat_for_troops, "tavern_traveler_pretender_location_ask",
-   [
-     (store_repeat_object, ":troop_no"),
-     (is_between, ":troop_no", pretenders_begin, pretenders_end),
-     (neg|troop_slot_eq, ":troop_no", slot_troop_occupation, slto_faction_hero),
-     (troop_slot_ge, ":troop_no", slot_troop_cur_center, 1),
-     (str_store_troop_name, s11, ":troop_no"),
-     (neq, ":troop_no", "$supported_pretender"),
-     ],  "{s11}", "tavern_traveler_pretender_location_ask_2",
-   [
-     (store_repeat_object, "$temp"),
-     ]],
+  # [anyone|plyr|repeat_for_troops, "tavern_traveler_pretender_location_ask",
+   # [
+     # (store_repeat_object, ":troop_no"),
+     # (is_between, ":troop_no", pretenders_begin, pretenders_end),
+     # (neg|troop_slot_eq, ":troop_no", slot_troop_occupation, slto_faction_hero),
+     # (troop_slot_ge, ":troop_no", slot_troop_cur_center, 1),
+     # (str_store_troop_name, s11, ":troop_no"),
+     # (neq, ":troop_no", "$supported_pretender"),
+     # ],  "{s11}", "tavern_traveler_pretender_location_ask_2",
+   # [
+     # (store_repeat_object, "$temp"),
+     # ]],
 
-  [anyone|plyr, "tavern_traveler_pretender_location_ask",
-   [],  "Never mind.", "tavern_traveler_pretalk", []],
+  # [anyone|plyr, "tavern_traveler_pretender_location_ask",
+   # [],  "Never mind.", "tavern_traveler_pretalk", []],
 
 
-  [anyone, "tavern_traveler_pretender_location_ask_2", [], "I can reveal this information to you for a small price, let's say 30 credits.", "tavern_traveler_pretender_location_ask_money", []],
+  # [anyone, "tavern_traveler_pretender_location_ask_2", [], "I can reveal this information to you for a small price, let's say 30 credits.", "tavern_traveler_pretender_location_ask_money", []],
   
-  [anyone|plyr, "tavern_traveler_pretender_location_ask_money",
-   [
-     (store_troop_gold, ":cur_gold", "trp_player"),
-     (ge, ":cur_gold", 30),
-     ], "All right. Here is 30 credits.", "tavern_traveler_pretender_location_tell",
-   [
-     (troop_remove_gold, "trp_player", 30),
-     ]],
+  # [anyone|plyr, "tavern_traveler_pretender_location_ask_money",
+   # [
+     # (store_troop_gold, ":cur_gold", "trp_player"),
+     # (ge, ":cur_gold", 30),
+     # ], "All right. Here is 30 credits.", "tavern_traveler_pretender_location_tell",
+   # [
+     # (troop_remove_gold, "trp_player", 30),
+     # ]],
   
-  [anyone|plyr, "tavern_traveler_pretender_location_ask_money", [], "Never mind.", "tavern_traveler_pretalk", []],
+  # [anyone|plyr, "tavern_traveler_pretender_location_ask_money", [], "Never mind.", "tavern_traveler_pretalk", []],
 
-  [anyone, "tavern_traveler_pretender_location_tell", [], "{s15} is currently at {s11}.", "tavern_traveler_pretalk",
-   [
-     (str_store_troop_name, s15, "$temp"),
-     (troop_get_slot, ":cur_center", "$temp", slot_troop_cur_center),
-     (str_store_party_name, s11, ":cur_center"),
-     ]],
+  # [anyone, "tavern_traveler_pretender_location_tell", [], "{s15} is currently at {s11}.", "tavern_traveler_pretalk",
+   # [
+     # (str_store_troop_name, s15, "$temp"),
+     # (troop_get_slot, ":cur_center", "$temp", slot_troop_cur_center),
+     # (str_store_party_name, s11, ":cur_center"),
+     # ]],
 
 
   [anyone|plyr, "tavern_traveler_talk", [], "I am looking for one of my companions...", "tavern_traveler_companion_location", []],

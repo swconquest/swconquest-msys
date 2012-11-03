@@ -433,18 +433,18 @@ map_get_land_position_around_position  = 1628	# (map_get_land_position_around_po
 map_get_water_position_around_position = 1629	# (map_get_water_position_around_position,<dest_position_no>,<source_position_no>,<radius>),
 
 
-party_count_members_of_type            = 1630	# (party_count_members_of_type,<destination>,<party_id>,<troop_id>),
-party_count_companions_of_type         = 1631	# (party_count_companions_of_type,<destination>,<party_id>,<troop_id>),
-party_count_prisoners_of_type          = 1632	# (party_count_prisoners_of_type,<destination>,<party_id>,<troop_id>),
+party_count_members_of_type            = 1630   # (party_count_members_of_type,<destination>,<party_id>,<troop_id>),
+party_count_companions_of_type         = 1631   # (party_count_companions_of_type,<destination>,<party_id>,<troop_id>),
+party_count_prisoners_of_type          = 1632   # (party_count_prisoners_of_type,<destination>,<party_id>,<troop_id>),
 
 party_get_free_companions_capacity     = 1633   # (party_get_free_companions_capacity,<destination>,<party_id>),
 party_get_free_prisoners_capacity      = 1634   # (party_get_free_prisoners_capacity,<destination>,<party_id>),
 
-party_set_ai_initiative                = 1639	# (party_set_ai_initiative,<party_id>,<value>), #value is between 0-100
-party_set_ai_behavior                  = 1640	# (party_set_ai_behavior,<party_id>,<ai_bhvr>),
-party_set_ai_object                    = 1641	# (party_set_ai_object,<party_id>,<party_id>),
-party_set_ai_target_position           = 1642	# (party_set_ai_target_position,<party_id>,<position_no>),
-party_set_ai_patrol_radius             = 1643	# (party_set_ai_patrol_radius,<party_id>,<radius_in_km>),
+party_set_ai_initiative                = 1639   # (party_set_ai_initiative,<party_id>,<value>), #value is between 0-100
+party_set_ai_behavior                  = 1640   # (party_set_ai_behavior,<party_id>,<ai_bhvr>),
+party_set_ai_object                    = 1641   # (party_set_ai_object,<party_id>,<party_id>),
+party_set_ai_target_position           = 1642   # (party_set_ai_target_position,<party_id>,<position_no>),
+party_set_ai_patrol_radius             = 1643   # (party_set_ai_patrol_radius,<party_id>,<radius_in_km>),
 party_ignore_player                    = 1644   # (party_ignore_player, <party_id>,<duration_in_hours>), #don't pursue player party for this duration
 party_set_bandit_attraction            = 1645   # (party_set_bandit_attraction, <party_id>,<attaraction>), #set how attractive a target the party is for bandits (0..100)
 
@@ -507,10 +507,10 @@ get_player_agent_kill_count            = 1701	# (get_player_agent_kill_count,<de
 agent_is_alive                         = 1702	# (agent_is_alive,<agent_id>),
 agent_is_wounded                       = 1703	# (agent_is_wounded,<agent_id>),
 agent_is_human                         = 1704	# (agent_is_human,<agent_id>),
-get_player_agent_own_troop_kill_count  = 1705   # (get_player_agent_own_troop_kill_count,<destination>,[get_wounded]), #Set second value to non-zero to get wounded count
+get_player_agent_own_troop_kill_count  = 1705	# (get_player_agent_own_troop_kill_count,<destination>,[get_wounded]), #Set second value to non-zero to get wounded count
 agent_is_ally                          = 1706	# (agent_is_ally,<agent_id>),
 agent_is_defender                      = 1708	# (agent_is_defender,<agent_id>),
-agent_get_look_position                = 1709   # (agent_get_look_position, <position_no>, <agent_id>),
+agent_get_look_position                = 1709	# (agent_get_look_position, <position_no>, <agent_id>),
 agent_get_position                     = 1710	# (agent_get_position,<position_no>,<agent_id>),
 agent_set_position                     = 1711	# (agent_set_position,<agent_id>,<position_no>),
 agent_get_horse                        = 1714	# (agent_get_horse,<destination>,<agent_id>),
@@ -525,15 +525,15 @@ store_agent_hit_points                 = 1720	# set absolute to 1 to retrieve ac
 agent_set_hit_points                   = 1721	# set absolute to 1 if value is absolute, otherwise value will be treated as relative number in range [0..100]
 						# (agent_set_hit_points,<agent_id>,<value>,[absolute]),
 agent_deliver_damage_to_agent          = 1722	# (agent_deliver_damage_to_agent,<agent_id_deliverer>,<agent_id>),
-agent_get_kill_count                   = 1723   # (agent_get_kill_count,<destination>,<agent_id>,[get_wounded]), #Set second value to non-zero to get wounded count
+agent_get_kill_count                   = 1723	# (agent_get_kill_count,<destination>,<agent_id>,[get_wounded]), #Set second value to non-zero to get wounded count
 agent_get_wielded_item                 = 1726	# (agent_get_wielded_item,<destination>,<agent_id>,<hand_no>),
 agent_get_ammo                         = 1727	# (agent_get_ammo,<destination>,<agent_id>),
 agent_refill_ammo                      = 1728	# (agent_refill_ammo,<agent_id>),
 agent_has_item_equipped                = 1729	# (agent_has_item_equipped,<agent_id>,<item_id>),
 
-agent_set_scripted_destination         = 1730	# (agent_set_scripted_destination,<agent_id>,<position_no>,<auto_set_z_to_ground_level>), #auto_set_z_to_ground_level can be 0 (false) or 1 (true)
+agent_set_scripted_destination         = 1730   # (agent_set_scripted_destination,<agent_id>,<position_no>,<auto_set_z_to_ground_level>), #auto_set_z_to_ground_level can be 0 (false) or 1 (true)
 agent_get_scripted_destination         = 1731   # (agent_get_scripted_destination,<position_no>,<agent_id>),
-agent_clear_scripted_mode              = 1735	# (agent_clear_scripted_mode,<agent_id>),
+agent_clear_scripted_mode              = 1735   # (agent_clear_scripted_mode,<agent_id>),
 agent_set_speed_limit                  = 1736   # (agent_set_speed_limit,<agent_id>,<speed_limit(kilometers/hour)>), #Affects AI only 
 agent_ai_set_always_attack_in_melee    = 1737   # (agent_ai_set_always_attack_in_melee, <agent_id>,<value>), #to be used in sieges so that agents don't wait on the ladder.
 agent_get_simple_behavior              = 1738   # (agent_get_simple_behavior, <destination>, <agent_id>), #constants are written in header_mission_templates.py, starting with aisb_
@@ -552,7 +552,7 @@ agent_get_class                        = 1772   # (agent_get_class ,<destination
 
 class_is_listening_order               = 1775   # (class_is_listening_order, <team_no>, <sub_class>),
 
-entry_point_get_position               = 1780	# (entry_point_get_position,<position_no>,<entry_no>),
+entry_point_get_position               = 1780   # (entry_point_get_position,<position_no>,<entry_no>),
 
 team_get_hold_fire_order               = 1784   # (team_get_hold_fire_order, <destination>, <team_no>, <sub_class>),
 team_get_movement_order                = 1785   # (team_get_movement_order, <destination>, <team_no>, <sub_class>),
@@ -615,8 +615,8 @@ particle_system_burst                  = 1969	# (particle_system_burst,<par_sys_
 
 set_spawn_position                     = 1970   # (set_spawn_position, <position_no>) 
 spawn_item                             = 1971   # (spawn_item, <item_kind_id>, <item_modifier>) 
-spawn_agent                            = 1972	# (spawn_agent,<troop_id>), (stores agent_id in reg0)
-spawn_horse                            = 1973	# (spawn_horse,<item_kind_id>, <item_modifier>)  (stores agent_id in reg0)
+spawn_agent                            = 1972   # (spawn_agent,<troop_id>), (stores agent_id in reg0)
+spawn_horse                            = 1973   # (spawn_horse,<item_kind_id>, <item_modifier>)  (stores agent_id in reg0)
 ###spawn_scene_prop                       = 11304    # (spawn_scene_prop, <scene_prop_id>)  (stores prop_instance_id in reg0) not yet.
 cur_tableau_add_tableau_mesh           = 1980   # (cur_tableau_add_tableau_mesh, <tableau_material_id>, <value>, <position_register_no>), #value is passed to tableau_material
 cur_item_set_tableau_material          = 1981   # (cur_item_set_tableu_material, <tableau_material_id>, <instance_code>), #only call inside ti_on_init_item in module_items

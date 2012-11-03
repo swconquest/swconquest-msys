@@ -11959,7 +11959,7 @@ game_menus = [
 
   (
     "tournament_bet_confirm",menu_text_color(0xFF000d2c),
-    "If you bet {reg1} denars, you will earn {reg2} credits if you win the tournament. Is that all right?",
+    "If you bet {reg1} credits, you will earn {reg2} credits if you win the tournament. Is that all right?",
     "none",
     [
       (call_script, "script_get_win_amount_for_tournament_bet"),
@@ -17563,7 +17563,7 @@ game_menus = [
            (val_add, "$g_player_deposit", 1000),
       (faction_set_slot,"fac_trade_federation",slot_faction_bank_deposit,"$g_player_deposit"),
         ]),
-      ("take_deposit",[(ge,"$g_player_deposit",1000)],"Withdraw 1000 denars from your account.",
+      ("take_deposit",[(ge,"$g_player_deposit",1000)],"Withdraw 1000 credits from your account.",
        [
 	   (troop_add_gold, "trp_player", 1000),
            (val_sub, "$g_player_deposit", 1000),
