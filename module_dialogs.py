@@ -44,6 +44,10 @@ from module_constants import *
 #    If a dialog line is picked, the active dialog-state will become the picked line's ending dialog-state.
 # 6) Consequences block (list): This must be a valid operation block. See header_operations.py for reference.
 ####################################################################################################################
+def gender_fix(register, trp="player"):
+  if (trp[0] != ":") and (trp[0] != "$"):
+    trp = "trp_" + trp
+  return [(call_script, "script_gender_fix", trp),(assign,register,reg33)]
 
 dialogs = [
 
@@ -164,7 +168,7 @@ dialogs = [
                        (assign, "$g_comment_found", reg0),
                      (try_end),
 
-                     (troop_get_type, reg65, "$g_talk_troop"),
+                     ]+gender_fix(reg65, "$g_talk_troop")+[
                      (try_begin),
                        (faction_slot_eq,"$g_talk_troop_faction",slot_faction_leader,"$g_talk_troop"),
                        (str_store_string,s64,"@{reg65?my Lady:my Lord}"), #bug fix
@@ -187,9 +191,9 @@ dialogs = [
                                (talk_info_show, 1),
                                (call_script, "script_setup_talk_info_companions"),
                            (try_end),
-                           (troop_get_type, reg65, "$g_talk_troop"),
+                           ]+gender_fix(reg65, "$g_talk_troop")+[
                            
-                     (troop_get_type, reg65, "$g_talk_troop"),
+                     ]+gender_fix(reg65, "$g_talk_troop")+[
                      (try_begin),
                        (faction_slot_eq,"$g_talk_troop_faction",slot_faction_leader,"$g_talk_troop"),
                        (str_store_string,s64,"@{reg65?my Lady:my Lord}"), #bug fix
@@ -211,7 +215,7 @@ dialogs = [
                                (call_script, "script_setup_talk_info_companions"),
                            (try_end),
                                
-                     (troop_get_type, reg65, "$g_talk_troop"),
+                     ]+gender_fix(reg65, "$g_talk_troop")+[
                      (try_begin),
                        (faction_slot_eq,"$g_talk_troop_faction",slot_faction_leader,"$g_talk_troop"),
                        (str_store_string,s64,"@{reg65?my Lady:my Lord}"), #bug fix
@@ -1773,7 +1777,7 @@ dialogs = [
        (str_store_troop_name, s11, "$temp"),
      (try_end),
      (str_store_party_name, s1, "$g_center_taken_by_player_faction"),
-     (troop_get_type, reg3, "$temp"),
+     ]+gender_fix(reg3, "$temp")+[
      (assign, "$g_center_taken_by_player_faction", -1),
      ]],
 
@@ -1954,7 +1958,7 @@ dialogs = [
   [anyone|plyr, "companion_personalityclash2_response", [
       (troop_get_slot, ":object", "$map_talk_troop", slot_troop_personalityclash2_object),
       (str_store_troop_name, s11, ":object"),
-      (troop_get_type, reg11, ":object"),
+      ]+gender_fix(reg11, ":object")+[
       ],  "{s11} is a valued member of this company. I don't want you picking any more fights with {reg11?her:him}.", "close_window", [
                     (troop_set_slot, "$map_talk_troop", slot_troop_personalityclash2_state, pclash_penalty_to_self),
           ]],
@@ -1962,7 +1966,7 @@ dialogs = [
   [anyone|plyr, "companion_personalityclash2_response", [
       (troop_get_slot, ":object", "$map_talk_troop", slot_troop_personalityclash2_object),
       (str_store_troop_name, s11, ":object"),
-      (troop_get_type, reg11, ":object"),
+      ]+gender_fix(reg11, ":object")+[
       ],  "Tell {s11} you have my support in this, and {reg11?she:he} should hold {reg11?her:his} tongue.", "close_window", [
                     (troop_set_slot, "$map_talk_troop", slot_troop_personalityclash2_state, pclash_penalty_to_other),
           ]],
@@ -2017,7 +2021,7 @@ dialogs = [
   [anyone|plyr, "companion_personalityclash_response", [
       (troop_get_slot, ":object", "$map_talk_troop", slot_troop_personalityclash_object),
       (str_store_troop_name, s11, ":object"),
-      (troop_get_type, reg11, ":object"),
+      ]+gender_fix(reg11, ":object")+[
       ],  "{s11} is a capable member of this company. I don't want you picking any more fights with {reg11?her:him}.", "close_window", [
                     (troop_set_slot, "$map_talk_troop", slot_troop_personalityclash_state, pclash_penalty_to_self),
           ]],
@@ -2025,7 +2029,7 @@ dialogs = [
   [anyone|plyr, "companion_personalityclash_response", [
       (troop_get_slot, ":object", "$map_talk_troop", slot_troop_personalityclash_object),
       (str_store_troop_name, s11, ":object"),
-      (troop_get_type, reg11, ":object"),
+      ]+gender_fix(reg11, ":object")+[
       ],  "Tell {s11} you have my support in this, and {reg11?she:he} should hold {reg11?her:his} tongue.", "close_window", [
                     (troop_set_slot, "$map_talk_troop", slot_troop_personalityclash_state, pclash_penalty_to_other),
           ]],
@@ -2591,7 +2595,7 @@ dialogs = [
 
 
   [anyone|plyr ,"pretender_rebellion_ready", [
-                     (troop_get_type, reg3, "$g_talk_troop"),
+                     ]+gender_fix(reg3, "$g_talk_troop")+[
                      ],
    "I am ready to pledge myself to your cause, {reg3?my lady:sir}.", "lord_give_oath_2", [
      ]],
@@ -3789,7 +3793,7 @@ dialogs = [
                             (ge, ":cur_day", ":quest_target_amount"),
                             (quest_get_slot, ":quest_target_troop", "qst_lend_companion", slot_quest_target_troop),
                             (str_store_troop_name,s14,":quest_target_troop"),
-                            (troop_get_type, reg3, ":quest_target_troop"),
+                            ]+gender_fix(reg3, ":quest_target_troop")+[
                             ],
    "I should like {s14} returned to me, {s65}, if you no longer require {reg3?her:his} services.", "lord_lend_companion_end",
    []],
@@ -3806,7 +3810,7 @@ dialogs = [
     (add_xp_as_reward, 100),
     (call_script, "script_end_quest", "qst_lend_companion"),
     (str_store_troop_name,s14,":quest_target_troop"),
-    (troop_get_type, reg3, ":quest_target_troop"),
+    ]+gender_fix(reg3, ":quest_target_troop")+[
     ]],
    
   [anyone|plyr,"lord_talk",[(check_quest_active,"qst_collect_debt"),
@@ -4855,7 +4859,7 @@ dialogs = [
                             (try_end),
                             (troop_slot_ge, ":pretender", slot_troop_met, 1),
                             (str_store_troop_name, s45, ":pretender"),
-                            (troop_get_type, reg3, ":pretender"),
+                            ]+gender_fix(reg3, ":pretender")+[
                              ],
    "I have met in my travels one who calls {reg3?herself:himself} {s45}...", "liege_defends_claim_1",[
        ]],
@@ -4995,7 +4999,7 @@ dialogs = [
        (troop_set_slot, "$g_talk_troop", slot_troop_discussed_rebellion, 1),
 
        (faction_get_slot, ":pretender", "$players_faction", slot_faction_leader),
-       (troop_get_type, reg3, ":pretender"),
+       ]+gender_fix(reg3, ":pretender")+[
        (faction_get_slot, ":current_ruler", "$g_talk_troop_faction", slot_faction_leader),
 
        (str_store_troop_name, 45, ":pretender"),
@@ -5097,7 +5101,7 @@ dialogs = [
    [
     ]],
 
-  [anyone|plyr,"lord_join_rebellion_suggest_3", [(troop_get_type, reg39, "$g_talk_troop"),
+  [anyone|plyr,"lord_join_rebellion_suggest_3", []+gender_fix(reg39, "$g_talk_troop")+[
       ], "Legality -- {s45} has the better claim to the throne", "lord_join_rebellion_suggest_4",
    [
         (call_script, "script_rebellion_arguments", "$g_talk_troop", argument_claim),
@@ -5109,7 +5113,7 @@ dialogs = [
 
     ]],
 
-  [anyone|plyr,"lord_join_rebellion_suggest_3", [(troop_get_type, reg39, "$g_talk_troop"),
+  [anyone|plyr,"lord_join_rebellion_suggest_3", []+gender_fix(reg39, "$g_talk_troop")+[
       ], "Justice -- {s45} will treat {reg39?her:his} subjects better than {s46}", "lord_join_rebellion_suggest_4",
    [
         (call_script, "script_rebellion_arguments", "$g_talk_troop", argument_ruler),
@@ -5120,7 +5124,7 @@ dialogs = [
         (assign, "$current_argument_value", reg0),
     ]],
 
-  [anyone|plyr,"lord_join_rebellion_suggest_3", [(troop_get_type, reg39, "$g_talk_troop"),
+  [anyone|plyr,"lord_join_rebellion_suggest_3", []+gender_fix(reg39, "$g_talk_troop")+[
       ], "Expediency -- {s45} will win, and the sooner  {reg39?she:he} wins, the sooner this war will end.", "lord_join_rebellion_suggest_4",
    [
         (call_script, "script_rebellion_arguments", "$g_talk_troop", argument_victory),
@@ -5132,7 +5136,7 @@ dialogs = [
 
     ]],
 
-  [anyone|plyr,"lord_join_rebellion_suggest_3", [(troop_get_type, reg39, "$g_talk_troop"),
+  [anyone|plyr,"lord_join_rebellion_suggest_3", []+gender_fix(reg39, "$g_talk_troop")+[
       ], "Self-interest -- {s45} will reward  {reg39?her:his} followers well.", "lord_join_rebellion_suggest_4",
    [
         (call_script, "script_rebellion_arguments", "$g_talk_troop", argument_benefit),
@@ -5788,7 +5792,7 @@ dialogs = [
 ## You have done wisely {playername}. Serve me well and I promise, you will rise high.", "lord_give_oath_5", []],
 
   [anyone|plyr,"lord_give_conclude", [
-            (troop_get_type, reg39, "$g_talk_troop"),
+            ]+gender_fix(reg39, "$g_talk_troop")+[
       ],  "I thank you, {reg39?my lady:lord}.", "lord_give_conclude_2", [
 
     (try_begin),
@@ -5922,7 +5926,7 @@ dialogs = [
                                     (ge, ":cur_day", ":quest_target_amount"),
 ##                                    (quest_get_slot, ":quest_target_troop", "qst_lend_companion", slot_quest_target_troop),
 ##                                    (str_store_troop_name,s14,":quest_target_troop"),
-##                                    (troop_get_type, reg3, ":quest_target_troop"),
+##                                    ]+gender_fix(reg3, ":quest_target_troop")+[
                                     ],
    "Oh, you want your companion back? I see...", "lord_lend_companion_end",[]],
 
@@ -7164,7 +7168,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
    []],
   [anyone,"quest_meet_spy_in_enemy_town_accepted_3", [(quest_get_slot, ":quest_target_center", "$random_quest_no", slot_quest_target_center),
                                                       (str_store_party_name_link, s13, ":quest_target_center"),
-                                                      (troop_get_type, reg7, "$spy_quest_troop"),
+                                                      ]+gender_fix(reg7, "$spy_quest_troop")+[
                                                       (quest_get_slot, ":secret_sign", "$random_quest_no", slot_quest_target_amount),
                                                       (store_sub, ":countersign", ":secret_sign", secret_signs_begin),
                                                       (val_add, ":countersign", countersigns_begin),
@@ -7380,7 +7384,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
        (str_store_troop_name_link,s9,"$g_talk_troop"),
        (str_store_troop_name,s3,":quest_target_troop"),
        (setup_quest_text,"$random_quest_no"),
-       (troop_get_type, reg3, ":quest_target_troop"),
+       ]+gender_fix(reg3, ":quest_target_troop")+[
        (str_store_string, s2, "@{s9} asked you to lend your companion {s3} to them for a week."),
     ]],
   [anyone|plyr,"lord_tell_mission_lend_companion", [],
@@ -7799,7 +7803,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
      (str_store_troop_name_link,1,"$g_talk_troop"),
 ##     (str_store_party_name,2,"$g_encountered_party"),
      (str_store_troop_name,3,":quest_object_troop"),
-     (troop_get_type, reg3, ":quest_object_troop"),
+     ]+gender_fix(reg3, ":quest_object_troop")+[
      (setup_quest_text,"$random_quest_no"),
 ##     (try_begin),
 ##       (is_between, "$g_encountered_party", centers_begin, centers_end),
@@ -8124,7 +8128,7 @@ They are going around making terrible accusations against me, impugning my honou
                                       (assign, reg10, "$lady_restore_cost_1"),
                                       (assign, reg11, "$lady_restore_cost_2"),
                                       (assign, reg12, "$lady_restore_cost_3"),
-                                      (troop_get_type, reg4, "$troop_to_restore_relations_with"),
+                                      ]+gender_fix(reg4, "$troop_to_restore_relations_with")+[
                                       ],
    "You can improve your relation with {s10} by sending {reg4?her:him} a gift worth {reg10} credits.\
  But if you can afford spending {reg11} credits on the gift, it would make a good impression on {reg4?her:him}.\
@@ -8149,7 +8153,7 @@ They are going around making terrible accusations against me, impugning my honou
  I am sure {reg4?she:he} will appreciate the gesture.", "lady_restore_relation_6",[
      (troop_remove_gold, "trp_player","$temp_2"),
      (call_script, "script_change_player_relation_with_troop", "$troop_to_restore_relations_with", "$temp"),
-     (troop_get_type, reg4, "$troop_to_restore_relations_with"),
+     ]+gender_fix(reg4, "$troop_to_restore_relations_with")+[
      ]],
 
   [anyone|plyr,"lady_restore_relation_6", [], "Thank you for your help, madame.", "lady_pretalk",[]],
@@ -8247,7 +8251,7 @@ They are going around making terrible accusations against me, impugning my honou
         (val_sub, "$convince_value", "$persuasion_strength"),
         (quest_set_slot, "$g_convince_quest", slot_quest_convince_value, "$convince_value"),
         (str_store_troop_name, s50, "$g_talk_troop"),
-        (troop_get_type, reg51, "$g_talk_troop"),
+        ]+gender_fix(reg51, "$g_talk_troop")+[
         (try_begin),
           (lt, "$persuasion_strength", -30),
           (str_store_string, s5, "str_persuasion_summary_very_bad"),
@@ -8460,7 +8464,7 @@ They are going around making terrible accusations against me, impugning my honou
                                             (else_try),
                                               (str_store_string, s51, "str_noone"),
                                             (try_end),
-                                            (troop_get_type, reg1, "$hero_requested_to_learn_relations")],
+                                            ]+gender_fix(reg1, "$hero_requested_to_learn_relations")+[],
    "{reg1?She:He} hates {s51}.", "seneschal_ask_about_someone_4",[(add_troop_note_from_dialog, "$hero_requested_to_learn_relations", 3)]],
 # Ryan END
 
@@ -10460,7 +10464,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "Greetings, {playername}. I saw your companion {s10} at a cantina in {s11} some days ago. I thought you might like to know.", "tavern_traveler_lost_companion_thanks",
    [(assign, "$last_lost_companion", 0)]],
 
-  [anyone|plyr, "tavern_traveler_lost_companion_thanks", [(troop_get_type, reg3, "$last_lost_companion")], "Thanks. I'll go and find {reg3?her:him} there.", "tavern_traveler_pretalk", []],
+  [anyone|plyr, "tavern_traveler_lost_companion_thanks", []+gender_fix(reg3, "$last_lost_companion")+[], "Thanks. I'll go and find {reg3?her:him} there.", "tavern_traveler_pretalk", []],
   [anyone|plyr, "tavern_traveler_lost_companion_thanks", [], "Thanks, but I don't really care.", "tavern_traveler_pretalk", []],
 
   [anyone, "start", [(is_between, "$g_talk_troop", tavern_travelers_begin, tavern_travelers_end),

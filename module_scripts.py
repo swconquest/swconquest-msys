@@ -18197,12 +18197,12 @@ scripts = [
       (try_begin),
         (neq, reg0, 0),
         (troop_get_type, reg1, ":troop_no"),
-        (call_script, "script_race_type_fix", reg1),		#SW - added to fix male/female for aliens
+        (call_script, "script_gender_fix", ":troop_no"),		#SW - added to fix male/female for aliens
         (try_begin),
           (eq, ":see_or_hear", 0),
-          (add_troop_note_from_sreg, ":troop_no", 2, "@The last time you saw {reg1?her:him}, {s1}", 1),
+          (add_troop_note_from_sreg, ":troop_no", 2, "@The last time you saw {reg33?her:him}, {s1}", 1),
         (else_try),
-          (add_troop_note_from_sreg, ":troop_no", 2, "@The last time you heard about {reg1?her:him}, {s1}", 1),
+          (add_troop_note_from_sreg, ":troop_no", 2, "@The last time you heard about {reg33?her:him}, {s1}", 1),
         (try_end),
       (try_end),
   ]),
@@ -26823,88 +26823,41 @@ scripts = [
               # race/gender fix (call before dialogs)
               # concept by Keedo420 - http://forums.taleworlds.net/index.php/topic,59300.msg1534679.html#msg1534679
               
-              ("race_type_fix",
+              ("gender_fix",
                 [
-                  (store_script_param, ":troop_type", 1),
-                  (try_begin),
-                    (this_or_next|eq, ":troop_type", 1),	#female
-                    (eq, ":troop_type", 12),				#twilek female
-                    (assign, reg1, 1),
-                  (else_try),
-                    (assign, reg1, 0),
+                  (store_script_param, ":troop_no", 1),
+                  (troop_get_type,":character_race",":troop_no"),
+                  
+                  (try_begin), #male species
+                    (this_or_next|eq,":character_race",tf_male),
+                    (this_or_next|eq,":character_race",tf_twilek),
+                    (this_or_next|eq,":character_race",tf_rodian),
+                    (this_or_next|eq,":character_race",tf_moncal),
+                    (this_or_next|eq,":character_race",tf_trandoshan),
+                    (this_or_next|eq,":character_race",tf_droid),
+                    (this_or_next|eq,":character_race",tf_wookiee),
+                    (this_or_next|eq,":character_race",tf_sullustan),
+                    (this_or_next|eq,":character_race",tf_gamorrean),
+                    (this_or_next|eq,":character_race",tf_bothan),
+                    (this_or_next|eq,":character_race",tf_geonosian),
+                    (this_or_next|eq,":character_race",tf_jawa),
+                    (             eq,":character_race",tf_tusken),
+                    
+                    (assign, ":gender",0),
+                  
+                  (else_try), #female species
+                    (this_or_next|eq,":character_race",tf_female),
+                    (             eq,":character_race",tf_twilek_female),
+                    
+                    (assign, ":gender",1),
                   (try_end),
+                  
+                  (assign, reg33, ":gender"), #we return the choice as as the register 33, which is rarely used.
+                                              #in dialogs 1 is used for the first option of the conditional and 0 for the second one
+                                              #{reg33?her:him}
               ]),
               
-              ("race_fix",
-                [
-                  
-                  # (try_begin),
-                  # (eq,"$character_race",0),
-                  # (str_store_string, s22, "@Human"),
-                  # (else_try),
-                  # (eq,"$character_race",1),
-                  # (str_store_string, s22, "@Elf"),
-                  # (else_try),
-                  # (eq,"$character_race",2),
-                  # (str_store_string, s22, "@Dark Elf"),
-                  # (else_try),
-                  # (eq,"$character_race",3),
-                  # (str_store_string, s22, "@Goblin"),
-                  # (else_try),
-                  # (eq,"$character_race",4),
-                  # (str_store_string, s22, "@Orc"),
-                  # (else_try),
-                  # (eq,"$character_race",5),
-                  # (str_store_string, s22, "@Zombie"),
-                  # (else_try),
-                  # (eq,"$character_race",6),
-                  # (str_store_string, s22, "@Skeleton"),
-                  # (else_try),
-                  # (eq,"$character_race",7),
-                  # (str_store_string, s22, "@Ghost"),
-                  # (try_end),
-                  (try_begin),
-                    (eq,"$character_gender",tf_male),
-                    (str_store_string, s23, "@sir"),
-                    (str_store_string, s24, "@my Lord"),
-                    (str_store_string, s25, "@man"),
-                    (str_store_string, s26, "@sir"),
-                    (str_store_string, s27, "@his"),
-                    (str_store_string, s28, "@Lord"),
-                    (str_store_string, s29, "@him"),
-                    (str_store_string, s30, "@husband"),
-                  (else_try),
-                    (eq,"$character_gender",tf_female),
-                    (str_store_string, s23, "@madam"),
-                    (str_store_string, s24, "@my Lady"),
-                    (str_store_string, s25, "@lady"),
-                    (str_store_string, s26, "@lady"),
-                    (str_store_string, s27, "@her"),
-                    (str_store_string, s28, "@Lady"),
-                    (str_store_string, s29, "@her"),
-                    (str_store_string, s30, "@wife"),
-                  (try_end),
-                  (troop_get_type, ":troop_type", "$g_talk_troop"),
-                  (try_begin),
-                    (this_or_next|eq, ":troop_type", 1),	#female
-                    (eq, ":troop_type", 12),				#twilek female
-                    (assign, reg1, 1),
-                  (else_try),
-                    (assign, reg1, 0),
-                  (try_end),
-                  
-                  (str_store_string, s31, "@{reg1?madam:sir}"),
-                  (str_store_string, s32, "@{reg1?my Lady:my Lord}"),
-                  (str_store_string, s33, "@{reg1?lady:man}"),
-                  (str_store_string, s34, "@{reg1?lady:sir}"),
-                  (str_store_string, s35, "@{reg1?her:his}"),
-                  (str_store_string, s36, "@{reg1?Lady:Lord}"),
-                  (str_store_string, s37, "@{reg1?her:him}"),
-                  (str_store_string, s38, "@{reg1?husband:wife}"),
-                  (str_store_string, s39, "@{reg1?Madam:Sir}"),
-                  
-              ]),
-              
+              ("placeholder_because_savegames_are_important_haha_easter_egg:_1138", []),
               #############################################################################
               #SW MF start new scripts
               
