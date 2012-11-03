@@ -18054,7 +18054,7 @@ scripts = [
           (try_end),
           (val_add, ":num_enemies", 1),
         (try_end),
-        (add_faction_note_from_sreg, ":faction_no", 0, "@{s5} is ruled by {s6}.^It occupies {s8}.^Its vassals are {s10}.^{s5} is at war with {s12}.", 0),
+        (add_faction_note_from_sreg, ":faction_no", 0, "@{s5} is ruled by {s6}.^It occupies {s8}.^Its commanders are {s10}.^{s5} is at war with {s12}.", 0),
       (else_try),
         (is_between, ":faction_no", factions_begin, factions_end),
         (faction_slot_eq, ":faction_no", slot_faction_state, sfs_defeated),
@@ -18186,7 +18186,7 @@ scripts = [
         (try_end),
         (assign, reg9, ":num_centers"),
         #SW - modified fiefs to territories
-        (add_troop_note_from_sreg, ":troop_no", 0, "@{reg6?:{reg4?{s54} is the ruler of {s56}.^:{s54} is a vassal of {s55} of {s56}.^}}Renown: {reg5}.^{reg9?{reg3?She:He} is the {reg3?lady:lord} of {s58}.:{reg3?She:He} has no territories.}{s59}", 0),
+        (add_troop_note_from_sreg, ":troop_no", 0, "@{reg6?:{reg4?{s54} is the ruler of {s56}.^:{s54} is a commander of {s55} of {s56}.^}}Renown: {reg5}.^{reg9?{reg3?She:He} is the {reg3?lady:lord} of {s58}.:{reg3?She:He} has no territories.}{s59}", 0),
         (add_troop_note_tableau_mesh, ":troop_no", "tableau_troop_note_mesh"),
       (try_end),
   ]),

@@ -13798,11 +13798,11 @@ game_menus = [
 
   (
     "invite_player_to_faction_without_center",menu_text_color(0xFF000d2c)|mnf_scale_picture,
-    "You receive an offer of vassalage!^^\
- {s8} of {s9} has sent a royal herald to bring you an invitation in his own hand.\
- You would be granted the honour of becoming a vassal {lord/lady} of {s9},\
- and in return {s8} asks you to swear an oath of homage to him and fight in his military campaigns,\
- although he offers you no lands or titles.\
+    "You receive an offer of promotion!^^\
+ {s8} of {s9} has sent a message with great news.\
+ You would be granted the honour of becoming a commander {lord/lady} of {s9},\
+ and in return {s8} asks you to swear an oath of homage to him and fight in the war,\
+ although he offers you no colonies or titles.\
  He will surely be offended if you do not take the offer...",
     "none",
     [
@@ -13839,11 +13839,11 @@ game_menus = [
 
   (
     "invite_player_to_faction",menu_text_color(0xFF000d2c)|mnf_scale_picture,
-    "You receive an offer of vassalage!^^\
- {s8} of {s9} has sent a royal herald to bring you an invititation in his own hand.\
- You would be granted the honour of becoming a vassal {lord/lady} of {s9},\
- and in return {s8} asks you to swear an oath of homage to him and fight in his military campaigns,\
- offering you the fief of {s2} for your loyal service.\
+    "You receive an offer of promotion!^^\
+ {s8} of {s9} has sent a royal herald to bring you an invitation in his own hand.\
+ You would be granted the honour of becoming a commander {lord/lady} of {s9},\
+ and in return {s8} asks you to swear an oath of homage to him and fight in the war,\
+ offering you the planet of {s2} for your loyal service.\
  He will surely be offended if you do not take the offer...",
     "none",
     [
@@ -13879,7 +13879,7 @@ game_menus = [
   
   (
     "invite_player_to_faction_accepted",menu_text_color(0xFF000d2c),
-    "In order to become a vassal, you must swear an oath of homage to {s3}.\
+    "In order to become a commander, you must swear an oath of homage to {s3}.\
  You shall have to find him and give him your oath in person. {s5}",
     "none",
     [
