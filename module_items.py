@@ -73,7 +73,7 @@ lsbr_vluemul=1.7
 items = [
 # item_name, mesh_name, item_properties, item_capabilities, slot_no, cost, bonus_flags, weapon_flags, scale, view_dir, pos_offset
 #SW - modified the no_item to be transparent so practice_swords wouldn't appear everywhere
- ["no_item","<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+ ["no_item","<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
  ["horse_meat","Horse Meat", [("raw_meat",0)], itp_type_goods|itp_consumable|itp_food, 0, 12,weight(40)|food_quality(30)|max_ammo(40),imodbits_none],
 # Items before this point are hardwired and their order should not be changed!
  ["practice_sword","Practice Sword", [("practice_sword",0)], itp_type_one_handed_wpn|itp_primary|itp_secondary, itc_longsword, 3,weight(1.5)|spd_rtng(103)|weapon_length(90)|swing_damage(16,blunt)|thrust_damage(10,blunt),imodbits_none],
@@ -885,7 +885,7 @@ items = [
 #["swc_readme", "Star Wars Calradia 0.5.3^^Credits:^  HokieBT - scripting, textures^  Hank - scripting, textures^etc...", [("book_a",0)], itp_type_thrown |itp_primary ,itcf_throw_knife, 0 , weight(2.0)|spd_rtng(80) | shoot_speed(30) | thrust_damage(4, blunt)|max_ammo(1)|weapon_length(0),imodbits_none ],
 
 #common/shared items
-["armors_begin", "<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+["armors_begin", "<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
 # SW Handwear
 ["black_gloves","Black Gloves", [("black_glove_L",0)], itp_merchandise|itp_type_hand_armor|itp_civilian,0, 
 #["black_gloves","Black Gloves", [("black_glove_w_cuff_L",0)], itp_merchandise|itp_type_hand_armor|itp_civilian,0, 
@@ -987,9 +987,9 @@ items = [
  300 , weight(2)|abundance(50)|head_armor(20)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ], 
 ["rebel_honor_guard_helmet", "Rebel Honor Guard Helmet", [("rebel_honor_guard_helmet",0)], itp_merchandise| itp_type_head_armor|itp_civilian ,0, 
  300 , weight(2)|abundance(50)|head_armor(20)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ], 
-["transparent_helmet", "Transparent Helmet", [("0",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_head_armor|itp_doesnt_cover_hair|itp_civilian,0, 
+["transparent_helmet", "Transparent Helmet", [("_",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_head_armor|itp_doesnt_cover_hair|itp_civilian,0, 
  140 , weight(1)|abundance(60)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
-#["transparent_helmet_merch", "Transparent Helmet", [("0",0),("transparent_helmet_inv",ixmesh_inventory)], itp_merchandise|itp_type_head_armor|itp_doesnt_cover_hair|itp_civilian,0, 
+#["transparent_helmet_merch", "Transparent Helmet", [("_",0),("transparent_helmet_inv",ixmesh_inventory)], itp_merchandise|itp_type_head_armor|itp_doesnt_cover_hair|itp_civilian,0, 
 # 140 , weight(1)|abundance(60)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ],  
 ["imperial_trooper_helmet", "Imperial Trooper Helmet", [("imperial_atst_driver_helmet",0)], itp_merchandise| itp_type_head_armor|itp_civilian ,0, 
  120 , weight(2)|abundance(100)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ], 
@@ -1410,7 +1410,7 @@ items = [
 #["bothan_head", "Bothan Head", [("bothan_head",0)], itp_unique|itp_type_head_armor|itp_covers_head |itp_civilian ,0, 
 
 #no attack ability since the droid armor moves and the animation looks bad when they attack
-["droid_weapon_no_attack","Droid Melee Weapon (No Attack)", [("0",0),("force_block_inv",ixmesh_inventory)], itp_unique|itp_primary, 0, 
+["droid_weapon_no_attack","Droid Melee Weapon (No Attack)", [("_",0),("force_block_inv",ixmesh_inventory)], itp_unique|itp_primary, 0, 
  1 , weight(1)|abundance(0)|difficulty(0)|spd_rtng(40) | weapon_length(25)|swing_damage(0, blunt) | thrust_damage(0, blunt),imodbits_none ],
 
 #r2series
@@ -1500,7 +1500,7 @@ items = [
  1000 , weight(60)|abundance(0)|head_armor(15)|body_armor(45)|leg_armor(15)|difficulty(0) ,imodbits_none ], 
 ["3poseries_grey", "3PO-Series Grey", [("C3PO_fullbody_grey",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
  1000 , weight(60)|abundance(0)|head_armor(15)|body_armor(45)|leg_armor(15)|difficulty(0) ,imodbits_none ],  
-["3poseries_attack","3PO-Series Melee Attack", [("0",0),("C3PO_gold_hand_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary, itc_dagger, 
+["3poseries_attack","3PO-Series Melee Attack", [("_",0),("C3PO_gold_hand_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary, itc_dagger, 
 250 , weight(1)|abundance(0)|difficulty(0)|spd_rtng(50) | weapon_length(15)|swing_damage(5, blunt) | thrust_damage(4, blunt),imodbits_none ], 
 
 #b1 battledroid & others
@@ -1519,7 +1519,7 @@ items = [
 ["oomseries_command_body", "OOM Command Droid Body", [("battledroid_commander",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
  2750 , weight(35)|abundance(0)|head_armor(25)|body_armor(55)|leg_armor(25)|difficulty(0) ,imodbits_none ],
  #melee attack
- ["battle_droid_attack","Battle Droid Melee Attack", [("0",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary, itc_dagger, 
+ ["battle_droid_attack","Battle Droid Melee Attack", [("_",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary, itc_dagger, 
 250 , weight(1)|abundance(0)|difficulty(0)|spd_rtng(65) | weapon_length(15)|swing_damage(7, blunt) | thrust_damage(6, blunt),imodbits_none ], 
 
 #b2series
@@ -1529,15 +1529,15 @@ items = [
  ["b2series_body_enhanced", "C-B3 Battle Droid Body", [("B2-Battledroid_enhanced",0)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
  7420, weight(55)|abundance(0)|head_armor(30)|body_armor(70)|leg_armor(30)|difficulty(0) ,imodbits_none ],
   
- ["b2series_attack","B2-Series Battle Droid Attack", [("0",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary, itc_dagger, 
+ ["b2series_attack","B2-Series Battle Droid Attack", [("_",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary, itc_dagger, 
   500, weight(1)|abundance(0)|difficulty(0)|spd_rtng(75) | weapon_length(20)|swing_damage(10, blunt) | thrust_damage(8, blunt),imodbits_none ], 
- ["b2series_blaster", "B2-Series Battle Droid Blaster", [("0",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_pistol|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_reload_pistol, 
+ ["b2series_blaster", "B2-Series Battle Droid Blaster", [("_",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_pistol|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_reload_pistol, 
 	 500 , weight(2)|abundance(0)|difficulty(0)|spd_rtng(90) | shoot_speed(145) | thrust_damage(35,pierce)|max_ammo(24)|accuracy(88),imodbits_none,
 	 [(ti_on_weapon_attack, [(play_sound,"snd_bigblaster19"),(position_move_x, pos1,12),(position_move_y, pos1,15)])]],	
 
-["transparent_droid_head", "Transparent Head (for Droids)", [("0",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_head_armor|itp_covers_head|itp_civilian,0, 1, weight(0.25)|abundance(0)|head_armor(1)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
-["transparent_droid_hands", "Transparent Hands (for Droids)", [("0",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_hand_armor|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(1)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
-["transparent_droid_feet", "Transparent Feet (for Droids)", [("0",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_foot_armor|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(0)|leg_armor(1)|difficulty(0) ,imodbits_none ], 
+["transparent_droid_head", "Transparent Head (for Droids)", [("_",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_head_armor|itp_covers_head|itp_civilian,0, 1, weight(0.25)|abundance(0)|head_armor(1)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
+["transparent_droid_hands", "Transparent Hands (for Droids)", [("_",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_hand_armor|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(1)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
+["transparent_droid_feet", "Transparent Feet (for Droids)", [("_",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_foot_armor|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(0)|leg_armor(1)|difficulty(0) ,imodbits_none ], 
  
 #IG88 parts (removed merch flag)
 ["ig88_head", "IG-Series Head", [("IG88_head",0)], itp_type_head_armor|itp_covers_head|itp_civilian,0, 
@@ -1548,7 +1548,7 @@ items = [
  1000 , weight(35)|abundance(0)|head_armor(0)|body_armor(65)|leg_armor(0)|difficulty(0) ,imodbits_none ],
 ["ig88_feet", "IG-Series Feet", [("IG88_feet",0)], itp_type_foot_armor | itp_attach_armature|itp_civilian,0, 
  500 , weight(5)|abundance(0)|head_armor(0)|body_armor(0)|leg_armor(20)|difficulty(0) ,imodbits_none ],
-["ig88_attack","_", [("0",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary|itp_bonus_against_shield, itc_dagger, 
+["ig88_attack","_", [("_",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary|itp_bonus_against_shield, itc_dagger, 
 250 , weight(1)|abundance(0)|difficulty(0)|spd_rtng(80) | weapon_length(25)|swing_damage(30, cut) | thrust_damage(25, pierce),imodbits_none ], 
 ["ig88_e11_shield", "IG-88's E-11 Shield", [("E11_IG88",0)], itp_unique|itp_type_shield, 0,  500 , weight(3.0)|abundance(0)|hit_points(200)|body_armor(10)|spd_rtng(70)|weapon_length(45),imodbits_none ], 
 # no merchandise and no unique flag so there is a chance they will be in the loot after battle (must give 2x to the troops for this to happen)
@@ -1568,7 +1568,7 @@ items = [
  7000 , weight(30)|abundance(0)|head_armor(0)|body_armor(45)|leg_armor(0)|difficulty(0) ,imodbits_none ],
 ["hk_feet", "HK-Series Feet", [("hk_feet",0)], itp_type_foot_armor | itp_attach_armature|itp_civilian,0, 
  300 , weight(5)|abundance(0)|head_armor(0)|body_armor(0)|leg_armor(14)|difficulty(0) ,imodbits_none ], 
-["hk_attack","_", [("0",0),("hk_hand_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary|itp_bonus_against_shield, itc_dagger, 
+["hk_attack","_", [("_",0),("hk_hand_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary|itp_bonus_against_shield, itc_dagger, 
 250 , weight(1)|abundance(0)|difficulty(0)|spd_rtng(70) | weapon_length(25)|swing_damage(24, cut) | thrust_damage(18, pierce),imodbits_none ],  
  
 # mandalorians
@@ -1739,7 +1739,7 @@ items = [
 ["geonosian_armor_merch", "Geonosian Armor", [("geonosian_armor",0)], itp_merchandise| itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 
  510 , weight(5)|abundance(50)|head_armor(0)|body_armor(40)|leg_armor(16)|difficulty(0) ,imodbits_cloth ], 
  
-["armors_end", "<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+["armors_end", "<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
 
 # special arena lightsabers with no strength requirements (this is lightsaber_noise_begin)
 ["lightsaber_green_arena", "Lightsaber", [("lightsaber_green",0),("lightsaber_greenoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_unique| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left,
@@ -1752,7 +1752,7 @@ items = [
  1500*lsbr_vluemul , weight(0.5)|abundance(0)|difficulty(0)|spd_rtng(120) | weapon_length(115)|swing_damage(50, blunt) | thrust_damage(35, blunt),imodbits_none ],
 
 # weapons - lightsabers  (abundance is reduced since you can buy them all from the force-sensitive merchant at the trade federation base)
-["weapons_begin", "<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+["weapons_begin", "<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
 ["lightsaber_green", "Lightsaber", [("lightsaber_green",0),("lightsaber_greenoff",ixmesh_carry)], itp_type_two_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left,
  900*lsbr_vluemul , weight(0.5)|abundance(30)|difficulty(12)|spd_rtng(120) | weapon_length(115)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_lightsaber, ],
  #@> SWY - Tried to add a real lightpoint, the game crashes when used: [(ti_on_init_item), [(assign,":scale",2),(store_mul, ":red", 2 * 157, ":scale"),(store_mul, ":green", 2 * 250, ":scale"),(store_mul, ":blue", 2 * 157, ":scale"),(val_div, ":red", 100),(val_div, ":green", 100),(val_div, ":blue", 100),(set_current_color,":red", ":green", ":blue"),(set_position_delta,0,0,0),(add_point_light, 10, 30)])]],
@@ -1894,7 +1894,7 @@ items = [
 	]],
 
 # unique melee weapons (melee_punch is lightsaber_noise_end)
-["melee_punch","_", [("0",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary|itp_no_parry, itc_dagger, 1 , weight(0.1)|abundance(0)|difficulty(0)|spd_rtng(105) | weapon_length(25)|swing_damage(10, blunt) | thrust_damage(10, blunt),imodbits_none ],
+["melee_punch","_", [("_",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary|itp_no_parry, itc_dagger, 1 , weight(0.1)|abundance(0)|difficulty(0)|spd_rtng(105) | weapon_length(25)|swing_damage(10, blunt) | thrust_damage(10, blunt),imodbits_none ],
 # axe
 ["durasteel_staff", "Durasteel Staff", [("iron_staff",0)], itp_type_polearm|itp_merchandise| itp_spear|itp_primary|itp_penalty_with_shield, itc_staff|itcf_carry_sword_back, 475 , weight(2.5)|abundance(100)|difficulty(0)|spd_rtng(88) | weapon_length(140)|swing_damage(25 , blunt) | thrust_damage(15,  blunt),imodbits_polearm ],
 ["electro_staff_medium", "Electrostaff", [("electro_staff_medium",0),("electro_staff_medium_off",ixmesh_carry)], itp_type_polearm|itp_merchandise| itp_spear|itp_primary|itp_penalty_with_shield, itc_staff|itcf_carry_sword_back, 450 , weight(2.5)|abundance(100)|difficulty(0)|spd_rtng(105) | weapon_length(120)|swing_damage(30, blunt) | thrust_damage(25 ,  blunt),imodbits_polearm ],
@@ -1940,7 +1940,7 @@ items = [
 ["vibro_sword3_gold", "Vibro Sword", [("vibro_sword3a",0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary|itp_bonus_against_shield, itc_longsword|itcf_carry_sword_back, 485 , weight(1.3)|abundance(50)|difficulty(0)|spd_rtng(100) | weapon_length(100)|swing_damage(40 , pierce) | thrust_damage(40,  pierce),imodbits_sword ], 
 ["vibro_sword3_blue", "Vibro Sword", [("vibro_sword3c",0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary|itp_bonus_against_shield, itc_longsword|itcf_carry_sword_back, 485 , weight(1.3)|abundance(50)|difficulty(0)|spd_rtng(100) | weapon_length(100)|swing_damage(40 , pierce) | thrust_damage(40,  pierce),imodbits_sword ], 
 ["vibro_sword3_red", "Vibro Sword", [("vibro_sword3d",0)], itp_type_one_handed_wpn|itp_merchandise|itp_primary|itp_bonus_against_shield, itc_longsword|itcf_carry_sword_back, 485 , weight(1.3)|abundance(50)|difficulty(0)|spd_rtng(100) | weapon_length(100)|swing_damage(40 , pierce) | thrust_damage(40,  pierce),imodbits_sword ], 
-["weapons_end", "<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+["weapons_end", "<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
 
 # practice/training/tutorial lightsabers (no merchandise flag)
 ["tutorial_lightsaber", "Lightsaber", [("lightsaber_yellow",0),("lightsaber_yellowoff",ixmesh_carry)], itp_type_two_handed_wpn| itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber|itcf_carry_dagger_front_left, 1500 , weight(2.25)|difficulty(0)|spd_rtng(120) | weapon_length(115)|swing_damage(50, pierce) | thrust_damage(35,  pierce),imodbits_none ],
@@ -1954,7 +1954,7 @@ items = [
 
 #special items with unique flag(quick battle, etc)
 ["quick_battle_armor", "Armor", [("jacket_closed_b",0)], itp_unique|itp_type_body_armor|itp_covers_legs |itp_civilian  ,0, 380 , weight(2)|abundance(0)|head_armor(0)|body_armor(32)|leg_armor(14)|difficulty(0) ,imodbits_none ],
-["transparent_helmet_armor", "Transparent Helmet with Body Armor", [("0",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_head_armor|itp_doesnt_cover_hair|itp_civilian,0, 140 , weight(0.25)|abundance(0)|head_armor(15)|body_armor(35)|leg_armor(15)|difficulty(0) ,imodbits_none ], 
+["transparent_helmet_armor", "Transparent Helmet with Body Armor", [("_",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_head_armor|itp_doesnt_cover_hair|itp_civilian,0, 140 , weight(0.25)|abundance(0)|head_armor(15)|body_armor(35)|leg_armor(15)|difficulty(0) ,imodbits_none ], 
 ["twilek_female_helmet_armor", "Twilek Female Helmet with Body Armor", [("twilekwrap",0)], itp_unique|itp_type_head_armor|itp_doesnt_cover_hair|itp_civilian,0,  500 , weight(1)|abundance(0)|head_armor(15)|body_armor(35)|leg_armor(15)|difficulty(0) ,imodbits_none ],  
 ["twilek_male_head_bib", "Bib Fortuna Head", [("twilek_head_bib",0)], itp_unique|itp_type_head_armor|itp_covers_head |itp_civilian ,0, 1500 , weight(3)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ],
 ["weequay_head_helmet_a", "Weequay Head", [("weequay_head_helmet_a",0)], itp_unique|itp_type_head_armor|itp_covers_head |itp_civilian ,0, 500 , weight(2)|head_armor(5)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ],
@@ -1971,24 +1971,24 @@ items = [
 ["rancor_body_a", "Rancor Body", [("swy_rancor",0)], itp_unique|itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 1000 , weight(64)|head_armor(35)|body_armor(90)|leg_armor(35)|difficulty(0) ,imodbits_none ],
 ["rancor_body_b", "Rancor Body", [("swy_rancor_alt",0)], itp_unique|itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 1000 , weight(64)|head_armor(35)|body_armor(90)|leg_armor(35)|difficulty(0) ,imodbits_none ],
 ["rancor_body_c", "Rancor Body", [("swy_rancor_mutant",0)], itp_unique|itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 1000 , weight(64)|head_armor(35)|body_armor(90)|leg_armor(35)|difficulty(0) ,imodbits_none ],
-["rancor_attack","_", [("0",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary|itp_bonus_against_shield|itp_no_parry, itc_rancor, 250 , weight(64)|abundance(0)|difficulty(0)|spd_rtng(85) | weapon_length(15)|swing_damage(60, cut) | thrust_damage(45, pierce),imodbits_none ],
+["rancor_attack","_", [("_",0),("ArcTrooperGloves_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary|itp_bonus_against_shield|itp_no_parry, itc_rancor, 250 , weight(64)|abundance(0)|difficulty(0)|spd_rtng(85) | weapon_length(15)|swing_damage(60, cut) | thrust_damage(45, pierce),imodbits_none ],
 ["rancor_keeper_armor", "Rancor Keeper Armor", [("rancor_keeper",0)], itp_unique|itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 500 , weight(20)|head_armor(5)|body_armor(35)|leg_armor(10)|difficulty(0) ,imodbits_none ],
 ["yoda_armor", "Yoda Armor and Chair", [("yoda",0)], itp_unique|itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 2000 , weight(40)|head_armor(20)|body_armor(50)|leg_armor(20)|difficulty(0) ,imodbits_none ],
 ["yoda_lightsaber", "Yoda's Lightsaber", [("lightsaber_green_1h",0),("lightsaber_green_1hoff",ixmesh_carry)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_bonus_against_shield|itp_wooden_parry|itp_wooden_attack, itc_lightsaber_1h, 605 , weight(0.1)|abundance(0)|difficulty(0)|spd_rtng(105) | weapon_length(100)|swing_damage(75 , pierce) | thrust_damage(75 ,  pierce),imodbits_none ],
-["yoda_speeder","Yoda's Transparent Speeder", [("0",0),("force_block_inv",ixmesh_inventory)],  itp_unique|itp_type_horse, 0, 500,abundance(0)|hit_points(40)|body_armor(25)|difficulty(0)|horse_speed(40)|horse_maneuver(50)|horse_charge(5),imodbits_none],
+["yoda_speeder","Yoda's Transparent Speeder", [("_",0),("force_block_inv",ixmesh_inventory)],  itp_unique|itp_type_horse, 0, 500,abundance(0)|hit_points(40)|body_armor(25)|difficulty(0)|horse_speed(40)|horse_maneuver(50)|horse_charge(5),imodbits_none],
 ["jabba_armor", "Jabba Armor and Chair", [("jabba",0)], itp_unique|itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 2000 , weight(80)|head_armor(30)|body_armor(80)|leg_armor(25)|difficulty(0) ,imodbits_none ],
-["jabba_attack","Jabba No Attack", [("0",0),("transparent_helmet_inv",ixmesh_inventory)], itp_type_two_handed_wpn|itp_unique|itp_primary, 0, 1 , weight(1)|abundance(0)|difficulty(0)|spd_rtng(40) | weapon_length(25)|swing_damage(0, blunt) | thrust_damage(0, blunt),imodbits_none ],
-["jabba_speeder","Jabba's Transparent Speeder", [("0",0),("force_block_inv",ixmesh_inventory)],     itp_unique|itp_type_horse, 0, 500,abundance(0)|hit_points(50)|body_armor(50)|difficulty(0)|horse_speed(30)|horse_maneuver(35)|horse_charge(80),imodbits_none],
-["transparent_head", "Transparent Head", [("0",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_head_armor|itp_covers_head|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(1)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
-["transparent_body", "Transparent Body", [("0",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(1)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
-["transparent_hands", "Transparent Hands", [("0",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_hand_armor|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(1)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
-["transparent_feet", "Transparent Feet", [("0",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_foot_armor|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(0)|leg_armor(1)|difficulty(0) ,imodbits_none ], 
+["jabba_attack","Jabba No Attack", [("_",0),("transparent_helmet_inv",ixmesh_inventory)], itp_type_two_handed_wpn|itp_unique|itp_primary, 0, 1 , weight(1)|abundance(0)|difficulty(0)|spd_rtng(40) | weapon_length(25)|swing_damage(0, blunt) | thrust_damage(0, blunt),imodbits_none ],
+["jabba_speeder","Jabba's Transparent Speeder", [("_",0),("force_block_inv",ixmesh_inventory)],     itp_unique|itp_type_horse, 0, 500,abundance(0)|hit_points(50)|body_armor(50)|difficulty(0)|horse_speed(30)|horse_maneuver(35)|horse_charge(80),imodbits_none],
+["transparent_head", "Transparent Head", [("_",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_head_armor|itp_covers_head|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(1)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
+["transparent_body", "Transparent Body", [("_",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_body_armor|itp_covers_legs|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(1)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
+["transparent_hands", "Transparent Hands", [("_",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_hand_armor|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(1)|leg_armor(0)|difficulty(0) ,imodbits_none ], 
+["transparent_feet", "Transparent Feet", [("_",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_foot_armor|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(0)|leg_armor(1)|difficulty(0) ,imodbits_none ], 
  
 # unique items, no merchandise tag - removed itp_unique flag since that means its un-lootable, instead I gave these to troops so there is a chance they will be dropped after a battle
 # some unique items are in other parts of the file (lightsabers had to be between lightsabers_noise_begin, etc)
 ["darth_vader_helmet", "Darth Vader's Helmet", [("dvader_helm",0)], itp_type_head_armor|itp_civilian|itp_covers_head ,0, 2000 , weight(2)|head_armor(28)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ],
 ["darth_vader_armor", "Darth Vader's Armor",   [("dvader_body",0)], itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 3000 , weight(6)|head_armor(0)|body_armor(60)|leg_armor(18)|difficulty(0) ,imodbits_none ],
-["darth_vader_feet", "Darth Vader's Feet", [("0",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_foot_armor|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(0)|leg_armor(47)|difficulty(0) ,imodbits_none ],
+["darth_vader_feet", "Darth Vader's Feet", [("_",0),("transparent_helmet_inv",ixmesh_inventory)], itp_unique|itp_type_foot_armor|itp_civilian,0, 1 , weight(0.25)|abundance(0)|head_armor(0)|body_armor(0)|leg_armor(47)|difficulty(0) ,imodbits_none ],
 ["princess_leia_outfit", "Princess Leia's Outfit", [("princess_leia_outfit",0)], itp_type_body_armor  |itp_covers_legs|itp_civilian ,0, 1200 , weight(2)|head_armor(0)|body_armor(40)|leg_armor(12)|difficulty(0) ,imodbits_none ],
 ["princess_leia_blaster", "Princess Leia's DDC Defender", [("DDC_defender",0)], itp_type_pistol|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 2000 , weight(1.2)|difficulty(0)|spd_rtng(150) | shoot_speed(170) | thrust_damage(30 ,pierce)|max_ammo(16)|accuracy(95),imodbits_none, [(ti_on_weapon_attack, [(play_sound,"snd_littleblaster"),(position_move_x, pos1,14),(position_move_y, pos1,18)])]],  
 ["han_solo_outfit", "Han Solo's Outfit", [("vest_open_c",0)], itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 1200 , weight(2)|head_armor(0)|body_armor(45)|leg_armor(14)|difficulty(0) ,imodbits_none ],
@@ -2099,7 +2099,7 @@ items = [
 # thermal_detonator3 end -------------------------------------------------------------------------------------------------------
  
 # shields? durasteel_shield = dragon_shield mesh? personal deflector shields ? power shield?  semi-transparent?
-["shields_begin","<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+["shields_begin","<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
 #["energy_shield_small","Small Energy Shield", [("shield_1_yellow",0)], itp_merchandise|itp_type_shield, 0, 300 , weight(0.1)|abundance(100)|hit_points(400)|body_armor(10)|spd_rtng(105)|weapon_length(45),imodbits_none ],
 #["energy_shield_medium","Medium Energy Shield", [("shield_2_yellow",0)], itp_merchandise|itp_type_shield, 0, 500 , weight(0.1)|abundance(100)|hit_points(550)|body_armor(20)|spd_rtng(100)|weapon_length(60),imodbits_none ],
 #["energy_shield_large","Large Energy Shield", [("shield_3_yellow",0)], itp_merchandise|itp_type_shield, 0, 700 , weight(0.1)|abundance(100)|hit_points(700)|body_armor(30)|spd_rtng(95)|weapon_length(80),imodbits_none ],
@@ -2123,7 +2123,7 @@ items = [
 ["durasteel_shield_large", "Large Durasteel Shield", [("durasteel_shield",0)], itp_merchandise|itp_type_shield, itcf_carry_kite_shield,  400 , weight(8)|abundance(60)|hit_points(500)|body_armor(25)|spd_rtng(60)|weapon_length(80),imodbits_shield ],
 ["wookiee_shield_small", "Small Wookiee Shield", [("shield_round_f",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,  100 , weight(2)|abundance(80)|hit_points(300)|body_armor(5)|spd_rtng(100)|weapon_length(50),imodbits_shield ],
 ["wookiee_shield_large",  "Large Wookiee Shield", [("shield_kite_m",0)], itp_merchandise|itp_type_shield, itcf_carry_kite_shield,  150 , weight(3.5)|abundance(80)|hit_points(400)|body_armor(10)|spd_rtng(80)|weapon_length(85),imodbits_shield ],
-["shield_bash_begin","<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+["shield_bash_begin","<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
 ["westar_shield", "Westar-34 Shield", [("westar_shield",0)], itp_merchandise|itp_type_shield, 0,  250 , weight(1.5)|abundance(80)|hit_points(150)|body_armor(5)|spd_rtng(100)|weapon_length(15),imodbits_none ],
 ["ryyk_kerarthorr_shield", "Ryyk Kerarthorr Shield", [("ryyk_kerarthorr_shield",0)], itp_merchandise|itp_type_shield, 0,  200 , weight(2.5)|abundance(60)|hit_points(150)|body_armor(10)|spd_rtng(100)|weapon_length(20),imodbits_none ],
 ["ryyk_blade_shield", "Ryyk Blade Shield", [("ryyk_blade_shield",0)], itp_merchandise|itp_type_shield, 0,  200 , weight(3)|abundance(80)|hit_points(200)|body_armor(15)|spd_rtng(80)|weapon_length(30),imodbits_none ],
@@ -2134,12 +2134,12 @@ items = [
 ["lightsaber_block_purple", "Lightsaber Shield", [("lightsaber_purple_block",0)], itp_merchandise|itp_type_shield|itp_wooden_parry,0,  800 , weight(0.5)|abundance(60)|hit_points(800)|body_armor(35)|spd_rtng(105)|weapon_length(75),imodbits_none ],
 ["lightsaber_block_red", "Lightsaber Shield", [("lightsaber_red_block",0)], itp_merchandise|itp_type_shield|itp_wooden_parry,0,  800 , weight(0.5)|abundance(80)|hit_points(800)|body_armor(35)|spd_rtng(105)|weapon_length(75),imodbits_none ],
 ["lightsaber_block_yellow", "Lightsaber Shield", [("lightsaber_yellow_block",0)], itp_merchandise|itp_type_shield|itp_wooden_parry,0,  800 , weight(0.5)|abundance(40)|hit_points(800)|body_armor(35)|spd_rtng(105)|weapon_length(75),imodbits_none ],
-["shields_end","<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+["shields_end","<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
 ["force_block", "Force Block", [("force_block",0),("force_block_inv",ixmesh_inventory)], itp_unique|itp_type_shield|itp_wooden_parry,0,  600, weight(0.1)|abundance(100)|hit_points(600)|body_armor(40)|spd_rtng(110)|weapon_length(60),imodbits_none ],
 ["force_shield", "Force Shield", [("force_shield",0),("force_shield_inv",ixmesh_inventory)], itp_unique|itp_type_shield|itp_wooden_parry,0, 800, weight(0.1)|abundance(100)|hit_points(800)|body_armor(50)|spd_rtng(110)|weapon_length(85),imodbits_none ],
 ["force_protect","Force Protect", [("force_protect",0),("force_protect_inv",ixmesh_inventory)], itp_unique|itp_type_shield|itp_wooden_parry, 0, 1200, weight(0.1)|abundance(100)|hit_points(1000)|body_armor(60)|spd_rtng(110)|weapon_length(100),imodbits_none ],
 ["hero_shield", "Transparent Hero Shield", [("force_shield",0),("force_shield_inv",ixmesh_inventory)], itp_unique|itp_type_shield,0, 800, weight(0.1)|abundance(100)|hit_points(600)|body_armor(40)|spd_rtng(100)|weapon_length(75),imodbits_none ],
-["shield_bash_end","<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+["shield_bash_end","<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
  
  # training/practice
 #["practice_force_block", "Force Block", [("force_block",0),("force_block_inv",ixmesh_inventory)], itp_type_shield,0,  1000 , weight(0.1)|abundance(100)|hit_points(1000)|body_armor(40)|spd_rtng(120)|weapon_length(60),imodbits_none ],
@@ -2157,68 +2157,68 @@ items = [
 
 # weapons - ammo
 #force power ammo
-["force_lightning_ammo","Force Lightning", [("0",0),("lightning",ixmesh_flying_ammo),("lightning",ixmesh_inventory)], itp_type_arrows|itp_unique|itp_bonus_against_shield, 0, 200,weight(0.1)|abundance(80)|weapon_length(95)|thrust_damage(1,blunt)|max_ammo(30),imodbits_none],
-["force_push_ammo","Force Push", [("0",0),("f_push",ixmesh_flying_ammo),("f_push",ixmesh_inventory)], itp_type_arrows|itp_unique|itp_bonus_against_shield, 0, 200,weight(0.1)|abundance(80)|weapon_length(95)|thrust_damage(1,blunt)|max_ammo(30),imodbits_none],
+["force_lightning_ammo","Force Lightning", [("_",0),("lightning",ixmesh_flying_ammo),("lightning",ixmesh_inventory)], itp_type_arrows|itp_unique|itp_bonus_against_shield, 0, 200,weight(0.1)|abundance(80)|weapon_length(95)|thrust_damage(1,blunt)|max_ammo(30),imodbits_none],
+["force_push_ammo","Force Push", [("_",0),("f_push",ixmesh_flying_ammo),("f_push",ixmesh_inventory)], itp_type_arrows|itp_unique|itp_bonus_against_shield, 0, 200,weight(0.1)|abundance(80)|weapon_length(95)|thrust_damage(1,blunt)|max_ammo(30),imodbits_none],
 
 #TEST
-# ["laser_bolts_green","Plasma Gas Cartridges", [("0",0),("laser_bolt_green",ixmesh_flying_ammo),("laser_bolt_green_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.1)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
-# ["laser_bolts_red","Plasma Gas Cartridges", [("0",0),("laser_bolt_red",ixmesh_flying_ammo),("laser_bolt_red_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.1)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
-# ["laser_bolts_orange","Plasma Gas Cartridges", [("0",0),("laser_bolt_orange",ixmesh_flying_ammo),("laser_bolt_orange_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.1)|abundance(80)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
-# ["laser_bolts_yellow","Plasma Gas Cartridges", [("0",0),("laser_bolt_yellow",ixmesh_flying_ammo),("laser_bolt_yellow_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.1)|abundance(80)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
-# ["laser_bolts_blue","Plasma Gas Cartridges", [("0",0),("laser_bolt_blue",ixmesh_flying_ammo),("laser_bolt_blue_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.1)|abundance(60)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
-# ["stun_beam","Stun Beam Cartridges", [("0",0),("stun_beam",ixmesh_flying_ammo),("stun_beam_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.1)|abundance(100)|weapon_length(80)|thrust_damage(1,blunt)|max_ammo(100),imodbits_ammo],
-# ["ion_beam","Ion Beam Cartridges", [("0",0),("ion_beam",ixmesh_flying_ammo),("ion_beam_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 50,weight(0.1)|abundance(60)|weapon_length(60)|thrust_damage(1,blunt)|max_ammo(80),imodbits_ammo],
-# ["sonic_beam","Sonic Beam Cartridges", [("0",0),("ion_beam",ixmesh_flying_ammo),("ion_beam_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 50,weight(0.1)|abundance(40)|weapon_length(60)|thrust_damage(1,blunt)|max_ammo(80),imodbits_ammo],
-# ["ammo_belt","Ammo Belt", [("0",0),("laser_bolt_yellow",ixmesh_flying_ammo),("ammo_belt",ixmesh_carry),("ammo_belt",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, itcf_carry_axe_back, 150,weight(1.5)|abundance(50)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(150),imodbits_ammo],
+# ["laser_bolts_green","Plasma Gas Cartridges", [("_",0),("laser_bolt_green",ixmesh_flying_ammo),("laser_bolt_green_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.1)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
+# ["laser_bolts_red","Plasma Gas Cartridges", [("_",0),("laser_bolt_red",ixmesh_flying_ammo),("laser_bolt_red_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.1)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
+# ["laser_bolts_orange","Plasma Gas Cartridges", [("_",0),("laser_bolt_orange",ixmesh_flying_ammo),("laser_bolt_orange_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.1)|abundance(80)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
+# ["laser_bolts_yellow","Plasma Gas Cartridges", [("_",0),("laser_bolt_yellow",ixmesh_flying_ammo),("laser_bolt_yellow_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.1)|abundance(80)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
+# ["laser_bolts_blue","Plasma Gas Cartridges", [("_",0),("laser_bolt_blue",ixmesh_flying_ammo),("laser_bolt_blue_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.1)|abundance(60)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
+# ["stun_beam","Stun Beam Cartridges", [("_",0),("stun_beam",ixmesh_flying_ammo),("stun_beam_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.1)|abundance(100)|weapon_length(80)|thrust_damage(1,blunt)|max_ammo(100),imodbits_ammo],
+# ["ion_beam","Ion Beam Cartridges", [("_",0),("ion_beam",ixmesh_flying_ammo),("ion_beam_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 50,weight(0.1)|abundance(60)|weapon_length(60)|thrust_damage(1,blunt)|max_ammo(80),imodbits_ammo],
+# ["sonic_beam","Sonic Beam Cartridges", [("_",0),("ion_beam",ixmesh_flying_ammo),("ion_beam_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 50,weight(0.1)|abundance(40)|weapon_length(60)|thrust_damage(1,blunt)|max_ammo(80),imodbits_ammo],
+# ["ammo_belt","Ammo Belt", [("_",0),("laser_bolt_yellow",ixmesh_flying_ammo),("ammo_belt",ixmesh_carry),("ammo_belt",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, itcf_carry_axe_back, 150,weight(1.5)|abundance(50)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(150),imodbits_ammo],
 
 # pistol ammo = bullets, main mesh has to be 'transparent' so it doesn't stay visble after hiting somebody
-["laser_bolts_green_pistol","Plasma Gas Cartridges", [("0",0),("swy_blasterbolt_green_alpha",ixmesh_flying_ammo),("laser_bolt_green_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
-["laser_bolts_red_pistol","Plasma Gas Cartridges", [("0",0),("swy_blasterbolt_red_alpha",ixmesh_flying_ammo),("laser_bolt_red_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
-["laser_bolts_orange_pistol","Plasma Gas Cartridges", [("0",0),("swy_blasterbolt_orange_alpha",ixmesh_flying_ammo),("laser_bolt_orange_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(80)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
-["laser_bolts_yellow_pistol","Plasma Gas Cartridges", [("0",0),("swy_blasterbolt_yellow_alpha",ixmesh_flying_ammo),("laser_bolt_yellow_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(80)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
-["laser_bolts_blue_pistol","Plasma Gas Cartridges", [("0",0),("swy_blasterbolt_blue_alpha",ixmesh_flying_ammo),("laser_bolt_blue_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(60)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
-["stun_beam_pistol","Stun Beam Cartridges", [("0",0),("stun_beam",ixmesh_flying_ammo),("stun_beam_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(100)|weapon_length(80)|thrust_damage(1,blunt)|max_ammo(100),imodbits_ammo],
-["ion_beam_pistol","Ion Beam Cartridges", [("0",0),("ion_beam",ixmesh_flying_ammo),("ion_beam_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 50,weight(0.0)|abundance(60)|weapon_length(60)|thrust_damage(1,blunt)|max_ammo(80),imodbits_ammo],
-["sonic_beam_pistol","Sonic Beam Cartridges", [("0",0),("sonic_ammo",ixmesh_flying_ammo),("ion_beam_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 50,weight(0.0)|abundance(40)|weapon_length(60)|thrust_damage(1,blunt)|max_ammo(80),imodbits_ammo],
-["ammo_belt_pistol","Ammo Belt", [("0",0),("swy_blasterbolt_yellow_alpha",ixmesh_flying_ammo),("ammo_belt",ixmesh_carry),("ammo_belt",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, itcf_carry_axe_back, 150,weight(0.0)|abundance(50)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(150),imodbits_none],
+["laser_bolts_green_pistol","Plasma Gas Cartridges", [("_",0),("swy_blasterbolt_green_alpha",ixmesh_flying_ammo),("laser_bolt_green_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
+["laser_bolts_red_pistol","Plasma Gas Cartridges", [("_",0),("swy_blasterbolt_red_alpha",ixmesh_flying_ammo),("laser_bolt_red_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
+["laser_bolts_orange_pistol","Plasma Gas Cartridges", [("_",0),("swy_blasterbolt_orange_alpha",ixmesh_flying_ammo),("laser_bolt_orange_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(80)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
+["laser_bolts_yellow_pistol","Plasma Gas Cartridges", [("_",0),("swy_blasterbolt_yellow_alpha",ixmesh_flying_ammo),("laser_bolt_yellow_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(80)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
+["laser_bolts_blue_pistol","Plasma Gas Cartridges", [("_",0),("swy_blasterbolt_blue_alpha",ixmesh_flying_ammo),("laser_bolt_blue_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(60)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(100),imodbits_ammo],
+["stun_beam_pistol","Stun Beam Cartridges", [("_",0),("stun_beam",ixmesh_flying_ammo),("stun_beam_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(100)|weapon_length(80)|thrust_damage(1,blunt)|max_ammo(100),imodbits_ammo],
+["ion_beam_pistol","Ion Beam Cartridges", [("_",0),("ion_beam",ixmesh_flying_ammo),("ion_beam_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 50,weight(0.0)|abundance(60)|weapon_length(60)|thrust_damage(1,blunt)|max_ammo(80),imodbits_ammo],
+["sonic_beam_pistol","Sonic Beam Cartridges", [("_",0),("sonic_ammo",ixmesh_flying_ammo),("ion_beam_cartridges_pistol",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 50,weight(0.0)|abundance(40)|weapon_length(60)|thrust_damage(1,blunt)|max_ammo(80),imodbits_ammo],
+["ammo_belt_pistol","Ammo Belt", [("_",0),("swy_blasterbolt_yellow_alpha",ixmesh_flying_ammo),("ammo_belt",ixmesh_carry),("ammo_belt",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, itcf_carry_axe_back, 150,weight(0.0)|abundance(50)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(150),imodbits_none],
 #@>>> Added by Swyter
-["disruptor_ammo","Disruptor Ammo for Pistols", [("0",0),("laser_disruptor",ixmesh_flying_ammo),("laser_bolt_blue_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 4960,weight(0.09)|abundance(60)|weapon_length(60)|thrust_damage(4,blunt)|max_ammo(160),imodbits_ammo],
+["disruptor_ammo","Disruptor Ammo for Pistols", [("_",0),("laser_disruptor",ixmesh_flying_ammo),("laser_bolt_blue_cartridges",ixmesh_inventory)], itp_type_bullets|itp_merchandise|itp_bonus_against_shield, 0, 4960,weight(0.09)|abundance(60)|weapon_length(60)|thrust_damage(4,blunt)|max_ammo(160),imodbits_ammo],
 
 
 # rifle ammo = bolts, main mesh has to be 'transparent' so it doesn't stay visble after hiting somebody
-["laser_bolts_green_rifle","Plasma Gas Cartridges", [("0",0),("swy_blasterbolt_green_alpha",ixmesh_flying_ammo),("laser_bolt_green_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(125),imodbits_ammo],
-["laser_bolts_red_rifle","Plasma Gas Cartridges", [("0",0),("swy_blasterbolt_red_alpha",ixmesh_flying_ammo),("laser_bolt_red_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(125),imodbits_ammo],
-["laser_bolts_orange_rifle","Plasma Gas Cartridges", [("0",0),("swy_blasterbolt_orange_alpha",ixmesh_flying_ammo),("laser_bolt_orange_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(80)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(125),imodbits_ammo],
-["laser_bolts_yellow_rifle","Plasma Gas Cartridges", [("0",0),("swy_blasterbolt_yellow_alpha",ixmesh_flying_ammo),("laser_bolt_yellow_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(80)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(125),imodbits_ammo],
-["laser_bolts_blue_rifle","Plasma Gas Cartridges", [("0",0),("swy_blasterbolt_blue_alpha",ixmesh_flying_ammo),("laser_bolt_blue_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(60)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(125),imodbits_ammo],
-["stun_beam_rifle","Stun Beam Cartridges", [("0",0),("stun_beam",ixmesh_flying_ammo),("stun_beam_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(100)|weapon_length(80)|thrust_damage(1,blunt)|max_ammo(125),imodbits_ammo],
-["ion_beam_rifle","Ion Beam Cartridges", [("0",0),("ion_beam",ixmesh_flying_ammo),("ion_beam_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 50,weight(0.0)|abundance(60)|weapon_length(60)|thrust_damage(1,blunt)|max_ammo(100),imodbits_ammo],
-["sonic_beam_rifle","Sonic Beam Cartridges", [("0",0),("sonic_ammo",ixmesh_flying_ammo),("ion_beam_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 50,weight(0.0)|abundance(40)|weapon_length(60)|thrust_damage(1,blunt)|max_ammo(100),imodbits_ammo],
-["ammo_belt_rifle","Ammo Belt", [("0",0),("swy_blasterbolt_yellow_alpha",ixmesh_flying_ammo),("ammo_belt",ixmesh_carry),("ammo_belt",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, itcf_carry_axe_back, 150,weight(0.0)|abundance(50)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(175),imodbits_none],
+["laser_bolts_green_rifle","Plasma Gas Cartridges", [("_",0),("swy_blasterbolt_green_alpha",ixmesh_flying_ammo),("laser_bolt_green_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(125),imodbits_ammo],
+["laser_bolts_red_rifle","Plasma Gas Cartridges", [("_",0),("swy_blasterbolt_red_alpha",ixmesh_flying_ammo),("laser_bolt_red_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(125),imodbits_ammo],
+["laser_bolts_orange_rifle","Plasma Gas Cartridges", [("_",0),("swy_blasterbolt_orange_alpha",ixmesh_flying_ammo),("laser_bolt_orange_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(80)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(125),imodbits_ammo],
+["laser_bolts_yellow_rifle","Plasma Gas Cartridges", [("_",0),("swy_blasterbolt_yellow_alpha",ixmesh_flying_ammo),("laser_bolt_yellow_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(80)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(125),imodbits_ammo],
+["laser_bolts_blue_rifle","Plasma Gas Cartridges", [("_",0),("swy_blasterbolt_blue_alpha",ixmesh_flying_ammo),("laser_bolt_blue_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(60)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(125),imodbits_ammo],
+["stun_beam_rifle","Stun Beam Cartridges", [("_",0),("stun_beam",ixmesh_flying_ammo),("stun_beam_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 100,weight(0.0)|abundance(100)|weapon_length(80)|thrust_damage(1,blunt)|max_ammo(125),imodbits_ammo],
+["ion_beam_rifle","Ion Beam Cartridges", [("_",0),("ion_beam",ixmesh_flying_ammo),("ion_beam_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 50,weight(0.0)|abundance(60)|weapon_length(60)|thrust_damage(1,blunt)|max_ammo(100),imodbits_ammo],
+["sonic_beam_rifle","Sonic Beam Cartridges", [("_",0),("sonic_ammo",ixmesh_flying_ammo),("ion_beam_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 50,weight(0.0)|abundance(40)|weapon_length(60)|thrust_damage(1,blunt)|max_ammo(100),imodbits_ammo],
+["ammo_belt_rifle","Ammo Belt", [("_",0),("swy_blasterbolt_yellow_alpha",ixmesh_flying_ammo),("ammo_belt",ixmesh_carry),("ammo_belt",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, itcf_carry_axe_back, 150,weight(0.0)|abundance(50)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(175),imodbits_none],
 #@>>> Added by Swyter
-["disruptor_ammo_rifle","Disruptor Ammo for Rifles", [("0",0),("laser_disruptor",ixmesh_flying_ammo),("laser_bolt_blue_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 4960,weight(0.09)|abundance(60)|weapon_length(60)|thrust_damage(4,blunt)|max_ammo(160),imodbits_ammo],
+["disruptor_ammo_rifle","Disruptor Ammo for Rifles", [("_",0),("laser_disruptor",ixmesh_flying_ammo),("laser_bolt_blue_cartridges",ixmesh_inventory)], itp_type_bolts|itp_merchandise|itp_bonus_against_shield, 0, 4960,weight(0.09)|abundance(60)|weapon_length(60)|thrust_damage(4,blunt)|max_ammo(160),imodbits_ammo],
 
 # practice/training
-["laser_bolts_training_pistol","Laser Bolts", [("0",0),("swy_blasterbolt_yellow_alpha",ixmesh_flying_ammo),("laser_bolt_yellow_cartridges",ixmesh_inventory)], itp_unique|itp_type_bullets|itp_bonus_against_shield, 0, 500,weight(0.0)|abundance(100)|weapon_length(5)|thrust_damage(1,pierce)|max_ammo(12),imodbits_none],
-["laser_bolts_training_rifle","Laser Bolts", [("0",0),("swy_blasterbolt_yellow_alpha",ixmesh_flying_ammo),("laser_bolt_yellow_cartridges",ixmesh_inventory)], itp_unique|itp_type_bolts|itp_bonus_against_shield, 0, 500,weight(0.0)|abundance(100)|weapon_length(5)|thrust_damage(1,pierce)|max_ammo(12),imodbits_none],
+["laser_bolts_training_pistol","Laser Bolts", [("_",0),("swy_blasterbolt_yellow_alpha",ixmesh_flying_ammo),("laser_bolt_yellow_cartridges",ixmesh_inventory)], itp_unique|itp_type_bullets|itp_bonus_against_shield, 0, 500,weight(0.0)|abundance(100)|weapon_length(5)|thrust_damage(1,pierce)|max_ammo(12),imodbits_none],
+["laser_bolts_training_rifle","Laser Bolts", [("_",0),("swy_blasterbolt_yellow_alpha",ixmesh_flying_ammo),("laser_bolt_yellow_cartridges",ixmesh_inventory)], itp_unique|itp_type_bolts|itp_bonus_against_shield, 0, 500,weight(0.0)|abundance(100)|weapon_length(5)|thrust_damage(1,pierce)|max_ammo(12),imodbits_none],
 
 #force powers (ranged weapon)
-#["force_power_ls_1","Initiate Force Powers", [("0",0),("force_powers_ls",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 500 , weight(0.1)|abundance(80)|difficulty(2)|spd_rtng(80) | shoot_speed(80) | thrust_damage(30, blunt)|max_ammo(50)|accuracy(85),imodbits_none,
-["force_power_ls_1","Initiate Force Powers", [("0",0),("force_powers_ls",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_bow, 500 , weight(0.1)|abundance(80)|difficulty(2)|spd_rtng(80) | shoot_speed(80) | thrust_damage(30, blunt)|max_ammo(50)|accuracy(85),imodbits_none,
+#["force_power_ls_1","Initiate Force Powers", [("_",0),("force_powers_ls",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 500 , weight(0.1)|abundance(80)|difficulty(2)|spd_rtng(80) | shoot_speed(80) | thrust_damage(30, blunt)|max_ammo(50)|accuracy(85),imodbits_none,
+["force_power_ls_1","Initiate Force Powers", [("_",0),("force_powers_ls",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_bow, 500 , weight(0.1)|abundance(80)|difficulty(2)|spd_rtng(80) | shoot_speed(80) | thrust_damage(30, blunt)|max_ammo(50)|accuracy(85),imodbits_none,
  [(ti_on_weapon_attack, [(play_sound,"snd_force_push"),(position_move_x, pos1,0),(position_move_y, pos1,0)])]],
-["force_power_ls_2","Apprentice Force Powers", [("0",0),("force_powers_ls",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 1000 , weight(0.1)|abundance(70)|difficulty(4)|spd_rtng(100) | shoot_speed(100) | thrust_damage(40, blunt)|max_ammo(50)|accuracy(90),imodbits_none,
+["force_power_ls_2","Apprentice Force Powers", [("_",0),("force_powers_ls",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 1000 , weight(0.1)|abundance(70)|difficulty(4)|spd_rtng(100) | shoot_speed(100) | thrust_damage(40, blunt)|max_ammo(50)|accuracy(90),imodbits_none,
  [(ti_on_weapon_attack, [(play_sound,"snd_force_push"),(position_move_x, pos1,0),(position_move_y, pos1,0)])]],
-["force_power_ls_3","Knight Force Powers", [("0",0),("force_powers_ls",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 1500 , weight(0.1)|abundance(60)|difficulty(5)|spd_rtng(120) | shoot_speed(120) | thrust_damage(50, blunt)|max_ammo(50)|accuracy(95),imodbits_none,
+["force_power_ls_3","Knight Force Powers", [("_",0),("force_powers_ls",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 1500 , weight(0.1)|abundance(60)|difficulty(5)|spd_rtng(120) | shoot_speed(120) | thrust_damage(50, blunt)|max_ammo(50)|accuracy(95),imodbits_none,
  [(ti_on_weapon_attack, [(play_sound,"snd_force_push"),(position_move_x, pos1,0),(position_move_y, pos1,0)])]],
-["force_power_ls_4","Master Force Powers", [("0",0),("force_powers_ls",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 2000 , weight(0.1)|abundance(50)|difficulty(6)|spd_rtng(140) | shoot_speed(140) | thrust_damage(60, blunt)|max_ammo(50)|accuracy(100),imodbits_none,
+["force_power_ls_4","Master Force Powers", [("_",0),("force_powers_ls",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 2000 , weight(0.1)|abundance(50)|difficulty(6)|spd_rtng(140) | shoot_speed(140) | thrust_damage(60, blunt)|max_ammo(50)|accuracy(100),imodbits_none,
  [(ti_on_weapon_attack, [(play_sound,"snd_force_push"),(position_move_x, pos1,0),(position_move_y, pos1,0)])]], 
-["force_power_ds_1","Initiate Force Powers", [("0",0),("force_powers_ds",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 500 , weight(0.1)|abundance(80)|difficulty(2)|spd_rtng(80) | shoot_speed(80) | thrust_damage(30, pierce)|max_ammo(50)|accuracy(85),imodbits_none,
+["force_power_ds_1","Initiate Force Powers", [("_",0),("force_powers_ds",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 500 , weight(0.1)|abundance(80)|difficulty(2)|spd_rtng(80) | shoot_speed(80) | thrust_damage(30, pierce)|max_ammo(50)|accuracy(85),imodbits_none,
  [(ti_on_weapon_attack, [(play_sound,"snd_force_lightning"),(position_move_x, pos1,0),(position_move_y, pos1,0)])]],
-["force_power_ds_2","Apprentice Force Powers", [("0",0),("force_powers_ds",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 1000 , weight(0.1)|abundance(70)|difficulty(4)|spd_rtng(100) | shoot_speed(100) | thrust_damage(40, pierce)|max_ammo(50)|accuracy(90),imodbits_none,
+["force_power_ds_2","Apprentice Force Powers", [("_",0),("force_powers_ds",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 1000 , weight(0.1)|abundance(70)|difficulty(4)|spd_rtng(100) | shoot_speed(100) | thrust_damage(40, pierce)|max_ammo(50)|accuracy(90),imodbits_none,
  [(ti_on_weapon_attack, [(play_sound,"snd_force_lightning"),(position_move_x, pos1,0),(position_move_y, pos1,0)])]],
-["force_power_ds_3","Knight Force Powers", [("0",0),("force_powers_ds",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 1500 , weight(0.1)|abundance(60)|difficulty(5)|spd_rtng(120) | shoot_speed(120) | thrust_damage(50, pierce)|max_ammo(50)|accuracy(95),imodbits_none,
+["force_power_ds_3","Knight Force Powers", [("_",0),("force_powers_ds",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 1500 , weight(0.1)|abundance(60)|difficulty(5)|spd_rtng(120) | shoot_speed(120) | thrust_damage(50, pierce)|max_ammo(50)|accuracy(95),imodbits_none,
  [(ti_on_weapon_attack, [(play_sound,"snd_force_lightning"),(position_move_x, pos1,0),(position_move_y, pos1,0)])]],
-["force_power_ds_4","Master Force Powers", [("0",0),("force_powers_ds",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 2000 , weight(0.1)|abundance(50)|difficulty(6)|spd_rtng(140) | shoot_speed(140) | thrust_damage(60, pierce)|max_ammo(50)|accuracy(100),imodbits_none,
+["force_power_ds_4","Master Force Powers", [("_",0),("force_powers_ds",ixmesh_inventory)], itp_type_bow|itp_unique|itp_primary,itcf_shoot_pistol, 2000 , weight(0.1)|abundance(50)|difficulty(6)|spd_rtng(140) | shoot_speed(140) | thrust_damage(60, pierce)|max_ammo(50)|accuracy(100),imodbits_none,
  [(ti_on_weapon_attack, [(play_sound,"snd_force_lightning"),(position_move_x, pos1,0),(position_move_y, pos1,0)])]], 
 #force powers (inventory items)
  ["force_jump","Force Jump", [("force_push_inv",0)], itp_unique|itp_type_goods, 0,3000,weight(0.1)|abundance(35),imodbits_none],  
@@ -2230,7 +2230,7 @@ items = [
 # two handed blasters (ie. musket)  - added itp_two_handed_wpn so you cannot use a shield at the same time
 # NOTE - use itcf_reload_mask instead of reload_pistol or reload_musket so it uses the crossbow reload noise
 
-["ranged_weapons_begin","<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+["ranged_weapons_begin","<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
 
 #removed merch flag since there are two a280's
 ["a280", "A-280", [("A280",0),("A280_inventory",ixmesh_inventory)], itp_type_crossbow|itp_two_handed|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_spear|itcf_reload_musket, 
@@ -2588,12 +2588,12 @@ items = [
 	795 , weight(1.5)|abundance(70)|difficulty(0)|spd_rtng(110) | shoot_speed(150) | thrust_damage(32,blunt)|max_ammo(10)|accuracy(90),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_stunblaster"),(position_move_x, pos1,10),(position_move_y, pos1,14)]
 	)]],    
-["wrist_blaster", "Wrist Mounted Blaster", [("0",0),("wrist_blaster",ixmesh_inventory)], itp_merchandise|itp_type_pistol|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_reload_pistol, 
+["wrist_blaster", "Wrist Mounted Blaster", [("_",0),("wrist_blaster",ixmesh_inventory)], itp_merchandise|itp_type_pistol|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_reload_pistol, 
 	500 , weight(1.3)|abundance(60)|difficulty(0)|spd_rtng(105) | shoot_speed(135) | thrust_damage(35,pierce)|max_ammo(24)|accuracy(90),imodbits_none,
 	[(ti_on_weapon_attack, [(play_sound,"snd_laser_fire"),(position_move_x, pos1,0),(position_move_y, pos1,0)]
 	)]],
 
-["ranged_weapons_end", "<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+["ranged_weapons_end", "<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
  
 # practice/training
 ["practice_dl44", "DL-44", [("DL44a",0)], itp_type_pistol|itp_primary|itp_bonus_against_shield,itcf_shoot_pistol|itcf_carry_revolver_right|itcf_reload_pistol, 300 , weight(1.5)|abundance(100)|difficulty(0)|spd_rtng(120) | shoot_speed(140) | thrust_damage(26,pierce)|max_ammo(12)|accuracy(90),imodbits_gun,
@@ -2604,8 +2604,8 @@ items = [
  [(ti_on_weapon_attack, [(play_sound,"snd_laser_fire"),(position_move_x, pos1,14),(position_move_y, pos1,18)])]], 
 
 #Heavy Weapons start ---------------------------------------------------------------------------
-#["heavy_weapons_ammo","Heavy Weapons Ammo", [("0",0),("0",ixmesh_flying_ammo),("rpg_rocket", ixmesh_inventory)], itp_type_bolts|itp_merchandise,0, 100,weight(2.25)|abundance(90)|weapon_length(10)|thrust_damage(1,pierce)|max_ammo(40),imodbits_ammo],
-["heavy_weapons_ammo","Heavy Weapons Ammo", [("0",0),("0",ixmesh_flying_ammo),("player_chest_sw", ixmesh_inventory)], itp_type_bolts|itp_unique,0, 100,weight(2.25)|abundance(90)|weapon_length(10)|thrust_damage(1,pierce)|max_ammo(12),imodbits_ammo],
+#["heavy_weapons_ammo","Heavy Weapons Ammo", [("_",0),("_",ixmesh_flying_ammo),("rpg_rocket", ixmesh_inventory)], itp_type_bolts|itp_merchandise,0, 100,weight(2.25)|abundance(90)|weapon_length(10)|thrust_damage(1,pierce)|max_ammo(40),imodbits_ammo],
+["heavy_weapons_ammo","Heavy Weapons Ammo", [("_",0),("_",ixmesh_flying_ammo),("player_chest_sw", ixmesh_inventory)], itp_type_bolts|itp_unique,0, 100,weight(2.25)|abundance(90)|weapon_length(10)|thrust_damage(1,pierce)|max_ammo(12),imodbits_ammo],
 #RPG start ---------------------------------------------------------------------------
 #["rocket_launcher", "Prototype RDP-12 Rocket Launcher", [("rpg",0)], itp_type_crossbow|itp_merchandise|itp_primary|itp_bonus_against_shield|itp_two_handed ,itcf_shoot_musket|itcf_carry_spear, 3000 , weight(10.0)|abundance(90)|difficulty(0)|spd_rtng(60) | shoot_speed(160) | thrust_damage(150 ,pierce)|max_ammo(1)|accuracy(95),imodbits_none,
 ["rocket_launcher", "RDP-12 Rocket Launcher (in development)", [("rpg",0),("rpg_inventory",ixmesh_inventory)], itp_type_crossbow|itp_unique|itp_primary|itp_bonus_against_shield|itp_two_handed|itp_cant_reload_on_horseback,itcf_shoot_musket|itcf_carry_spear|itcf_reload_mask, 4000 , weight(10.0)|abundance(90)|difficulty(0)|spd_rtng(60) | shoot_speed(160) | thrust_damage(150 ,pierce)|max_ammo(1)|accuracy(95),imodbits_none,
@@ -2643,7 +2643,7 @@ items = [
 
 #RPG end ---------------------------------------------------------------------------
 
-#["flame_ammo","Flamethrower Ammmo", [("0",0),("arrow",ixmesh_inventory)], itp_type_arrows|itp_merchandise|itp_bonus_against_shield, 0, 500,weight(4)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(80),imodbits_none],
+#["flame_ammo","Flamethrower Ammmo", [("_",0),("arrow",ixmesh_inventory)], itp_type_arrows|itp_merchandise|itp_bonus_against_shield, 0, 500,weight(4)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(80),imodbits_none],
 
 # Flame Rifle Start ----------------------------------------------------------------- (do not give a reload flag so it uses the crossbow reload sound effect)
 # SW - concept below from Magic Mod: Curtain of Fire - http://forums.taleworlds.net/index.php/topic,30512.msg784362.html
@@ -2709,7 +2709,7 @@ items = [
                           (end_try),],)]],						  
 #------------------------------------------------------------------------------------------
 # SW - concept below from Magic Mod: Curtain of Fire - http://forums.taleworlds.net/index.php/topic,30512.msg784362.html
-# ["medpac","Medpac", [("0",0),("life_support_pack", ixmesh_inventory)], itp_type_thrown |itp_merchandise|itp_primary ,itcf_throw_stone, 
+# ["medpac","Medpac", [("_",0),("life_support_pack", ixmesh_inventory)], itp_type_thrown |itp_merchandise|itp_primary ,itcf_throw_stone, 
 	# 1000 , weight(1)|abundance(90)|difficulty(0)|spd_rtng(90) | shoot_speed(30) | thrust_damage(1,  blunt)|max_ammo(1)|weapon_length(1),imodbits_none,
 	# [(ti_on_weapon_attack, [(assign,":distance",99999),
 							# (try_for_agents,":agent"),
@@ -2724,7 +2724,7 @@ items = [
 							# (agent_set_hit_points,":chosen",100,0),],)]],
 # #------------------------------------------------------------------------------------------							
 # # SW - concept below from Magic Mod: Curtain of Fire - http://forums.taleworlds.net/index.php/topic,30512.msg784362.html
-# ["medpac_adv","Advanced Medpac", [("0",0),("life_support_pack", ixmesh_inventory)], itp_type_thrown |itp_merchandise|itp_primary ,itcf_throw_stone, 
+# ["medpac_adv","Advanced Medpac", [("_",0),("life_support_pack", ixmesh_inventory)], itp_type_thrown |itp_merchandise|itp_primary ,itcf_throw_stone, 
 	# 4000 , weight(1)|abundance(75)|difficulty(0)|spd_rtng(90) | shoot_speed(30) | thrust_damage(1,  blunt)|max_ammo(3)|weapon_length(1),imodbits_none,
 	# [(ti_on_weapon_attack, [(assign,":distance",99999),
 						# (try_for_agents,":agent"),
@@ -2739,7 +2739,7 @@ items = [
 							# (agent_set_hit_points,":chosen",100,0),],)]],
 #------------------------------------------------------------------------------------------
 # SW - concept below from Magic Mod: Curtain of Fire - http://forums.taleworlds.net/index.php/topic,30512.msg784362.html
-["force_kill","Force Kill", [("0",0),("force_kill_inv", ixmesh_inventory)], itp_type_thrown|itp_unique|itp_two_handed|itp_primary ,itc_scimitar, 
+["force_kill","Force Kill", [("_",0),("force_kill_inv", ixmesh_inventory)], itp_type_thrown|itp_unique|itp_two_handed|itp_primary ,itc_scimitar, 
 	6000 , weight(0.1)|abundance(60)|difficulty(0)|spd_rtng(50) | shoot_speed(5) | thrust_damage(100,pierce)|max_ammo(1)|weapon_length(8),imodbits_none,
 	[
 		(ti_on_weapon_attack, [(
@@ -2789,7 +2789,7 @@ items = [
                               (end_try),
 					],)]],
 #------------------------------------------------------------------------------------------
-["force_choke","Force Choke", [("0",0),("force_kill_inv", ixmesh_inventory)], itp_type_thrown|itp_unique|itp_two_handed|itp_primary ,itc_scimitar, 
+["force_choke","Force Choke", [("_",0),("force_kill_inv", ixmesh_inventory)], itp_type_thrown|itp_unique|itp_two_handed|itp_primary ,itc_scimitar, 
 	5000 , weight(0.1)|abundance(60)|difficulty(0)|spd_rtng(50) | shoot_speed(5) |thrust_damage(15,blunt)|max_ammo(1)|weapon_length(8),imodbits_none,
 	[
 		(ti_on_weapon_attack, [
@@ -2843,7 +2843,7 @@ items = [
                               (end_try),
 					],)]],
 #------------------------------------------------------------------------------------------------------------------------------------------
-["force_knockdown","Force Knockdown", [("0",0),("force_stun_inv", ixmesh_inventory)], itp_type_thrown|itp_unique|itp_two_handed|itp_primary ,itc_force_power, 
+["force_knockdown","Force Knockdown", [("_",0),("force_stun_inv", ixmesh_inventory)], itp_type_thrown|itp_unique|itp_two_handed|itp_primary ,itc_force_power, 
 	6000 , weight(0.1)|abundance(60)|difficulty(0)|spd_rtng(50) | shoot_speed(5) |thrust_damage(15,blunt)|max_ammo(1)|weapon_length(8),imodbits_none,
 	[
 		(ti_on_weapon_attack, [
@@ -2899,7 +2899,7 @@ items = [
                               (end_try),
 					],)]],
 #------------------------------------------------------------------------------------------------------------------------------------------
-["force_stun","Force Stun", [("0",0),("force_stun_inv", ixmesh_inventory)], itp_type_thrown|itp_unique|itp_two_handed|itp_primary ,itc_force_power, 
+["force_stun","Force Stun", [("_",0),("force_stun_inv", ixmesh_inventory)], itp_type_thrown|itp_unique|itp_two_handed|itp_primary ,itc_force_power, 
 	5000 , weight(0.1)|abundance(60)|difficulty(0)|spd_rtng(50) | shoot_speed(5) |thrust_damage(15,blunt)|max_ammo(1)|weapon_length(8),imodbits_none,
 	[
 		(ti_on_weapon_attack, [
@@ -2953,7 +2953,7 @@ items = [
 #------------------------------------------------------------------------------------------------------------------------------------------
 							
 # mounts
-["horses_begin","<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+["horses_begin","<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
 # since gallop animation was removed for speeder kaaduu, dewback, and horses are not longer possible
 #["kaadu1","Kaadu", [("kaadu_a",0)], itp_merchandise|itp_type_horse, 0, 1000,abundance(110)|hit_points(70)|body_armor(25)|difficulty(2)|horse_speed(42)|horse_maneuver(38)|horse_charge(10),imodbits_horse_basic],
 #["kaadu2","Kaadu", [("kaadu_b",0)], itp_merchandise|itp_type_horse, 0, 1000,abundance(110)|hit_points(70)|body_armor(25)|difficulty(2)|horse_speed(42)|horse_maneuver(38)|horse_charge(10),imodbits_horse_basic],
@@ -2972,7 +2972,7 @@ items = [
 #["swoop_bike","Swoop Bike", [("swoop_bike",0)], itp_merchandise|itp_type_horse, 0, 2500,abundance(60)|hit_points(25)|body_armor(0)|difficulty(3)|horse_speed(115)|horse_maneuver(75)|horse_charge(10),imodbits_speeder],
 ["speeder_dagger","Bladed 74-Z Speeder Bike", [("speeder_dagger",0)],                        itp_merchandise|itp_type_horse, 0, 2000,abundance(70)|hit_points(45)|body_armor(10)|difficulty(2)|horse_speed(75)|horse_maneuver(65)|horse_charge(35),imodbits_speeder],
 #["power_chair","Power Chair", [("power_chair",0)],                        itp_merchandise|itp_type_horse, 0, 500,abundance(50)|hit_points(20)|body_armor(0)|difficulty(0)|horse_speed(45)|horse_maneuver(35)|horse_charge(10),imodbits_speeder_basic],
-["horses_end","<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+["horses_end","<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
 
 #practice/training (no merchandise flag)
 #["practice_dewback","Dewback", [("dewback",0)], itp_type_horse, 0, 1200,abundance(110)|hit_points(100)|body_armor(35)|difficulty(0)|horse_speed(38)|horse_maneuver(35)|horse_charge(15),imodbits_horse_basic],
@@ -2991,6 +2991,6 @@ items = [
 	#################
 	# Autoloot: Need this dummy item here to mark end of file
 	#######
-	["items_end","<dummy>", [("0",0)], 0,0,0,0,imodbits_none],
+	["items_end","<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
 
 ]
