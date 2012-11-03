@@ -4805,9 +4805,10 @@ presentations = [
             (display_message, "@The dealers hand value is over 21. You win!", 0x88ffff),
             #(play_sound, "snd_game_win"),			
             (call_script, "script_troop_add_gold", "trp_player", reg51),
-			#SW - added script_change_player_relation_with_troop to blackjack mod (win = -1, lose = +1, draw = 0)
-			(call_script, "script_change_player_relation_with_troop", "$g_talk_troop", -1),
             (assign,reg56,2),
+			#SW - added script_change_player_relation_with_troop to blackjack mod (win = -1, lose = +1, draw = 0)
+			(gt,reg51,25*2),#if npc losts more than 25 credits then worse relationship
+			(call_script, "script_change_player_relation_with_troop", "$g_talk_troop", -1),
           (else_try),
             (gt,reg54,21),
             (display_message, "@Your hand value is over 21. You lose!", 0x88ffff),
@@ -4882,6 +4883,7 @@ presentations = [
               (call_script, "script_troop_add_gold", "trp_player", reg51),
               #(play_sound, "snd_game_win"),
 			#SW - added script_change_player_relation_with_troop to blackjack mod (win = -1, lose = +1, draw = 0)
+			(gt,reg51,25*2),#if npc losts more than 25 credits then worse relationship
 			(call_script, "script_change_player_relation_with_troop", "$g_talk_troop", -1),					  
             (else_try),
               (display_message, "@Draw, all bets are returned.", 0x88ffff),

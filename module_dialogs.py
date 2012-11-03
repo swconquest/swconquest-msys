@@ -2136,7 +2136,7 @@ dialogs = [
  However, thanks to you, we have prevailed. It is now time for me to leave your company and take what's rightfully mine.\
  From now on, I will carry out the great responsibility of ruling {s3}.\
  There still lie many challanges ahead and I count on your help in overcoming those.\
- And of course, you will always remain as my foremost vassal."),
+ And of course, you will always remain as my foremost commander."),
     ],
    "{s6}", "rebel_thanks_answer",
    [
@@ -2749,7 +2749,7 @@ dialogs = [
    #TODO: change conversations according to relation.
    "{playername}, I've been expecting you. Word has reached my ears of your exploits.\
  Why, I keep hearing such tales of prowess and bravery that my mind was quickly made up.\
- I knew that I had found someone worthy of becoming my vassal.", "lord_invite_1",
+ I knew that I had found someone worthy of becoming my commander.", "lord_invite_1",
    []],
 
 
@@ -2804,7 +2804,7 @@ dialogs = [
                             (eq, ":faction_leader", "$g_talk_troop"),
                             (str_store_string, s9, "@I am {s4}, the ruler of {s6}", 0),
                           (else_try),
-                            (str_store_string, s9, "@I am {s4}, a vassal of {s6}", 0),
+                            (str_store_string, s9, "@I am {s4}, a commander of {s6}", 0),
                           (try_end),
                           (assign, ":num_centers", 0),
                           (str_clear, s8),
@@ -4372,7 +4372,7 @@ dialogs = [
                              (store_partner_quest, ":lords_quest"),
                              (neq, ":lords_quest", "qst_join_faction"),
                             ],
-   "{s66}, I have come to offer you myself in vassalage!", "lord_ask_enter_service",[]],
+   "{s66}, I have come to offer you my services as commander!", "lord_ask_enter_service",[]],
 
 
   [anyone|plyr,"lord_talk", [(le,"$talk_context", tc_party_encounter),
@@ -5656,11 +5656,11 @@ dialogs = [
      (try_end),
      ],
    "You are known as a brave {man-at-arms/warrior} and a fine leader of troops, {playername}.\
- I shall be pleased to accept you into my service and bestow vassalage upon you,\
+ I shall be pleased to accept you into my service and be my commander,\
  if you are ready to swear homage to me.", "lord_give_oath_1",[]],
 
   [anyone,"lord_ask_enter_service", [], "You've yet to show yourself as a competent commander, {playername}.\
- Take your weapons to my enemies and prove to me that you are worthy of becoming my vassal.\
+ Take your weapons to my enemies and prove to me that you are worthy of it.\
  Then we may speak more of this.", "lord_pretalk",[]],
 
   [anyone|plyr,"lord_give_oath_1", [],  "I am ready, {s65}.", "lord_give_oath_2", []],
@@ -5706,8 +5706,8 @@ dialogs = [
        (str_store_party_name, s1, "$g_invite_offered_center"),
      (try_end),
      ],
-   "Let it be known that from this day forward, you are my sworn {man/follower} and vassal.\
- I give you my protection and grant you the right to bear arms in my name, and I pledge that I shall not deprive you of your life, liberty or properties except by the lawful judgment of your peers or by the law and custom of the Galaxy.{reg1? Furthermore I give you the fief of {s1} with all its rents and revenues.:}", "lord_give_oath_go_on_3", []],
+   "Let it be known that from this day forward, you are my sworn {man/follower} and commander.\
+ I give you my protection and grant you the right to bear arms in my name, and I pledge that I shall not deprive you of your life, liberty or properties except by the lawful judgment of your peers or by the law and custom of the Galaxy.{reg1? Furthermore I give you the planet of {s1} with all its nearby facilities.:}", "lord_give_oath_go_on_3", []],
 
   [anyone,"lord_give_oath_go_on_3",
    [
@@ -5892,7 +5892,7 @@ dialogs = [
 
   [anyone,"lord_ask_leave_service_2", [], "Then you are sure?", "lord_ask_leave_service_verify_again",[]],
   [anyone|plyr ,"lord_ask_leave_service_verify_again", [], "Yes, {s65}.", "lord_ask_leave_service_3",[]],
-  [anyone|plyr ,"lord_ask_leave_service_verify_again", [], "Of course not, {s65}. I am ever your loyal vassal.", "lord_ask_leave_service_giveup",[]],
+  [anyone|plyr ,"lord_ask_leave_service_verify_again", [], "Of course not, {s65}. I am ever your loyal commander.", "lord_ask_leave_service_giveup",[]],
 
   [anyone,"lord_ask_leave_service_3", [], "As you wish. I hereby declare your oaths to be null and void.\
  You will no longer hold planets or titles in my name, and you are released from your duties to my faction.\
@@ -6633,21 +6633,21 @@ Hand over my {reg19} credits, if you please, and end our business together.", "l
   [anyone|plyr,"lord_mercenary_elaborate_1", [], "I'm sorry, I'm not for hire.", "lord_mercenary_service_reject", []],
 
   [anyone,"lord_mercenary_elaborate_castle", [(faction_slot_eq, "$g_talk_troop_faction", slot_faction_leader, "$g_talk_troop")],
-   "Only my loyal vassals can own planets in my dominion.\
+   "Only my loyal commanders can own planets in my dominion.\
  A mercenary can not be trusted with such a responsibility.\
- However, after serving for some time, you can swear loyalty to me and become my vassal.\
+ However, after serving for some time, you can swear loyalty to me and become my commander.\
  Then you will be rewarded with a planet.", "lord_mercenary_elaborate_1", []],
-  [anyone,"lord_mercenary_elaborate_castle", [], "Only loyal vassals of {s10} can control planets.\
+  [anyone,"lord_mercenary_elaborate_castle", [], "Only loyal commanders of {s10} can control planets.\
  You understand, a simple mercenary cannot be trusted with such responsibility.\
- However, after serving for some time, you may earn the right to swear loyalty to {s10} and become his vassal.\
+ However, after serving for some time, you may earn the right to swear loyalty to {s10} and become his commander.\
  Then you would be rewarded with a planet.", "lord_mercenary_elaborate_1", []],
 
   [anyone,"lord_mercenary_elaborate_banner", [(faction_slot_eq, "$g_talk_troop_faction", slot_faction_leader, "$g_talk_troop")],
-   "Only my noble vassals have the honour of carrying their own banners.\
- However, after some time in mercenary service, you may earn the opportunity to swear loyalty to me and become my vassal,\
+   "Only my noble commanders have the honour of carrying their own banners.\
+ However, after some time in mercenary service, you may earn the opportunity to swear loyalty to me and become my commander,\
  gaining the right to choose a banner of your own and fight under it in battle.", "lord_mercenary_elaborate_1", []],
-  [anyone,"lord_mercenary_elaborate_banner", [], "Only noble vassals of {s10} have the honour of carrying their own banners.\
- However, after some time of mercenary service, perhaps you can earn the opportunity to swear homage to {s10} and become his vassal,\
+  [anyone,"lord_mercenary_elaborate_banner", [], "Only noble commanders of {s10} have the honour of carrying their own banners.\
+ However, after some time of mercenary service, perhaps you can earn the opportunity to swear homage to {s10} and become his commander,\
  gaining the right to choose a banner of your own and fight under it in battle.", "lord_mercenary_elaborate_1", []],
 
   [anyone,"lord_request_mission_ask", [(store_partner_quest,":lords_quest"),(ge,":lords_quest",0)],
@@ -7487,8 +7487,8 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
                                 (str_store_troop_name_link, s15,":quest_object_troop"),
                                 ],
  "I tell you, that blubbering fool {s13} is not fit to rule {s14}.\
- The Galaxy would be rid of them in an instant were it not for one of their loyal vassals, {s15}.\
- As long as they have vassals aiding them, it will be a difficult job beating them.\
+ The Galaxy would be rid of them in an instant were it not for one of their loyal commanders, {s15}.\
+ As long as they have commanders aiding them, it will be a difficult job beating them.\
  So I need to get {s15} out of the picture, and I have a plan just to do that...\
  With your help, naturally.", "lord_tell_mission_incriminate_commander",[]],
 
@@ -7548,7 +7548,7 @@ I suppose there are plenty of bounty hunters around to get the job done . . .", 
        (str_store_troop_name_plural, s15,"$incriminate_quest_sacrificed_troop"),
        (str_store_troop_name_link, s16,":quest_object_troop"),
        (setup_quest_text,"$random_quest_no"),
-       (str_store_string, s2, "@{s11} gave you a fake datacard to fool {s13} into banishing his vassal {s16}.\
+       (str_store_string, s2, "@{s11} gave you a fake datacard to fool {s13} into banishing his commander {s16}.\
  You are to go near {s14}, give the datacard to one of your {s15} and send them to the planet as a messenger,\
  believing his orders to be genuine."),
        (call_script, "script_start_quest", "$random_quest_no", "$g_talk_troop"),
@@ -10266,6 +10266,22 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "Ok.^^You may need to move your character to one side so the 'Talk' dialog does not appear while playing the game.", "close_window",[
     (assign, "$black_jack",1),
     (assign, reg50, 0),
+    #$g_talk_troop
+    
+    #Get both the player and the troop who's talking positions ($g_talk_agent)
+    #(get_player_agent_no, ":player_agent"),
+    
+    #(agent_get_position, pos1, ":player_agent"),
+    #(position_get_rotation_around_z,":angle", "$g_talk_agent"),
+    
+    #(val_add,":angle", 180+ #invert rotation, where technically the player should be facing to.
+    #                    45  # <-plus 45 extra degrees to ensure there's a little offset, this should avoid that nasty "TAlK" box.
+    #),
+    #(position_rotate_z, pos1, 180),#":angle"),
+    #(position_move_y,pos1,50),
+    #(agent_set_position,":player_agent", pos1),
+    #(agent_set_scripted_destination, ":player_agent", pos1, 1),
+    
     (start_presentation, "prsnt_blackjack"),
     ]],
   [anyone,"tavernkeeper_blackjack_3",[],
@@ -10469,10 +10485,10 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
    "tavern_traveler_tell_factions_4", []],
   [anyone, "tavern_traveler_tell_factions_3", [], "The Empire and Rebels, both will pay good money for mercenaries if they are engaged in a war.\
  If you have done a bit of fighting, speaking with one of their commanders will probably result in being offered a mercenary contract.\
- However the real rewards come if you can manage to become a vassal to a ruler.\
- A vassal can own planets and get rich with the taxes and revenues of these locations.\
+ However the real rewards come if you can manage to become a commander to a ruler.\
+ A commander can own planets and get rich with the taxes and revenues of these locations.\
  Normally, only rulers of the faction own star systems in this way,\
- but in time of war, a commander will not hesitate to accept someone who distinugishes {himself/herself} on the battlefield as a vassal, and grant {him/her} the right to own planets.",
+ but in time of war, a commander will not hesitate to accept someone who distinugishes {himself/herself} on the battlefield as a commander, and grant {him/her} the right to own planets.",
    "tavern_traveler_tell_factions_4", []],
 
   [anyone, "tavern_traveler_tell_factions_4", [], "The only path closed to a an adventurer such as you would be becoming the leader of a faction.\

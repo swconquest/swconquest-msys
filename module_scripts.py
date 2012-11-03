@@ -19593,11 +19593,25 @@ scripts = [
       (try_end),
       #Troop commentary changes begin
       (try_for_range, ":lord", "trp_knight_1_1", "trp_heroes_end"),
-        (store_random_in_range, ":reputation", 0, 8),
+      
+        #faction dependent reputation for commanders -- swyter
+        # {module_contants.py:line 885 onwards}
+        (store_troop_faction,":lord_fac", ":lord"),
+        (try_begin),
+          (eq,":lord_fac","fac_galacticempire"), #evil
+          (store_random_in_range, ":reputation", 3, 5+1),
+        (else_try),
+          (eq,":lord_fac","fac_rebelalliance"),  #cool guy
+          (store_random_in_range, ":reputation", 6, 7+1),
+        (else_try),                              #hutt or neutral
+          (store_random_in_range, ":reputation", 0, 8),
+        (try_end),
+        
         (try_begin),
           (eq, ":reputation", 0),
           (assign, ":reputation", 1),
         (try_end),
+        
         (troop_set_slot, ":lord", slot_lord_reputation_type, ":reputation"),
       (try_end),
       #Troop commentary changes end
