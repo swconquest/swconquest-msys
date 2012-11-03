@@ -60,9 +60,9 @@ imodbits_droid = imodbit_battered | imodbit_cracked | imodbit_rusty | imodbit_re
 
 #Swyter's Muzzleflare system
 muzzleflare_system = [
-  (position_move_x,pos1, -24), #up *-1
-  (position_move_y,pos1,  70), #length
-  (position_move_z,pos1,   0),(particle_system_burst,"psys_swy_muzzleflare",pos1,1) #,(set_current_color,255, 0, 255),(add_point_light, 10, 30)
+  #(position_move_x,pos1, -24), #up *-1
+  #(position_move_y,pos1,  70), #length
+  #(position_move_z,pos1,   0),(particle_system_burst,"psys_swy_muzzleflare",pos1,1) #,(set_current_color,255, 0, 255),(add_point_light, 10, 30)
 ]
 
 #lightsaber price bonus--some balancing comes in handy in more civilized times

@@ -139,7 +139,7 @@ parties = [
   ## SWY 0.9.0.4 - Added Raxus Prime and Sarapin
   ("raxusprime","Raxus_Prime",  icon_sw_swy_Planet_RaxusPrime|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(99.90,108.53),[],135), #newpos #[swycartographr] prev. coords: (99.36, 114.62) #[swycartographr] prev. coords: (99.9, 106.6)
   ("sarapin","Sarapin",  icon_sw_swy_Planet_Sarapin|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(7.86,8.18),[],135), #new pos    #[swycartographr] prev. coords: (-6.5, 17)
-  ("hypori","Hypori",  icon_sw_swy_Planet_Tatooine|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(86.86,-71.17),[],135), #new pos  #[swycartographr] prev. coords: (92, -91)
+  ("hypori","Hypori",  icon_sw_swy_Planet_Tatooine|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(86.86,-71.17),[],35), #new pos  #[swycartographr] prev. coords: (92, -91)
   ("felucia","Felucia",  icon_sw_swy_Planet_forest|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(75.79,82.91),[],135), #newpos    #[swycartographr] prev. coords: (84.56, 108.78)
   ("bespin","Bespin",icon_sw_swy_rePlanet_gas|pf_town, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-55.11,-106.78),[],50), #new pos--close enough #[swycartographr] prev. coords: (-50, -129.7) #[swycartographr] prev. coords: (-61.22, -102)
   
