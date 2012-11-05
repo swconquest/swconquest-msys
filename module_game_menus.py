@@ -2894,10 +2894,10 @@ game_menus = [
 		[
 		#(neq,"$cheat_mode",-1),#if cheats disabled with loader... (doesn't seem to work correctly)
 		
-		#New Cheat protection system by Swyter
-		(mouse_get_position, pos2),
-		(position_get_y,":y",pos2),
-		(le,":y",1),
+		#New Cheat protection system by Swyter -- seems that people like cheating, what a surprise. re-enabling :)
+		#(mouse_get_position, pos2),
+		#(position_get_y,":y",pos2),
+		#(le,":y",1),
 	    ]
 		,"Modding/Cheat Menu (for development use).",
         [
@@ -4401,16 +4401,16 @@ game_menus = [
 ############## MF for testing end ####################	
 
 ##@> Swyter > Custom Item adder
-      ("swy_item_adder",
-      [
-	  #(eq,"$cheat_mode",1)
-	  ],
-      "Swyter's Item adder",
-      [
-		 (start_presentation, "prsnt_typer"),
-         (troop_add_item, "trp_player",s10,0),
-      ]
-      ),
+    #  ("swy_item_adder",
+    #  [
+    #(eq,"$cheat_mode",1)
+    #],
+    #  "Swyter's Item adder",
+    #  [
+    # (start_presentation, "prsnt_typer"),
+    #     (troop_add_item, "trp_player",s10,0),
+    #  ]
+    #  ),
  
 ############## MF for testing end ####################	
 
@@ -4425,7 +4425,7 @@ game_menus = [
 			(party_set_slot, ":cur_place", slot_center_has_temple, 1),
 			(party_set_slot, ":cur_place", slot_center_has_droid_foundry, 1),
 			(party_set_slot, ":cur_place", slot_center_has_rancor_pit, 1),
-        (try_end),
+    (try_end),
 		(display_message, "@Clone Chambers, Temples, Droid Foundries, and Rancor Pits were added to all planets."),
         ]
        ),
@@ -13799,7 +13799,7 @@ game_menus = [
   (
     "invite_player_to_faction_without_center",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "You receive an offer of promotion!^^\
- {s8} of {s9} has sent a message with great news.\
+ {s8} of {s9} has sent you a message with great news.\
  You would be granted the honour of becoming a commander {lord/lady} of {s9},\
  and in return {s8} asks you to swear an oath of homage to him and fight in the war,\
  although he offers you no colonies or titles.\
@@ -13840,7 +13840,7 @@ game_menus = [
   (
     "invite_player_to_faction",menu_text_color(0xFF000d2c)|mnf_scale_picture,
     "You receive an offer of promotion!^^\
- {s8} of {s9} has sent a royal herald to bring you an invitation in his own hand.\
+ {s8} of {s9} has sent you a message with great news.\
  You would be granted the honour of becoming a commander {lord/lady} of {s9},\
  and in return {s8} asks you to swear an oath of homage to him and fight in the war,\
  offering you the planet of {s2} for your loyal service.\
