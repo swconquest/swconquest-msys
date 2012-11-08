@@ -4252,14 +4252,14 @@ game_menus = [
 		 (troop_raise_attribute, "trp_player",ca_charisma,20),
 		 
 		 #skills
-         (troop_raise_skill, "trp_player",skl_riding,10),
-		 (troop_raise_skill, "trp_player",skl_shield,5),		#there is a bug in M&B 1.x where the shield skill helps out the other team so don't raise it too high
-         (troop_raise_skill, "trp_player",skl_spotting,10),
-         (troop_raise_skill, "trp_player",skl_pathfinding,10),
-         (troop_raise_skill, "trp_player",skl_trainer,10),
-         (troop_raise_skill, "trp_player",skl_leadership,10),
-         (troop_raise_skill, "trp_player",skl_trade,10),
-         (troop_raise_skill, "trp_player",skl_prisoner_management,10),
+		(troop_raise_skill, "trp_player",skl_riding,10),
+		(troop_raise_skill, "trp_player",skl_shield,5),		#there is a bug in M&B 1.x where the shield skill helps out the other team so don't raise it too high
+		(troop_raise_skill, "trp_player",skl_spotting,10),
+		(troop_raise_skill, "trp_player",skl_pathfinding,10),
+		(troop_raise_skill, "trp_player",skl_trainer,10),
+		(troop_raise_skill, "trp_player",skl_leadership,10),
+		(troop_raise_skill, "trp_player",skl_trade,10),
+		(troop_raise_skill, "trp_player",skl_prisoner_management,10),
 		(troop_raise_skill, "trp_player", skl_athletics, 10),
 		(troop_raise_skill, "trp_player", skl_power_strike, 10),
 		(troop_raise_skill, "trp_player", skl_power_draw, 10),
@@ -4278,8 +4278,8 @@ game_menus = [
 		(troop_raise_proficiency_linear, "trp_player", wpt_throwing, 350),
 		(troop_raise_proficiency_linear, "trp_player", wpt_firearm, 350),	 
 		 
-         (display_message, "@Attributes, skills and proficiencies raised."),
-        ]
+		(display_message, "@Attributes, skills and proficiencies raised."),
+		]
       ),      
 
 ### MF - Change items below to anything you want to test out, look in items.py for item_id
@@ -4287,10 +4287,10 @@ game_menus = [
      [
 	 #(eq,"$cheat_mode",1)
 	 ],
-      "Add gear and gold to player.",
-       [
-		 #gold
-         (troop_add_gold, "trp_player", 100000),
+      "Add credits and equipment to player.",
+		[
+		#gold
+		(troop_add_gold, "trp_player", 100000),
    
 		#equipment
 		(troop_add_item, "trp_player","itm_grey_gloves",0),
@@ -4418,7 +4418,7 @@ game_menus = [
 	  [
 	  #(eq,"$cheat_mode",1)
 	  ],
-	  "Build all village upgrades.",
+	  "Build all minor planet upgrades.",
        [
 		(try_for_range, ":cur_place", minorplanet_begin, minorplanet_end),
 			(party_set_slot, ":cur_place", slot_center_has_clone_chambers, 1),

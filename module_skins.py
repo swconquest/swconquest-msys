@@ -463,7 +463,7 @@ skins = [
  #SW - new gamorrean skin
    (
      "gamorrean", 0,
-     "gamorrean_body", "transparent_calf_l", "gamorrean_handL",
+     "gamorrean_body", "_", "gamorrean_handL",
      "gamorrean_head", gamorrean_face_keys,
      [],
      [],
@@ -565,13 +565,13 @@ skins = [
 	#SW - new rancor skin
    (
      "rancor", 0,
-     "transparent_body", "transparent_calf_l", "transparent_handL",
-     "transparent_head", rancor_face_keys,
+     "_", "_", "_",
+     "_", rancor_face_keys,
      [],
      [],
      ["hair_blonde"], #hair textures NOTE - you MUST have a hair texture (even if it is not used) for the game not to crash
      [],
-     [("transparent_body",0xffffffff,[])
+     [("default",0xffffffff,[])
 	 ], #face_textures
      [(voice_die,"snd_gamorrean_die"),(voice_hit,"snd_gamorrean_hit"),(voice_grunt,"snd_gamorrean_grunt"),(voice_grunt_long,"snd_gamorrean_grunt_long"),(voice_yell,"snd_gamorrean_yell"),(voice_warcry,"snd_gamorrean_victory"),(voice_victory,"snd_gamorrean_victory")], #man voice sounds
      "skel_human", 0.6,
