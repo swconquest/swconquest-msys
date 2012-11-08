@@ -2135,10 +2135,10 @@ items = [
 ["lightsaber_block_red", "Lightsaber Shield", [("lightsaber_red_block",0)], itp_merchandise|itp_type_shield|itp_wooden_parry,0,  800 , weight(0.5)|abundance(80)|hit_points(800)|body_armor(35)|spd_rtng(105)|weapon_length(75),imodbits_none ],
 ["lightsaber_block_yellow", "Lightsaber Shield", [("lightsaber_yellow_block",0)], itp_merchandise|itp_type_shield|itp_wooden_parry,0,  800 , weight(0.5)|abundance(40)|hit_points(800)|body_armor(35)|spd_rtng(105)|weapon_length(75),imodbits_none ],
 ["shields_end","<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
-["force_block", "Force Block", [("force_block",0),("force_block_inv",ixmesh_inventory)], itp_unique|itp_type_shield|itp_wooden_parry,0,  600, weight(0.1)|abundance(100)|hit_points(600)|body_armor(40)|spd_rtng(110)|weapon_length(60),imodbits_none ],
-["force_shield", "Force Shield", [("force_shield",0),("force_shield_inv",ixmesh_inventory)], itp_unique|itp_type_shield|itp_wooden_parry,0, 800, weight(0.1)|abundance(100)|hit_points(800)|body_armor(50)|spd_rtng(110)|weapon_length(85),imodbits_none ],
-["force_protect","Force Protect", [("force_protect",0),("force_protect_inv",ixmesh_inventory)], itp_unique|itp_type_shield|itp_wooden_parry, 0, 1200, weight(0.1)|abundance(100)|hit_points(1000)|body_armor(60)|spd_rtng(110)|weapon_length(100),imodbits_none ],
-["hero_shield", "Transparent Hero Shield", [("force_shield",0),("force_shield_inv",ixmesh_inventory)], itp_unique|itp_type_shield,0, 800, weight(0.1)|abundance(100)|hit_points(600)|body_armor(40)|spd_rtng(100)|weapon_length(75),imodbits_none ],
+["force_block", "Force Block", [("_",0),("force_block_inv",ixmesh_inventory)], itp_unique|itp_type_shield|itp_wooden_parry,0,  600, weight(0.1)|abundance(100)|hit_points(600)|body_armor(40)|spd_rtng(110)|weapon_length(60),imodbits_none ],
+["force_shield", "Force Shield", [("_",0),("force_shield_inv",ixmesh_inventory)], itp_unique|itp_type_shield|itp_wooden_parry,0, 800, weight(0.1)|abundance(100)|hit_points(800)|body_armor(50)|spd_rtng(110)|weapon_length(85),imodbits_none ],
+["force_protect","Force Protect", [("_",0),("force_protect_inv",ixmesh_inventory)], itp_unique|itp_type_shield|itp_wooden_parry, 0, 1200, weight(0.1)|abundance(100)|hit_points(1000)|body_armor(60)|spd_rtng(110)|weapon_length(100),imodbits_none ],
+["hero_shield", "Transparent Hero Shield", [("_",0),("force_shield_inv",ixmesh_inventory)], itp_unique|itp_type_shield,0, 800, weight(0.1)|abundance(100)|hit_points(600)|body_armor(40)|spd_rtng(100)|weapon_length(75),imodbits_none ],
 ["shield_bash_end","<dummy>", [("_",0)], 0,0,0,0,imodbits_none],
  
  # training/practice
