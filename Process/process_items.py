@@ -66,6 +66,10 @@ def write_items(variable_list,variable_uses,tag_uses,quick_strings):
   ofile.close()
 
 print "Exporting item data..."
+  
+if len(items)>=915:
+  print "----\r\n Warning! Mod over the 1.011 item limit. Crashie on battles.\r\n----"
+
 save_python_header()
 
 from module_info import *
