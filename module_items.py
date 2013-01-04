@@ -358,7 +358,7 @@ items = [
  70 , weight(1)|abundance(100)|head_armor(0)|body_armor(6)|leg_armor(2)|difficulty(0) ,imodbits_cloth ],
 ["blue_dress", "Blue Dress", [("blue_dress",0)], itp_merchandise| itp_type_body_armor  |itp_covers_legs|itp_civilian, 0, 
  70 , weight(1)|abundance(100)|head_armor(0)|body_armor(6)|leg_armor(2)|difficulty(0) ,imodbits_cloth ],
-["peasant_dress", "Peasant Dress", [("peasant_dress_b",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
+["peasant_dress", "Colonist Dress", [("peasant_dress_b",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
  70 , weight(1)|abundance(100)|head_armor(0)|body_armor(6)|leg_armor(2)|difficulty(0) ,imodbits_cloth ], 
 ["woolen_dress", "Woolen Dress", [("woolen_dress",0)], itp_merchandise| itp_type_body_armor|itp_civilian  |itp_covers_legs ,0,
  83 , weight(1.75)|abundance(100)|head_armor(0)|body_armor(8)|leg_armor(2)|difficulty(0) ,imodbits_cloth ],

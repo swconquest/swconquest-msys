@@ -351,7 +351,7 @@ strings = [
   ("s3s_s2", "{s3}'s {s2}"),
   ("s5_is_s51", "{s5} is {s51}."),
   ("s5_is_the_ruler_of_s51", "{s5} is the ruler of {s51}. "),
-  ("s5_is_a_nobleman_of_s6", "{s5} is a nobleman of {s6}. "),
+  ("s5_is_a_nobleman_of_s6", "{s5} is a commander of {s6}. "),
 ##  ("your_debt_to_s1_is_changed_from_reg1_to_reg2", "Your debt to {s1} is changed from {reg1} to {reg2}."),
 
   ("relation_mnus_100", "Vengeful"), # -100..-94
@@ -521,7 +521,7 @@ strings = [
   ("surname_6",  "{s50} of Kessel"),
   ("surname_7",  "{s50} of Dantooine"),
   ("surname_8",  "{s50} of Wayland"),
-  ("surname_9",  "{s50} of Mon Cal"),
+  ("surname_9",  "{s50} of Dac"),
   ("surname_10", "{s50} of Kashyyk"),
   ("surname_11", "{s50} of Hoth"),
   ("surname_12", "{s50} of Gamorr"),
@@ -1057,7 +1057,7 @@ strings = [
   ("npc5_personalityclash_speech", "A moment of your time, captain. {s11} seems to think me a common bandit, just because I have rewarded myself in the past to the legitimate spoils of war from caravans passing through my family's lands."),
   ("npc6_personalityclash_speech", "Your pardon, {sir/madame}, but I cannot keep my tongue stilled any longer. That harlot, {s11} -- every time she sees me she points the five fingers of her hand at me -- a peasant's sign to ward off evil."),
   ("npc7_personalityclash_speech", "Captain, I have done my best to put up with your followers' rude talk and filthy habits. But that one who calls himself {s11} is beyond tolerance."),
-  ("npc8_personalityclash_speech", "Just so you know, I cannot abide that insolent mountebank {s11}. Some minutes ago, I was remarking to our companions how the peasants of this region were more than usually slack-jawed and beetle-browed, and speculated that perhaps they had bred with apes."), 
+  ("npc8_personalityclash_speech", "Just so you know, I cannot abide that insolent mountebank {s11}. Some minutes ago, I was remarking to our companions how the colonists of this region were more than usually slack-jawed and beetle-browed, and speculated that perhaps they had bred with apes."), 
   ("npc9_personalityclash_speech", "Sir -- {s11} is a base braggart, a man with no respect for the honour of women. I am tired of hearing how he conquered this or that damsel."),
   ("npc10_personalityclash_speech", "Excuse me, captain. I hate to trouble you with such things, but I just wanted to let you know that I can't abide that fellow Rolf, the one who calls himself a baron."),
   ("npc11_personalityclash_speech", "Begging your pardon, captain, but I can't keep silent. That man, {s11} -- he killed his own brother."),
@@ -1372,7 +1372,7 @@ strings = [
   ("comment_you_helped_villagers_friendly_cruel",            "I heard that you gave charity to the citizens on the planet of {s51}. I appreciate that you meant well, but I'd rather you not undercut my authority like that."),
   ("comment_you_helped_villagers_friendly",                  "I heard that you gave charity to the citizens on the planet of {s51}. Times are hard, and I know that you mean well, so I will not object to you providing them with assistance."),
   ("comment_you_helped_villagers_unfriendly_spiteful",       "I heard that you gave charity to the citizens on the planet of {s51}. As amusing as it is to see you grubbing for favor among my commanders, I would ask you to mind your own business."),
-  ("comment_you_helped_villagers_cruel",                     "I heard that you gave charity to the citizens on the planet of {s51}. As the peasants' lord and protector, it is most properly my duty to assist them in times of hardship. You may mean well, but your actions still undercut my authority. I would thank you to leave them alone."),
+  ("comment_you_helped_villagers_cruel",                     "I heard that you gave charity to the citizens on the planet of {s51}. As the colonists' lord and protector, it is most properly my duty to assist them in times of hardship. You may mean well, but your actions still undercut my authority. I would thank you to leave them alone."),
   ("comment_you_helped_villagers_default",                   "I heard that you gave charity to the citizens on the planet of {s51}. Times are hard, and I know that you mean well, but try not to make a habit of it. I am their lord and protector, and I would rather not have them go looking to strangers for assistance."),
 
 
@@ -2260,7 +2260,7 @@ We apologize sincerely if you contributed your suggestions and feedback but were
 #  ("spaceship_mercenary_raider_name", "Mercenary Raider"), <- now Wild Karrde
   ("spaceship_mercenary_raider_name", "Wild Karrde"),
   #("spaceship_mercenary_raider_desc", "The Mercenary Raider is an all-round winner. ^^While already no slouch, it can be made faster still with drive upgrades. ^There is plenty of room for detaining defeated enemies with room for ^two additional compartments if required.^^Enhanced scanners help detect enemies while the MK-I Combat Computer ^will give you the edge in any fight. ^If you still find yourself on the losing end, you can upgrade to a MK-III model."),  
-  ("spaceship_mercenary_raider_desc", "Very good prisioner capacity and base speed. A good choice ^for bountyhunters or small mercenenary groups."),  
+  ("spaceship_mercenary_raider_desc", "Very good prisoner capacity and base speed. A good choice ^for bountyhunters or small mercenenary groups."),  
   ("spaceship_freighter_name", "Freighter"),
   #("spaceship_freighter_desc", "This model Freighter is the workhorse of traders around the galaxy. ^^Its basic engines are somewhat outdated but can easily be upgraded to MK-III.^^The ship has a pressurized cargo hold with room for four additional units to be installed. ^^The MK-I trade computer will make sure you get a fair price but if you ^really want to hunt for the sharpest deal, you can uprade to a MK-V model. ^^There is also room for two prisoner comparments, with one already installed."),
   ("spaceship_freighter_desc", "This standard Freighter is the workhorse of traders around the galaxy."),

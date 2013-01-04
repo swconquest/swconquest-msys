@@ -873,7 +873,7 @@ game_menus = [
 
   (
     "custom_battle_end",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
-    "The battle is over. {s1} Your side killed {reg5} enemies and lost {reg6} troops over the battle. You personally slew {reg7} men in the fighting.",
+    "The battle is over. {s1} Your side killed {reg5} enemies and lost {reg6} troops over the battle. You personally slew {reg7} adversaries in the fighting.",
     "none",
     [(music_set_situation, 0),
      (assign, reg5, "$g_custom_battle_team2_death_count"),
@@ -6210,8 +6210,8 @@ game_menus = [
   (
     "encounter_retreat_confirm",menu_text_color(0xFF000d2c),
     "As the party member with the highest tactics skill,\
- ({reg2}), {reg3?you devise:{s3} devises} a plan that will allow you and your men to escape with your lives,\
- but you'll have to leave {reg4} soldiers behind to stop the enemy from giving chase.",
+ ({reg2}), {reg3?you devise:{s3} devises} a plan that will allow you and your troops to escape with your lives,\
+ but you'll have to leave {reg4} soldiers behind to stop the enemy from following you.",
     "none",
     [(call_script, "script_get_max_skill_of_player_party", "skl_tactics"),
      (assign, ":max_skill", reg0),
@@ -6235,7 +6235,7 @@ game_menus = [
      (try_end),
      ],
     [
-      ("leave_behind",[],"Go on. The sacrifice of these men will save the rest.",[
+      ("leave_behind",[],"Go on. The sacrifice of these troops will save the rest.",[
           (assign, ":num_casualties", reg4),
           (try_for_range, ":unused", 0, ":num_casualties"),
             (call_script, "script_cf_party_remove_random_regular_troop", "p_main_party"),
@@ -7272,7 +7272,7 @@ game_menus = [
   (
     "besiegers_camp_with_allies",menu_text_color(0xFF000d2c),
     "{s1} remains under siege. The banners of {s2} fly above the camp of the besiegers,\
- where you and your men are welcomed.",
+ where you and your troops are welcomed.",
     "none",
     [
         (str_store_party_name, s1, "$g_encountered_party"),
@@ -7669,7 +7669,7 @@ game_menus = [
              (assign, reg6, 0),
            (try_end),
            ],
-       "Besiege the {reg6?town:castle}.",
+       "Besiege the {reg6?planet:station}.",
        [
          (assign,"$g_player_besiege_town","$g_encountered_party"),
          (store_relation, ":relation", "fac_player_supporters_faction", "$g_encountered_party_faction"),
@@ -7696,7 +7696,7 @@ game_menus = [
            (assign, reg6, 0),
          (try_end),
            ],
-       "CHEAT: Besiege the {reg6?town:castle}...",
+       "CHEAT: Besiege the {reg6?planet:station}...",
        [
            (assign,"$g_player_besiege_town","$g_encountered_party"),
            (jump_to_menu, "mnu_spacestation_besiege"),
@@ -7782,7 +7782,7 @@ game_menus = [
   (
     "spacestation_entry_denied",menu_text_color(0xFF000d2c),
     "The lord of this planet has forbidden you from landing on the surface,\
- and the guard sergeant informs you that his men will fire if you attempt to come any closer.",
+ and the guard sergeant informs you that his troops will fire if you attempt to come any closer.",
     "none",
     [
 		#SW - display a new menu background
@@ -7902,9 +7902,9 @@ game_menus = [
         
         (try_begin),
           (gt, reg3, 0),
-          (str_store_string, s2, "@The {reg6?town's:castle's} food stores should last for {reg3} more days."),
+          (str_store_string, s2, "@The {reg6?planet's:station's} food stores should last for {reg3} more days."),
         (else_try),
-          (str_store_string, s2, "@The {reg6?town's:castle's} food stores have run out and the defenders are starving."),
+          (str_store_string, s2, "@The {reg6?planet's:station's} food stores have run out and the defenders are starving."),
         (try_end),
 
         (str_store_string, s3, "str_empty_string"),
@@ -7916,7 +7916,7 @@ game_menus = [
             (store_sub, reg9, "$g_siege_method_finish_hours", ":cur_hours"),
             (try_begin),
               (eq, "$g_siege_method", 1),
-              (str_store_string, s3, "@You're preparing to attack the walls, the work should finish in {reg9} hours."),
+              (str_store_string, s3, "@You're preparing to attack, the work should finish in {reg9} hours."),
             (else_try),
               (eq, "$g_siege_method", 2),
               (str_store_string, s3, "@Your forces are building a siege tower. They estimate another {reg9} hours to complete the build."),
@@ -7999,7 +7999,7 @@ game_menus = [
         (try_end),
     ],
     [
-      ("siege_request_meeting",[(eq, "$cant_talk_to_enemy", 0)],"Call for a meeting with the castle commander.", [
+      ("siege_request_meeting",[(eq, "$cant_talk_to_enemy", 0)],"Call for a meeting with the commander.", [
           (assign, "$cant_talk_to_enemy", 1),
           (assign, "$g_enemy_surrenders",0),
           (assign, "$g_spacestation_left_to_player",0),
@@ -8519,7 +8519,7 @@ game_menus = [
 
   (
     "spacestation_taken",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
-    "{s3} has fallen to your troops, and you now have full control of the {reg2?town:castle}.\
+    "{s3} has fallen to your troops, and you now have full control of the {reg2?planet:station}.\
 {reg1? It would seem that there is nothing stopping you from taking it for yourself...:}",# Only visible when castle is taken without being a vassal of a faction.
     "none",
     [
@@ -8564,7 +8564,7 @@ game_menus = [
   ),
   (
     "spacestation_taken_2",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
-    "{s3} has fallen to your troops, and you now have full control of the castle.\
+    "{s3} has fallen to your troops, and you now have full control of the station.\
  It is time to send word to {s9} about your victory. {s5}",
     "none",
     [
@@ -8579,7 +8579,7 @@ game_menus = [
             (party_slot_eq, "$g_encountered_party", spt_mainplanet),
             (assign, reg8, 1),
           (try_end),
-          (str_store_string, s5, "@However, since you are not a sworn {man/follower} of {s9}, there is no chance he would recognize you as the {lord/lady} of this {reg8?town:castle}."),
+          (str_store_string, s5, "@However, since you are not a sworn follower of {s9}, there is no chance he would recognize you as the {lord/lady} of this {reg8?planet:station}."),
         (try_end),
     ],
     [
@@ -8633,10 +8633,10 @@ game_menus = [
   
   (
     "requested_spacestation_granted_to_another",menu_text_color(0xFF000d2c)|mnf_scale_picture,
-    "You receive a message from your monarch, {s3}.^^\
+    "You receive a message from your leader, {s3}.^^\
  'I was most pleased to hear of your valiant efforts in the capture of {s2}. Your victory has gladdened all our hearts.\
- You also requested me to give you ownership of the castle, but that is a favour which I fear I cannot grant,\
- as you already hold significant estates in my realm.\
+ You also requested me to give you ownership of the planet, but that is a favour which I fear I cannot grant,\
+ as you already hold significant estates in my faction.\
  Instead I have sent you {reg6} credits to cover the expenses of your campaign, but {s2} I give to {s5}.'\
  ",
     "none",
@@ -9402,7 +9402,7 @@ game_menus = [
 
            (change_screen_map_conversation, ":minorplanet_elder_troop"),
          (try_end),
-        ],"Door to the village center."),
+        ],"Door to the planet center."),
 #SW - Talk to village elder END
 		
 # inserted by obi 2009-04-28 --> recruit clones, droids, force sensitives
@@ -9650,7 +9650,7 @@ game_menus = [
          (check_quest_active, "qst_train_peasants_against_bandits"),
          (neg|check_quest_concluded, "qst_train_peasants_against_bandits"),
          (quest_slot_eq, "qst_train_peasants_against_bandits", slot_quest_target_center, "$current_town"),
-         ], "Train the peasants.",
+         ], "Train the colonists.",
        [(jump_to_menu, "mnu_train_peasants_against_bandits"),]),
 
       ("minorplanet_hostile_action",[(party_slot_eq, "$current_town", slot_minorplanet_state, 0),
@@ -9684,7 +9684,7 @@ game_menus = [
             (assign, ":town_stores_not_empty", 1),
           (try_end),
           (eq, ":town_stores_not_empty", 1),
-          ],"Force the peasants to give you supplies.",
+          ],"Force the colonists to give you supplies.",
        [
            (jump_to_menu, "mnu_minorplanet_take_food_confirm")
         ]),
@@ -9707,7 +9707,7 @@ game_menus = [
                        (store_relation, ":reln", "fac_player_supporters_faction", ":center_faction"),
                        (lt, ":reln", 0),
                        ],
-       "Loot and burn this village.",
+       "Loot and burn this minor planet.",
        [
 #           (party_clear, "$current_town"),
 #           (party_add_template, "$current_town", "pt_villagers_in_raid"),
@@ -10064,7 +10064,7 @@ game_menus = [
        (jump_to_menu, "mnu_minorplanet_infestation_removed"),
      (else_try),
        (str_store_string, s9, "@Try as you might, you could not defeat the bandits.\
- Infuriated, they raze part of the planet to the ground to punish the peasants,\
+ Infuriated, they raze part of the planet to the ground to punish the colonists,\
  and then leave the burning wasteland behind to find more space to plunder."),
        (set_background_mesh, "mesh_pic_looted_village"),
      (try_end),
@@ -10340,7 +10340,7 @@ game_menus = [
         (gt, ":num_companions", 2),
         (str_store_string, s5, "@Luckily some of your companions come to search for you when you do not return, and find you lying by the side of the road. They hurry you to safety and dress your wounds."),
       (else_try),
-        (str_store_string, s5, "@Luckily some passing townspeople find you lying by the side of the road, and recognise you as something other than a simple beggar. They carry you to the nearest inn and dress your wounds."),
+        (str_store_string, s5, "@Luckily some passing people find you lying by the side of the road, and recognise you as something other than a simple beggar. They carry you to the nearest inn and dress your wounds."),
       (try_end),
     ],
     [
@@ -10445,7 +10445,7 @@ game_menus = [
 
    (
     "minorplanet_take_food_confirm",menu_text_color(0xFF000d2c),
-    "It will be difficult to force and threaten the peasants into giving their precious supplies. You think you will need at least one hour.",
+    "It will be difficult to force and threaten the colonists into giving their precious supplies. You think you will need at least one hour.",
     #TODO: mention looting skill?
     "none",
     [],
@@ -11407,7 +11407,7 @@ game_menus = [
                         (assign, reg0, 0),
                       (try_end),]
        #SW - modified menu
-	   #,"Manage this {reg0?town:castle}.",
+	   #,"Manage this {reg0?planet:station}.",
 	   ,"Manage this {reg0?planet:planet}.",
        [
            (assign, "$g_next_menu", "mnu_town"),
@@ -11572,7 +11572,7 @@ game_menus = [
            (assign, reg6, 0),
          (try_end),
            ],
-       "CHEAT: Besiege the {reg6?town:castle}...",
+       "CHEAT: Besiege the {reg6?planet:station}...",
        [
            (assign,"$g_player_besiege_town","$g_encountered_party"),
            (jump_to_menu, "mnu_spacestation_besiege"),
@@ -12170,7 +12170,7 @@ game_menus = [
 
   (
     "collect_taxes_revolt",menu_text_color(0xFF000d2c),
-    "You are interrupted while collecting the taxes at {s3}. A large band of angry {reg9?peasants:townsmen} is marching nearer,\
+    "You are interrupted while collecting the taxes at {s3}. A large band of angry {reg9?colonists:citizens} is marching nearer,\
  shouting about the exorbitant taxes and waving torches and weapons. It looks like they aim to fight you!",
     "none",
     [(str_store_party_name, s3, "$current_town"),
@@ -12206,7 +12206,7 @@ game_menus = [
 # They must learn field discipline and the steadiness to follow orders in combat before they can be thought to use arms.",
   (
     "train_peasants_against_bandits",menu_text_color(0xFF000d2c),
-    "As the party member with the highest training skill ({reg2}), {reg3?you expect:{s1} expects} that getting some peasants ready for practice will take {reg4} hours.",
+    "As the party member with the highest training skill ({reg2}), {reg3?you expect:{s1} expects} that getting some colonists ready for practice will take {reg4} hours.",
     "none",
     [(call_script, "script_get_max_skill_of_player_party", "skl_trainer"),
      (assign, ":max_skill", reg0),
@@ -12242,7 +12242,7 @@ game_menus = [
 
   (
     "train_peasants_against_bandits_ready",menu_text_color(0xFF000d2c),
-    "You put the peasants through the basics of soldiering, discipline and obedience.\
+    "You put the colonists through the basics of soldiering, discipline and obedience.\
  You think {reg0} of them {reg1?have:has} fully grasped the training and {reg1?are:is} ready for some practice.",
     "none",
     [
@@ -12289,9 +12289,9 @@ game_menus = [
       (str_store_troop_name_by_count, s0, "trp_trainee_peasant", "$g_train_peasants_against_bandits_num_peasants"),
       (try_begin),
         (eq, "$g_train_peasants_against_bandits_training_succeeded", 0),
-        (str_store_string, s0, "@You were beaten. The peasants are heartened by their success, but the lesson you wanted to teach them probably didn't get through..."),
+        (str_store_string, s0, "@You were beaten. The colonists are heartened by their success, but the lesson you wanted to teach them probably didn't get through..."),
       (else_try),
-        (str_store_string, s0, "@After beating your last opponent, you explain to the peasants how to better defend themselves against such an attack. Hopefully they'll take the experience on board and will be prepared next time."),
+        (str_store_string, s0, "@After beating your last opponent, you explain to the colonists how to better defend themselves against such an attack. Hopefully they'll take the experience on board and will be prepared next time."),
         (quest_get_slot, ":quest_current_state", "qst_train_peasants_against_bandits", slot_quest_current_state),
         (val_add, ":quest_current_state", "$g_train_peasants_against_bandits_num_peasants"),
         (quest_set_slot, "qst_train_peasants_against_bandits", slot_quest_current_state, ":quest_current_state"),
@@ -12366,13 +12366,13 @@ game_menus = [
         (eq, "$g_battle_result", 1),
         (str_store_string, s9, "@The bandits are broken!\
  Those few who remain alive and conscious run off with their tails between their legs,\
- terrified of the peasants and their new champion."),
+ terrified of the colonists and their new champion."),
 	(call_script, "script_succeed_quest", "qst_train_peasants_against_bandits"),
         (jump_to_menu, "mnu_train_peasants_against_bandits_success"),
       (else_try),
         (call_script, "script_fail_quest", "qst_train_peasants_against_bandits"),
         (str_store_string, s9, "@Try as you might, you could not defeat the bandits.\
- Infuriated, they raze part of the planet to the ground to punish the peasants,\
+ Infuriated, they raze part of the planet to the ground to punish the colonists,\
  and then leave the burning wasteland behind to find greener pastures to plunder."),
         (set_background_mesh, "mesh_pic_looted_village"),
       (try_end),
@@ -12395,7 +12395,7 @@ game_menus = [
     "train_peasants_against_bandits_success",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "The bandits are broken!\
  Those few who remain run off with their tails between their legs,\
- terrified of the peasants and their new champion.\
+ terrified of the colonists and their new champion.\
  The villagers have little left in the way of wealth after their ordeal,\
  but they offer you all they can find to show their gratitude.",
     "none",
