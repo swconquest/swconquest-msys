@@ -2793,6 +2793,9 @@ scene_props = [
   ("moncal_center",0,"moncal_center","bo_moncal_center", []),
   
   ("coruscant_ground",0,"coruscant_ground","bo_coruscant_ground", []),
+  
+  
+  ("swy_outer_sea",0,"swy_outer_sea","0", []),
 
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)

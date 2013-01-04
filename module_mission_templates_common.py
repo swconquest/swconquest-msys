@@ -91,7 +91,7 @@ af_spacestation_lord = af_override_horse | af_override_weapons
 
 sw_victory_defeat_conditions = (
   5, 2, 3,
-  [(all_enemies_defeated),],
+  [(all_enemies_defeated)],
   [
 
     (assign, "$battle_won",1),

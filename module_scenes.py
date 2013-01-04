@@ -293,7 +293,7 @@ scenes = [
   ("mainplanet_tatooine_center",sf_generate,"none", "none",(0,0),(100,100),-100,"0x00000000200016da000364d9000060f500007591000064e7",
     [],["bonus_box_mainplanet_14"],"outer_terrain_desert"),
   ("mainplanet_manaan_center",sf_generate,"none", "none", (0,0),(220,220),30,"0x000000043000050000029caa00000001000048c000001029",
-    [],["bonus_box_mainplanet_15"],"swy_outer_sea"),	
+    [],["bonus_box_mainplanet_15"],),	
   ("mainplanet_coruscant_center",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029",
     [],["bonus_box_mainplanet_16"],"outer_terrain_city"),
   ("mainplanet_ryloth_center",sf_generate,"none", "none",(0,0),(100,100),-100,"0x0000000020045abc000308c4000029d9000033bd000009b9",
@@ -307,7 +307,7 @@ scenes = [
 	
 	#Kamino center orig code: (0x000000043000050000029caa00000001000048c000001029)     new code: (0x0000000430000500000d234800000001000048c000001029)
   ("mainplanet_kamino_center",sf_generate,"none", "none", (0,0),(220,220),-100,"0x000000043000050000029caa00000001000048c000001029",
-    [],["bonus_box_mainplanet_21"],"swy_outer_sea"),	
+    [],["bonus_box_mainplanet_21"],),	
 	## SWY 0.9.0.3 - Added Taris
   ("mainplanet_taris_center",sf_generate,"none", "none", (0,0),(220,220),-100,"0x000000043000050000029caa00000001000048c000001029",
     [],["bonus_box_mainplanet_21"],"outer_terrain_city"),
@@ -528,7 +528,7 @@ scenes = [
   ("mainplanet_tatooine_arena",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000002500005004005f57b00005885000046bd00006d9c",
     [],[],"outer_terrain_desert"),
   ("mainplanet_manaan_arena",sf_generate,"none", "none", (0,0),(220,220),30,"0x000000043000050000029caa00000001000048c000001029",
-    [],[],"swy_outer_sea"),	
+    [],[]),	
   ("mainplanet_coruscant_arena",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
     [],[], "outer_terrain_plain"),	
   ("mainplanet_ryloth_arena",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000002200005000005f57b00005885000046bd00006d9c",
@@ -541,7 +541,7 @@ scenes = [
     [],[], "outer_terrain_plain"),	
 #old code: 0x00000002500005004005f57b00005885000046bd00006d9c  new code:0x0000000250000500000d234800005885000046bd00006d9c
   ("mainplanet_kamino_arena",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000002500005004005f57b00005885000046bd00006d9c",
-    [],[],"swy_outer_sea"),
+    [],[]),
   ("mainplanet_taris_arena",sf_generate,"none", "none", (0,0),(220,220),30,"0x000000043000050000029caa00000001000048c000001029",
     [],[],"outer_terrain_plain"),	
   ("mainplanet_raxusprime_arena",sf_generate,"none", "none", (0,0),(240,240),-8,"0x00000040400681000a46298a003702000051a10000512f00", 
@@ -696,7 +696,7 @@ scenes = [
   ("mainplanet_tatooine_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
     [],[],),
   ("mainplanet_manaan_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
-    [],[],"swy_outer_sea"),
+    [],[]),
   ("mainplanet_coruscant_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
     [],[],),
   ("mainplanet_ryloth_alley",sf_generate,"none", "none", (0,0),(100,100),-100,"0x300bc5430001e0780000448a0000049f00007932",
@@ -1254,7 +1254,7 @@ scenes = [
   ("mainplanet_tatooine_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x0000000250c19207400691a400003efe00004b34000059be",
     [],[], "outer_terrain_desert"),
   ("mainplanet_manaan_land_battle",sf_generate,"none", "none", (0,0),(120,120),30,"0x00000000300005000006d9b9000052560000620000004c92", 
-    [],[], "swy_outer_sea"),
+    [],[],),
   ("mainplanet_coruscant_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
     [],[], "outer_terrain_plain"),
   ("mainplanet_ryloth_land_battle",sf_generate,"none", "none", (0,0),(240,240),-0.5,"0x0000000250c19207400691a400003efe00004b34000059be",
@@ -1268,7 +1268,7 @@ scenes = [
 	
 	#Kamino land battle  Old code: 0x000000043000050000029caa00000001000048c000001029      New code:0x0000000430000500000d234800000001000048c000001029
   ("mainplanet_kamino_land_battle",sf_generate,"none", "none", (0,0),(120,120),30,"0x000000043000050000029caa00000001000048c000001029", 
-    [],[],"swy_outer_sea"),	
+    [],[]),	
   ("mainplanet_taris_land_battle",sf_generate,"none", "none", (0,0),(240,240),-100,"0x000000043000050000029caa00000001000048c000001029", 
     [],[], "outer_terrain_plain"),	
   ("mainplanet_raxusprime_land_battle",sf_generate,"none", "none", (0,0),(240,240),-8,"0x00000040400681000a46298a003702000051a10000512f00", 
