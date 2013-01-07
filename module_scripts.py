@@ -33,9 +33,9 @@ def gen_ammodb():
   from module_items import items
   for item in items:
     id = items.index(item)
-    if id > itm_ranged_weapons_begin and id < itm_ranged_weapons_end: #Attention at the hardcoded limits, should be changed if order is altered
+    #Attention at the hardcoded limits, should be changed if order is altered
+    if id > itm_ranged_weapons_begin and id < itm_ranged_weapons_end:
       ammoclip_db.append( (item_set_slot,"itm_"+item[0],slot_item_ammo_clip,get_max_ammo(item[6])) )
-      #print "itm_"+item[0]+"  --  "+str(get_max_ammo(item[6]))
   return ammoclip_db
 
 scripts = [
