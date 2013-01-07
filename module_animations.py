@@ -780,7 +780,7 @@ animations = [
  ["ready_overswing_twohanded", 0,	#acm modified
    [ready_durn, "anim_human", combat+6200, combat+6210, blend_in_ready],
    [ready_durn, "draw_greatsword", 20, 10, blend_in_ready], 	#acm new
-   [1.0, "brfedit-01", 20024, 20004, blend_in_ready, 0, (0, 0, 0), 0.95], 	#acm new
+   [ready_durn, "brfedit-01", 20024, 20004, blend_in_ready, 0, (0, 0, 0), 0.95], 	#acm new #swy-- too long for an attack (issue #179)
  ],
  ["release_overswing_twohanded", acf_overswing,
    [0.63, "anim_human", combat+6210, combat+6241, blend_in_release],
