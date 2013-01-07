@@ -28,6 +28,16 @@ def gender_fix(register, trp="player"):
     trp = "trp_" + trp
   return [(call_script, "script_gender_fix", trp),(assign,register,reg33)]
 
+def gen_ammodb():
+  ammoclip_db=[]
+  from module_items import items
+  for item in items:
+    id = items.index(item)
+    if id > itm_ranged_weapons_begin and id < itm_ranged_weapons_end: #Attention at the hardcoded limits, should be changed if order is altered
+      ammoclip_db.append( (item_set_slot,"itm_"+item[0],slot_item_ammo_clip,get_max_ammo(item[6])) )
+      #print "itm_"+item[0]+"  --  "+str(get_max_ammo(item[6]))
+  return ammoclip_db
+
 scripts = [
   
   #script_game_start:
@@ -3199,66 +3209,13 @@ scripts = [
         (is_between, ":item_no", ranged_weapons_begin, ranged_weapons_end),
         ##@> SWY | TEMP, WEAPON AMMO CLIP DB, UGLY, BUT WE NEED A SPECIFIC FUNCTION TO MANAGE - - -
         
-        (item_set_slot,"itm_a280",slot_item_ammo_clip,30),
-        (item_set_slot,"itm_a280_crouch",slot_item_ammo_clip,30),
-        (item_set_slot,"itm_a280_stun",slot_item_ammo_clip,30),
-        (item_set_slot,"itm_a295",slot_item_ammo_clip,30),
-        (item_set_slot,"itm_a295_crouch",slot_item_ammo_clip,30),
-        (item_set_slot,"itm_a295_stun",slot_item_ammo_clip,30),
-        (item_set_slot,"itm_mandalorian_heavy_blaster",slot_item_ammo_clip,30),
-        (item_set_slot,"itm_corellian_destroyer_blaster",slot_item_ammo_clip,30),
-        (item_set_slot,"itm_dlt19",slot_item_ammo_clip,6),
-        (item_set_slot,"itm_dlt19_scope",slot_item_ammo_clip,6),
-        (item_set_slot,"itm_dlt20a",slot_item_ammo_clip,30),
-        (item_set_slot,"itm_e17d",slot_item_ammo_clip,5),
-        (item_set_slot,"itm_dc15a",slot_item_ammo_clip,500),
-        (item_set_slot,"itm_dc15a_hip",slot_item_ammo_clip,500),
-        (item_set_slot,"itm_dc15s",slot_item_ammo_clip,500),
-        (item_set_slot,"itm_trandoshan_acp_array_gun",slot_item_ammo_clip,8),
-        (item_set_slot,"itm_trandoshan_stun_gun",slot_item_ammo_clip,12),
-        (item_set_slot,"itm_quicksnap_36t",slot_item_ammo_clip,100),
-        (item_set_slot,"itm_bothan_bola_carabine",slot_item_ammo_clip,16),
-        (item_set_slot,"itm_ee3",slot_item_ammo_clip,30),
-        (item_set_slot,"itm_ee3_stun",slot_item_ammo_clip,30),
-        (item_set_slot,"itm_mg15",slot_item_ammo_clip,500),
-        (item_set_slot,"itm_e5",slot_item_ammo_clip,500),
-        (item_set_slot,"itm_e11",slot_item_ammo_clip,100),
-        (item_set_slot,"itm_e11_hip",slot_item_ammo_clip,100),
-        (item_set_slot,"itm_e11_stun",slot_item_ammo_clip,100),
-        (item_set_slot,"itm_wookiee_bowcaster",slot_item_ammo_clip,35),
-        (item_set_slot,"itm_kashyyyk_long_gun",slot_item_ammo_clip,10),
-        (item_set_slot,"itm_tusken_rifle",slot_item_ammo_clip,15),
-        (item_set_slot,"itm_geonosian_sonic_rifle",slot_item_ammo_clip,50),
-        (item_set_slot,"itm_t21",slot_item_ammo_clip,30),
-        (item_set_slot,"itm_senate_rifle",slot_item_ammo_clip,14),
-        (item_set_slot,"itm_kisteer_1284",slot_item_ammo_clip,10),
-        (item_set_slot,"itm_ion_blaster",slot_item_ammo_clip,10),
-        (item_set_slot,"itm_dh17",slot_item_ammo_clip,500),
-        (item_set_slot,"itm_se14r",slot_item_ammo_clip,16),
-        (item_set_slot,"itm_dh17_stun",slot_item_ammo_clip,500),
-        (item_set_slot,"itm_dl44a",slot_item_ammo_clip,25),
-        (item_set_slot,"itm_dl44a_stun",slot_item_ammo_clip,25),
-        (item_set_slot,"itm_dl44b",slot_item_ammo_clip,25),
-        (item_set_slot,"itm_q2",slot_item_ammo_clip,6),
-        (item_set_slot,"itm_q2_stun",slot_item_ammo_clip,6),
-        (item_set_slot,"itm_elg3a",slot_item_ammo_clip,100),
-        (item_set_slot,"itm_elg3a_stun",slot_item_ammo_clip,100),
-        (item_set_slot,"itm_scout_trooper_pistol",slot_item_ammo_clip,14),
-        (item_set_slot,"itm_ddc_defender",slot_item_ammo_clip,100),
-        (item_set_slot,"itm_geonosian_sonic_pistol",slot_item_ammo_clip,10),
-        (item_set_slot,"itm_dl18",slot_item_ammo_clip,100),
-        (item_set_slot,"itm_westar",slot_item_ammo_clip,20),
-        (item_set_slot,"itm_westar_stun",slot_item_ammo_clip,20),
-        (item_set_slot,"itm_ion_pistol",slot_item_ammo_clip,15),
-        (item_set_slot,"itm_trandoshan_supressor",slot_item_ammo_clip,10),
-        (item_set_slot,"itm_wrist_blaster",slot_item_ammo_clip,24),
-        (item_set_slot,"itm_heavy_repeater",slot_item_ammo_clip,400),
+        #swy@2013 Finally added dynamic db generation :-) Function up there ^
+        ]+gen_ammodb()+[
         
         ##@> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-        #(this_or_next|eq, ":extra_text_id", 0),
+
         (eq, ":extra_text_id", 0),
-        (item_get_slot,":ammo_clip",":item_no",slot_item_ammo_clip),
-        (assign, reg1, ":ammo_clip"),
+        (item_get_slot, reg1,":item_no",slot_item_ammo_clip),
         (set_result_string, "@Ammo clip size: {reg1}"),
         (set_trigger_result, 0xFF6600), #orange text
         (str_clear, s1),
@@ -3271,7 +3228,7 @@ scripts = [
         (this_or_next|eq, ":item_no", "itm_a295"),
         (this_or_next|eq, ":item_no", "itm_a295_crouch"),
         (this_or_next|eq, ":item_no", "itm_dc15a"),
-        (eq, ":item_no", "itm_dc15a_hip"),
+        (             eq, ":item_no", "itm_dc15a_hip"),
         (eq, ":extra_text_id", 1),
         (call_script,"script_get_key","$toggle_weapon_key"),
         (str_store_string,s1,s13),
