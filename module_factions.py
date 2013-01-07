@@ -39,13 +39,13 @@ factions = [
  #("dark_knights","Dark Knights", 0, 0.5,[("innocents",-0.9),("player_faction",-0.4)], []),
 
 
-  ("culture_1",  "culture_1", 0, 0.9, [], []),  ##@> Empire culture
-  ("culture_2",  "culture_2", 0, 0.9, [], []),  ##@> Rebel culture
-  ("culture_3",  "culture_3", 0, 0.9, [], []),  ##@> Hutt culture
-  ("culture_4",  "culture_4", 0, 0.9, [], []),  ##@> Wookie culture
-  ("culture_5",  "culture_5", 0, 0.9, [], []),  ##@> Mandalorian culture
-  ("culture_6",  "culture_6", 0, 0.9, [], []),  ##@> Clone culture
-  ("culture_7",  "culture_7", 0, 0.9, [], []),  ##@> Trandoshan culture
+  ("culture_1",  "<culture_1>", 0, 0.9, [], []),  ##@> Empire culture
+  ("culture_2",  "<culture_2>", 0, 0.9, [], []),  ##@> Rebel culture
+  ("culture_3",  "<culture_3>", 0, 0.9, [], []),  ##@> Hutt culture
+  ("culture_4",  "<culture_4>", 0, 0.9, [], []),  ##@> Wookie culture
+  ("culture_5",  "<culture_5>", 0, 0.9, [], []),  ##@> Mandalorian culture
+  ("culture_6",  "<culture_6>", 0, 0.9, [], []),  ##@> Clone culture
+  ("culture_7",  "<culture_7>", 0, 0.9, [], []),  ##@> Trandoshan culture
 
 
  #("swadian_caravans","Swadian Caravans", 0, 0.5,[("outlaws",-0.8), ("dark_knights",-0.2)], []),
@@ -83,7 +83,7 @@ factions = [
 ##    << Real Game factions End Here >>
  #("factions_end","factions_end", 0, 0,[], []),
 
-  ("robber_knights",  "robber_knights", 0, 0.1, [], []),
+  ("robber_knights",  "<robber_knights>", 0, 0.1, [], []),
 
  #("khergits","Khergits", 0, 0.5,[("player_faction",0.0)], []),
  #("black_khergits","Black Khergits", 0, 0.5,[("player_faction",-0.3),("galacticempire",-0.02),("rebelalliance",-0.02)], []),
@@ -96,7 +96,7 @@ factions = [
   ("blazing_claw_pirates","Blazing Claw Pirates", 0, 0.5,[("commoners",-0.2),("merchants",-0.5),("bountyhunters",-0.6),("player_faction",-0.15)], [], 0xFFFF66),
 
  #("undeads","Undeads", max_player_rating(-30), 0.5,[("commoners",-0.7),("player_faction",-0.5)], []),
-  ("enemy","Enemy Placeholder", max_player_rating(-30), 0.5,[("commoners",-0.7),("player_faction",-0.5)], []),
+  ("enemy","<enemy_placeholder>", max_player_rating(-30), 0.5,[("commoners",-0.7),("player_faction",-0.5)], []),
   ("slavers","Slavers", 0, 0.1, [], []),
  #("peasant_rebels","Peasant Rebels", 0, 1.0,[("noble_refugees",-1.0),("player_faction",-0.4)], []),
  #("noble_refugees","Noble Refugees", 0, 0.5,[], []),

@@ -29,7 +29,7 @@ pmf_is_prisoner = 0x0001
 
 
 party_templates = [
-  ("none","none",icon_shuttle,0,fac_commoners,merchant_personality,[]),
+  ("none","<none>",icon_shuttle,0,fac_commoners,merchant_personality,[]),
   ("rescued_prisoners","Rescued Prisoners",icon_civilian_cruiser,0,fac_commoners,merchant_personality,[]),
   ("enemy","Enemy",icon_mercenary_fighter,0,fac_enemy,merchant_personality,[]),
   ("hero_party","Hero Party",icon_civilian_transport,0,fac_commoners,merchant_personality,[]),
@@ -85,7 +85,7 @@ party_templates = [
 
   ("spy_partners", "Unremarkable Travellers", icon_tran_slaver|carries_goods(3)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_spy_partner,1,1),(trp_security_guard,5,10)]),
   ("runaway_serfs","Runaway Slaves",icon_civilian_cruiser|carries_goods(8)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_farmer,6,10), (trp_peasant_woman,3,3)]),
-  ("spy", "Ordinary Townsman", icon_tran_slaver|carries_goods(3)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_spy,1,1)]),
+  ("spy", "Ordinary Colonist", icon_tran_slaver|carries_goods(3)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_spy,1,1)]),
   ("sacrificed_messenger", "Sacrificed Messenger", icon_tran_slaver|carries_goods(3)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[]),
 ##  ("conspirator", "Conspirators", icon_gray_knight|carries_goods(8)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_conspirator,3,4)]),
 ##  ("conspirator_leader", "Conspirator Leader", icon_gray_knight|carries_goods(8)|pf_default_behavior|pf_quest_party,0,fac_neutral,merchant_personality,[(trp_conspirator_leader,1,1)]),
@@ -120,18 +120,18 @@ party_templates = [
 #  ("default_reinforcements_c","default_reinforcements_c",0,0,fac_commoners,0,[(trp_hired_blade,1,7),(trp_mercenary,3,10),(trp_caravan_guard,3,15)]),
 
 #SW - modified faction 1 reinforcements (empire = 6-13 troops)
-  ("galacticempire_reinforcements_a", "galacticempire_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_imperial_recruit,2,3),(trp_imperial_army_trooper,4,10)]),
-  ("galacticempire_reinforcements_b", "galacticempire_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_imperial_stormtrooper,6,13)]),
-  ("galacticempire_reinforcements_c", "galacticempire_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_sith_hopeful,1,2),(trp_chiss_1,1,2),(trp_imperial_stormtrooper,1,2)]),
+  ("galacticempire_reinforcements_a", "<galacticempire_reinforcements_a>", 0, 0, fac_commoners, 0, [(trp_imperial_recruit,2,3),(trp_imperial_army_trooper,4,10)]),
+  ("galacticempire_reinforcements_b", "<galacticempire_reinforcements_b>", 0, 0, fac_commoners, 0, [(trp_imperial_stormtrooper,6,13)]),
+  ("galacticempire_reinforcements_c", "<galacticempire_reinforcements_c>", 0, 0, fac_commoners, 0, [(trp_sith_hopeful,1,2),(trp_chiss_1,1,2),(trp_imperial_stormtrooper,1,2)]),
 
 #SW - modified faction 2 reinforcements (rebel = 5-12 troops)
-  ("rebelalliance_reinforcements_a", "rebelalliance_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_rebel_recruit,2,3),(trp_rebel_cadet,3,9)]),		#rebels have 1 less for min & max
-  ("rebelalliance_reinforcements_b", "rebelalliance_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_rebel_trooper,3,8),(trp_wookiee,1,2),(trp_moncal_1,1,2)]),	#rebels have 1 less for min & max
-  ("rebelalliance_reinforcements_c", "rebelalliance_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_jedi_hopeful,1,2),(trp_sullustan_1,1,2),(trp_bothan,1,2)]),	#rebels are equal for this reinforcement
+  ("rebelalliance_reinforcements_a", "<rebelalliance_reinforcements_a>", 0, 0, fac_commoners, 0, [(trp_rebel_recruit,2,3),(trp_rebel_cadet,3,9)]),		#rebels have 1 less for min & max
+  ("rebelalliance_reinforcements_b", "<rebelalliance_reinforcements_b>", 0, 0, fac_commoners, 0, [(trp_rebel_trooper,3,8),(trp_wookiee,1,2),(trp_moncal_1,1,2)]),	#rebels have 1 less for min & max
+  ("rebelalliance_reinforcements_c", "<rebelalliance_reinforcements_c>", 0, 0, fac_commoners, 0, [(trp_jedi_hopeful,1,2),(trp_sullustan_1,1,2),(trp_bothan,1,2)]),	#rebels are equal for this reinforcement
 #SW - modified faction 3 reinforcements (hutt = 5-12 troops)
-   ("huttcartel_reinforcements_a", "huttcartel_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_hutt_militia,2,3),(trp_hutt_mercenary,2,6),(trp_gamorrean,1,3),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
-   ("huttcartel_reinforcements_b", "huttcartel_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_hutt_guard,2,5),(trp_trandoshan,1,2),(trp_rodian,1,2),(trp_twilek,1,3),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
-   ("huttcartel_reinforcements_c", "huttcartel_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_mandalorian,1,1),(trp_gamorrean,1,2),(trp_hutt_skiff_guard,1,1),(trp_ig88,0,1),(trp_rancor,0,1)]),
+   ("huttcartel_reinforcements_a", "<huttcartel_reinforcements_a>", 0, 0, fac_commoners, 0, [(trp_hutt_militia,2,3),(trp_hutt_mercenary,2,6),(trp_gamorrean,1,3),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
+   ("huttcartel_reinforcements_b", "<huttcartel_reinforcements_b>", 0, 0, fac_commoners, 0, [(trp_hutt_guard,2,5),(trp_trandoshan,1,2),(trp_rodian,1,2),(trp_twilek,1,3),(trp_twilek_female1,0,1,pmf_is_prisoner)]),
+   ("huttcartel_reinforcements_c", "<huttcartel_reinforcements_c>", 0, 0, fac_commoners, 0, [(trp_mandalorian,1,1),(trp_gamorrean,1,2),(trp_hutt_skiff_guard,1,1),(trp_ig88,0,1),(trp_rancor,0,1)]),
 
   #SW - commented out faction 4 & 5 reinforcements  
   # ("faction_4_reinforcements_a", "faction_4_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_nord_footman,2,6),(trp_nord_recruit,4,7)]),
@@ -143,21 +143,21 @@ party_templates = [
   # ("faction_5_reinforcements_c", "faction_5_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_rhodok_sergeant,3,6)]),
 
 #SW - Culture specific reinforcements
-  ("faction_human_reinforcements_a", "faction_human_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_civilian,6,12)]),
-  ("faction_human_reinforcements_b", "faction_human_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_civilian,3,6),(trp_militia,2,4),(trp_thug,1,2)]),
-  ("faction_human_reinforcements_c", "faction_human_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_militia,2,4),(trp_thug,2,4)]),  
-  ("faction_wookiee_reinforcements_a", "faction_wookiee_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_wookiee,6,12)]),
-  ("faction_wookiee_reinforcements_b", "faction_wookiee_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_wookiee,3,6),(trp_wookiee_warrior,3,6)]),
-  ("faction_wookiee_reinforcements_c", "faction_wookiee_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_wookiee_marksman,2,4),(trp_wookiee_berserker,2,4)]),
-  ("faction_mandalorian_reinforcements_a", "faction_mandalorian_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_mandalorian,6,12)]),
-  ("faction_mandalorian_reinforcements_b", "faction_mandalorian_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_mandalorian,3,6),(trp_mandalorian_soldier,3,6)]),
-  ("faction_mandalorian_reinforcements_c", "faction_mandalorian_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_mandalorian_commando,2,4),(trp_mandalorian_sniper,2,4)]),  
-  ("faction_clone_reinforcements_a", "faction_clone_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_clone_trooper_1,6,12)]),
-  ("faction_clone_reinforcements_b", "faction_clone_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_clone_trooper_2,5,9),(trp_arc_trooper_2,1,3)]),
-  ("faction_clone_reinforcements_c", "faction_clone_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_clone_trooper_3,3,6),(trp_arc_trooper_3,1,2)]),    
-  ("faction_trandoshan_reinforcements_a", "faction_trandoshan_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_trandoshan,6,12)]),
-  ("faction_trandoshan_reinforcements_b", "faction_trandoshan_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_trandoshan,3,6),(trp_trandoshan_warrior,3,6)]),
-  ("faction_trandoshan_reinforcements_c", "faction_trandoshan_reinforcements_c", 0, 0, fac_commoners, 0, [(trp_trandoshan_hunter,2,4),(trp_trandoshan_bounty_hunter,2,4)]),
+  ("faction_human_reinforcements_a", "<faction_human_reinforcements_a>", 0, 0, fac_commoners, 0, [(trp_civilian,6,12)]),
+  ("faction_human_reinforcements_b", "<faction_human_reinforcements_b>", 0, 0, fac_commoners, 0, [(trp_civilian,3,6),(trp_militia,2,4),(trp_thug,1,2)]),
+  ("faction_human_reinforcements_c", "<faction_human_reinforcements_c>", 0, 0, fac_commoners, 0, [(trp_militia,2,4),(trp_thug,2,4)]),  
+  ("faction_wookiee_reinforcements_a", "<faction_wookiee_reinforcements_a>", 0, 0, fac_commoners, 0, [(trp_wookiee,6,12)]),
+  ("faction_wookiee_reinforcements_b", "<faction_wookiee_reinforcements_b>", 0, 0, fac_commoners, 0, [(trp_wookiee,3,6),(trp_wookiee_warrior,3,6)]),
+  ("faction_wookiee_reinforcements_c", "<faction_wookiee_reinforcements_c>", 0, 0, fac_commoners, 0, [(trp_wookiee_marksman,2,4),(trp_wookiee_berserker,2,4)]),
+  ("faction_mandalorian_reinforcements_a", "<faction_mandalorian_reinforcements_a>", 0, 0, fac_commoners, 0, [(trp_mandalorian,6,12)]),
+  ("faction_mandalorian_reinforcements_b", "<faction_mandalorian_reinforcements_b>", 0, 0, fac_commoners, 0, [(trp_mandalorian,3,6),(trp_mandalorian_soldier,3,6)]),
+  ("faction_mandalorian_reinforcements_c", "<faction_mandalorian_reinforcements_c>", 0, 0, fac_commoners, 0, [(trp_mandalorian_commando,2,4),(trp_mandalorian_sniper,2,4)]),  
+  ("faction_clone_reinforcements_a", "<faction_clone_reinforcements_a>", 0, 0, fac_commoners, 0, [(trp_clone_trooper_1,6,12)]),
+  ("faction_clone_reinforcements_b", "<faction_clone_reinforcements_b>", 0, 0, fac_commoners, 0, [(trp_clone_trooper_2,5,9),(trp_arc_trooper_2,1,3)]),
+  ("faction_clone_reinforcements_c", "<faction_clone_reinforcements_c>", 0, 0, fac_commoners, 0, [(trp_clone_trooper_3,3,6),(trp_arc_trooper_3,1,2)]),    
+  ("faction_trandoshan_reinforcements_a", "<faction_trandoshan_reinforcements_a>", 0, 0, fac_commoners, 0, [(trp_trandoshan,6,12)]),
+  ("faction_trandoshan_reinforcements_b", "<faction_trandoshan_reinforcements_b>", 0, 0, fac_commoners, 0, [(trp_trandoshan,3,6),(trp_trandoshan_warrior,3,6)]),
+  ("faction_trandoshan_reinforcements_c", "<faction_trandoshan_reinforcements_c>", 0, 0, fac_commoners, 0, [(trp_trandoshan_hunter,2,4),(trp_trandoshan_bounty_hunter,2,4)]),
   
 ##  ("galacticempire_reinforcements_a", "galacticempire_reinforcements_a", 0, 0, fac_commoners, 0, [(trp_swadian_footman,3,7),(trp_swadian_skirmisher,5,10),(trp_swadian_militia,11,26)]),
 ##  ("galacticempire_reinforcements_b", "galacticempire_reinforcements_b", 0, 0, fac_commoners, 0, [(trp_swadian_man_at_arms,5,10),(trp_swadian_infantry,5,10),(trp_swadian_crossbowman,3,8)]),

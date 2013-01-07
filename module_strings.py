@@ -2332,6 +2332,7 @@ We apologize sincerely if you contributed your suggestions and feedback but were
                               ' Dustin Matthew Blamey^'+
                               ' Sam <uio0000>^'+
                               ' <Zahar>^'+
+                              ' <HapSlash>^'+
                               ' <Grocat>^'+
                               ' <LordOfTheSithLords>^'+
                               ' <Highelf>^'+
