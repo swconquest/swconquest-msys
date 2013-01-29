@@ -27,35 +27,35 @@ from header_triggers import *
 ####################################################################################################################
 
 # Some constants for ease of use.
-imodbits_none = 0
-imodbits_horse_basic = imodbit_swaybacked|imodbit_lame|imodbit_spirited|imodbit_heavy|imodbit_stubborn
-imodbits_cloth  = imodbit_tattered | imodbit_ragged | imodbit_sturdy | imodbit_thick | imodbit_hardened
-imodbits_armor  = imodbit_rusty | imodbit_battered | imodbit_crude | imodbit_thick | imodbit_reinforced |imodbit_lordly
-imodbits_plate  = imodbit_cracked | imodbit_rusty | imodbit_battered | imodbit_crude | imodbit_thick | imodbit_reinforced |imodbit_lordly
-imodbits_polearm = imodbit_cracked | imodbit_bent | imodbit_balanced
-imodbits_shield  = imodbit_cracked | imodbit_battered |imodbit_thick | imodbit_reinforced
-imodbits_sword   = imodbit_rusty | imodbit_chipped | imodbit_balanced |imodbit_tempered
-imodbits_sword_high   = imodbit_rusty | imodbit_chipped | imodbit_balanced |imodbit_tempered|imodbit_masterwork
-imodbits_axe   = imodbit_rusty | imodbit_chipped | imodbit_balanced |imodbit_heavy
-imodbits_mace   = imodbit_rusty | imodbit_chipped | imodbit_balanced |imodbit_heavy
-imodbits_pick   = imodbit_rusty | imodbit_chipped | imodbit_balanced | imodbit_heavy
-imodbits_bow = imodbit_cracked | imodbit_bent | imodbit_strong |imodbit_masterwork
-imodbits_crossbow = imodbit_cracked | imodbit_bent | imodbit_masterwork
-imodbits_missile   = imodbit_bent | imodbit_large_bag
-imodbits_thrown   = imodbit_bent | imodbit_heavy| imodbit_balanced| imodbit_large_bag
+imodbits_none          = 0
+imodbits_horse_basic   = imodbit_swaybacked|imodbit_lame|imodbit_spirited|imodbit_heavy|imodbit_stubborn
+imodbits_cloth         = imodbit_tattered | imodbit_ragged | imodbit_sturdy | imodbit_thick | imodbit_hardened
+imodbits_armor         = imodbit_rusty | imodbit_battered | imodbit_crude | imodbit_thick | imodbit_reinforced |imodbit_lordly
+imodbits_plate         = imodbit_cracked | imodbit_rusty | imodbit_battered | imodbit_crude | imodbit_thick | imodbit_reinforced |imodbit_lordly
+imodbits_polearm       = imodbit_cracked | imodbit_bent | imodbit_balanced
+imodbits_shield        = imodbit_cracked | imodbit_battered |imodbit_thick | imodbit_reinforced
+imodbits_sword         = imodbit_rusty | imodbit_chipped | imodbit_balanced |imodbit_tempered
+imodbits_sword_high    = imodbit_rusty | imodbit_chipped | imodbit_balanced |imodbit_tempered|imodbit_masterwork
+imodbits_axe           = imodbit_rusty | imodbit_chipped | imodbit_balanced |imodbit_heavy
+imodbits_mace          = imodbit_rusty | imodbit_chipped | imodbit_balanced |imodbit_heavy
+imodbits_pick          = imodbit_rusty | imodbit_chipped | imodbit_balanced | imodbit_heavy
+imodbits_bow           = imodbit_cracked | imodbit_bent | imodbit_strong |imodbit_masterwork
+imodbits_crossbow      = imodbit_cracked | imodbit_bent | imodbit_masterwork
+imodbits_missile       = imodbit_bent | imodbit_large_bag
+imodbits_thrown        = imodbit_bent | imodbit_heavy| imodbit_balanced| imodbit_large_bag
 
-imodbits_horse_good = imodbit_spirited|imodbit_heavy
-imodbits_cloth_good  = imodbit_sturdy | imodbit_thick | imodbit_hardened
-imodbits_good   = imodbit_sturdy | imodbit_thick | imodbit_hardened | imodbit_reinforced
-imodbits_bad    = imodbit_rusty | imodbit_chipped | imodbit_tattered | imodbit_ragged | imodbit_cracked | imodbit_bent
+imodbits_horse_good    = imodbit_spirited|imodbit_heavy
+imodbits_cloth_good    = imodbit_sturdy | imodbit_thick | imodbit_hardened
+imodbits_good          = imodbit_sturdy | imodbit_thick | imodbit_hardened | imodbit_reinforced
+imodbits_bad           = imodbit_rusty | imodbit_chipped | imodbit_tattered | imodbit_ragged | imodbit_cracked | imodbit_bent
 
 #SW - added imodbits for guns, lightsaber
-imodbits_gun   = imodbit_cracked | imodbit_rusty | imodbit_balanced | imodbit_heavy
-imodbits_lightsaber   = imodbit_rusty | imodbit_chipped | imodbit_balanced |imodbit_tempered | imodbit_heavy
-imodbits_speeder = imodbit_battered | imodbit_champion | imodbit_cracked | imodbit_heavy | imodbit_lame | imodbit_reinforced | imodbit_spirited | imodbit_swaybacked
+imodbits_gun           = imodbit_cracked | imodbit_rusty | imodbit_balanced | imodbit_heavy
+imodbits_lightsaber    = imodbit_rusty | imodbit_chipped | imodbit_balanced |imodbit_tempered | imodbit_heavy
+imodbits_speeder       = imodbit_battered | imodbit_champion | imodbit_cracked | imodbit_heavy | imodbit_lame | imodbit_reinforced | imodbit_spirited | imodbit_swaybacked
 imodbits_speeder_basic = imodbit_battered | imodbit_cracked | imodbit_heavy | imodbit_lame | imodbit_reinforced | imodbit_spirited | imodbit_swaybacked
-imodbits_ammo    = imodbit_large_bag
-imodbits_droid = imodbit_battered | imodbit_cracked | imodbit_rusty | imodbit_reinforced | imodbit_thick
+imodbits_ammo          = imodbit_large_bag
+imodbits_droid         = imodbit_battered | imodbit_cracked | imodbit_rusty | imodbit_reinforced | imodbit_thick
 
 
 #Swyter's Muzzleflare system
@@ -66,7 +66,7 @@ muzzleflare_system = [
 ]
 
 #lightsaber price bonus--some balancing comes in handy in more civilized times
-lsbr_vluemul=1.7
+lsbr_vluemul = 1.7
 
 # Replace winged mace/spiked mace with: Flanged mace / Knobbed mace?
 # Fauchard (majowski glaive) 

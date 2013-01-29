@@ -1680,9 +1680,9 @@ troops = [
 		itm_ig88_feet,
 		itm_ig88_e11_shield,
 		itm_ig88_dlt20a,
-		itm_ig88_dlt20a,		#gave 2x so ther eis a chance the player could find it in the loot after a battle
+		itm_ig88_dlt20a,		            #gave 2x so ther eis a chance the player could find it in the loot after a battle
 		itm_laser_bolts_orange_pistol,	#have to give pistol ammo since itm_ig88_dlt20a is a pistol so it can be carried 1-handed
-		itm_laser_bolts_orange_pistol	#have to give pistol ammo since itm_ig88_dlt20a is a pistol so it can be carried 1-handed
+		itm_laser_bolts_orange_pistol	  #have to give pistol ammo since itm_ig88_dlt20a is a pistol so it can be carried 1-handed
 	],
 	str_16|int_12|level(35),
 	wp(175)|wp_crossbow(200),

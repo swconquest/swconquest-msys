@@ -2797,6 +2797,31 @@ scene_props = [
   
   ("swy_outer_sea",0,"swy_outer_sea","0", []),
 
+("Rhen_Var_Block_A",0,"Rhen_Var_Block_A","bo_Yavin_Block_A", []),
+("Rhen_VarYavin_Bridge_Large",0,"Rhen_VarYavin_Bridge_Large","bo_Yavin_Bridge_Large", []),
+("Rhen_VarYavin_Bridge_Large_Broken_A",0,"Rhen_VarYavin_Bridge_Large_Broken_A","bo_Yavin_Bridge_Large_Broken_A", []),
+("Rhen_VarYavin_Bridge_Large_Broken_B",0,"Rhen_VarYavin_Bridge_Large_Broken_B","bo_Yavin_Bridge_Large_Broken_B", []),
+("Rhen_VarYavin_Platform",0,"Rhen_VarYavin_Platform","bo_Yavin_Platform", []),
+("Rhen_VarYavin_Ramp_A",0,"Rhen_VarYavin_Ramp_A","bo_Yavin_Ramp_A", []),
+("Rhen_VarYavin_Ramp_B",0,"Rhen_VarYavin_Ramp_B","bo_Yavin_Ramp_B", []),
+("Rhen_VarYavin_Ramp_B",0,"Rhen_VarYavin_Ramp_B","bo_Yavin_Ramp_B", []),
+("Rhen_VarYavin_Stairs",0,"Rhen_VarYavin_Stairs","bo_Yavin_Stairs", []),
+("Rhen_VarYavin_Stairs_Large",0,"Rhen_VarYavin_Stairs_Large","bo_Yavin_Stairs_Large", []),
+("Rhen_VarYavin_Statue_4",0,"Rhen_VarYavin_Statue_4","bo_Yavin_Statue_4", []),
+("Rhen_VarYavin_Statue_5",0,"Rhen_VarYavin_Statue_5","bo_Yavin_Statue_5", []),
+("Rhen_VarYavin_Statue_6",0,"Rhen_VarYavin_Statue_6","bo_Yavin_Statue_6", []),
+("Rhen_VarYavin_Wall_Big_Broken",0,"Rhen_VarYavin_Wall_Big_Broken","bo_Yavin_Wall_Big_Broken", []),
+("Rhen_VarYavin_Wall_Big",0,"Rhen_VarYavin_Wall_Big","bo_Yavin_Wall_Big", []),
+("Rhen_VarYavin_Wall_Big_Hole",0,"Rhen_VarYavin_Wall_Big_Hole","bo_Yavin_Wall_Big_Hole", []),
+("Rhen_VarYavin_Wall_Big_Hole_2",0,"Rhen_VarYavin_Wall_Big_Hole_2","bo_Yavin_Wall_Big_Hole_2", []),
+("Rhen_VarYavin_Wall_Big_Hub",0,"Rhen_VarYavin_Wall_Big_Hub","bo_Yavin_Wall_Big_Hub", []),
+("Rhen_Varyavinaddon",0,"Rhen_Varyavinaddon","bo_yavinaddon", []),
+("Rhen_VarYavin_Tower_1",0,"Rhen_VarYavin_Tower_1","bo_Yavin_Tower_1", []),
+("Rhen_VarYavin_Tower_2",0,"Rhen_VarYavin_Tower_2","bo_Yavin_Tower_2", []),
+("skybox_space_prop_dome",0,"skybox_space_prop_dome","0", []),
+("prop_sentinel_droid",0,"prop_sentinel_droid","bo_prop_sentinel_droid", []),
+("Rebel_Floor",0,"Rebel_Floor","bo_Rebel_Floor", []),
+  
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)
 #Highlander begin--------------------------------------
