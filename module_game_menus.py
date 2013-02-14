@@ -734,11 +734,11 @@ game_menus = [
        (set_visitors, 8, "trp_quick_battle_farmer", 5),
 
 ## ENEMY
-       (set_visitors, 16, "trp_tusken_1", 15),
-       (set_visitors, 17, "trp_tusken_1", 25),
-       (set_visitors, 18, "trp_tusken_1", 15),
-       (set_visitors, 19, "trp_tusken_1", 25),
-       (set_visitors, 20, "trp_tusken_1", 20),
+       (set_visitors, 16, "trp_tusken_1", 15*.7),
+       (set_visitors, 17, "trp_tusken_1", 25*.6),
+       (set_visitors, 18, "trp_tusken_1", 15*.7),
+       (set_visitors, 19, "trp_tusken_1", 25*.6),
+       (set_visitors, 20, "trp_tusken_1", 20*.7),
        (str_store_string, s16, "str_custom_battle_3"),
 	   
 ##   Scene 5 START

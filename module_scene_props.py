@@ -2338,7 +2338,7 @@ scene_props = [
   ("moseisley_bank",0,"moseisley_bank","bo_moseisley_bank", []),
   ("moseisleybottles",0,"moseisleybottles","bo_moseisleybottles", []),
 
-  ("moseisley_building_1",0,"moseisley_building_1",0, []),
+  ("moseisley_building_1",0,"moseisley_building_1","bo_moseisley_building_1", []),
   ("moseisley_building_2",0,"moseisley_building_2",0, []),
   
 #Saleucami
@@ -2821,6 +2821,16 @@ scene_props = [
 ("skybox_space_prop_dome",0,"skybox_space_prop_dome","0", []),
 ("prop_sentinel_droid",0,"prop_sentinel_droid","bo_prop_sentinel_droid", []),
 ("Rebel_Floor",0,"Rebel_Floor","bo_Rebel_Floor", []),
+#>another batch of fresh props by vector :)
+("tatooine_house_1",0,"tatooine_house_1","bo_tatooine_house_1", []),
+("tatooine_arch",0,"tatooine_arch","bo_tatooine_arch", []),
+("tatooine_corner",0,"tatooine_corner","bo_tatooine_corner", []),
+("tatooine_wall_big",0,"tatooine_wall_big","bo_tatooine_wall_big", []),
+("tatooine_wall_end",0,"tatooine_wall_end","bo_tatooine_wall_end", []),
+("tatooine_wall_mid",0,"tatooine_wall_mid","bo_tatooine_wall_mid", []),
+("tatooine_house_2",0,"tatooine_house_2","bo_tatooine_house_2", []),
+("tatooine_house_3",0,"tatooine_house_3","bo_tatooine_house_3", []),
+("tatooine_circle",0,"tatooine_circle","bo_tatooine_circle", []),
   
 #----------------------------------------------------------------------
 #add everything crashable here:(asteroids and etc.)

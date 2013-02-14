@@ -2310,7 +2310,8 @@ We apologize sincerely if you contributed your suggestions and feedback but were
                               ' Marosh <Geroj>^^'+
 
                               'Music Composition and Performance:^'+
-                              ' Vladan Zivanovic^^'+
+                              ' Vladan Zivanovic^'+
+                              ' (www.DarkRuneCreations.com.au)^^'+
 
                               'Additional AI Programming:^'+
                               ' Michael Richter^^'+

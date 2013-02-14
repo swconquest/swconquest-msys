@@ -143,7 +143,7 @@ scenes = [
   #("quick_battle_4",sf_generate,"none", "none", (0,0),(120,120),-100,"0x00001d63c005114300006228000053bf00004eb9", 
 
 #--> Tusken Raider Attack
-  ("quick_battle_4",sf_generate,"none", "none", (0,0),(120,120),-100,"0x0000000050001d63c005114300006228000053bf00004eb9", 
+  ("quick_battle_4",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000000200016da000364d9000060f500007591000064e7", 
     [],[], "outer_terrain_steppe"),
 #--> Attack on the Yavin IV Shrine
   ("quick_battle_7",sf_generate,"none", "none", (0,0),(100,100),-100,"0x314d060900036cd70000295300002ec9000025f3",
