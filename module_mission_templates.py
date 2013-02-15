@@ -4490,9 +4490,9 @@ mission_templates = [
         common_battle_mission_start,
 
         (0, 0, ti_once,
-         [
-           (assign, "$defender_team", 0),
-           (assign, "$attacker_team", 1),
+         [ (set_fog_distance, 175, 0xEE655436),
+           (assign, "$defender_team",   0),
+           (assign, "$attacker_team",   1),
            (assign, "$defender_team_2", 2),
            (assign, "$attacker_team_2", 3),
            ], []),
