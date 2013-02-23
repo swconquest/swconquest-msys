@@ -4809,15 +4809,18 @@ presentations = [
             (call_script, "script_troop_add_gold", "trp_player", reg51),
             (assign,reg56,2),
 			#SW - added script_change_player_relation_with_troop to blackjack mod (win = -1, lose = +1, draw = 0)
-			(gt,reg51,25*2),#if npc losts more than 25 credits then worse relationship
+			(gt,reg51,25),#if npc loses more than 25 credits then worse relationship
 			(call_script, "script_change_player_relation_with_troop", "$g_talk_troop", -1),
           (else_try),
             (gt,reg54,21),
             (display_message, "@Your hand value is over 21. You lose!", 0x88ffff),
             #(play_sound, "snd_game_lose"),
+      (assign,reg56,1),
 			#SW - added script_change_player_relation_with_troop to blackjack mod (win = -1, lose = +1, draw = 0)
+			#if npc gains more than 25 credits has a 50% probability of raising relation
+			(gt,reg51,25),
+			(store_random_in_range,":_t",0,1),(eq,":_t",0),
 			(call_script, "script_change_player_relation_with_troop", "$g_talk_troop", 1),			
-            (assign,reg56,1),
           (else_try),
             (eq,reg60,1),
             (eq,reg61,1),
