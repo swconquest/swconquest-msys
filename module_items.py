@@ -2116,7 +2116,7 @@ items = [
 ["energy_shield_green_large","Large Energy Shield", [("energy_shield_green_large",0)], itp_merchandise|itp_type_shield|itp_wooden_parry, 0, 600 , weight(0.1)|abundance(60)|hit_points(600)|body_armor(30)|spd_rtng(95)|weapon_length(80),imodbits_none ],
 ["energy_shield_yellow_large","Large Energy Shield", [("energy_shield_yellow_large",0)], itp_merchandise|itp_type_shield|itp_wooden_parry, 0, 600 , weight(0.1)|abundance(60)|hit_points(600)|body_armor(30)|spd_rtng(95)|weapon_length(80),imodbits_none ],
 ["energy_shield_oval","Oval Energy Shield", [("energy_shield_large_v2",0)], itp_merchandise|itp_type_shield|itp_wooden_parry, 0, 800 , weight(0.1)|abundance(60)|hit_points(700)|body_armor(35)|spd_rtng(90)|weapon_length(85),imodbits_none ],
-["energy_shield_circle","Circular Energy Shield", [("shield_circle",0)], itp_merchandise|itp_type_shield|itp_wooden_parry, 0, 1200, weight(0.1)|abundance(60)|hit_points(800)|body_armor(40)|spd_rtng(85)|weapon_length(90),imodbits_none ],
+["energy_shield_circle","Circular Energy Shield", [("_",0)], itp_merchandise|itp_type_shield|itp_wooden_parry, 0, 1200, weight(0.1)|abundance(60)|hit_points(800)|body_armor(40)|spd_rtng(85)|weapon_length(90),imodbits_none ],
 ["durasteel_shield_small", "Small Durasteel Shield", [("shield_dragon",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,  250 , weight(4)|abundance(60)|hit_points(300)|body_armor(10)|spd_rtng(75)|weapon_length(40),imodbits_shield ],
 #TEST durasteel shield ?
 ["durasteel_shield_small_2", "Small Durasteel Shield", [("shield_round_e",0)], itp_merchandise|itp_type_shield, itcf_carry_round_shield,  250 , weight(4)|abundance(60)|hit_points(300)|body_armor(10)|spd_rtng(75)|weapon_length(40),imodbits_shield ],

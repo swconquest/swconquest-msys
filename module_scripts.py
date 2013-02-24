@@ -30245,7 +30245,7 @@ scripts = [
                       #Rancors
                       (this_or_next|eq, "trp_rancor",        ":cur_agent_troop"),
                       (eq,              "trp_rancor_mutant", ":cur_agent_troop"),
-                      (agent_set_speed_limit,":agent_no",3),
+                      (agent_set_speed_limit,":agent_no",3*2),
                     (else_try),
                       #Darth Vader
                       (eq, "trp_knight_1_1", ":cur_agent_troop"),
@@ -30254,14 +30254,14 @@ scripts = [
                       (agent_set_walk_forward_animation, ":agent_no", "anim_droid_walk_forward"),
                       (agent_get_item_id,":vader_is_mounted", ":agent_no"),
                       (eq, ":vader_is_mounted", -1),
-                      (agent_set_speed_limit,":agent_no",4),
+                      (agent_set_speed_limit,":agent_no",4*2),
                     (else_try),
                       #B2 Droids
                       (this_or_next|eq, "trp_b2series",          ":cur_agent_troop"),
                       (eq,              "trp_b2series_enhanced", ":cur_agent_troop"),
                       (agent_set_stand_animation, ":agent_no", "anim_b2_stand"),
                       (agent_set_walk_forward_animation, ":agent_no", "anim_b2_walk"),
-                      (agent_set_speed_limit,":agent_no",6),
+                      (agent_set_speed_limit,":agent_no",6*2),
                     (else_try),
                       #Hutt Dancer
                       (eq,":location_flag",1),
