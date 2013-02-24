@@ -303,7 +303,7 @@ scenes = [
   ("mainplanet_bothawui_center",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029",
     [],["bonus_box_mainplanet_19"],"outer_terrain_plain"),
   ("mainplanet_mustafar_center",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029",
-    [],["bonus_box_mainplanet_20"],"outer_terrain_plain"),
+    [],["bonus_box_mainplanet_20"],),
 	
 	#Kamino center orig code: (0x000000043000050000029caa00000001000048c000001029)     new code: (0x0000000430000500000d234800000001000048c000001029)
   ("mainplanet_kamino_center",sf_generate,"none", "none", (0,0),(220,220),-100,"0x000000043000050000029caa00000001000048c000001029",
@@ -538,7 +538,7 @@ scenes = [
   ("mainplanet_bothawui_arena",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
     [],[], "outer_terrain_plain"),	  
   ("mainplanet_mustafar_arena",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
-    [],[], "outer_terrain_plain"),	
+    [],[],),	
 #old code: 0x00000002500005004005f57b00005885000046bd00006d9c  new code:0x0000000250000500000d234800005885000046bd00006d9c
   ("mainplanet_kamino_arena",sf_generate,"none", "none", (0,0),(100,100),-100,"0x00000002500005004005f57b00005885000046bd00006d9c",
     [],[]),
@@ -1264,7 +1264,7 @@ scenes = [
   ("mainplanet_bothawui_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
     [],[], "outer_terrain_plain"),
   ("mainplanet_mustafar_land_battle",sf_generate,"none", "none", (0,0),(120,120),-100,"0x000000043000050000029caa00000001000048c000001029", 
-    [],[], "outer_terrain_plain"),
+    [],[],),
 	
 	#Kamino land battle  Old code: 0x000000043000050000029caa00000001000048c000001029      New code:0x0000000430000500000d234800000001000048c000001029
   ("mainplanet_kamino_land_battle",sf_generate,"none", "none", (0,0),(120,120),30,"0x000000043000050000029caa00000001000048c000001029", 
