@@ -2411,6 +2411,9 @@ common_change_fog = (
     (eq, "$current_town","p_spacestation_4"), #Dagobah
     (set_fog_distance, 220, 0xEE222722),
   (else_try),
+    (eq, "$current_town","p_spacestation_28"), #Dathomir
+    (set_fog_distance, 195, 0x00324D3F),
+  (else_try),
     (set_fog_distance, 100000000), #otherwise fog isn't well received here
   (try_end),
     ], [])

@@ -200,26 +200,26 @@ items = [
   ["butter","Bantha butter", [("butter_pot",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(40)|max_ammo(60),imodbits_none],
 
   #@> New Consumable supplies by Vector Dalon
- ["Container_spice_1","Shipment of Ryll Spice", [("Container_spice_1",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(32)|abundance(110),imodbits_none],
- ["Container_spice_2","Shipment of Gree Spice", [("Container_spice_2",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(32)|abundance(70),imodbits_none],
- ["Container_spice_3","Shipment of Glitterstim Spice", [("Container_spice_3",0)], itp_merchandise|itp_type_goods, 0, 150,weight(32)|abundance(40),imodbits_none],
+ ["Container_spice_1","Shipment of Ryll Spice",        [("Container_spice_1",0)], itp_merchandise|itp_type_goods, 0, 150, weight(32)|abundance(110),imodbits_none],
+ ["Container_spice_2","Shipment of Gree Spice",        [("Container_spice_2",0)], itp_merchandise|itp_type_goods, 0, 150, weight(32)|abundance(70), imodbits_none],
+ ["Container_spice_3","Shipment of Glitterstim Spice", [("Container_spice_3",0)], itp_merchandise|itp_type_goods, 0, 150, weight(32)|abundance(40), imodbits_none],
 
- ["Container_food_1","Shipment of Vegetables", [("Container_food_1",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(40)|max_ammo(200),imodbits_none],
+ ["Container_food_1","Shipment of Vegetables",    [("Container_food_1",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 190,weight(18)|abundance(111)|food_quality(40)|max_ammo(260),imodbits_none],
  ["Container_food_2","Shipment of Carbohydrates", [("Container_food_2",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(60)|max_ammo(200),imodbits_none],
- ["Container_food_3","Shipment of Protein", [("Container_food_3",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(80)|max_ammo(200),imodbits_none],
+ ["Container_food_3","Shipment of Protein",       [("Container_food_3",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 140,weight(10)|abundance(110)|food_quality(80)|max_ammo(170),imodbits_none],
 
- ["Container_metal_1","Shipment of Beskar bars", [("Container_metal_1",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(50),imodbits_none],
- ["Container_metal_2","Shipment of Durasteel bars", [("Container_metal_2",0)], itp_merchandise|itp_type_goods, 0, 180,weight(12)|abundance(70),imodbits_none],
- ["Container_metal_3","Shipment of Bronzium bars", [("Container_metal_3",0)], itp_merchandise|itp_type_goods, 0, 210,weight(12)|abundance(110),imodbits_none],
+ ["Container_metal_1","Shipment of Beskar bars",    [("Container_metal_1",0)], itp_merchandise|itp_type_goods, 0, 150, weight(40)|abundance(50), imodbits_none],
+ ["Container_metal_2","Shipment of Durasteel bars", [("Container_metal_2",0)], itp_merchandise|itp_type_goods, 0, 180, weight(60)|abundance(110),imodbits_none],
+ ["Container_metal_3","Shipment of Bronzium bars",  [("Container_metal_3",0)], itp_merchandise|itp_type_goods, 0, 210, weight(70)|abundance(70), imodbits_none],
  
- ["Container_death_sticks","Carton of Death Sticks", [("Container_death_sticks",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(110),imodbits_none],
+ ["Container_death_sticks","Carton of Death Sticks", [("Container_death_sticks",0)], itp_merchandise|itp_type_goods, 0, 90, weight(6)|abundance(110),imodbits_none],
 
- ["Container_drink_1","Shipment of Water", [("Container_drink_1",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(40)|max_ammo(100),imodbits_none],
- ["Container_drink_2","Shipment of Black Ale", [("Container_drink_2",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(60)|max_ammo(150),imodbits_none],
- ["Container_drink_3","Shipment of Juri juice", [("Container_drink_3",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(60)|food_quality(80)|max_ammo(150),imodbits_none],
+ ["Container_drink_1","Shipment of Water",      [("Container_drink_1",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0,  60,weight(12)|abundance(110)|food_quality(30)|max_ammo(220),imodbits_none],
+ ["Container_drink_2","Shipment of Black Ale",  [("Container_drink_2",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0,  90,weight(14)|abundance(110)|food_quality(60)|max_ammo(150),imodbits_none],
+ ["Container_drink_3","Shipment of Juri juice", [("Container_drink_3",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 240,weight(20)|abundance(60)| food_quality(80)|max_ammo(60),imodbits_none],
 
  ["Carbonite_Tibanna","Carbonite Shipment of Tibanna Gas", [("Carbonite_Tibanna",0)], itp_merchandise|itp_type_goods, 0, 150,weight(12)|abundance(110),imodbits_none],
- ["Container_ore","Ore container", [("Container_ore",0)], itp_merchandise|itp_type_goods, 0, 87,weight(56)|abundance(340),imodbits_none],
+ ["Container_ore",    "Ore container",                     [("Container_ore",0)],     itp_merchandise|itp_type_goods, 0,  87,weight(56)|abundance(340),imodbits_none],
 
  ["butter","Bantha butter", [("butter_pot",0)], itp_merchandise|itp_type_goods|itp_consumable|itp_food, 0, 150,weight(12)|abundance(110)|food_quality(40)|max_ammo(60),imodbits_none],
 
@@ -303,8 +303,8 @@ items = [
 #SW - commented out cartridges
 # ["cartridges","Cartridges", [("cartridge_a",0)], itp_type_bullets|itp_merchandise, 0, 41,weight(2.25)|abundance(90)|weapon_length(3)|thrust_damage(1,pierce)|max_ammo(40),imodbits_missile],
 
-["pilgrim_disguise", "Pilgrim Disguise", [("pilgrim_outfit",0)], 0| itp_type_body_armor |itp_covers_legs |itp_civilian ,0, 25 , weight(2)|abundance(100)|head_armor(0)|body_armor(19)|leg_armor(8)|difficulty(0) ,imodbits_cloth ],
-["pilgrim_hood", "Pilgrim Hood", [("pilgrim_hood",0)], 0| itp_type_head_armor |itp_civilian  ,0, 35 , weight(1.25)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_cloth ],
+["pilgrim_disguise", "Pilgrim Disguise", [("pilgrim_outfit",0)], 0|itp_type_body_armor|itp_covers_legs|itp_civilian ,0, 25, weight(2)   |abundance(100)|head_armor(0)|body_armor(19)|leg_armor(8)|difficulty(0), imodbits_cloth],
+["pilgrim_hood",     "Pilgrim Hood",     [("pilgrim_hood",0)],   0|itp_type_head_armor|itp_civilian,                 0, 35, weight(1.25)|abundance(100)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0), imodbits_cloth],
 
 # ARMOR
 #handwear
