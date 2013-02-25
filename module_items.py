@@ -1560,11 +1560,11 @@ items = [
  400 , weight(5)|abundance(0)|head_armor(15)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ],   
  
 #hkseries
-["hk_head", "HK-Series Head", [("hk_head",0)], itp_type_head_armor|itp_covers_head|itp_civilian,0, 
+["hk_head", "HK-Series Head", [("HK_series_head",0)], itp_type_head_armor|itp_covers_head|itp_civilian|itp_attach_armature,0, 
  300 , weight(5)|abundance(0)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ],  
 ["hk_hands", "HK-Series Hands", [("hk_hand_L",0)], itp_type_hand_armor|itp_civilian,0, 
  300 , weight(3)|abundance(0)|head_armor(0)|body_armor(3)|leg_armor(0)|difficulty(0) ,imodbits_none ],   
-["hk_body", "HK-Series Body", [("hk_body",0)], itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
+["hk_body", "HK-Series Body", [("HK_series_body",0)], itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
  7000 , weight(30)|abundance(0)|head_armor(0)|body_armor(45)|leg_armor(0)|difficulty(0) ,imodbits_none ],
 ["hk_feet", "HK-Series Feet", [("hk_feet",0)], itp_type_foot_armor | itp_attach_armature|itp_civilian,0, 
  300 , weight(5)|abundance(0)|head_armor(0)|body_armor(0)|leg_armor(14)|difficulty(0) ,imodbits_none ], 
