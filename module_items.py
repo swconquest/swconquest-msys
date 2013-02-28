@@ -1562,13 +1562,13 @@ items = [
 #hkseries
 ["hk_head", "HK-Series Head", [("HK_series_head",0)], itp_type_head_armor|itp_covers_head|itp_civilian|itp_attach_armature,0, 
  300 , weight(5)|abundance(0)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_none ],  
-["hk_hands", "HK-Series Hands", [("hk_hand_L",0)], itp_type_hand_armor|itp_civilian,0, 
+["hk_hands","HK-Series Hands",[("HK_series_hands",0),("HK_series_hands_inv",ixmesh_inventory)], itp_type_hand_armor|itp_civilian|itp_attach_armature,0, 
  300 , weight(3)|abundance(0)|head_armor(0)|body_armor(3)|leg_armor(0)|difficulty(0) ,imodbits_none ],   
 ["hk_body", "HK-Series Body", [("HK_series_body",0)], itp_type_body_armor|itp_covers_legs|itp_civilian,0, 
  7000 , weight(30)|abundance(0)|head_armor(0)|body_armor(45)|leg_armor(0)|difficulty(0) ,imodbits_none ],
-["hk_feet", "HK-Series Feet", [("hk_feet",0)], itp_type_foot_armor | itp_attach_armature|itp_civilian,0, 
+["hk_feet", "HK-Series Feet", [("HK_series_feet",0)], itp_type_foot_armor | itp_attach_armature|itp_civilian,0, 
  300 , weight(5)|abundance(0)|head_armor(0)|body_armor(0)|leg_armor(14)|difficulty(0) ,imodbits_none ], 
-["hk_attack","_", [("_",0),("hk_hand_L",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary|itp_bonus_against_shield, itc_dagger, 
+["hk_attack","_", [("_",0),("HK_series_hands_inv",ixmesh_inventory)], itp_unique|itp_type_one_handed_wpn|itp_primary|itp_secondary|itp_bonus_against_shield, itc_dagger, 
 250 , weight(1)|abundance(0)|difficulty(0)|spd_rtng(70) | weapon_length(25)|swing_damage(24, cut) | thrust_damage(18, pierce),imodbits_none ],  
  
 # mandalorians
@@ -1904,7 +1904,7 @@ items = [
 ["vibro_axe_medium_1h", "One Handed Vibro-Axe", [("vibro_axe1_1h",0)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_secondary|itp_bonus_against_shield, itc_scimitar|itcf_carry_axe_left_hip, 200 , weight(2.5)|abundance(40)|difficulty(0)|spd_rtng(95) | weapon_length(75)|swing_damage(30, pierce) | thrust_damage(0,  pierce),imodbits_axe ],
 ["vibro_axe_medium_2h", "Two Handed Vibro-Axe", [("vibro_axe1_2h",0)], itp_type_two_handed_wpn|itp_merchandise| itp_two_handed|itp_primary|itp_bonus_against_shield, itc_nodachi|itcf_carry_axe_back, 300 , weight(3.0)|abundance(40)|difficulty(0)|spd_rtng(92) | weapon_length(95)|swing_damage(35, pierce) | thrust_damage(0,  pierce),imodbits_axe ],
 ["vibro_axe_long_1h","One Handed Vibro-Axe", [("vibro_axe2_1h",0)], itp_type_one_handed_wpn|itp_merchandise| itp_primary|itp_secondary|itp_bonus_against_shield, itc_scimitar|itcf_carry_axe_left_hip, 250 , weight(2.0)|abundance(40)|difficulty(0)|spd_rtng(97) | weapon_length(75)|swing_damage(32, pierce) | thrust_damage(0,  pierce),imodbits_axe ],
-["vibro_axe_long_2h","BD-1 Cutter Vibro-Axe", [("vibro_axe2_2h",0)], itp_type_two_handed_wpn|itp_merchandise| itp_two_handed|itp_primary|itp_secondary|itp_bonus_against_shield, itc_nodachi|itcf_carry_axe_back, 425 , weight(4.5)|abundance(80)|difficulty(0)|spd_rtng(90) | weapon_length(120)|swing_damage(40, pierce) | thrust_damage(0,  pierce),imodbits_axe ],
+["vibro_axe_long_2h","BD-1 Cutter Vibro-Axe", [("vibro_axe2",0)], itp_type_two_handed_wpn|itp_merchandise| itp_two_handed|itp_primary|itp_secondary|itp_bonus_against_shield, itc_nodachi|itcf_carry_axe_back, 425 , weight(4.5)|abundance(80)|difficulty(0)|spd_rtng(90) | weapon_length(120)|swing_damage(40, pierce) | thrust_damage(0,  pierce),imodbits_axe ],
 ["tusken_gaffi_staff", "Gaffi Staff", [("gaffi_stick_1",0)], itp_type_polearm|itp_merchandise| itp_spear|itp_primary|itp_penalty_with_shield, itc_staff|itcf_carry_sword_back, 125 , weight(2.5)|abundance(80)|difficulty(0)|spd_rtng(90) | weapon_length(100)|swing_damage(30, blunt) | thrust_damage(25, blunt),imodbits_pick ],
 ["tusken_gaffi_stick", "Gaffi Stick", [("tusken_gaffi_stick_2",0)], itp_type_two_handed_wpn|itp_merchandise| itp_primary|itp_bonus_against_shield, itc_bastardsword|itcf_carry_sword_back, 100 , weight(2.0)|abundance(80)|difficulty(0)|spd_rtng(100) | weapon_length(80)|swing_damage(25, blunt) | thrust_damage(20, blunt),imodbits_pick ],
 ["durasteel_mace","Durasteel Mace", [("spiked_mace",0)], itp_type_one_handed_wpn|itp_merchandise| itp_primary, itc_scimitar|itcf_carry_mace_left_hip, 135 , weight(3.5)|abundance(100)|difficulty(0)|spd_rtng(92) | weapon_length(90)|swing_damage(30 , blunt) | thrust_damage(0 ,  blunt),imodbits_pick ],

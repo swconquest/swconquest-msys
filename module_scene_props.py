@@ -40,8 +40,8 @@ scene_props = [
   ("sw_ATST",0,"ATST_scene_prop","bo_ATST_scene_prop", []),
   ("sw_ATAT",0,"ATAT","bo_ATAT", []),  
   ("sw_dewback",0,"dewback","bo_dewback", []),
-  ("sw_kaadu_a",0,"kaadu_a","bo_kaadu_a", []),
-  ("sw_kaadu_b",0,"kaadu_b","bo_kaadu_b", []),  
+  ("sw_kaadu_a",0,"kaadu_a","bo_kaadu", []),
+  ("sw_kaadu_b",0,"kaadu_b","bo_kaadu", []),  
   
   #ships/map icons
   ("sw_a_wing",0,"a_wing","bo_a_wing", []),
