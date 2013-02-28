@@ -37,7 +37,7 @@ scene_props = [
   #SW - new scene props
 
   #vehicles and mounts
-  ("sw_ATST",0,"ATST_scene_prop","bo_ATST_scene_prop", []),
+  ("sw_ATST",0,"ATST","bo_ATST", []),
   ("sw_ATAT",0,"ATAT","bo_ATAT", []),  
   ("sw_dewback",0,"dewback","bo_dewback", []),
   ("sw_kaadu_a",0,"kaadu_a","bo_kaadu", []),
@@ -804,7 +804,7 @@ scene_props = [
 
   #SW - switched the Catapult to an ATST
   #("Catapult",0,"Catapult","bo_Catapult", []),
-  ("Catapult",0,"ATST_scene_prop","bo_ATST_scene_prop", []),
+  ("Catapult",0,"ATST","bo_ATST", []),
   #SW - modified broom
   #("broom",0,"broom","0", []),
   ("broom", 0, "0", "0", []),
@@ -1652,12 +1652,12 @@ scene_props = [
 
   #SW - switched mangonel to an ATST
   #("mangonel",0,"mangonel","bo_mangonel", []),
-  ("mangonel",0,"ATST_scene_prop","bo_ATST_scene_prop", []),
+  ("mangonel",0,"ATST","bo_ATST", []),
   #SW - switched trebuchet to an ATST
   #("trebuchet_old",0,"trebuchet_old","bo_trebuchet_old", []),
   #("trebuchet_new",0,"trebuchet_new","bo_trebuchet_old", []),
-  ("trebuchet_old",0,"ATST_trebuchet","bo_ATST_trebuchet", []),
-  ("trebuchet_new",0,"ATST_trebuchet","bo_ATST_trebuchet", []),  
+  ("trebuchet_old",0,"ATST","bo_ATST", []),
+  ("trebuchet_new",0,"ATST","bo_ATST", []),
   ("stone_ball",0,"stone_ball","0", []),
 
   ("village_house_a",0,"village_house_a","bo_village_house_a", []),
