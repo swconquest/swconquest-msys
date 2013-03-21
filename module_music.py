@@ -21,7 +21,7 @@ tracks = [
 
 	# NEW MUSIC TRACKS
 	#main title
-	("mount_and_blade_title_screen", "SWC-Battle-Empire.ogg", mtf_sit_main_title|mtf_start_immediately|mtf_module_track, 0),
+	("mount_and_blade_title_screen", "SWC_Intro.ogg", mtf_sit_main_title|mtf_start_immediately|mtf_module_track, 0),
 
 	#SW - some music track names are called by play_track and play_cue_track so these must be the same names as native
 	("captured", "SWC-Capture.ogg", mtf_persist_until_finished|mtf_module_track, 0),
@@ -46,6 +46,7 @@ tracks = [
 	("killed", "SWC-Defeat.ogg", mtf_persist_until_finished|mtf_sit_killed|mtf_module_track, 0),
 	
 	#MAP
+	("map_dspace", "SWC-Deep_Space.ogg", mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
 	("map_1", "SWC-map-1.ogg", mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
 	("map_2", "SWC-map-2.ogg", mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
 	("map_3", "SWC-map-3.ogg", mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
@@ -59,12 +60,16 @@ tracks = [
 	
 	#TOWN/PLANET TRACKS
 	("town_bizaar", "SWC-BizaarPlanetTexture.ogg", mtf_sit_town|mtf_sit_town_infiltrate|mtf_module_track, mtf_sit_town|mtf_sit_town_infiltrate),	
-	("town_gentle", "SWC-Gentle-Planet.ogg", mtf_sit_town|mtf_sit_town_infiltrate|mtf_module_track, mtf_sit_town|mtf_sit_town_infiltrate),
+	("town_gentle", "SWC-Gentle-Planet.ogg",       mtf_sit_town|mtf_sit_town_infiltrate|mtf_module_track, mtf_sit_town|mtf_sit_town_infiltrate),
 	("town_beautiful", "SWC-Beautiful_Planet.ogg", mtf_sit_town|mtf_sit_town_infiltrate|mtf_module_track, mtf_sit_town|mtf_sit_town_infiltrate),		
 	#TOWN SPECIFIC (doesn't seem to work correctly with the play_track commands so I had to add mtf_persist_until_finished)
 	("town_desert", "SWC-Dessert-Planet.ogg", mtf_persist_until_finished|mtf_module_track, 0),
 	("town_wookiee", "SWC-WookiePlanetTexture.ogg", mtf_persist_until_finished|mtf_module_track, 0),
 	("town_endor", "SWC-Endor.ogg", mtf_persist_until_finished|mtf_module_track, 0),	
+	("town_bothawui",   "SWC-Bothawui.ogg",    mtf_persist_until_finished|mtf_module_track, 0),	
+	("town_felucia",    "SWC-Felucia.ogg",     mtf_persist_until_finished|mtf_module_track, 0),	
+	("town_nalhutta",   "SWC-Nul_Hutta.ogg",   mtf_persist_until_finished|mtf_module_track, 0),	
+	("town_raxusprime", "SWC-Raxus_Prime.ogg", mtf_persist_until_finished|mtf_module_track, 0),	
 	#TOWN BATTLES? maybe also use for fights or town_infiltrate ?
 	("town_battle", "SWC-Planet_Battle.ogg", mtf_persist_until_finished|mtf_module_track, 0),	
 	#TOWN TESTING

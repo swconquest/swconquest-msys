@@ -320,19 +320,30 @@ mission_templates = [
             #set music depending on the location
             #SW - attempting to add town specific music (this concept doesn't seem to work at all?  I had to add that persist until finished flag...)
             (try_begin),
-              (this_or_next|eq, "$current_town", "p_endor"),    #Endor
-              (eq, "$current_town", "p_dantooine"),    #Dantooine
+              (this_or_next|eq, "$current_town", "p_endor"),        #Endor
+              (             eq, "$current_town", "p_dantooine"),    #Dantooine
               (play_track, "track_town_endor", 2),  # 0 = default, 1 = fade out current track, 2 = stop current track
             (else_try),
-              (this_or_next|eq, "$current_town", "p_gamorr"),    #Gamorr
-              (this_or_next|eq, "$current_town", "p_kashyyyk"),    #Kashyyyk
-              (eq, "$current_town", "p_nalhutta"),    #Nal_Hutta
+              (this_or_next|eq, "$current_town", "p_gamorr"),       #Gamorr
+              (             eq, "$current_town", "p_kashyyyk"),     #Kashyyyk
               (play_track, "track_town_wookiee", 2),  # 0 = default, 1 = fade out current track, 2 = stop current track
             (else_try),
-              (this_or_next|eq, "$current_town", "p_tatooine"),    #Tatooine
-              (eq, "$current_town", "p_ryloth"),    #Ryloth
+              (             eq, "$current_town", "p_nalhutta"),     #Nal_Hutta
+              (play_track, "track_town_nalhutta", 2),  # 0 = default, 1 = fade out current track, 2 = stop current track
+            (else_try),
+              (this_or_next|eq, "$current_town", "p_tatooine"),     #Tatooine
+              (             eq, "$current_town", "p_ryloth"),       #Ryloth
               (play_track, "track_town_desert", 2),  # 0 = default, 1 = fade out current track, 2 = stop current track
               #(play_track, "track_town_test", 2),    # 0 = default, 1 = fade out current track, 2 = stop current track
+            (else_try),
+              (             eq, "$current_town", "p_felucia"),      #Felucia
+              (play_track, "track_town_felucia", 2),  # 0 = default, 1 = fade out current track, 2 = stop current track
+            (else_try),
+              (             eq, "$current_town", "p_raxusprime"),   #Raxus Prime
+              (play_track, "track_town_raxusprime", 2),  # 0 = default, 1 = fade out current track, 2 = stop current track
+            (else_try),
+              (             eq, "$current_town", "p_bothawui"),     #Bothawui
+              (play_track, "track_town_bothawui", 2),  # 0 = default, 1 = fade out current track, 2 = stop current track
             (try_end),
             #------------------------------------------------------------------------------------------------------------------------------------------------------
 

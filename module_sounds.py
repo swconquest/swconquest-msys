@@ -580,7 +580,7 @@ sounds = [
 #("lightsaber_swing",sf_priority_10|sf_vol_6,["saber_swing1.ogg","saber_swing2.ogg","saber_swing3.ogg","saber_swing4.ogg","saber_swing5.ogg","saber_swing6.ogg","saber_swing7.ogg","saber_swing8.ogg",]),
 #removed saber_swing7.ogg & saber_swing8.ogg since they were 1.4 seconds until the usually 0.5 - 0.9 seconds
 ("lightsaber_swing",sf_priority_10|sf_vol_6,["saber_swing1.ogg","saber_swing2.ogg","saber_swing3.ogg","saber_swing4.ogg","saber_swing5.ogg","saber_swing6.ogg"]),
-("deflector_shield",sf_priority_5|sf_vol_3|sf_looping, ["deflector_shield.ogg"]),
+("deflector_shield",sf_priority_9|sf_vol_2|sf_looping|sf_start_at_random_pos, ["deflector_shield.ogg"]),
 ("deflector_shield_hit",sf_priority_1|sf_vol_10, ["deflector_shield_hit.ogg"]),
 #Added by Swyter, Revan Shan suggestion
 ("e5",sf_priority_5|sf_vol_6,["E5-blaster.ogg"]),

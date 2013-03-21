@@ -5558,7 +5558,7 @@ presentations = [
 	(overlay_set_color, "$g_jq_version", 0xFFFFFFFF), 
 
 	#Equipment info
-        (create_text_overlay, "$g_jq_equipment_status", "@If you can see this, buy a new cpu.", tf_center_justify), #Hero name
+	(create_text_overlay, "$g_jq_equipment_status", "@If you can see this, buy a new cpu.", tf_center_justify), #Hero name
 	(create_text_overlay, "$g_jq_equip_hlines", "@-Weapons-                                                              -Equipment-", tf_left_align),
 	(create_text_overlay, "$g_jq_equipment_item0", "@________________n/a________________", tf_center_justify), #item 0
 	(create_text_overlay, "$g_jq_equipment_item1", "@________________n/a________________", tf_center_justify), #item 1
@@ -5572,20 +5572,21 @@ presentations = [
 
 	#Hero name centered at the top
 	(position_set_x, pos1, 500),
-        (position_set_y, pos1, 630),
-        (overlay_set_position, "$g_jq_equipment_status", pos1),
+	(position_set_y, pos1, 630),
+	(overlay_set_position, "$g_jq_equipment_status", pos1),
 	(position_set_x, pos1, 800),
-        (position_set_y, pos1, 850),
+	(position_set_y, pos1, 850),
 	(overlay_set_size, "$g_jq_equipment_status", pos1),
+	(overlay_set_color, "$g_jq_equipment_status", 0xFFf1f1ff), 
 	
 	# Weapons and Armor headlines
 	(position_set_x, pos1, 210),
 	(position_set_y, pos1, 700),
 	(overlay_set_position, "$g_jq_equip_hlines", pos1),
 	(position_set_x, pos1, 1000),
-        (position_set_y, pos1, 800),
+	(position_set_y, pos1, 800),
 	(overlay_set_size, "$g_jq_equip_hlines", pos1),
-	(overlay_set_color, "$g_jq_equip_hlines", 0xFFAAAAFF),
+	(overlay_set_color, "$g_jq_equip_hlines", 0xFFd0d0ff),
 	
 	# item 0-3
 	(position_set_x, pos1, 255),
