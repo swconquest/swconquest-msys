@@ -73,7 +73,7 @@ tracks = [
 	#TOWN BATTLES? maybe also use for fights or town_infiltrate ?
 	("town_battle", "SWC-Planet_Battle.ogg", mtf_persist_until_finished|mtf_module_track, 0),	
 	#TOWN TESTING
-	("town_test", "test_music.ogg", mtf_persist_until_finished|mtf_module_track, 0),
+	#("town_test", "test_music.ogg", mtf_persist_until_finished|mtf_module_track, 0),
 	
 	#NEW Throne Room Tracks (may also be used for castle entry)
 	("throne_empire_1", "SWC-Empire_Throne_1.ogg", mtf_persist_until_finished|mtf_module_track, 0),	

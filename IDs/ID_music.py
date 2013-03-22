@@ -29,16 +29,15 @@ track_town_felucia = 27
 track_town_nalhutta = 28
 track_town_raxusprime = 29
 track_town_battle = 30
-track_town_test = 31
-track_throne_empire_1 = 32
-track_throne_empire_2 = 33
-track_throne_empire_3 = 34
-track_throne_hutt_1 = 35
-track_throne_hutt_2 = 36
-track_throne_hutt_3 = 37
-track_throne_rebel_1 = 38
-track_throne_rebel_2 = 39
-track_throne_rebel_3 = 40
-track_throne_rebel_4 = 41
+track_throne_empire_1 = 31
+track_throne_empire_2 = 32
+track_throne_empire_3 = 33
+track_throne_hutt_1 = 34
+track_throne_hutt_2 = 35
+track_throne_hutt_3 = 36
+track_throne_rebel_1 = 37
+track_throne_rebel_2 = 38
+track_throne_rebel_3 = 39
+track_throne_rebel_4 = 40
 
 
