@@ -863,7 +863,7 @@ game_menus = [
         (change_screen_mission),
         ]
        ),
-      ("leave_custom_battle_2",[],"Cancel.",
+      ("cancel_dot",[],"Cancel.",
        [(jump_to_menu, "mnu_start_game_3"),
         ]
        ),
@@ -888,7 +888,7 @@ game_menus = [
        (str_store_string, s1, "str_battle_lost"),
      (try_end),],
     [
-      ("continue",[],"Continue.",
+      ("continue_dot",[],"Continue.",
        [(change_screen_quit),
         ]
        ),
@@ -8624,7 +8624,7 @@ game_menus = [
      (call_script, "script_gender_fix", ":faction_leader"),(assign,reg4,reg33)
     ],
     [
-      ("continue",[],"Continue.",
+      ("continue_dot",[],"Continue.",
        [(call_script, "script_give_center_to_lord", "$g_center_to_give_to_player", "trp_player", 0),
         (jump_to_menu, "mnu_give_center_to_player_2"),
         ]),
@@ -10590,7 +10590,7 @@ game_menus = [
     "none",
     [],
     [
-      ("minorplanet_loot",[], "Plunder the planet, then raze it.",
+      ("minorplanet_plunder",[], "Plunder the planet, then raze it.",
        [
           (call_script, "script_minorplanet_set_state", "$current_town", svs_being_raided),
           (party_set_slot, "$current_town", slot_minorplanet_raided_by, "p_main_party"),
@@ -13019,7 +13019,7 @@ game_menus = [
          (assign, "$temp", 4),
          (jump_to_menu, "mnu_training_ground_selection_details_melee_2"),
          ]),
-      ("go_back_dot",[],"Cancel.",
+      ("cancel_dot",[],"Cancel.",
        [
          (jump_to_menu, "mnu_training_ground"),
         ]),
@@ -15897,7 +15897,7 @@ game_menus = [
 	  (troop_set_slot,"$troop_store",":troop_slot","$g_custom_battle_current_troop_number"),
 	  (assign,"$g_custom_battle_current_troop_number",0),]
 	  ),
-	  ("finish",[],"Next",
+	  ("next",[],"Next",
 	  [(try_begin),
 	  (eq,"$g_custom_battle_faction_to_edit","$g_custom_battle_num_factions"),
 	  (jump_to_menu, "mnu_custom_battle_config_main_class"),
@@ -17190,7 +17190,7 @@ game_menus = [
 					(jump_to_menu, "mnu_manage_loot_pool")
 				]
 			),
-			("next",
+			("more_party_members",
 				[
 						(try_begin),
 							(le, reg10, num_loot_management_menu_heroes), #enough entries for everyone
