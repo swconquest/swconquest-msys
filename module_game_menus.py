@@ -298,7 +298,7 @@ game_menus = [
     "none",
     [],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
          (call_script, "script_get_player_party_morale_values"),
          (party_set_morale, "p_main_party", reg0),
@@ -602,7 +602,7 @@ game_menus = [
 ##        ]
 ##       ),
 
-      ("view_character_report",[(eq,"$cheat_mode",1)],"NPC status check.",
+      ("view_npc_status",[(eq,"$cheat_mode",1)],"NPC status check.",
        [
         (try_for_range, ":npc", companions_begin, companions_end),
             (main_party_has_troop, ":npc"),
@@ -2373,7 +2373,7 @@ game_menus = [
         (val_add,"$current_string_reg",1),
         (jump_to_menu, "mnu_past_life_explanation"),
         ]),
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
         ]),
       ("go_back_dot",[],"Go back.",[
@@ -2445,7 +2445,7 @@ game_menus = [
     (str_store_string, s1, "@Current party morale is {reg5}.^Current party morale modifiers are:^^Base morale:  +50^Party size: {s2}{reg1}^Leadership: {s3}{reg2}^Food variety: {s4}{reg3}{s5}{s6}^Recent events: {s7}{reg4}^TOTAL:  {reg5}"),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(jump_to_menu, "mnu_reports"),
         ]
        ),
@@ -2643,7 +2643,7 @@ game_menus = [
     (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(jump_to_menu, "mnu_reports"),
         ]
        ),
@@ -2687,7 +2687,7 @@ game_menus = [
     (str_store_string, s1, "@Current party size limit is {reg5}.^Current party size modifiers are:^^Base size:  +10^Leadership: {s2}{reg1}^Charisma: {s3}{reg2}^Renown: {s4}{reg3}^TOTAL:  {reg5}"),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(jump_to_menu, "mnu_reports"),
         ]
        ),
@@ -2763,7 +2763,7 @@ game_menus = [
     (str_store_string, s1, "@Your relation with the factions are:^{s2}"),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(jump_to_menu, "mnu_reports"),
         ]
        ),
@@ -2953,7 +2953,7 @@ game_menus = [
 		(call_script, "script_walk_around_ship", ":player_entry_point"),
 	  ]
     ),
-	("walk_around_back",
+	("go_back_dot",
       [],"Go back.",
 	  [
 		#SW - autoloot - must switch back to 0 so other dialogs don't break
@@ -3485,7 +3485,7 @@ game_menus = [
 	
 	#########################################################################################
 	
-    ("camp_action_4",[],"Back to faction management menu.",
+    ("back_to_faction_manag",[],"Back to faction management menu.",
       [
 		(jump_to_menu, "mnu_own_faction"),
       ]
@@ -3628,13 +3628,13 @@ game_menus = [
        (jump_to_menu,"mnu_manage_fiefs_2"),
         ]
        ),
-      ("artillery_recruit2",[],"Next...",
+      ("next_3dot",[],"Next...",
        [
        (val_add,"$fief_no",1),
        (jump_to_menu,"mnu_manage_fiefs"),
         ]
        ),
-      ("artillery_recruit2",[],"Back...",
+      ("back_3dot",[],"Back...",
        [
        (val_sub,"$fief_no",1),
        (jump_to_menu,"mnu_manage_fiefs"),
@@ -3774,13 +3774,13 @@ game_menus = [
        (jump_to_menu, "mnu_camp"),
         ]
        ),
-      ("artillery_recruit2",[],"Next...",
+      ("next_3dot",[],"Next...",
        [
        (val_add,"$cur_lord_no",1),
        (jump_to_menu,"mnu_manage_fiefs_2"),
         ]
        ),
-      ("artillery_recruit2",[],"Back...",
+      ("back_3dot",[],"Back...",
        [
        (val_sub,"$cur_lord_no",1),
        (jump_to_menu,"mnu_manage_fiefs_2"),
@@ -4040,7 +4040,7 @@ game_menus = [
        (start_presentation, "prsnt_key_assignment"),
        ]),	   
 	   
-      ("back",[],"Back to configuration menu.",
+      ("back_to_config_menu",[],"Back to configuration menu.",
        [(jump_to_menu, "mnu_camp_configuration"),]),
      ]     
   ),		
@@ -4626,7 +4626,7 @@ game_menus = [
         ]
        ),
 	   
-      ("cheat_next_page",[],"Previous page.",
+      ("cheat_prev_page",[],"Previous page.",
        [(jump_to_menu, "mnu_camp_cheat"),
         ]
        ),
@@ -4970,7 +4970,7 @@ game_menus = [
         (assign, "$g_prisoner_recruit_size", 0),
         ]
        ),
-      ("continue",[(le, "$g_prisoner_recruit_troop_id", 0)],"Go back.",
+      ("go_back_dot",[(le, "$g_prisoner_recruit_troop_id", 0)],"Go back.",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -4982,7 +4982,7 @@ game_menus = [
    "none",
    [],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -5380,7 +5380,7 @@ game_menus = [
  Try as you might, it soon gives you a headache, and you're forced to give up the attempt."),
     (try_end),],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -5667,7 +5667,7 @@ game_menus = [
    "none",
    [],
    [
-     ("continue",[],"Continue...",
+     ("continue_3dot",[],"Continue...",
       [
         (jump_to_menu, "mnu_simple_encounter"),
         (change_screen_mission),
@@ -6257,7 +6257,7 @@ game_menus = [
     [
      ],
     [
-      ("continue",[],"Continue...",[
+      ("continue_3dot",[],"Continue...",[
 ###Troop commentary changes begin
           (call_script, "script_objectionable_action", tmt_aristocratic, "str_flee_battle"),
           (party_get_num_companion_stacks, ":num_stacks", "p_encountered_party_backup"),
@@ -6351,7 +6351,7 @@ game_menus = [
       ("order_retreat",[(eq, "$no_soldiers_left", 0)],"Call your soldiers back.",[
           (jump_to_menu,"mnu_simple_encounter"),
           ]),
-      ("continue",[(eq, "$no_soldiers_left", 1)],"Continue...",[
+      ("continue_3dot",[(eq, "$no_soldiers_left", 1)],"Continue...",[
           (jump_to_menu,"mnu_simple_encounter"),
           ]),
     ]
@@ -6459,7 +6459,7 @@ game_menus = [
      (try_end),
      ],
     [
-      ("continue",[],"Continue...",[(jump_to_menu, "$g_next_menu"),]),
+      ("continue_3dot",[],"Continue...",[(jump_to_menu, "$g_next_menu"),]),
     ]
   ),
 
@@ -6704,7 +6704,7 @@ game_menus = [
         (try_end),
       ],
     [
-      ("continue",[],"Continue...",[]),
+      ("continue_3dot",[],"Continue...",[]),
         ]
   ),
 
@@ -6714,7 +6714,7 @@ game_menus = [
     "none",
     [],
     [
-      ("continue",[],"Continue...",[(jump_to_menu,"mnu_total_victory")]),
+      ("continue_3dot",[],"Continue...",[(jump_to_menu,"mnu_total_victory")]),
     ]
   ),
 
@@ -7099,7 +7099,7 @@ game_menus = [
                                     (try_end),
     ],
     [
-      ("continue",[],"Continue...",[
+      ("continue_3dot",[],"Continue...",[
           (jump_to_menu,"mnu_join_battle"),
           ]),
     ]
@@ -7260,7 +7260,7 @@ game_menus = [
     "none",
     [],
     [
-      ("continue",[],"Continue...",[(try_begin),
+      ("continue_3dot",[],"Continue...",[(try_begin),
                                    (this_or_next|eq, "$g_encountered_party_faction", "fac_player_supporters_faction"),
                                    (eq, "$g_encountered_party_faction", "$players_faction"),
                                    (jump_to_menu, "mnu_town"),
@@ -7774,7 +7774,7 @@ game_menus = [
 	
     ],
     [
-      ("continue",[],
+      ("continue_3dot",[],
        "Continue...",
        [(jump_to_menu,"mnu_town")]),
     ]
@@ -7789,7 +7789,7 @@ game_menus = [
 		(call_script, "script_display_fullscreen_background", "$current_town"),	
     ],
     [
-      ("continue",[],
+      ("continue_3dot",[],
        "Continue...",
        [(jump_to_menu,"mnu_spacestation_guard")]),
     ]
@@ -7838,7 +7838,7 @@ game_menus = [
 		(str_store_troop_name, s6, "$spacestation_meeting_selected_troop")
 	],
     [
-      ("continue",[],
+      ("continue_3dot",[],
        "Continue...",
        [(jump_to_menu, "mnu_spacestation_outside"),
         (modify_visitors_at_site,"scn_conversation_scene"),(reset_visitors),
@@ -8149,7 +8149,7 @@ game_menus = [
     [
     ],
     [
-      ("continue",[],
+      ("continue_3dot",[],
        "Continue...",
        [
              (jump_to_menu, "mnu_battle_debrief"),
@@ -8229,7 +8229,7 @@ game_menus = [
         (try_end),
     ],
     [
-      ("continue",[],
+      ("continue_3dot",[],
        "Continue...",
        [
            (try_begin),
@@ -8299,7 +8299,7 @@ game_menus = [
            (rest_for_hours_interactive, 96, 5, 1), #rest while attackable. A trigger will divert control when attack is ready.
            (change_screen_return),
            ]),
-      ("go_back",[],
+      ("go_back_dot",[],
        "Go back.", [(jump_to_menu,"mnu_spacestation_besiege")]),
         ],
   ),
@@ -8339,7 +8339,7 @@ game_menus = [
            (rest_for_hours_interactive, 240, 5, 1), #rest while attackable. A trigger will divert control when attack is ready.
            (change_screen_return),
            ]),
-      ("go_back",[],
+      ("go_back_dot",[],
        "Go back.", [(jump_to_menu,"mnu_spacestation_besiege")]),
         ],
   ),
@@ -8409,7 +8409,7 @@ game_menus = [
 ##                                    (jump_to_menu,"mnu_spacestation_attack_walls_3"),
 ##                                    ]),
 ##      ("call_soldiers_back",[(eq, "$no_soldiers_left", 0)],"Call your soldiers back.",[(jump_to_menu,"mnu_spacestation_outside")]),
-      ("continue",[],"Continue...",[(jump_to_menu,"mnu_spacestation_besiege")]),
+      ("continue_3dot",[],"Continue...",[(jump_to_menu,"mnu_spacestation_besiege")]),
     ]
   ),
   
@@ -8492,7 +8492,7 @@ game_menus = [
         (try_end),
      ],
     [
-      ("continue",[],"Continue...",[(jump_to_menu,"mnu_besiegers_camp_with_allies")]),
+      ("continue_3dot",[],"Continue...",[(jump_to_menu,"mnu_besiegers_camp_with_allies")]),
     ]
   ),
 
@@ -8555,7 +8555,7 @@ game_menus = [
         (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
           (assign, "$auto_enter_town", "$g_encountered_party"),
           (change_screen_return),
@@ -8753,7 +8753,7 @@ game_menus = [
       (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
     ],
@@ -9175,7 +9175,7 @@ game_menus = [
         (try_end),
     ],
     [
-      ("continue",[],"Continue...",[
+      ("continue_3dot",[],"Continue...",[
           (jump_to_menu,"mnu_siege_started_defender"),
           ]),
     ]
@@ -9189,7 +9189,7 @@ game_menus = [
       (str_store_party_name, s2, "$current_town"),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [ (jump_to_menu,"mnu_town"),
         ]),
     ],
@@ -9753,7 +9753,7 @@ game_menus = [
 		(set_background_mesh, "mesh_pic_recruits"),
     ],
     [
-      ("continue",		[(le, reg5, 0)],
+      ("continue_3dot",		[(le, reg5, 0)],
 						"Continue...",	[
 						(party_set_slot, "$current_town", slot_center_volunteer_troop_amount, -1),
 						(jump_to_menu,"mnu_village")
@@ -9810,7 +9810,7 @@ game_menus = [
 		(set_background_mesh, "mesh_pic_recruits"),
     ],
     [
-      ("continue",		[(le, reg5, 0)],
+      ("continue_3dot",		[(le, reg5, 0)],
 						"Continue...",	[
 						(party_set_slot, "$current_town", slot_center_volunteer_troop_amount, -1),
 						(jump_to_menu,"mnu_village")
@@ -9873,8 +9873,8 @@ game_menus = [
 						# (assign, "$g_droid_foundry_type", "trp_fxseries_droid"),
 						# (jump_to_menu,"mnu_recruit_droids"),
                         # ]),
-      ("leave",			[],
-						"go back.",[
+      ("go_back_dot",			[],
+						"Go back.",[
 						(jump_to_menu,"mnu_village")
 						]),
     ],
@@ -9911,7 +9911,7 @@ game_menus = [
 		(set_background_mesh, "mesh_pic_recruits"),
     ],
     [
-      ("continue",		[(le, reg5, 0)],
+      ("continue_3dot",		[(le, reg5, 0)],
 						"Continue...",	[
 						(party_set_slot, "$current_town", slot_center_volunteer_troop_amount, -1),
 						(jump_to_menu,"mnu_village")
@@ -9960,7 +9960,7 @@ game_menus = [
 		(set_background_mesh, "mesh_pic_rancors"),
     ],
     [
-      ("continue",		[(le, reg5, 0)],
+      ("continue_3dot",		[(le, reg5, 0)],
 						"Continue...",	[
 						(party_set_slot, "$current_town", slot_center_volunteer_troop_amount, -1),
 						(jump_to_menu,"mnu_village")
@@ -10027,7 +10027,7 @@ game_menus = [
 		(set_background_mesh, "mesh_pic_recruits"),
     ],
     [
-      ("continue",		[(le, reg5, 0)],
+      ("continue_3dot",		[(le, reg5, 0)],
 						"Continue...",	[
 						(party_set_slot, "$current_town", slot_center_volunteer_troop_amount, -1),
 						(jump_to_menu,"mnu_village")
@@ -10051,7 +10051,7 @@ game_menus = [
     "none",
     [],
     [
-      ("continue",[],"Continue...",[(jump_to_menu, "mnu_village"),]),
+      ("continue_3dot",[],"Continue...",[(jump_to_menu, "mnu_village"),]),
     ],
   ),
 
@@ -10070,7 +10070,7 @@ game_menus = [
      (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(party_set_slot, "$g_encountered_party", slot_minorplanet_infested_by_bandits, 0),
         (call_script, "script_minorplanet_set_state",  "$current_town", svs_looted),
         (party_set_slot, "$current_town", slot_minorplanet_raid_progress, 0),
@@ -10344,7 +10344,7 @@ game_menus = [
       (try_end),
     ],
     [
-      ("continue",[],"Continue...",[(change_screen_return)]),
+      ("continue_3dot",[],"Continue...",[(change_screen_return)]),
     ],
   ),
 
@@ -10370,7 +10370,7 @@ game_menus = [
       (call_script, "script_troop_add_gold","trp_player",":gold_reward"),
     ],
     [
-      ("continue",[],"Continue...",[(change_screen_return)]),
+      ("continue_3dot",[],"Continue...",[(change_screen_return)]),
     ],
   ),
 
@@ -10435,7 +10435,7 @@ game_menus = [
       (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
          (change_screen_return),
          ]),
@@ -10598,13 +10598,13 @@ game_menus = [
           (rest_for_hours, 3, 5, 1), #rest while attackable (3 hours will be extended by the trigger)
           (change_screen_return),
            ]),
-      ("minorplanet_raid_leave",[],"Leave this village alone.",[(change_screen_return)]),
+      ("minorplanet_raid_leave",[],"Leave this planet alone.",[(change_screen_return)]),
     ],
   ),
   (
     "minorplanet_loot_complete",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
-    "On your orders your troops sack the village, pillaging everything of any value,\
- and then put the buildings to the torch. From the coins and valuables that are found, you get your share of {reg1} credits.",
+    "On your orders your troops sack the planet, pillaging everything of any value,\
+ Before destroying any trace of life in your way some valuables are found, you get your share of {reg1} credits.",
     "none",
     [
         (party_get_slot, ":minorplanet_lord", "$current_town", slot_mainplanet_lord),
@@ -10630,7 +10630,7 @@ game_menus = [
 #NPC companion changes end
       ],
     [
-      ("continue",[], "Continue...",
+      ("continue_3dot",[], "Continue...",
        [
           (jump_to_menu, "mnu_close"),
           (call_script, "script_calculate_amount_of_cattle_can_be_stolen", "$current_town"),
@@ -10657,17 +10657,17 @@ game_menus = [
   ),
   (
     "minorplanet_loot_defeat",menu_text_color(0xFF000d2c),
-    "Fighting with courage and determination, the villagers manage to hold together and drive off your forces.",
+    "Fighting with courage and determination, the planet inhabitants manage to hold together and drive off your forces.",
     "none",
     [],
     [
-      ("continue",[],"Continue...",[(change_screen_return)]),
+      ("continue_3dot",[],"Continue...",[(change_screen_return)]),
     ],
   ),
   
   (
     "minorplanet_loot_continue",menu_text_color(0xFF000d2c),
-    "Do you wish to continue looting this village?",
+    "Do you wish to continue looting this planet?",
     "none",
     [],
     [
@@ -10725,7 +10725,7 @@ game_menus = [
         (call_script, "script_troop_add_gold", "trp_player", ":total_tax"),		
       ],
     [
-      ("continue",[], "Continue...",
+      ("continue_3dot",[], "Continue...",
        [
            (try_begin),
              (party_slot_eq, "$current_town", slot_party_type, spt_minorplanet),
@@ -11606,7 +11606,7 @@ game_menus = [
     [
         ],
     [
-      ("continue", [], "Continue...",
+      ("continue_3dot", [], "Continue...",
        [(jump_to_menu, "mnu_town_tournament_won_by_another"),
         ]),
     ]
@@ -11641,7 +11641,7 @@ game_menus = [
         (call_script, "script_play_victorious_sound"),
         ],
     [
-      ("continue", [], "Continue...",
+      ("continue_3dot", [], "Continue...",
        [(jump_to_menu, "mnu_town"),
         ]),
     ]
@@ -11665,7 +11665,7 @@ game_menus = [
         (call_script, "script_gender_fix", ":winner_troop"),(assign,reg3,reg33)
         ],
     [
-      ("continue", [], "Continue...",
+      ("continue_3dot", [], "Continue...",
        [(jump_to_menu, "mnu_town"),
         ]),
     ]
@@ -12109,7 +12109,7 @@ game_menus = [
      (call_script, "script_succeed_quest", "qst_collect_taxes"),
      ],
     [
-      ("continue", [], "Continue...",
+      ("continue_3dot", [], "Continue...",
        [(change_screen_return),
         ]),
     ]
@@ -12123,7 +12123,7 @@ game_menus = [
     [
     ],
     [
-      ("continue", [], "Continue...",
+      ("continue_3dot", [], "Continue...",
        [(change_screen_map),
         ]),
     ]
@@ -12143,7 +12143,7 @@ game_menus = [
      (rest_for_hours, 0, 0, 0), #stop resting
      ],
     [
-      ("continue", [], "Continue...",
+      ("continue_3dot", [], "Continue...",
        [(change_screen_map),
         ]),
     ]
@@ -12181,7 +12181,7 @@ game_menus = [
      (try_end),
      ],
     [
-      ("continue", [], "Continue...",
+      ("continue_3dot", [], "Continue...",
        [(set_jump_mission,"mt_back_alley_revolt"),
         (quest_get_slot, ":target_center", "qst_collect_taxes", slot_quest_target_center),
         (try_begin),
@@ -12298,7 +12298,7 @@ game_menus = [
       (try_end),
      ],
     [
-      ("continue", [], "Continue...",
+      ("continue_3dot", [], "Continue...",
        [
          (try_begin),
            (quest_get_slot, ":quest_current_state", "qst_train_peasants_against_bandits", slot_quest_current_state),
@@ -12378,7 +12378,7 @@ game_menus = [
       (try_end),
      ],
     [
-      ("continue", [], "Continue...",
+      ("continue_3dot", [], "Continue...",
        [(try_begin),
           (call_script, "script_minorplanet_set_state",  "$current_town", svs_looted),
           (party_set_slot, "$current_town", slot_minorplanet_raid_progress, 0),
@@ -12615,7 +12615,7 @@ game_menus = [
     "none",
     [],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
            (assign,"$auto_enter_town","$current_town"),
            (assign, "$g_town_assess_trade_goods_after_rest", 1),
@@ -12761,7 +12761,7 @@ game_menus = [
      (try_end),
      ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
            (jump_to_menu,"mnu_town_trade"),
         ]),
@@ -12777,7 +12777,7 @@ game_menus = [
 		(call_script, "script_display_fullscreen_background", "$current_town"),			  
 	],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
            (assign, "$sneaked_into_town",1),
            (jump_to_menu,"mnu_town"),
@@ -12839,7 +12839,7 @@ game_menus = [
     "none",
     [],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
            (assign, "$sneaked_into_town",1),
            (assign, "$town_entered", 1),
@@ -12853,7 +12853,7 @@ game_menus = [
     "none",
     [],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
            (assign,"$auto_menu",-1),
            (store_encountered_party,"$last_sneak_attempt_town"),
@@ -13094,15 +13094,15 @@ game_menus = [
        [
          (call_script, "script_start_training_at_training_ground", itp_type_two_handed_wpn, 0),
          ]),
-      ("camp_train_mounted_details_4",[], "Force Throw Lightsaber",
+      ("camp_train_mounted_details_2",[], "Force Throw Lightsaber",
        [
          (call_script, "script_start_training_at_training_ground", itp_type_thrown, 0),
          ]),
-	 ("camp_train_mounted_details_1",[], "DL-44 Blaster",
+      ("camp_train_mounted_details_3",[], "DL-44 Blaster",
        [
          (call_script, "script_start_training_at_training_ground", itp_type_pistol, 0),
          ]),
-      ("camp_train_mounted_details_1",[], "DLT-19 Rifle",
+      ("camp_train_mounted_details_4",[], "DLT-19 Rifle",
        [
          (call_script, "script_start_training_at_training_ground", itp_type_musket, 0),
          ]),		 
@@ -13192,7 +13192,7 @@ game_menus = [
    "none",
    [],
     [
-      ("continue", [], "Continue...",
+      ("continue_3dot", [], "Continue...",
        [
          (set_jump_mission, "mt_training_ground_training"),
          (jump_to_scene, "$g_training_ground_training_scene"),
@@ -13296,7 +13296,7 @@ game_menus = [
      
      ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(jump_to_menu, "mnu_training_ground"),
         ]
        ),
@@ -13460,7 +13460,7 @@ game_menus = [
         (set_background_mesh, "mesh_pic_prisoner_wilderness"),
      ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
          (try_for_range, ":npc", companions_begin, companions_end),
            (main_party_has_troop, ":npc"),
@@ -13519,7 +13519,7 @@ game_menus = [
         (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
            (assign, "$g_player_is_captive", 0),
            (try_begin),
@@ -13548,7 +13548,7 @@ game_menus = [
         (try_end),
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
            (assign, "$g_player_is_captive", 1),
            (store_random_in_range, ":random_hours", 16, 22),
@@ -13574,7 +13574,7 @@ game_menus = [
         (try_end),
    ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
            (assign, "$g_player_is_captive", 1),
            (store_random_in_range, ":random_hours", 16, 22),
@@ -13615,7 +13615,7 @@ game_menus = [
       (play_cue_track, "track_escape"),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
            (assign, "$g_player_is_captive", 0),
            (try_begin),
@@ -13688,7 +13688,7 @@ game_menus = [
         
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
            (assign, "$g_player_is_captive", 1),
            (change_screen_return),
@@ -13716,7 +13716,7 @@ game_menus = [
         (assign, reg13, ":quest_target_amount"),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
            (quest_get_slot, ":quest_target_troop", "qst_report_to_army", slot_quest_target_troop),
            (quest_get_slot, ":quest_target_amount", "qst_report_to_army", slot_quest_target_amount),
@@ -13742,7 +13742,7 @@ game_menus = [
         (str_store_troop_name, s8, ":faction_marshall"),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -13761,7 +13761,7 @@ game_menus = [
         (str_store_party_name, s9, ":quest_target_center"),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
            (call_script, "script_end_quest", "qst_follow_army"),
            (quest_get_slot, ":quest_target_center", "qst_join_siege_with_army", slot_quest_target_center),
@@ -13789,7 +13789,7 @@ game_menus = [
         (call_script, "script_change_player_relation_with_troop", ":faction_marshall", -3),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -13888,7 +13888,7 @@ game_menus = [
         (str_store_string, s5, "@{s1}"),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -13934,7 +13934,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "fac_player_supporters_faction", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -13952,7 +13952,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_faction_note_mesh_banner", "fac_player_supporters_faction", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -13974,7 +13974,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_center_note_mesh", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -13997,7 +13997,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_center_note_mesh", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -14019,7 +14019,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_center_note_mesh", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -14043,7 +14043,7 @@ game_menus = [
       (try_end),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -14067,7 +14067,7 @@ game_menus = [
       (try_end),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -14087,7 +14087,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_center_note_mesh", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -14109,7 +14109,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_troop_note_mesh", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -14130,7 +14130,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_troop_note_mesh", "$g_notification_menu_var1", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -14164,7 +14164,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_2_factions_mesh", ":galacticempire", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -14188,7 +14188,7 @@ game_menus = [
       (set_game_menu_tableau_mesh, "tableau_2_factions_mesh", ":galacticempire", pos0),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(change_screen_return),
         ]),
      ]
@@ -14212,7 +14212,7 @@ game_menus = [
       (try_end),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
          (try_begin),
            (is_between, "$supported_pretender", pretenders_begin, pretenders_end),
@@ -14276,7 +14276,7 @@ game_menus = [
       (try_end),
       ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [
          (assign, "$talk_context", tc_rebel_thanks),
          (start_map_conversation, "$g_notification_menu_var2"),
@@ -14294,7 +14294,7 @@ game_menus = [
     [
     ],
     [
-      ("continue",[],"Continue...",
+      ("continue_3dot",[],"Continue...",
        [(set_jump_mission,"mt_back_alley_kill_local_merchant"),
         (party_get_slot, ":town_alley", "$qst_kill_local_merchant_center", slot_mainplanet_alley),
         (modify_visitors_at_site,":town_alley"),
@@ -16945,7 +16945,7 @@ game_menus = [
 	(troop_get_slot,reg(10),reg(30),10),	
 	],
 	[
-	("continue",[],"Back to test menu",
+	("back_to_test_menu",[],"Back to test menu",
 	[(jump_to_menu,"mnu_custom_battle_test")]
 	),
 	]
@@ -17253,7 +17253,7 @@ game_menus = [
 					(call_script, "script_loot_menu_talk", reg14)
 				]
 			),
-			("leave",
+			("autoloot_no_items",
 				[],
 				"{s20}",
 				[
@@ -17707,7 +17707,7 @@ game_menus = [
       (try_end),
     ],
     [
-      ("upgrade_back", [(eq, reg10, 0)],
+      ("go_back_dot", [(eq, reg10, 0)],
         "Go back.",
         [(jump_to_menu, "mnu_camp_action")]
       ),
