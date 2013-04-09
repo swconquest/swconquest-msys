@@ -8800,7 +8800,7 @@ They are going around making terrible accusations against me, impugning my honou
    "Get out of my sight, beggar! You stink!", "spacestation_guard_sneaked_intro_1",[]],
   [anyone,"start", [(eq, "$talk_context", 0),(faction_slot_eq, "$g_encountered_party_faction", slot_faction_spacestation_guard_troop, "$g_talk_troop"),(eq, "$sneaked_into_town",1)],
    "Get lost before I lose my temper you vile beggar!", "close_window",[]],
-  [anyone|plyr,"spacestation_guard_sneaked_intro_1", [], "wish to enter the command deck, and speak to the commander in charge.", "spacestation_guard_sneaked_intro_2",[]],
+  [anyone|plyr,"spacestation_guard_sneaked_intro_1", [], "I wish to enter the command deck, and speak to the commander in charge.", "spacestation_guard_sneaked_intro_2",[]],
   [anyone|plyr,"spacestation_guard_sneaked_intro_1", [], "[Leave]", "close_window",[]],
   [anyone,"spacestation_guard_sneaked_intro_2", [], "Are you out of your mind, {man/woman}?\
  Scum like you aren't allowed in the command deck. Now, begone, or things will get messy.", "close_window",[]],

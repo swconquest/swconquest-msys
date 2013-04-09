@@ -2348,8 +2348,8 @@ We apologize sincerely if you contributed your suggestions and feedback but were
 
                               'Special Thanks:^'+
                               ' Marco Tarini <mtarini> - OpenBRF is our cornerstone^'+
+                              ' Jack <Mechwarrior24> and Alex <Panda666> - Dialog modernizers and proofreaders^'+
                               ' Luke Challand  <ithilienranger> – For the annoying questions^'+
-                              ' Alex <Panda666> - Dialog modernizer^'+
                               ' Scott Reismanis <INtense!> – ModDB is a better place^'+
                               ' Creators of the included mods, code snippets and enhancements – 1866,^'+
                               ' Gangs of Glasgow, Mount&Shotgun, MAXHARDMAN, Rubik, Gutekfiutek, hapslash...^^'+
