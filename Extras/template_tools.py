@@ -80,13 +80,13 @@ class Game_Menu_Template(object):
       menu += format_strings([self.flags, self.text, self.mesh, self.opers])
       
       optns.append(
-        ("back",[],"Go back.",
+        ("go_back_dot",[],"Go back.",
           [(change_screen_quit)]
         )
       )  
       if next_page < len(input_list):
         optns.append(
-          ("next",[],"Next...",
+          ("next_3dot",[],"Next...",
             [(jump_to_menu, "mnu_" + self.id + str(next_page))]
           )
         )
