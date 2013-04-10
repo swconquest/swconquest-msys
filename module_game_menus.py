@@ -148,14 +148,14 @@ game_menus = [
 	   
 #---------------------------------------------------------------
 
-      ("start_male",[],"Human Male",
+      ("race_male",[],"Human Male",
        [
            (troop_set_type,"trp_player",tf_male),
            (assign,"$character_gender",tf_male),
            (jump_to_menu,"mnu_start_character_0"),
         ]
        ),
-      ("start_female",[],"Human Female",
+      ("race_female",[],"Human Female",
        [
            (troop_set_type,"trp_player",tf_female),
            (assign,"$character_gender",tf_female),
@@ -164,42 +164,42 @@ game_menus = [
        ),
 	   #------------------------------------------------------
 	   #SW - new races	   
-      ("start_twilek",[],"Twilek Male",
+      ("race_twilek",[],"Twilek Male",
        [
            (troop_set_type,"trp_player",tf_twilek),
            (assign,"$character_gender",tf_male),
            (jump_to_menu,"mnu_start_character_0"),
         ]
        ),
-      ("start_twilek_female",[],"Twilek Female",
+      ("race_twilek_female",[],"Twilek Female",
        [
            (troop_set_type,"trp_player",tf_twilek_female),
            (assign,"$character_gender",tf_female),
            (jump_to_menu,"mnu_start_character_0"),
         ]
        ),	   
-      ("start_rodian",[],"Rodian",
+      ("race_rodian",[],"Rodian",
        [
            (troop_set_type,"trp_player",tf_rodian),
            (assign,"$character_gender",tf_male),
            (jump_to_menu,"mnu_start_character_0"),
         ]
        ),
-      ("start_moncal",[],"Mon Calamari",
+      ("race_moncal",[],"Mon Calamari",
        [
            (troop_set_type,"trp_player",tf_moncal),
            (assign,"$character_gender",tf_male),
            (jump_to_menu,"mnu_start_character_0"),
         ]
        ),
-      ("start_trandoshan",[],"Trandoshan",
+      ("race_trandoshan",[],"Trandoshan",
        [
            (troop_set_type,"trp_player",tf_trandoshan),
            (assign,"$character_gender",tf_male),
            (jump_to_menu,"mnu_start_character_0"),
         ]
        ),
-      ("start_droid",[],"Droid",
+      ("race_droid",[],"Droid",
        [
            (troop_set_type,"trp_player",tf_droid),
            (assign,"$character_gender",tf_male),
@@ -213,14 +213,14 @@ game_menus = [
            # (jump_to_menu,"mnu_start_character_0"),
         # ]
        # ),	   
-      ("start_wookiee",[],"Wookiee",
+      ("race_wookiee",[],"Wookiee",
        [
            (troop_set_type,"trp_player",tf_wookiee),
            (assign,"$character_gender",tf_male),
            (jump_to_menu,"mnu_start_character_0"),
         ]
        ),
-      ("start_sullustan",[],"Sullustan",
+      ("race_sullustan",[],"Sullustan",
        [
            (troop_set_type,"trp_player",tf_sullustan),
            (assign,"$character_gender",tf_male),
@@ -234,21 +234,21 @@ game_menus = [
            # (jump_to_menu,"mnu_start_character_0"),
         # ]
        # ),	   
-      ("start_gamorrean",[],"Gamorrean",
+      ("race_gamorrean",[],"Gamorrean",
        [
            (troop_set_type,"trp_player",tf_gamorrean),
            (assign,"$character_gender",tf_male),
            (jump_to_menu,"mnu_start_character_0"),
         ]
        ),
-      ("start_bothan",[],"Bothan",
+      ("race_bothan",[],"Bothan",
        [
            (troop_set_type,"trp_player",tf_bothan),
            (assign,"$character_gender",tf_male),
            (jump_to_menu,"mnu_start_character_0"),
         ]
        ),
-      ("start_geonosian",[],"Geonosian",
+      ("race_geonosian",[],"Geonosian",
        [
            (troop_set_type,"trp_player",tf_geonosian),
            (assign,"$character_gender",tf_male),
@@ -262,14 +262,14 @@ game_menus = [
            # (jump_to_menu,"mnu_start_character_0"),
         # ]
        # ),	   
-       ("start_jawa",[],"Jawa",
+       ("race_jawa",[],"Jawa",
        [
            (troop_set_type,"trp_player",tf_jawa),
            (assign,"$character_gender",tf_male),
            (jump_to_menu,"mnu_start_character_0"),
         ]
        ),
-      ("start_tusken",[],"Tusken",
+      ("race_tusken",[],"Tusken",
        [
            (troop_set_type,"trp_player",tf_tusken),
            (assign,"$character_gender",tf_male),
@@ -2863,7 +2863,7 @@ game_menus = [
 # End Autoloot
 ###################################################################################
 	   
-      ("camp_wait_here",[],"Wait here for some time.",
+      ("wait_here",[],"Wait here for some time.",
        [
            (assign,"$g_camp_mode", 1),
 #           (assign,"$auto_menu","mnu_camp"),
@@ -3047,7 +3047,7 @@ game_menus = [
         ]
        ),	   
 	   
-      ("camp_action_4",[],"Back to camp menu.",
+      ("back_to_camp",[],"Back to camp menu.",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -3640,7 +3640,7 @@ game_menus = [
        (jump_to_menu,"mnu_manage_fiefs"),
         ]
        ),
-      ("camp_action_4",[],"Back to camp menu.",
+      ("back_to_camp",[],"Back to camp menu.",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -3786,7 +3786,7 @@ game_menus = [
        (jump_to_menu,"mnu_manage_fiefs_2"),
         ]
        ),
-      ("camp_action_4",[],"Back to camp menu.",
+      ("back_to_camp",[],"Back to camp menu.",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -3950,7 +3950,7 @@ game_menus = [
         ]
        ),
 		
-      ("config_back",[],"Back to camp menu.",
+      ("back_to_camp",[],"Back to camp menu.",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -4448,7 +4448,7 @@ game_menus = [
         ]
        ),
 	   
-      ("cheat_back",[],"Back to camp menu.",
+      ("back_to_camp",[],"Back to camp menu.",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -4626,12 +4626,12 @@ game_menus = [
         ]
        ),
 	   
-      ("cheat_prev_page",[],"Previous page.",
+      ("prev_page_dot",[],"Previous page.",
        [(jump_to_menu, "mnu_camp_cheat"),
         ]
        ),
 	   
-      ("cheat_back",[],"Back to camp menu.",
+      ("back_to_camp",[],"Back to camp menu.",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -4734,7 +4734,7 @@ game_menus = [
           (jump_to_menu, "mnu_swc_readme"),
         ]
       ),
-      ("camp_action_4",[],"Back to camp menu.",
+      ("back_to_camp",[],"Back to camp menu.",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -4753,7 +4753,7 @@ game_menus = [
       (str_store_troop_name, s0, "$g_player_troop"),
     ],
     [
-      ("export_import_back",[],"Go back",
+      ("go_back",[],"Go back",
         [
           (assign, "$g_player_troop", "trp_player"),
           (set_player_troop, "$g_player_troop"),
@@ -4812,7 +4812,7 @@ game_menus = [
         ]
       ),
      
-      ("export_import_next",[],"Next page", [(jump_to_menu, "mnu_export_import_npcs_2")]),
+      ("next_page",[],"Next page", [(jump_to_menu, "mnu_export_import_npcs_2")]),
     ]
   ),
  
@@ -4824,7 +4824,7 @@ game_menus = [
        (str_store_troop_name, s0, "$g_player_troop"),
      ],
     [
-      ("export_import_prev",[],"Previous page", [(jump_to_menu, "mnu_export_import_npcs")]),
+      ("prev_page",[],"Previous page", [(jump_to_menu, "mnu_export_import_npcs")]),
      
       ("export_import_npc9", [(str_store_troop_name, s0, "trp_npc9")], "{s0}",
         [
@@ -5051,7 +5051,7 @@ game_menus = [
         (jump_to_menu, "mnu_camp_action_read_book_start"),
         ]
        ),
-      ("camp_action_4",[],"Back to camp menu.",
+      ("back_to_camp",[],"Back to camp menu.",
        [(jump_to_menu, "mnu_camp"),
         ]
        ),
@@ -5355,7 +5355,7 @@ game_menus = [
 		   # (jump_to_menu, "mnu_camp"),
         # ]
        # ),	   	   
-     ("camp_menu",[],"Back to camp menu.",
+     ("back_to_camp",[],"Back to camp menu.",
        [(jump_to_menu, "mnu_camp"),
        ]
      ),
@@ -5396,12 +5396,12 @@ game_menus = [
      (assign, reg1, "$g_player_luck"),
      ],
     [
-      ("retire_yes",[],"Yes.",
+      ("yes_dot",[],"Yes.",
        [
          (start_presentation, "prsnt_retirement"),
         ]
        ),
-      ("retire_no",[],"No.",
+      ("no_dot",[],"No.",
        [
          (jump_to_menu, "mnu_camp"),
         ]
@@ -5599,7 +5599,7 @@ game_menus = [
        [(jump_to_menu, "mnu_cattle_herd_kill"),
         ]
        ),
-      ("leave",[],"Leave.",
+      ("leave_dot",[],"Leave.",
        [(change_screen_return),
         ]
        ),
@@ -5611,35 +5611,35 @@ game_menus = [
    "none",
    [(party_get_num_companions, reg5, "$g_encountered_party")],
     [
-      ("cattle_kill_1",[(ge, reg5, 1),],"One.",
+      ("one",[(ge, reg5, 1),],"One.",
        [(call_script, "script_kill_cattle_from_herd", "$g_encountered_party", 1),
         (jump_to_menu, "mnu_cattle_herd_kill_end"),
         (change_screen_loot, "trp_temp_troop"),
         (play_sound, "snd_cow_slaughter"),
         ]
        ),
-      ("cattle_kill_2",[(ge, reg5, 2),],"Two.",
+      ("two",[(ge, reg5, 2),],"Two.",
        [(call_script, "script_kill_cattle_from_herd", "$g_encountered_party", 2),
         (jump_to_menu, "mnu_cattle_herd_kill_end"),
         (change_screen_loot, "trp_temp_troop"),
         (play_sound, "snd_cow_slaughter"),
         ]
        ),
-      ("cattle_kill_3",[(ge, reg5, 3),],"Three.",
+      ("three",[(ge, reg5, 3),],"Three.",
        [(call_script, "script_kill_cattle_from_herd", "$g_encountered_party", 3),
         (jump_to_menu, "mnu_cattle_herd_kill_end"),
         (change_screen_loot, "trp_temp_troop"),
         (play_sound, "snd_cow_slaughter"),
         ]
        ),
-      ("cattle_kill_4",[(ge, reg5, 4),],"Four.",
+      ("four",[(ge, reg5, 4),],"Four.",
        [(call_script, "script_kill_cattle_from_herd", "$g_encountered_party", 4),
         (jump_to_menu, "mnu_cattle_herd_kill_end"),
         (change_screen_loot, "trp_temp_troop"),
         (play_sound, "snd_cow_slaughter"),
         ]
        ),
-      ("cattle_kill_5",[(ge, reg5, 5),],"Five.",
+      ("five",[(ge, reg5, 5),],"Five.",
        [(call_script, "script_kill_cattle_from_herd", "$g_encountered_party", 5),
         (jump_to_menu, "mnu_cattle_herd_kill_end"),
         (change_screen_loot, "trp_temp_troop"),
@@ -5740,7 +5740,7 @@ game_menus = [
            (jump_to_menu, "mnu_duel_menu"),
        ]
        ),
-      ("leave",[],"Leave.",
+      ("leave_dot",[],"Leave.",
        [(change_screen_map),
         ]
        ),
@@ -5912,7 +5912,7 @@ game_menus = [
 ##### Custom Commander(CC)
 ############################################################################################################
     
-      ("commander_change_simple_encounter",[(str_store_troop_name,s7,"$g_player_troop")],
+      ("commander_change",[(str_store_troop_name,s7,"$g_player_troop")],
         "Change the commander.(Current:{s7})",
         [
           (assign, "$g_next_menu", "mnu_simple_encounter"),
@@ -6059,7 +6059,7 @@ game_menus = [
            "Order your troops to attack without you.",[(jump_to_menu,"mnu_order_attack_begin"),
                                                             #(simulate_battle,3)
                                                             ]),
-      ("encounter_leave",[
+      ("leave_dot",[
           (eq,"$cant_leave_encounter", 0),
           ],"Leave.",[
 
@@ -6101,7 +6101,7 @@ game_menus = [
          (assign, ":player_count", reg0),
          (ge, ":player_count", ":enemy_party_strength"),
          ],"Pull back, leaving some soldiers behind to cover your retreat.",[(jump_to_menu, "mnu_encounter_retreat_confirm"),]),
-      ("encounter_surrender",[
+      ("surrender",[
          (eq,"$cant_leave_encounter", 1),
           ],"Surrender.",[(assign,"$g_player_surrenders",1)]),
     ]
@@ -6972,7 +6972,7 @@ game_menus = [
 ##### Custom Commander(CC)
 ############################################################################################################
     
-      ("commander_change_join_battle",[(str_store_troop_name,s7,"$g_player_troop")],
+      ("commander_change",[(str_store_troop_name,s7,"$g_player_troop")],
         "Change the commander.(Current:{s7})",
         [
           (assign, "$g_next_menu", "mnu_join_battle"),
@@ -7030,7 +7030,7 @@ game_menus = [
 #      ("join_attack",[],"Lead a charge against the enemies",[(set_jump_mission,"mt_charge_with_allies"),
 #                                (call_script, "script_setup_random_scene"),
 #                                                             (change_screen_mission,0)]),
-      ("join_leave",[],"Leave.",[
+      ("leave_dot",[],"Leave.",[
         (try_begin),
            (neg|troop_is_wounded, "trp_player"),
            (call_script, "script_objectionable_action", tmt_aristocratic, "str_flee_battle"),
@@ -7250,7 +7250,7 @@ game_menus = [
        [
             (jump_to_menu,"mnu_cut_siege_without_fight"),
           ]),
-      ("leave",[],"Leave.",[(leave_encounter),
+      ("leave_dot",[],"Leave.",[(leave_encounter),
                             (change_screen_return)]),
     ]
   ),
@@ -7331,7 +7331,7 @@ game_menus = [
 ##### Custom Commander(CC)
 ############################################################################################################
 
-      ("commander_change_besiegers_camp_with_allies",[(str_store_troop_name,s7,"$g_player_troop")],
+      ("commander_change",[(str_store_troop_name,s7,"$g_player_troop")],
         "Change the commander.(Current:{s7})",
         [
           (assign, "$g_next_menu", "mnu_besiegers_camp_with_allies"),
@@ -7413,7 +7413,7 @@ game_menus = [
            (assign, "$g_player_follow_army_warnings", 0),
          (try_end),
          (jump_to_menu,"mnu_spacestation_attack_walls_with_allies_simulate")]),
-      ("leave",[],"Leave.",[(leave_encounter),(change_screen_return)]),
+      ("leave_dot",[],"Leave.",[(leave_encounter),(change_screen_return)]),
     ]
   ),
 
@@ -7653,7 +7653,7 @@ game_menus = [
            (jump_to_menu,"mnu_sneak_into_town_caught"),
          (try_end)
          ]),
-      ("spacestation_start_siege",
+      ("start_siege",
        [
            (this_or_next|party_slot_eq, "$g_encountered_party", slot_center_is_besieged_by, -1),
            (             party_slot_eq, "$g_encountered_party", slot_center_is_besieged_by, "p_main_party"),
@@ -7679,7 +7679,7 @@ game_menus = [
          (jump_to_menu, "mnu_spacestation_besiege"),
          ]),
 
-      ("cheat_spacestation_start_siege",
+      ("cheat_start_siege",
        [
          (eq, "$cheat_mode", 1),
          (this_or_next|party_slot_eq, "$g_encountered_party", slot_center_is_besieged_by, -1),
@@ -7702,7 +7702,7 @@ game_menus = [
            (jump_to_menu, "mnu_spacestation_besiege"),
            ]),
 
-      ("spacestation_leave",[],"Leave.",[(change_screen_return,0)]),
+      ("leave_dot",[],"Leave.",[(change_screen_return,0)]),
       ("spacestation_cheat_interior",[(eq, "$cheat_mode", 1)], "CHEAT! Interior.",[(set_jump_mission,"mt_ai_training"),
                                                        (party_get_slot, ":spacestation_scene", "$current_town", slot_mainplanet_castle),
                                                        (jump_to_scene,":spacestation_scene"),
@@ -7758,7 +7758,7 @@ game_menus = [
        [
           (jump_to_menu, "mnu_spacestation_meeting"),
        ]),
-      ("guard_leave",[],
+      ("leave_dot",[],
        "Leave.",
        [(change_screen_return,0)]),
     ]
@@ -8032,7 +8032,7 @@ game_menus = [
 ##### Custom Commander(CC)
 ############################################################################################################
     
-      ("commander_change_spacestation_besiege",
+      ("commander_change",
         [
           (ge, "$g_siege_method", 1),
           (store_current_hours, ":cur_hours"),
@@ -8720,7 +8720,7 @@ game_menus = [
      (str_store_party_name, s2, "$g_center_to_give_to_player"),
     ],
     [
-      ("give_center_to_player_accept",[],"Accept the offer.",
+      ("accept_offer",[],"Accept the offer.",
        [(call_script, "script_give_center_to_lord", "$g_center_to_give_to_player", "trp_player", 0),
         (jump_to_menu, "mnu_give_center_to_player_2"),
         ]),
@@ -9048,7 +9048,7 @@ game_menus = [
 ##### Custom Commander(CC)
 ############################################################################################################
     
-      ("commander_change_siege_defender",[(str_store_troop_name,s7,"$g_player_troop")],
+      ("commander_change",[(str_store_troop_name,s7,"$g_player_troop")],
         "Change the commander.(Current:{s7})",
         [
           (assign, "$g_next_menu", "mnu_siege_started_defender"),
@@ -9453,7 +9453,7 @@ game_menus = [
            (jump_to_menu, "mnu_recruit_volunteers"),
          (try_end),
         ]),
-      ("minorplanet_center",[(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
+      ("land_surface",[(neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_looted),
                          (neg|party_slot_eq, "$current_town", slot_minorplanet_state, svs_being_raided),
                          (neg|party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),]
        #,"Go to the center.",
@@ -9586,7 +9586,7 @@ game_menus = [
 ##### Custom Commander(CC)
 ############################################################################################################
     
-      ("commander_change_minorplanet_attack_bandits",
+      ("commander_change",
       [
         (party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
         (str_store_troop_name,s7,"$g_player_troop"),
@@ -9621,7 +9621,7 @@ game_menus = [
         (change_screen_mission),
         ]),
 
-      ("minorplanet_wait",
+      ("wait_here",
        [(party_slot_eq, "$current_town", slot_center_has_manor, 1),
         (party_slot_eq, "$current_town", slot_mainplanet_lord, "trp_player"),
         ],
@@ -9658,10 +9658,10 @@ game_menus = [
        [(jump_to_menu,"mnu_minorplanet_hostile_action"),
            ]),
       
-      ("minorplanet_reports",[(eq, "$cheat_mode", 1),], "CHEAT! Show reports.",
+      ("show_reports",[(eq, "$cheat_mode", 1),], "CHEAT! Show reports.",
        [(jump_to_menu,"mnu_center_reports"),
            ]),
-      ("minorplanet_leave",[],"Leave...",[(change_screen_return,0)]),
+      ("leave_3dot",[],"Leave...",[(change_screen_return,0)]),
       
     ],
   ),
@@ -10300,7 +10300,7 @@ game_menus = [
      (try_end),
     ],
     [
-      ("improve_cont",[(store_troop_gold, ":cur_gold", "trp_player"),
+      ("go_on",[(store_troop_gold, ":cur_gold", "trp_player"),
                        (ge, ":cur_gold", reg5)],
        "Go on.", [(troop_remove_gold, "trp_player", reg5),
                   (party_set_slot, "$g_encountered_party", slot_center_current_improvement, "$g_improvement_type"),
@@ -10394,7 +10394,7 @@ game_menus = [
       (assign, reg4, reg0),
       ],
     [
-      ("minorplanet_steal_cattle_confirm",[],"Go on.",
+      ("go_on",[],"Go on.",
        [
          (rest_for_hours_interactive, 3, 5, 1), #rest while attackable
          (assign, "$auto_menu", "mnu_minorplanet_steal_cattle"),
@@ -10450,7 +10450,7 @@ game_menus = [
     "none",
     [],
     [
-      ("minorplanet_take_food_confirm",[],"Go ahead.",
+      ("go_ahead",[],"Go ahead.",
        [
          (rest_for_hours_interactive, 1, 5, 0), #rest while not attackable
          (assign, "$auto_enter_town", "$current_town"),
@@ -10671,10 +10671,10 @@ game_menus = [
     "none",
     [],
     [
-      ("disembark_yes",[],"Yes.",[ (rest_for_hours, 3, 5, 1), #rest while attackable (3 hours will be extended by the trigger)
+      ("yes_dot",[],"Yes.",[ (rest_for_hours, 3, 5, 1), #rest while attackable (3 hours will be extended by the trigger)
                               (change_screen_return),
                               ]),
-      ("disembark_no",[],"No.",[(call_script, "script_minorplanet_set_state", "$current_town", 0),
+      ("no_dot",[],"No.",[(call_script, "script_minorplanet_set_state", "$current_town", 0),
                             (party_set_slot, "$current_town", slot_minorplanet_raided_by, -1),
                             (assign, "$g_player_raiding_village", 0),
                             (change_screen_return)]),
@@ -10901,7 +10901,7 @@ game_menus = [
         (try_end),
         ],
     [
-      ("spacestation_castle",[(party_slot_eq,"$current_town",slot_party_type, spt_castle)],"Go to the main hall.",
+      ("main_hall",[(party_slot_eq,"$current_town",slot_party_type, spt_castle)],"Go to the main hall.",
        [
            (try_begin),
              (eq,"$all_doors_locked",1),
@@ -10926,7 +10926,7 @@ game_menus = [
            (jump_to_menu, "mnu_town_tournament"),
         ]),
       
-      ("town_castle",[
+      ("main_hall",[
           (party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
           (eq,"$entry_to_town_forbidden",0),
 #          (party_get_slot, ":spacestation_scene", "$current_town", slot_mainplanet_castle),
@@ -10947,7 +10947,7 @@ game_menus = [
            (try_end),
         ], "Door to the main hall."),
       
-      ("town_center",[
+      ("land_surface",[
           (party_slot_eq,"$current_town",slot_party_type, spt_mainplanet),
           (this_or_next|eq,"$entry_to_town_forbidden",0),
           (eq, "$sneaked_into_town",1)]
@@ -11524,7 +11524,7 @@ game_menus = [
                             ], "{reg5?Continue collecting taxes:Collect taxes} due to {s1}.",
        [(jump_to_menu, "mnu_collect_taxes"),]),
       
-      ("town_leave",[],"Leave...",[
+      ("leave_3dot",[],"Leave...",[
 		    #autoloot flag - turn it off so dialogs don't break
 		    (assign, "$g_camp_talk",0),
             (assign, "$g_permitted_to_center",0),
@@ -11537,7 +11537,7 @@ game_menus = [
                                                        (party_get_slot, ":spacestation_scene", "$current_town", slot_mainplanet_castle),
                                                        (jump_to_scene,":spacestation_scene"),
                                                        (change_screen_mission)]),
-      ("spacestation_cheat_town_exterior",[(eq, "$cheat_mode", 1)], "CHEAT! Exterior.",[
+      ("spacestation_cheat_exterior",[(eq, "$cheat_mode", 1)], "CHEAT! Exterior.",[
                                                        (try_begin),
                                                          (party_slot_eq,"$current_town",slot_party_type, spt_castle),
                                                          (party_get_slot, ":scene", "$current_town", slot_spacestation_exterior),
@@ -11558,7 +11558,7 @@ game_menus = [
                                                        (jump_to_scene,":scene"),
                                                        (change_screen_mission)]),
 
-      ("cheat_town_start_siege",
+      ("cheat_start_siege",
        [
          (eq, "$cheat_mode", 1),
          (party_slot_eq, "$g_encountered_party", slot_center_is_besieged_by, -1),
@@ -11579,7 +11579,7 @@ game_menus = [
            ]),
 
 
-      ("center_reports",[(eq, "$cheat_mode", 1),], "CHEAT! Show reports.",
+      ("show_reports",[(eq, "$cheat_mode", 1),], "CHEAT! Show reports.",
        [(jump_to_menu,"mnu_center_reports"),
            ]),
 
@@ -11972,13 +11972,13 @@ game_menus = [
       (assign, reg2, ":win_amount"),
       ],
     [
-      ("tournament_bet_accept", [],
+      ("go_ahead", [],
        "Go ahead.",
        [
          (call_script, "script_tournament_place_bet", "$temp"),
          (jump_to_menu, "mnu_town_tournament"),
          ]),
-      ("tournament_bet_cancel", [],
+      ("forget_it", [],
        "Forget it.",
        [
          (jump_to_menu, "mnu_tournament_bet"),
@@ -12083,7 +12083,7 @@ game_menus = [
         (assign, "$g_town_visit_after_rest", 1),
         (change_screen_return),
         ]),
-      ("collect_later", [], "Put it off until later.",
+      ("do_it_later", [], "Put it off until later.",
        [(try_begin),
           (party_slot_eq, "$current_town", slot_party_type, spt_mainplanet),
           (jump_to_menu, "mnu_town"),
@@ -12233,7 +12233,7 @@ game_menus = [
          (assign, "$g_town_visit_after_rest", 1),
          (change_screen_return),
          ]),
-      ("train_later", [], "Put it off until later.",
+      ("do_it_later", [], "Put it off until later.",
        [
          (jump_to_menu, "mnu_village"),
         ]),
@@ -12430,7 +12430,7 @@ game_menus = [
     "none",
     [],
     [
-      ("disembark_yes", [], "Yes.",
+      ("yes_dot", [], "Yes.",
        [(assign, "$g_player_icon_state", pis_normal),
         (party_set_flags, "p_main_party", pf_is_ship, 0),
         (party_get_position, pos1, "p_main_party"),
@@ -12456,7 +12456,7 @@ game_menus = [
         (assign, "$g_main_ship_party", -1),
         (change_screen_return),
         ]),
-      ("disembark_no", [], "No.",
+      ("no_dot", [], "No.",
        [(change_screen_return),
         ]),
     ]
@@ -12468,7 +12468,7 @@ game_menus = [
     "none",
     [],
     [
-      ("reembark_yes", [], "Yes.",
+      ("yes_dot", [], "Yes.",
        [(assign, "$g_player_icon_state", pis_ship),
         (party_set_flags, "p_main_party", pf_is_ship, 1),
         (party_get_position, pos1, "p_main_party"),
@@ -12478,7 +12478,7 @@ game_menus = [
         (disable_party, "$g_encountered_party"),
         (change_screen_return),
         ]),
-      ("reembark_no", [], "No.",
+      ("no_dot", [], "No.",
        [(change_screen_return),
         ]),
     ]
@@ -12601,7 +12601,7 @@ game_menus = [
      	(try_end),
        	]),
 ######### JEDEDIAH Q END #############################################
-      ("back_to_town_menu",[],"Head back.",
+      ("head_back",[],"Head back.",
        [
            (jump_to_menu,"mnu_town"),
         ]),
@@ -12827,7 +12827,7 @@ game_menus = [
            (jump_to_scene,":sneak_scene"),
            (change_screen_mission),
         ]),
-      ("sneak_caught_surrender",[],"Surrender.",
+      ("surrender",[],"Surrender.",
        [
            (jump_to_menu,"mnu_captivity_start_spacestation_surrender"),
         ]),
@@ -12875,7 +12875,7 @@ game_menus = [
      (str_store_faction_name, s2, ":faction_no"),
      ],
     [
-      ("ransom_accept",[],"Accept the offer.",
+      ("accept_offer",[],"Accept the offer.",
        [(troop_add_gold, "trp_player", reg12),
         (party_remove_prisoners, "$g_ransom_offer_party", "$g_ransom_offer_troop", 1),
         #(troop_set_slot, "$g_ransom_offer_troop", slot_troop_is_prisoner, 0),
@@ -12955,7 +12955,7 @@ game_menus = [
 		   #(change_screen_mission)],"Door to the tavern."),
 	       ]),
 
-      ("leave",[],"Leave.",
+      ("leave_dot",[],"Leave.",
        [(change_screen_return),
         ]),		   
 		   
@@ -12999,22 +12999,22 @@ game_menus = [
      (assign, "$temp_2", 1),
      ],
     [
-      ("camp_train_melee_num_men_1",[(ge, "$temp", 1)], "One.",
+      ("one",[(ge, "$temp", 1)], "One.",
        [
          (assign, "$temp", 1),
          (jump_to_menu, "mnu_training_ground_selection_details_melee_2"),
          ]),
-      ("camp_train_melee_num_men_2",[(ge, "$temp", 2)], "Two.",
+      ("two",[(ge, "$temp", 2)], "Two.",
        [
          (assign, "$temp", 2),
          (jump_to_menu, "mnu_training_ground_selection_details_melee_2"),
          ]),
-      ("camp_train_melee_num_men_3",[(ge, "$temp", 3)], "Three.",
+      ("three",[(ge, "$temp", 3)], "Three.",
        [
          (assign, "$temp", 3),
          (jump_to_menu, "mnu_training_ground_selection_details_melee_2"),
          ]),
-      ("camp_train_melee_num_men_4",[(ge, "$temp", 4)], "Four.",
+      ("four",[(ge, "$temp", 4)], "Four.",
        [
          (assign, "$temp", 4),
          (jump_to_menu, "mnu_training_ground_selection_details_melee_2"),
@@ -13094,15 +13094,15 @@ game_menus = [
        [
          (call_script, "script_start_training_at_training_ground", itp_type_two_handed_wpn, 0),
          ]),
-      ("camp_train_mounted_details_2",[], "Force Throw Lightsaber",
+      ("camp_train_rweapon_a",[], "Force Throw Lightsaber",
        [
          (call_script, "script_start_training_at_training_ground", itp_type_thrown, 0),
          ]),
-      ("camp_train_mounted_details_3",[], "DL-44 Blaster",
+      ("camp_train_rweapon_b",[], "DL-44 Blaster",
        [
          (call_script, "script_start_training_at_training_ground", itp_type_pistol, 0),
          ]),
-      ("camp_train_mounted_details_4",[], "DLT-19 Rifle",
+      ("camp_train_rweapon_c",[], "DLT-19 Rifle",
        [
          (call_script, "script_start_training_at_training_ground", itp_type_musket, 0),
          ]),		 
@@ -13119,19 +13119,19 @@ game_menus = [
    "none",
    [],
     [
-      ("camp_train_ranged_weapon_bow_a",[], "Force Throw Lightsaber",
+      ("camp_train_rweapon_a",[], "Force Throw Lightsaber",
        [
          (assign, "$g_mt_mode", ctm_ranged),
 		 (assign, "$temp", itp_type_thrown),
          (jump_to_menu, "mnu_training_ground_selection_details_ranged_2"),
          ]),
-      ("camp_train_ranged_weapon_bow_b",[], "DL-44 Blaster",
+      ("camp_train_rweapon_b",[], "DL-44 Blaster",
        [
          (assign, "$g_mt_mode", ctm_ranged),
 		 (assign, "$temp", itp_type_pistol),
          (jump_to_menu, "mnu_training_ground_selection_details_ranged_2"),
          ]),
-      ("camp_train_ranged_weapon_bow_c",[], "DLT-19 Rifle",
+      ("camp_train_rweapon_c",[], "DLT-19 Rifle",
        [
          (assign, "$g_mt_mode", ctm_ranged),
 		 (assign, "$temp", itp_type_musket),
@@ -13643,7 +13643,7 @@ game_menus = [
         (assign, reg5, "$player_ransom_amount"),
     ],
     [
-      ("captivity_end_ransom_accept",[(store_troop_gold,":player_gold", "trp_player"),
+      ("accept_offer",[(store_troop_gold,":player_gold", "trp_player"),
                                       (ge, ":player_gold","$player_ransom_amount")],"Accept the offer.",
        [
            (play_cue_track, "track_escape"),
@@ -17180,11 +17180,11 @@ game_menus = [
 				"Insufficient item pool space for auto-upgrade.",
 				[]
 			),
-			("prev",
+			("prev_page_dot",
 				[
 					(neq, "$inventory_menu_offset",0)
 				],
-				"Previous page",
+				"Previous page.",
 				[
 					(val_sub, "$inventory_menu_offset", num_loot_management_menu_heroes),
 					(jump_to_menu, "mnu_manage_loot_pool")
@@ -17383,7 +17383,7 @@ game_menus = [
 			(change_screen_mission),			
 		]),		
 		
-	("trade_4", [],
+	("leave_dot", [],
 	"Leave.", [(change_screen_map)]),
 
 	# ("trade_5", [
@@ -17499,7 +17499,7 @@ game_menus = [
 	("shipyard_3",[(troop_slot_ge, "trp_player", slot_troop_has_spaceship, 1)], "Sell your current ship.",
 			[(assign, "$g_presentation_details", 2),(start_presentation, "prsnt_ship_details")]), 
 			
-	("shipyard_4",[], "Leave.", 
+	("leave_dot",[], "Leave.", 
 			[(jump_to_menu, "mnu_trade_base")]),
 ]),
 
@@ -17577,7 +17577,7 @@ game_menus = [
            (val_sub, "$g_player_deposit", reg6),
       (faction_set_slot,"fac_trade_federation",slot_faction_bank_deposit,"$g_player_deposit"),
         ]),
-      ("back_to_town_menu",[],"Head back.",
+      ("head_back",[],"Head back.",
        [
            (jump_to_menu,"mnu_trade_base"),
         ]),
@@ -17644,7 +17644,7 @@ game_menus = [
 		(faction_set_slot,"fac_trade_federation",slot_faction_debt_expires,":cur_hours"),
 		(jump_to_menu, "mnu_bank"),
 		]),
-    ("back_to_bank_menu",[],"Head back.",
+    ("head_back",[],"Head back.",
        [
            (jump_to_menu,"mnu_bank"),
         ]),
@@ -17712,7 +17712,7 @@ game_menus = [
         [(jump_to_menu, "mnu_camp_action")]
       ),
       
-      ("upgrade_continue", [(eq, reg10, 1)],
+      ("continue_3dot", [(eq, reg10, 1)],
         "Continue...",
         [
           (jump_to_menu, "mnu_camp_action"),

@@ -605,8 +605,6 @@ scenes = [
     ["exit"],[]),	
   ("mainplanet_hypori_prison",sf_indoors,"interior_prison_f", "bo_interior_prison_f", (-100,-100),(100,100),-100,"0",
     ["exit"],[]),	
-  ("mainplanet_hypori_prison",sf_indoors,"interior_prison_f", "bo_interior_prison_f", (-100,-100),(100,100),-100,"0",
-    ["exit"],[]),	
   ("mainplanet_felucia_prison",sf_indoors,"interior_prison_f", "bo_interior_prison_f", (-100,-100),(100,100),-100,"0",
     ["exit"],[]),	
   ("mainplanet_bespin_prison",sf_indoors,"interior_prison_f", "bo_interior_prison_f", (-100,-100),(100,100),-100,"0",
