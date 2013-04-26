@@ -1085,15 +1085,15 @@ items = [
 ["imperial_royal_guard_helmet", "Imperial Royal Guard Helmet", [("imperial_royal_guard_helmet",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 255 , weight(1)|abundance(60)|head_armor(18)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
 ["shadow_guard_helmet", "Imperial Shadow Guard Helmet", [("shadow_guard_helmet",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 300 , weight(1)|abundance(40)|head_armor(20)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
 #["imperial_stormtrooper_helmet_black", "Imperial Darktrooper Helmet", [("imperial_stormtrooper_helmet_black",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 175 , weight(1)|abundance(100)|head_armor(18)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
-["desert_hat1", "Desert Hat", [("desert_hat1",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(50)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
-["desert_hat2", "Desert Hat", [("desert_hat2",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(40)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
-["desert_hat3", "Desert Hat", [("desert_hat3",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(40)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
-["urban_hat1", "Urban Hat", [("urban_hat1",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(50)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
-["urban_hat2", "Urban Hat", [("urban_hat2",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(40)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
-["urban_hat3", "Urban Hat", [("urban_hat3",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(40)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
-["camouflage_hat1", "Camouflage Hat", [("camouflage_hat1",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(50)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
-["camouflage_hat2", "Camouflage Hat", [("camouflage_hat2",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(40)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
-["camouflage_hat3", "Camouflage Hat", [("camouflage_hat3",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(40)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
+# ["desert_hat1", "Desert Hat", [("desert_hat1",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(50)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
+# ["desert_hat2", "Desert Hat", [("desert_hat2",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(40)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
+# ["desert_hat3", "Desert Hat", [("desert_hat3",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(40)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
+# ["urban_hat1", "Urban Hat", [("urban_hat1",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(50)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
+# ["urban_hat2", "Urban Hat", [("urban_hat2",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(40)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
+# ["urban_hat3", "Urban Hat", [("urban_hat3",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(40)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
+# ["camouflage_hat1", "Camouflage Hat", [("camouflage_hat1",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(50)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
+# ["camouflage_hat2", "Camouflage Hat", [("camouflage_hat2",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(40)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
+# ["camouflage_hat3", "Camouflage Hat", [("camouflage_hat3",0)],itp_merchandise|itp_type_head_armor|itp_civilian,0,90, weight(1)|abundance(40)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0),imodbits_cloth],
 
 # SW Bodywear
 ["dress_yellow", "Lady Dress", [("court_dress",0)], itp_type_body_armor|itp_merchandise|itp_covers_legs|itp_civilian   ,0, 280 , weight(2)|abundance(60)|head_armor(0)|body_armor(20)|leg_armor(10)|difficulty(0) ,imodbits_cloth ],
@@ -1286,12 +1286,12 @@ items = [
 # 500 , weight(12)|abundance(100)|head_armor(0)|body_armor(45)|leg_armor(22)|difficulty(0) ,imodbits_armor ],
 ["imperial_stormtrooper_armor_officer", "Imperial Stormtrooper Officer Armor", [("Sandtrooper_body_orangepauldron",0)], itp_merchandise|itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 
  825 , weight(12)|abundance(80)|head_armor(0)|body_armor(45)|leg_armor(22)|difficulty(0) ,imodbits_armor ], 
-["sw_desert_armor", "Heavy Desert Armor", [("desert_armor_heavy",0)], itp_merchandise| itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 
- 795 , weight(14)|abundance(60)|head_armor(0)|body_armor(45)|leg_armor(22)|difficulty(0) ,imodbits_armor ],
-["sw_urban_armor", "Heavy Urban Armor", [("urban_armor_heavy",0)], itp_merchandise| itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 
- 795 , weight(14)|abundance(60)|head_armor(0)|body_armor(45)|leg_armor(22)|difficulty(0) ,imodbits_armor ],
-["sw_sniper_armor", "Sniper Armor", [("kevlarvest_woodland",0)], itp_merchandise| itp_type_body_armor |itp_civilian  ,0, 
- 885 , weight(8)|abundance(80)|head_armor(0)|body_armor(45)|leg_armor(22)|difficulty(0) ,imodbits_armor ],
+#["sw_desert_armor", "Heavy Desert Armor", [("desert_armor_heavy",0)], itp_merchandise| itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 
+# 795 , weight(14)|abundance(60)|head_armor(0)|body_armor(45)|leg_armor(22)|difficulty(0) ,imodbits_armor ],
+#["sw_urban_armor", "Heavy Urban Armor", [("urban_armor_heavy",0)], itp_merchandise| itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 
+# 795 , weight(14)|abundance(60)|head_armor(0)|body_armor(45)|leg_armor(22)|difficulty(0) ,imodbits_armor ],
+#["sw_sniper_armor", "Sniper Armor", [("kevlarvest_woodland",0)], itp_merchandise| itp_type_body_armor |itp_civilian  ,0, 
+# 885 , weight(8)|abundance(80)|head_armor(0)|body_armor(45)|leg_armor(22)|difficulty(0) ,imodbits_armor ],
 
 #new jedi robes 
 ["jedi_robe_a", "Jedi Robe", [("jedi_robe_a",0)], itp_merchandise| itp_type_body_armor |itp_civilian |itp_covers_legs |itp_civilian,0, 
@@ -2606,42 +2606,42 @@ items = [
 #Heavy Weapons start ---------------------------------------------------------------------------
 #["heavy_weapons_ammo","Heavy Weapons Ammo", [("_",0),("_",ixmesh_flying_ammo),("rpg_rocket", ixmesh_inventory)], itp_type_bolts|itp_merchandise,0, 100,weight(2.25)|abundance(90)|weapon_length(10)|thrust_damage(1,pierce)|max_ammo(40),imodbits_ammo],
 ["heavy_weapons_ammo","Heavy Weapons Ammo", [("_",0),("_",ixmesh_flying_ammo),("player_chest_sw", ixmesh_inventory)], itp_type_bolts|itp_unique,0, 100,weight(2.25)|abundance(90)|weapon_length(10)|thrust_damage(1,pierce)|max_ammo(12),imodbits_ammo],
-#RPG start ---------------------------------------------------------------------------
+##RPG start ---------------------------------------------------------------------------
 #["rocket_launcher", "Prototype RDP-12 Rocket Launcher", [("rpg",0)], itp_type_crossbow|itp_merchandise|itp_primary|itp_bonus_against_shield|itp_two_handed ,itcf_shoot_musket|itcf_carry_spear, 3000 , weight(10.0)|abundance(90)|difficulty(0)|spd_rtng(60) | shoot_speed(160) | thrust_damage(150 ,pierce)|max_ammo(1)|accuracy(95),imodbits_none,
-["rocket_launcher", "RDP-12 Rocket Launcher (in development)", [("rpg",0),("rpg_inventory",ixmesh_inventory)], itp_type_crossbow|itp_unique|itp_primary|itp_bonus_against_shield|itp_two_handed|itp_cant_reload_on_horseback,itcf_shoot_musket|itcf_carry_spear|itcf_reload_mask, 4000 , weight(10.0)|abundance(90)|difficulty(0)|spd_rtng(60) | shoot_speed(160) | thrust_damage(150 ,pierce)|max_ammo(1)|accuracy(95),imodbits_none,
- [(ti_on_weapon_attack, [(play_sound,"snd_rocket_fire"),(position_move_x, pos1,27),(position_move_y, pos1,100),(particle_system_burst, "psys_rocket_forward_smoke", pos1, 15),(particle_system_burst, "psys_rocket_backward_smoke", pos1, 15), 
-  
-#Highlander begin--------------------------------------
-  (store_current_scene,":scene"),
-  (try_begin),
-		(neg|is_between,":scene","scn_ship_hangar_imp","scn_space_battle"), #land battle  
-	#@->(neg|is_between,":scene","scn_ship_hangar_closed_1a","scn_space_battle"), #land battle
-	
-	(call_script,"script_emit_projectile",
-	pos1,#the position from where the projectile is emitted. Usually pos1 in the item triggers
-	100,#projectile speed in m/s when emitted
-	0,#Damage when the projectile itself hits an agent: Isn't needed for explosives. Use 0 here.
-	0,#bounce effect: Doesn't work, yet. Use 0 here.
-	1,#explosive: Should the projectile explode? Make sense for explosives. ;)
-	500, #explosion countdown. In 1/100 sec. 300 means in 3 seconds after shooting this projectile detonates (if it doesn't detonate before). Use a high number like 10000, if you don't want this feature.
-	1000,#explosion area:	/ The damage an agent receives when the projectile detonates will be generated the following way:
-	900,#explosion damage:	\ damage = (explosion area - distance_to_explosion) * explosion damage / explosion area
-	"psys_projectile_fly_smoke", # particle system: which particle system should be attached to the projectile? -1 = none.
-	4, #Unused
-	1, #Explode on ground hit: Should the projectile detonate, if it hits the ground?
-	-1,#Put a scene prop ID here, if you want it to follow the projectile. The scene props NEED to be placed in the scene, if it should work. -1 for no scene prop.
-	1 #check_collision: Set it to 1 in outdoors, 0 in interiors.
-	),
-	
-  (else_try),
-	#ship battle
-	(call_script,"script_emit_projectile",pos1,100,0,0,1,500,1000,900,"psys_projectile_fly_smoke",4,1,-1,0),
-  (try_end),
-#Highlander end--------------------------------------
- ])]],
-
-
-#RPG end ---------------------------------------------------------------------------
+#["rocket_launcher", "RDP-12 Rocket Launcher (in development)", [("rpg",0),("rpg_inventory",ixmesh_inventory)], itp_type_crossbow|itp_unique|itp_primary|itp_bonus_against_shield|itp_two_handed|itp_cant_reload_on_horseback,itcf_shoot_musket|itcf_carry_spear|itcf_reload_mask, 4000 , weight(10.0)|abundance(90)|difficulty(0)|spd_rtng(60) | shoot_speed(160) | thrust_damage(150 ,pierce)|max_ammo(1)|accuracy(95),imodbits_none,
+# [(ti_on_weapon_attack, [(play_sound,"snd_rocket_fire"),(position_move_x, pos1,27),(position_move_y, pos1,100),(particle_system_burst, "psys_rocket_forward_smoke", pos1, 15),(particle_system_burst, "psys_rocket_backward_smoke", pos1, 15), 
+#  
+##Highlander begin--------------------------------------
+#  (store_current_scene,":scene"),
+#  (try_begin),
+#		(neg|is_between,":scene","scn_ship_hangar_imp","scn_space_battle"), #land battle  
+#	#@->(neg|is_between,":scene","scn_ship_hangar_closed_1a","scn_space_battle"), #land battle
+#	
+#	(call_script,"script_emit_projectile",
+#	pos1,#the position from where the projectile is emitted. Usually pos1 in the item triggers
+#	100,#projectile speed in m/s when emitted
+#	0,#Damage when the projectile itself hits an agent: Isn't needed for explosives. Use 0 here.
+#	0,#bounce effect: Doesn't work, yet. Use 0 here.
+#	1,#explosive: Should the projectile explode? Make sense for explosives. ;)
+#	500, #explosion countdown. In 1/100 sec. 300 means in 3 seconds after shooting this projectile detonates (if it doesn't detonate before). Use a high number like 10000, if you don't want this feature.
+#	1000,#explosion area:	/ The damage an agent receives when the projectile detonates will be generated the following way:
+#	900,#explosion damage:	\ damage = (explosion area - distance_to_explosion) * explosion damage / explosion area
+#	"psys_projectile_fly_smoke", # particle system: which particle system should be attached to the projectile? -1 = none.
+#	4, #Unused
+#	1, #Explode on ground hit: Should the projectile detonate, if it hits the ground?
+#	-1,#Put a scene prop ID here, if you want it to follow the projectile. The scene props NEED to be placed in the scene, if it should work. -1 for no scene prop.
+#	1 #check_collision: Set it to 1 in outdoors, 0 in interiors.
+#	),
+#	
+#  (else_try),
+#	#ship battle
+#	(call_script,"script_emit_projectile",pos1,100,0,0,1,500,1000,900,"psys_projectile_fly_smoke",4,1,-1,0),
+#  (try_end),
+##Highlander end--------------------------------------
+# ])]],
+#
+#
+##RPG end ---------------------------------------------------------------------------
 
 #["flame_ammo","Flamethrower Ammmo", [("_",0),("arrow",ixmesh_inventory)], itp_type_arrows|itp_merchandise|itp_bonus_against_shield, 0, 500,weight(4)|abundance(100)|weapon_length(60)|thrust_damage(1,pierce)|max_ammo(80),imodbits_none],
 

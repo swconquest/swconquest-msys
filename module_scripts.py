@@ -26666,6 +26666,7 @@ scripts = [
               ]),
               
               #script_update_iw_merchants
+              #Illegal Weapons merchant
               # INPUT: none
               # OUTPUT: none
               ("update_iw_merchants",
@@ -26673,7 +26674,7 @@ scripts = [
                   
                   (try_for_range, ":merchant", tavern_iw_merchant_begin, tavern_iw_merchant_end),
                     (troop_clear_inventory, ":merchant"),
-                    (troop_add_item, ":merchant","itm_rocket_launcher",0),
+                    #(troop_add_item, ":merchant","itm_rocket_launcher",0),
                     (troop_add_item, ":merchant","itm_flame_rifle",0),
                     (troop_add_item, ":merchant","itm_concussion_rifle",0),
                     (troop_add_item, ":merchant","itm_thermal_detonator1",0),
