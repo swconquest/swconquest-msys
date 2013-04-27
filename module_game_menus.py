@@ -2980,7 +2980,7 @@ game_menus = [
          (val_add,":num_lords",1),
        (try_end),
        (assign,reg1,":num_lords"),
-      ],"Recruit a new commander. Your faction currently has {reg1} leaders.",	#SW modified
+      ],"Recruit a new commander. Your faction currently has {reg1} generals.",	#SW modified
        [
 		#(try_begin),
 		#	(eq, "$culture_selected",1),	#culture has already been selected
@@ -3255,8 +3255,18 @@ game_menus = [
 				#(troop_get_inventory_slot,":cur_item",":knight",":slot_no"),
 				(troop_set_inventory_slot, ":knight",":slot_no",-1),
 			(try_end),
+      
+      
 			#change race
-			(troop_set_type,":knight",tf_male),
+      #unisex troops -- let's not be misogynistic :)
+      (store_random_in_range, ":rand", 0, 2),
+      (try_begin),
+        (eq,":rand",0),
+        (troop_set_type,":knight",tf_female),
+      (else_try),
+        (troop_set_type,":knight",tf_male),
+      (try_end),
+      
 			#add equipment
 			(troop_add_item, ":knight","itm_grey_gloves",0),			
 			(troop_add_item, ":knight","itm_combat_knife",0),
@@ -3459,7 +3469,14 @@ game_menus = [
 				(troop_set_inventory_slot, ":knight",":slot_no",-1),
 			(try_end),
 			#change race
-			(troop_set_type,":knight",tf_male),
+      #unisex troops -- let's not be misogynistic :)
+      (store_random_in_range, ":rand", 0, 4),
+      (try_begin),
+        (ge,":rand",0),
+        (troop_set_type,":knight",tf_trandoshan),
+      (else_try),
+        (troop_set_type,":knight",tf_male),
+      (try_end),
 			#add equipment
 			(troop_add_item, ":knight","itm_transparent_helmet",0),
 			(troop_add_item, ":knight","itm_trandoshan_blade",0),

@@ -25665,7 +25665,14 @@ scripts = [
                       (troop_set_inventory_slot, ":knight",":slot_no",-1),
                     (try_end),
                     #change race
-                    (troop_set_type,":knight",tf_male),
+                    #unisex troops -- let's not be misogynistic :)
+                    (store_random_in_range, ":rand", 0, 3),
+                    (try_begin),
+                      (eq,":rand",0),
+                      (troop_set_type,":knight",tf_female),
+                    (else_try),
+                      (troop_set_type,":knight",tf_male),
+                    (try_end),
                     #change equipment
                     (troop_add_item, ":knight","itm_imperial_stormtrooper_armor_officer",0),
                     (troop_add_item, ":knight","itm_imperial_stormtrooper_helmet",0),
@@ -25916,7 +25923,14 @@ scripts = [
                       (troop_set_inventory_slot, ":knight",":slot_no",-1),
                     (try_end),
                     #change race
-                    (troop_set_type,":knight",tf_male),
+                    #unisex troops -- let's not be misogynistic :)
+                    (store_random_in_range, ":rand", 0, 2),
+                    (try_begin),
+                      (eq,":rand",0),
+                      (troop_set_type,":knight",tf_female),
+                    (else_try),
+                      (troop_set_type,":knight",tf_male),
+                    (try_end),
                     #add equipment
                     (troop_add_item, ":knight","itm_black_gloves",0),
                     (troop_add_item, ":knight","itm_black_boots",0),
