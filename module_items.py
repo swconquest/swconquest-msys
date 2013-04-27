@@ -1058,6 +1058,7 @@ items = [
 ["clone_trooper_helmet_orange", "Clone Trooper Helmet", [("ArcTrooperHelmOrange",0)], itp_type_head_armor|itp_covers_head|itp_civilian ,0, 405 , weight(1)|abundance(10)|head_armor(18)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ], 
 ["clone_trooper_helmet_mand", "Clone Trooper Helmet", [("ArcTrooperHelmMand",0)], itp_type_head_armor|itp_covers_head|itp_civilian ,0, 405 , weight(1)|abundance(10)|head_armor(18)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ], 
 ["clone_trooper_helmet_lux", "Clone Trooper Helmet", [("ArcTrooperHelmLux",0)], itp_type_head_armor|itp_covers_head|itp_civilian ,0, 405 , weight(1)|abundance(10)|head_armor(18)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ], 
+["clone_commando_helmet", "Clone Commando Helmet", [("clonecommando_helm",0)], itp_type_head_armor|itp_covers_head|itp_civilian ,0, 530 , weight(2)|abundance(8)|head_armor(20)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ], 
  
 ["imperial_scout_trooper_helmet", "Imperial Scout Trooper Helmet", [("scouthelm",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 135 , weight(1)|abundance(100)|head_armor(10)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
 ["shadow_scout_trooper_helmet", "Shadow Scout Trooper Helmet", [("shadow_scouthelm",0)], itp_merchandise| itp_type_head_armor|itp_covers_head|itp_civilian ,0, 195 , weight(1)|abundance(60)|head_armor(14)|body_armor(0)|leg_armor(0)|difficulty(0) ,imodbits_armor ],
@@ -1244,6 +1245,7 @@ items = [
 ["arc_trooper_armor_orange", "Arc Trooper Armor", [("ArcTrooperOrange",0)], itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 780 , weight(10)|abundance(100)|head_armor(0)|body_armor(44)|leg_armor(20)|difficulty(0) ,imodbits_armor ], 
 ["arc_trooper_armor_mand", "Arc Trooper Armor", [("ArcTrooperMand",0)], itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 780 , weight(10)|abundance(100)|head_armor(0)|body_armor(44)|leg_armor(20)|difficulty(0) ,imodbits_armor ], 
 ["arc_trooper_armor_lux", "Arc Trooper Armor", [("ArcTrooperLux",0)], itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 780 , weight(10)|abundance(100)|head_armor(0)|body_armor(44)|leg_armor(20)|difficulty(0) ,imodbits_armor ], 
+["clone_commando_armor", "Clone Commando Armor", [("clonecommando_armor",0)], itp_type_body_armor|itp_covers_legs|itp_civilian, 0, 1280 , weight(20)|abundance(80)|head_armor(0)|body_armor(52)|leg_armor(22)|difficulty(0) ,imodbits_armor ], 
  
  
 ["skiff_guard_armor_brown", "Skiff Guard Armor", [("sw_armor1_brown",0)], itp_merchandise| itp_type_body_armor |itp_covers_legs |itp_civilian  ,0, 
@@ -2325,6 +2327,13 @@ items = [
 	# [(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,4),(position_move_y, pos1,5),(particle_system_burst, "psys_blaster_smoke", pos1, 15)])]], 
 #["dc15a", "DC-15A", [("DC15A",0)], itp_type_crossbow|itp_two_handed |itp_merchandise|itp_primary|itp_bonus_against_shield,itcf_shoot_musket|itcf_carry_spear|itcf_reload_musket, 
 #removed merch flag since there are two dc15a's
+["dc17m", "DC-17M", [("dc17m",0),("dc17m_inv",ixmesh_inventory)], itp_type_crossbow|itp_two_handed|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_spear|itcf_reload_musket, 
+	985 , weight(4.8)|abundance(80)|difficulty(0)|spd_rtng(90) | shoot_speed(200) | thrust_damage(36 ,pierce)|max_ammo(999)|accuracy(94),imodbits_gun,
+	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,4),(position_move_y, pos1,5)]
+	+#<muzzleflare system>#
+	muzzleflare_system,
+	#</muzzleflare system>#
+	)]],
 ["dc15a", "DC-15A", [("DC15A",0),("DC15A_inv",ixmesh_inventory)], itp_type_crossbow|itp_two_handed|itp_primary|itp_bonus_against_shield,itcf_shoot_crossbow|itcf_carry_spear|itcf_reload_musket, 
 	1385 , weight(6.8)|abundance(100)|difficulty(0)|spd_rtng(90) | shoot_speed(190) | thrust_damage(60 ,pierce)|max_ammo(500)|accuracy(96),imodbits_gun,
 	[(ti_on_weapon_attack, [(play_sound,"snd_bigblaster01"),(position_move_x, pos1,4),(position_move_y, pos1,5)]
