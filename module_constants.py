@@ -4,6 +4,7 @@
 
 from ID_items import *
 from ID_quests import *
+from ID_parties import *
 from ID_factions import *
 from ID_map_icons import *
 
@@ -1025,7 +1026,7 @@ minorplanet_begin = "p_minorplanet_1"
 
 mainplanets_end   = castles_begin
 castles_end       = minorplanet_begin
-minorplanet_end   = "p_training_ground"
+minorplanet_end   = p_minorplanet_90 + 1
 
 walled_centers_begin = mainplanets_begin
 walled_centers_end   = castles_end

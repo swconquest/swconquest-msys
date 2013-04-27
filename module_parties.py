@@ -298,7 +298,7 @@ parties = [
   #("battlefields","battlefields",pf_disabled|icon_minorplanet_a|pf_is_static|pf_always_visible|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-129.22,-27.59),[]),
   #("dhorak_keep","Dhorak_Keep",icon_sw_town_green|pf_disabled|pf_is_static|pf_always_visible|pf_no_label|pf_hide_defenders, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-139.17,-31.98),[]),
 
-  ("training_ground","Training_Ground",  pf_disabled|icon_training_ground|pf_hide_defenders|pf_is_static|pf_always_visible, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-126.38,-18.65),[]),
+  #("training_ground","Training_Ground",  pf_disabled|icon_training_ground|pf_hide_defenders|pf_is_static|pf_always_visible, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-126.38,-18.65),[]),
 
   ("training_ground_1","Training_Academy",  icon_training_ground|icon_training_ground|pf_hide_defenders|pf_is_static|pf_always_visible|pf_label_medium, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(89.35,88.79),[],100), #[swycartographr] prev. coords: (101.96, 67.16)
   ("training_ground_2","Training_Academy",  icon_training_ground|icon_training_ground|pf_hide_defenders|pf_is_static|pf_always_visible|pf_label_medium, no_menu, pt_none, fac_neutral,0,ai_bhvr_hold,0,(-41.22,116.11),[],100),
