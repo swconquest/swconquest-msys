@@ -482,7 +482,7 @@ game_menus = [
 # This needs to be the fourth window!!!
   (
     "tutorial",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
-    "You approach a field where the locals are training with weapons. You can practice here to improve your combat skills.",
+    "You approach a field where the locals are training with weapons. The distant twang of laser blasters coupled with the metallic clashes of vibroblades can be heard. You can practice here to improve your combat skills.",
     "none",
     [(set_passage_menu, "mnu_tutorial"),
      (try_begin),
@@ -2571,7 +2571,7 @@ game_menus = [
     (else_try),
       (assign, "$g_player_reading_book", 0),
 	  #SW - modified reading menu
-      (str_store_string, s9, "@You are not viewing any holocron's."),
+      (str_store_string, s9, "@You are not viewing any holocrons."),
     (try_end),
     (assign, ":num_friends", 0),
     (assign, ":num_enemies", 0),
@@ -3055,7 +3055,7 @@ game_menus = [
   ),
   
   ("change_culture",menu_text_color(0xFF000d2c),
-   "Choose a culture:^^^The culture of your Faction determine the guards in your territories, the type of recruits from your planets, and the soldiers in your commanders armies.",	#SW - modified
+   "Choose a culture:^^^The culture of your Faction determine the guards in your territories, the type of recruits from your planets, and the soldiers in your commanders' armies.",	#SW - modified
    "none",
    [],
     [
@@ -3979,7 +3979,7 @@ game_menus = [
     (
 	#code from Expanded Gameplay III
     "setup_keys",menu_text_color(0xFF000d2c),
-    "Choose ability and then press a key to assign/change its key binding. To unassign key choose ability and press ESC",
+    "Choose ability and then press a key to assign/change its key binding. To unassign a key, choose an ability and press ESC",
     "none",
     [ 
     #^^{s11}
@@ -7273,7 +7273,7 @@ game_menus = [
   ),
   (
     "cut_siege_without_fight",menu_text_color(0xFF000d2c),
-    "The besiegers let you approach the entrance without challenge.",
+    "The besieging fleet lets you pass without challenge, despite a suspicious tone from the communications operator.",
     "none",
     [],
     [
@@ -7288,8 +7288,8 @@ game_menus = [
   ),
   (
     "besiegers_camp_with_allies",menu_text_color(0xFF000d2c),
-    "{s1} remains under siege. The banners of {s2} fly above the camp of the besiegers,\
- where you and your troops are welcomed.",
+    "{s1} remains under blockade. The blockading ships bear the signature of {s2},\
+ and your fleet is welcomed.",
     "none",
     [
         (str_store_party_name, s1, "$g_encountered_party"),
@@ -7649,7 +7649,7 @@ game_menus = [
       ("town_sneak",[(party_slot_eq,"$g_encountered_party", slot_party_type,spt_mainplanet),
                      (eq,"$entry_to_town_forbidden",1),
                      (eq,"$cant_sneak_into_town",0)],
-       "Disguise yourself and try to sneak onto the planet.",
+       "Disguise yourself and try to sneak onto the planet's capital.",
        [
          (faction_get_slot, ":player_alarm", "$g_encountered_party_faction", slot_faction_player_alarm),
          (party_get_num_companions, ":num_men", "p_main_party"),
@@ -7846,7 +7846,7 @@ game_menus = [
   (
     "spacestation_meeting_selected",menu_text_color(0xFF000d2c),
     #"Your request for a meeting is relayed inside, and finally {s6} appears in the courtyard to speak with you.",
-	"Your request for a meeting is relayed inside, and finally they appear to speak with you.",
+	"Your request is relayed as the comm officer communicates with his superior. Finally, their ghostly hologram appears.",
     "none",
     [
 		#SW - display a new menu background
@@ -8960,7 +8960,7 @@ game_menus = [
 
   (
     "siege_started_defender",menu_text_color(0xFF000d2c),
-    "{s1} is launching an assault against the walls of {s2}. You have {reg10} troops fit for battle against the enemy's {reg11}. You decide to...",
+    "{s1} is launching an assault against {s2}. You have {reg10} troops fit for battle against the enemy's {reg11}. You decide to...",
     "none",
     [
         (select_enemy,1),
@@ -10112,8 +10112,8 @@ game_menus = [
 
   (
     "minorplanet_infestation_removed",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
-    "In a battle worthy of song, you and your men drive the bandits out of the village, making it safe once more.\
- The villagers have little left in the way of wealth after their ordeal,\
+    "In a battle worthy of song, you and your men drive the bandits away from the planet, making it safe once more.\
+ The colonistss have little left in the way of wealth after their ordeal,\
  but they offer you all they can find.",
     "none",
     [(party_get_slot, ":bandit_troop", "$g_encountered_party", slot_minorplanet_infested_by_bandits),
@@ -10369,7 +10369,7 @@ game_menus = [
     "town_bandits_succeeded",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
     "The bandits fall before you as wheat to a scythe! Soon you stand alone in the streets\
  while most of your attackers lie unconscious, dead or dying.\
- Searching the bodies, you find a purse which must have belonged to a previous victim of these brutes.\
+ Searching the bodies, you find a datacard which must have belonged to a previous victim of these brutes.\
  Or perhaps, it was given to them by someone who wanted to arrange a suitable ending to your life.",
     "none",
     [
@@ -10394,7 +10394,7 @@ game_menus = [
   
    (
     "minorplanet_steal_cattle_confirm",menu_text_color(0xFF000d2c),
-    "As the party member with the highest looting skill ({reg2}), {reg3?you reckon:{s1} reckons} that you can steal as many as {reg4} nerfs from the village's herd.",
+    "As the party member with the highest looting skill ({reg2}), {reg3?you reckon:{s1} reckons} that you can steal as many as {reg4} nerfs from the colonists' herds.",
     "none",
     [
       (call_script, "script_get_max_skill_of_player_party", "skl_looting"),
@@ -10481,7 +10481,7 @@ game_menus = [
 
   (
     "minorplanet_take_food",menu_text_color(0xFF000d2c),
-    "The villagers grudgingly bring out what they have for you.",
+    "The colonists grudgingly bring out what they have for you.",
     "none",
     [
        (call_script, "script_party_count_members_with_full_health","p_main_party"),
@@ -10541,7 +10541,7 @@ game_menus = [
 
   (
     "minorplanet_start_attack",menu_text_color(0xFF000d2c)|mnf_disable_all_keys,
-    "Some of the angry villagers grab their tools and prepare to resist you.\
+    "Some of the angry colonists grab their tools and prepare to resist you.\
  It looks like you'll have a fight on your hands if you continue.",
     "none",
     [
@@ -10602,7 +10602,7 @@ game_menus = [
   
   (
     "minorplanet_loot_no_resist",menu_text_color(0xFF000d2c),
-    "The villagers here are few and frightened, and they quickly scatter and run before you.\
+    "The colonists here are few and frightened, and they quickly scatter and run before you, dropping cheap blaster pistols as they go.\
  The planet is at your mercy.",
     "none",
     [],
@@ -12188,7 +12188,7 @@ game_menus = [
   (
     "collect_taxes_revolt",menu_text_color(0xFF000d2c),
     "You are interrupted while collecting the taxes at {s3}. A large band of angry {reg9?colonists:citizens} is marching nearer,\
- shouting about the exorbitant taxes and waving torches and weapons. It looks like they aim to fight you!",
+ shouting about the exorbitant taxes and waving knives and blaster pistols. It looks like they aim to fight you!",
     "none",
     [(str_store_party_name, s3, "$current_town"),
      (assign, reg9, 0),
@@ -12330,8 +12330,8 @@ game_menus = [
 
   (
     "train_peasants_against_bandits_attack",menu_text_color(0xFF000d2c),
-    "As you get ready to continue the training, a sentry from the planet runs up to you, shouting alarums.\
- The bandits have been spotted on the horizon, riding hard for {s3}.\
+    "As you get ready to continue the training, a sentry from the planet runs up to you, shouting alarms.\
+ The bandits have been spotted on the short range scanners, on an intercept course for {s3}.\
  The administrator begs that you organize your newly-trained militia and face them.",
     "none",
     [
@@ -13553,7 +13553,7 @@ game_menus = [
   ),
   (
     "captivity_spacestation_taken_prisoner",menu_text_color(0xFF000d2c),
-    "You are quickly surrounded by guards who take away your weapons. With curses and insults, they throw you into the dungeon where you must while away the miserable days of your captivity.",
+    "You are quickly surrounded by guards who take away your weapons. With curses and insults, they throw you into the brig where you must while away the miserable days of your captivity.",
     "none",
     [
         (troop_get_type, ":is_female", "trp_player"),
@@ -13649,7 +13649,7 @@ game_menus = [
   ),
   (
     "captivity_end_propose_ransom",menu_text_color(0xFF000d2c),
-    "You spend long hours in the sunless dank of the dungeon, more than you can count.\
+    "You spend long hours in the sunless dank of the brig, more than you can count.\
  Suddenly one of your captors enters your cell with an offer;\
  he proposes to free you in return for {reg5} credits of your hidden wealth. You decide to...",
     "none",
@@ -13940,7 +13940,7 @@ game_menus = [
   (
     "notification_player_faction_active",menu_text_color(0xFF000d2c),
     "You now posess land in your name without being tied to any faction, as a masterless warlord who knows no higher authority.\
- Enjoy this freedom, but know that the kings of the land will not look to you kindly and will make every attempt to dispose of you.\
+ Enjoy this freedom, but know that the lords of the galaxy will not look to you kindly and will make every attempt to dispose of you.\
  You may find life very difficult without the protection of a faction.",
     "none",
     [
@@ -14044,7 +14044,7 @@ game_menus = [
 
   (
     "notification_one_faction_left",menu_text_color(0xFF000d2c),
-    "Calradia Conquered by One Faction^^{s1} has defeated all rivals and stands as the sole faction.",
+    "The Galaxy Conquered by One Faction^^{s1} has defeated all rivals and stands as the sole faction.",
     "none",
     [
       (str_store_faction_name, s1, "$g_notification_menu_var1"),

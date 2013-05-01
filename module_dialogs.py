@@ -10400,7 +10400,7 @@ I suppose there are plenty of bounty hunters around to get the job done...", "ta
 
   [anyone|plyr,"ransom_broker_intro",[], "Why is that?", "ransom_broker_intro_2",[]],
   [anyone, "ransom_broker_intro_2", [], "I broker ransoms for the poor wretches who are captured in these endless wars.\
- Normally I travel between the salt mines and the slave markets on the coast, on commission from those whose relatives have gone missing.\
+ Normally I travel between the spice mines and the slave markets on the coast, on commission from those whose relatives have gone missing.\
  But if I'm out on my errands of mercy, and I come across a fellow dragging around a captive or two,\
  well, there's no harm in a little speculative investment, is there?\
  And you look like the type who might have a prisoner to sell.", "ransom_broker_info_talk",[(assign, "$ransom_broker_families_told",0),
