@@ -27,9 +27,9 @@ def save_scripts(variable_list,variable_uses,scripts,tag_uses,quick_strings):
 
 def save_python_header():
   if (is_wb):
-    file = open("./ID/ID_scripts_wb.py","w")
+    file = open("./IDs/ID_scripts_wb.py","w")
   else:
-    file = open("./ID/ID_scripts_mb.py","w")
+    file = open("./IDs/ID_scripts_mb.py","w")
   for i_script in xrange(len(scripts)):
     file.write("script_%s = %d\n"%(convert_to_identifier(scripts[i_script][0]),i_script))
   file.write("\n\n")

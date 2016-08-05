@@ -41,7 +41,7 @@ python -B -OO ./Process/process_presentations.py
 python -B -OO ./Process/process_party_tmps.py
 python -B -OO ./Process/process_parties.py
 python -B -OO ./Process/process_quests.py
-python -B -OO ./Process/process_info_pages.py # <-- just for wb
+#python -B -OO ./Process/process_info_pages.py # <-- just for wb
 python -B -OO ./Process/process_scripts.py
 python -B -OO ./Process/process_mission_tmps.py
 python -B -OO ./Process/process_game_menus.py
