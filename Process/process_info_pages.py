@@ -16,7 +16,7 @@ def save_info_pages():
   ofile.close()
 
 def save_python_header():
-  ofile = open("./ID/ID_info_pages.py","w")
+  ofile = open("./IDs/ID_info_pages.py","w")
   for i_info_page in xrange(len(info_pages)):
     ofile.write("ip_%s = %d\n"%(info_pages[i_info_page][0],i_info_page))
   ofile.write("\n\n")
@@ -26,4 +26,4 @@ if (wb_compile_switch):
   print "Exporting info_page data for Warband..."
   save_info_pages()
   save_python_header()
-  
+

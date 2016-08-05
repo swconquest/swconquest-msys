@@ -208,6 +208,7 @@ create_image_button_overlay_with_tableau_material = 938 # (create_image_button_o
 create_mesh_overlay_with_tableau_material         = 939 # (create_mesh_overlay_with_tableau_material, <destination>, <mesh_id>, <tableau_material_id>, <value>), #returns overlay id. value is passed to tableau_material
                                                         # when mesh_id is -1, a default mesh is generated automatically
 create_game_button_overlay      = 940 # (create_game_button_overlay, <destination>, <string_id>), #returns overlay id
+overlay_get_position                      = 946 # (overlay_get_position, <destination>, <overlay_id>)
 
 context_menu_add_item       = 980 # (right_mouse_menu_add_item, <string_id>, <value>), #must be called only inside script_game_right_mouse_menu_get_buttons
 
