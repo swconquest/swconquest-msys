@@ -7,7 +7,7 @@ title() { true; }; export -f title
 cd "$(dirname "$0")" || exit
 
 title 'building tld for [wait for it]--'
-PYTHONPATH="$PWD:$PWD/Data:$PWD/Headers:$PWD/IDs:$PWD/Process::$PWD/Extras"; export PYTHONPATH
+PYTHONPATH="$PWD:$PWD/Data:$PWD/Header:$PWD/ID:$PWD/Process::$PWD/Extras"; export PYTHONPATH
 
 clear
 
@@ -53,13 +53,13 @@ msys_check()
 # count objects... (mtarini)
 #
 
-msys_check IDs/ID_items.py 'item' 915
+msys_check ID/ID_items.py 'item' 915
 
 #
 # count map_icons... (mtarini)
 #
 
-msys_check IDs/ID_map_icons.py ' map' 256
+msys_check ID/ID_map_icons.py ' map' 256
 
 
 echo ______________________________

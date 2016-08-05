@@ -6,6 +6,8 @@ from module_scripts import *
 from process_common import *
 from process_operations import *
 
+from module_info import wb_compile_switch as is_wb
+
 def save_scripts(variable_list,variable_uses,scripts,tag_uses,quick_strings):
   file = open(export_dir + "scripts.txt","w")
   file.write("scriptsfile version 1\n")
@@ -24,7 +26,10 @@ def save_scripts(variable_list,variable_uses,scripts,tag_uses,quick_strings):
   file.close()
 
 def save_python_header():
-  file = open("./IDs/ID_scripts.py","w")
+  if (is_wb):
+    file = open("./ID/ID_scripts_wb.py","w")
+  else:
+    file = open("./ID/ID_scripts_mb.py","w")
   for i_script in xrange(len(scripts)):
     file.write("script_%s = %d\n"%(convert_to_identifier(scripts[i_script][0]),i_script))
   file.write("\n\n")

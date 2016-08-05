@@ -26,6 +26,14 @@ def write_items(variable_list,variable_uses,tag_uses,quick_strings):
       add_tag_use(tag_uses,tag_item,id_no)
     ofile.write(" itm_%s %s %s %d "%(convert_to_identifier(item[0]),replace_spaces(item[1]),replace_spaces(item[1]),len(item[2])))
     item_variations = item[2]
+    for item_variation in item_variations:
+      #swy-- different dummy mesh for warband, for invisible objects, fixes galadriel's appearance, meshes have to have more than two characters to work.
+      from module_info import wb_compile_switch as is_a_wb_item
+      item_variation = list(item_variation)
+      # if (is_a_wb_item and item_variation[0]=="0") or (index<=(len(items)/2)):
+      # if (is_a_wb_item and item_variation[0]=="0") or (index>=(len(items)/2)):
+      if (is_a_wb_item and item_variation[0]=="0" or item_variation[0]=="_"):
+        item_variation[0]="dummy_mesh"
 
 ##########################################################################	
 # Autoloot
@@ -57,6 +65,14 @@ def write_items(variable_list,variable_uses,tag_uses,quick_strings):
                                                    get_thrust_damage(item[6]),
                                                    get_swing_damage(item[6]),
                                                                ))
+    if (wb_compile_switch == 1):
+      if (len(item) > 9):
+        ofile.write(" %d\n"%(len(item[9])))
+        for item_faction in item[9]:
+          ofile.write(" %d"%item_faction)
+        ofile.write("\n")
+      else:
+        ofile.write(" 0\n")
     trigger_list = []
     if (len(item) > 8):
       trigger_list = item[8]

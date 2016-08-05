@@ -26,8 +26,12 @@ from module_scene_props import *
 from module_presentations import *
 from module_map_icons import *
 from module_tableau_materials import *
-from module_animations import *
-from process__swyhelper import *
+
+from module_info import *
+if (not wb_compile_switch):
+  from module_animations import *
+else:
+  from module_animations_wb import *
 
 def get_id_value(tag, identifier, tag_uses):
   tag_type = -1
@@ -460,23 +464,28 @@ def save_statement_block(ofile,statement_name,can_fail_statement,statement_block
   i = 0
   while (i < len(local_vars)):
     if (local_var_uses[i] == 0 and not(local_vars[i].startswith("unused"))):
-      print "WARNING: Local variable never used: " + local_vars[i] + " in script '" + calling_script + "'"
+      print "WARNING: Local variable never used: " + local_vars[i]+ ", at: " + str(statement_name) + " in script '" + calling_script + "'"
     i = i + 1
-# Indentation Enhancement By Vorne
-# http://forums.taleworlds.com/index.php/topic,189368.0.html
+  if (len(local_vars) > 128):
+   print "WARNING: Script uses more than 128 local wariables: " + str(statement_name) + "variables count:" + str(len(local_vars))
+  
+  # Indentation Enhancement By Vorne
+  # http://forums.taleworlds.com/index.php/topic,189368.0.html
+  
   if current_depth != 0:
     if current_depth > 0:
       missing = " missing"
     else:
       missing = " extra"
       current_depth *= -1
-	  
-    if statement_name != 0:
-      print "WARNING: " + `current_depth` + missing + " try_end: " + str(statement_name)
-    else:
-      print "WARNING: " + `current_depth` + missing + " try_end: \r\n------------\r\n" + str(statement_block) + "\r\n------------"
-#>
-	
+    
+    if statement_name == 0:
+      statement_name = calling_script
+      
+    print "WARNING: " + `current_depth` + missing + " try_end: " + str(statement_name)
+  
+  #>
+
 def compile_global_vars(statement_block,variable_list, variable_uses):
   for statement in statement_block:
     compile_global_vars_in_statement(statement, variable_list, variable_uses)

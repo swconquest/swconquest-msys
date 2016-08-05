@@ -10,7 +10,7 @@ from module_presentations import *
 from process_common import *
 from process_operations import *
 
-
+from module_info import wb_compile_switch as is_wb
 
 #-------------------------------------------------------
 
@@ -85,5 +85,31 @@ def compile_all_global_vars(variable_list,variable_uses, triggers, sentences, ga
 print "Compiling all global variables..."
 variables = []
 variable_uses = []
-compile_all_global_vars(variables, variable_uses,triggers, dialogs, game_menus, mission_templates, scripts, simple_triggers)
-save_variables(export_dir, variables,variable_uses)
+
+#MORDACHAI - Preserve previous global variable order, for save-game compatibility...
+try:
+  if(is_wb):
+    file = open("variables_wb.txt","r")
+  else:
+    file = open("variables.txt","r")
+  var_list = file.readlines()
+  file.close()
+  for v in var_list:
+    vv = string.strip(v)
+    if vv:
+      variables.append(vv)
+      variable_uses.append(0)
+except:
+  print "Variables.txt not found. No attempt to maintain save game compatibility will be made for this build."
+
+compile_all_global_vars(variables, variable_uses, triggers, dialogs, game_menus, mission_templates, scripts, simple_triggers)
+save_variables(export_dir, variables, variable_uses)
+
+#MORDACHAI - write out the new version of variables.txt to our module system folder, so we can maintain compatibility with it...
+if(is_wb):
+  file = open("variables_wb.txt","w")
+else:
+  file = open("variables.txt","w")
+for i in xrange(len(variables)):
+  file.write("%s\n"%variables[i])
+file.close()

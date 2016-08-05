@@ -44,11 +44,11 @@ def save_particle_systems():
     if (len(psys) >= (angular_speed_pos + 1)):
       ofile.write("%s "%(swytrailzro(psys[angular_speed_pos])))
     else:
-      ofile.write("0.0 ")
+      ofile.write("0 ")
     if (len(psys) >= (angular_damping_pos + 1)):
       ofile.write("%s "%(swytrailzro(psys[angular_damping_pos])))
     else:
-      ofile.write("0.0 ")
+      ofile.write("0 ")
     ofile.write("\n")
   ofile.close()
 
