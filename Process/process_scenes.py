@@ -4,7 +4,7 @@ from module_scenes import *
 from process_common import *
 
 def save_python_header():
-  ofile = open("./ID/ID_scenes.py","w")
+  ofile = open("./IDs/ID_scenes.py","w")
   for i_scene in xrange(len(scenes)):
     ofile.write("scn_%s = %d\n"%(convert_to_identifier(scenes[i_scene][0]),i_scene))
   ofile.close()
@@ -22,7 +22,7 @@ scene_outer_terrain_pos = 10
 
 def write_vec(ofile,vec):
   ofile.write(" %s %s %s "%(swytrailzro(vec[0]),swytrailzro(vec[1]),swytrailzro(vec[2])))
-  
+
 def write_passage(ofile,scenes,passage):
   scene_no = 0
   found = 0
