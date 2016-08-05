@@ -1897,33 +1897,227 @@ animations = [
  ["unused_human_anim_71", 0, 0, [1.0, "anim_human", 0, 1, 0]],
  ["unused_human_anim_72", 0, 0, [1.0, "anim_human", 0, 1, 0]],
  ["unused_human_anim_73", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_74", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_75", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_76", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_77", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_78", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_79", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_80", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_81", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_82", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_83", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_84", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_85", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_86", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_87", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_88", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_89", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_90", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_91", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_92", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_93", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_94", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_95", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_96", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_97", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_98", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_99", 0, 0, [1.0, "anim_human", 0, 1, 0]],
- ["unused_human_anim_100", 0, 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_74", 0, [1.0, "anim_human", 0, 1, 0]],	  #SWY - Commented out for b2's walk
+# ["unused_human_anim_75", 0, [1.0, "anim_human", 0, 1, 0]],	  #SWY - Commented out for b2's stand
+# ["unused_human_anim_76", 0, [1.0, "anim_human", 0, 1, 0]],    #SWY - Commented out for vader's stand
+# ["unused_human_anim_77", 0, [1.0, "anim_human", 0, 1, 0]],		#had to comment out for slave_dance
+# ["unused_human_anim_78", 0, [1.0, "anim_human", 0, 1, 0]],		#hand to comment out for crouch_stop
+# ["unused_human_anim_79", 0, [1.0, "anim_human", 0, 1, 0]],		#had to comment out for crouch
+# ["unused_human_anim_80", 0, [1.0, "anim_human", 0, 1, 0]],		#had to comment out for stand_crouch
+# ["unused_human_anim_81", 0, [1.0, "anim_human", 0, 1, 0]],		#had to comment out for walk_forward_crouch
+# ["unused_human_anim_82", 0, [1.0, "anim_human", 0, 1, 0]],		#had to comment out for droid_walk_forward
+# ["unused_human_anim_83", 0, [1.0, "anim_human", 0, 1, 0]],		#had to comment out for dmod_kill_agent animation
+#--------------------------------------------------------------------------------------------------------------------
+
+
+ ["slave_dance", acf_enforce_all, amf_client_prediction|amf_priority_die|amf_play,
+   #[10.0, "dancer_stand", 0, 177, arf_blend_in_5],
+   [10.0, "dancer_stand", 0, 177, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.20],
+ ],
+
+ ["droid_walk_forward", acf_enforce_lowerbody, amf_client_prediction|amf_priority_die|amf_play,	#from walk_forward
+   #[1.0, "man_walk", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   [1.0, "man_walk", 0, 0, arf_use_walk_progress|arf_cyclic|blend_in_walk,pack2f(0.0,0.0), (0, 0, 0), 0.0],
+ ],
+
+ #SW - used to move the agent far underground when they are 'killed'
+ ["dmod_kill_agent", acf_enforce_all|acf_displace_position, amf_client_prediction|amf_priority_die|amf_play,
+   [0.1, "anim_human", 386, 387, 0, 0, (0, 0, 20.0), 0.0],	#(right,  forward,  down), delay
+ ],
+
+#SW - had to comment out 1 animation for the jetpack jump
+# ["unused_human_anim_89", 0, [1.0, "anim_human", 0, 1, 0]],
+
+ # Super-Mario Stype Super Jump - http://forums.taleworlds.net/index.php/topic,65520.msg1703891.html
+ #["fall_body_back", acf_enforce_all|acf_align_with_ground|acf_lock_camera,
+ #["jetpack", acf_enforce_all|acf_lock_camera|acf_align_with_ground|acf_displace_position,		#working
+ ["jetpack", acf_enforce_all|acf_align_with_ground|acf_displace_position, amf_client_prediction|amf_priority_die|amf_play,		#working
+ #["jetpack", acf_displace_position,		#testing
+ #["jetpack", acf_enforce_lowerbody|acf_displace_position,
+	[1.5, "jump", 22, 48, arf_blend_in_1, 0, (0, 15, -5), 0],	#(right,  forward,  down), delay
+ #[1.5, "jump", 22, 48, 0, 0, (0, 15, -5), 0.0],	#(right,  forward,  down), delay
+ #[2.2, "death_face", 8, 60, arf_blend_in_16|arf_make_custom_sound, pack2f(0.5, 0.0), (0,0,0), 0.6],
+ ],
+
+#-----------------------------------------------------------------------------------------------
+
+#SW - had to comment out 6 animations for force powers
+# ["unused_human_anim_90", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_91", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_92", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_93", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_94", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_85", 0, [1.0, "anim_human", 0, 1, 0]],
+
+#SW - force powers - animations similar to shild bash but longer
+ # strike_fall_back_rise_after_bashed
+ ["force_knocked", acf_enforce_all|acf_align_with_ground, amf_client_prediction|amf_priority_die|amf_play,
+   [2.5, "anim_human", blow+5400, blow+5453, arf_blend_in_2],
+ ],
+# strike_chest_front_stop
+ ["force_stun", acf_enforce_all, amf_client_prediction|amf_priority_die|amf_play,
+   [2.0, "anim_human", blow+5000, blow+5010, arf_blend_in_3],
+ ],
+# strike_chest_front_stop
+ ["force_mini_stun", acf_enforce_all, amf_client_prediction|amf_priority_die|amf_play,
+   [1.2, "anim_human", blow+5000, blow+5010, arf_blend_in_3],
+ ],
+ # anim jump end
+ ["force_crouch", acf_enforce_all|acf_enforce_lowerbody, amf_client_prediction|amf_priority_die|amf_play,
+   [1.5, "anim_human", 280, 290, arf_blend_in_3],
+ ],
+# strike_head_front_left
+ ["force_unsuccessful", acf_enforce_all, amf_client_prediction|amf_priority_die|amf_play,
+   [1.5, "anim_human", blow+0, blow+10, arf_blend_in_3],
+ ],
+ # strike_fall_back_rise_after_bashed
+ ["force_push", acf_enforce_all|acf_displace_position, amf_client_prediction|amf_priority_die|amf_play,
+  #[2.5, "anim_human", blow+5400, blow+5453, 0, 0, (0, -2, 0), 0.0],	#(right,  forward,  down), delay],
+  #[0.2, "anim_human", blow+5000, blow+5010, arf_blend_in_3, 0, (0, -7, 0), 0.0],	#(right,  forward,  down), delay],
+   [0.3, "death_chest", 0, 37, arf_blend_in_3, 0, (0, -7, 0), 0.0],	#(right,  forward,  down), delay],
+   [0.4, "death2", 0, 53, 0, arf_blend_in_3, (0, -7, 0), 0.0],	#(right,  forward,  down), delay],
+   [0.4, "death_face", 0, 54, 0, arf_blend_in_3, (0, -7, 0), 0.0],	#(right,  forward,  down), delay],
+   [0.6, "death_abdomen", 0, 96, arf_blend_in_3, 0, (0, -7, 0), 0.0],	#(right,  forward,  down), delay],
+
+ ],
+
+ #Swyter animations
+#SW - had to comment out these for Swyter animations
+#["unused_human_anim_88", 0, [1.0, "anim_human", 0, 1, 0]],
+ ["force_choke", acf_enforce_all, amf_client_prediction|amf_priority_die|amf_play,
+   [3.5, "sw_force_kill_1", 0, 50, arf_blend_in_3],
+ ],
+
+#SW - had to comment out these for Georj animations (drinking & sitting)
+# ["unused_human_anim_86", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_87", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_84", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["drinking", acf_enforce_all|acf_displace_position,			#working
+# [2, "sw_chair_drinking_beta_1", 0, 59, 0, 0, (0, 0, 2), 0.0],	#(right,  forward,  down), delay
+  #["drinking", acf_enforce_all,			#working
+   ["drinking", 0, amf_client_prediction|amf_priority_die|amf_play,			#working
+  #[2, "anim-drinking", 0, 120, 0],		#by geroj
+   [3.0, "sw_chair_drinking_beta_1_fixed", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],	#by Swyter
+   [4.0, "sw_chair_drinking_beta_1_fixed", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],	#by Swyter
+   [2.0, "sw_chair_moving_head_fixed", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],	#by Swyter
+   [4.0, "sw_chair_moving_head_fixed", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],	#by Swyter
+   [2.0, "sw_chair_stand1_fixed", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],		#by Swyter
+   [2.0, "sw_chair_stand2_fixed", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],		#by Swyter
+ ],
+
+#["sitting", acf_enforce_all,
+ ["sitting", 0, amf_client_prediction|amf_priority_die|amf_play,
+#["sitting", acf_enforce_all|acf_displace_position,
+  #[2, "anim-drinking", 0, 1, 0],		#by geroj
+  #[2, "sw_chair_moving_head_fixed", 0, 59, 0, pack2f(0.0, 0.0), (0, 0, 2), 0.0],	#(right,  forward,  down), delay
+  #[2, "sw_chair_moving_head_fixed", 0, 59, 0, 0],	#(right,  forward,  down), delay
+  #[2, "sw_chair_moving_head_fixed", 0, 59, 0, 0, (0, 0, 0.2), 0.25],	#(right,  forward,  down), delay
+  #[2, "sw_chair_drinking_beta_1", 0, 59, 0, 0, (0, 0, 0.2), 0.25],	#(right,  forward,  down), delay
+  #[2, "sw_chair_drinking_beta_1", 0, 59, 0, 0],	#(right,  forward,  down), delay
+   [2.0, "sw_chair_moving_head_fixed", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],	#by Swyter
+   [4.0, "sw_chair_moving_head_fixed", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],	#by Swyter
+   [2.0, "sw_chair_stand1_fixed", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],		#by Swyter
+   [2.0, "sw_chair_stand2_fixed", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],		#by Swyter
+
+ ],
+
+#["sit_cantina_agent", acf_enforce_all|acf_displace_position,
+ ["sit_cantina_agent", acf_displace_position, amf_client_prediction|amf_priority_die|amf_play,
+  #[2, "anim-drinking", 0, 1, 0],		#by geroj
+  #[2, "sw_chair_moving_head_fixed", 0, 59, 0, pack2f(0.0, 0.0), (0, 0, 2), 0.0],	#(right,  forward,  down), delay
+  #[2, "sw_chair_moving_head_fixed", 0, 1, 0, 0, (0, 0, 0.2), 0.0],	#(right,  forward,  down), delay
+  #[2, "sw_chair_moving_head_fixed", 0, 59, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0.2), 0.0],	#(right,  forward,  down), delay
+   [0.2, "sw_chair_stand1_fixed", 0, 1, 0, 0, (0, 0, 0.2), 0.0],	#(right,  forward,  down), delay
+ ],
+
+
+ ["vader_stand", 0, amf_client_prediction|amf_priority_die|amf_play,
+   [4, "swy_vader_stand", 0, 70, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25], #by Swyter
+ ],
+
+ ["b2_stand", 0, amf_client_prediction|amf_priority_die|amf_play,
+   [6, "swy_b2_stand", 0, 49, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0], #by Swyter
+ ],
+
+ ["b2_walk", acf_enforce_lowerbody,	 amf_client_prediction|amf_priority_die|amf_play,	#from walk_forward
+  #[1.0, "man_walk", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   [1.0, "swy_b2_walk", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk,pack2f(0.0,0.0), (0, 0, 0), 0.0],
+ ],
+
+#--------------------------------------------------------------------------------------------------------------------
+
+#SW - had to comment out 6 animations for shield bash kit to work
+# ["unused_human_anim_95", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_96", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_97", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_98", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_99", 0, [1.0, "anim_human", 0, 1, 0]],
+# ["unused_human_anim_100", 0, [1.0, "anim_human", 0, 1, 0]],
+
+ #SW - added shield bash kit
+ # START OF SHIELD BASH KIT -------------------------------------------
+
+ # strike_fall_back_rise_after_bashed
+ ["bash_knocked", acf_enforce_all|acf_align_with_ground, amf_client_prediction|amf_priority_die|amf_play,
+   [2.0, "anim_human", blow+5400, blow+5453, arf_blend_in_2],
+ ],
+# strike_chest_front_stop
+ ["bash_stun", acf_enforce_all, amf_client_prediction|amf_priority_die|amf_play,
+ #[1.5, "anim_human", blow+5000, blow+5010, arf_blend_in_3],		#original shield bash
+	[1.0, "strikes", 881, 905, arf_blend_in_3],    	#from strike_chest_front
+ ],
+# strike_chest_front_stop
+ ["bash_mini_stun", acf_enforce_all, amf_client_prediction|amf_priority_die|amf_play,
+  #[0.6, "anim_human", blow+5000, blow+5010, arf_blend_in_3],	#original shield bash
+   [0.8, "strikes", 1618, 1640, arf_blend_in_3], 	#from strike_abdomen_front
+ ],
+ # anim jump end
+ ["bash_crouch", acf_enforce_all|acf_enforce_lowerbody, amf_client_prediction|amf_priority_die|amf_play,
+   [0.7, "anim_human", 280, 290, arf_blend_in_3],
+ ],
+# strike_head_front_left
+ ["bash_unsuccessful", acf_enforce_all, amf_client_prediction|amf_priority_die|amf_play,
+   [0.55, "anim_human", blow+0, blow+10, arf_blend_in_3],
+ ],
+
+ ["release_bash", acf_enforce_all|acf_right_cut|acf_parallels_for_look_slope, amf_client_prediction|amf_priority_die|amf_play,
+  #[0.62, "anim_human", combat+5710, combat+5740, blend_in_release],		#original shield bash (good)
+  #[0.62, "anim_human", combat+4300, combat+4335, blend_in_release],		# testing release_swingleft_fist?  nope
+  #[2.0, "anim_human", combat+2650, combat+2860, blend_in_release],		#testing reload_musket?		     nope
+  #[0.62, "sw_lightsaber_left_swing_1", 25, 49, blend_in_release],		#from swyter, maybe
+  #[0.62, "equip_arms", 78, 84, blend_in_release],		#from native, maybe
+  #[0.62, "man_cheer", 808, 825, blend_in_release],		#from native, maybe
+  #[0.8, "wb_defend_shield_right", 11, 36, blend_in_release],		#shield bash from warband
+   [0.8, "wb_defend_shield_right", 11, 36, arf_blend_in_3],		#shield bash from warband
+ ],
+
+ ["stand_crouch", 0, amf_client_prediction|amf_priority_die|amf_play,
+  #[10.0, "lord_stand", 0, 111, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25],
+   [4.0, "Sit", 0, 199, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25],
+ ],
+
+ ["crouch", 0, amf_client_prediction|amf_priority_die|amf_play,
+  #[10.0, "lord_stand", 0, 111, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.25],
+  #[15.0, "Sit", 0, 199, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],
+   [30.0, "coehorn_shoot", 49, 49, arf_use_stand_progress|arf_cyclic, 0, (0, 0, 0), 0.0],
+ ],
+
+ ["crouch_stop", 0, amf_client_prediction|amf_priority_die|amf_play,
+   [0.01, "Sit", 0, 0, arf_blend_in_3],
+ ],
+
+ ["walk_forward_crouch", acf_enforce_lowerbody, amf_client_prediction|amf_priority_die|amf_play,
+  #[1.0, "man_walk", 0, 32, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+   [1.0, "crouch", 0, 19, arf_use_walk_progress|arf_cyclic|blend_in_walk|arf_make_walk_sound,pack2f(0.4,0.9), (0, 0, 0), 0.0],
+ ],
+
+
+  # ["release_bash", acf_left_cut|acf_parallels_for_look_slope|acf_anim_length(100),	#from release_slashleft_onehanded
+  # [0.6, "anim_human", combat+9110, combat+9140, blend_in_release], 			#original
+  # #[2.0, "sw_lightsaber_left_swing_1", 0, 49, blend_in_release],
+  # ],
+
+ # END OF SHIELD BASH KIT -----------------------------------------------------
 
  ["horse_stand", 0, amf_client_prediction,
 ##   [5.0, "anim_horse", 1000, 1044, arf_cyclic],
@@ -2092,6 +2286,20 @@ animations = [
  ["unused_horse_anim_96", 0, 0, [1.0, "anim_horse", 0, 1, 0]],
  ["unused_horse_anim_97", 0, 0, [1.0, "anim_horse", 0, 1, 0]],
  ["unused_horse_anim_98", 0, 0, [1.0, "anim_horse", 0, 1, 0]],
- ["unused_horse_anim_99", 0, 0, [1.0, "anim_horse", 0, 1, 0]],
- ["unused_horse_anim_100", 0, 0, [1.0, "anim_horse", 0, 1, 0]],
+
+ #SW - had to comment out for speeder_allow_movement
+ #["unused_horse_anim_99", 0, [1.0, "anim_horse", 0, 1, 0]],
+  #SW - had to comment out for stationary_speeder
+ #["unused_horse_anim_100", 0, [1.0, "anim_horse", 0, 1, 0]],
+
+ ["speeder_stationary", 0, amf_client_prediction|amf_keep|amf_priority_die|amf_start_instantly|amf_play,
+ #[1.0, "anim_horse", 0, 1, 0]		#this works
+ #[5, "sw_speeder_stand", 0, 99, arf_cyclic|arf_use_stand_progress, 0, (0, 0, 0), 0.0],	#SW - new horse_stand animation by Swyter
+	[5, "sw_speeder_stand", 0, 99, 0],	#SW - new horse_stand animation by Swyter
+ ],
+
+ ["speeder_allow_movement", 0, amf_client_prediction|amf_keep|amf_priority_die|amf_start_instantly|amf_play,
+	[0.01, "sw_speeder_stand", 0, 0, 0],	#SW - new horse_stand animation by Swyter
+ ],
+
  ]
