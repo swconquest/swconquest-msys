@@ -21,7 +21,7 @@ def save_scene_props(variable_list,variable_uses,tag_uses,quick_strings):
     #scene_prop[0] = 0
     #scene_prop[1] = 0
     #scene_prop[2] = 0
-    scene_prop[3] = 0
+    #scene_prop[3] = 0
     #scene_prop[4] = []
 
     #SW - modified the following code to allow for higher hit points on destructable scene props
