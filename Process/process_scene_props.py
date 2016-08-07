@@ -19,10 +19,10 @@ def save_scene_props(variable_list,variable_uses,tag_uses,quick_strings):
     #    if type(mesh) is str and mesh == "0":
     #        print i,mesh; scene_prop[i] = "dummy_mesh"
     #scene_prop[0] = 0
-    scene_prop[1] = 0
-    scene_prop[2] = 0
+    #scene_prop[1] = 0
+    #scene_prop[2] = 0
     scene_prop[3] = 0
-    scene_prop[4] = []
+    #scene_prop[4] = []
 
     #SW - modified the following code to allow for higher hit points on destructable scene props
 	#ofile.write("spr_%s %d %d %s %s "%(scene_prop[0], scene_prop[1], get_spr_hit_points(scene_prop[1]), scene_prop[2], scene_prop[3]))
