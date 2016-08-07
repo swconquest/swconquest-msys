@@ -51,13 +51,13 @@ def export_skins(skins):
     skins = skins[0:30]
   for skin in skins:
     if is_wb_skin:
-        #swy-- convert tuple to list to make it writable
-        skin = list(skin)
+      #swy-- convert tuple to list to make it writable
+      skin = list(skin)
 
-        #swy--
-        for i, mesh in enumerate(skin):
-            if type(mesh) is str and mesh == "_":
-                print i,mesh; skin[i] = "dummy_mesh"
+      #swy--
+      for i, mesh in enumerate(skin):
+        if type(mesh) is str and mesh == "_":
+          skin[i] = "dummy_mesh"
 
     skin_name      = skin[0]
     skin_flags     = skin[1]

@@ -18,14 +18,18 @@ def save_scene_props(variable_list,variable_uses,tag_uses,quick_strings):
     #for i, mesh in enumerate(scene_prop):
     #    if type(mesh) is str and mesh == "0":
     #        print i,mesh; scene_prop[i] = "dummy_mesh"
-    scene_prop = scene_props[0]
+    scene_prop[0] = 0
+    scene_prop[1] = 0
+    scene_prop[2] = 0
+    scene_prop[3] = 0
+    scene_prop[4] = []
 
     #SW - modified the following code to allow for higher hit points on destructable scene props
 	#ofile.write("spr_%s %d %d %s %s "%(scene_prop[0], scene_prop[1], get_spr_hit_points(scene_prop[1]), scene_prop[2], scene_prop[3]))
     if (len(scene_prop) == 5):
       ofile.write("spr_%s %d %d %s %s "%(scene_prop[0], scene_prop[1], get_spr_hit_points(scene_prop[1]), scene_prop[2], scene_prop[3]))
     elif (len(scene_prop) == 6):
-      ofile.write("spr_%s %d %d %s %s "%(scene_prop[0], scene_prop[1], scene_prop[5] , scene_prop[2], scene_prop[3]))
+      ofile.write("spr_%s %d %d %s %s "%(scene_prop[0], scene_prop[1], scene_prop[5], scene_prop[2], scene_prop[3]))
     save_simple_triggers(ofile,scene_prop[4]  , variable_list,variable_uses,tag_uses,quick_strings)
     ofile.write("\n")
   ofile.close()
