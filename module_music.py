@@ -33,13 +33,13 @@ tracks = [
 	("arena_2", "SWC-Arena-2.ogg", mtf_sit_arena|mtf_module_track, mtf_sit_arena),
 
 	#FIGHT/BATTLE
-	("battle_2", "SWC-Battle-2.ogg", mtf_sit_fight|mtf_sit_ambushed|mtf_sit_siege|mtf_module_track, mtf_sit_fight|mtf_sit_ambushed|mtf_sit_siege),
-	("battle_3", "SWC-Battle-3.ogg", mtf_sit_fight|mtf_sit_ambushed|mtf_sit_siege|mtf_module_track, mtf_sit_fight|mtf_sit_ambushed|mtf_sit_siege),
+	("battle_2", "SWC-Battle-2.ogg",           mtf_sit_fight|mtf_sit_ambushed|mtf_sit_siege|mtf_module_track, mtf_sit_fight|mtf_sit_ambushed|mtf_sit_siege),
+	("battle_3", "SWC-Battle-3.ogg",           mtf_sit_fight|mtf_sit_ambushed|mtf_sit_siege|mtf_module_track, mtf_sit_fight|mtf_sit_ambushed|mtf_sit_siege),
 	#("battle_empire", "SWC-Battle-Empire.ogg", mtf_culture_1|mtf_sit_fight|mtf_sit_ambushed|mtf_sit_siege|mtf_module_track, mtf_sit_fight|mtf_sit_ambushed|mtf_sit_siege|mtf_culture_all),
 	("battle_empire", "SWC-Battle-Empire.ogg", mtf_sit_fight|mtf_sit_ambushed|mtf_sit_siege|mtf_module_track, mtf_sit_fight|mtf_sit_ambushed|mtf_sit_siege),
 
 	#TAVERN/CANTINA
-	("cantina_1", "SWC-Cantina.ogg", mtf_sit_tavern|mtf_module_track, mtf_sit_tavern),
+	("cantina_1",     "SWC-Cantina.ogg",   mtf_sit_tavern|mtf_module_track, mtf_sit_tavern),
 	("cantina_fight", "SWC-Bar_Fight.ogg", mtf_persist_until_finished|mtf_module_track, 0),		#only used in cantina bar fights
 
 	#DEFEAT/KILLED
@@ -47,31 +47,31 @@ tracks = [
 
 	#MAP
 	("map_dspace", "SWC-Deep_Space.ogg", mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
-	("map_1", "SWC-map-1.ogg", mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
-	("map_2", "SWC-map-2.ogg", mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
-	("map_3", "SWC-map-3.ogg", mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
-	("map_4", "SWC-map-4.ogg", mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
-	("map_5", "SWC-map-5.ogg", mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
-	("map_6", "SWC-map-6.ogg", mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
-	("map_7", "SWC-map-7.ogg", mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
+	("map_1",      "SWC-Map-1.ogg",      mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
+	("map_2",      "SWC-Map-2.ogg",      mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
+	("map_3",      "SWC-Map-3.ogg",      mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
+	("map_4",      "SWC-Map-4.ogg",      mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
+	("map_5",      "SWC-Map-5.ogg",      mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
+	("map_6",      "SWC-Map-6.ogg",      mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
+	("map_7",      "SWC-Map-7.ogg",      mtf_sit_travel|mtf_sit_day|mtf_sit_night|mtf_module_track, mtf_sit_travel|mtf_sit_day|mtf_sit_night),
 
 	#VICTORY
 	("victory", "SWC-Victory.ogg", mtf_persist_until_finished|mtf_sit_victorious, 0),
 
 	#TOWN/PLANET TRACKS
-	("town_bizaar", "SWC-BizaarPlanetTexture.ogg", mtf_sit_town|mtf_sit_town_infiltrate|mtf_module_track, mtf_sit_town|mtf_sit_town_infiltrate),
-	("town_gentle", "SWC-Gentle-Planet.ogg",       mtf_sit_town|mtf_sit_town_infiltrate|mtf_module_track, mtf_sit_town|mtf_sit_town_infiltrate),
-	("town_beautiful", "SWC-Beautiful_Planet.ogg", mtf_sit_town|mtf_sit_town_infiltrate|mtf_module_track, mtf_sit_town|mtf_sit_town_infiltrate),
+	("town_bizaar",     "SWC-BizaarPlanetTexture.ogg", mtf_sit_town|mtf_sit_town_infiltrate|mtf_module_track, mtf_sit_town|mtf_sit_town_infiltrate),
+	("town_gentle",     "SWC-Gentle-Planet.ogg",       mtf_sit_town|mtf_sit_town_infiltrate|mtf_module_track, mtf_sit_town|mtf_sit_town_infiltrate),
+	("town_beautiful",  "SWC-Beautiful_Planet.ogg",    mtf_sit_town|mtf_sit_town_infiltrate|mtf_module_track, mtf_sit_town|mtf_sit_town_infiltrate),
 	#TOWN SPECIFIC (doesn't seem to work correctly with the play_track commands so I had to add mtf_persist_until_finished)
-	("town_desert", "SWC-Dessert-Planet.ogg", mtf_persist_until_finished|mtf_module_track, 0),
-	("town_wookiee", "SWC-WookiePlanetTexture.ogg", mtf_persist_until_finished|mtf_module_track, 0),
-	("town_endor", "SWC-Endor.ogg", mtf_persist_until_finished|mtf_module_track, 0),
-	("town_bothawui",   "SWC-Bothawui.ogg",    mtf_persist_until_finished|mtf_module_track, 0),
-	("town_felucia",    "SWC-Felucia.ogg",     mtf_persist_until_finished|mtf_module_track, 0),
-	("town_nalhutta",   "SWC-Nul_Hutta.ogg",   mtf_persist_until_finished|mtf_module_track, 0),
-	("town_raxusprime", "SWC-Raxus_Prime.ogg", mtf_persist_until_finished|mtf_module_track, 0),
+	("town_desert",     "SWC-Dessert-Planet.ogg",      mtf_persist_until_finished|mtf_module_track, 0),
+	("town_wookiee",    "SWC-WookiePlanetTexture.ogg", mtf_persist_until_finished|mtf_module_track, 0),
+	("town_endor",      "SWC-Endor.ogg",               mtf_persist_until_finished|mtf_module_track, 0),
+	("town_bothawui",   "SWC-Bothawui.ogg",            mtf_persist_until_finished|mtf_module_track, 0),
+	("town_felucia",    "SWC-Felucia.ogg",             mtf_persist_until_finished|mtf_module_track, 0),
+	("town_nalhutta",   "SWC-Nul_Hutta.ogg",           mtf_persist_until_finished|mtf_module_track, 0),
+	("town_raxusprime", "SWC-Raxus_Prime.ogg",         mtf_persist_until_finished|mtf_module_track, 0),
 	#TOWN BATTLES? maybe also use for fights or town_infiltrate ?
-	("town_battle", "SWC-Planet_Battle.ogg", mtf_persist_until_finished|mtf_module_track, 0),
+	("town_battle",     "SWC-Planet_Battle.ogg",       mtf_persist_until_finished|mtf_module_track, 0),
 	#TOWN TESTING
 	#("town_test", "test_music.ogg", mtf_persist_until_finished|mtf_module_track, 0),
 
@@ -79,13 +79,13 @@ tracks = [
 	("throne_empire_1", "SWC-Empire_Throne_1.ogg", mtf_persist_until_finished|mtf_module_track, 0),
 	("throne_empire_2", "SWC-Empire_Throne_2.ogg", mtf_persist_until_finished|mtf_module_track, 0),
 	("throne_empire_3", "SWC-Empire_Throne_3.ogg", mtf_persist_until_finished|mtf_module_track, 0),
-	("throne_hutt_1", "SWC-Hutt_Throne_1.ogg", mtf_persist_until_finished|mtf_module_track, 0),
-	("throne_hutt_2", "SWC-Hutt_Throne_2.ogg", mtf_persist_until_finished|mtf_module_track, 0),
-	("throne_hutt_3", "SWC-Hutt_Throne_3.ogg", mtf_persist_until_finished|mtf_module_track, 0),
-	("throne_rebel_1", "SWC-Rebel_Throne_1.ogg", mtf_persist_until_finished|mtf_module_track, 0),
-	("throne_rebel_2", "SWC-Rebel_Throne_2.ogg", mtf_persist_until_finished|mtf_module_track, 0),
-	("throne_rebel_3", "SWC-Rebel_Throne_3.ogg", mtf_persist_until_finished|mtf_module_track, 0),
-	("throne_rebel_4", "SWC-Rebel_Throne_4.ogg", mtf_persist_until_finished|mtf_module_track, 0),
+	("throne_hutt_1",   "SWC-Hutt_Throne_1.ogg",   mtf_persist_until_finished|mtf_module_track, 0),
+	("throne_hutt_2",   "SWC-Hutt_Throne_2.ogg",   mtf_persist_until_finished|mtf_module_track, 0),
+	("throne_hutt_3",   "SWC-Hutt_Throne_3.ogg",   mtf_persist_until_finished|mtf_module_track, 0),
+	("throne_rebel_1",  "SWC-Rebel_Throne_1.ogg",  mtf_persist_until_finished|mtf_module_track, 0),
+	("throne_rebel_2",  "SWC-Rebel_Throne_2.ogg",  mtf_persist_until_finished|mtf_module_track, 0),
+	("throne_rebel_3",  "SWC-Rebel_Throne_3.ogg",  mtf_persist_until_finished|mtf_module_track, 0),
+	("throne_rebel_4",  "SWC-Rebel_Throne_4.ogg",  mtf_persist_until_finished|mtf_module_track, 0),
 
 ########################################################################################################################
 
