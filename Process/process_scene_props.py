@@ -18,7 +18,7 @@ def save_scene_props(variable_list,variable_uses,tag_uses,quick_strings):
     #for i, mesh in enumerate(scene_prop):
     #    if type(mesh) is str and mesh == "0":
     #        print i,mesh; scene_prop[i] = "dummy_mesh"
-    scene_prop[0] = 0
+    #scene_prop[0] = 0
     scene_prop[1] = 0
     scene_prop[2] = 0
     scene_prop[3] = 0
