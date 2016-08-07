@@ -57,9 +57,10 @@ python -B -OO ./Process/process_global_variables_unused.py
 
 if [ -e /usr/bin/flip ]; then
     flip -d IDs/*.py
-    flip -d  ../*.txt
+    flip -d   ./*.txt
     flip -d  ../swconquest/_wb/*.txt
-    flip -d   ./swconquest/*.txt
+    flip -d  ../swconquest/*.txt
+    flip -u  ../swconquest/_wb/_wb_porting_notes.txt
 fi
 
 # --

@@ -2,6 +2,7 @@ import string
 from process_common import *
 from module_info import *
 from module_skins import *
+from module_info import wb_compile_switch as is_wb_skin
 
 import string
 from process__swyhelper import *
@@ -16,7 +17,7 @@ def replace_spaces(s0):
 
 
 def write_face_tex(ofile,tex_set):
-  ofile.write(" %d "%len(tex_set)) 
+  ofile.write(" %d "%len(tex_set))
   for tex in tex_set:
     color = tex[1]
     hair_mats = tex[2]
@@ -31,7 +32,7 @@ def write_face_tex(ofile,tex_set):
   ofile.write("\n")
 
 def write_textures(ofile,tex_set):
-  ofile.write(" %d "%len(tex_set)) 
+  ofile.write(" %d "%len(tex_set))
   for tex in tex_set:
     ofile.write(" %s "%tex)
   ofile.write("\n")
@@ -41,7 +42,7 @@ def write_voices(ofile, voices):
   for voice_rec in voices:
     ofile.write(" %d %s "%(voice_rec[0],voice_rec[1]))
   ofile.write("\n")
-    
+
 def export_skins(skins):
   ofile = open(export_dir + "skins.txt","w")
   ofile.write("skins_file version 1\n")
@@ -49,6 +50,15 @@ def export_skins(skins):
   if len(skins) > 29:
     skins = skins[0:30]
   for skin in skins:
+    if is_wb_skin:
+        #swy-- convert tuple to list to make it writable
+        skin = list(skin)
+
+        #swy--
+        for i, mesh in enumerate(skin):
+            if type(mesh) is str and mesh == "_":
+                print i,mesh; skin[i] = "dummy_mesh"
+
     skin_name      = skin[0]
     skin_flags     = skin[1]
     body_name      = skin[2]
@@ -75,7 +85,7 @@ def export_skins(skins):
       blood_particles_2 = skin[16]
     if len(skin) > 17:
       constraints = skin[17]
-    
+
     ofile.write("%s %d\n %s %s %s\n"%(skin_name, skin_flags, body_name, calf_name, hand_name))
     ofile.write(" %s %d "%(head_mesh,len(face_keys)))
     for face_key in face_keys:
@@ -83,7 +93,7 @@ def export_skins(skins):
     ofile.write("\n%d\n"%len(hair_meshes))
     for mesh_name in hair_meshes:
       ofile.write(" %s "%mesh_name)
-    ofile.write("\n %d\n"%len(beard_meshes)) 
+    ofile.write("\n %d\n"%len(beard_meshes))
     for bmn in beard_meshes:
       ofile.write("  %s\n"%bmn)
     ofile.write("\n")

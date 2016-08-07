@@ -11,6 +11,15 @@ def save_scene_props(variable_list,variable_uses,tag_uses,quick_strings):
   ofile.write("scene_propsfile version 1\n")
   ofile.write(" %d\n"%(len(scene_props)))
   for scene_prop in scene_props:
+    #swy-- convert tuple to list to make it writable
+    scene_prop = list(scene_prop)
+
+    #swy--
+    #for i, mesh in enumerate(scene_prop):
+    #    if type(mesh) is str and mesh == "0":
+    #        print i,mesh; scene_prop[i] = "dummy_mesh"
+    scene_prop = scene_props[0]
+
     #SW - modified the following code to allow for higher hit points on destructable scene props
 	#ofile.write("spr_%s %d %d %s %s "%(scene_prop[0], scene_prop[1], get_spr_hit_points(scene_prop[1]), scene_prop[2], scene_prop[3]))
     if (len(scene_prop) == 5):
