@@ -4335,11 +4335,11 @@ scripts = [
     [
       (store_script_param_1, ":meeting_troop"),
       (store_script_param_2, ":troop_dna"),
+      (set_jump_mission,"mt_conversation_encounter"),
       (modify_visitors_at_site,"scn_conversation_scene"),(reset_visitors),
       (set_visitor,0,"trp_player"),
       #       (party_stack_get_troop_dna,":troop_dna",":meeting_party",0),
       (set_visitor,17,":meeting_troop",":troop_dna"),
-      (set_jump_mission,"mt_conversation_encounter"),
       (jump_to_scene,"scn_conversation_scene"),
       (change_screen_map_conversation, ":meeting_troop"),
   ]),
@@ -4355,12 +4355,12 @@ scripts = [
         (lt, "$g_encountered_party_relation", 0), #hostile
         #        (call_script, "script_music_set_situation_with_culture", mtf_sit_encounter_hostile),
       (try_end),
+      (set_jump_mission,"mt_conversation_encounter"),      
       (modify_visitors_at_site,"scn_conversation_scene"),(reset_visitors),
       (set_visitor,0,"trp_player"),
       (party_stack_get_troop_id, ":meeting_troop",":meeting_party",0),
       (party_stack_get_troop_dna,":troop_dna",":meeting_party",0),
       (set_visitor,17,":meeting_troop",":troop_dna"),
-      (set_jump_mission,"mt_conversation_encounter"),
       (jump_to_scene,"scn_conversation_scene"),
       (change_screen_map_conversation, ":meeting_troop"),
   ]),
@@ -15653,6 +15653,7 @@ scripts = [
       (party_slot_ge, "$current_town", slot_center_has_bandits, 1),
       (eq, "$g_defending_against_siege", 0),#Skip if the center is under siege (because of resting)
       (eq, "$sneaked_into_town", 0),#Skip if sneaked
+      (set_jump_mission, "mt_bandits_at_night"),
       (try_begin),
         (party_slot_eq, "$current_town", slot_party_type, spt_minorplanet),
         (party_get_slot, ":cur_scene", "$current_town", slot_spacestation_exterior),
@@ -15663,8 +15664,7 @@ scripts = [
       (reset_visitors),
       (party_get_slot, ":bandit_troop", "$current_town", slot_center_has_bandits),
       (store_character_level, ":level", "trp_player"),
-      
-      (set_jump_mission, "mt_bandits_at_night"),
+
       (try_begin),
         (party_slot_eq, "$current_town", slot_party_type, spt_minorplanet),
         (assign, ":spawn_amount", 2),
@@ -24554,10 +24554,10 @@ scripts = [
               
               ("loot_menu_talk", [
                   (store_script_param, ":troop", 1),
+                  (set_jump_mission,"mt_conversation_encounter"),
                   (modify_visitors_at_site,"scn_conversation_scene"),(reset_visitors),
                   (set_visitor,0,"trp_player"),
                   (set_visitor,17,":troop"),
-                  (set_jump_mission,"mt_conversation_encounter"),
                   (jump_to_scene,"scn_conversation_scene"),
                   (assign, "$g_camp_talk",1),
                   (change_screen_map_conversation, ":troop"),
@@ -25533,7 +25533,10 @@ scripts = [
               ("walk_around_ship",
                 [
                   (store_script_param, ":player_entry_point", 1),
-                  
+
+                  #set the mission template
+                  (set_jump_mission,"mt_ship_interior"),
+
                   #may be necessary for dialogs to work correctly?
                   (assign, "$talk_context", 0),		#default
                   
@@ -25610,9 +25613,6 @@ scripts = [
                     (set_visitor, ":entry_point", ":troop"),
                     #(set_visitor, ":entry_point", "trp_rebel_trooper"),
                   (try_end),
-                  
-                  #set the mission template
-                  (set_jump_mission,"mt_ship_interior"),
                   
                   #jump to the scene
                   (jump_to_scene,":scene_to_use"),
@@ -25968,6 +25968,7 @@ scripts = [
               ("start_arena_battle",
                 #SW - modified tournament items
                 [
+                  (set_jump_mission,"mt_arena_melee_fight"),
                   (assign, "$last_training_fight_town", "$current_town"),
                   (store_current_hours,"$training_fight_time"),
                   (assign, "$g_mt_mode", abm_training),
@@ -25975,16 +25976,15 @@ scripts = [
                   (modify_visitors_at_site,":scene"),
                   (reset_visitors),
                   (store_random_in_range, "$g_player_entry_point", 32, 40),
-                  
+
                   #SW - added script_set_items_for_arena so we can toggle what weapons are used
                   (call_script, "script_set_items_for_arena", "$g_player_entry_point","trp_player"),
-                  
+
                   (set_visitor, "$g_player_entry_point", "trp_player"),
-                  
+
                   #SW - added script_set_items_for_arena so we can toggle what weapons are used (didn't see to work correctly here)
                   #(call_script, "script_set_items_for_arena", 0),
-                  
-                  (set_jump_mission,"mt_arena_melee_fight"),
+
                   (jump_to_scene, ":scene"),
               ]),
               
