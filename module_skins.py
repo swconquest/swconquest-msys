@@ -1,4 +1,4 @@
-# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M 
+# S T A R   W A R S   C O N Q U E S T   M O D U L E   S Y S T E M
 # / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
 # By Taleworlds, HokieBT, MartinF and Swyter - Do not use/copy without permission
 
@@ -71,10 +71,10 @@ man_face_keys = [
 
 # Face width-Jaw width Temple width
 woman_face_keys = [
-  (230,0, 0.8,-1.0, "Chin Size"), 
-  (220,0,-1.0, 1.0, "Chin Shape"), 
+  (230,0, 0.8,-1.0, "Chin Size"),
+  (220,0,-1.0, 1.0, "Chin Shape"),
   (10, 0,-1.2, 1.0, "Chin Forward"),
-  (20, 0,-0.6, 1.2, "Jaw Width"), 
+  (20, 0,-0.6, 1.2, "Jaw Width"),
   (40, 0,-0.7, 1.0, "Jaw Position"),
   (270,0, 0.9,-0.9, "Mouth-Nose Distance"),
   (30, 0,-0.5, 1.0, "Mouth Width"),
@@ -187,7 +187,7 @@ skins = [
     [
 		("manface_young_2",0xffcbe0e0,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19]),
 		("manface_midage",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),
-		("manface_young",0xffd0e0e0,["hair_blonde"],[0xff83301a, 0xff502a19, 0xff19100c, 0xff0c0d19]),     
+		("manface_young",0xffd0e0e0,["hair_blonde"],[0xff83301a, 0xff502a19, 0xff19100c, 0xff0c0d19]),
 		#("manface_old",0xffd0d0d0,["hair_white","hair_brunette","hair_red","hair_blonde"],[0xffffcded, 0xffbbcded, 0xff99eebb]),
 		("manface_young_3",0xffdceded,["hair_blonde"],[0xff2f180e, 0xff171313, 0xff007080c]),
 		("manface_7",0xffc0c8c8,["hair_blonde"],[0xff171313, 0xff007080c]),
@@ -196,23 +196,23 @@ skins = [
 		#("manface_young_4",0xffe0e8e8,["hair_blonde"],[0xff2f180e, 0xff171313, 0xff007080c]),
 		#("manface_old_2",0xffd5d5c5,["hair_white"],[0xffffcded, 0xffbbcded, 0xff99eebb]),
 		#new faces from JED_Q
-		("Jed_Q_1",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),		
-		("Jed_Q_2",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),		
-		("Jed_Q_3",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),		
-		("Jed_Q_4",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),		
-		("Jed_Q_5",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),		
-		("Jed_Q_6",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),				
+		("Jed_Q_1",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),
+		("Jed_Q_2",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),
+		("Jed_Q_3",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),
+		("Jed_Q_4",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),
+		("Jed_Q_5",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),
+		("Jed_Q_6",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),
 		("Jed_Q_7",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),
 		("Jed_Q_8",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),
 		("Jed_Q_9",0xffdfefe1,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),
-		("manface_african",0xff807c8a,["hair_blonde"],[0xff120808, 0xff007080c]),     
+		("manface_african",0xff807c8a,["hair_blonde"],[0xff120808, 0xff007080c]),
 		("sith_darth_maul",0x006b0808,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),	# from I-V-I-O-R-T
-		("palpatine",0xffffffff,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),		
-		("twilek_face_bib",0x00e1d489,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),		
+		("palpatine",0xffffffff,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),
+		("twilek_face_bib",0x00e1d489,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),
 		("chiss_face_a",0x00355bff,["hair_blonde"],[0xff120808, 0xff007080c]),
 		("weequay_face_a",0xFF807c8a,["hair_blonde"],[0xFF120808, 0xFF007080c]),	# from I-V-I-O-R-T
 		("weequay_face_b",0xFF807c8a,["hair_blonde"],[0xFF120808, 0xFF007080c])		# from I-V-I-O-R-T
- 
+
      ], #man_face_textures,
     [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_victory,"snd_man_victory")], #voice sounds
 	#SW - why was voice_warcry removed?  should we add it back in?
@@ -231,7 +231,7 @@ skins = [
      [2.7, comp_greater_than, (1.0,chin_size), (1.0,mouth_nose_distance), (1.0,nose_height), (-1.0,face_width)],
      ]
   ),
-  
+
   (
     "woman", skf_use_morph_key_10,
     "woman_body",  "woman_calf_l", "w_handL",
@@ -247,11 +247,11 @@ skins = [
       ("womanface_a",0xffe8dfe5,["hair_blonde"],[0xff502a19, 0xff19100c, 0xff0c0d19]),
       ("womanface_b",0xffdfdfdf,["hair_blonde"],[0xffa5481f, 0xff502a19, 0xff19100c, 0xff0c0d19]),
       ("womanface_new_a",0xffe8dfe5,["hair_blonde"],[0xff502a19, 0xff19100c, 0xff0c0d19]),
-      ("womanface_new_b",0xffdfdfdf,["hair_blonde"],[0xffa5481f, 0xff502a19, 0xff19100c, 0xff0c0d19]),	 
+      ("womanface_new_b",0xffdfdfdf,["hair_blonde"],[0xffa5481f, 0xff502a19, 0xff19100c, 0xff0c0d19]),
       ("Jed_Q_w_1",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),	#from Jed_Q
       ("womanface_brown",0xffaf9f7e,["hair_blonde"],[0xff19100c, 0xff0c0d19, 0xff007080c]),
       ("sibylla_womanface_amidala",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),	#from Jed_Q
-      ("womanface_african",0xff808080,["hair_blonde"],[0xff120808, 0xff007080c]),	 
+      ("womanface_african",0xff808080,["hair_blonde"],[0xff120808, 0xff007080c]),
       ("sith_darth_maul_female",0x0097392c,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff632e18, 0xff502a19, 0xff19100c]),	# from I-V-I-O-R-T
       ("chiss_female_face_a",0x00355bff,["hair_blonde"],[0xff120808, 0xff007080c]),
       ("womanface_new_young",0xffe3e8ef,["hair_blonde"],[0xffffffff, 0xffb04717, 0xff502a19, 0xff19100c]),
@@ -291,12 +291,12 @@ skins = [
      [],
      ["hair_blonde"], #hair textures NOTE - you MUST have a hair texture (even if it is not used) for the game not to crash
      [],
-     [	
+     [
 		("tusken_face_a",0xffffffff,[])
 	 ], #undead_face_textures
      [(voice_die,"snd_jawa_die"),(voice_hit,"snd_jawa_hit"),(voice_grunt,"snd_jawa_grunt"),(voice_grunt_long,"snd_jawa_grunt_long"),(voice_yell,"snd_jawa_yell"),(voice_warcry,"snd_jawa_victory"),(voice_victory,"snd_jawa_victory")], #man voice sounds
      #"skel_human", 1.0,
-	 "skel_human", 0.56,		#attempting to make the hitbox a little smaller
+	 "skel_human", 0.76,		#attempting to make the hitbox a little smaller
 	 #"skel_jawa", 1.0,		#new skel_jawa skeleton
 	 0,0, #psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
@@ -335,7 +335,7 @@ skins = [
 		("rodian_face_c",0xffffffff,[])
 	 ], #face_textures
      [(voice_die,"snd_rodian_die"),(voice_hit,"snd_rodian_hit"),(voice_grunt,"snd_rodian_grunt"),(voice_grunt_long,"snd_rodian_grunt_long"),(voice_yell,"snd_rodian_yell"),(voice_warcry,"snd_rodian_victory"),(voice_victory,"snd_rodian_victory")], #man voice sounds
-     "skel_human", 0.7,
+     "skel_human", 0.86,
     0,0, #psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
    ),
@@ -353,7 +353,7 @@ skins = [
      [("moncal_face_a",0xffffffff,[])
 	 ], #face_textures
      [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_victory,"snd_man_victory")], #man voice sounds
-     "skel_human", 1.3,
+     "skel_human", 1.1,
     0,0, #psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
    ),
@@ -362,8 +362,8 @@ skins = [
    (
      "trandoshan", 0,
 	 #"trandoshan_body", "trandoshan_foot_L", "trandoshan_handL",
-	 #"trandoshan_body", "trandoshan_foot_L", "trandoshan_clawL",	 
-	 "trandoshan_nocolor_body", "trandoshan_nocolor_foot_L", "trandoshan_nocolor_clawL",	 
+	 #"trandoshan_body", "trandoshan_foot_L", "trandoshan_clawL",
+	 "trandoshan_nocolor_body", "trandoshan_nocolor_foot_L", "trandoshan_nocolor_clawL",
      "trandoshan_head", trandoshan_face_keys,
      [],
      [],
@@ -387,8 +387,8 @@ skins = [
      #"transparent_body", "transparent_calf_l", "transparent_handL",
 	 #"transparent_head", droid_face_keys,
     "droid_body", "droid_leg_L", "droid_hand_L",
-    "droid_head_half", droid_face_keys,	 
-	#"droid_head", droid_face_keys,	 
+    "droid_head_half", droid_face_keys,
+	#"droid_head", droid_face_keys,
      [],
      [],
      ["hair_blonde"], #hair textures NOTE - you MUST have a hair texture (even if it is not used) for the game not to crash
@@ -399,7 +399,7 @@ skins = [
      [(voice_die,"snd_battledroid_die"),(voice_hit,"snd_battledroid_hit"),(voice_grunt,"snd_battledroid_grunt"),(voice_grunt_long,"snd_battledroid_grunt_long"),(voice_yell,"snd_battledroid_yell"),(voice_warcry,"snd_battledroid_victory"),(voice_victory,"snd_battledroid_victory")], #r2series voice sounds
 
      #"skel_human", 1.0,
-	 "skel_human", 1.4,		#attempting to make the hitbox a little smaller
+	 "skel_human", 1.1,		#attempting to make the hitbox a little smaller
 	 #"skel_horse", 1.0,	# does doing this seem to cause the game to randomly crash?  seemed to happen a few times after I made this change, so not sure if its related.  AncientWanker confirmed this was an issue
     0,0, #psys_swy_damage_sparks,psys_swy_damage_smoke,
 	 #psys_droid_blood,psys_droid_blood_2,
@@ -437,11 +437,11 @@ skins = [
 		#("wookiee_face_b",0xffffffff,[])
 	 ], #face_textures
      [(voice_die,"snd_wookiee_die"),(voice_hit,"snd_wookiee_hit"),(voice_grunt,"snd_wookiee_grunt"),(voice_grunt_long,"snd_wookiee_grunt_long"),(voice_yell,"snd_wookiee_yell"),(voice_warcry,"snd_wookiee_victory"),(voice_victory,"snd_wookiee_victory")], #man voice sounds
-     "skel_human", 1.5,
+     "skel_human", 1.3,
 	 #"skel_wookiee", 1.0,
     0,0, #psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
-   ),   
+   ),
 
 #SW - new sullustan skin
    (
@@ -458,8 +458,8 @@ skins = [
      "skel_human", 1.0,
     0,0, #psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
-   ),      
-   
+   ),
+
  #SW - new gamorrean skin
    (
      "gamorrean", 0,
@@ -475,7 +475,7 @@ skins = [
      "skel_human", 0.87,
     0,0, #psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
-   ),   
+   ),
 
  #SW - new twilek skin
    (
@@ -493,9 +493,9 @@ skins = [
 		("twilek_face_green",0x0057ff57,[]),
 		("twilek_face_blue",0x00355bff,[]),
 		("twilek_face_bib",0x00e1d489,[]),
-		("sith_darth_maul",0x006b0808,[])	# from I-V-I-O-R-T		
+		("sith_darth_maul",0x006b0808,[])	# from I-V-I-O-R-T
 		#notes on good body hue:  Yellow = 0x00fff76f, Dark Blue = 0x00008ce5
-		
+
 	 ], #face_textures
      [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_victory,"snd_man_victory")], #man voice sounds
      "skel_human", 1.0,
@@ -504,7 +504,7 @@ skins = [
    ),
 
  #SW - new twilek female skin
-  ( 
+  (
     "twilek_female", skf_use_morph_key_10,
     #"twilek_female_body",  "twilek_female_calf_l", "twilek_female_handL",
 	"oola", "oola_foot_L", "twilek_female_handL",
@@ -526,7 +526,7 @@ skins = [
     "skel_human", 1.0,
     0,0, #psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
-  ),   
+  ),
 
  #SW - new bothan skin
    (
@@ -558,9 +558,9 @@ skins = [
      [("geonosian_face_a",0xffffffff,[])
 	 ], #face_textures
      [(voice_die,"snd_geonosian_die"),(voice_hit,"snd_geonosian_hit"),(voice_grunt,"snd_geonosian_grunt"),(voice_grunt_long,"snd_geonosian_grunt_long"),(voice_yell,"snd_geonosian_yell"),(voice_warcry,"snd_geonosian_victory"),(voice_victory,"snd_geonosian_victory")], #man voice sounds
-     "skel_human", 0.5,
+     "skel_human", 0.88,
 	 0,0, #psys_swy_damage_sparks,psys_swy_damage_smoke,
-   ),   
+   ),
 
 	#SW - new rancor skin
    (
@@ -574,17 +574,17 @@ skins = [
      [("default",0xffffffff,[])
 	 ], #face_textures
      [(voice_die,"snd_gamorrean_die"),(voice_hit,"snd_gamorrean_hit"),(voice_grunt,"snd_gamorrean_grunt"),(voice_grunt_long,"snd_gamorrean_grunt_long"),(voice_yell,"snd_gamorrean_yell"),(voice_warcry,"snd_gamorrean_victory"),(voice_victory,"snd_gamorrean_victory")], #man voice sounds
-     "skel_human", 0.6,
+     "skel_human", 1.1,
 	 #"skel_rancor", 1.0,	#new rancor skeleton
     0,0, #psys_swy_damage_sparks,psys_swy_damage_smoke,
     #psys_game_blood,psys_game_blood_2,
-   ),   
+   ),
 
    # #SW - new clone skin
    # (
     # "clone", 0,
     # "man_body", "man_calf_l", "m_handL",
-    # "cloneface", clone_face_keys,	 
+    # "cloneface", clone_face_keys,
      # [],
      # [],
      # ["hair_blonde"], #hair textures NOTE - you MUST have a hair texture (even if it is not used) for the game not to crash
@@ -595,13 +595,13 @@ skins = [
 	 # ], #face_textures
      # [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_victory,"snd_man_victory")], #man voice sounds
      # "skel_human", 1.0,
-   # ),   
-   
+   # ),
+
  # #SW - new klatooinian skin
    # (
     # "klatooinian", 0,
     # "man_body", "man_calf_l", "m_handL",
-    # "cloneface", clone_face_keys,	 
+    # "cloneface", clone_face_keys,
      # [],
      # [],
      # ["hair_blonde"], #hair textures NOTE - you MUST have a hair texture (even if it is not used) for the game not to crash
@@ -612,8 +612,8 @@ skins = [
 	 # ], #face_textures
      # [(voice_die,"snd_man_die"),(voice_hit,"snd_man_hit"),(voice_grunt,"snd_man_grunt"),(voice_grunt_long,"snd_man_grunt_long"),(voice_yell,"snd_man_yell"),(voice_victory,"snd_man_victory")], #man voice sounds
      # "skel_human", 1.0,
-   # ),      
-   
+   # ),
+
  # #SW - new chiss skin (commented out since there is a limit on the number of skins, used a chiss face texture on the humans instead)
    # (
      # "chiss", 0,
@@ -630,7 +630,7 @@ skins = [
    # ),
 
  # #SW - new chiss female skin (commented out since there is a limit on the number of skins, used a chiss face texture on the humans instead)
-  # ( 
+  # (
     # "chiss_female", skf_use_morph_key_10,
     # "chiss_female_body",  "chiss_female_calf_l", "chiss_female_handL",
     # "chiss_female_head", chiss_female_face_keys,
@@ -644,6 +644,6 @@ skins = [
     # [(voice_die,"snd_woman_die"),(voice_hit,"snd_woman_hit"),(voice_grunt,"snd_woman_grunt"),(voice_grunt_long,"snd_woman_grunt_long"),(voice_victory,"snd_woman_victory")], #voice sounds
     # "skel_human", 1.0,
   # ),
-   
+
 ]
 
