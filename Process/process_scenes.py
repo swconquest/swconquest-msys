@@ -47,6 +47,10 @@ def save_scenes(variables,variable_uses,tag_uses):
   ofile.write("scenesfile version 1\n")
   ofile.write(" %d\n"%len(scenes))
   for scene in scenes:
+    scene = list(scene)
+    if scene[2] == "0":
+      scene[2] = "none"
+
     ofile.write("scn_%s %s %d %s %s %s %s %s %s %s %s "%(convert_to_identifier(scene[0]),replace_spaces(scene[0]),scene[1], scene[2],scene[3],swytrailzro(scene[4][0]),swytrailzro(scene[4][1]),swytrailzro(scene[5][0]),swytrailzro(scene[5][1]),swytrailzro(scene[6]),scene[7]))
     passages = scene[passages_pos]
     ofile.write("\n  %d "%len(passages))
