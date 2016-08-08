@@ -1,6 +1,50 @@
+import os
 from header_common import *
 from module_info import *
 from module_sounds import *
+
+# http://stackoverflow.com/a/8462613
+def _path_insensitive(path):
+    """
+    Recursive part of path_insensitive to do the work.
+    """
+
+    if path == '' or os.path.exists(path):
+        return path
+
+    base = os.path.basename(path)  # may be a directory or a file
+    dirname = os.path.dirname(path)
+
+    suffix = ''
+    if not base:  # dir ends with a slash?
+        if len(dirname) < len(path):
+            suffix = path[:len(path) - len(dirname)]
+
+        base = os.path.basename(dirname)
+        dirname = os.path.dirname(dirname)
+
+    if not os.path.exists(dirname):
+        dirname = _path_insensitive(dirname)
+        if not dirname:
+            return
+
+    # at this point, the directory exists but not the file
+
+    try:  # we are expecting dirname to be a directory, but it could be a file
+        files = os.listdir(dirname)
+    except OSError:
+        return
+
+    baselow = base.lower()
+    try:
+        basefinal = next(fl for fl in files if fl.lower() == baselow)
+    except StopIteration:
+        return
+
+    if basefinal:
+        return os.path.join(dirname, basefinal) + suffix
+    else:
+        return
 
 def write_python_header(sounds):
   file = open("./IDs/ID_sounds.py","w")
@@ -31,6 +75,9 @@ def compile_sounds(sounds):
     sound_flags = sound[1]
     for i_sound_file in xrange(len(sound_files)):
       sound_file = sound_files[i_sound_file]
+      print(os.path.isfile(export_dir + "Sounds/" + sound_file), _path_insensitive(export_dir + "Sounds/" + sound_file) != None, sound_file)
+      if not os.path.isfile(export_dir + "Sounds/" + sound_file) and _path_insensitive(export_dir + "Sounds/" + sound_file) != None:
+        print("%s not found in the mod, check case sensitivity." % sound_file)
       sound_no = 0
       found = 0
       while (sound_no< (len(all_sounds))) and (not found):
