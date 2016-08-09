@@ -26,33 +26,37 @@ def write_items(variable_list,variable_uses,tag_uses,quick_strings):
       add_tag_use(tag_uses,tag_item,id_no)
     ofile.write(" itm_%s %s %s %d "%(convert_to_identifier(item[0]),replace_spaces(item[1]),replace_spaces(item[1]),len(item[2])))
     item_variations = item[2]
-    for item_variation in item_variations:
-      #swy-- different dummy mesh for warband, for invisible objects, fixes galadriel's appearance, meshes have to have more than two characters to work.
-      from module_info import wb_compile_switch as is_a_wb_item
-      item_variation = list(item_variation)
-      # if (is_a_wb_item and item_variation[0]=="0") or (index<=(len(items)/2)):
-      # if (is_a_wb_item and item_variation[0]=="0") or (index>=(len(items)/2)):
-      if (is_a_wb_item and item_variation[0]=="0" or item_variation[0]=="_"):
-        item_variation[0]="dummy_mesh"
-
-##########################################################################	
+##########################################################################
 # Autoloot
-##########################################################################	
+##########################################################################
 # encode item difficulty in less-significant digit of price (only for items over 50 denars, all items below 50 denars assumed to have 0 difficulty)
     if (item[5] >= 50):
 	  item[5] -= item[5] % 10
 	  diff = get_difficulty(item[6])
 	  if (diff > 5):
 		diff-= 5
-	  item[5] += diff    
+	  item[5] += diff
 # End Autoloot
-##########################################################################	
-	
+##########################################################################
+
     for item_variation in item_variations:
+      #swy-- different dummy mesh for warband, for invisible objects, fixes game crashing
+      #      when it tries to add a missing "_" missile mesh to a shield that has been hit.
+      from module_info import wb_compile_switch as is_a_wb_item
+
+      item_variation = list(item_variation)
+
+      if is_a_wb_item:
+
+        for i, mesh in enumerate(item_variation):
+          if type(mesh) is str and mesh == "_" or mesh == "0":
+            print item,item_variation,i,mesh; print "\n\n"
+            item_variation[i] = "dummy_mesh"
+      # --
       ofile.write(" %s %d "%(item_variation[0],item_variation[1]))
     ofile.write(" %d %d %d %d %s %d %d %d %d %d %d %d %d %d %d %d %d\n"%(item[3], item[4], item[5], item[7],
                                                    swytrailzro(get_weight(item[6])),
-                                                   get_abundance(item[6]),                  
+                                                   get_abundance(item[6]),
                                                    get_head_armor(item[6]),
                                                    get_body_armor(item[6]),
                                                    get_leg_armor(item[6]),
@@ -82,7 +86,7 @@ def write_items(variable_list,variable_uses,tag_uses,quick_strings):
   ofile.close()
 
 print "Exporting item data..."
-  
+
 if len(items)>=915:
   print "----\r\n Warning! Mod over the 1.011 item limit. Crashie on battles.\r\n----"
 
