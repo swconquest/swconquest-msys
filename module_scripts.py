@@ -16,6 +16,7 @@ from header_terrain_types import *
 from header_music import *
 from ID_animations import *
 
+from module_info import wb_compile_switch as is_a_wb_script
 
 ####################################################################################################################
 # scripts is a list of script records.
@@ -18022,6 +18023,14 @@ scripts = [
           (val_add, ":num_enemies", 1),
         (try_end),
         (add_faction_note_from_sreg, ":faction_no", 0, "@{s5} is ruled by {s6}.^It occupies {s8}.^Its commanders are {s10}.^{s5} is at war with {s12}.", 0),
+
+        ] + (is_a_wb_script==1 and [
+          
+        #swy-- this is needed to show by default the note entries on Warband...
+        (faction_set_note_available, ":faction_no", 1),
+           
+        ] or []) + [
+
       (else_try),
         (is_between, ":faction_no", factions_begin, factions_end),
         (faction_slot_eq, ":faction_no", slot_faction_state, sfs_defeated),
@@ -18029,10 +18038,26 @@ scripts = [
         (add_faction_note_from_sreg, ":faction_no", 0, "@{s5} has been defeated!", 0),
         (str_clear, s1),
         (add_faction_note_from_sreg, ":faction_no", 1, s1, 0),
+        
+        ] + (is_a_wb_script==1 and [
+          
+        #swy-- this is needed to show by default the note entries on Warband...
+        (faction_set_note_available, ":faction_no", 1),
+           
+        ] or []) + [
+        
       (else_try),
         (str_clear, s1),
         (add_faction_note_from_sreg, ":faction_no", 0, s1, 0),
         (add_faction_note_from_sreg, ":faction_no", 1, s1, 0),
+        
+        ] + (is_a_wb_script==1 and [
+          
+        #swy-- this is needed to show by default the note entries on Warband...
+        (faction_set_note_available, ":faction_no", 0),
+           
+        ] or []) + [
+      
       (try_end),
       (try_begin),
         (is_between, ":faction_no", "fac_galacticempire", factions_end), #Excluding player faction
@@ -18040,6 +18065,7 @@ scripts = [
       (else_try),
         (add_faction_note_tableau_mesh, ":faction_no", "tableau_faction_note_mesh_banner"),
       (try_end),
+
   ]),
   
   #script_update_faction_traveler_notes
@@ -18155,6 +18181,14 @@ scripts = [
         #SW - modified fiefs to territories
         (add_troop_note_from_sreg, ":troop_no", 0, "@{reg6?:{reg4?{s54} is the ruler of {s56}.^:{s54} is a commander of {s55} of {s56}.^}}Renown: {reg5}.^{reg9?{reg3?She:He} is the {reg3?lady:lord} of {s58}.:{reg3?She:He} has no territories.}{s59}", 0),
         (add_troop_note_tableau_mesh, ":troop_no", "tableau_troop_note_mesh"),
+        
+       ] + (is_a_wb_script==1 and [
+       
+       #swy-- this is needed to show by default the note entries on Warband...
+       (troop_set_note_available, ":troop_no", 1),
+
+       ] or []) + [
+        
       (try_end),
   ]),
   
@@ -18176,7 +18210,14 @@ scripts = [
           (add_troop_note_from_sreg, ":troop_no", 2, "@The last time you heard about {reg1?her:him}, {s1}", 1),
         (try_end),
       (try_end),
-  ]),
+      
+     ] + (is_a_wb_script==1 and [
+     
+     #swy-- this is needed to show by default the note entries on Warband...
+     (troop_set_note_available, ":troop_no", 1),
+
+     ] or [])
+  ),
   
   #script_update_center_notes
   # INPUT: center_no
@@ -18242,6 +18283,14 @@ scripts = [
       (call_script, "script_get_prosperity_text_to_s50", ":center_no"),
       (add_party_note_from_sreg, ":center_no", 0, "@{s2}Its prosperity is: {s50}", 0),
       (add_party_note_tableau_mesh, ":center_no", "tableau_center_note_mesh"),
+
+       ] + (is_a_wb_script==1 and [
+             
+       #swy-- this is needed to show by default the note entries on Warband,
+       #   -- this one goes in the loop because we don't want to show everything...
+       (party_set_note_available, ":center_no", 1),
+
+       ] or []) + [
   ]),
   
   
