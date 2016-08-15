@@ -1555,5 +1555,6 @@ str_swy_space_battles_won_desc = 1553
 str_swconquest_credits_years = 1554
 str_swconquest_credits_prefc = 1555
 str_swconquest_credits_contb = 1556
+str_cmenu_follow = 1557
 
 

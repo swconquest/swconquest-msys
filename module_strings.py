@@ -2355,4 +2355,6 @@ We apologize sincerely if you contributed your suggestions and feedback but were
                               ' Gangs of Glasgow, Mount&Shotgun, MAXHARDMAN, Rubik, Gutekfiutek, hapslash...^^'+
 
                               ' To all our fans and supporters, may the force be with you, always.'),
+
+  ("cmenu_follow", "Accompany"),
 ]

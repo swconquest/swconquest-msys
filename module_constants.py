@@ -1304,7 +1304,8 @@ btactic_charge        = 3
 btactic_stand_ground  = 4
 
 #default right mouse menu orders
-cmenu_move = -7
+cmenu_follow = -6
+cmenu_move   = -7
 
 # Town center modes
 tcm_default   = 0
