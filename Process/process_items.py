@@ -56,14 +56,15 @@ def write_items(variable_list,variable_uses,tag_uses,quick_strings):
       ofile.write(" %s %d "%(item_variation[0],item_variation[1]))
 
     #swy-- don't make blaster bolts or force effects pickupable, ignore gravity
-    if ((item[3] & 0xff) == itp_type_bolts) or \
+    if is_a_wb_item and                        \
+     ( ((item[3] & 0xff) == itp_type_bolts) or \
        ((item[3] & 0xff) == itp_type_thrown and item[0] not in ["twilek_dagger_throwing",
                                                                 "discblade",
                                                                 "throwing_axes",
                                                                 "thermal_detonator1",
                                                                 "thermal_detonator2",
-                                                                "thermal_detonator3"]):
-      print "%x %x %x %s" % (itp_type_bolts, itp_type_thrown, item[3], item); print "\n\n"
+                                                                "thermal_detonator3"]) ):
+      #print "%x %x %x %s" % (itp_type_bolts, itp_type_thrown, item[3], item); print "\n\n"
       item[3] |= itp_ignore_gravity | itp_no_pick_up_from_ground
 
     ofile.write(" %d %d %d %d %s %d %d %d %d %d %d %d %d %d %d %d %d\n"%(item[3], item[4], item[5], item[7],
