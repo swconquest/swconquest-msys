@@ -12274,7 +12274,16 @@ scripts = [
           (assign, "$ratio_of_prisoners", 0), #do not let prisoners have an effect on ai calculation
         (else_try),
           (party_get_num_prisoners, ":num_prisoners", ":party_no"),
-          (store_div, "$ratio_of_prisoners", ":num_prisoners", ":party_fit_for_battle"),
+          (try_begin),
+            #swy-- avoid divisions by zero (?!)
+            (this_or_next|eq,       ":num_prisoners",           0),
+            (             eq,       ":party_fit_for_battle",    0),
+            # ----
+            (assign,                "$ratio_of_prisoners",      0),
+          (else_try),
+            (store_div,             "$ratio_of_prisoners",     ":num_prisoners",
+                                                               ":party_fit_for_battle"),
+          (try_end),
         (try_end),
         (call_script, "script_faction_hero_decide_next_ai_state_follow_or_not", ":troop_no"),
         (party_slot_eq, ":party_no", slot_party_commander_party, -1),
