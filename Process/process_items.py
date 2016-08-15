@@ -50,10 +50,22 @@ def write_items(variable_list,variable_uses,tag_uses,quick_strings):
 
         for i, mesh in enumerate(item_variation):
           if type(mesh) is str and mesh == "_" or mesh == "0":
-            print item,item_variation,i,mesh; print "\n\n"
+            #print item,item_variation,i,mesh; print "\n\n"
             item_variation[i] = "dummy_mesh"
       # --
       ofile.write(" %s %d "%(item_variation[0],item_variation[1]))
+
+    #swy-- don't make blaster bolts or force effects pickupable, ignore gravity
+    if ((item[3] & 0xff) == itp_type_bolts) or \
+       ((item[3] & 0xff) == itp_type_thrown and item[0] not in ["twilek_dagger_throwing",
+                                                                "discblade",
+                                                                "throwing_axes",
+                                                                "thermal_detonator1",
+                                                                "thermal_detonator2",
+                                                                "thermal_detonator3"]):
+      print "%x %x %x %s" % (itp_type_bolts, itp_type_thrown, item[3], item); print "\n\n"
+      item[3] |= itp_ignore_gravity | itp_no_pick_up_from_ground
+
     ofile.write(" %d %d %d %d %s %d %d %d %d %d %d %d %d %d %d %d %d\n"%(item[3], item[4], item[5], item[7],
                                                    swytrailzro(get_weight(item[6])),
                                                    get_abundance(item[6]),

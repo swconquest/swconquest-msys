@@ -64,6 +64,20 @@ itp_civilian                 = 0x20000000
 itp_fit_to_head              = 0x40000000
 itp_covers_head              = 0x80000000
 
+itp_couchable                = 0x0000000080000000
+itp_crush_through            = 0x0000000100000000
+#itp_knock_back               = 0x0000000200000000 being used?
+itp_remove_item_on_use       = 0x0000000400000000
+itp_unbalanced               = 0x0000000800000000
+itp_covers_beard             = 0x0000001000000000    #remove beard mesh
+itp_no_pick_up_from_ground   = 0x0000002000000000
+itp_can_knock_down           = 0x0000004000000000
+itp_extra_penetration        = 0x0000100000000000
+itp_has_bayonet              = 0x0000200000000000
+itp_cant_reload_while_moving = 0x0000400000000000
+itp_ignore_gravity           = 0x0000800000000000
+itp_ignore_friction          = 0x0001000000000000
+
 #equipment slots
 ek_item_0 = 0
 ek_item_1 = 1
