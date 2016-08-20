@@ -39,6 +39,8 @@ def save_mission_templates(variables,variable_uses,tag_uses,quick_strings):
   file.write("missionsfile version 1\n")
   file.write(" %d\n"%(len(mission_templates)))
   for mission_template in mission_templates:
+    mission_template = list(mission_template)
+    mission_template[mission_template_flags_pos] |= mtf_no_blood
     file.write("mst_%s %s %d "%(convert_to_identifier(mission_template[mission_template_name_pos]),convert_to_identifier(mission_template[mission_template_name_pos]),mission_template[mission_template_flags_pos]))
     file.write(" %d\n"%(mission_template[mission_template_types_pos]))
     file.write("%s \n"%(string.replace(mission_template[mission_template_desc_pos]," ","_")))
