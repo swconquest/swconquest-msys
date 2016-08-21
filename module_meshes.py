@@ -562,7 +562,7 @@ meshes = [
   ("swc_logo", 0, "warrider_logo", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("galaxy", 0, "skybox_space_prop", 0, 0, 0, 0, 0, 0, .2, .2, .2),
 
-  ("loading_background",   0, "edit_cursor",          0, 0, 0, 0, 0, 0, 1, 1, 1),
-  ("main_menu_background", 0, "mission_window",       0, 0, 0, 0, 0, 0, 1, 1, 1),
-  ("main_menu_statue",     0, "pic_mercenary",        0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("loading_background",                    0, "meeting_window",     0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("main_menu_background",                  0, "meeting_window",     0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("main_menu_statue",    render_order_plus_1, "pic_mercenary",      0, 0, 0, 0, 0, 0, 1, 1, 1),
 ]

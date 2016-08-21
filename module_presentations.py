@@ -8351,13 +8351,15 @@ from module_info import wb_compile_switch
 
 if wb_compile_switch==1:
   presentations+=[
-    ("game_start", mesh_load_window, 0, [
+    ("game_start", mesh_load_window, 0,
+    [
           (ti_on_presentation_load,
-           [(presentation_set_duration, 999999),
+           [
+            (presentation_set_duration, 999999),
            
             #Little Pos Helper by Kuba begin
 			(create_text_overlay, "$g_little_pos_helper", "@X: 00,Y: 00"),
-			(overlay_set_color, "$g_little_pos_helper", 0xFFFFFFFF),
+			(overlay_set_color,   "$g_little_pos_helper", 0xFFFFFFFF),
 			(position_set_x, pos1, 10),
 			(position_set_y, pos1, 700),
 			(overlay_set_position, "$g_little_pos_helper", pos1),
@@ -8374,37 +8376,28 @@ if wb_compile_switch==1:
 			(position_set_y, pos1, 660),
 			(overlay_set_position, "$g_little_pos3_helper", pos1),
 			#Little Pos Helper by Kuba end
-           
-           
-            (set_fixed_point_multiplier, 1000),
 
-            #swy-- place the main menu statue in WB, manually, as there is no hardcoded mesh as in 1.011.
-            (create_mesh_overlay, ":mmback", "mesh_main_menu_background"),
-            (position_set_x, pos1, 0),
-            (position_set_y, pos1, 0),
-            (overlay_set_position, ":mmback", pos1),
+             (set_fixed_point_multiplier, 1000),
 
-            (create_mesh_overlay, ":mmstatue", "mesh_main_menu_statue"),
-            (position_set_x, pos1, 0),
-            (position_set_y, pos1, 0),
-            (overlay_set_position, ":mmstatue", pos1),
-            ],
-            
+             #swy-- place the main menu statue in WB, manually, as there is no hardcoded mesh as in 1.011.
+             (create_mesh_overlay, ":mmback", "mesh_main_menu_background"),
+             (position_set_x, pos1, 0),
+             (position_set_y, pos1, 0),
+             (overlay_set_position, ":mmback", pos1),
 
+             (create_mesh_overlay, ":mmstatue", "mesh_main_menu_statue"),
+             (position_set_x, pos1, 0),
+             (position_set_y, pos1, 0),
+             (overlay_set_position, ":mmstatue", pos1),
+            ]),
             
-            ),
-            
-            
-            (ti_on_presentation_load,
-           [
-           
-       (mouse_get_position, pos1),
-		(position_get_x, reg1, pos1),
-		(position_get_y, reg2, pos1),
-		(overlay_set_text, "$g_little_pos_helper", "@X: {reg1},Y: {reg2}"),
-            
-           
-           ])
+            (ti_on_presentation_event_state_change,
+            [
+             (mouse_get_position,   pos1),
+             (position_get_x, reg1, pos1),
+             (position_get_y, reg2, pos1),
+             (overlay_set_text, "$g_little_pos_helper", "@X: {reg1},Y: {reg2}"),
+            ])
     ]),
     ("game_custom_battle_designer", mesh_load_window, 0, [
           (ti_on_presentation_load,
