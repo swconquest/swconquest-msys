@@ -150,8 +150,15 @@ dialogs = [
                        (assign, "$g_enemy_strength", reg0),
                        (call_script, "script_party_calculate_strength", "p_main_party",0),
                        (assign, "$g_ally_strength", reg0),
-                       (store_mul, "$g_strength_ratio", "$g_ally_strength", 100),
-                       (val_div, "$g_strength_ratio", "$g_enemy_strength"),
+                       (try_begin),
+                         #swy-- FIXME hack! fix division by error, $g_enemy_strength shouldn't return zero (?)
+                         (neq, "$g_enemy_strength", 0),
+                         (neq, "$g_ally_strength",  0),
+                         (store_mul, "$g_strength_ratio", "$g_ally_strength", 100),
+                         (val_div, "$g_strength_ratio", "$g_enemy_strength"),
+                       (else_try),
+                         (assign, "$g_strength_ratio", 1),
+                       (try_end),
                      (try_end),
 
                      (assign, "$g_comment_found", 0),

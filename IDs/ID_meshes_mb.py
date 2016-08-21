@@ -422,5 +422,8 @@ mesh_wood_table = 420
 mesh_cpov = 421
 mesh_swc_logo = 422
 mesh_galaxy = 423
+mesh_loading_background_2 = 424
+mesh_loading_background = 425
+mesh_main_menu_background = 426
 
 

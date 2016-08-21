@@ -4174,6 +4174,9 @@ mission_templates = [
                    (assign, "$tutorial_4_finished", 1),
                  (try_end),
                  ], []),
+                 
+      common_speeder_trigger_1,
+      common_speeder_trigger_2,
     ],
   ),
 

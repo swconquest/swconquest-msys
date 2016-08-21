@@ -12291,7 +12291,7 @@ scripts = [
         (else_try),
           (party_get_num_prisoners, ":num_prisoners", ":party_no"),
           (try_begin),
-            #swy-- avoid divisions by zero (?!)
+            #swy-- FIXME hack! avoid divisions by zero (?!)
             (this_or_next|eq,       ":num_prisoners",           0),
             (             eq,       ":party_fit_for_battle",    0),
             # ----
