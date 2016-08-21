@@ -3406,10 +3406,7 @@ scripts = [
     
     #swy-- add an Accompany option to the right-click menu for allied parties, mostly lifted from Native Warband...
     (try_begin),
-     (neq, ":party_no", "p_main_party"),       
-     (store_faction_of_party, ":party_faction", ":party_no"),
-     
-     (call_script, "script_cf_factions_are_allies", ":party_faction", "$players_kingdom"),     
+     (neq,            ":party_no", "p_main_party"),
      (neg|is_between, ":party_no", centers_begin, spawn_points_end),
      
      (context_menu_add_item, "str_cmenu_follow", cmenu_follow),
@@ -15989,7 +15986,7 @@ scripts = [
   # script_siege_init_ai_and_belfry
   # Input: none
   # Output: none (required for siege mission templates)
-  ("siege_init_ai_and_belfry",
+  ("cf_siege_init_ai_and_belfry",
     [(assign, "$cur_belfry_pos", 50),
       (assign, ":cur_belfry_object_pos", slot_scene_belfry_props_begin),
       (store_current_scene, ":cur_scene"),
@@ -24012,7 +24009,7 @@ scripts = [
                   (try_end),
                   (try_begin),
                     (lt,":shot_distance",2000),
-                    (call_script,"script_ai_cylon_shot",":instance",":cylon"),
+                    (call_script,"script_cf_ai_cylon_shot",":instance",":cylon"),
                   (try_end),
               ]),
               #script_ai_viper_movements
@@ -24103,13 +24100,13 @@ scripts = [
                   (try_end),
                   (try_begin),
                     (lt,":shot_distance",2000),
-                    (call_script,"script_ai_viper_shot",":instance",":viper"),
+                    (call_script,"script_cf_ai_viper_shot",":instance",":viper"),
                   (try_end),
               ]),
               #script_ai_viper_shot
               # INPUT: arg1 = center_no
               # OUTPUT: reg0 = ideal_prosperity
-              ("ai_viper_shot",
+              ("cf_ai_viper_shot",
                 [(store_script_param, ":instance", 1),
                   (store_script_param, ":viper", 2),
                   (prop_instance_get_position,pos1,":instance"),
@@ -24143,7 +24140,7 @@ scripts = [
               #script_ai_cylon_shot
               # INPUT: arg1 = center_no
               # OUTPUT: reg0 = ideal_prosperity
-              ("ai_cylon_shot",
+              ("cf_ai_cylon_shot",
                 [(store_script_param, ":instance", 1),
                   (store_script_param, ":cylon", 2),
                   (prop_instance_get_position,pos1,":instance"),

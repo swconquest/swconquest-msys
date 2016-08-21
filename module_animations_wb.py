@@ -2338,14 +2338,14 @@ animations = [
   #[2.5, "anim_horse", 400, 400,  arf_blend_in_8|arf_make_custom_sound, pack2f(0.0, 0.0), (0, 0, 0), 0.0],
    [4.0, "anim_horse", 0, 0, arf_blend_in_16|arf_make_custom_sound, pack2f(0.0, 0.0)], 		#from horse_fall_in_place
  ],
- 
-  ["speeder_stationary", 0, amf_client_prediction|amf_priority_striked|amf_start_instantly,
+
+  ["speeder_stationary", 0, amf_client_prediction|amf_keep|amf_priority_die|amf_start_instantly|amf_play,
  #[1.0, "anim_horse", 0, 1, 0]		#this works
  #[5, "sw_speeder_stand", 0, 99, arf_cyclic|arf_use_stand_progress, 0, (0, 0, 0), 0.0],	#SW - new horse_stand animation by Swyter
 	[5, "sw_speeder_stand", 0, 99, 0],	#SW - new horse_stand animation by Swyter
  ],
 
- ["speeder_allow_movement", 0, amf_client_prediction|amf_priority_striked|amf_start_instantly,
+ ["speeder_allow_movement", 0, amf_client_prediction|amf_priority_die|amf_start_instantly|amf_play,
 	[0.01, "sw_speeder_stand", 0, 0, 0],	#SW - new horse_stand animation by Swyter
  ],
  

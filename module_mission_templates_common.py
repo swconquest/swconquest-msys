@@ -932,7 +932,7 @@ common_inventory_not_available = (
 common_siege_init_ai_and_belfry = (
   0, 0, ti_once,
   [
-    (call_script, "script_siege_init_ai_and_belfry"),
+    (call_script, "script_cf_siege_init_ai_and_belfry"),
     ], [])
 
 common_siege_move_belfry = (
