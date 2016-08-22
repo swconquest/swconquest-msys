@@ -1370,7 +1370,7 @@ animations = [
  ["defend_shield", 0, amf_play|amf_restart|amf_priority_defend|amf_use_defend_speed|amf_use_inertia|amf_rider_rot_shield|amf_client_owner_prediction,
    [defend_duration, "anim_human", defend+105, defend+120, blend_in_defense], 	#native
    [defend_duration, "anim_human", defend+105, defend+120, blend_in_defense], 	#native (gave it twice so it is more common)
-   [defend_duration, "draw_greatsword", 24, 29, blend_in_defense], 	#acm new
+  #[defend_duration, "draw_greatsword", 24, 29, blend_in_defense], 	#acm new
   #[defend_duration, "sw_lightsaber_protect_1", 0, 99, blend_in_defense], 	#Swyter animation
   #[defend_duration, "sw_lightsaber_protect_1", 0, 9, blend_in_defense], 	#Swyter animation
   #[defend_duration, "anim_reload_b", 0, 0, blend_in_defense], 	#1866 animations
@@ -1380,7 +1380,7 @@ animations = [
   #[2.0, "anim_human", defend+120, defend+120, arf_blend_in_1|arf_cyclic],
    [6.0, "anim_human", defend+120, defend+120, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#acm modified
    [6.0, "anim_human", defend+120, defend+120, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#acm modified
-   [6.0, "draw_greatsword", 29, 29, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#acm new
+  #[6.0, "draw_greatsword", 29, 29, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#acm new
   #[6.0, "sw_lightsaber_protect_1", 99, 99, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#Swyter animation
   #[6.0, "sw_lightsaber_protect_1", 9, 9, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#Swyter animation
   #[6.0, "anim_reload_b", 0, 0, arf_blend_in_1|arf_cyclic, 0, (0, 0, 0), 5.0], 	#1866 animation
