@@ -1357,7 +1357,7 @@ common_speeder_trigger_1 = (
       (try_begin),
           (lt, ":cur_rider", 0),  #horse does not have a rider
         (agent_play_sound,":cur_agent","snd_speeder_noise_idle"),
-      (display_message, "@debug: sound played - no rider"),
+      #(display_message, "@debug: sound played - no rider"),
          (agent_set_animation, ":cur_agent", anim_speeder_stationary),  #so the horse doesn't move, must include module_animations at the top
         #(agent_set_stand_animation, ":cur_agent", anim_speeder_stationary),  #doesn't work to stop them?
       #(else_try),
@@ -1398,7 +1398,7 @@ common_speeder_trigger_2 = (
           (ge, ":cur_rider", 0),  #horse has a rider
       (eq, ":speeder_movement", 0),  #speeder was previously not mounted
       (agent_set_slot, ":cur_agent", slot_agent_speeder_movement, 1),  #horse has a rider
-      (display_message, "@debug: agent got ON a speeder"),
+      #(display_message, "@debug: agent got ON a speeder"),
        (agent_set_animation, ":cur_agent", anim_speeder_allow_movement),  #cancel the current animation and allow the horse to move
        #(agent_play_sound, ":cur_agent", "snd_speeder_noise_begin"),
        (eq, ":cur_agent", ":player_agent"),
