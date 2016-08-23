@@ -903,12 +903,39 @@ common_siege_check_defeat_condition = (
     # (finish_mission,0),
     ])
 
-common_battle_order_panel = (
-  0, 0, 0, [],
-  [
-    (game_key_clicked, gk_view_orders),
-    (start_presentation, "prsnt_battle"),
-    ])
+from module_info import wb_compile_switch as is_a_wb_mt
+
+common_battle_order_panel = (0, 0, 0, [],
+	[
+	    (try_begin),
+	      #-- {show up the ticker on backspace}
+	      (game_key_clicked, gk_view_orders),
+	      (neq, "$g_presentation_battle_active", 1),
+	      #--
+
+	      (start_presentation, "prsnt_battle"),
+	    (try_end),
+	]
+	 + (is_a_wb_mt==1 and 
+	[
+	    #swy-- what a shamefur dispray!
+	    (try_begin),
+	      #-- {guard against rogue Esc presses that kill the ticker without notice}
+	      (eq, "$g_presentation_battle_active", 1),
+	      (neg|is_presentation_active, "prsnt_battle"),
+	      #--
+
+	      (assign, "$g_presentation_battle_active", 0),
+	      (set_show_messages, 1),
+
+	      (try_for_agents, ":cur_agent"),
+	        (agent_set_slot, ":cur_agent", slot_agent_map_overlay_id, 0),
+	      (try_end),
+
+	      (presentation_set_duration, 0),
+	    (try_end)
+	] or [])
+)
 
 common_battle_order_panel_tick = (
   0.1, 0, 0, [],
@@ -1315,6 +1342,8 @@ common_agent_droid_refill_trigger = (
       (try_end),
     ])
 
+from ID_animations import *
+
 common_speeder_trigger_1 = (
    # SW - script to stop riderless horses (ie. speeders) from moving (script from KON_Air)
    5, 0, 0,  #length of stationary animation
@@ -1328,9 +1357,9 @@ common_speeder_trigger_1 = (
       (try_begin),
           (lt, ":cur_rider", 0),  #horse does not have a rider
         (agent_play_sound,":cur_agent","snd_speeder_noise_idle"),
-      #(display_message, "@debug: sound played - no rider"),
-        (agent_set_animation, ":cur_agent", "anim_speeder_stationary"),  #so the horse doesn't move, must include module_animations at the top
-        #(agent_set_stand_animation, ":cur_agent", "anim_speeder_stationary"),  #doesn't work to stop them?
+      (display_message, "@debug: sound played - no rider"),
+         (agent_set_animation, ":cur_agent", anim_speeder_stationary),  #so the horse doesn't move, must include module_animations at the top
+        #(agent_set_stand_animation, ":cur_agent", anim_speeder_stationary),  #doesn't work to stop them?
       #(else_try),
       #  (agent_play_sound,":cur_agent","snd_speeder_noise_moving"),
       #(agent_play_sound,":cur_rider","snd_speeder_noise_moving"),
@@ -1369,8 +1398,8 @@ common_speeder_trigger_2 = (
           (ge, ":cur_rider", 0),  #horse has a rider
       (eq, ":speeder_movement", 0),  #speeder was previously not mounted
       (agent_set_slot, ":cur_agent", slot_agent_speeder_movement, 1),  #horse has a rider
-      #(display_message, "@debug: agent got ON a speeder"),
-       (agent_set_animation, ":cur_agent", "anim_speeder_allow_movement"),  #cancel the current animation and allow the horse to move
+      (display_message, "@debug: agent got ON a speeder"),
+       (agent_set_animation, ":cur_agent", anim_speeder_allow_movement),  #cancel the current animation and allow the horse to move
        #(agent_play_sound, ":cur_agent", "snd_speeder_noise_begin"),
        (eq, ":cur_agent", ":player_agent"),
        (play_sound, "snd_speeder_noise_loop", sf_looping),
