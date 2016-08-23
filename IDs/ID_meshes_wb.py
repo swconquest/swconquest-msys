@@ -425,5 +425,9 @@ mesh_galaxy = 423
 mesh_loading_background = 424
 mesh_main_menu_background = 425
 mesh_main_menu_statue = 426
+mesh_pic_mb_warrior_1 = 427
+mesh_pic_mb_warrior_2 = 428
+mesh_pic_mb_warrior_3 = 429
+mesh_pic_mb_warrior_4 = 430
 
 

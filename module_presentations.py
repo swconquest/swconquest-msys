@@ -8353,98 +8353,55 @@ if wb_compile_switch==1:
   presentations+=[
     ("game_start", mesh_load_window, 0,
     [
-          (ti_on_presentation_load,
-           [
-            (presentation_set_duration, 999999),
-           
-            ####### mouse fix pos system #######
-            (create_text_overlay, "$g_presentation_obj_39", "@ ", tf_center_justify|tf_vertical_align_center),
+      (ti_on_presentation_load,
+       [
+         (presentation_set_duration, 999999),
+         (set_fixed_point_multiplier,  1000),
 
-            (create_mesh_overlay, "$g_presentation_obj_38", "mesh_white_plane"),
-            (position_set_x, pos1, 50),
-            (position_set_y, pos1, 37500),
-            (overlay_set_size, "$g_presentation_obj_38", pos1),
+         #swy-- place the main menu statue in WB, manually, as there is no hardcoded mesh as in 1.011.
+         (create_mesh_overlay, ":mmback", "mesh_main_menu_background"),
+         (position_set_x, pos1, 0),
+         (position_set_y, pos1, 0),
+         (overlay_set_position, ":mmback", pos1),
 
-            (create_mesh_overlay, "$g_presentation_obj_37", "mesh_white_plane"),
-            (position_set_x, pos1, 50000),
-            (position_set_y, pos1, 50),
-            (overlay_set_size, "$g_presentation_obj_37", pos1),
-            ####### mouse fix pos system #######
-
-             (set_fixed_point_multiplier, 1000),
-
-             #swy-- place the main menu statue in WB, manually, as there is no hardcoded mesh as in 1.011.
-             (create_mesh_overlay, ":mmback", "mesh_main_menu_background"),
-             (position_set_x, pos1, 0),
-             (position_set_y, pos1, 0),
-             (overlay_set_position, ":mmback", pos1),
-
-             (create_mesh_overlay, ":mmstatue", "mesh_main_menu_statue"),
-             (position_set_x, pos1, 0),
-             (position_set_y, pos1, 0),
-             (overlay_set_position, ":mmstatue", pos1),
-            ]),
-            
-            (ti_on_presentation_run,
-            [
-                ####### mouse fix pos system #######
-                (mouse_get_position, pos1),
-                (position_get_x, reg50, pos1),
-                (position_get_y, reg51, pos1),
-               
-                (position_set_x, pos1, reg50),
-                (position_set_y, pos1, 0),
-                (overlay_set_position, "$g_presentation_obj_38", pos1),
-
-                (position_set_x, pos1, 0),
-                (position_set_y, pos1, reg51),
-                (overlay_set_position, "$g_presentation_obj_37", pos1),
-
-                (try_begin),
-                  (le, reg50, 500),
-                  (assign, ":offset_x", 70),
-                (else_try),
-                  (assign, ":offset_x", -70),
-                (try_end),
-                (try_begin),
-                  (le, reg51, 375),
-                  (assign, ":offset_y", 20),
-                (else_try),
-                  (assign, ":offset_y", -20),
-                (try_end),
-                (store_add, ":pos_x", reg50, ":offset_x"),
-                (store_add, ":pos_y", reg51, ":offset_x"),
-                (position_set_x, pos1, ":pos_x"),
-                (position_set_y, pos1, ":pos_y"),
-                (overlay_set_position, "$g_presentation_obj_39", pos1),
-                (overlay_set_text, "$g_presentation_obj_39", "@({reg50},{reg51})"),
-                ####### mouse fix pos system #######
-            ])
+         (create_mesh_overlay, ":mmstatue", "mesh_main_menu_statue"),
+         (position_set_x, pos1, 0),
+         (position_set_y, pos1, 0),
+         (overlay_set_position, ":mmstatue", pos1),
+       ]),
     ]),
-    ("game_custom_battle_designer", mesh_load_window, 0, [
-          (ti_on_presentation_load,
-           [#swy-- boom! direct shortcut to the vanilla quick battle menu! how cool is that?
-            (jump_to_menu, "mnu_start_game_3"),
-            ])
+
+    ("game_custom_battle_designer", mesh_load_window, 0,
+    [
+      (ti_on_presentation_load,
+       [
+         (presentation_set_duration, 0),
+
+         #swy-- boom! direct shortcut to the vanilla quick battle menu! how cool is that?
+         (jump_to_menu, "mnu_start_game_3")
+       ])
     ]),
-    ("___game_escape", mesh_load_window, 0, [
-          (ti_on_presentation_load,
-           [(presentation_set_duration, 999999),
-            (set_fixed_point_multiplier, 1000),
 
-            #swy-- place the random escape menu illustrations in WB, manually, as there are no hardcoded meshes as in 1.011.
-            (create_mesh_overlay, ":emback", "mesh_main_menu_background"),
-            (position_set_x, pos1, 0),
-            (position_set_y, pos1, 0),
-            (overlay_set_position, ":emback", pos1),
+    ("game_escape", mesh_load_window, 0,
+    [
+      (ti_on_presentation_load,
+       [
+         (presentation_set_duration, 999999),
+         (set_fixed_point_multiplier,  1000),
 
-            (store_random_in_range, ":random_bg_pic", 0,1), #mesh_pic_mb_warrior_1, mesh_pic_mb_warrior_4 + 1),
+         #swy-- place the random escape menu illustrations in WB, manually, as there are no hardcoded meshes as in 1.011.
+         (create_mesh_overlay, ":emback", "mesh_main_menu_background"),
+         (position_set_x, pos1, 0),
+         (position_set_y, pos1, 0),
+         (overlay_set_position, ":emback", pos1),
 
-            (create_mesh_overlay, ":empic", ":random_bg_pic"),
-            (position_set_x, pos1, 0),
-            (position_set_y, pos1, 0),
-            (overlay_set_position, ":empic", pos1),
-            ])
-    ]),
+         (store_random_in_range, ":random_bg_pic", mesh_pic_mb_warrior_1, mesh_pic_mb_warrior_4 + 1),
+
+         (create_mesh_overlay, ":empic", ":random_bg_pic"),
+         (position_set_x, pos1, 0),
+         (position_set_y, pos1, 0),
+         (overlay_set_position, ":empic", pos1),
+       ])
+    ])
 ]
 

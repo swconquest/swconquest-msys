@@ -562,7 +562,14 @@ meshes = [
   ("swc_logo", 0, "warrider_logo", 0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("galaxy", 0, "skybox_space_prop", 0, 0, 0, 0, 0, 0, .2, .2, .2),
 
+  #swy-- for the main menu
   ("loading_background",                    0, "meeting_window",     0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("main_menu_background",                  0, "meeting_window",     0, 0, 0, 0, 0, 0, 1, 1, 1),
   ("main_menu_statue",    render_order_plus_1, "pic_mercenary",      0, 0, 0, 0, 0, 0, 1, 1, 1),
+
+  #swy-- for the escape menu
+  ("pic_mb_warrior_1",    render_order_plus_1, "pic_mb_warrior_1",   0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("pic_mb_warrior_2",    render_order_plus_1, "pic_mb_warrior_2",   0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("pic_mb_warrior_3",    render_order_plus_1, "pic_mb_warrior_3",   0, 0, 0, 0, 0, 0, 1, 1, 1),
+  ("pic_mb_warrior_4",    render_order_plus_1, "pic_mb_warrior_4",   0, 0, 0, 0, 0, 0, 1, 1, 1),
 ]

@@ -29,4 +29,4 @@ prsnt_class_selection = 27
 prsnt_upgrade_troops = 28
 prsnt_game_start = 29
 prsnt_game_custom_battle_designer = 30
-prsnt____game_escape = 31
+prsnt_game_escape = 31
