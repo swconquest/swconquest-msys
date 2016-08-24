@@ -456,5 +456,7 @@ script_party_has_troop = 454
 script_party_remove_troop = 455
 script_party_remove_heroes = 456
 script_has_enough_slot = 457
+script_game_get_upgrade_cost = 458
+script_game_get_morale_of_troops_from_faction = 459
 
 
