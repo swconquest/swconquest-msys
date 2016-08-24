@@ -14888,33 +14888,33 @@ from     ID_scripts import script_custom_battle_set_faction_troops
 generated_entries = []
 
 for opcode in scripts[script_custom_battle_set_faction_troops][1]:
+
     if type(opcode) is not tuple:
       continue
-      
+
     if opcode[0] is eq:
-      print("opcode is eq")
       #swy-- e.g: faction number 5, these (eq,) opcodes always prefix a block
       ___cur_magic_entry_troop_faction = opcode[2]
 
     if opcode[0] is assign:
-      print("opcode is assign")
       #swy-- e.g: "trp_b2series" as-is
       ___cur_magic_entry_troop_identifier = opcode[2]
       #swy-- e.g: reg(17) => slot 7
       ___cur_magic_entry_troop_faction_slot_index = (opcode[1] & ~opmask_register) - 10
-      
+
       generated_entries += [
-      ("custom_battle_config_troop_item",
+      ("custom_battle_config_troop_entry",
 	  [
 	    (troop_get_slot, ":cur_faction", "trp_custom_battle_fac_store", reg(11)),
 	    (eq,             ":cur_faction", ___cur_magic_entry_troop_faction),
 
+        #swy-- get the translated troop name at runtime, hell yeah!
 	    (str_store_troop_name, s20, ___cur_magic_entry_troop_identifier),
 	  ],
 	  "{s20} ({reg1})",
 	  [
 	    (assign, ":cur_troop_slot", ___cur_magic_entry_troop_faction_slot_index),
-	    (troop_get_slot, ":custom_battle_current_troop_amount", "$troop_store", ":cur_troop_slot"),
+	    (troop_get_slot, ":cur_troop_amount", "$troop_store", ":cur_troop_slot"),
 	    
         #swy-- Click + Ctrl + Shift => Remove five if there's at least five
 	    (try_begin),
