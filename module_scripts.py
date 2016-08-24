@@ -26904,7 +26904,7 @@ scripts = [
                                               #{reg33?her:him}
               ]),
               
-              ("placeholder_because_savegames_are_important_haha_easter_egg:_1138", []),
+              ("placeholder_because_savegames_are_important_haha_easter_egg_1138", []),
               #############################################################################
               #SW MF start new scripts
               
