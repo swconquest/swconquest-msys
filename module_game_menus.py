@@ -458,6 +458,7 @@ game_menus = [
 	  #SW - added menu for custom battle mod
 	  ("custom_battle",[],"Start a Custom Battle",
 	   [
+		  (assign, "$g_custom_battle_location", 0),
 		  (jump_to_menu, "mnu_custom_battle_config_1"),
 	   ]
 	  ),
@@ -14344,75 +14345,98 @@ game_menus = [
     "custom_battle_config_1",menu_text_color(0xFF000d2c),
 	"Please choose the location for this battle.^{s1}",
 	"none",
-	[(try_begin),
-	(eq,"$g_custom_battle_location",1),
-	(str_store_string,s1,"str_custom_battle_location_1"),
+	[
+	(try_begin),
+	  (eq,"$g_custom_battle_location",1),
+	  (str_store_string,s1,"str_custom_battle_location_1"),
 	(else_try),
-	(eq,"$g_custom_battle_location",2),
-	(str_store_string,s1,"str_custom_battle_location_2"),
+	  (eq,"$g_custom_battle_location",2),
+	  (str_store_string,s1,"str_custom_battle_location_2"),
 	(else_try),
-	(eq,"$g_custom_battle_location",3),
-	(str_store_string,s1,"str_custom_battle_location_3"),
+	  (eq,"$g_custom_battle_location",3),
+	  (str_store_string,s1,"str_custom_battle_location_3"),
 	(else_try),
-	(eq,"$g_custom_battle_location",4),
-	(str_store_string,s1,"@Felucia"),
+	  (eq,"$g_custom_battle_location",4),
+	  (str_store_string,s1,"@Felucia"),
 	(else_try),
-	(eq,"$g_custom_battle_location",5),
-	(str_store_string,s1,"@Coruscant"),
+	  (eq,"$g_custom_battle_location",5),
+	  (str_store_string,s1,"@Coruscant"),
 	(else_try),
-	(eq,"$g_custom_battle_location",6),
-	(str_store_string,s1,"@Tatooine"),
+	  (eq,"$g_custom_battle_location",6),
+	  (str_store_string,s1,"@Tatooine"),
 	(else_try),
-	(eq,"$g_custom_battle_location",7),
-	(str_store_string,s1,"@Mustafar"),
+	  (eq,"$g_custom_battle_location",7),
+	  (str_store_string,s1,"@Mustafar"),
 	(else_try),
-	(eq,"$g_custom_battle_location",8),
-	(str_store_string,s1,"@Dantooine"),
+	  (eq,"$g_custom_battle_location",8),
+	  (str_store_string,s1,"@Dantooine"),
 	(else_try),
-	(eq,"$g_custom_battle_location",9),
-	(str_store_string,s1,"@Kashyyyk"),
+	  (eq,"$g_custom_battle_location",9),
+	  (str_store_string,s1,"@Kashyyyk"),
 	(else_try),
-	(eq,"$g_custom_battle_location",10),
-	(str_store_string,s1,"@Raxus Prime"),
+	  (eq,"$g_custom_battle_location",10),
+	  (str_store_string,s1,"@Raxus Prime"),
+	(else_try),
+	  (str_store_string, s1, "str_no_choice"),
 	(try_end)],
 	[
 	  ("open_plains",[],"Geonosis [V. Large]",
-	  [(assign, "$g_custom_battle_location", 1),]
+	  [(assign, "$g_custom_battle_location", 1),
+	   (jump_to_menu, "mnu_custom_battle_config_1"),]
 	   ),
 	  #("deep_forest",[],"Deep Forest (Large)",
 	  ("deep_forest",[],"Yavin IV Plains [Large]",
-	  [(assign, "$g_custom_battle_location", 2),]
+	  [(assign, "$g_custom_battle_location", 2),
+	   (jump_to_menu, "mnu_custom_battle_config_1"),]
 	   ), 
 	  ("desert_pass",[],"Dagobah Swamp [Medium]",
-	  [(assign, "$g_custom_battle_location", 3),]
+	  [(assign, "$g_custom_battle_location", 3),
+	   (jump_to_menu, "mnu_custom_battle_config_1"),]
 	   ), 
 	   ##New Custom Battle Maps...
 	  ("felucia",[],"Felucia [Medium]",
-	  [(assign, "$g_custom_battle_location", 4),]
+	  [(assign, "$g_custom_battle_location", 4),
+	   (jump_to_menu, "mnu_custom_battle_config_1"),]
 	   ), 
 	   ("coruscant",[],"Coruscant [Medium]",
-	  [(assign, "$g_custom_battle_location", 5),]
+	  [(assign, "$g_custom_battle_location", 5),
+	   (jump_to_menu, "mnu_custom_battle_config_1"),]
 	   ), 
 	   ("tatooine",[],"Tatooine [Medium]",
-	  [(assign, "$g_custom_battle_location", 6),]
+	  [(assign, "$g_custom_battle_location", 6),
+	   (jump_to_menu, "mnu_custom_battle_config_1"),]
 	   ), 
 	   ("mustafar",[],"Mustafar [Medium]",
-	  [(assign, "$g_custom_battle_location", 7),]
+	  [(assign, "$g_custom_battle_location", 7),
+	   (jump_to_menu, "mnu_custom_battle_config_1"),]
 	   ), 
 	   ("dantooine",[],"Dantooine [Medium]",
-	  [(assign, "$g_custom_battle_location", 8),]
+	  [(assign, "$g_custom_battle_location", 8),
+	   (jump_to_menu, "mnu_custom_battle_config_1"),]
 	   ), 
 	   ("kashyyyk",[],"Kashyyyk [Medium]",
-	  [(assign, "$g_custom_battle_location", 9),]
+	  [(assign, "$g_custom_battle_location", 9),
+	   (jump_to_menu, "mnu_custom_battle_config_1"),]
 	   ), 
 	   ("raxus",[],"Raxus Prime [Medium]",
-	  [(assign, "$g_custom_battle_location", 10),]
+	  [(assign, "$g_custom_battle_location", 10),
+	   (jump_to_menu, "mnu_custom_battle_config_1"),]
 	   ), 
 
-	  ("next",[(disable_menu_option)],"Next",
-	  [(jump_to_menu,"mnu_custom_battle_config_2"),
-	  (assign,"$g_custom_battle_faction_to_edit",1)]
-	   ),
+	  ("next",
+	  [
+	    # Only display option when player has made a choice
+	    (try_begin),
+	      (eq, "$g_custom_battle_location", 0),
+	      (disable_menu_option),
+	    (try_end)
+	  ],
+	  "Next",
+	  [
+	    (jump_to_menu, "mnu_custom_battle_config_2"),
+	    (assign, "$g_custom_battle_faction_to_edit",1)
+	  ]),
+
 	   #SW - added ability to cancel out of custom battle mod
       ("cancel_custom_battle_mod",[],"Cancel",
        [(jump_to_menu, "mnu_start_game_3"),
@@ -14427,6 +14451,7 @@ game_menus = [
 	"Please choose the type of battle.^You have chosen: {s1}",
 	"none",
 	[
+	(str_store_string, s1, "str_no_choice"),
 	(try_begin),
 		(eq,"$g_custom_battle_type",1),
 		(str_store_string,s1,"str_custom_battle_type_1"),
@@ -14456,7 +14481,7 @@ game_menus = [
 	  [(assign, "$g_custom_battle_type", 1),
 	  (assign, "$g_custom_battle_num_factions", 2),
 	  (troop_set_slot,"trp_custom_battle_spawn_store",1,1),
-	  (troop_set_slot,"trp_custom_battle_spawn_store",2,11),]
+	  (troop_set_slot,"trp_custom_battle_spawn_store",2,11),(jump_to_menu, "mnu_custom_battle_config_2"),]
 	   ), 
 	  ("3way",[
 	  (this_or_next|eq,"$g_custom_battle_location",1),
@@ -14466,7 +14491,7 @@ game_menus = [
 	  (assign, "$g_custom_battle_num_factions", 3),
 	  (troop_set_slot,"trp_custom_battle_spawn_store",1,1),
 	  (troop_set_slot,"trp_custom_battle_spawn_store",2,21),
-	  (troop_set_slot,"trp_custom_battle_spawn_store",3,41),]
+	  (troop_set_slot,"trp_custom_battle_spawn_store",3,41),(jump_to_menu, "mnu_custom_battle_config_2"),]
 	   ),
 	  ("4way",[
 	  (this_or_next|eq,"$g_custom_battle_location",1),
@@ -14477,7 +14502,7 @@ game_menus = [
 	  (troop_set_slot,"trp_custom_battle_spawn_store",1,1),
 	  (troop_set_slot,"trp_custom_battle_spawn_store",2,21),
 	  (troop_set_slot,"trp_custom_battle_spawn_store",3,31),
-	  (troop_set_slot,"trp_custom_battle_spawn_store",4,51),]
+	  (troop_set_slot,"trp_custom_battle_spawn_store",4,51),(jump_to_menu, "mnu_custom_battle_config_2"),]
 	   ),  
 	  # ("5way",[
 	  # (this_or_next|eq,"$g_custom_battle_location",1),
@@ -14514,59 +14539,71 @@ game_menus = [
 	  (troop_set_slot,"trp_custom_battle_spawn_store",1,1),
 	  (troop_set_slot,"trp_custom_battle_spawn_store",2,11),
 	  (troop_set_slot,"trp_custom_battle_spawn_store",3,21),
-	  (troop_set_slot,"trp_custom_battle_spawn_store",4,41),
+	  (troop_set_slot,"trp_custom_battle_spawn_store",4,41), (jump_to_menu, "mnu_custom_battle_config_2"),
 	  ]
 	  ),
-	  ("next",[
-	  # Only display option when player has made a choice
-	  (ge,"$g_custom_battle_type",1), (disable_menu_option)],
+	  ("next",
+	  [
+	    # Only display option when player has made a choice
+	    (try_begin),
+	      (lt,"$g_custom_battle_type", 1),
+	      (disable_menu_option),
+	    (try_end)
+	  ],
 	  "Next",
 	  [(jump_to_menu,"mnu_custom_battle_config_3"),
 	  (str_store_string,s1,"str_no_choice")]
 	   ),	   
 	]
   ),
+  
   (
     "custom_battle_config_3",menu_text_color(0xFF000d2c),
 	"Please choose the faction for army {reg1}.^Your choice: {s1}",
 	"none",
-	[(assign,reg1,"$g_custom_battle_faction_to_edit"),],
+	[(assign,reg1,"$g_custom_battle_faction_to_edit")],
 	[
 #	  ("vaegir",[],"Faction of Vaegirs",
-	  ("empire",[],"Galactic Empire",
+	  ("empire",[(str_store_faction_name, s20, "fac_galacticempire")], "{s20}",
 	  [(troop_set_slot,"trp_custom_battle_fac_store",reg(1),1),
-	  (str_store_string,s1,"str_galacticempire"),
+	  (str_store_string,s1,"str_galacticempire"), (jump_to_menu,"mnu_custom_battle_config_3"),
 	   ]
 	   ),
 #	  ("swadia",[],"Faction of Swadia",
-	  ("rebel",[],"Rebel Alliance",
+	  ("rebel",[(str_store_faction_name, s20, "fac_rebelalliance")], "{s20}",
 	  [(troop_set_slot,"trp_custom_battle_fac_store",reg(1),2),
-	  (str_store_string,s1,"str_rebelalliance"),
+	  (str_store_string,s1,"str_rebelalliance"), (jump_to_menu,"mnu_custom_battle_config_3"),
 	   ]
 	   ),
 #	  ("nords",[],"Faction of Nords",
-	  ("hutt",[],"Hutt Cartel",
+	  ("hutt",[(str_store_faction_name, s20, "fac_huttcartel")], "{s20}",
 	  [(troop_set_slot,"trp_custom_battle_fac_store",reg(1),3),
-	  (str_store_string,s1,"str_huttcartel"),
+	  (str_store_string,s1,"str_huttcartel"), (jump_to_menu,"mnu_custom_battle_config_3"),
 	   ]
 	   ),
 #	   ("rhodok",[],"Faction of Rhodok",
-	  ("mercenary",[],"Mercenaries",	  
+	  ("mercenary",[],"Mercenaries",
 	  [(troop_set_slot,"trp_custom_battle_fac_store",reg(1),4),
-	  (str_store_string,s1,"str_faction_4"),
+	  (str_store_string,s1,"str_faction_4"), (jump_to_menu,"mnu_custom_battle_config_3"),
 	   ]
 	   ),
 	  #("khergit",[],"Khergit Khanate",
 	  ("clonewars",[],"Clone Wars",
 	   [(troop_set_slot,"trp_custom_battle_fac_store",reg(1),5),
-	   (str_store_string,s1,"str_faction_5"),
+	   (str_store_string,s1,"str_faction_5"), (jump_to_menu,"mnu_custom_battle_config_3"),
 	    ]
 	   ),
 	  ("next",[
 	  # Only display option when player has made a choice
-	  (troop_slot_ge,"trp_custom_battle_fac_store",reg(1),1), (disable_menu_option)],"Next",
-	  [(jump_to_menu,"mnu_custom_battle_config_4"),
-	  (str_store_string,s1,"str_no_choice")]
+	    (try_begin),
+	      (neg|troop_slot_ge,"trp_custom_battle_fac_store",reg(1), 1),
+	      (disable_menu_option),
+	    (try_end)
+	  ],"Next",
+	  [
+	    (jump_to_menu,"mnu_custom_battle_config_4"),
+	    (str_store_string,s1,"str_no_choice")
+	  ]
 	   ),	   
 	]
   ),
@@ -14842,38 +14879,27 @@ game_menus = [
 	"none",
 	[
 # Show army number
-    (assign,reg11,"$g_custom_battle_faction_to_edit"),
+    (assign, reg11, "$g_custom_battle_faction_to_edit"),
 # Set troop to store troop numbers on
 	(try_begin),
-	(eq,"$g_custom_battle_faction_to_edit",1),
-	(assign,"$troop_store","trp_custom_battle_fac_1_troops"),
+	  (eq,"$g_custom_battle_faction_to_edit", 1),
+	  (assign,"$troop_store","trp_custom_battle_fac_1_troops"),
 	(else_try),
-	(eq,"$g_custom_battle_faction_to_edit",2),
-	(assign,"$troop_store","trp_custom_battle_fac_2_troops"),
+	  (eq,"$g_custom_battle_faction_to_edit", 2),
+	  (assign,"$troop_store","trp_custom_battle_fac_2_troops"),
 	(else_try),
-	(eq,"$g_custom_battle_faction_to_edit",3),
-	(assign,"$troop_store","trp_custom_battle_fac_3_troops"),
+	  (eq,"$g_custom_battle_faction_to_edit", 3),
+	  (assign,"$troop_store","trp_custom_battle_fac_3_troops"),
 	(else_try),
-	(eq,"$g_custom_battle_faction_to_edit",4),
-	(assign,"$troop_store","trp_custom_battle_fac_4_troops"),
+	  (eq,"$g_custom_battle_faction_to_edit", 4),
+	  (assign,"$troop_store","trp_custom_battle_fac_4_troops"),
 	(else_try),
-	(eq,"$g_custom_battle_faction_to_edit",5),
-	(assign,"$troop_store","trp_custom_battle_fac_5_troops"),
+	  (eq,"$g_custom_battle_faction_to_edit", 5),
+	  (assign,"$troop_store","trp_custom_battle_fac_5_troops"),
 	(else_try),
-	(eq,"$g_custom_battle_faction_to_edit",6),
-	(assign,"$troop_store","trp_custom_battle_fac_6_troops"),
+	  (eq,"$g_custom_battle_faction_to_edit", 6),
+	  (assign,"$troop_store","trp_custom_battle_fac_6_troops"),
 	(end_try),
-# Show numbers of troops.
-	(troop_get_slot,reg(1),"$troop_store",1),
-	(troop_get_slot,reg(2),"$troop_store",2),
-	(troop_get_slot,reg(3),"$troop_store",3),
-	(troop_get_slot,reg(4),"$troop_store",4),
-	(troop_get_slot,reg(5),"$troop_store",5),
-	(troop_get_slot,reg(6),"$troop_store",6),
-	(troop_get_slot,reg(7),"$troop_store",7),
-	(troop_get_slot,reg(8),"$troop_store",8),
-	(troop_get_slot,reg(9),"$troop_store",9),
-	(troop_get_slot,reg(10),"$troop_store",10),
 	],[])
 	
 ]
@@ -14908,10 +14934,12 @@ for opcode in scripts[script_custom_battle_set_faction_troops][1]:
 	    (troop_get_slot, ":cur_faction", "trp_custom_battle_fac_store", reg(11)),
 	    (eq,             ":cur_faction", ___cur_magic_entry_troop_faction),
 
+	    (troop_get_slot, reg40, "$troop_store", ___cur_magic_entry_troop_faction_slot_index),
+
         #swy-- get the translated troop name at runtime, hell yeah!
 	    (str_store_troop_name, s20, ___cur_magic_entry_troop_identifier),
 	  ],
-	  "{s20} ({reg1})",
+	  "{s20} ({reg40})",
 	  [
 	    (assign, ":cur_troop_slot", ___cur_magic_entry_troop_faction_slot_index),
 	    (troop_get_slot, ":cur_troop_amount", "$troop_store", ":cur_troop_slot"),
@@ -14943,6 +14971,7 @@ for opcode in scripts[script_custom_battle_set_faction_troops][1]:
 	    (end_try),
 
 	   (troop_set_slot, "$troop_store", ":cur_troop_slot", ":cur_troop_amount"),
+	   (jump_to_menu, "mnu_custom_battle_config_4"),
 	  ]) ]
 
 game_menus[-1] = list(game_menus[-1])
@@ -16117,6 +16146,7 @@ game_menus += [
       ("new_battle",[],"Set up a new battle",
        [(jump_to_menu, "mnu_custom_battle_config_1"),
 	   	# Set all friendly troop values to zero.
+    (assign, "$g_custom_battle_location", 0),
 
 	# Reset weather settings
 	(assign,"$g_rain_settings",0),
