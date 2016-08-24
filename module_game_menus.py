@@ -14409,7 +14409,7 @@ game_menus = [
 	  [(assign, "$g_custom_battle_location", 10),]
 	   ), 
 
-	  ("next",[],"Next",
+	  ("next",[(disable_menu_option)],"Next",
 	  [(jump_to_menu,"mnu_custom_battle_config_2"),
 	  (assign,"$g_custom_battle_faction_to_edit",1)]
 	   ),
@@ -14519,7 +14519,7 @@ game_menus = [
 	  ),
 	  ("next",[
 	  # Only display option when player has made a choice
-	  (ge,"$g_custom_battle_type",1)],
+	  (ge,"$g_custom_battle_type",1), (disable_menu_option)],
 	  "Next",
 	  [(jump_to_menu,"mnu_custom_battle_config_3"),
 	  (str_store_string,s1,"str_no_choice")]
@@ -14564,7 +14564,7 @@ game_menus = [
 	   ),
 	  ("next",[
 	  # Only display option when player has made a choice
-	  (troop_slot_ge,"trp_custom_battle_fac_store",reg(1),1)],"Next",
+	  (troop_slot_ge,"trp_custom_battle_fac_store",reg(1),1), (disable_menu_option)],"Next",
 	  [(jump_to_menu,"mnu_custom_battle_config_4"),
 	  (str_store_string,s1,"str_no_choice")]
 	   ),	   
@@ -14875,33 +14875,55 @@ game_menus = [
 	(troop_get_slot,reg(9),"$troop_store",9),
 	(troop_get_slot,reg(10),"$troop_store",10),
 	],
+	
+	
+	
+	
+	
+	
+	
 	[
 # Vaegir Troops
 	  ("vaegir_recruit",
-	  [(troop_get_slot,reg(12),"trp_custom_battle_fac_store",reg(11)),
-	  (eq,reg(12),1)],
+	  [
+	    (troop_get_slot, reg(12), "trp_custom_battle_fac_store", reg(11)),
+	    (eq,             reg(12), 1)
+	  ],
 	  "Imperial Recruit ({reg1})",
-	  [(assign,":troop_slot",1),
-	  (troop_get_slot,"$g_custom_battle_current_troop_number","$troop_store",":troop_slot"),
-	  (try_begin),
-	  (ge, "$g_custom_battle_current_troop_number", 5),
-	  (key_is_down, key_left_shift),
-	  (key_is_down, key_left_control),
-	  (val_sub, "$g_custom_battle_current_troop_number", 5),
-	  (else_try),
-	  (key_is_down, key_left_shift),
-	  (val_add, "$g_custom_battle_current_troop_number",5),
-	  (else_try),
-	  (ge, "$g_custom_battle_current_troop_number", 1),
-	  (key_is_down, key_left_control),
-	  (val_sub, "$g_custom_battle_current_troop_number", 1),
-	  (else_try),
-	  (val_add, "$g_custom_battle_current_troop_number", 1),
-	  (end_try),
-	  (troop_set_slot,"$troop_store",":troop_slot","$g_custom_battle_current_troop_number"),
-	  (assign,"$g_custom_battle_current_troop_number",0),
-	  ]
-	  ),
+	  [
+	    (assign, ":troop_slot", 1),
+	    (troop_get_slot, "$g_custom_battle_current_troop_number", "$troop_store", ":troop_slot"),
+	    
+        #swy-- Click + Ctrl + Shift => Remove five
+	    (try_begin),
+	      (ge,           "$g_custom_battle_current_troop_number", 5),
+	      (key_is_down,  key_left_shift),
+	      (key_is_down,  key_left_control),
+	      # --
+	      (val_sub,      "$g_custom_battle_current_troop_number", 5),
+
+	    #swy-- Click + Shift => Add five
+	    (else_try),
+	      (key_is_down,  key_left_shift),
+	      # --
+	      (val_add,      "$g_custom_battle_current_troop_number", 5),
+
+	    #swy-- Click + Ctrl => Remove one
+	    (else_try),
+	      (ge,           "$g_custom_battle_current_troop_number", 1),
+	      (key_is_down,  key_left_control),
+	      # --
+	      (val_sub,      "$g_custom_battle_current_troop_number", 1),
+	      
+	    #swy-- Click => Add one
+	    (else_try),
+	      (val_add,      "$g_custom_battle_current_troop_number", 1),
+	    (end_try),
+
+	   (troop_set_slot, "$troop_store", ":troop_slot", "$g_custom_battle_current_troop_number"),
+	   (assign, "$g_custom_battle_current_troop_number", 0),
+	  ]),
+	  
 	  ("vaegir_footman",
 	  [(troop_get_slot,reg(12),"trp_custom_battle_fac_store",reg(11)),
 	  (eq,reg(12),1)],
