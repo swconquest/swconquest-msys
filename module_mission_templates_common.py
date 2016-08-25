@@ -920,6 +920,22 @@ common_battle_order_panel = (0, 0, 0, [],
 	[
 	    #swy-- what a shamefur dispray!
 	    (try_begin),
+	      (game_key_clicked, gk_view_orders),
+	      #-- {guard against rogue Esc presses that kill the ticker without notice}
+	      (eq, "$g_presentation_battle_active", 1),
+	      (is_presentation_active, "prsnt_battle"),
+	      #--
+
+	      (assign, "$g_presentation_battle_active", 0),
+	      (set_show_messages, 1),
+
+	      (try_for_agents, ":cur_agent"),
+	        (agent_set_slot, ":cur_agent", slot_agent_map_overlay_id, 0),
+	      (try_end),
+
+	      (presentation_set_duration, 0),
+	    #swy-- what a shamefur dispray!
+	    (else_try),
 	      #-- {guard against rogue Esc presses that kill the ticker without notice}
 	      (eq, "$g_presentation_battle_active", 1),
 	      (neg|is_presentation_active, "prsnt_battle"),
@@ -934,15 +950,11 @@ common_battle_order_panel = (0, 0, 0, [],
 
 	      (presentation_set_duration, 0),
 	    (try_end)
+	    
 	] or [])
 )
 
-common_battle_order_panel_tick = (
-  0.1, 0, 0, [],
-  [
-    (eq, "$g_presentation_battle_active", 1),
-    (call_script, "script_update_order_panel_statistics_and_map"),
-    ])
+common_battle_order_panel_tick = (0.1, 0, 0, [], [ (eq, "$g_presentation_battle_active", 1),(call_script, "script_update_order_panel_statistics_and_map")])
 
 common_battle_inventory = (
   ti_inventory_key_pressed, 0, 0, [],
