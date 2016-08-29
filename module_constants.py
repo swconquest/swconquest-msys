@@ -1218,7 +1218,7 @@ spaceship_all_end            =  spaceship_other_end
 banner_meshes_begin                  = "mesh_banner_a01"
 #SW - modified banner_meshes_end_minus_one so only a few banners are displayed for the banner selection
 #banner_meshes_end_minus_one         = "mesh_banner_f21"
-banner_meshes_end_minus_one          = "mesh_banner_c21"
+banner_meshes_end_minus_one          = "mesh_banner_c01"
 
 arms_meshes_begin                    = "mesh_arms_a01"
 arms_meshes_end_minus_one            = "mesh_arms_cu"
