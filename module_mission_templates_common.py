@@ -99,7 +99,15 @@ sw_victory_defeat_conditions = (
     (display_message,"str_msg_battle_won"),
     (set_mission_result, 1),
   ])
+  
+  
+#swy-- temporarily disable the buggy deathcam
+sw_deathcam_follow_troop         = (0, 0, 0,[],[])
+sw_deathcam_valkyrie_move_camera = (0, 0, 0,[],[])
+sw_deathcam_cycle_fowards        = (0, 0, 0,[],[])
+sw_deathcam_cycle_backwards      = (0, 0, 0,[],[])
 
+'''
 sw_deathcam_follow_troop = (0, 0, 0,[
   (eq, "$dmod_move_camera", 2),
     (agent_get_position, 1, "$dmod_current_agent"),
@@ -133,7 +141,7 @@ sw_deathcam_cycle_backwards = (0, 0, 0,[
     (main_hero_fallen),
         (call_script, "script_dmod_cycle_backwards"),
         ], [])
-
+'''
 ############################################################################################################
 ##### Custom Commander(CC)
 ############################################################################################################

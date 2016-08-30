@@ -5940,7 +5940,7 @@ game_menus = [
 ############################################################################################################
     
       ("commander_change",[(str_store_troop_name,s7,"$g_player_troop")],
-        "Change the commander.(Current:{s7})",
+        "Change the commander. (Current:{s7})",
         [
           (assign, "$g_next_menu", "mnu_simple_encounter"),
           (assign, "$change_commander_menu_offset", 0),
@@ -7000,7 +7000,7 @@ game_menus = [
 ############################################################################################################
     
       ("commander_change",[(str_store_troop_name,s7,"$g_player_troop")],
-        "Change the commander.(Current:{s7})",
+        "Change the commander. (Current:{s7})",
         [
           (assign, "$g_next_menu", "mnu_join_battle"),
           (assign, "$change_commander_menu_offset", 0),
@@ -7359,7 +7359,7 @@ game_menus = [
 ############################################################################################################
 
       ("commander_change",[(str_store_troop_name,s7,"$g_player_troop")],
-        "Change the commander.(Current:{s7})",
+        "Change the commander. (Current:{s7})",
         [
           (assign, "$g_next_menu", "mnu_besiegers_camp_with_allies"),
           (assign, "$change_commander_menu_offset", 0),
@@ -8066,7 +8066,7 @@ game_menus = [
           (ge, ":cur_hours", "$g_siege_method_finish_hours"),
           (str_store_troop_name,s7,"$g_player_troop"),
         ],
-        "Change the commander.(Current:{s7})",
+        "Change the commander. (Current:{s7})",
         [
           (assign, "$g_next_menu", "mnu_spacestation_besiege"),
           (assign, "$change_commander_menu_offset", 0),
@@ -9076,7 +9076,7 @@ game_menus = [
 ############################################################################################################
     
       ("commander_change",[(str_store_troop_name,s7,"$g_player_troop")],
-        "Change the commander.(Current:{s7})",
+        "Change the commander. (Current:{s7})",
         [
           (assign, "$g_next_menu", "mnu_siege_started_defender"),
           (assign, "$change_commander_menu_offset", 0),
@@ -9618,7 +9618,7 @@ game_menus = [
         (party_slot_ge, "$current_town", slot_minorplanet_infested_by_bandits, 1),
         (str_store_troop_name,s7,"$g_player_troop"),
       ],
-      "Change the commander.(Current:{s7})",
+      "Change the commander. (Current:{s7})",
       [
         (assign, "$g_next_menu", "mnu_village"),
         (assign, "$change_commander_menu_offset", 0),
