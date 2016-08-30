@@ -1469,6 +1469,15 @@ game_menus = [
 ##           (try_end),
 
 
+      #swy-- jawas get special jawa robes, unattainable in any other way
+     (try_begin),
+       (troop_get_type, ":character_race", "trp_player"),
+       (eq,             ":character_race",  tf_jawa),
+       # --
+       (troop_add_item, "trp_player", "itm_jawa_hood",  0),
+       (troop_add_item, "trp_player", "itm_jawa_robe",  0),
+       (troop_add_item, "trp_player", "itm_jawa_boots", 0),
+     (try_end),
 
 #---------------------------------------------------
 #SW - new classes (commented out old ones below)
