@@ -12,7 +12,7 @@ wb_compile_switch = False
 # By default it will be built either on the parent folder or a _wb sibling.
 if (not wb_compile_switch and not "BUILD_TLD_WB" in environ):
   export_dir = "../swconquest/"; wb_compile_switch = 0
-  system("title building tld for 1011--")
+  system("title building swc for 1011--")
 else:
   export_dir = "../swconquest/_wb/"; wb_compile_switch = 1
-  system("title building tld for wb--")
+  system("title building swc for wb--")
