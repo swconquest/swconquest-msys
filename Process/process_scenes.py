@@ -3,6 +3,8 @@ from module_scenes import *
 
 from process_common import *
 
+from module_info import wb_compile_switch as is_a_wb_scene
+
 def save_python_header():
   ofile = open("./IDs/ID_scenes.py","w")
   for i_scene in xrange(len(scenes)):
@@ -48,7 +50,7 @@ def save_scenes(variables,variable_uses,tag_uses):
   ofile.write(" %d\n"%len(scenes))
   for scene in scenes:
     scene = list(scene)
-    if scene[2] == "0":
+    if is_a_wb_scene and scene[2] == "0":
       scene[2] = "none"
 
     ofile.write("scn_%s %s %d %s %s %s %s %s %s %s %s "%(convert_to_identifier(scene[0]),replace_spaces(scene[0]),scene[1], scene[2],scene[3],swytrailzro(scene[4][0]),swytrailzro(scene[4][1]),swytrailzro(scene[5][0]),swytrailzro(scene[5][1]),swytrailzro(scene[6]),scene[7]))

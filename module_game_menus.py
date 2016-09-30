@@ -14953,7 +14953,7 @@ for opcode in scripts[script_custom_battle_set_faction_troops][1]:
 	    (assign, ":cur_troop_slot", ___cur_magic_entry_troop_faction_slot_index),
 	    (troop_get_slot, ":cur_troop_amount", "$troop_store", ":cur_troop_slot"),
 	    
-        #swy-- Click + Ctrl + Shift => Remove five if there's at least five
+	    #swy-- Click + Ctrl + Shift => Remove five if there's at least five
 	    (try_begin),
 	      (ge,           ":cur_troop_amount", 5),
 	      (key_is_down,  key_left_shift),
