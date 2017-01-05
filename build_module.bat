@@ -1,6 +1,6 @@
 @echo off && title building tld for [wait for it]--
 set PATH="C:\Python24";"C:\Python26";C:\Python27;%PATH%
-set PYTHONPATH=%cd%;%cd%\data;%cd%\header;%cd%\id;%cd%\process
+set PYTHONPATH=%cd%;%cd%\data;%cd%\header;%cd%\ids;%cd%\process;%cd%\extras
 
 :top
 cls
@@ -40,7 +40,7 @@ REM count objects... (mtarini)
 
 set /a cnt=0
 set /a max=915
-for /f %%a in ('type ".\ID\ID_items.py"^|find "" /v /c') do set /a cnt=%%a
+for /f %%a in ('type ".\IDs\ID_items.py"^|find "" /v /c') do set /a cnt=%%a
 set /a cnt = cnt-1 
 
 IF /I %cnt% LSS %max% ( 
@@ -55,7 +55,7 @@ REM count map_icons... (mtarini)
 
 set /a cnt=0
 set /a max=256
-for /f %%a in ('type ".\ID\ID_map_icons.py"^|find "" /v /c') do set /a cnt=%%a
+for /f %%a in ('type ".\IDs\ID_map_icons.py"^|find "" /v /c') do set /a cnt=%%a
 
 IF /I %cnt% LSS %max% ( 
 	echo  map icons: %cnt%/%max% ... ok.
