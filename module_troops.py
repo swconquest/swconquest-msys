@@ -2928,19 +2928,6 @@ troops = [
 	[itm_clone_trooper_helmet_white,itm_clone_trooper_armor_white,itm_clone_trooper_gloves_white,itm_clone_trooper_boots,itm_combat_knife,itm_laser_bolts_blue_rifle,itm_dc15s],
 	def_attrib_2|level(16),wp(80),starwars_skills_2,mandalorian_face1, mandalorian_face2
 ],
-#droid
-["droid_messenger","Droid Messenger","Droid Messengers", # oom_series_pilot
-	tf_battledroid|tf_mounted|tf_guarantee_all_armor|tf_guarantee_horse|tf_guarantee_ranged,
-	0,0,fac_neutral,
-	[itm_horus_winged_cruiser, itm_vibro_sword3_blue, itm_droid_parts, itm_transparent_droid_head, itm_transparent_droid_hands, itm_transparent_droid_feet, itm_oomseries_pilot_body, itm_e5, itm_laser_bolts_red_rifle],
-	def_attrib_4|agi_21|level(30),wp(150),starwars_skills_mounted_4, droid_face1, droid_face2
-],
-["droid_deserter","Droid Deserter","Droid Deserters", # b1series
-	tf_battledroid|tf_guarantee_boots|tf_guarantee_all_armor,
-	0,0,fac_neutral,
-	[itm_droid_parts, itm_battle_droid_attack, itm_transparent_droid_head, itm_transparent_droid_hands, itm_transparent_droid_feet, itm_e5, itm_laser_bolts_red_rifle],
-	def_attrib_2|level(16),wp(80),starwars_skills_2, droid_face1, droid_face2
-],
 #trandoshan
 ["trandoshan_messenger","Trandoshan Messenger","Trandoshan Messengers",
 	tf_trandoshan|tf_mounted|tf_guarantee_armor|tf_guarantee_horse|tf_guarantee_ranged,
@@ -6686,6 +6673,21 @@ def_attrib_4|level(16),wp(80),starwars_skills_2,sw_hutt_face_1, sw_hutt_face_2],
 
 ["gate_sys_array2","Mr Gate Array[Internal]","Mr Gate Array[Internal]",tf_hero,no_scene,reserved,fac_commoners,[],def_attrib,0,knows_common,0],
 ["gate_sys_counter2","Mr Gate Array[Internal]","Mr Gate Array[Internal]",tf_hero,no_scene,reserved,fac_commoners,[],def_attrib,0,knows_common,0],
+
+
+##@> new droid culture troops for the player faction
+["droid_messenger","Droid Messenger","Droid Messengers", # oom_series_pilot
+	tf_battledroid|tf_mounted|tf_guarantee_all_armor|tf_guarantee_horse|tf_guarantee_ranged,
+	0,0,fac_neutral,
+	[itm_horus_winged_cruiser, itm_vibro_sword3_blue, itm_droid_parts, itm_transparent_droid_head, itm_transparent_droid_hands, itm_transparent_droid_feet, itm_oomseries_pilot_body, itm_e5, itm_laser_bolts_red_rifle],
+	def_attrib_4|agi_21|level(30),wp(150),starwars_skills_mounted_4, droid_face1, droid_face2
+],
+["droid_deserter","Droid Deserter","Droid Deserters", # b1series
+	tf_battledroid|tf_guarantee_boots|tf_guarantee_all_armor,
+	0,0,fac_neutral,
+	[itm_droid_parts, itm_battle_droid_attack, itm_transparent_droid_head, itm_transparent_droid_hands, itm_transparent_droid_feet, itm_e5, itm_laser_bolts_red_rifle],
+	def_attrib_2|level(16),wp(80),starwars_skills_2, droid_face1, droid_face2
+],
 ]
 
 

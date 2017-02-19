@@ -46,7 +46,6 @@ factions = [
   ("culture_5",  "<culture_5>", 0, 0.9, [], []),  ##@> Mandalorian culture
   ("culture_6",  "<culture_6>", 0, 0.9, [], []),  ##@> Clone culture
   ("culture_7",  "<culture_7>", 0, 0.9, [], []),  ##@> Trandoshan culture
-  ("culture_8",  "<culture_8>", 0, 0.9, [], []),  ##@> Droid culture
 
  #("swadian_caravans","Swadian Caravans", 0, 0.5,[("outlaws",-0.8), ("dark_knights",-0.2)], []),
  #("vaegir_caravans","Vaegir Caravans", 0, 0.5,[("outlaws",-0.8), ("dark_knights",-0.2)], []),

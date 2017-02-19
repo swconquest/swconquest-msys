@@ -809,13 +809,10 @@ game_menus = [
      
        (troop_clear_inventory, "$g_player_troop"),
 	   #SW - modified items for quick battles
-       (troop_add_item, "trp_player","itm_leather_boots",0),
-       (troop_add_item, "trp_player","itm_quick_battle_armor",0),
-       (troop_add_item, "trp_player","itm_leather_gloves",0),
-       (troop_add_item, "trp_player","itm_lightsaber_blue",0),
-       (troop_add_item, "trp_player","itm_laser_bolts_yellow_rifle",0),
-       (troop_add_item, "trp_player","itm_a295",0),
-       (troop_add_item, "trp_player","itm_energy_shield_yellow_medium",0),	   
+       (troop_add_item, "trp_player","itm_laser_bolts_orange_pistol",0),
+       (troop_add_item, "trp_player","itm_han_solo_blaster",0),
+       (troop_add_item, "trp_player","itm_energy_shield_yellow_medium",0),	  
+       
        (troop_equip_items, "$g_player_troop"),
 ## US     
        (set_visitors, 1, "trp_rebel_commando", 6),
