@@ -51,12 +51,11 @@ imodbits_bad           = imodbit_rusty | imodbit_chipped | imodbit_tattered | im
 
 #SW - added imodbits for guns, lightsaber
 imodbits_gun           = imodbit_cracked | imodbit_rusty | imodbit_balanced | imodbit_heavy
-imodbits_lightsaber    = imodbit_rusty | imodbit_chipped | imodbit_balanced |imodbit_tempered | imodbit_heavy
-imodbits_speeder       = imodbit_battered | imodbit_champion | imodbit_cracked | imodbit_heavy | imodbit_lame | imodbit_reinforced | imodbit_spirited | imodbit_swaybacked
-imodbits_speeder_basic = imodbit_battered | imodbit_cracked | imodbit_heavy | imodbit_lame | imodbit_reinforced | imodbit_spirited | imodbit_swaybacked
+imodbits_lightsaber    =                   imodbit_rusty | imodbit_balanced | imodbit_heavy | imodbit_tempered   | imodbit_chipped
+imodbits_speeder       = imodbit_cracked |                 imodbit_battered | imodbit_heavy | imodbit_reinforced | imodbit_lame    | imodbit_spirited | imodbit_swaybacked | imodbit_champion
+imodbits_speeder_basic = imodbit_cracked |                 imodbit_battered | imodbit_heavy | imodbit_reinforced | imodbit_lame    | imodbit_spirited | imodbit_swaybacked
+imodbits_droid         = imodbit_cracked | imodbit_rusty | imodbit_battered | imodbit_thick | imodbit_reinforced
 imodbits_ammo          = imodbit_large_bag
-imodbits_droid         = imodbit_battered | imodbit_cracked | imodbit_rusty | imodbit_reinforced | imodbit_thick
-
 
 #Swyter's Muzzleflare system
 muzzleflare_system = [

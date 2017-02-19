@@ -3063,461 +3063,513 @@ game_menus = [
        ),
       ]
   ),
-  
+]
+
+def fill_faction_cultures(factions, code):
+  array = [];
+  for faction in factions:
+    for line in code:
+      line = list(line)
+      line[1] = faction
+      array.append(tuple(line))
+  return array
+
+game_menus += [
   ("change_culture",menu_text_color(0xFF000d2c),
    "Choose a culture:^^^The culture of your Faction determine the guards in your territories, the type of recruits from your planets, and the soldiers in your commanders' armies.",	#SW - modified
    "none",
    [],
     [
 
-	#SW - empire culture
-    ("galactic_empire",
-    [],"Galactic Empire culture",
+  #SW - empire culture
+  ("galactic_empire", [], "Galactic Empire culture",
     [
-		#change the culture to empire
-		(call_script, "script_change_culture_empire"),
-	  
-		(display_message, "@Player Faction culture is now Galactic Empire."),
-        (jump_to_menu, "mnu_own_faction"),
+      #change the culture to empire
+      (call_script, "script_change_culture_empire"),
+
+      (display_message, "@Player Faction culture is now Galactic Empire."),
+      (jump_to_menu, "mnu_own_faction"),
     ]
 	),
 
-	#SW - rebel culture
-    ("rebel_alliance",
-    [],"Rebel Alliance culture",
+  #SW - rebel culture
+  ("rebel_alliance", [], "Rebel Alliance culture",
     [
-		#change the culture to rebel
-		(call_script, "script_change_culture_rebel"),
-		
-		(display_message, "@Player Faction culture is now Rebel Alliance."),
-        (jump_to_menu, "mnu_own_faction"),
-    ]
-	),		
-	
-	#SW - hutt culture
-    ("hutt_cartel",
-    [],"Hutt Cartel culture",
-    [
-		#change the culture to hutt
-		(call_script, "script_change_culture_hutt"),
-	  
-		(display_message, "@Player Faction culture is now Hutt Cartel."),
-        (jump_to_menu, "mnu_own_faction"),
-    ]
-	),	
-	
-	#TEST
-	#############################################################################################################
-	#SW - new human culture
-    ("human",
-    [],"Human culture",
-    [
+      #change the culture to rebel
+      (call_script, "script_change_culture_rebel"),
 
-		#change the culture to human
-		(call_script, "script_change_culture_human"),
-	
-		(display_message, "@Player Faction culture is now Human."),
-        (jump_to_menu, "mnu_own_faction"),
+      (display_message, "@Player Faction culture is now Rebel Alliance."),
+      (jump_to_menu, "mnu_own_faction"),
     ]
-	),	
-	#############################################################################################################
-    ("wookiee",	#SW modified
-    [],"Wookiee culture",	#SW modified
-    [
-		#(assign,"$culture_selected",1),
-		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_huttcartel"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
-		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_4"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
-		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Faction"),		#nevermind, I gave the player the ability to change the faction name
-		
-		#(assign,"$players_faction","fac_player_supporters_faction"),		would this be necessary to add?
-		  
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_deserter_troop, "trp_wookiee_deserter"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_wookiee_messenger"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_wookiee_warrior"),		
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_wookiee_berserker"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_bacca_warrior"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_faction_wookiee_reinforcements_a"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_faction_wookiee_reinforcements_b"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_faction_wookiee_reinforcements_c"),		  
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_1_troop, "trp_wookiee"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_2_troop, "trp_wookiee_warrior"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_3_troop, "trp_wookiee_marksman"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_4_troop, "trp_wookiee_sharpshooter"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_5_troop, "trp_bacca_warrior"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_patrol_unit_1, "trp_wookiee"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_patrol_unit_2, "trp_wookiee_warrior"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_patrol_unit_3, "trp_wookiee_marksman"),
+  ),
 
-		#do this because we set the recruited knights original faction to fac_neutral
-        (faction_set_slot, "fac_neutral",  slot_faction_deserter_troop, "trp_wookiee_deserter"),
-        (faction_set_slot, "fac_neutral",  slot_faction_messenger_troop, "trp_wookiee_messenger"),
-        (faction_set_slot, "fac_neutral",  slot_faction_guard_troop, "trp_wookiee_warrior"),		
-        (faction_set_slot, "fac_neutral",  slot_faction_prison_guard_troop, "trp_wookiee_berserker"),
-        (faction_set_slot, "fac_neutral",  slot_faction_spacestation_guard_troop, "trp_bacca_warrior"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_faction_wookiee_reinforcements_a"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_faction_wookiee_reinforcements_b"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_faction_wookiee_reinforcements_c"),		  
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_1_troop, "trp_wookiee"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_2_troop, "trp_wookiee_warrior"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_3_troop, "trp_wookiee_marksman"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_4_troop, "trp_wookiee_sharpshooter"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_5_troop, "trp_bacca_warrior"),
-		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_1, "trp_wookiee"),
-		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_2, "trp_wookiee_warrior"),
-		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_3, "trp_wookiee_marksman"),
-		
-        (try_for_range,":knight",reserved_knight_begin,reserved_knight_end),	#SW modified
-			#(troop_slot_eq, ":knight", slot_troop_occupation, slto_faction_hero),	#comment this out since some may not be a faction hero yet but we still want to change their race/equipment/etc
-			#(troop_set_slot, ":knight", slot_troop_original_faction,"fac_player_supporters_faction"),	# don't do this, it stops lords from building armies!!!
-			(troop_set_slot, ":knight", slot_troop_original_faction,"fac_neutral"),
-			
-			#new culture specific troops
-			#clear any inventory
-			(troop_clear_inventory, ":knight"),
-			#remove all equipment
-			(try_for_range, ":slot_no", 0, 9),
-				#(troop_get_inventory_slot,":cur_item",":knight",":slot_no"),
-				(troop_set_inventory_slot, ":knight",":slot_no",-1),
-			(try_end),
-			#change race
-			(troop_set_type,":knight",tf_wookiee),
-			#add equipment
-			(troop_add_item, ":knight","itm_transparent_helmet_armor",0),
-			(troop_add_item, ":knight","itm_ryyk_blade_chieftain",0),
-			(troop_add_item, ":knight","itm_wookiee_shield_large",0),			
-			(troop_add_item, ":knight","itm_wookiee_bowcaster",0),
-			(troop_add_item, ":knight","itm_laser_bolts_green_rifle",0),
-			#(troop_add_item, ":knight","itm_speeder",0),
-			(troop_add_item, ":knight","itm_wookiee_fur",0),
-			#random equipment
-			(store_random_in_range, ":rand", 0, 2),
-			(try_begin),
-				(eq, ":rand", 0),
-				(troop_add_item, ":knight","itm_wookiee_armor1",0),
-			(else_try),
-				(troop_add_item, ":knight","itm_wookiee_armor2",0),
-			(try_end),
-			#equip items
-			(troop_equip_items, ":knight"),
-		(try_end),
+    #SW - hutt culture
+  ("hutt_cartel", [], "Hutt Cartel culture",
+    [
+      #change the culture to hutt
+      (call_script, "script_change_culture_hutt"),
+
+      (display_message, "@Player Faction culture is now Hutt Cartel."),
+      (jump_to_menu, "mnu_own_faction"),
+    ]
+  ),
   
-		(display_message, "@Player Faction culture is now Wookiee."),
-        (jump_to_menu, "mnu_own_faction"),	  
-    ]
-	),
-	#############################################################################################################	
-	#SW - new mandalorian culture
-    ("mandalorian",
-    [],"Mandalorian culture",
+  #TEST
+  #############################################################################################################
+  #SW - new human culture
+  ("human", [], "Human culture",
     [
-		#(assign,"$culture_selected",1),
-		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_huttcartel"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
-		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_5"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
-		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Faction"),		#nevermind, I gave the player the ability to change the faction name
-		
-		#(assign,"$players_faction","fac_player_supporters_faction"),		would this be necessary to add?
-		  
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_deserter_troop, "trp_mandalorian_deserter"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_mandalorian_messenger"),		
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_mandalorian_soldier"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_mandalorian_commando"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_mandalorian_crusader"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_faction_mandalorian_reinforcements_a"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_faction_mandalorian_reinforcements_b"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_faction_mandalorian_reinforcements_c"),		  
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_1_troop, "trp_mandalorian"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_2_troop, "trp_mandalorian_soldier"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_3_troop, "trp_mandalorian_sniper"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_4_troop, "trp_mandalorian_commando"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_5_troop, "trp_mandalorian_deadeye"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_patrol_unit_1, "trp_mandalorian"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_patrol_unit_2, "trp_mandalorian_soldier"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_patrol_unit_3, "trp_mandalorian_commando"),
+      #change the culture to human
+      (call_script, "script_change_culture_human"),
 
-		#do this because we set the recruited knights original faction to fac_neutral
-        (faction_set_slot, "fac_neutral",  slot_faction_deserter_troop, "trp_mandalorian_deserter"),
-        (faction_set_slot, "fac_neutral",  slot_faction_messenger_troop, "trp_mandalorian_messenger"),
-        (faction_set_slot, "fac_neutral",  slot_faction_guard_troop, "trp_mandalorian_soldier"),		
-        (faction_set_slot, "fac_neutral",  slot_faction_prison_guard_troop, "trp_mandalorian_commando"),
-        (faction_set_slot, "fac_neutral",  slot_faction_spacestation_guard_troop, "trp_mandalorian_crusader"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_faction_mandalorian_reinforcements_a"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_faction_mandalorian_reinforcements_b"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_faction_mandalorian_reinforcements_c"),		  
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_1_troop, "trp_mandalorian"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_2_troop, "trp_mandalorian_soldier"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_3_troop, "trp_mandalorian_sniper"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_4_troop, "trp_mandalorian_commando"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_5_troop, "trp_mandalorian_deadeye"),
-		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_1, "trp_mandalorian_soldier"),
-		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_2, "trp_mandalorian_commando"),
-		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_3, "trp_mandalorian_sniper"),
-		
-        (try_for_range,":knight",reserved_knight_begin,reserved_knight_end),	#SW modified
-			#(troop_slot_eq, ":knight", slot_troop_occupation, slto_faction_hero),	#comment this out since some may not be a faction hero yet but we still want to change their race/equipment/etc
-			#(troop_set_slot, ":knight", slot_troop_original_faction,"fac_player_supporters_faction"),	# don't do this, it stops lords from building armies!!!
-			(troop_set_slot, ":knight", slot_troop_original_faction,"fac_neutral"),
-			
-			#new culture specific troops
-			#clear any inventory
-			(troop_clear_inventory, ":knight"),
-			#remove all equipment
-			(try_for_range, ":slot_no", 0, 9),
-				#(troop_get_inventory_slot,":cur_item",":knight",":slot_no"),
-				(troop_set_inventory_slot, ":knight",":slot_no",-1),
-			(try_end),
+      (display_message, "@Player Faction culture is now Human."),
+      (jump_to_menu, "mnu_own_faction"),
+    ]
+  ),
+  #############################################################################################################
+  ("wookiee", [], "Wookiee culture",	#SW modified
+    [
+      #just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
+      (faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_4"),
+
+      #do this because we set the recruited knights original faction to fac_neutral
+      ] + fill_faction_cultures(["fac_player_supporters_faction", "fac_neutral"], [
+        
+      (faction_set_slot, '__cur_faction', slot_faction_deserter_troop,           "trp_wookiee_deserter"),
+      (faction_set_slot, '__cur_faction', slot_faction_messenger_troop,          "trp_wookiee_messenger"),
+      (faction_set_slot, '__cur_faction', slot_faction_guard_troop,              "trp_wookiee_warrior"),
+      (faction_set_slot, '__cur_faction', slot_faction_prison_guard_troop,       "trp_wookiee_berserker"),
+      (faction_set_slot, '__cur_faction', slot_faction_spacestation_guard_troop, "trp_bacca_warrior"),
       
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_a,         "pt_faction_wookiee_reinforcements_a"),
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_b,         "pt_faction_wookiee_reinforcements_b"),
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_c,         "pt_faction_wookiee_reinforcements_c"),		  
       
-			#change race
-      #unisex troops -- let's not be misogynistic :)
-      (store_random_in_range, ":rand", 0, 2),
-      (try_begin),
-        (eq,":rand",0),
-        (troop_set_type,":knight",tf_female),
-      (else_try),
-        (troop_set_type,":knight",tf_male),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_1_troop,             "trp_wookiee"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_2_troop,             "trp_wookiee_warrior"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_3_troop,             "trp_wookiee_marksman"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_4_troop,             "trp_wookiee_sharpshooter"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_5_troop,             "trp_bacca_warrior"),
+      
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_1,            "trp_wookiee"),
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_2,            "trp_wookiee_warrior"),
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_3,            "trp_wookiee_marksman")
+          
+      ]) + [
+      
+      (try_for_range,":knight", reserved_knight_begin, reserved_knight_end), #SW modified
+        (troop_set_slot, ":knight", slot_troop_original_faction, "fac_neutral"),
+
+        #new culture specific troops
+      
+        #clear any inventory
+        (troop_clear_inventory, ":knight"),
+        
+        #remove all equipment
+        (try_for_range, ":slot_no", 0, 9),
+          (troop_set_inventory_slot, ":knight", ":slot_no", -1),
+        (try_end),
+        
+        #change race
+        (troop_set_type, ":knight", tf_wookiee),
+        
+        #add equipment
+        (troop_add_item, ":knight", "itm_transparent_helmet_armor", 0),
+        (troop_add_item, ":knight", "itm_ryyk_blade_chieftain",     0),
+        (troop_add_item, ":knight", "itm_wookiee_shield_large",     0),			
+        (troop_add_item, ":knight", "itm_wookiee_bowcaster",        0),
+        (troop_add_item, ":knight", "itm_laser_bolts_green_rifle",  0),
+    #   (troop_add_item, ":knight", "itm_speeder",                  0),
+        (troop_add_item, ":knight", "itm_wookiee_fur",              0),
+        
+        #random equipment
+        (store_random_in_range, ":rand", 0, 2),
+        (try_begin),
+          (eq, ":rand", 0),
+          (troop_add_item, ":knight", "itm_wookiee_armor1", 0),
+        (else_try),
+          (troop_add_item, ":knight", "itm_wookiee_armor2", 0),
+        (try_end),
+        
+        #equip items
+        (troop_equip_items, ":knight"),
       (try_end),
-      
-			#add equipment
-			(troop_add_item, ":knight","itm_grey_gloves",0),			
-			(troop_add_item, ":knight","itm_combat_knife",0),
-			(troop_add_item, ":knight","itm_laser_bolts_orange_rifle",0),
-			(troop_add_item, ":knight","itm_mandalorian_heavy_blaster",0),
-			(troop_add_item, ":knight","itm_westar_shield",0),
-			#(troop_add_item, ":knight","itm_speeder",0),
-			#random equipment
-			(store_random_in_range, ":rand", 0, 4),
-			(try_begin),
-				(eq, ":rand", 0),
-				(troop_add_item, ":knight","itm_mandalorian_crusader_helmet",0),
-				(troop_add_item, ":knight","itm_mandalorian_crusader_armor",0),
-				(troop_add_item, ":knight","itm_mandalorian_crusader_boots",0),				
-			(else_try),
-				(eq, ":rand", 1),
-				(troop_add_item, ":knight","itm_mandalorian_neocrusader_helmet",0),
-				(troop_add_item, ":knight","itm_mandalorian_crusader_armor",0),
-				(troop_add_item, ":knight","itm_mandalorian_crusader_boots",0),
-			(else_try),
-				(eq, ":rand", 2),
-				(troop_add_item, ":knight","itm_mandalorian_commando_helmet",0),
-				(troop_add_item, ":knight","itm_mandalorian_commando_armor",0),
-				(troop_add_item, ":knight","itm_mandalorian_commando_boots",0),
-			(else_try),
-				(troop_add_item, ":knight","itm_mandalorian_sniper_helmet",0),
-				(troop_add_item, ":knight","itm_mandalorian_sniper_armor",0),
-				(troop_add_item, ":knight","itm_mandalorian_sniper_boots",0),				
-			(try_end),			
-			#equip items
-			(troop_equip_items, ":knight"),
-		(try_end),
-	  
-		(display_message, "@Player Faction culture is now Mandalorian."),
-        (jump_to_menu, "mnu_own_faction"),
+
+      (display_message, "@Player Faction culture is now Wookiee."),
+      (jump_to_menu, "mnu_own_faction"),	  
     ]
-	),
-
-	#############################################################################################################	
-	#SW - new clone culture
-    ("clone",
-    [],"Clone culture",
+  ),
+  #############################################################################################################	
+  #SW - new mandalorian culture
+  ("mandalorian", [], "Mandalorian culture",
     [
-		#(assign,"$culture_selected",1),
-		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_huttcartel"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
-		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_6"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
-		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Faction"),		#nevermind, I gave the player the ability to change the faction name
-		
-		#(assign,"$players_faction","fac_player_supporters_faction"),		would this be necessary to add?
-		  
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_deserter_troop, "trp_clone_deserter"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_clone_messenger"),		
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_clone_trooper_1"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_arc_trooper_3"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_arc_trooper_4"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_faction_clone_reinforcements_a"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_faction_clone_reinforcements_b"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_faction_clone_reinforcements_c"),		  
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_1_troop, "trp_clone_trooper_1"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_2_troop, "trp_clone_trooper_2"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_3_troop, "trp_clone_trooper_3"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_4_troop, "trp_clone_trooper_4"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_5_troop, "trp_clone_trooper_5"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_patrol_unit_1, "trp_clone_trooper_1"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_patrol_unit_2, "trp_clone_trooper_2"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_patrol_unit_3, "trp_clone_trooper_3"),
+      #just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
+      (faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_5"),
 
-		#do this because we set the recruited knights original faction to fac_neutral
-        (faction_set_slot, "fac_neutral",  slot_faction_deserter_troop, "trp_clone_deserter"),
-        (faction_set_slot, "fac_neutral",  slot_faction_messenger_troop, "trp_clone_messenger"),
-        (faction_set_slot, "fac_neutral",  slot_faction_guard_troop, "trp_clone_trooper_1"),
-        (faction_set_slot, "fac_neutral",  slot_faction_prison_guard_troop, "trp_arc_trooper_3"),
-        (faction_set_slot, "fac_neutral",  slot_faction_spacestation_guard_troop, "trp_arc_trooper_4"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_faction_clone_reinforcements_a"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_faction_clone_reinforcements_b"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_faction_clone_reinforcements_c"),		  
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_1_troop, "trp_clone_trooper_1"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_2_troop, "trp_clone_trooper_2"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_3_troop, "trp_clone_trooper_3"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_4_troop, "trp_clone_trooper_4"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_5_troop, "trp_clone_trooper_5"),
-		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_1, "trp_clone_trooper_1"),
-		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_2, "trp_clone_trooper_2"),
-		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_3, "trp_clone_trooper_3"),
-		
-        (try_for_range,":knight",reserved_knight_begin,reserved_knight_end),	#SW modified
-			#(troop_slot_eq, ":knight", slot_troop_occupation, slto_faction_hero),	#comment this out since some may not be a faction hero yet but we still want to change their race/equipment/etc
-			#(troop_set_slot, ":knight", slot_troop_original_faction,"fac_player_supporters_faction"),	# don't do this, it stops lords from building armies!!!
-			(troop_set_slot, ":knight", slot_troop_original_faction,"fac_neutral"),
+      #do this because we set the recruited knights original faction to fac_neutral
+      ] + fill_faction_cultures(["fac_player_supporters_faction", "fac_neutral"], [
+        
+      (faction_set_slot, '__cur_faction', slot_faction_deserter_troop,           "trp_mandalorian_deserter"),
+      (faction_set_slot, '__cur_faction', slot_faction_messenger_troop,          "trp_mandalorian_messenger"),
+      (faction_set_slot, '__cur_faction', slot_faction_guard_troop,              "trp_mandalorian_soldier"),
+      (faction_set_slot, '__cur_faction', slot_faction_prison_guard_troop,       "trp_mandalorian_commando"),
+      (faction_set_slot, '__cur_faction', slot_faction_spacestation_guard_troop, "trp_mandalorian_crusader"),
+      
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_a,         "pt_faction_mandalorian_reinforcements_a"),
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_b,         "pt_faction_mandalorian_reinforcements_b"),
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_c,         "pt_faction_mandalorian_reinforcements_c"),		  
+      
+      (faction_set_slot, '__cur_faction', slot_faction_tier_1_troop,             "trp_mandalorian"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_2_troop,             "trp_mandalorian_soldier"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_3_troop,             "trp_mandalorian_sniper"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_4_troop,             "trp_mandalorian_commando"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_5_troop,             "trp_mandalorian_deadeye"),
+      
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_1,            "trp_mandalorian"),
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_2,            "trp_mandalorian_soldier"),
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_3,            "trp_mandalorian_commando")
+          
+      ]) + [
+
+      (try_for_range,":knight", reserved_knight_begin, reserved_knight_end),	#SW modified
+        (troop_set_slot, ":knight", slot_troop_original_faction, "fac_neutral"),
 			
-			#new culture specific troops
-			#clear any inventory
-			(troop_clear_inventory, ":knight"),
-			#remove all equipment
-			(try_for_range, ":slot_no", 0, 9),
-				#(troop_get_inventory_slot,":cur_item",":knight",":slot_no"),
-				(troop_set_inventory_slot, ":knight",":slot_no",-1),
-			(try_end),
-			#change race
-			(troop_set_type,":knight",tf_male),
-			#add equipment
-			#(troop_add_item, ":knight","itm_darkgrey_gloves",0),	
-			(troop_add_item, ":knight","itm_combat_knife",0),
-			(troop_add_item, ":knight","itm_laser_bolts_blue_rifle",0),
-			(troop_add_item, ":knight","itm_clone_trooper_boots",0),
-			#(troop_add_item, ":knight","itm_speeder",0),
-			#random equipment
-			(store_random_in_range, ":rand", 0, 4),
-			(try_begin),
-				(eq, ":rand", 0),
-				(troop_add_item, ":knight","itm_clone_trooper_helmet_green",0),
-				(troop_add_item, ":knight","itm_arc_trooper_armor_green",0),
-				(troop_add_item, ":knight","itm_clone_trooper_gloves_green",0),
-				(troop_add_item, ":knight","itm_dc15s",0),
-			(else_try),
-				(eq, ":rand", 1),
-				(troop_add_item, ":knight","itm_clone_trooper_helmet_blue",0),
-				(troop_add_item, ":knight","itm_arc_trooper_armor_blue",0),
-				(troop_add_item, ":knight","itm_clone_trooper_gloves_blue",0),
-				(troop_add_item, ":knight","itm_dc15a",0),
-			(else_try),
-				(eq, ":rand", 2),
-				(troop_add_item, ":knight","itm_clone_trooper_helmet_red",0),
-				(troop_add_item, ":knight","itm_arc_trooper_armor_red",0),
-				(troop_add_item, ":knight","itm_clone_trooper_gloves_red",0),
-				(troop_add_item, ":knight","itm_dc15a",0),
-			(else_try),
-				(troop_add_item, ":knight","itm_clone_trooper_helmet_yellow",0),
-				(troop_add_item, ":knight","itm_arc_trooper_armor_yellow",0),
-				(troop_add_item, ":knight","itm_clone_trooper_gloves_yellow",0),
-				(troop_add_item, ":knight","itm_dc15a",0),
-			(try_end),			
-			#equip items
-			(troop_equip_items, ":knight"),
-		(try_end),
+        #new culture specific troops
+      
+        #clear any inventory
+        (troop_clear_inventory, ":knight"),
+        
+        #remove all equipment
+        (try_for_range, ":slot_no", 0, 9),
+          (troop_set_inventory_slot, ":knight",":slot_no", -1),
+        (try_end),
+      
+        #change race
+        
+        #unisex troops -- let's not be misogynistic :)
+        (store_random_in_range, ":rand", 0, 2),
+        (try_begin),
+          (eq, ":rand", 0),
+          (troop_set_type, ":knight", tf_female),
+        (else_try),
+          (troop_set_type, ":knight", tf_male),
+        (try_end),
+      
+        #add equipment
+        (troop_add_item, ":knight", "itm_grey_gloves",                      0),			
+        (troop_add_item, ":knight", "itm_combat_knife",                     0),
+        (troop_add_item, ":knight", "itm_laser_bolts_orange_rifle",         0),
+        (troop_add_item, ":knight", "itm_mandalorian_heavy_blaster",        0),
+        (troop_add_item, ":knight", "itm_westar_shield",                    0),
+    #   (troop_add_item, ":knight", "itm_speeder",                          0),
+        
+        #random equipment
+        (store_random_in_range, ":rand", 0, 4),
+        (try_begin),
+          (eq, ":rand", 0),
+          (troop_add_item, ":knight", "itm_mandalorian_crusader_helmet",    0),
+          (troop_add_item, ":knight", "itm_mandalorian_crusader_armor",     0),
+          (troop_add_item, ":knight", "itm_mandalorian_crusader_boots",     0),				
+        (else_try),
+          (eq, ":rand", 1),
+          (troop_add_item, ":knight", "itm_mandalorian_neocrusader_helmet", 0),
+          (troop_add_item, ":knight", "itm_mandalorian_crusader_armor",     0),
+          (troop_add_item, ":knight", "itm_mandalorian_crusader_boots",     0),
+        (else_try),
+          (eq, ":rand", 2),
+          (troop_add_item, ":knight", "itm_mandalorian_commando_helmet",    0),
+          (troop_add_item, ":knight", "itm_mandalorian_commando_armor",     0),
+          (troop_add_item, ":knight", "itm_mandalorian_commando_boots",     0),
+        (else_try),
+          (troop_add_item, ":knight", "itm_mandalorian_sniper_helmet",      0),
+          (troop_add_item, ":knight", "itm_mandalorian_sniper_armor",       0),
+          (troop_add_item, ":knight", "itm_mandalorian_sniper_boots",       0),				
+        (try_end),
+        
+        #equip items
+        (troop_equip_items, ":knight"),
+      (try_end),
 	  
-		(display_message, "@Player Faction culture is now Clone."),
-        (jump_to_menu, "mnu_own_faction"),
+      (display_message, "@Player Faction culture is now Mandalorian."),
+      (jump_to_menu, "mnu_own_faction"),
+    ]
+  ),
+
+  #############################################################################################################
+  #SW - new clone culture
+  ("clone", [], "Clone culture",
+    [
+      #just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
+      (faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_6"),
+
+      #do this because we set the recruited knights original faction to fac_neutral
+      ] + fill_faction_cultures(["fac_player_supporters_faction", "fac_neutral"], [
+        
+      (faction_set_slot, '__cur_faction', slot_faction_deserter_troop,           "trp_clone_deserter"),
+      (faction_set_slot, '__cur_faction', slot_faction_messenger_troop,          "trp_clone_messenger"),
+      (faction_set_slot, '__cur_faction', slot_faction_guard_troop,              "trp_clone_trooper_1"),
+      (faction_set_slot, '__cur_faction', slot_faction_prison_guard_troop,       "trp_arc_trooper_3"),
+      (faction_set_slot, '__cur_faction', slot_faction_spacestation_guard_troop, "trp_arc_trooper_4"),
+      
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_a,         "pt_faction_clone_reinforcements_a"),
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_b,         "pt_faction_clone_reinforcements_b"),
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_c,         "pt_faction_clone_reinforcements_c"),
+      
+      (faction_set_slot, '__cur_faction', slot_faction_tier_1_troop,             "trp_clone_trooper_1"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_2_troop,             "trp_clone_trooper_2"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_3_troop,             "trp_clone_trooper_3"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_4_troop,             "trp_clone_trooper_4"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_5_troop,             "trp_clone_trooper_5"),
+      
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_1,            "trp_clone_trooper_1"),
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_2,            "trp_clone_trooper_2"),
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_3,            "trp_clone_trooper_3")
+
+      ]) + [
+
+      (try_for_range,":knight", reserved_knight_begin, reserved_knight_end),	#SW modified
+        (troop_set_slot, ":knight", slot_troop_original_faction, "fac_neutral"),
+
+        #new culture specific troops
+        
+        #clear any inventory
+        (troop_clear_inventory, ":knight"),
+        
+        #remove all equipment
+        (try_for_range, ":slot_no", 0, 9),
+          (troop_set_inventory_slot, ":knight", ":slot_no", -1),
+        (try_end),
+        
+        #change race
+        (troop_set_type, ":knight", tf_male),
+        
+        #add equipment
+     #  (troop_add_item, ":knight", "itm_darkgrey_gloves",               0),	
+        (troop_add_item, ":knight", "itm_combat_knife",                  0),
+        (troop_add_item, ":knight", "itm_laser_bolts_blue_rifle",        0),
+        (troop_add_item, ":knight", "itm_clone_trooper_boots",           0),
+     #  (troop_add_item, ":knight", "itm_speeder",                       0),
+     
+        #random equipment
+        (store_random_in_range, ":rand", 0, 4),
+        
+        (try_begin),
+          (eq, ":rand", 0),
+          (troop_add_item, ":knight", "itm_clone_trooper_helmet_green",  0),
+          (troop_add_item, ":knight", "itm_arc_trooper_armor_green",     0),
+          (troop_add_item, ":knight", "itm_clone_trooper_gloves_green",  0),
+          (troop_add_item, ":knight", "itm_dc15s",                       0),
+        (else_try),
+          (eq, ":rand", 1),
+          (troop_add_item, ":knight", "itm_clone_trooper_helmet_blue",   0),
+          (troop_add_item, ":knight", "itm_arc_trooper_armor_blue",      0),
+          (troop_add_item, ":knight", "itm_clone_trooper_gloves_blue",   0),
+          (troop_add_item, ":knight", "itm_dc15a",                       0),
+        (else_try),
+          (eq, ":rand", 2),
+          (troop_add_item, ":knight", "itm_clone_trooper_helmet_red",    0),
+          (troop_add_item, ":knight", "itm_arc_trooper_armor_red",       0),
+          (troop_add_item, ":knight", "itm_clone_trooper_gloves_red",    0),
+          (troop_add_item, ":knight", "itm_dc15a",                       0),
+        (else_try),
+          (troop_add_item, ":knight", "itm_clone_trooper_helmet_yellow", 0),
+          (troop_add_item, ":knight", "itm_arc_trooper_armor_yellow",    0),
+          (troop_add_item, ":knight", "itm_clone_trooper_gloves_yellow", 0),
+          (troop_add_item, ":knight", "itm_dc15a",                       0),
+        (try_end),			
+        #equip items
+        (troop_equip_items, ":knight"),
+      (try_end),
+
+      (display_message, "@Player Faction culture is now Clone."),
+      (jump_to_menu, "mnu_own_faction"),
+    ]
+  ),
+
+  #############################################################################################################	
+  #swy-- new CIS culture
+  ("droid", [], "Droid culture",
+    [
+      #just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
+      #(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_8"),
+
+      #do this because we set the recruited knights original faction to fac_neutral
+      ] + fill_faction_cultures(["fac_player_supporters_faction", "fac_neutral"], [
+        
+      (faction_set_slot, '__cur_faction', slot_faction_deserter_troop,           "trp_droid_deserter"),
+      (faction_set_slot, '__cur_faction', slot_faction_messenger_troop,          "trp_droid_messenger"),
+      (faction_set_slot, '__cur_faction', slot_faction_guard_troop,              "trp_oom_series_security"),
+      (faction_set_slot, '__cur_faction', slot_faction_prison_guard_troop,       "trp_oom_series_security"),
+      (faction_set_slot, '__cur_faction', slot_faction_spacestation_guard_troop, "trp_oom_series_marine"),
+      
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_a,         "pt_faction_droid_reinforcements_a"),
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_b,         "pt_faction_droid_reinforcements_b"),
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_c,         "pt_faction_droid_reinforcements_c"),
+      
+      (faction_set_slot, '__cur_faction', slot_faction_tier_1_troop,             "trp_b1series"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_2_troop,             "trp_b1series_assassin"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_3_troop,             "trp_b2series"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_4_troop,             "trp_bxseries_commando"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_5_troop,             "trp_b2series_enhanced"),
+      
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_1,            "trp_b1series"),
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_2,            "trp_oom_series_marine"),
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_3,            "trp_b2series")
+
+      ]) + [
+
+      (try_for_range,":knight", reserved_knight_begin, reserved_knight_end),	#SW modified
+        (troop_set_slot, ":knight", slot_troop_original_faction, "fac_neutral"),
+
+        #new culture specific troops
+        
+        #clear any inventory
+        (troop_clear_inventory, ":knight"),
+        
+        #remove all equipment
+        (try_for_range, ":slot_no", 0, 9),
+          (troop_set_inventory_slot, ":knight", ":slot_no", -1),
+        (try_end),
+        
+        #change race
+        (troop_set_type, ":knight", tf_battledroid),
+        
+        #add equipment
+        (troop_add_item, ":knight", "itm_droid_parts",                   0),
+        (troop_add_item, ":knight", "itm_vibro_blade1",                  0),
+        (troop_add_item, ":knight", "itm_vibro_blade2",                  0),
+        (troop_add_item, ":knight", "itm_laser_bolts_red_rifle",         0),
+        (troop_add_item, ":knight", "itm_laser_bolts_red_rifle",         0),
+		    (troop_add_item, ":knight", "itm_transparent_droid_head",        0),
+		    (troop_add_item, ":knight", "itm_transparent_droid_hands",       0),
+		    (troop_add_item, ":knight", "itm_transparent_droid_feet",		     0),
+     #  (troop_add_item, ":knight", "itm_speeder",                       0),
+     
+        #random equipment
+        (store_random_in_range, ":rand", 0, 4),
+        
+        (try_begin),
+          (eq, ":rand", 0), # bxseries_commando
+          (troop_add_item, ":knight", "itm_bxseries_body",               0),
+          (troop_add_item, ":knight", "itm_dlt19",                       0),
+          (troop_add_item, ":knight", "itm_vibro_blade1",                0),
+          (troop_add_item, ":knight", "itm_vibro_blade2",                0),
+        (else_try),
+          (eq, ":rand", 1), # oom_series_command
+          (troop_add_item, ":knight", "itm_oomseries_command_body",      0),
+          (troop_add_item, ":knight", "itm_e5",                          0),
+          (troop_add_item, ":knight", "itm_vibro_blade1",                0),
+          (troop_add_item, ":knight", "itm_vibro_blade2",                0),
+        (else_try),
+          (eq, ":rand", 2), # b2series_enhanced
+          (troop_add_item, ":knight", "itm_b2series_body_enhanced",      0),
+          (troop_add_item, ":knight", "itm_b2series_blaster",            0),
+          (troop_add_item, ":knight", "itm_b2series_attack",             0),
+          (troop_add_item, ":knight", "itm_b2series_blaster",            0),
+        (else_try),         # oom_series_marine
+          (troop_add_item, ":knight", "itm_oomseries_marine_body",       0),
+          (troop_add_item, ":knight", "itm_e5",                          0),
+          (troop_add_item, ":knight", "itm_vibro_blade1",                0),
+          (troop_add_item, ":knight", "itm_vibro_blade2",                0),
+        (try_end),			
+        #equip items
+        (troop_equip_items, ":knight"),
+      (try_end),
+
+      (display_message, "@Player Faction culture is now Droid."),
+      (jump_to_menu, "mnu_own_faction"),
+    ]
+  ),
+  
+  #########################################################################################
+  #SW - new trandoshan culture
+    ("trandoshan", [], "Trandoshan culture",
+    [
+      #just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
+      (faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_7"),
+    
+      #do this because we set the recruited knights original faction to fac_neutral
+      ] + fill_faction_cultures(["fac_player_supporters_faction", "fac_neutral"], [
+
+      (faction_set_slot, '__cur_faction', slot_faction_deserter_troop,           "trp_trandoshan_deserter"),
+      (faction_set_slot, '__cur_faction', slot_faction_messenger_troop,          "trp_trandoshan_messenger"),
+      (faction_set_slot, '__cur_faction', slot_faction_guard_troop,              "trp_trandoshan_warrior"),
+      (faction_set_slot, '__cur_faction', slot_faction_prison_guard_troop,       "trp_trandoshan_hunter"),
+      (faction_set_slot, '__cur_faction', slot_faction_spacestation_guard_troop, "trp_trandoshan_bounty_hunter"),
+      
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_a,         "pt_faction_trandoshan_reinforcements_a"),
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_b,         "pt_faction_trandoshan_reinforcements_b"),
+      (faction_set_slot, '__cur_faction', slot_faction_reinforcements_c,         "pt_faction_trandoshan_reinforcements_c"),
+      
+      (faction_set_slot, '__cur_faction', slot_faction_tier_1_troop,             "trp_trandoshan"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_2_troop,             "trp_trandoshan_warrior"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_3_troop,             "trp_trandoshan_hunter"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_4_troop,             "trp_trandoshan_bounty_hunter"),
+      (faction_set_slot, '__cur_faction', slot_faction_tier_5_troop,             "trp_trandoshan_bounty_hunter"),
+      
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_1,            "trp_trandoshan"),
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_2,            "trp_trandoshan_warrior"),
+      (faction_set_slot, '__cur_faction', slot_faction_patrol_unit_3,            "trp_trandoshan_hunter")
+
+      ]) + [
+
+      (try_for_range,":knight",reserved_knight_begin,reserved_knight_end), #SW modified
+        (troop_set_slot, ":knight", slot_troop_original_faction, "fac_neutral"),
+        
+        #new culture specific troops
+        
+        #clear any inventory
+        (troop_clear_inventory, ":knight"),
+        
+        #remove all equipment
+        (try_for_range, ":slot_no", 0, 9),
+          (troop_set_inventory_slot, ":knight", ":slot_no", -1),
+        (try_end),
+        
+        #change race
+        
+        #unitrandosanex troops -- let's not be misogynistic :) :)
+        (store_random_in_range, ":rand", 0, 4),
+        (try_begin),
+          (ge, ":rand", 0),
+          (troop_set_type, ":knight", tf_trandoshan),
+        (else_try),
+          (troop_set_type, ":knight", tf_male),
+        (try_end),
+        
+        #add equipment
+        (troop_add_item, ":knight", "itm_transparent_helmet",        0),
+        (troop_add_item, ":knight", "itm_trandoshan_blade",          0),
+        (troop_add_item, ":knight", "itm_laser_bolts_orange_rifle",  0),
+        (troop_add_item, ":knight", "itm_trandoshan_acp_array_gun",  0),
+    #   (troop_add_item, ":knight", "itm_speeder",                   0),
+    
+        #random equipment
+        (store_random_in_range, ":rand", 0, 3),
+        (try_begin),
+          (eq, ":rand", 0),
+          (troop_add_item, ":knight","itm_trandoshan_flight_suit",   0),
+        (else_try),
+          (troop_add_item, ":knight","itm_trandoshan_armor",         0),
+        (try_end),		
+        
+        #equip items
+        (troop_equip_items, ":knight"),
+      (try_end),
+
+      (display_message, "@Player Faction culture is now Trandoshan."),
+      (jump_to_menu, "mnu_own_faction"),
     ]
 	),	
 	
 	#########################################################################################
-	#SW - new trandoshan culture
-    ("trandoshan",
-    [],"Trandoshan culture",
+  
+  ("back_to_faction_manag",[],"Back to faction management menu.",
     [
-		#(assign,"$culture_selected",1),
-		#(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_huttcartel"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
-		(faction_set_slot, "fac_player_supporters_faction", slot_faction_culture, "fac_culture_7"),	#just re-use an original culture ? shouldn't it be fac_culture_3 instead of fac_huttcartel ?
-		#(faction_set_name, "fac_player_supporters_faction", "@Wookiee Faction"),		#nevermind, I gave the player the ability to change the faction name
-		
-		#(assign,"$players_faction","fac_player_supporters_faction"),		would this be necessary to add?
-		  
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_deserter_troop, "trp_trandoshan_deserter"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_messenger_troop, "trp_trandoshan_messenger"),		
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_guard_troop, "trp_trandoshan_warrior"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_prison_guard_troop, "trp_trandoshan_hunter"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_spacestation_guard_troop, "trp_trandoshan_bounty_hunter"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_a, "pt_faction_trandoshan_reinforcements_a"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_b, "pt_faction_trandoshan_reinforcements_b"),
-        (faction_set_slot, "fac_player_supporters_faction",  slot_faction_reinforcements_c, "pt_faction_trandoshan_reinforcements_c"),		  
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_1_troop, "trp_trandoshan"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_2_troop, "trp_trandoshan_warrior"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_3_troop, "trp_trandoshan_hunter"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_4_troop, "trp_trandoshan_bounty_hunter"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_tier_5_troop, "trp_trandoshan_bounty_hunter"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_patrol_unit_1, "trp_trandoshan"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_patrol_unit_2, "trp_trandoshan_warrior"),
-		(faction_set_slot, "fac_player_supporters_faction",  slot_faction_patrol_unit_3, "trp_trandoshan_hunter"),
-
-		#do this because we set the recruited knights original faction to fac_neutral
-        (faction_set_slot, "fac_neutral",  slot_faction_deserter_troop, "trp_trandoshan_deserter"),
-        (faction_set_slot, "fac_neutral",  slot_faction_messenger_troop, "trp_trandoshan_messenger"),
-        (faction_set_slot, "fac_neutral",  slot_faction_guard_troop, "trp_trandoshan_warrior"),
-        (faction_set_slot, "fac_neutral",  slot_faction_prison_guard_troop, "trp_trandoshan_hunter"),
-        (faction_set_slot, "fac_neutral",  slot_faction_spacestation_guard_troop, "trp_trandoshan_bounty_hunter"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_a, "pt_faction_trandoshan_reinforcements_a"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_b, "pt_faction_trandoshan_reinforcements_b"),
-        (faction_set_slot, "fac_neutral",  slot_faction_reinforcements_c, "pt_faction_trandoshan_reinforcements_c"),		  
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_1_troop, "trp_trandoshan"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_2_troop, "trp_trandoshan_warrior"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_3_troop, "trp_trandoshan_hunter"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_4_troop, "trp_trandoshan_bounty_hunter"),
-		(faction_set_slot, "fac_neutral",  slot_faction_tier_5_troop, "trp_trandoshan_bounty_hunter"),
-		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_1, "trp_trandoshan"),
-		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_2, "trp_trandoshan_warrior"),
-		(faction_set_slot, "fac_neutral",  slot_faction_patrol_unit_3, "trp_trandoshan_hunter"),
-		
-        (try_for_range,":knight",reserved_knight_begin,reserved_knight_end),	#SW modified
-			#(troop_slot_eq, ":knight", slot_troop_occupation, slto_faction_hero),	#comment this out since some may not be a faction hero yet but we still want to change their race/equipment/etc
-			#(troop_set_slot, ":knight", slot_troop_original_faction,"fac_player_supporters_faction"),	# don't do this, it stops lords from building armies!!!
-			(troop_set_slot, ":knight", slot_troop_original_faction,"fac_neutral"),
-			
-			#new culture specific troops
-			#clear any inventory
-			(troop_clear_inventory, ":knight"),
-			#remove all equipment
-			(try_for_range, ":slot_no", 0, 9),
-				#(troop_get_inventory_slot,":cur_item",":knight",":slot_no"),
-				(troop_set_inventory_slot, ":knight",":slot_no",-1),
-			(try_end),
-			#change race
-      #unisex troops -- let's not be misogynistic :)
-      (store_random_in_range, ":rand", 0, 4),
-      (try_begin),
-        (ge,":rand",0),
-        (troop_set_type,":knight",tf_trandoshan),
-      (else_try),
-        (troop_set_type,":knight",tf_male),
-      (try_end),
-			#add equipment
-			(troop_add_item, ":knight","itm_transparent_helmet",0),
-			(troop_add_item, ":knight","itm_trandoshan_blade",0),
-			(troop_add_item, ":knight","itm_laser_bolts_orange_rifle",0),
-			(troop_add_item, ":knight","itm_trandoshan_acp_array_gun",0),
-			#(troop_add_item, ":knight","itm_speeder",0),
-			#random equipment
-			(store_random_in_range, ":rand", 0, 3),
-			(try_begin),
-				(eq, ":rand", 0),
-				(troop_add_item, ":knight","itm_trandoshan_flight_suit",0),
-			(else_try),
-				(troop_add_item, ":knight","itm_trandoshan_armor",0),
-			(try_end),			
-			#equip items
-			(troop_equip_items, ":knight"),
-		(try_end),
-	  
-		(display_message, "@Player Faction culture is now Trandoshan."),
-        (jump_to_menu, "mnu_own_faction"),
+      (jump_to_menu, "mnu_own_faction"),
     ]
-	),	
-	
-	#########################################################################################
-	
-    ("back_to_faction_manag",[],"Back to faction management menu.",
-      [
-		(jump_to_menu, "mnu_own_faction"),
-      ]
-    ),
-	
+  ),
+  
   ]),
 #############################################################################################################		  
   ("manage_fiefs",menu_text_color(0xFF000d2c),

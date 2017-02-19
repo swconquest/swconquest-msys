@@ -2928,17 +2928,31 @@ troops = [
 	[itm_clone_trooper_helmet_white,itm_clone_trooper_armor_white,itm_clone_trooper_gloves_white,itm_clone_trooper_boots,itm_combat_knife,itm_laser_bolts_blue_rifle,itm_dc15s],
 	def_attrib_2|level(16),wp(80),starwars_skills_2,mandalorian_face1, mandalorian_face2
 ],
+#droid
+["droid_messenger","Droid Messenger","Droid Messengers", # oom_series_pilot
+	tf_battledroid|tf_mounted|tf_guarantee_all_armor|tf_guarantee_horse|tf_guarantee_ranged,
+	0,0,fac_neutral,
+	[itm_horus_winged_cruiser, itm_vibro_sword3_blue, itm_droid_parts, itm_transparent_droid_head, itm_transparent_droid_hands, itm_transparent_droid_feet, itm_oomseries_pilot_body, itm_e5, itm_laser_bolts_red_rifle],
+	def_attrib_4|agi_21|level(30),wp(150),starwars_skills_mounted_4, droid_face1, droid_face2
+],
+["droid_deserter","Droid Deserter","Droid Deserters", # b1series
+	tf_battledroid|tf_guarantee_boots|tf_guarantee_all_armor,
+	0,0,fac_neutral,
+	[itm_droid_parts, itm_battle_droid_attack, itm_transparent_droid_head, itm_transparent_droid_hands, itm_transparent_droid_feet, itm_e5, itm_laser_bolts_red_rifle],
+	def_attrib_2|level(16),wp(80),starwars_skills_2, droid_face1, droid_face2
+],
+#trandoshan
 ["trandoshan_messenger","Trandoshan Messenger","Trandoshan Messengers",
 	tf_trandoshan|tf_mounted|tf_guarantee_armor|tf_guarantee_horse|tf_guarantee_ranged,
 	0,0,fac_neutral,
 	[itm_speeder,itm_transparent_helmet,itm_trandoshan_blade,itm_laser_bolts_orange_rifle,itm_trandoshan_acp_array_gun,itm_trandoshan_armor,itm_trandoshan_flight_suit,itm_trandoshan_skin],
-	def_attrib_4|agi_21|level(30),wp(150),starwars_skills_mounted_4,wookiee_face1, wookiee_face2
+	def_attrib_4|agi_21|level(30),wp(150),starwars_skills_mounted_4, trandoshan_face1, trandoshan_face2
 ],
 ["trandoshan_deserter","Trandoshan Deserter","Trandoshan Deserters",
 	tf_trandoshan|tf_guarantee_boots|tf_guarantee_armor,
 	0,0,fac_neutral,
 	[itm_transparent_helmet,itm_trandoshan_blade,itm_laser_bolts_orange_rifle,itm_trandoshan_acp_array_gun,itm_trandoshan_armor,itm_trandoshan_flight_suit,itm_trandoshan_skin],
-	def_attrib_2|level(16),wp(80),starwars_skills_2,wookiee_face1, wookiee_face2
+	def_attrib_2|level(16),wp(80),starwars_skills_2, trandoshan_face1, trandoshan_face2
 ],
 ###################################################################################
 
