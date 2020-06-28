@@ -145,12 +145,12 @@ presentations = [
           (position_set_y, pos1, 1250),
           (overlay_set_size, "$g_presentation_credits_obj_4", pos1),
 
-          (position_set_x, pos1, 200),
+          (position_set_x, pos1, 100),
           (position_set_y, pos1, -375),
           (overlay_set_position, "$g_presentation_credits_obj_4", pos1),
 
-          (position_set_x, pos1, 200),
-          (position_set_y, pos1, 1000),
+          (position_set_x, pos1, 100),
+          (position_set_y, pos1, 1500),
           (overlay_animate_to_position, "$g_presentation_credits_obj_4", 28000, pos1),
           (overlay_animate_to_alpha,    "$g_presentation_credits_obj_4", 700,   0xFF),
         (else_try),
